@@ -724,7 +724,7 @@ tunnel. One solution is to use port forwarding from your local machine
 to the server. The port forward can be set up in the terminal using a
 command like:
 
-        ssh -L 1234:localhost:3306 myUsername@myServer.edu
+    ssh -L 1234:localhost:3306 myUsername@myServer.edu
 
 This command connects port 1234 on your local computer to port 3306 (the
 default mySQL port) on the server. Now, telling Matlab to connect to
