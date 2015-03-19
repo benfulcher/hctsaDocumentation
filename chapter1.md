@@ -84,9 +84,7 @@ An example **sql_settings.conf** file:
 
     localhost,myTestDatabase,benfulcher,myInsecurePassword
 
-Note that if your database is not set up on your local machine (i.e.,
-`localhost`), then Matlab can communicate with a mySQL server through an
-ssh tunnel, which requires some [additional setup](#sec:sqlssh).
+Note that if your database is not set up on your local machine (i.e., `localhost`), then Matlab can communicate with a mySQL server through an ssh tunnel, which requires some [additional setup](#sec:sqlssh).
 Once you have configured your **sql_settings.conf** file, and you can run `dbc = SQL_opendatabase;` and `SQL_closedatabase(dbc)` without errors, then you can smile to yourself and you should at this point be happy because Matlab can communicate successfully with your mySQL server!
 You should also be excited because you are now ready to set up the database structure.
 
@@ -99,8 +97,7 @@ The mySQL database contains four main components:
 4. A list of the results of applying operations to time series in the database (the **Results** table). There are some additional subtleties relating to managing keywords, etc., but these basic components form the core of the database.
 
 
-Time series and operations have their own tables that contain metadata
-associated with each piece of data, and each operation, and the results
+Time series and operations have their own tables that contain metadata associated with each piece of data, and each operation, and the results
 of applying each method to each time series is in the **Results** table,
 that has a row for every combination of time series and operation, where
 we also record calculation times and the quality of outputs (for cases
