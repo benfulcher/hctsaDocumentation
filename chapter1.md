@@ -16,13 +16,10 @@ A summary of the steps involved in setting up the system is as follows, and will
 This section describes initial tasks that one must perform once, to set
 up the <span>*mySQL*</span> database and its interface with Matlab.
 
-##mySQL Database {#sec:mysql_database}
+### mySQL Database {#sec:mysql_database}
 
-We assume that the user has access to and appropriate read/write
-privileges for a local or network <span>*mySQL*</span> server database.
-Instructions on how to install and set up a <span>*mySQL*</span>
-database on a variety of operating systems can be found here:
-<http://dev.mysql.com/doc/refman/5.7/en/installing.html>.
+We assume that the user has access to and appropriate read/write privileges for a local or network *mySQL* server database.
+Instructions on how to install and set up a *mySQL* database on a variety of operating systems can be found [here][http://dev.mysql.com/doc/refman/5.7/en/installing.html].
 
 ### Setting Matlab up to talk to a mySQL server using the java connector {#sec:setting_matlab_up_to_talk_to_mysql}
 
