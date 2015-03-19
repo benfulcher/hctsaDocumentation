@@ -761,8 +761,7 @@ Memory*</span>.
 [^1]: cf.
     <http://www.mathworks.co.uk/help/matlab/matlab_external/bringing-java-classes-and-methods-into-matlab-workspace.html>
 
-[^2]: An alternative is to modify the **classpath.txt** file directly,
-    but this may not be supported by newer versions of Matlab.
+[^2]: An alternative is to modify the **classpath.txt** file directly, but this may not be supported by newer versions of Matlab.
 
 [^3]: As mentioned above, this can be achieved by editing the
     **classpath.txt** file using `edit classpath.txt` in an open Matlab
