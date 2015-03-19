@@ -12,7 +12,7 @@ A summary of the steps involved in setting up the system is as follows,
 and will be elaborated on below:
 
 1.  Install and set up a mySQL server, setup a new database to store
-    Matlab calculations in, and set up Matlab to be able to communicate with it, [here][sec:setting_up].
+    Matlab calculations in, and set up Matlab to be able to communicate with it, [here][sec:SettingUp].
 
 2.  Populate the database with master operations, operations, and time series (using the **install.m** script followed by the user importing their own time series using `SQL_add`), [here][sec:PopulatingDatabase].
 
