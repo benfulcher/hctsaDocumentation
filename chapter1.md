@@ -145,7 +145,7 @@ compilers (e.g., gcc, g++) to be installed on your system, which can be
 configured using `mex -setup` (cf. `doc mex` for more information). Once
 mex is set up, the mex functions used in the time-series code repository
 can be compiled by navigating to the **Toolboxes** directory and then
-running `` compile`mex ``.
+running `compile_mex`.
 
 ### Compiling the TISEAN binaries {#ssub:compiling_tisean}
 
