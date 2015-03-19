@@ -1,4 +1,4 @@
-#Guide to implementing the techniques and methods developed in _Highly Comparative Time-Series Analysis__ using an interface between Matlab and a <span>*mySQL*</span> server.
+#Guide to implementing the techniques and methods developed in _Highly Comparative Time-Series Analysis_ using an interface between Matlab and a *mySQL* server
 
 ##Introduction {#sec:introduction}
 
