@@ -1,6 +1,6 @@
 # Guide to implementing the techniques and methods developed in _Highly Comparative Time-Series Analysis_ using an interface between Matlab and a *mySQL* server
 
-## <a name="sec:Intro"></a>Introduction
+## Introduction {#sec:Intro}
 This document outlines steps required to set up and implement highly comparative analysis methods on a system using an interface between Matlab and a _mySQL_ database using the highly comparative time-series analysis repository.
 The document is an accompaniment this code repository.
 
