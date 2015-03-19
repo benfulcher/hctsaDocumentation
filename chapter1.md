@@ -11,7 +11,7 @@ A summary of the steps involved in setting up the system is as follows, and will
 3. Run computations to evaluate the operations on all the time series using the **sample_runscript** as a template, [here](sec:calculating).
 4. Analyze the results of computations by retrieving calculated data using `TSQ_prepared`, normalizing and filtering it using `TSQ_normalize`, and then making use of a range of analysis and visualization scripts provided, [here](sec:analyzing).
 
-## <a name="sec:SettingUp"></a>Setting up
+## Setting up {#sec:SettingUp}
 
 This section describes initial tasks that one must perform once, to set
 up the <span>*mySQL*</span> database and its interface with Matlab.
