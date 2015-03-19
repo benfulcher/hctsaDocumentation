@@ -14,7 +14,7 @@ and will be elaborated on below:
 1.  Install and set up a mySQL server, setup a new database to store
     Matlab calculations in, and set up Matlab to be able to communicate with it, [here][sec:setting_up].
 
-2.  Populate the database with master operations, operations, and time series (using the **install.m** script followed by the user importing their own time series using `SQL_add`), [here][sec:populating~d~atabase].
+2.  Populate the database with master operations, operations, and time series (using the **install.m** script followed by the user importing their own time series using `SQL_add`), [here][sec:PopulatingDatabase].
 
 3.  Run computations to evaluate the operations on all the time series
     using the **sample_runscript** as a template,
