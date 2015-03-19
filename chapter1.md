@@ -70,10 +70,11 @@ To check that Matlab can connect to external servers using the mySQL
 J-connector, using correct host name, username, and password settings,
 we introduce the Matlab routines `SQL_opendatabase` and `SQL_closedatabase`.
 An example usage is as follows:
-
+```matlab
     dbc = SQL_opendatabase; % Opens a connection to the default mySQL database (settings in sql-setting.conf) as `dbc'
             % do things with database using dbc
     SQL_closedatabase(dbc); % Closes the connection labeled `dbc'
+```
 
 For this to work, the **sql_settings.conf** file must be set up
 properly. This file specifies (in unencrypted plain text!) the login
