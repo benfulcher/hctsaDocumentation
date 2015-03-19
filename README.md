@@ -1,8 +1,4 @@
-My Awesome Book
+Highly Comparative Time-Series Analysis: Manual
 =======
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
-
-When $$a \ne 0$$, there are two solutions to $$(ax^2 + bx + c = 0)$$ and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-
+Guide to implementing the techniques and methods developed in [Highly Comparative Time-Series Analysis](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full) using an interface between Matlab and a _mySQL_ server.
