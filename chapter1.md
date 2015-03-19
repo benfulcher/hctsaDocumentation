@@ -755,7 +755,7 @@ Running out of java heap space throws the error
 retrieve a large set of time series/operations from the database. Matlab
 needs to keep the whole retrieval in memory, and has a hard limit on
 this. The java heap size can be increased in the Matlab preferences,
-under <span>*General*</span> $\rightarrow$ <span>*Java Heap
+under <span>*General*</span> $$\rightarrow$$ <span>*Java Heap
 Memory*</span>.
 
 [^1]: cf.
