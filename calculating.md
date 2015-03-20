@@ -46,7 +46,7 @@ database. The file contains the following elements:
 
 -   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output. Quality labels are shown in Tab.[tab:qualityLabels].
 
--   **TS_CalcTimes** is an *n* $$\times$$ *m* matrix containing calculation times for each operation output. Note that for operations that point to a structure produced by a master operation operations, the calculation time stored is that taken to compute the entire master function from which they were derived.
+-   **TS_CalcTimes** is an *n* x *m* matrix containing calculation times for each operation output. Note that for operations that point to a structure produced by a master operation operations, the calculation time stored is that taken to compute the entire master function from which they were derived.
 
 -   **TimeSeries** is a structure array containing metadata about the time series retrieved (corresponding to rows of the **TS_** matrices).
 
