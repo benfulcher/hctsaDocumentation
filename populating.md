@@ -3,7 +3,7 @@
 Adding time series or operations to the database is done using the function `SQL_add`.
 It has two key inputs that specify:
 
-1. Whether to import a set of time series (specify ‘ts’), a set of operations (‘ops’), or a set of master operations (‘mops’),
+1. Whether to import a set of time series (specify `‘ts’`), a set of operations (specify `‘ops’`), or a set of master operations (specify `‘mops’`),
 2. The name of the input text file that contains appropriately-formatted information about the time series, master operations, or operations.
 
 Note that manually adding or deleting rows to the database can create inconsistencies and errors in the database structure and should not be done unless you *really* know what you’re doing.
