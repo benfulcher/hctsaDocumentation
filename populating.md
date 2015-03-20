@@ -80,7 +80,7 @@ For example, the following input file would add two time series named **gaussian
     gaussianwhitenoise_002.dat     noise,gaussian
     sinusoid_001.dat               periodic,sine
 
-Every time series added to the database will be given a unique integer identifier, `ts_id`, which is used to retrieve specific time series from the database.
+Every time series added to the database will be given a unique integer identifier, **ts\_id**, which is used to retrieve specific time series from the database.
 `SQL_add` will attempt to find the time-series data files given in the input file, read them (using `dlmread`), and then import all of this data into the database.
 Once imported, the time-series data is stored in the database, and the original files in the input file no longer need to kept in the Matlab path.
 If keywords are provided in the input file, the time series are indexed and then updated in the **TimeSeriesKeywords** table and associated index table.
