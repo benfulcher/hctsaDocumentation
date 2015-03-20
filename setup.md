@@ -21,7 +21,8 @@ Instructions on how to install and set up a *mySQL* database on a variety of ope
 ### Setting Matlab up to talk to a mySQL server using the java connector {#sec:SettingUpJ}
 
 Before the structure of the database can be created, Matlab must be set
-up to be able to talk to the mySQL server. It is necessary to relocate the J connector from the **Database** directory of this code repository (which is also freely available [here](http://dev.mysql.com/downloads/connector/j/)): the file **mysql-connector-java-5.1.27-bin.jar** (for version 5.1.27). Instructions are here and are summarized below (cf. [Matlab documentation](http://www.mathworks.co.uk/help/matlab/matlab_external/bringing-java-classes-and-methods-into-matlab-workspace.html)).
+up to be able to talk to the mySQL server. It is necessary to relocate the J connector from the **Database** directory of this code repository (which is also freely available [here](http://dev.mysql.com/downloads/connector/j/)): the file `mysql-connector-java-5.1.27-bin.jar` (for version 5.1.27).
+Instructions are here and are summarized below, and described in the [Matlab documentation](http://www.mathworks.co.uk/help/matlab/matlab_external/bringing-java-classes-and-methods-into-matlab-workspace.html).
 This .jar file must be added to a static path where it can always be found by Matlab.
 A good candidate directory is the **java/jarext/** subdirectory of the Matlab root directory (to determine the Matlab root directory, simply type `matlabroot` in an open Matlab command window).
 For Matlab to see this file, you need to add a reference to it in the `javaclasspath.txt` file (An alternative is to modify the **classpath.txt** file directly, but this may not be supported by newer versions of Matlab).
@@ -32,12 +33,12 @@ This `javaclasspath.txt` file must contain a text reference to the location of t
 
 ensuring that the version number (5.1.27) matches your version of the J connector (if you are using a more recent version, for example).
 As mentioned above, this can be achieved by editing the **classpath.txt** file using `edit classpath.txt` in an open Matlab command window and then adding the line above to it, corresponding to the location of the j-connector on disk.
-Note that `javaclasspath.txt` can also be in Matlab’s startup directory.
-After restarting Matlab, it should now have the ability to communicate with mySQL servers (we will check whether this works below).
+Note that **javaclasspath.txt** can also be in Matlab’s startup directory.
+After restarting Matlab, it should now have the ability to communicate with *mySQL* servers (we will check whether this works below).
 
 ## Installing the Matlab/mySQL system {#sec:installing_the_matlab_mysql_system}
 
-Many tasks involved in installing the Matlab/mySQL system can be done by simply running the **install.m** script in the main directory of the code repository.
+Many tasks involved in installing the Matlab/mySQL system can be done by simply running the `install.m` script in the main directory of the code repository.
 This script runs the user through the steps outlined below.
 
 ### Creating the mySQL database {#sec:creating_the_mysql_database}
