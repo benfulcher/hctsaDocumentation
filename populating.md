@@ -74,7 +74,7 @@ Adding a set of time series to the database is done as above, and for a given in
 We provide an example input file in the **Database** directory as
 `INP_test_ts.txt`.
 The `SQL_add` function expects the text file to be formatted with each row specifying the filename of a time series and comma-delimited keywords with whitespace between them.
-For example, the following input file would add two time series named `gaussianwhitenoise_001.dat` and `gaussianwhitenoise_002.dat` to the database, each with keywords ‘noise’ and ‘gaussian’, and it would then add the time series stored in the file `sinusoid_001.dat` with keywords ‘periodic’ and ‘sine’:
+For example, the following input file would add two time series named **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** to the database, each with keywords **‘noise’** and **‘gaussian’**, and it would then add the time series stored in the file `sinusoid_001.dat` with keywords ‘periodic’ and ‘sine’:
 
     gaussianwhitenoise_001.dat     noise,gaussian
     gaussianwhitenoise_002.dat     noise,gaussian
