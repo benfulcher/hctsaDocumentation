@@ -60,15 +60,14 @@ Note that NULL entries in the database are converted to NaN entries in the local
 Values are used to indicate non-real-valued outputs from operations, or cases when fatal errors were encountered.
 Note that when the quality label is nonzero (i.e., the quality encodes a special-valued output), the actual output value of the operation is set to zero, as a convention:
 
-| **Quality label** | **Description** |
 |:-------------:|:-------------:|
+| **Quality label** | **Description** |
 | 0 | No problems with calculation. Output was a real number. |
 | 1 | When running the code, a fatal error was encountered. |
 | 2 | Output of the code was `NaN`.|
 | 3 | Output of the code was `Inf`. |
 | 4 | Output of the code was `-Inf` |
 | 5 | Output had a nonzero imaginary component |
-|:-------------:|:-------------:|
 
 <!-- **Quality labels**. These are stored in the **Quality** column of
   the **Results** table in the *mySQL* database (and
