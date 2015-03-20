@@ -54,7 +54,7 @@ An example excerpt from such a file is below:
 
 The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace).
 White space is used to separate the three entries on each line of the input file.
-In this example, the master operation labeled `CO_tc3_y_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named `length` here.
+In this example, the master operation labeled `CO_tc3_y_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named **'length'** here.
 The two keywords 'correlation' and 'nonlinear' are added to the `CO_tc3` operations, while the keywords ‘raw’ and ‘lengthDependent’ are added to the `ST_length` operation.
 These keywords can be used to organize and filter the set of operations used for a given analysis task.
 
