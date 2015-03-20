@@ -42,9 +42,9 @@ When calculations are complete and one wishes to analyze all of the data stored 
 The result of running `TSQ_prepared` is a local Matlab file, `HCTSA_loc.mat`, that contains the relevant data retrieved from the
 database. The file contains the following elements:
 
--   **TS_DataMat** is an *n* $$\times$$ *m* matrix corresponding to the *n* time series and *m* operations retrieved from the database. Elements of **TS\_DataMat** correspond to the result of applying each operation to each time series.
+-   **TS_DataMat** is an *n* x *m* matrix corresponding to the *n* time series and *m* operations retrieved from the database. Elements of **TS\_DataMat** correspond to the result of applying each operation to each time series.
 
--   **TS_Quality** is an *n* $$\times$$ *m* matrix containing quality labels for each operation output. Quality labels are shown in Tab.[tab:qualityLabels].
+-   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output. Quality labels are shown in Tab.[tab:qualityLabels].
 
 -   **TS_CalcTimes** is an *n* $$\times$$ *m* matrix containing calculation times for each operation output. Note that for operations that point to a structure produced by a master operation operations, the calculation time stored is that taken to compute the entire master function from which they were derived.
 
