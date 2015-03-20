@@ -1,4 +1,4 @@
-# Retrieving, calculating, and writing
+## Retrieving, calculating, and writing
 
 
 ### Retrieving data from the database using `TSQ_prepared` {#sec:tsq_prepared}
