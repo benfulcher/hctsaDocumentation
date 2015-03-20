@@ -164,5 +164,3 @@ Running out of java heap space throws the error `java.lang.OutOfMemoryError`, an
 Matlab needs to keep the whole retrieval in memory, and has a hard limit on this.
 The java heap size can be increased in the Matlab preferences, under *General* $$\rightarrow$$ *Java Heap
 Memory*.
-
-[hctsa-paper][http://rsif.royalsocietypublishing.org/content/10/83/20130048.full]
