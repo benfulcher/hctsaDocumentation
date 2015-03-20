@@ -1,4 +1,4 @@
-# Overview
+## Overview
 
 In this chapter we describe our Matlab framework for computing the output of operations in the **Operations** table of the *mySQL* database on time series in the **TimeSeries** table of the database.
 The procedure involves three main steps:
