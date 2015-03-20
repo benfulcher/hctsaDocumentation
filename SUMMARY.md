@@ -6,6 +6,6 @@
 * [Running computations](calculating.md)
    * [Overview](overview.md)
    * [Retrieving, calculating, and writing](retrieving,_calculating,_and_writing.md)
-   * Cycling through computations using runscripts
+   * [Cycling through computations using runscripts](cycling_through_computations_using_runscripts.md)
 * [Running analysis with the results of a set of computations](analyzing.md)
 
