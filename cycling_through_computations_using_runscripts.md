@@ -11,4 +11,4 @@ By designating different sections of the database to cycle through, this procedu
 Retrieving a large section of the database at once can be problematic because it requires large disk reads and writes, uses a lot of memory, and if problems occur in the reading or writing to/from files, one may have to abandon a large number of existing computations.
 Due to the ability of `TSQ_brawn` to parallelize the computation across multiple CPU processors, it is usually the most efficient practice to retrieve a small number of time series at each iteration of the prepared–brawn–agglomerate loop.
 Depending on their length, we usually retrieve five time series at each iteration of a runscript loop.
-An example runscript is given in the code that accompanies this document, as `sample_runscript.m`, and can be viewed as a template for runscripts that one may wish to use when performing time-series calculations across the database.
+An example runscript is given in the code that accompanies this document, as **sample_runscript.m**, and can be viewed as a template for runscripts that one may wish to use when performing time-series calculations across the database.
