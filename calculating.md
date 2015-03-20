@@ -1,7 +1,6 @@
 ## Running Computations {#sec:calculating}
 
 
-
 ### Retrieving data from the database using `TSQ_prepared` {#sec:tsq_prepared}
 
 Retrieving data from the **Results** table of the database is typically done for one of two purposes:
