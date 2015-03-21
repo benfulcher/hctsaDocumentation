@@ -1,5 +1,5 @@
 # Highly Comparative Time-Series Analysis Manual
-A guide to implementing the techniques and methods developed in _Highly Comparative Time-Series Analysis_ using an interface between Matlab and a *mySQL* server
+A guide to implementing the techniques and methods developed in _Highly Comparative Time-Series Analysis_ using an interface between Matlab and a *mySQL* server.
 This manual takes you through the steps required to run highly comparative time-series analysis, as described in our papers:
 
 * [Main highly comparative time-series analysis paper](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full)
