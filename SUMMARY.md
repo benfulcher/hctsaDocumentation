@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Installing and setting up](setup.md)
 * [Populating the database with time series and operations](populating.md)
-   * Adding master operations
+   * [Adding master operations](adding_master_operations.md)
 * [Running computations](calculating.md)
    * [Overview](overview.md)
    * [Retrieving, calculating, and writing](retrieving,_calculating,_and_writing.md)
