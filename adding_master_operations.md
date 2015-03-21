@@ -9,7 +9,7 @@ These operations can be added to the database using the following command:
 
     SQL_add('mops','INP_mops.txt');
 
-Two example lines from the input file, ‘INP_mops.txt’, are as follows:
+Two example lines from the input file, **INP_mops.txt**, are as follows:
 
     CO_tc3(y,1)     CO_tc3_y_1
     ST_length(x)    ST_length
