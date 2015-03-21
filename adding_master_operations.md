@@ -5,7 +5,7 @@
 
 By default, the `install` script populates the database with the default library of highly comparative time-series analysis code.
 The formatted input file specifying these pieces of code and their input parameters is **INP_mops.txt** in the **Database** directory of the repository.
-This step can be reproduced operations can be added to the database using the following command:
+This step can be reproduced using the following command:
 
     SQL_add('mops','INP_mops.txt');
 
