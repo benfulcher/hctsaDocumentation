@@ -1,4 +1,4 @@
-# Adding master operations
+# Adding master operations to the database
 
 ### Adding master operations to the database
 <!--{#sec:addingMops}-->
