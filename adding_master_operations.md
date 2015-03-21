@@ -1,6 +1,6 @@
 # Adding master operations to the database
 
-### Adding master operations to the database
+## Adding our library of master operations to the database
 <!--{#sec:addingMops}-->
 
 By default, the `install` script populates the database with the default library of highly comparative time-series analysis code.
