@@ -2,8 +2,10 @@
 
 Every time series added to the database will be given a unique integer identifier, **ts\_id**, which is used to retrieve specific time series from the database.
 
-The most common task is adding time series to the database, which must be done for each dataset analyzed. It is up to personal preference of the user whether to keep all time-series data in a single database, or
-have a different database for each dataset.
+The most common task is adding time series to the database, which must be done for each dataset analyzed. It is up to personal preference of the user whether to keep all time-series data in a single database, or have a different database for each dataset.
+
+
+###
 Adding a set of time series to the database is done as above, and for a given input file with filename `INP_ts.txt`, for example, the appropriate code is:
 
     SQL_add('ts','INP_ts.txt');
