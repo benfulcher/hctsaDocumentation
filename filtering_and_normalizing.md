@@ -6,7 +6,7 @@ This involves filtering out operations or time series that produced many errors 
 Both of these tasks are performed using the function `TSQ_normalize`.
 Example usage is as follows:
 
-    TSQ_normalize(`scaledSQzscore',[0.8,1.0]);
+        TSQ_normalize(`scaledSQzscore',[0.8,1.0]);
 
 The first input controls the normalization method, in this case a scaled outlier-robust sigmoidal transformation, and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).
 
