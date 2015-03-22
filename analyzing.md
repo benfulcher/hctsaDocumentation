@@ -10,7 +10,7 @@ Once a highly comparative dataset is produced, users can be creative in their ex
 ## Retrieving data from the database
 
 The first step of any analysis is to retrieve a relevant portion of data from the *mySQL* database to local Matlab files for analysis.
-This is done using the `TSQ_prepared` function described .
+This is done using the `TSQ_prepared` function described [earlier](retrieving_calculating_writing.md).
 Example usage is provided:
 
     TSQ_prepared(ts_ids, op_ids,'all');
