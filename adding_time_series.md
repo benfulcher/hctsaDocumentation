@@ -29,4 +29,4 @@ Running `SQL_add` with this input file will add three time series to the databas
 
 `SQL_add` will attempt to find the time-series data files given in the input file, read them (using `dlmread`), and then import all of this data into the database.
 Once imported, the time-series data is stored in the database, and the original files in the input file no longer need to kept in the Matlab path.
-If keywords are provided in the input file, the time series are indexed and then updated in the **TimeSeriesKeywords** table and associated index table.
+If keywords are provided in the input file, the time series are indexed and then updated in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate**.
