@@ -70,7 +70,8 @@ The `TSQ_normalize` function writes the new, filtered, normalized matrix to a lo
 This contains normalized, and trimmed versions of the information in `HCTSA_loc.mat`.
 Analysis can now be performed on the data contained in `HCTSA_N.mat`, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TSQ_normalize`, which will overwrite the existing `HCTSA_N.mat` with the results of the new normalization and filtration settings.
 
-### Clustering the data matrix using TSQ_cluster {#sec:clustering}
+### Clustering the data matrix using TSQ_cluster
+<!--{#sec:clustering}-->
 
 For the purposes of visualizing the data matrix, it is often desirable to have the rows and columns reordered to put similar rows adjacent to one another, and similarly to place similar columns adjacent to one another.
 This reordering can be done by the function `TSQ_cluster`, which has five inputs:
