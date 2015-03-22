@@ -18,7 +18,7 @@ We provide an example input file in the **Database** directory as **INP_test_ts.
 
 ### Input file format
 
-The `SQL_add` function expects the input text file to be formatted with each row specifying the file name of a time series and comma-delimited keywords with white space between them.
+The `SQL_add` function expects the input text file to be formatted with each row specifying: (i) the file name of a time-series data file and (ii) comma-delimited keywords, with white space separating them.
 For example, consider the following input file, containing three lines (one for each time series to be added to the database):
 
     gaussianwhitenoise_001.dat     noise,gaussian
@@ -26,6 +26,10 @@ For example, consider the following input file, containing three lines (one for 
     sinusoid_001.dat               periodic,sine
     
 Running `SQL_add` with this input file will add three time series to the database. The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
+
+When keywords are provided, time series are indexed according to them in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate** of the database.
+Assigning keywords to time series makes it easier to retrieve time series with a given set of keywords for analysis.
+Also, when distinguishing, and grouping time series annotated with different keywords
 
 ### Time-series data files
 
@@ -35,4 +39,3 @@ have a single real number on each row, specifying the ordered values that make u
 This data is imported into the database.
 
 Once imported, the time-series data is stored in the database, and the original files in the input file no longer need to kept in the Matlab path.
-If keywords are provided in the input file, the time series are indexed and then updated in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate**.
