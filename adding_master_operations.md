@@ -30,5 +30,7 @@ When the time comes to perform computations on data using the methods in the dat
 For the above example, this means that the functions `CO_tc3` and `ST_length` are in the Matlab path (because it will attempt to run `CO_tc3(y,1)` and `ST_length(x)`).
 The script `startup.m` handles the addition of paths required for the code library.
 
-New master operations can be added by adding lines to the current **INP_mops.txt** file, or by generating a new input file and running `SQL_add` on the new input file.
+## Adding new pieces of code to the database
+
+New functions and their input parameters to execute can be added to the database as above, by adding lines to the current **INP_mops.txt** file, or by generating a new input file and running `SQL_add` on the new input file.
 Note that `SQL_add` checks for 
