@@ -10,9 +10,14 @@ This contains normalized, and trimmed versions of the information in `HCTSA_loc.
 ## Example Usage
 Example usage is as follows:
 
-        TSQ_normalize(`scaledSQzscore',[0.8,1.0]);
+        TSQ_normalize('scaledSQzscore',[0.8,0.8]);
+
+This filters time series (rows of the data matrix) with more than 20% special values (specifying 0.8), then filters out operations (columns of the data matrix) with more than 20% special values, then applies the outlier-robust ‘scaledSQzscore’ sigmoidal transformation to all remaining operations (columns) and saves the result in the file **HCTSA_N.mat**.
+Note that the 'scaledSQzscore' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
+
 
 The first input controls the normalization method, in this case a scaled outlier-robust sigmoidal transformation, and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).
+
 
 These can be relaxed, to, for example, [0.7,0.9], which removes time series with less than 70% good values, and then removes operations with less than 90% good values.
 When neither value is 1.0, this can leave NaN values in the resulting data matrix, which can affect some calculations that cannot deal with missing values (such as PCA).
@@ -23,16 +28,15 @@ The list of implemented normalization transformations can be found in the functi
 
 An example usage is as follows:
 
-        TSQ_normalize('scaledSQzscore',[0.8,0.8]);
 
-This filters time series (rows of the data matrix) with more than 20% special values, then filters out operations (columns of the data matrix) with more than 20% special values, then applies the outlier-robust ‘scaledSQzscore’ sigmoidal transformation to all remaining operations (columns) and saves the result in the file **HCTSA_N.mat**.
-Note that the 'scaledSQzscore' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
 
-Another example:
 
-        TSQ_normalize('raw',[0.8,1]);
 
-This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) containing any special values, leaving a data matrix containing no special (or missing) values.
-No normalizing transformation is applied to the remaining operations.
+<!--Another example:-->
+
+<!--        TSQ_normalize('raw',[0.8,1]);-->
+
+<!--This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) containing any special values, leaving a data matrix containing no special (or missing) values.-->
+<!--No normalizing transformation is applied to the remaining operations.-->
 
 Analysis can now be performed on the data contained in `HCTSA_N.mat`, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TSQ_normalize`, which will overwrite the existing `HCTSA_N.mat` with the results of the new normalization and filtration settings.
