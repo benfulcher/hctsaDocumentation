@@ -28,8 +28,7 @@ For example, consider the following input file, containing three lines (one for 
 Running `SQL_add` with this input file will add three time series to the database. The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
 
 When keywords are provided, time series are indexed according to them in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate** of the database.
-Assigning keywords to time series makes it easier to retrieve time series with a given set of keywords for analysis.
-Also, when distinguishing, and grouping time series annotated with different keywords
+Assigning keywords to time series makes it easier to retrieve a set of time series with a given set of keywords for analysis, and to group time series annotated with different keywords for classification tasks.
 
 ### Time-series data files
 
