@@ -14,12 +14,12 @@ Here we describe the use of the `TSQ_prepared` function for the purposes of popu
 
 For calculating missing entries in the database, `TSQ_prepared` can be run as follows:
 
-    TSQ_prepared(ts_ids, op_ids, 'null');
+        TSQ_prepared(ts_ids, op_ids, 'null');
 
 The third input, `'null'`, retrieves `ts_id`s and `op_id`s from the sets provided that contain (as-yet) uncalculated (i.e., NULL) elements in the database; these can then be calculated and stored back in the database.
 An example usage is given below:
 
-    TSQ_prepared([1,3], 1:500, 'null');
+        TSQ_prepared([1,3], 1:500, 'null');
 
 Running this code will retrieve data for time series with `ts_id`s 1 and 3 and operations with `op_id` in the range 1 to 500, keeping only the rows and columns of the resulting time series x operations matrix that contain NULLs.
 When calculations are complete and one wishes to analyze all of the data stored in the database (not just NULL entries requiring computation), the third input should be set to ‘all’ to retrieve all entries in the **Results** table of the database.
