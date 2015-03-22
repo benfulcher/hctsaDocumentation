@@ -14,7 +14,8 @@ A summary of the steps involved in setting up the system is as follows, and will
 
 This section describes initial tasks that one must perform once, to set up the *mySQL* database and its interface with Matlab.
 
-### Creating the database structure {#sec:DatabaseStructure}
+### Creating the database structure
+<!--{#sec:DatabaseStructure}-->
 
 The mySQL database contains four main components:
 
