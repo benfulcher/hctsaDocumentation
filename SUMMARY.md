@@ -5,8 +5,8 @@
    * [Setting up the mySQL database](mysql_database.md)
 * [Populating the database with time series and operations](populating.md)
    * [Adding master operations](adding_master_operations.md)
-   * Adding operations
-   * Adding time series
+   * [Adding operations](adding_operations.md)
+   * [Adding time series](adding_time_series.md)
 * [Running computations](calculating.md)
    * [Overview](overview.md)
    * [Retrieving, calculating, and writing](retrieving,_calculating,_and_writing.md)
