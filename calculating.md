@@ -1,7 +1,7 @@
 ## Running Computations
 <!--{#sec:calculating}-->
 
-In this chapter we describe our Matlab framework for computing the output of operations in the **Operations** table of the *mySQL* database on time series in the **TimeSeries** table of the database.
+In this section we describe our Matlab framework for computing the output of operations in the **Operations** table of the *mySQL* database on time series in the **TimeSeries** table of the database.
 The procedure involves three main steps:
 
 1.  Retrieve a set of time series and operations from (the **Results** table) of the database to a local Matlab file, `HCTSA_loc` (use `TSQ_prepared`).
