@@ -31,7 +31,7 @@ Note that keywords should be separated only by commas and not whitespace.
 When keywords are provided, time series are indexed according to them in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate** of the database.
 Assigning keywords to time series makes it easier to retrieve a set of time series with a given set of keywords for analysis, and to group time series annotated with different keywords for classification tasks.
 
-### Time-series data files
+#### Time-series data file format
 
 `SQL_add` will attempt to find each time-series data file specified in the input file and read it (using `dlmread`).
 Data files should thus be accessible in the Matlab path.
