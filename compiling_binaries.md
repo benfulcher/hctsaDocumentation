@@ -34,4 +34,4 @@ You can test that Matlab can see the *TISEAN* binaries by typing, for example, t
 
         !which nstat_z
 
-If Matlab’s system paths are set up correctly, this command should return the path to your *TISEAN* binary `nstat_z`.
+If Matlab’s system paths are set up correctly, this command should return the path to your compiled *TISEAN* binary, `nstat_z`.
