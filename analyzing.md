@@ -23,4 +23,4 @@ Running the code in this way, using the ‘all’ tag, ensures that the full ran
 ### Grouping elements {#sec:grouping_variables}
 
 Throughout our analysis, it is often important to incorporate grouped structure particularly between time series in a classification dataset, for example.
-This is done using `TSQ_LabelGroups`.
+This is done using the function `TSQ_LabelGroups`.
