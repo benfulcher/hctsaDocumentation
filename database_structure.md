@@ -22,8 +22,8 @@ You now you have the basic table structure set up in the database and have done 
 It is very useful to be able to inspect the database directly, using a graphical interface.
 A very good example for Mac is the excellent, free application, [*Sequel Pro*](http://www.sequelpro.com) (a screenshot is shown below, showing the first 40 rows of the Operations table of our default operations library).
 Applications similar to *Sequal Pro* exist for Windows and Linux platforms.
-We encourage the user to explore the structure of these tables.
-It is NOT advisable to manipulate the database directly; instead Matlab scripts should be used to interact with the database to ensure that the relationships between the different tables are maintained.
+Applications that allow the database to be inspected are extremely useful, however they should ***not*** be used to manipulate the database directly.
+Instead, Matlab scripts should be used to interact with the database to ensure that the relationships between the different tables are maintained.
 
 ![SQLPro for Mac](SQLProScreenshot.png)
 <!--Visualizing the **Operations** table in the database using *Sequel Pro* for Mac. Similar applications exist for Windows and Linux platforms. -->
