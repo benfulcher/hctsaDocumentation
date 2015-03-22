@@ -20,6 +20,7 @@ This `javaclasspath.txt` file must contain a text reference to the location of t
 ```
 
 ensuring that the version number (5.1.27) matches your version of the J connector (if you are using a more recent version, for example).
+
 As mentioned above, this can be achieved by editing the **classpath.txt** file using `edit classpath.txt` in an open Matlab command window and then adding the line above to it, corresponding to the location of the j-connector on disk.
 Note that **javaclasspath.txt** can also be in Matlab’s startup directory.
 After restarting Matlab, it should now have the ability to communicate with *mySQL* servers (we will check whether this works below).
@@ -45,7 +46,8 @@ To check that Matlab can connect to external servers using the mySQL J-connector
 An example usage is as follows:
 
 ```matlab
-    dbc = SQL_opendatabase; % Opens a connection to the default mySQL database
+    % Open a connection to the default mySQL database
+    dbc = SQL_opendatabase;
     % (settings in sql-setting.conf) as `dbc'
     % do things with database using dbc
     SQL_closedatabase(dbc); % Closes the connection labeled dbc
