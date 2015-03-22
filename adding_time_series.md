@@ -1,7 +1,7 @@
 ## Adding time series to the database
 <!--{#sec:addingTimeSeries}-->
 
-The most common task is adding time series to the database, which must be done for each dataset analyzed.
+After setting up a database with a library of time-series features, the next task is to add a dataset of time series to the database.
 It is up to personal preference of the user whether to keep all time-series data in a single database, or have a different database for each dataset.
 
 Time series are added using the same function used to add master operations and operations to the database, `SQL_add`.
