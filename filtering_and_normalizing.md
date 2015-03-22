@@ -31,6 +31,4 @@ Another example:
 This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) containing any special values, leaving a data matrix containing no special (or missing) values.
 No normalizing transformation is applied to the remaining operations.
 
-The `TSQ_normalize` function writes the new, filtered, normalized matrix to a local file called **HCTSA_N**.
-This contains normalized, and trimmed versions of the information in `HCTSA_loc.mat`.
 Analysis can now be performed on the data contained in `HCTSA_N.mat`, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TSQ_normalize`, which will overwrite the existing `HCTSA_N.mat` with the results of the new normalization and filtration settings.
