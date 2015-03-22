@@ -1,7 +1,7 @@
 ## Adding operations to the database
 <!--{#sec:addingOps}-->
 
-Operations can be added to the mySQL database using the following:
+Operations can be added to the *mySQL* database using the following:
 
     SQL_add('ops','INP_ops.txt');
 
