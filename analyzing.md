@@ -16,6 +16,7 @@ Example usage is provided:
     TSQ_prepared(ts_ids, op_ids,'all');
 
 for vectors `ts_ids` and `op_ids`, specifying the **ts\_id**s and **op\_id**s to be retrieved from the database.
+Sets of **ts_id**s and **op_id**s to retrieve 
 Running the code in this way, using the ‘all’ tag, ensures that the full range of **ts\_id**s and **op\_id**s specified are retrieved from the database and stored in the local file, **HCTSA_loc.mat**, which can then form the basis of subsequent analysis.
 
 
