@@ -7,7 +7,7 @@ It is up to personal preference of the user whether to keep all time-series data
 Time series are added using the same function used to add master operations and operations to the database, `SQL_add`, which imports time series data (stored in time-series data files) and associated keyword metadata (assigned to each time series) to the database.
 The time-series data files to import, and the keywords to assign to each time series are specified in a structured input file, as explained below.
 
-Every time series added to the database will be given a unique integer identifier, **ts\_id**, which is used to retrieve specific time series from the database.
+Every time series added to the database is assigned a unique integer identifier, **ts\_id**, which can be used to retrieve specific time series from the database.
 
 ### Example: Adding a set of time series to the database
 Adding a set of time series to the database requires an appropriately formatted input file, **INP_ts.txt**, for example, the appropriate code is:
