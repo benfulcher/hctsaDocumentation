@@ -50,7 +50,7 @@ An example usage is as follows:
     % Connection details are stored in sql-setting.conf
     dbc = SQL_opendatabase;
     
-    % <Do things with the database using dbc>
+    % <Do things with the database connection, dbc>
     
     % Closes the connection labeled dbc
     SQL_closedatabase(dbc);
