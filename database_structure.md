@@ -20,7 +20,7 @@ The **TimeSeries**, **Operations**, and **MasterOperations** tables can be gener
 You now you have the basic table structure set up in the database and have done the first bits of *mySQL* manipulation through the Matlab interface.
 
 It is very useful to be able to inspect the database directly, using a graphical interface.
-A very good example for Mac is the excellent, free application, [*Sequel Pro*](http://www.sequelpro.com).
+A very good example for Mac is the excellent, free application, [*Sequel Pro*](http://www.sequelpro.com) (a screenshot is shown below, showing the first 40 rows of the Operations table of our default operations library).
 Similar applications exist for Windows and Linux platforms.
 We encourage the user to explore the structure of these tables.
 It is NOT advisable to manipulate the database directly; instead Matlab scripts should be used to interact with the database to ensure that the relationships between the different tables are maintained.
