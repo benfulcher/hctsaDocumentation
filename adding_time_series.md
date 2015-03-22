@@ -34,8 +34,6 @@ Assigning keywords to time series makes it easier to retrieve a set of time seri
 ### Time-series data files
 
 `SQL_add` will attempt to find each time-series data file specified in the input file and read it (using `dlmread`).
-Data files should thus be accessible in 
-have a single real number on each row, specifying the ordered values that make up the time series.
-This data is imported into the database.
-
-Once imported, the time-series data is stored in the database, and the original files in the input file no longer need to kept in the Matlab path.
+Data files should thus be accessible in the Matlab path.
+Each time-series data file should have a single real number on each row, specifying the ordered values that make up the time series.
+Once imported, the time-series data is stored in the database; thus the original time-series data files are no longer required, and can be removed from the Matlab path.
