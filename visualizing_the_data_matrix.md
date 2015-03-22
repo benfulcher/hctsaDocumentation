@@ -4,7 +4,8 @@
 There are many tasks that involve understanding the rich structure contained in data matrices by visualizing them.
 In this section we describe some basic tools we have developed to visualize the behavior of time series and operations in the data matrix.
 
-### Visualizing the data matrix using `TSQ_plot_DataMatrix` {#sec:visDatamatrix}
+### Visualizing the data matrix using `TSQ_plot_DataMatrix`
+<!--{#sec:visDatamatrix}-->
 
         TSQ_plot_DataMatrix()
 
