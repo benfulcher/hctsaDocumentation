@@ -2,9 +2,8 @@
 
 In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters.
 Each of these
-Each operation (or feature) corresponds to a single real number, which can be one of many outputs from a master operation.
+Each operation (or feature) corresponds to a single real number, making up a column of the resulting data matrix, and can be one of many outputs from a master operation.
 A valid output from a master operation is: (i) a real number, (ii) a structure containing real numbers, or (iii) `NaN` to indicate that the input time series is not appropriate for this code.
-The operations make up elements of the data matrix.
 To reproduce 
 
 
