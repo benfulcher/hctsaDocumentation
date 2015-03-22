@@ -28,7 +28,7 @@ Otherwise, you should check that this directory is in your path, e.g., by adding
     export PATH=$PATH:$HOME/bin
 
 to your **~/.bash_profile** (and running `source ~/.bash_profile`).
-The path you install *TISEAN* to will also have to be in Matlab’s system path, which is added in **startup.m**, and assumes that the binaries are in **~/bin**.
+The path you install *TISEAN* to will also have to be in Matlab’s system path, which is added by `startup.m`, and assumes that the binaries are stored in **~/bin**.
 If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv(``PATH')` in Matlab) then you will have to add this path.
 You can test that Matlab can see the *TISEAN* binaries by typing, for example, the following into Matlab:
 
