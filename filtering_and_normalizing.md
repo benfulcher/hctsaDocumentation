@@ -12,7 +12,8 @@ Example usage is as follows:
 
         TSQ_normalize('scaledSQzscore',[0.8,0.8]);
 
-This filters time series (rows of the data matrix) with more than 20% special values (specifying 0.8), then filters out operations (columns of the data matrix) with more than 20% special values, then applies the outlier-robust ‘scaledSQzscore’ sigmoidal transformation to all remaining operations (columns) and saves the result in the file **HCTSA_N.mat**.
+This filters time series (rows of the data matrix) with more than 20% special values (specifying 0.8), then filters out operations (columns of the data matrix) containing any special values, and then applies the outlier-robust ‘scaledSQzscore’ sigmoidal transformation to all remaining operations (columns).
+The filtered, normalized matrix is saved to the file **HCTSA_N.mat**.
 Note that the 'scaledSQzscore' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
 
 
