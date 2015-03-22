@@ -8,7 +8,7 @@ Once in the database, the software will then run the new pieces of code.
 Corresponding operations (or features) will then need to added separately, to link to the structured outputs of master operations.
 
 
-## Adding our library of master operations to the database
+## Example: add our library of master operations to the database
 <!--{#sec:addingMops}-->
 
 By default, the `install` script populates the database with the default library of highly comparative time-series analysis code.
@@ -26,6 +26,9 @@ Each line in the input file specifies a piece of code and its input parameters a
 Note that we use the convention that *x* refers to the input time series and *y* refers to the *z*-scored input time series.
 In the example above, the first line thus adds an entry in the database for running the code `CO_tc3` using a *z*-scored time series as input (*y*), with ‘1’ as the second input with the label **CO_tc3_y_1**, and the second line will add an entry for running the code `ST_length` using the non-*z*-scored time-series *x*, with the label **length**.
 
-All pieces of code should be accessible in the current Matlab path.
+All pieces of code must be accessible in the current Matlab path.
 When the time comes to perform computations on data using the methods in the database, we assume that Matlab has access to each of the functions specified by their code name in the database.
 For the above example, this means that we assume Matlab has access to the function `CO_tc3` (because it will attempt to run `CO_tc3(y,1)`), and also the function `ST_length(x)`.
+
+New master operations can be added by adding lines to the current **INP_mops.txt** file, or by generating a new input file and running `SQL_add` on the new input file.
+Note that `SQL_add` checks for 
