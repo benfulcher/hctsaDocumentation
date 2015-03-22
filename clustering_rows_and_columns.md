@@ -1,4 +1,4 @@
-### Clustering the data matrix using TSQ_cluster
+### Clustering the data matrix using `TSQ_cluster`
 <!--{#sec:clustering}-->
 
 For the purposes of visualizing the data matrix, it is often desirable to have the rows and columns reordered to put similar rows adjacent to one another, and similarly to place similar columns adjacent to one another.
