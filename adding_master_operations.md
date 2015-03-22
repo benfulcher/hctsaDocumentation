@@ -6,6 +6,7 @@ Each operation (or feature) corresponds to a single real number, making up a col
 To add new master operations to the database of code, you need to create an input file and use `SQL_add`.
 Once in the database, the software will then run the new pieces of code.
 Corresponding operations (or features) will then need to added separately, to link to the structured outputs of master operations.
+Similarly, every master operation is given a unique integer, **mop_id**, that can be used to identify it.
 
 
 ## Example: add our library of master operations to the database
