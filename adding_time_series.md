@@ -6,7 +6,7 @@ The most common task is adding time series to the database, which must be done f
 
 
 ### 
-Adding a set of time series to the database is done as above, and for a given input file with filename `INP_ts.txt`, for example, the appropriate code is:
+Adding a set of time series to the database is done as above, and for a given input file with filename **INP_ts.txt**, for example, the appropriate code is:
 
     SQL_add('ts','INP_ts.txt');
 
