@@ -25,7 +25,8 @@ As mentioned above, this can be achieved by editing the **classpath.txt** file u
 Note that **javaclasspath.txt** can also be in Matlab’s startup directory.
 After restarting Matlab, it should now have the ability to communicate with *mySQL* servers (we will check whether this works below).
 
-## Installing the Matlab/mySQL system {#sec:installing_the_matlab_mysql_system}
+## Installing the Matlab/mySQL system
+<!--{#sec:installing_the_matlab_mysql_system}-->
 
 Many tasks involved in installing the Matlab/mySQL system can be done by simply running the `install.m` script in the main directory of the code repository.
 This script runs the user through the steps outlined below.
