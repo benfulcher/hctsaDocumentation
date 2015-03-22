@@ -28,7 +28,7 @@ Another example:
 
         TSQ_normalize('raw',[0.8,1]);
 
-This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) with any special values, leaving a data matrix with well-behaved operations as columns and containing no special or missing values.
+This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) containing any special values, leaving a data matrix containing no special or missing values.
 No normalizing transformation is applied to the remaining operations.
 
 The `TSQ_normalize` function writes the new, filtered, normalized matrix to a local file called **HCTSA_N**.
