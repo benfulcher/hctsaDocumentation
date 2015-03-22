@@ -50,7 +50,8 @@ To ensure that as many operations as possible run successfully on your data, you
 This requires working compilers (e.g., gcc, g++) to be installed on your system, which can be configured using `mex -setup` (cf. `doc mex` for more information).
 Once mex is set up, the mex functions used in the time-series code repository can be compiled by navigating to the **Toolboxes** directory and then running `compile_mex`.
 
-### Compiling the TISEAN binaries {#sec:CompilingTisean}
+### Compiling the TISEAN binaries
+<!--{#sec:CompilingTisean}-->
 
 Some operations rely on the [TISEAN nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html), which Matlab accesses via `system` commands, so the TISEAN binaries must be installed from the commandline.
 From the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
