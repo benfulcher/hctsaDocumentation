@@ -5,6 +5,7 @@
 * [Populating the database with time series and operations](populating.md)
    * [Adding master operations](adding_master_operations.md)
    * Adding operations
+   * Adding time series
 * [Running computations](calculating.md)
    * [Overview](overview.md)
    * [Retrieving, calculating, and writing](retrieving,_calculating,_and_writing.md)
