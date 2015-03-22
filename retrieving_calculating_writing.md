@@ -64,7 +64,8 @@ Note that when the quality label is nonzero (i.e., the quality encodes a special
   of the operation is set to zero, as a convention.<span
   data-label="tab:qualitylabels"></span> -->
 
-### Performing calculations using `TSQ_brawn` {#sec:performing_calculations}
+### Performing calculations using `TSQ_brawn`
+<!--{#sec:performing_calculations}-->
 
 Once a relevant section of the data matrix has been retrieved, we can calculate values that have not previously been calculated, indicated by NULL entries in the **Results** table of the database, and NaN entries in the corresponding `HCTSA_loc.mat`.
 
