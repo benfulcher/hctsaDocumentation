@@ -4,7 +4,7 @@
 After setting up a database with a library of time-series features, the next task is to add a dataset of time series to the database.
 It is up to personal preference of the user whether to keep all time-series data in a single database, or have a different database for each dataset.
 
-Time series are added using the same function used to add master operations and operations to the database, `SQL_add`.
+Time series are added using the same function used to add master operations and operations to the database, `SQL_add`, which imports time series data (stored in time-series data files) and associated keyword metadata (assigned to each time series) to the database.
 The input file to this function should specify a set of time-series data files and keywords to assign to them, as explained below.
 
 Every time series added to the database will be given a unique integer identifier, **ts\_id**, which is used to retrieve specific time series from the database.
