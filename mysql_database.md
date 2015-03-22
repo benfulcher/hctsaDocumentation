@@ -47,8 +47,9 @@ An example usage is as follows:
 
 ```matlab
     % Open a connection to the default mySQL database as dbc:
-    dbc = SQL_opendatabase;
     % Connection details are stored in sql-setting.conf
+    dbc = SQL_opendatabase;
+    
     % <Do things with the database using dbc>
     
     % Closes the connection labeled dbc
