@@ -24,6 +24,5 @@ The two keywords 'correlation' and 'nonlinear' are added to the `CO_tc3_1` opera
 These keywords can be used to organize and filter the set of operations used for a given analysis task.
 
 Every operation added to the database will be given a unique integer identifier, **op_id**, which provides a common way of retrieving specific operations from the database.
-Similarly, every master operation is given a unique integer, **mop_id**, that can be used to identify it.
 
 Note that after (hopefully successfully) adding the operations to the database, the `SQL_add` function indexes the operation keywords to an **OperationKeywords** table that produces a unique identifier for each keyword, and another linking table that allows operations with each keyword to be retrieved efficiently.
