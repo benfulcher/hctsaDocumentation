@@ -1,6 +1,6 @@
-# Highly Comparative Time-Series Analysis Manual
+# *hctsa* Manual
 
-This document outlines steps required to set up and implement highly comparative analysis methods on a system using an interface between Matlab and a _mySQL_ database using the [highly comparative time-series analysis repository](https://github.com/SystemsAndSignalsGroup/hctsa).
+This document outlines steps required to set up and implement highly comparative analysis methods on a system using an interface between Matlab and a _mySQL_ database using the [*hctsa* repository](https://github.com/SystemsAndSignalsGroup/hctsa).
 This manual is an accompaniment this code repository.
 It will take you through the steps required to run highly comparative time-series analysis, as described in our papers:
 
