@@ -42,7 +42,8 @@ It is NOT advisable to manipulate the database directly; instead Matlab scripts 
 ![SQLPro for Mac](SQLProScreenshot.png)
 <!--Visualizing the **Operations** table in the database using *Sequel Pro* for Mac. Similar applications exist for Windows and Linux platforms. -->
 
-### Compiling mex code {#sec:CompilingMexCode}
+### Compiling mex code
+<!--{#sec:CompilingMexCode}-->
 
 Many of the operations (especially external code packages) rely on mex functions, pieces of code not written in Matlab, that need to be compiled to run natively on each system architecture.
 To ensure that as many operations as possible run successfully on your data, you should compile these mex functions for your system.
