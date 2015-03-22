@@ -35,4 +35,7 @@ The script `startup.m` handles the addition of paths required for the code libra
 New functions and their input parameters to execute can be added to the database in the same way as described above.
 For example, lines corresponding to the new code can be added to the current **INP_mops.txt** file, or by generating a new input file and running `SQL_add` on the new input file.
 Note that `SQL_add` checks for repeats that already exist in the database, so there is no need to worry about generating duplicate database entries with `SQL_add`.
-But do ensure that 
+New code added to the database should be checked for the following:
+1. Output is a real number or structure (and uses an output of NaN to assign all outputs to a NaN).
+2. The function is accessible in the Matlab path.
+3. Corresponding outputs from the function (in the case of a structure) have matching operations (or features), which also need to be [added to the database](adding_operations.md).
