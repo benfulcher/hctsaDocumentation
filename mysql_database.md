@@ -70,3 +70,19 @@ An example **sql_settings.conf** file:
 Note that if your database is not set up on your local machine (i.e., `localhost`), then Matlab can communicate with a mySQL server through an ssh tunnel, which requires some [additional setup](#sec:sqlssh).
 Once you have configured your **sql_settings.conf** file, and you can run `dbc = SQL_opendatabase;` and `SQL_closedatabase(dbc)` without errors, then you can smile to yourself and you should at this point be happy because Matlab can communicate successfully with your mySQL server!
 You should also be excited because you are now ready to set up the database structure.
+
+
+### Setting up an ssh tunnel to a mySQL server
+<!-- {#sec:sqlssh} -->
+
+In some cases, the mySQL server you wish to connect to requires an ssh tunnel.
+One solution is to use port forwarding from your local machine to the server.
+The port forward can be set up in the terminal using a command like:
+
+```bash
+    ssh -L 1234:localhost:3306 myUsername@myServer.edu
+```
+
+This command connects port 1234 on your local computer to port 3306 (the default mySQL port) on the server.
+Now, telling Matlab to connect to `localhost` through port 1234 will connect it, through the established ssh tunnel, to the server.
+This can be achieved by specifying the server as `localhost` and the port number as 1234 in the `sql_settings.conf` file (or during the `install` process).
