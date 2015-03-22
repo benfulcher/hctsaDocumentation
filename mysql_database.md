@@ -30,7 +30,8 @@ After restarting Matlab, it should now have the ability to communicate with *myS
 Many tasks involved in installing the Matlab/mySQL system can be done by simply running the `install.m` script in the main directory of the code repository.
 This script runs the user through the steps outlined below.
 
-### Creating the mySQL database {#sec:creating_the_mysql_database}
+### Creating the mySQL database
+<!--{#sec:creating_the_mysql_database}-->
 
 If you have not already done so, creating a mySQL database to use with Matlab can be done using the `SQL_create_db` function.
 This requires that mySQL is installed on an accessible server, or on the local machine (i.e., using `localhost`).
