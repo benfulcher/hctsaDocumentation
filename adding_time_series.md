@@ -9,7 +9,7 @@ The input file to this function should specify a set of time-series data files a
 
 Every time series added to the database will be given a unique integer identifier, **ts\_id**, which is used to retrieve specific time series from the database.
 
-### Example: Adding time series to the database
+### Example: Adding a set of time series to the database
 Adding a set of time series to the database requires an appropriately formatted input file, **INP_ts.txt**, for example, the appropriate code is:
 
     SQL_add('ts','INP_ts.txt');
