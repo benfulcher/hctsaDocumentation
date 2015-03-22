@@ -1,5 +1,13 @@
 # Adding master operations to the database
 
+In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters.
+Each of these
+Each operation (or feature) corresponds to a single real number, which can be one of many outputs from a master operation.
+A valid output from a master operation is: (i) a real number, (ii) a structure containing real numbers, or a ‘NaN’ to indicate that the input time series is not appropriate for this code.
+The operations make up elements of the data matrix.
+To reproduce 
+
+
 ## Adding our library of master operations to the database
 <!--{#sec:addingMops}-->
 
@@ -17,8 +25,6 @@ Two example lines from the input file, **INP_mops.txt**, are as follows:
 Each line in the input file specifies a piece of code and its input parameters as well as a unique name for that master operation, separated by whitespace; this name is referenced by individual operations.
 Note that we use the convention that *x* refers to the input time series and *y* refers to the *z*-scored input time series.
 In the example above, the first line thus adds an entry in the database for running the code `CO_tc3` using a *z*-scored time series as input (*y*), with ‘1’ as the second input with the label **CO_tc3_y_1**, and the second line will add an entry for running the code `ST_length` using the non-*z*-scored time-series *x*, with the label **length**.
-The output of all master operations should either be a real number, a structure, or a ‘NaN’ to indicate that the input time series is not appropriate for this code.
-The operations make up elements of the data matrix.
 
 All pieces of code should be accessible in the current Matlab path.
 When the time comes to perform computations on data using the methods in the database, we assume that Matlab has access to each of the functions specified by their code name in the database.
