@@ -6,7 +6,7 @@ In this section we describe some basic tools we have developed to visualize the 
 
 ### Visualizing the data matrix using `TSQ_plot_DataMatrix` {#sec:visDatamatrix}
 
-    TSQ_plot_DataMatrix()
+        TSQ_plot_DataMatrix()
 
 [[mention how keywords can be used using the `TSQ_LabelGroups`]]
 [[should include the data matrix visualization code, dimensionality
