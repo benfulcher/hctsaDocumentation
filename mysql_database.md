@@ -46,11 +46,13 @@ To check that Matlab can connect to external servers using the mySQL J-connector
 An example usage is as follows:
 
 ```matlab
-    % Open a connection to the default mySQL database:
+    % Open a connection to the default mySQL database as dbc:
     dbc = SQL_opendatabase;
-    % (settings in sql-setting.conf) as `dbc'
-    % do things with database using dbc
-    SQL_closedatabase(dbc); % Closes the connection labeled dbc
+    % Connection details are stored in sql-setting.conf
+    % <Do things with the database using dbc>
+    
+    % Closes the connection labeled dbc
+    SQL_closedatabase(dbc);
 ```
 
 For this to work, the **sql_settings.conf** file must be set up properly.
