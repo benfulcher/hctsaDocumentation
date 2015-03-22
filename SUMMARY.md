@@ -15,4 +15,5 @@
 * [Running analysis with the results of a set of computations](analyzing.md)
    * [Filtering and normalizing](filtering_and_normalizing.md)
    * [Clustering rows and columns](clustering_rows_and_columns.md)
+   * Visualizing the data matrix
 
