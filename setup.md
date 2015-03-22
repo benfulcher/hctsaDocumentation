@@ -1,6 +1,6 @@
 ## Installing the *hctsa* code package
 
-The *hctsa* package should be set up by running the `install` script, which sets up a *mySQL* server and database, populates the database with operations, and then compiles all of the mex functions required by Matlab to run all of the operations.
+The *hctsa* package should be set up by running the `install` script, which sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.
 
 A summary of the steps involved in setting up the system is as follows, and will be elaborated on below:
 
