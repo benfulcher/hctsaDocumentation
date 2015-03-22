@@ -3,7 +3,8 @@
 We assume that the user has access to and appropriate read/write privileges for a local or network *mySQL* server database.
 Instructions on how to install and set up a *mySQL* database on a variety of operating systems can be found [here](http://dev.mysql.com/doc/refman/5.7/en/installing.html).
 
-## Setting Matlab up to talk to a mySQL server using the java connector {#sec:SettingUpJ}
+## Setting Matlab up to talk to a mySQL server using the java connector
+<!--{#sec:SettingUpJ}-->
 
 Before the structure of the database can be created, Matlab must be set up to be able to talk to the mySQL server.
 It is necessary to relocate the J connector from the **Database** directory of this code repository (which is also freely available [here](http://dev.mysql.com/downloads/connector/j/)): the file `mysql-connector-java-5.1.27-bin.jar` (for version 5.1.27).
