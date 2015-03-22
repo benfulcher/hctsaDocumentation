@@ -2,7 +2,7 @@
 <!--### Creating the database structure-->
 <!--{#sec:DatabaseStructure}-->
 
-The mySQL database contains four main components:
+The *mySQL* database contains four main components:
 
 1. A lists of all the filenames and other metadata of time series (the **TimeSeries** table),
 2. A list of all the names and other metadata of pieces of time-series analysis operations (the **Operations** table),
