@@ -5,7 +5,6 @@
    * [Setting up the mySQL database](mysql_database.md)
    * [The database structure](database_structure.md)
    * [Compiling binaries](compiling_binaries.md)
-* The database structure
 * [Populating the database with time series and operations](populating.md)
    * [Adding master operations](adding_master_operations.md)
    * [Adding operations](adding_operations.md)
