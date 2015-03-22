@@ -17,21 +17,21 @@ Once mex is set up, the mex functions used in the time-series code repository ca
 Some operations rely on the [*TISEAN* nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html), which Matlab accesses via `system` commands, so the *TISEAN* binaries must be installed from the commandline.
 From the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
 
-    ./configure
-    make clean
-    make
-    make install
+        ./configure
+        make clean
+        make
+        make install
 
 This should install the *TISEAN* binaries in your **~/bin/** directory by default (you can instead install into a system-wide directory (**/usr/bin**, for example) by running `./configure –prefix=/usr/bin`). You should be able to access these binaries from the commandline, e.g., typing the command `which poincare` should return the path to the *TISEAN* function `poincare`.
 Otherwise, you should check that this directory is in your path, e.g., by adding
 
-    export PATH=$PATH:$HOME/bin
+        export PATH=$PATH:$HOME/bin
 
 to your **~/.bash_profile** (and running `source ~/.bash_profile`).
 The path you install *TISEAN* to will also have to be in Matlab’s system path, which is added by `startup.m`, and assumes that the binaries are stored in **~/bin**.
-If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv(``PATH')` in Matlab) then you will have to add this path.
+If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv('PATH')` in Matlab) then you will have to add this path.
 You can test that Matlab can see the *TISEAN* binaries by typing, for example, the following into Matlab:
 
-    !which nstat_z
+        !which nstat_z
 
-If Matlab’s system paths are set up correctly, this command should return the path of your *TISEAN* binary `nstat_z`.
+If Matlab’s system paths are set up correctly, this command should return the path to your *TISEAN* binary `nstat_z`.
