@@ -16,7 +16,7 @@ Adding a set of time series to the database requires an appropriately formatted 
 
 We provide an example input file in the **Database** directory as **INP_test_ts.txt**, which can be added to the database, following the syntax above, using `SQL_add('ts','INP_test_ts.txt')`.
 
-### Input file format
+#### Input file format
 
 The `SQL_add` function expects the input text file to be formatted with each row specifying: (i) the file name of a time-series data file and (ii) comma-delimited keywords, with white space separating them.
 For example, consider the following input file, containing three lines (one for each time series to be added to the database):
