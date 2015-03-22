@@ -6,7 +6,7 @@ The most common task is adding time series to the database, which must be done f
 Every time series added to the database will be given a unique integer identifier, **ts\_id**, which is used to retrieve specific time series from the database.
 
 ### Example: Adding time series to the database
-Adding a set of time series to the database is done as above, and for a given input file with filename **INP_ts.txt**, for example, the appropriate code is:
+Adding a set of time series to the database requires an appropriately formatted input file, **INP_ts.txt**, for example, the appropriate code is:
 
     SQL_add('ts','INP_ts.txt');
 
