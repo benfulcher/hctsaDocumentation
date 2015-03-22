@@ -10,14 +10,14 @@ This contains normalized, and trimmed versions of the information in `HCTSA_loc.
 ## Example Usage
 Example usage is as follows:
 
-        TSQ_normalize('scaledSQzscore',[0.8,0.8]);
+        TSQ_normalize('scaledSQzscore',[0.8,1.0]);
 
-This filters time series (rows of the data matrix) with more than 20% special values (specifying 0.8), then filters out operations (columns of the data matrix) containing any special values, and then applies the outlier-robust ‘scaledSQzscore’ sigmoidal transformation to all remaining operations (columns).
+The first input controls the normalization method, in this case a scaled, outlier-robust sigmoidal transformation, specified with 'scaledSQzscore'.
+This filters time series (rows of the data matrix) with more than 20% special values (specifying 0.8), then filters out operations (columns of the data matrix) containing any special values (specifying 1.0), and then applies the outlier-robust ‘scaledSQzscore’ sigmoidal transformation to all remaining operations (columns).
 The filtered, normalized matrix is saved to the file **HCTSA_N.mat**.
 Note that the 'scaledSQzscore' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
 
-
-The first input controls the normalization method, in this case a scaled outlier-robust sigmoidal transformation, and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).
+<!--The first input controls the normalization method, in this case a , and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).-->
 
 
 These can be relaxed, to, for example, [0.7,0.9], which removes time series with less than 70% good values, and then removes operations with less than 90% good values.
