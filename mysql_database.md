@@ -28,9 +28,10 @@ After restarting Matlab, it should now have the ability to communicate with *myS
 ## Installing the Matlab/mySQL system
 <!--{#sec:installing_the_matlab_mysql_system}-->
 
-The main tasks involved in installing the Matlab/mySQL interface are achieved by the `install.m` script.
+The main tasks involved in installing the Matlab/mySQL interface are achieved by the `install.m` script, which runs the user through the steps below.
 <!--in the main directory of the code repository.-->
 <!--This script runs the user through the steps outlined below.-->
+
 
 ### Creating the mySQL database
 <!--{#sec:creating_the_mysql_database}-->
