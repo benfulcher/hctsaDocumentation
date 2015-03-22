@@ -1,4 +1,4 @@
-### Error handling and maintenance
+# Error handling and maintenance
 <!-- {#sec:maintainingDatabase} -->
 
 In this section we describe how keywords and other types of metadata stored in the database can be manipulated, and how results of whole sets of operations and time series can be cleared or completely deleted from the database.
