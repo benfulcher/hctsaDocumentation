@@ -15,7 +15,8 @@ Example usage is provided:
 
 for vectors `ts_ids` and `op_ids`, specifying the ts\_ids and op\_ids to be retrieved from the database. Running the code in this way, using the ‘all’ tag, ensures that the full range of ts\_ids and op\_ids specified are retrieved from the database and stored in the local file, `HCTSA_loc.mat`, which can then form the basis of subsequent analysis.
 
-## Filtering and normalizing the data using TSQ_normalize {#sec:normalization}
+## Filtering and normalizing the data using TSQ_normalize
+<!--{#sec:normalization}-->
 
 The first step in analyzing a dataset involves processing the data
 matrix. This involves filtering out operations or time series that
