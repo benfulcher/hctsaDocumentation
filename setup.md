@@ -20,18 +20,3 @@ This section describes initial tasks that one must perform once, to set up the *
 A useful way to keeping track with the directories you need to add to Matlab’s path involves creating a `.m` file containing `addpath` commands that can be run at the start of each Matlab session.
 We used this to keep track of the code for operations, for analysis, third-party toolboxes, and time-series data files, which could be easily altered at any point.
 An example is given in the code accompanying this document, as `startup.m`.
-
-### Setting up an ssh tunnel to a mySQL server
-<!-- {#sec:sqlssh} -->
-
-In some cases, the mySQL server you wish to connect to requires an ssh tunnel.
-One solution is to use port forwarding from your local machine to the server.
-The port forward can be set up in the terminal using a command like:
-
-```bash
-    ssh -L 1234:localhost:3306 myUsername@myServer.edu
-```
-
-This command connects port 1234 on your local computer to port 3306 (the default mySQL port) on the server.
-Now, telling Matlab to connect to `localhost` through port 1234 will connect it, through the established ssh tunnel, to the server.
-This can be achieved by specifying the server as `localhost` and the port number as 1234 in the `sql_settings.conf` file (or during the `install` process).
