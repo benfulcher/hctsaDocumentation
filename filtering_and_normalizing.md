@@ -19,7 +19,7 @@ The list of implemented normalization transformations can be found in the functi
 
 An example usage is as follows:
 
-        TSQ_normalize('scaledSQzscore',[0.8,0.8]);
+    TSQ_normalize('scaledSQzscore',[0.8,0.8]);
 
 This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) with more than 20% special values, then applies the outlier-robust ‘scaledSQzscore’ sigmoidal transformation to all remaining operations (columns).
 Note that this transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
