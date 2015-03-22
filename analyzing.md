@@ -7,7 +7,7 @@ The types of methods employed on a given dataset should be developed to suit spe
 Setting up the problem, guiding the methodology, and interpreting the results requires strong scientific input that should draw on domain knowledge, the questions asked of the data, experience performing data analysis, and statistical considerations.
 Once a highly comparative dataset is produced, users can be creative in their exploration and analysis of the data, or draw upon a library of analytic techniques that we have developed.
 
-## Retrieving data from the database
+## Retrieving data from the database using `TSQ_prepared`
 
 The first step of any analysis is to retrieve a relevant portion of data from the *mySQL* database to local Matlab files for analysis.
 This is done using the `TSQ_prepared` function described [earlier](retrieving_calculating_writing.md).
@@ -15,7 +15,8 @@ Example usage is provided:
 
     TSQ_prepared(ts_ids, op_ids,'all');
 
-for vectors `ts_ids` and `op_ids`, specifying the **ts\_id**s and **op\_id**s to be retrieved from the database. Running the code in this way, using the ‘all’ tag, ensures that the full range of **ts\_id**s and **op\_id**s specified are retrieved from the database and stored in the local file, **HCTSA_loc.mat**, which can then form the basis of subsequent analysis.
+for vectors `ts_ids` and `op_ids`, specifying the **ts\_id**s and **op\_id**s to be retrieved from the database.
+Running the code in this way, using the ‘all’ tag, ensures that the full range of **ts\_id**s and **op\_id**s specified are retrieved from the database and stored in the local file, **HCTSA_loc.mat**, which can then form the basis of subsequent analysis.
 
 
 ### Grouping elements {#sec:grouping_variables}
