@@ -27,6 +27,12 @@ For example, consider the following input file, containing three lines (one for 
     
 Running `SQL_add` with this input file will add three time series to the database. The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
 
-`SQL_add` will attempt to find the time-series data files given in the input file, read them (using `dlmread`), and then import all of this data into the database.
+### Time-series data files
+
+`SQL_add` will attempt to find each time-series data file specified in the input file and read it (using `dlmread`).
+Data files should thus be accessible in 
+have a single real number on each row, specifying the ordered values that make up the time series.
+This data is imported into the database.
+
 Once imported, the time-series data is stored in the database, and the original files in the input file no longer need to kept in the Matlab path.
 If keywords are provided in the input file, the time series are indexed and then updated in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate**.
