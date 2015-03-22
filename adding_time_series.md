@@ -19,7 +19,7 @@ We provide an example input file in the **Database** directory as **INP_test_ts.
 ### Input file format
 
 The `SQL_add` function expects the input text file to be formatted with each row specifying the file name of a time series and comma-delimited keywords with white space between them.
-For example, consider the following input file:
+For example, consider the following input file, containing three lines:
 
     gaussianwhitenoise_001.dat     noise,gaussian
     gaussianwhitenoise_002.dat     noise,gaussian
