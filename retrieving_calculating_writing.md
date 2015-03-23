@@ -77,7 +77,7 @@ Inputs to the function are optional and can be used to specify whether to log to
 before), and storing the results back in the matrices of `HCTSA_loc.mat`, i.e., **TS\_DataMat** (output of each operation on each time series), **TS\_CalcTime** (calculation time for each operation on each time series), and **TS\_Quality** (labels indicating errors or special-valued outputs). When all NULL entries in **TS\_DataMat** have been calculated, **TSQ_brawn** saves the results back to the local file: `HCTSA_loc.mat`.
 These results can then be written back to the database using `TSQ_agglomerate`, as shown in Fig.[fig:ComputationSchematic].
 
-### Writing calculations back to the database using `TSQ_agglomerate`
+## Writing calculations back to the database using `TSQ_agglomerate`
 <!--{#sec:writingCalcsDatabase}-->
 
 Once calculations have been performed using Matlab on local files, the results must be written back to the database.
