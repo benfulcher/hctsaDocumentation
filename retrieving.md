@@ -24,7 +24,7 @@ The example below assigns labels to two groups of time series in the **HCTSA_loc
 
     groupIndices = TSQ_LabelGroups('orig',{'parkinsons',0;'healthy',0},'ts',1)
 
-The second input is a cell, with the first column specifying the keyword strings for each group, and the second column specifying the number of each group to include (`'0'` used to specify *all*).
+The second input is a cell, with the first column specifying the keyword strings for each group, and the second column specifying the number of each label to include (`'0'` used to specify *all*).
 The final input, `1`, saves the group indices back to the data file, which can then be used by a range of other analysis functions.
 Group indices stay with the time series they are assigned to, e.g., after filtering and normalizing the data (using `TSQ_normalize`) and clustering the data (using `TSQ_cluster`) - the same group labels will stay with the time series.
 The group labels can be reassigned at any time by re-running the `TSQ_LabelGroups` function.
