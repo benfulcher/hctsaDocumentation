@@ -14,11 +14,6 @@ This section contains additional details about each of the steps performed by `i
 2. Populate the database with our default library of master operations and operations (using `SQL_add` commands), [here](populating.md).
 3. Compiling **mex** binaries required to evaluate all operations, [here](compiling_binaries.md).
 
-
-Run computations to evaluate the operations on all the time series using the `sample_runscript` as a template, [here](computing_runscripts.md).
-
-Analyze the results of computations by retrieving calculated data using `TSQ_prepared`, normalizing and filtering it using `TSQ_normalize`, and then making use of a range of analysis and visualization scripts provided, [here](analyzing.md).
-
 ### Setting the path
 <!-- {#sec:settingPath} -->
 
