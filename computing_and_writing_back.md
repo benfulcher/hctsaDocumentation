@@ -15,8 +15,8 @@ This function can be run without inputs:
 
 Inputs to the function are optional and can be used to specify:
 
-1. Whether to log to file or the screen (‘toLog’, default: no), and
-2. Whether to compute operations across cores using the Parallel processing (‘toParallel’, default: no).
+1. Whether to log to file or the screen (‘doLog’, default: no), and
+2. Whether to compute operations across cores using the Parallel processing (‘doParallel’, default: no).
 
 Running `TSQ_brawn` will begin running operations on time series in **HCTSA_loc.mat** for which elements in **TS\_DataMat** are **NaN**s (indicating that they have not been run before) or have a [quality label](retrieving_to_compute.md) of 1 (indicating a prior error).
 The results will be stored back in the matrices of **HCTSA_loc.mat**, i.e., **TS\_DataMat** (output of each operation on each time series), **TS\_CalcTime** (calculation time for each operation on each time series), and **TS\_Quality** (labels indicating errors or special-valued outputs).
