@@ -24,11 +24,12 @@ Two example lines from the input file, **INP_mops.txt**, are as follows:
     ST_length(x)    ST_length
 
 Each line in the input file specifies two pieces of information, separated by whitespace: (i) a piece of code and its input parameters, and (ii) a unique label for that master operation that is referenced by individual operations.
+
 We use the convention that *x* refers to the input time series and *y* refers to the *z*-scored input time series.
 In the example above, the first line thus adds an entry in the database for running the code `CO_tc3` using a *z*-scored time series as input (*y*), with ‘1’ as the second input with the label **CO_tc3_y_1**, and the second line will add an entry for running the code `ST_length` using the non-*z*-scored time-series *x*, with the label **length**.
 
 When the time comes to perform computations on data using the methods in the database, Matlab needs to have path access to each of the master operations functions specified in the database.
-For the above example, this means that the functions `CO_tc3` and `ST_length` are in the Matlab path (because it will attempt to run `CO_tc3(y,1)` and `ST_length(x)`).
+For the above example, Matlab will attempt to run both `CO_tc3(y,1)` and `ST_length(x)`, and thus the functions `CO_tc3.m` and `ST_length.m` must be in the Matlab path.
 The script `startup.m` handles the addition of paths required for the code library.
 
 ## Adding new pieces of executable code to the database
