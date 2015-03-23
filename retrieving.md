@@ -24,5 +24,7 @@ The group labels can be reassigned at any time.
 The example below assigns labels to two groups of time series in the **HCTSA_loc.mat** (specifying `'orig'`), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
 
     groupIndices = TSQ_LabelGroups('orig',{'parkinsons',0;'healthy',0},'ts',1)
+    
+The final input, `1`, saves the group indices back to the data file, which can then be used by other analysis functions.
 Throughout our analysis, it is often important to incorporate grouped structure particularly between time series in a classification dataset, for example.
 This is done using the function `TSQ_LabelGroups`.
