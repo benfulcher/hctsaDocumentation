@@ -15,8 +15,9 @@ These three different objects are summarized below:
 |:-------------:|:-------------:|:-------------:|
 | **Summary**: | Code and inputs to execute | single feature | univariate data|
 | **Example**: | `CO_AutoCorr(x,1:5,'TimeDomain')` | `AC_1` | [1.2, 33.7, -0.1, ...] |
-| **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
 | **Database identifier**: | m_id | op_id | ts_id |
+| **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
+
 
 
 
