@@ -15,8 +15,6 @@ This section contains additional details about each of the steps performed by `i
 3. Compiling **mex** binaries required to evaluate all operations [here](compiling_binaries.md). The user will need to compile the *TISEAN* binaries separately to the `install.m` script, as explained [here](compiling_binaries.md).
 
 
-
-
 ### Setting the path
 <!-- {#sec:settingPath} -->
 
