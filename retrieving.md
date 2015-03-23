@@ -19,6 +19,8 @@ The database structure provides much flexibility in storing and indexing the lar
 
 Highly comparative analyses often involve classification tasks, in which each observation is assigned a (numeric) class label.
 Once data has been retrieved, as described above, group labels can be assigned to each time series in a dataset, and stored in the local **HCTSA_*.mat** files using the function `TSQ_LabelGroups`.
-The group labels can be reassigned at any time
+The group labels can be reassigned at any time.
+
+        groupIndices = TSQ_LabelGroups('orig',{'parkinsons',0;'healthy',0},'ts',1)
 Throughout our analysis, it is often important to incorporate grouped structure particularly between time series in a classification dataset, for example.
 This is done using the function `TSQ_LabelGroups`.
