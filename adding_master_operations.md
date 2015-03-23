@@ -32,6 +32,8 @@ When the time comes to perform computations on data using the methods in the dat
 For the above example, Matlab will attempt to run both `CO_tc3(y,1)` and `ST_length(x)`, and thus the functions `CO_tc3.m` and `ST_length.m` must be in the Matlab path.
 Recall that the script `startup.m`, which should be run at the start of each session using *hctsa*, handles the addition of paths required for the default code library.
 
+Once added, each master operation is assigned a unique integer, **mop_id**, that can be used to identify it.
+
 ## Adding new pieces of executable code to the database
 
 New functions and their input parameters to execute can be added to the database using `SQL_add` in the same way as described above.
