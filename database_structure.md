@@ -7,7 +7,9 @@ The *mySQL* database is structured into four main components:
 1. A lists of all the filenames and other metadata of time series (the **TimeSeries** table),
 2. A list of all the names and other metadata of pieces of time-series analysis operations (the **Operations** table),
 3. A list of all the pieces of code that must be evaluated to give each operation a value, which is necessary, for example, when one piece of code produces multiple outputs (the **MasterOperations** table), and
-4. A list of the results of applying operations to time series in the database (the **Results** table). There are some additional subtleties relating to managing keywords, etc., but these basic components form the core of the database.
+4. A list of the results of applying operations to time series in the database (the **Results** table).
+
+Additional tables are related to indexing and managing efficient keyword labelling, etc.
 
 Time series and operations have their own tables that contain metadata associated with each piece of data, and each operation, and the results of applying each method to each time series is in the **Results** table, that has a row for every combination of time series and operation, where we also record calculation times and the quality of outputs (for cases where there the output of the operation was not a real number, or when some error occurred in the computation).
 Note that while the time-series data *is* stored on the database, the executable time-series analysis code
