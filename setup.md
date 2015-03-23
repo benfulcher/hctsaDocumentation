@@ -8,18 +8,17 @@ This function keeps track of functions for operations, for analysis, third-party
 The *hctsa* package should be set up by running the `install.m` script, which:
 
 1. Installs and sets up a *mySQL* server, creates a new database to store Matlab calculations in, and sets up Matlab to be able to communicate with it, [here](mysql_database.md).
-1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.
+2. Populate the database with our default library of master operations and operations (using `SQL_add` commands), [here](populating.md).
+3. Compiling **mex** binaries required to evaluate all operations [here](compiling_binaries.md). The user will need to compile the *TISEAN* binaries separately to the `install.m` script, as explained [here](compiling_binaries.md).
+
+This section contains additional details about each of these steps.
+
+<!--1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.-->
 
 <!--## Setting up-->
 <!--{#sec:SettingUp}-->
 
 <!--This section describes initial tasks that one must perform once, to set up the *mySQL* database and its interface with Matlab.-->
-
-
-This section contains additional details about each of the steps performed by `install.m`:
-
-2. Populate the database with our default library of master operations and operations (using `SQL_add` commands), [here](populating.md).
-3. Compiling **mex** binaries required to evaluate all operations [here](compiling_binaries.md). The user will need to compile the *TISEAN* binaries separately to the `install.m` script, as explained [here](compiling_binaries.md).
 
 
 <!--### Setting the path-->
