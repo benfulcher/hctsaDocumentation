@@ -47,6 +47,6 @@ Note that `SQL_add` checks for repeats that already exist in the database, so th
 New code added to the database should be checked for the following:
 1. Output is a real number or structure (and uses an output of NaN to assign all outputs to a NaN).
 2. The function is accessible in the Matlab path.
-3. Corresponding outputs from the function (in the case of a structure) have matching operations (or features), which also need to be [added to the database](adding_operations.md).
+3. Output(s) from the function have matching operations (or features), which also need to be [added to the database](adding_operations.md).
 
 <!--Corresponding operations (or features) will then need to added separately, to link to the structured outputs of master operations.-->
