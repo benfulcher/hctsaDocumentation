@@ -13,3 +13,11 @@ Sets of **ts_id**s and **op_id**s to retrieve can be selected by inspecting the 
 Running the code in this way, using the ‘all’ tag, ensures that the full range of **ts\_id**s and **op\_id**s specified are retrieved from the database and stored in the local file, **HCTSA_loc.mat**, which can then form the basis of subsequent analysis.
 
 The database structure provides much flexibility in storing and indexing the large datasets that can be analyzed using the *hctsa* approach, however the process of retrieving and storing large amounts of data from a database can take a considerable amount of time, depending on database latencies.
+
+### Grouping elements using `TSQ_LabelGroups`
+<!--{#sec:grouping_variables}-->
+
+Highly comparative analyses often involve classification tasks, in which each observation is assigned a (numeric) class label.
+For a given analysis, this metadata can be assigned to each time series in a dataset, and stored in the local **HCTSA_*.mat** files using the function `TSQ_LabelGroups`.
+Throughout our analysis, it is often important to incorporate grouped structure particularly between time series in a classification dataset, for example.
+This is done using the function `TSQ_LabelGroups`.
