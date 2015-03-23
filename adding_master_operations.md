@@ -2,7 +2,7 @@
 
 In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters, e.g., `CO_AutoCorr(x)`, which runs the `CO_AutoCorr` function on an input time series, *x*.
 
-A valid output from a master operation is:
+Valid outputs from a master operation are:
 1. A real number,
 2. A structure containing real numbers,
 3. **NaN** to indicate that the input time series is not appropriate for this code.
