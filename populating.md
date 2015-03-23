@@ -12,5 +12,5 @@ In this section, we describe how to add [master operations](adding_master_operat
 Users wishing to run the default *hctsa* code library their own time-series dataset will only need to [add time series](adding_time_series.md) to the database, as the full operation library is added in the `install.m` script.
 
 REMINDER: manually editing the database, including adding or deleting rows, is very dangerous, as it can create inconsistencies and errors in the database structure.
-Adding time series and operations to the database should always be done using `SQL_add` which sets up the **Results** table of the database and ensures that the indexing relationships in the database
+Adding time series and operations to the database should only be done using `SQL_add` which sets up the **Results** table of the database and ensures that the indexing relationships in the database
 are properly maintained.
