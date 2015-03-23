@@ -7,7 +7,7 @@ It has two key inputs that specify:
 1. Whether to import a set of time series (specify `‘ts’`), a set of operations (specify `‘ops’`), or a set of master operations (specify `‘mops’`),
 2. The name of the input text file that contains appropriately-formatted information about the time series, master operations, or operations.
 
-We deal with adding [master operations](adding_master_operations.md), [operations](adding_operations.md), and [time series](adding_time_series.md) separately.
+In this section, we describe how to add [master operations](adding_master_operations.md), [operations](adding_operations.md), and [time series](adding_time_series.md) separately.
 
 Note that manually editing the database, including adding or deleting rows, is very dangerous, as it can create inconsistencies and errors in the database structure.
 Adding time series and operations to the database should always be done using `SQL_add` which sets up the **Results** table of the database and ensures that the indexing relationships in the database
