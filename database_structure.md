@@ -12,8 +12,8 @@ The *mySQL* database is structured into four main components:
 Additional tables are related to indexing and managing efficient keyword labeling, etc.
 
 Time series and operations have their own tables that contain metadata associated with each piece of data, and each operation, and the results of applying each method to each time series is in the **Results** table, that has a row for every combination of time series and operation, where we also record calculation times and the quality of outputs (for cases where there the output of the operation was not a real number, or when some error occurred in the computation).
-Note that while the time-series data *is* stored on the database, the executable time-series analysis code
-files are not such that all code files must be in Matlab’s path (all paths can be set by running `startup.m`).
+Note that while data for each time series data *is* stored on the database, the executable time-series analysis code
+files *are not* such that all code files must be in Matlab’s path (all paths can be set by running `startup.m`).
 <!--, explained [here](#sec:SettingThePath).-->
 
 Another handy (but dangerous) function to know about is `SQL_reset`, which will ***delete all data in the mySQL database***, create all the new tables, and then fill the database with all the time-series analysis operations.
