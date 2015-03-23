@@ -15,7 +15,7 @@
    * [Cycling through computations using runscripts](computing_runscripts.md)
    * [Dealing with errors](dealing_with_errors.md)
 * [Analyzing results](analyzing.md)
-   * [Retrieving data from the database](retrieving.md)
+   * [Retrieving and grouping data from the database](retrieving.md)
    * [Filtering and normalizing](filtering_and_normalizing.md)
    * [Clustering rows and columns](clustering_rows_and_columns.md)
    * [Visualizing the data matrix](visualizing_the_data_matrix.md)
