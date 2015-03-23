@@ -7,7 +7,7 @@ This function keeps track of functions for operations, for analysis, third-party
 
 The *hctsa* package should be set up by running the `install` script, which:
 
-1. Installs and sets up a *mySQL* server, creates a new database to store Matlab calculations in, and set up Matlab to be able to communicate with it, [here](mysql_database.md).
+1. Installs and sets up a *mySQL* server, creates a new database to store Matlab calculations in, and sets up Matlab to be able to communicate with it, [here](mysql_database.md).
 1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.
 
 <!--## Setting up-->
