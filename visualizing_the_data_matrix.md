@@ -16,7 +16,5 @@ Visualizing the clustered matrix is the default behavior; but for some (large) d
 
 When data is grouped according to a set of distinct keywords and stored as group metadata in the **HCTSA_*.mat** files (using the `TSQ_LabelGroups` function), these can also be visualized using different colormaps by setting the second input to `1`, e.g., `TSQ_plot_DataMatrix('cl',1)`.
 
-[[dimensionality
-reduction code, and greedy feature selection code, as examples, each
-with example workflows starting from retrieval from the database]]
+[[dimensionality reduction code, and greedy feature selection code, as examples, each with example workflows starting from retrieval from the database]]
 [[mention how do similarity search, etc.]]
