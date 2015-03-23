@@ -13,7 +13,7 @@
    * [Retrieving, calculating, and writing](retrieving_calculating_writing.md)
    * [Cycling through computations using runscripts](computing_runscripts.md)
    * [Dealing with errors](dealing_with_errors.md)
-* [Running analysis with the results of a set of computations](analyzing.md)
+* [Analyzing results](analyzing.md)
    * [Filtering and normalizing](filtering_and_normalizing.md)
    * [Clustering rows and columns](clustering_rows_and_columns.md)
    * [Visualizing the data matrix](visualizing_the_data_matrix.md)
