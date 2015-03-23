@@ -13,8 +13,9 @@ These three different objects are summarized below:
 
 | | **Master Operation** | **Operation** | **Time Series** |
 |:-------------:|:-------------:|:-------------:|
-| Identifier | No problems with calculation. Output was a real number. |
-| 1 | When running the code, a fatal error was encountered. |
+| 
+| **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
+| Database identifier: | m_id | op_id | ts_id |
 | 2 | Output of the code was `NaN`.|
 | 3 | Output of the code was `Inf`. |
 | 4 | Output of the code was `-Inf` |
