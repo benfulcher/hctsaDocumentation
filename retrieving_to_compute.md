@@ -30,7 +30,7 @@ It contains the following elements:
 
 -   **TS_DataMat** is an *n* x *m* matrix corresponding to the *n* time series and *m* operations retrieved from the database. Elements of **TS\_DataMat** correspond to the result of applying each operation to each time series.
 
--   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output. Quality labels are shown in Tab.[tab:qualityLabels].
+-   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output. Quality labels are described below.
 
 -   **TS_CalcTimes** is an *n* x *m* matrix containing calculation times for each operation output. Note that for operations that point to a structure produced by a master operation operations, the calculation time stored is that taken to compute the entire master function from which they were derived.
 
