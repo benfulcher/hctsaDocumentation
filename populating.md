@@ -11,6 +11,14 @@ As explained [above](database_structure.md), the *mySQL* database is structured 
 
 These three different objects are summarized below:
 
+| **Master Operation** | **Operation** | **Time Series** |
+|:-------------:|:-------------:|:-------------:|
+| 0 | No problems with calculation. Output was a real number. |
+| 1 | When running the code, a fatal error was encountered. |
+| 2 | Output of the code was `NaN`.|
+| 3 | Output of the code was `Inf`. |
+| 4 | Output of the code was `-Inf` |
+| 5 | Output had a nonzero imaginary component |
 
 A given highly comparative time-series analysis requires the user to specify a set of code to evaluate (*master operations*), and their associated individual outputs (*operations*), and a time-series database (*time series*).
 We provide a default library of approximately 9000 *operations* (derived from approximately 1300 unique *master operations*) with the *hctsa* package.
