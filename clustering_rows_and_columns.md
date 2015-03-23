@@ -16,7 +16,7 @@ The inputs are as follows:
 
 -   *ClusterParamsCol*: a cell defining parameters of the clustering method specified as *ClusterMethCol*. A typical choice for linkage clustering is `{‘corr’,‘average’,0,[],0}`, which uses linear correlation distances between operations and average linkage clustering.
 
--   *SubSet*: Allows one to cluster only a specified subset of the columns and rows in **HCTSA\_N**. An example usage is `{‘norm’,[1,5,6,7],[]}`, which would keep only row indices 1,5,6, and 7, and all columns from **HCTSA\_N**.
+-   *SubSet*: Allows one to cluster only a specified subset of the columns and rows in **HCTSA\_N.mat**. An example usage is `{‘norm’,[1,5,6,7],[]}`, which would keep only row indices 1,5,6, and 7, and all columns from **HCTSA\_N.mat**.
 
 Note that `TSQ_cluster` uses the mechanics of a more general unsupervised clustering function **TSQ_us_cluster**, where more information about choices for clustering algorithms (for *ClusterMethRow* and *ClusterMethCol*) and the cells of parameters (for *ClusterParamsRow* and *ClusterParamsCol*) can be found.
-Note that the output of this function is to local Matlab files; in the same way that `TSQ_normalize` takes in **HCTSA_loc.mat** and outputs normalized versions as **HCTSA\_N**, `TSQ_cluster` takes in **HCTSA\_N** and writes output to a new file: **HCTSA\_cl**, containing clustered (re-ordered) versions of the data in **HCTSA\_N**.
+Note that the output of this function is to local Matlab files; in the same way that `TSQ_normalize` takes in **HCTSA_loc.mat** and outputs normalized versions as **HCTSA\_N.mat**, `TSQ_cluster` takes in **HCTSA\_N.mat** and writes output to a new file: **HCTSA\_cl.mat**, containing clustered (re-ordered) versions of the data in **HCTSA\_N.mat**.
