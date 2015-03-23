@@ -1,7 +1,7 @@
 # Populating the database with time series and operations
 <!--{#sec:PopulatingDatabase}-->
 
-Adding time series, code files (called *master operations*) operations to the database is done using the function `SQL_add`.
+Adding time series, code files (called *master operations*), and operations to the database is done using the function `SQL_add`.
 It has two key inputs that specify:
 
 1. Whether to import a set of time series (specify `‘ts’`), a set of operations (specify `‘ops’`), or a set of master operations (specify `‘mops’`),
