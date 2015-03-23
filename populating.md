@@ -13,7 +13,7 @@ These three different objects are summarized below:
 
 | | **Master Operation** | **Operation** | **Time Series** |
 |:-------------:|:-------------:|:-------------:|
-| **Summary**: | code and inputs to execute | single feature | univariate data|
+| **Summary**: | Code and inputs to execute | single feature | univariate data|
 | **Example**: | `ST_length(x)` | | |
 | **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
 | **Database identifier**: | m_id | op_id | ts_id |
