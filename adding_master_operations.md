@@ -1,7 +1,7 @@
 # Adding master operations to the database
 
 In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters, e.g., `CO_AutoCorr(x)`, which runs the `CO_AutoCorr.m` function on an input time series, x.
-A valid output from a master operation is: (i) a real number, (ii) a structure containing real numbers, or (iii) `NaN` to indicate that the input time series is not appropriate for this code.
+A valid output from a master operation is: (i) a real number, (ii) a structure containing real numbers, or (iii) **NaN** to indicate that the input time series is not appropriate for this code.
 Each operation (or feature) corresponds to a single real number, making up a column of the resulting data matrix, and can be one of many outputs from a master operation.
 To add new master operations to the database of code, you need to create an input file and use `SQL_add`.
 Once in the database, the software will then run the new pieces of code.
