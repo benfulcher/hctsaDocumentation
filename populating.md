@@ -15,7 +15,7 @@ These three different objects are summarized below:
 |:-------------:|:-------------:|:-------------:|
 | **Summary**: | Code and inputs to execute | Single feature | Univariate data|
 | **Example**: | `CO_AutoCorr(x,1:5,'TimeDomain')` | `AC_1` | [1.2, 33.7, -0.1, ...] |
-| **Database identifier**: | m_id | op_id | ts_id |
+| **Database identifier**: | mop_id | op_id | ts_id |
 | **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
 
 In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (*x*) at lags 1, 2, ..., 5.
