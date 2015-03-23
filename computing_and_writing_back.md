@@ -8,7 +8,8 @@ These functions are described below.
 
 Once a relevant section of the data matrix has been retrieved, we can calculate values that have not previously been calculated, indicated by NULL entries in the **Results** table of the database, and NaN entries in the corresponding `HCTSA_loc.mat`.
 
-Calculations are performed using the function `TSQ_brawn`, which stores results back into the matrices in `HCTSA_loc`. This function is generally run without inputs:
+Calculations are performed using the function `TSQ_brawn`, which stores results back into the matrices in `HCTSA_loc`.
+This function can be run without inputs:
 
         TSQ_brawn;
 
