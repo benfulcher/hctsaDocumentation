@@ -10,12 +10,15 @@ Operations can be added to the *mySQL* database using the following:
 The input file, e.g., `INP_ops.txt` (in the **Database** directory of the repository) should contain a row for every operation, and use labels that correspond to master operations.
 An example excerpt from such a file is below:
 
+
+```bash
     CO_tc3_y_1.raw     CO_tc3_1_raw      correlation,nonlinear
     CO_tc3_y_1.abs     CO_tc3_1_abs      correlation,nonlinear
     CO_tc3_y_1.num     CO_tc3_1_num      correlation,nonlinear
     CO_tc3_y_1.absnum  CO_tc3_1_absnum   correlation,nonlinear
     CO_tc3_y_1.denom   CO_tc3_1_denom    correlation,nonlinear
     ST_length          length            raw,lengthDependent
+```
 
 The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace).
 White space is used to separate the three entries on each line of the input file.
