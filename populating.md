@@ -14,9 +14,10 @@ These three different objects are summarized below:
 | | **Master Operation** | **Operation** | **Time Series** |
 |:-------------:|:-------------:|:-------------:|
 | **Summary**: | code and inputs to execute | single feature | univariate data|
+| **Example**: | `ST_length(x)` | | |
 | **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
 | **Database identifier**: | m_id | op_id | ts_id |
-| **Example**: |  | | |
+
 
 
 A given highly comparative time-series analysis requires the user to specify a set of code to evaluate (*master operations*), and their associated individual outputs (*operations*), and a time-series database (*time series*).
