@@ -1,4 +1,4 @@
-## Performing highly comparative analysis
+# Performing highly comparative analysis
 <!--{#sec:analyzing}-->
 
 Once the database has been set up, populated with data and operations, and the operations have been computed on the time-series data, the result can be used to perform a wide variety of highly comparative analyses, such as those outlined in [our paper](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full).
