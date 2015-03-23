@@ -8,6 +8,9 @@ Setting up the problem, guiding the methodology, and interpreting the results re
 
 Once a highly comparative dataset is produced, users can be creative in their exploration and analysis of the data, or draw upon a library of analytic techniques that we have developed.
 
+The main components of an *hctsa* analysis pipeline are:
+1. Retrieving results from the database using `TSQ_prepared` 
+
 ## Retrieving results from the database using `TSQ_prepared`
 
 The first step of any analysis is to retrieve a relevant portion of data from the *mySQL* database to local Matlab files for analysis.
@@ -20,6 +23,7 @@ for vectors `ts_ids` and `op_ids`, specifying the **ts\_id**s and **op\_id**s to
 Sets of **ts_id**s and **op_id**s to retrieve can be selected by inspecting the database, or by retrieving relevant sets of keywords using the `SQL_getids` function.
 Running the code in this way, using the ‘all’ tag, ensures that the full range of **ts\_id**s and **op\_id**s specified are retrieved from the database and stored in the local file, **HCTSA_loc.mat**, which can then form the basis of subsequent analysis.
 
+This process can take a considerable amount of time for large datasets, and depends on the latencies of the database.
 
 ### Grouping elements using `TSQ_LabelGroups`
 <!--{#sec:grouping_variables}-->
