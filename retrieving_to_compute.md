@@ -55,7 +55,7 @@ Note that when the quality label is nonzero (i.e., the quality encodes a special
 | 2 | Output of the code was **NaN**.|
 | 3 | Output of the code was **Inf**. |
 | 4 | Output of the code was **-Inf** |
-| 5 | Output had a nonzero imaginary component |
+| 5 | Output had a non-zero imaginary component |
 
 <!-- **Quality labels**. These are stored in the **Quality** column of
   the **Results** table in the *mySQL* database (and
