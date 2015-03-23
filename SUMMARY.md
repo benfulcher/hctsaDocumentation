@@ -11,7 +11,7 @@
    * [Adding time series](adding_time_series.md)
 * [Running computations](calculating.md)
    * [Retrieving, calculating, and writing](retrieving_calculating_writing.md)
-   * Computing operations and writing back to the database
+   * [Computing operations and writing back to the database](computing_and_writing_back.md)
    * [Cycling through computations using runscripts](computing_runscripts.md)
    * [Dealing with errors](dealing_with_errors.md)
 * [Analyzing results](analyzing.md)
