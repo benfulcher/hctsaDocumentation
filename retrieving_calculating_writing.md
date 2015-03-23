@@ -1,7 +1,7 @@
-## Retrieving, calculating, and writing
+# Retrieving, calculating, and writing
 
 
-### Retrieving data from the database using `TSQ_prepared`
+## Retrieving data from the database using `TSQ_prepared`
 <!--{#sec:tsq_prepared}-->
 
 Retrieving data from the **Results** table of the database is typically done for one of two purposes:
