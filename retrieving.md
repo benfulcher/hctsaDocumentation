@@ -1,6 +1,4 @@
-# Retrieving
-
-## Retrieving results from the database using `TSQ_prepared`
+# Retrieving results from the database using `TSQ_prepared`
 
 The first step of any analysis is to retrieve a relevant portion of data from the *mySQL* database to local Matlab files for analysis.
 This is done using the `TSQ_prepared` function described [earlier](retrieving_calculating_writing.md).
