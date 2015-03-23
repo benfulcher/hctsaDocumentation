@@ -6,7 +6,8 @@
 As explained [above](database_structure.md), the *mySQL* database is structured into 3 parts:
 
 1. *Master Operations* specify pieces of code (Matlab functions) and their inputs to be computed. Taking in a time series, master operations often generate a large number of outputs, each of which can be identified with an *operation* (or *feature*).
-2. *Operations* (or *features*) are a single number summarizing some measure of structure in a time series. In *hctsa*, 
+2. *Operations* (or *features*) are a single number summarizing some measure of structure in a time series. In *hctsa*, each operation links to an output from a piece of evaluated code (a *master operation*).
+3. 
 
 
 ## Using `SQL_add`
