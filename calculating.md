@@ -10,6 +10,7 @@ The procedure involves three main steps:
 
 3.  Write the results back to the **Results** table of the database (use `TSQ_agglomerate`).
 
-This computational workflow is represented schematically below. A sample script to iterate over these steps is the `sample_runscript`, explained [here](computing_runscripts.md).
+This computational workflow is represented schematically below.
+A sample script to iterate over these steps is the `sample_runscript` is explained [here](computing_runscripts.md).
 
 ![**Computation workflow schematic.**The three steps involved in computing time-series analysis operations on a set of time series are labeled: **1**. `TSQ_prepared` (retrieve data, including missing entries, from the database), **2**. `TSQ_brawn` (compute missing time series/operation pairs in HCTSA_loc.mat), **3**. `TSQ_agglomerate` (store the new results back in the database).](ComputationSchematic.png)
