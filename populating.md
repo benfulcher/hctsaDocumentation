@@ -1,4 +1,4 @@
-## Populating the database with time series and operations
+# Populating the database with time series and operations
 <!--{#sec:PopulatingDatabase}-->
 
 Adding time series or operations to the database is done using the function `SQL_add`.
