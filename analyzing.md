@@ -24,5 +24,7 @@ Running the code in this way, using the ‘all’ tag, ensures that the full ran
 ### Grouping elements using `TSQ_LabelGroups`
 <!--{#sec:grouping_variables}-->
 
+Analyses often involve classification tasks, in which each observation is assigned a (numeric) class label.
+For a given analysis, this metadata can be assigned to each time series in a dataset, and stored in the local **HCTSA_*.mat** files using the function `TSQ_LabelGroups`.
 Throughout our analysis, it is often important to incorporate grouped structure particularly between time series in a classification dataset, for example.
 This is done using the function `TSQ_LabelGroups`.
