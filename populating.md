@@ -22,7 +22,7 @@ It has two key inputs that specify:
 1. Whether to import a set of time series (specify `‘ts’`), a set of operations (specify `‘ops’`), or a set of master operations (specify `‘mops’`),
 2. The name of the input text file that contains appropriately-formatted information about the time series, master operations, or operations to be imported.
 
-In this section, we describe how to add [master operations](adding_master_operations.md), [operations](adding_operations.md), and [time series](adding_time_series.md) separately.
+In this section, we describe how to use `SQL_add` to add [master operations](adding_master_operations.md), [operations](adding_operations.md), and [time series](adding_time_series.md) to the database.
 
 Users wishing to run the default *hctsa* code library their own time-series dataset will only need to [add time series](adding_time_series.md) to the database, as the full operation library is added in the `install.m` script.
 Users wishing to add additional features using custom time-series code or different types of inputs, can either edit the default *INP_ops.txt* and *INP_mops.txt* files provided with the repository, or create new input files for their custom analysis methods (as explained for [operations](adding_operations.md) and [master operations](adding_master_operations.md)).
