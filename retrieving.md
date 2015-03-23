@@ -21,6 +21,8 @@ Highly comparative analyses often involve classification tasks, in which each ob
 Once data has been retrieved, as described above, group labels can be assigned to each time series in a dataset, and stored in the local **HCTSA_*.mat** files using the function `TSQ_LabelGroups`.
 The group labels can be reassigned at any time.
 
-        groupIndices = TSQ_LabelGroups('orig',{'parkinsons',0;'healthy',0},'ts',1)
+The example below assigns labels to two groups of time series in the **HCTSA_loc.mat** (specifying `'orig'`), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
+
+    groupIndices = TSQ_LabelGroups('orig',{'parkinsons',0;'healthy',0},'ts',1)
 Throughout our analysis, it is often important to incorporate grouped structure particularly between time series in a classification dataset, for example.
 This is done using the function `TSQ_LabelGroups`.
