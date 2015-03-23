@@ -1,7 +1,7 @@
 # Retrieving results from the database using `TSQ_prepared`
 
 The first step of any analysis is to retrieve a relevant portion of data from the *mySQL* database to local Matlab files for analysis.
-This is done using the `TSQ_prepared` function described [earlier](retrieving_to_compute.md).
+This is done using the `TSQ_prepared` function described [earlier](retrieving_to_compute.md), except we use the `'all'` input to retrieve all data, rather than the `'null'` input used to retrieve just missing data (requiring calculation).
 Example usage is provided:
 
     TSQ_prepared(ts_ids, op_ids,'all');
