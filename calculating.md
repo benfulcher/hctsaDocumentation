@@ -1,18 +1,19 @@
-## Running Computations
+# Running Computations
 <!--{#sec:calculating}-->
 
 In this section we describe our Matlab framework for computing the output of operations in the **Operations** table of the *mySQL* database on time series in the **TimeSeries** table of the database.
+
 The procedure involves three main steps:
 
-1.  Retrieve a set of time series and operations from (the **Results** table) of the database to a local Matlab file, **HCTSA\_loc.mat** (use `TSQ_prepared`).
+1. Retrieve a set of time series and operations from (the **Results** table) of the database to a local Matlab file, **HCTSA\_loc.mat** (use `TSQ_prepared`).
 
-2.  Compute the operations on the retrieved time series in Matlab and store the results locally (use `TSQ_brawn`).
+2. Compute the operations on the retrieved time series in Matlab and store the results locally (use `TSQ_brawn`).
 
-3.  Write the results back to the **Results** table of the database (use `TSQ_agglomerate`).
+3. Write the results back to the **Results** table of the database (use `TSQ_agglomerate`).
 
 This computational workflow is represented schematically below.
 A sample script to iterate over these steps is the `sample_runscript` is explained [here](computing_runscripts.md).
 
-![**Computation workflow schematic.**The three steps involved in computing time-series analysis operations on a set of time series are labeled: **1**. `TSQ_prepared` (retrieve data, including missing entries, from the database), **2**. `TSQ_brawn` (compute missing time series/operation pairs in HCTSA_loc.mat), **3**. `TSQ_agglomerate` (store the new results back in the database).](ComputationSchematic.png)
+![**Computation workflow schematic.**](ComputationSchematic.png)
 
 This workflow is very well suited to distributed computing for large datasets, whereby each node can iterate over a small set of time series, with all the results being written back to a central location (the *mySQL* database).
