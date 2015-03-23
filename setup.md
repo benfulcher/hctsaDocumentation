@@ -19,5 +19,4 @@ This section contains additional details about each of the steps performed by `i
 <!-- {#sec:settingPath} -->
 
 Directories required to be in Matlab’s path are added in the `startup.m` script that should be run at the start of each Matlab session.
-We used this to keep track of the code for operations, for analysis, third-party toolboxes, and time-series data files, which could be easily altered at any point.
-An example is given in the code accompanying this document, as `startup.m`.
+This function keeps track of functions for operations, for analysis, third-party toolboxes, and time-series data files, which could be easily altered at any point.
