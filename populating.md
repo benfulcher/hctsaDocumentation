@@ -16,11 +16,11 @@ This is achieved using `SQL_add` commands, as described below.
 
 ## Using `SQL_add`
 
-Adding time series, code files (called *master operations*), and operations (or *features*) to the database are achieved using the function `SQL_add`.
+Adding time series, master operations, and operations to the database are achieved using the function `SQL_add`.
 It has two key inputs that specify:
 
 1. Whether to import a set of time series (specify `‘ts’`), a set of operations (specify `‘ops’`), or a set of master operations (specify `‘mops’`),
-2. The name of the input text file that contains appropriately-formatted information about the time series, master operations, or operations.
+2. The name of the input text file that contains appropriately-formatted information about the time series, master operations, or operations to be imported.
 
 In this section, we describe how to add [master operations](adding_master_operations.md), [operations](adding_operations.md), and [time series](adding_time_series.md) separately.
 
