@@ -53,7 +53,7 @@ In this case, the output value of the operation is set to zero, as a convention,
 | **Quality label** | **Description** |
 |:-------------:|:-------------:|
 | 0 | No problems with calculation. Output was a real number. |
-| 1 | When running the code, a fatal error was encountered. |
+| 1 | A fatal error was encountered. |
 | 2 | Output of the code was **NaN**.|
 | 3 | Output of the code was **Inf**. |
 | 4 | Output of the code was **-Inf** |
