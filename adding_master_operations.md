@@ -7,7 +7,7 @@ A valid output from a master operation is:
 2. A structure containing real numbers,
 3. **NaN** to indicate that the input time series is not appropriate for this code.
 
-Each operation (or feature) corresponds to a single real number, making up a column of the resulting data matrix, and can be one of many outputs from a master operation.
+The (potentially many) outputs from a master operation can thus be mapped to individual operations (or features), which are single real numbers summarizing a time series that make up individual columns of the resulting data matrix.
 To add new master operations to the database of code, you need to create an input file and use `SQL_add`.
 Once in the database, the software will then run the new pieces of code.
 Corresponding operations (or features) will then need to added separately, to link to the structured outputs of master operations.
