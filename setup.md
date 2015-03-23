@@ -12,7 +12,10 @@ This section contains additional details about each of the steps performed by `i
 
 1. Install and set up a *mySQL* server, setup a new database to store Matlab calculations in, and set up Matlab to be able to communicate with it, [here](mysql_database.md).
 2. Populate the database with our default library of master operations and operations (using `SQL_add` commands), [here](populating.md).
-3. Compiling **mex** binaries required to evaluate all operations, [here](compiling_binaries.md).
+3. Compiling **mex** binaries required to evaluate all operations [here](compiling_binaries.md). The user will need to compile the *TISEAN* binaries separately to the `install.m` script, as explained [here](compiling_binaries.md).
+
+
+
 
 ### Setting the path
 <!-- {#sec:settingPath} -->
