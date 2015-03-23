@@ -21,7 +21,7 @@ Sets of **ts_id**s and **op_id**s to retrieve can be selected by inspecting the 
 Running the code in this way, using the ‘all’ tag, ensures that the full range of **ts\_id**s and **op\_id**s specified are retrieved from the database and stored in the local file, **HCTSA_loc.mat**, which can then form the basis of subsequent analysis.
 
 
-### Grouping elements
+### Grouping elements using `TSQ_LabelGroups`
 <!--{#sec:grouping_variables}-->
 
 Throughout our analysis, it is often important to incorporate grouped structure particularly between time series in a classification dataset, for example.
