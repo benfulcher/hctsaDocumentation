@@ -7,6 +7,8 @@
 <!--### Visualizing the data matrix using -->
 <!--{#sec:visDatamatrix}-->
 
+The clustered data matrix can be visualized by simply running
+
         TSQ_plot_DataMatrix()
 
 [[mention how keywords can be used using the `TSQ_LabelGroups`]]
