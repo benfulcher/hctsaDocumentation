@@ -1,6 +1,7 @@
 ## Adding operations to the database
 <!--{#sec:addingOps}-->
 
+Operations
 
 ### *Example*: Adding our library of operations to the database
 Operations can be added to the *mySQL* database using the following:
