@@ -1,6 +1,7 @@
 # Computing operations and writing back to the database
 
 After retrieving data from the *mySQL* database, missing entries (NULL in the database, and NaN in the local Matlab file) can be computed using `TSQ_brawn`, and stored back to the database using `TSQ_agglomerate`.
+These functions are described below.
 
 ## Performing calculations using `TSQ_brawn`
 <!--{#sec:performing_calculations}-->
