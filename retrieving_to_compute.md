@@ -44,7 +44,7 @@ NULL entries in the database are converted to NaN entries in the local Matlab ma
 
 ### Quality labels
 
-*Quality labels* Values are used to indicate non-real-valued outputs from operations, or cases when fatal errors were encountered.
+*Quality labels* are used to indicate when operations take non-real values, or when fatal errors were encountered.
 
 are stored in the **Quality** column of the **Results** table in the *mySQL* database (and locally in **TS_Quality** matrix).
 
