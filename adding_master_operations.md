@@ -33,6 +33,7 @@ For the above example, Matlab will attempt to run both `CO_tc3(y,1)` and `ST_len
 Recall that the script `startup.m`, which should be run at the start of each session using *hctsa*, handles the addition of paths required for the default code library.
 
 Once added, each master operation is assigned a unique integer, **mop_id**, that can be used to identify it.
+For example, when adding individual operations, the **mop_id** is used to map each individual operation to a corresponding master operation.
 
 ## Adding new pieces of executable code to the database
 
