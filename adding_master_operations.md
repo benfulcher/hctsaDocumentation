@@ -34,10 +34,14 @@ Recall that the script `startup.m`, which should be run at the start of each ses
 
 ## Adding new pieces of executable code to the database
 
-New functions and their input parameters to execute can be added to the database in the same way as described above.
+New functions and their input parameters to execute can be added to the database using `SQL_add` in the same way as described above.
 For example, lines corresponding to the new code can be added to the current **INP_mops.txt** file, or by generating a new input file and running `SQL_add` on the new input file.
-Note that `SQL_add` checks for repeats that already exist in the database, so there is no need to worry about generating duplicate database entries with `SQL_add`.
+Once in the database, the software will then run the new pieces of code.
+Note that `SQL_add` checks for repeats that already exist in the database, so that duplicate database entries cannot be added with `SQL_add`.
+
 New code added to the database should be checked for the following:
 1. Output is a real number or structure (and uses an output of NaN to assign all outputs to a NaN).
 2. The function is accessible in the Matlab path.
 3. Corresponding outputs from the function (in the case of a structure) have matching operations (or features), which also need to be [added to the database](adding_operations.md).
+
+<!--Corresponding operations (or features) will then need to added separately, to link to the structured outputs of master operations.-->
