@@ -24,7 +24,7 @@ Two example lines from the input file, **INP_mops.txt**, are as follows:
     ST_length(x)    ST_length
 
 Each line in the input file specifies two pieces of information, separated by whitespace:
-1. A piece of code and its input parameters, and
+1. A piece of code and its input parameters.
 2. A unique label for that master operation that is referenced by individual operations.
 
 We use the convention that *x* refers to the input time series and *y* refers to the *z*-scored input time series.
