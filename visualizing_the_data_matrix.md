@@ -9,7 +9,10 @@
 
 The clustered data matrix in **HCTSA_cl.mat** can be visualized by running
 
-        TSQ_plot_DataMatrix()
+        TSQ_plot_DataMatrix('cl')
+
+This will produce a colored visualization of the data matrix such as that shown below.
+Visualizing the clustered matrix is the default behavior; but for some (large) datasets, reordering the rows and columns can be a time and computationally expensive task, in which case the normalized matrix can be plotted by instead specifying `TSQ_plot_DataMatrix('cl')`.
 
 [[mention how keywords can be used using the `TSQ_LabelGroups`]]
 [[should include the data matrix visualization code, dimensionality
