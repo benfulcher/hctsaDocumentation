@@ -9,7 +9,7 @@ Corresponding operations (or features) will then need to added separately, to li
 Every master operation added to the database is assigned a unique integer, **mop_id**, that can be used to identify it.
 
 
-## Example: add our library of master operations to the database
+## *Example*: Add our library of master operations to the database
 <!--{#sec:addingMops}-->
 
 By default, the `install` script populates the database with the default library of highly comparative time-series analysis code.
