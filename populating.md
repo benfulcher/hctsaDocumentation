@@ -1,6 +1,8 @@
 # Populating the database with time series and operations using `SQL_add`
 <!--{#sec:PopulatingDatabase}-->
 
+## Overview
+
 
 ## Using `SQL_add`
 Adding time series, code files (called *master operations*), and operations (or *features*) to the database are achieved using the function `SQL_add`.
