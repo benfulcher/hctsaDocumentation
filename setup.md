@@ -1,3 +1,5 @@
+# Getting started
+
 ## Installing the *hctsa* code package
 
 At the start of any analysis using the *hctsa* package, required directories must be added to the *Matlab* path using the `startup.m` script.
