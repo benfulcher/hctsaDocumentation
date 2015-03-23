@@ -14,7 +14,7 @@ These three different objects are summarized below:
 | | **Master Operation** | **Operation** | **Time Series** |
 |:-------------:|:-------------:|:-------------:|
 | **Summary**: | Code and inputs to execute | single feature | univariate data|
-| **Example**: | `CO_AutoCorr(x)` | `length` |  |
+| **Example**: | `CO_AutoCorr(x,1:5)` | `length` |  |
 | **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
 | **Database identifier**: | m_id | op_id | ts_id |
 
