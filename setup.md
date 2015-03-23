@@ -7,8 +7,7 @@ The *hctsa* package should be set up by running the `install` script, which sets
 
 <!--This section describes initial tasks that one must perform once, to set up the *mySQL* database and its interface with Matlab.-->
 
-
-A summary of the steps involved in setting up the system is as follows, and will be elaborated on below:
+This seciton contains additional details about each of the steps performed by `install.m`:
 
 1. Install and set up a *mySQL* server, setup a new database to store Matlab calculations in, and set up Matlab to be able to communicate with it, [here](mysql_database.md).
 2. Populate the database with master operations, operations, and time series (using the `install` script followed by the user importing their own time series using `SQL_add`), [here](populating.md).
