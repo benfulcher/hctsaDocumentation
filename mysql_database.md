@@ -57,7 +57,7 @@ An example usage is as follows:
     
     % <Do things with the database connection, dbc>
     
-    % Close the connection dbc:
+    % Close the connection, dbc:
     SQL_closedatabase(dbc);
 ```
 
