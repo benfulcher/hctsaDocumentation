@@ -7,7 +7,7 @@ The types of methods employed on a given dataset should be developed to suit spe
 Setting up the problem, guiding the methodology, and interpreting the results requires strong scientific input that should draw on domain knowledge, the questions asked of the data, experience performing data analysis, and statistical considerations.
 Once a highly comparative dataset is produced, users can be creative in their exploration and analysis of the data, or draw upon a library of analytic techniques that we have developed.
 
-## Retrieving data from the database using `TSQ_prepared`
+## Retrieving results from the database using `TSQ_prepared`
 
 The first step of any analysis is to retrieve a relevant portion of data from the *mySQL* database to local Matlab files for analysis.
 This is done using the `TSQ_prepared` function described [earlier](retrieving_calculating_writing.md).
