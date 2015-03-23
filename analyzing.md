@@ -23,7 +23,8 @@ for vectors `ts_ids` and `op_ids`, specifying the **ts\_id**s and **op\_id**s to
 Sets of **ts_id**s and **op_id**s to retrieve can be selected by inspecting the database, or by retrieving relevant sets of keywords using the `SQL_getids` function.
 Running the code in this way, using the ‘all’ tag, ensures that the full range of **ts\_id**s and **op\_id**s specified are retrieved from the database and stored in the local file, **HCTSA_loc.mat**, which can then form the basis of subsequent analysis.
 
-This process can take a considerable amount of time for large datasets, and depends on the latencies of the database.
+The database structure provides much flexibility in storing and indexing the large datasets that can be analyzed using the *hctsa* approach, however the process of retrieving and storing large amounts of data from a database can take a considerable amount of time, depending on database latencies.
+
 
 ### Grouping elements using `TSQ_LabelGroups`
 <!--{#sec:grouping_variables}-->
