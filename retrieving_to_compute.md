@@ -52,9 +52,9 @@ Note that when the quality label is nonzero (i.e., the quality encodes a special
 |:-------------:|:-------------:|
 | 0 | No problems with calculation. Output was a real number. |
 | 1 | When running the code, a fatal error was encountered. |
-| 2 | Output of the code was `NaN`.|
-| 3 | Output of the code was `Inf`. |
-| 4 | Output of the code was `-Inf` |
+| 2 | Output of the code was **NaN**.|
+| 3 | Output of the code was **Inf**. |
+| 4 | Output of the code was **-Inf** |
 | 5 | Output had a nonzero imaginary component |
 
 <!-- **Quality labels**. These are stored in the **Quality** column of
