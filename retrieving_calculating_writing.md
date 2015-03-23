@@ -22,7 +22,8 @@ An example usage is given below:
         TSQ_prepared([1,3], 1:500, 'null');
 
 Running this code will retrieve data for time series with **ts_id**s 1 and 3 and operations with **op_id**s in the range 1 to 500, keeping only the rows and columns of the resulting time series x operations matrix that contain NULLs.
-When calculations are complete and one wishes to analyze all of the data stored in the database (not just NULL entries requiring computation), the third input should be set to ‘all’ to retrieve all entries in the **Results** table of the database.
+
+When calculations are complete and one wishes to analyze all of the data stored in the database (not just NULL entries requiring computation), the third input should be set to ‘all’ to retrieve all entries in the **Results** table of the database, as described [later](retrieving.md).
 
 The result of running `TSQ_prepared` is a local Matlab file, `HCTSA_loc.mat`, that contains the relevant data retrieved from the
 database. The file contains the following elements:
