@@ -35,7 +35,7 @@ Recall that the script `startup.m`, which should be run at the start of each ses
 Once added, each master operation is assigned a unique integer, **mop_id**, that can be used to identify it.
 For example, when adding individual operations, the **mop_id** is used to map each individual operation to a corresponding master operation.
 
-## Adding new pieces of executable code to the database
+## *Example*: Adding new pieces of executable code to the database
 
 New functions and their input parameters to execute can be added to the database using `SQL_add` in the same way as described above.
 For example, lines corresponding to the new code can be added to the current **INP_mops.txt** file, or by generating a new input file and running `SQL_add` on the new input file.
