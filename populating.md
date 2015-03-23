@@ -11,9 +11,9 @@ As explained [above](database_structure.md), the *mySQL* database is structured 
 
 These three different objects are summarized below:
 
-| **Master Operation** | **Operation** | **Time Series** |
+| | **Master Operation** | **Operation** | **Time Series** |
 |:-------------:|:-------------:|:-------------:|
-| 0 | No problems with calculation. Output was a real number. |
+| Identifier | No problems with calculation. Output was a real number. |
 | 1 | When running the code, a fatal error was encountered. |
 | 2 | Output of the code was `NaN`.|
 | 3 | Output of the code was `Inf`. |
