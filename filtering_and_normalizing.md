@@ -38,4 +38,4 @@ The list of implemented normalization transformations can be found in the functi
 <!--This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) containing any special values, leaving a data matrix containing no special (or missing) values.-->
 <!--No normalizing transformation is applied to the remaining operations.-->
 
-Analysis can now be performed on the data contained in `HCTSA_N.mat`, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TSQ_normalize`, which will overwrite the existing `HCTSA_N.mat` with the results of the new normalization and filtration settings.
+Analysis can now be performed on the data contained in **HCTSA_N.mat**, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TSQ_normalize`, which will overwrite the existing **HCTSA_N.mat** with the results of the new normalization and filtration settings.
