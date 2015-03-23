@@ -16,7 +16,7 @@ For calculating missing entries in the database, `TSQ_prepared` can be run as fo
 
         TSQ_prepared(ts_ids, op_ids, 'null');
 
-The third input, `'null'`, retrieves `ts_id`s and `op_id`s from the sets provided that contain (as-yet) uncalculated (i.e., NULL) elements in the database; these can then be calculated and stored back in the database.
+The third input, `'null'`, retrieves **ts_id**s and **op_id**s from the sets provided that contain (as-yet) uncalculated (i.e., NULL) elements in the database; these can then be calculated and stored back in the database.
 An example usage is given below:
 
         TSQ_prepared([1,3], 1:500, 'null');
