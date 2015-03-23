@@ -43,6 +43,7 @@ It contains the following elements:
 NULL entries in the database are converted to NaN entries in the local Matlab matrices.
 
 ### Quality labels
+
 **Quality labels** are stored in the **Quality** column of the **Results** table in the *mySQL* database (and locally in **TS_Quality** matrix).
 Values are used to indicate non-real-valued outputs from operations, or cases when fatal errors were encountered.
 Note that when the quality label is nonzero (i.e., the quality encodes a special-valued output), the actual output value of the operation is set to zero, as a convention:
