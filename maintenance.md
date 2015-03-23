@@ -4,7 +4,8 @@
 In this section we describe how keywords and other types of metadata stored in the database can be manipulated, and how results of whole sets of operations and time series can be cleared or completely deleted from the database.
 These tasks are implemented as Matlab functions, and ensure that key database structures are maintained. Instead performing such tasks by acting directly on the database can cause inconsistencies and should be avoided.
 
-## Error handling {#sec:error_handling}
+## Error handling
+<!--{#sec:error_handling}-->
 
 ### Java heap space
 
