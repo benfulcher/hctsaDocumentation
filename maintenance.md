@@ -11,5 +11,4 @@ These tasks are implemented as Matlab functions, and ensure that key database st
 
 Running out of java heap space throws the error `java.lang.OutOfMemoryError`, and usually happens when trying to retrieve a large set of time series/operations from the database.
 Matlab needs to keep the whole retrieval in memory, and has a hard limit on this.
-The java heap size can be increased in the Matlab preferences, under *General* $$\rightarrow$$ *Java Heap
-Memory*.
+The java heap size can be increased in the Matlab preferences, under *General* $$\rightarrow$$ *Java Heap Memory*.
