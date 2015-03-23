@@ -9,7 +9,7 @@ A valid output from a master operation is:
 
 The (potentially many) outputs from a master operation can thus be mapped to individual operations (or features), which are single real numbers summarizing a time series that make up individual columns of the resulting data matrix.
 
-## *Example*: Adding our library of master operations to the database
+## Adding our library of master operations to the database
 <!--{#sec:addingMops}-->
 
 By default, the `install` script populates the database with the default library of highly comparative time-series analysis code.
