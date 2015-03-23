@@ -1,6 +1,6 @@
 # Adding master operations to the database
 
-In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters, e.g., `CO_AutoCorr(x)`, which runs the `CO_AutoCorr.m` function on an input time series, *x*.
+In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters, e.g., `CO_AutoCorr(x)`, which runs the `CO_AutoCorr` function on an input time series, *x*.
 
 A valid output from a master operation is:
 1. A real number,
