@@ -13,7 +13,7 @@ These three different objects are summarized below:
 
 | | **Master Operation** | **Operation** | **Time Series** |
 |:-------------:|:-------------:|:-------------:|
-| **Summary**: | Code and inputs to execute | single feature | univariate data|
+| **Summary**: | Code and inputs to execute | Single feature | Univariate data|
 | **Example**: | `CO_AutoCorr(x,1:5,'TimeDomain')` | `AC_1` | [1.2, 33.7, -0.1, ...] |
 | **Database identifier**: | m_id | op_id | ts_id |
 | **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
