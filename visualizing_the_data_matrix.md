@@ -7,7 +7,7 @@
 <!--### Visualizing the data matrix using -->
 <!--{#sec:visDatamatrix}-->
 
-The clustered data matrix in **HCTSA_cl.mat** can be visualized by simply running
+The clustered data matrix in **HCTSA_cl.mat** can be visualized by running
 
         TSQ_plot_DataMatrix()
 
