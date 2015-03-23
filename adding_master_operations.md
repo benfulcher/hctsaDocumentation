@@ -23,7 +23,7 @@ Two example lines from the input file, **INP_mops.txt**, are as follows:
     CO_tc3(y,1)     CO_tc3_y_1
     ST_length(x)    ST_length
 
-Each line in the input file specifies a piece of code and its input parameters as well as a unique name for that master operation, separated by whitespace; this name is referenced by individual operations.
+Each line in the input file specifies (i) a piece of code and its input parameters as well as a unique name for that master operation, separated by whitespace; this name is referenced by individual operations.
 Note that we use the convention that *x* refers to the input time series and *y* refers to the *z*-scored input time series.
 In the example above, the first line thus adds an entry in the database for running the code `CO_tc3` using a *z*-scored time series as input (*y*), with ‘1’ as the second input with the label **CO_tc3_y_1**, and the second line will add an entry for running the code `ST_length` using the non-*z*-scored time-series *x*, with the label **length**.
 
