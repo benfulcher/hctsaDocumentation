@@ -27,7 +27,7 @@ Each line in the input file specifies two pieces of information, separated by wh
 1. A piece of code and its input parameters.
 2. A unique label for that master operation (that can be referenced by [individual operations](adding_operations.md)).
 
-We use the convention that *x* refers to the input time series and *y* refers to the *z*-scored input time series.
+We use the convention that *x* refers to the input time series and *y* refers to a *z*-scored transformation of the input time series.
 In the example above, the first line thus adds an entry in the database for running the code `CO_tc3` using a *z*-scored time series as input (*y*), with ‘1’ as the second input with the label **CO_tc3_y_1**, and the second line will add an entry for running the code `ST_length` using the non-*z*-scored time-series *x*, with the label **length**.
 
 When the time comes to perform computations on data using the methods in the database, Matlab needs to have path access to each of the master operations functions specified in the database.
