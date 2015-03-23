@@ -1,6 +1,6 @@
 # Computing operations and writing back to the database
 
-After retrieving data from the *mySQL* database, missing entries (NULL in the database -> NaN in the local Matlab file)
+After retrieving data from the *mySQL* database, missing entries (NULL in the database, and NaN in the local Matlab file)
 
 ## Performing calculations using `TSQ_brawn`
 <!--{#sec:performing_calculations}-->
