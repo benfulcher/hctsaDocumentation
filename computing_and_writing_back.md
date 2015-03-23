@@ -1,5 +1,7 @@
 # Computing operations and writing back to the database
 
+After retrieving data from the *mySQL* database
+
 ## Performing calculations using `TSQ_brawn`
 <!--{#sec:performing_calculations}-->
 
