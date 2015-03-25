@@ -1,6 +1,6 @@
 # Cycling through computations using runscripts
 
-This section on computation has outlined the three main steps to computation as:
+As described in this section, computation involves three main steps:
 
 1. Retrieving from the database (`TSQ_prepared`),
 2. Calculating operations on time series (`TSQ_brawn`), and
