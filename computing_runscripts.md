@@ -1,4 +1,4 @@
-## Cycling through computations using runscripts
+# Cycling through computations using runscripts
 
 This section on computation has outlined the three main steps to computation as:
 
