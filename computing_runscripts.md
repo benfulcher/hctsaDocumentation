@@ -2,7 +2,7 @@
 
 As described in this section, computation involves three main steps:
 
-1. Retrieving from the database (`TSQ_prepared`),
+1. Retrieving data from the database (`TSQ_prepared`),
 2. Calculating operations on time series (`TSQ_brawn`), and
 3. Writing the results back to the database (`TSQ_agglomerate`).
 
