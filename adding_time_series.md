@@ -1,4 +1,4 @@
-## Adding time series to the database
+# Adding time series to the database
 <!--{#sec:addingTimeSeries}-->
 
 After setting up a database with a library of time-series features, the next task is to add a dataset of time series to the database.
@@ -9,14 +9,14 @@ The time-series data files to import, and the keywords to assign to each time se
 
 Every time series added to the database is assigned a unique integer identifier, **ts\_id**, which can be used to retrieve specific time series from the database.
 
-### *Example*: Adding a set of time series to the database
+## *Example*: Adding a set of time series to the database
 Adding a set of time series to the database requires an appropriately formatted input file, **INP_ts.txt**, for example, the appropriate code is:
 
     SQL_add('ts','INP_ts.txt');
 
 We provide an example input file in the **Database** directory as **INP_test_ts.txt**, which can be added to the database, following the syntax above, using `SQL_add('ts','INP_test_ts.txt')`.
 
-#### Input file format
+### Input file format
 
 The `SQL_add` function expects the input text file to be formatted with each row specifying: (i) the file name of a time-series data file and (ii) comma-delimited keywords, with white space separating them.
 For example, consider the following input file, containing three lines (one for each time series to be added to the database):
@@ -31,7 +31,7 @@ Note that keywords should be separated only by commas and not whitespace.
 When keywords are provided, time series are indexed according to them in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate** of the database.
 Assigning keywords to time series makes it easier to retrieve a set of time series with a given set of keywords for analysis, and to group time series annotated with different keywords for classification tasks.
 
-#### Time-series data files
+### Time-series data files
 
 `SQL_add` will attempt to find each time-series data file specified in the input file and read it (using `dlmread`).
 Data files should thus be accessible in the Matlab path.
