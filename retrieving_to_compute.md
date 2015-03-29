@@ -55,9 +55,9 @@ In this case, the output value of the operation is set to zero, as a convention,
 | 3 | Output of the code was **Inf**. |
 | 4 | Output of the code was **-Inf** |
 | 5 | Output had a non-zero imaginary component |
-| 6 | Output was empty (e.g., []) |
+| 6 | Output was empty (e.g., `[]`) |
 | 7 | Error linking output fieldname to a master operation |
-
+     
 <!-- **Quality labels**. These are stored in the **Quality** column of
   the **Results** table in the *mySQL* database (and
   locally in **TS_Quality** matrix). Values are used to indicate
