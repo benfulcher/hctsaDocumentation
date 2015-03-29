@@ -25,7 +25,7 @@ After navigating to the **Toolboxes/Tisean_3.0.1** directory of the repository, 
 
 This should install the *TISEAN* binaries in your **~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr/bin`). Additional information about the *TISEAN* installation process is provided [on the *TISEAN* website](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html).
 
-You should be able to access these binaries from the commandline, e.g., typing the command `which poincare` should return the path to the *TISEAN* function `poincare`.
+If installation was successful then you should be able to access the newly-compiled binaries from the commandline, e.g., typing the command `which poincare` should return the path to the *TISEAN* function `poincare`.
 Otherwise, you should check that this directory is in your path, e.g., by adding
 
         export PATH=$PATH:$HOME/bin
