@@ -11,11 +11,11 @@ To ensure that as many operations as possible run successfully on your data, you
 This requires working compilers (e.g., gcc, g++) to be installed on your system, which can be configured using `mex -setup` (cf. `doc mex` for more information).
 Once mex is set up, the mex functions used in the time-series code repository can be compiled by navigating to the **Toolboxes** directory and then running `compile_mex`.
 
-## Compiling the TISEAN binaries
+## Compiling the *TISEAN* binaries
 <!--{#sec:CompilingTisean}-->
 
 Some operations rely on the [*TISEAN* nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html), which Matlab accesses via `system` commands, so the *TISEAN* binaries ***cannot*** be installed from within Matlab, but instead must be installed from the commandline.
-If you are running Windows, you will need an alternate method to install *TISEAN*, as explained below.
+(Note that if you are running Windows, you will need an alternate method to install *TISEAN*, as explained in the following section).
 From the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
 
         ./configure
@@ -41,3 +41,6 @@ You can test that Matlab can see the *TISEAN* binaries by typing, for example, t
         !which nstat_z
 
 If Matlab’s system paths are set up correctly, this command should return the path to your compiled *TISEAN* binary, `nstat_z`.
+
+## Using *TISEAN* on Windows
+
