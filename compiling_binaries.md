@@ -22,12 +22,15 @@ From the **Toolboxes/Tisean_3.0.1** directory of the repository, run the followi
         make
         make install
 
-This should install the *TISEAN* binaries in your **~/bin/** directory by default (you can instead install into a system-wide directory (**/usr/bin**, for example) by running `./configure –prefix=/usr/bin`). You should be able to access these binaries from the commandline, e.g., typing the command `which poincare` should return the path to the *TISEAN* function `poincare`.
+This should install the *TISEAN* binaries in your **~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr/bin`).
+
+You should be able to access these binaries from the commandline, e.g., typing the command `which poincare` should return the path to the *TISEAN* function `poincare`.
 Otherwise, you should check that this directory is in your path, e.g., by adding
 
         export PATH=$PATH:$HOME/bin
 
-to your **~/.bash_profile** (and running `source ~/.bash_profile`).
+to your **~/.bash_profile** (and running `source ~/.bash_profile` to update).
+
 The path you install *TISEAN* to will also have to be in Matlab’s environment path, which is added by `startup.m`, and assumes that the binaries are stored in **~/bin**.
 The `startup.m` code also adds the **DYLD_LIBRARY_PATH**, which is also required for *TISEAN* to function properly.
 
