@@ -45,7 +45,7 @@ You can test that Matlab can see the *TISEAN* binaries by typing, for example, t
 
 If Matlab’s system paths are set up correctly, this command should return the path to your compiled *TISEAN* binary, `nstat_z`.
 
-### Using *TISEAN* on Windows
+### Installing *TISEAN* on Windows
 
 If you are running Matlab from Windows, you can either use the TISEAN binaries compiled on a 32-bit system (available [here](http://www.mpipks-dresden.mpg.de/~tisean/windows_3.0.0.html)).
 Most likely, you are using a 64-bit system, in which case, there are two options:
