@@ -15,8 +15,8 @@ Once mex is set up, the mex functions used in the time-series code repository ca
 <!--{#sec:CompilingTisean}-->
 
 Some operations rely on the [*TISEAN* nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html), which Matlab accesses via `system` commands, so the *TISEAN* binaries ***cannot*** be installed from within Matlab, but instead must be installed from the commandline.
-(Note that if you are running Windows, you will need an alternate method to install *TISEAN*, as explained in the following section).
-From the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
+(Note that if you are running Linux, you will be familiar with the commandline, those running Mac will need to open a terminal, but those running Windows, you will need an alternate method to install *TISEAN*, as explained in the following section).
+After navigating to the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
 
         ./configure
         make clean
@@ -44,3 +44,4 @@ If Matlab’s system paths are set up correctly, this command should return the 
 
 ## Using *TISEAN* on Windows
 
+If you are running Matlab 
