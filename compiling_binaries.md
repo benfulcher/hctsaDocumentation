@@ -19,7 +19,7 @@ If you are running Linux or Mac and running highly comparative time-series analy
 
 ### Installing *TISEAN* on Linux or Mac
 
-After navigating to the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
+In the command line, after navigating to the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
 
         ./configure
         make clean
