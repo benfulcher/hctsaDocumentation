@@ -31,10 +31,10 @@ Otherwise, you should check that this directory is in your path, e.g., by adding
 
 to your **~/.bash_profile** (and running `source ~/.bash_profile` to update).
 
-The path you install *TISEAN* to will also have to be in Matlab’s environment path, which is added by `startup.m`, and assumes that the binaries are stored in **~/bin**.
+The path where *TISEAN* is installed will also have to be in Matlab’s environment path, which is added by `startup.m`, assuming that the binaries are stored in **~/bin**.
 The `startup.m` code also adds the **DYLD_LIBRARY_PATH**, which is also required for *TISEAN* to function properly.
 
-If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv('PATH')` in Matlab) then you will have to add this path.
+If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv('PATH')` in Matlab), then you will have to add this path manually.
 You can test that Matlab can see the *TISEAN* binaries by typing, for example, the following into Matlab:
 
         !which nstat_z
