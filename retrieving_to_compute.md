@@ -56,7 +56,7 @@ In this case, the output value of the operation is set to zero, as a convention,
 | 4 | Output of the code was **-Inf** |
 | 5 | Output had a non-zero imaginary component |
 | 6 | Output was empty (e.g., `[]`) |
-| 7 | Output field for this operation did not exist in the master operation output structure |
+| 7 | Field specified for this operation did not exist in the master operation output structure |
      
 <!-- **Quality labels**. These are stored in the **Quality** column of
   the **Results** table in the *mySQL* database (and
