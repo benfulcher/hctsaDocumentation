@@ -48,3 +48,4 @@ If you are running Matlab from Windows, you can either use the TISEAN binaries c
 Most likely, you are using a 64-bit system, in which case, there are two options:
 
 1. Install [Cygwin](http://www.cygwin.com) on your machine. Cygwin provides a Linux distribution-like environment on Windows. Use this environment to compile and install TISEAN
+2. 
