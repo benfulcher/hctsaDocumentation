@@ -67,10 +67,12 @@ An example **sql_settings.conf** file:
 
     localhost,myTestDatabase,benfulcher,myInsecurePassword
 
-Note that if your database is not set up on your local machine (i.e., `localhost`), then Matlab can communicate with a mySQL server through an ssh tunnel, which requires some additional setup (described below).
-
 Once you have configured your **sql_settings.conf** file, and you can run `dbc = SQL_opendatabase;` and `SQL_closedatabase(dbc)` without errors, then you can smile to yourself and you should at this point be happy because Matlab can communicate successfully with your mySQL server!
 You should also be excited because you are now ready to set up the database structure!
+
+Note that if your database is not set up on your local machine (i.e., `localhost`), then Matlab can communicate with a mySQL server through an ssh tunnel, which requires some additional setup (described below).
+
+Note also that the `SQL_opendatabase` function uses Matlab's *Database Toolbox* if a license is available, but otherwise will use java commands; both are supported and should give identical operational behavior.
 
 
 ### Setting up an ssh tunnel to a mySQL server
