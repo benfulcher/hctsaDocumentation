@@ -49,9 +49,9 @@ If Matlab’s system paths are set up correctly, this command should return the 
 
 ### Installing *TISEAN* on Windows
 
-If you are running Matlab from Windows, you need a mechanism for Matlab to call `system` commands and find compiled TISEAN binaries.
+If you are running Matlab from Windows, you will need a mechanism for Matlab to call `system` commands and find compiled TISEAN binaries.
 There are two options:
 
 1. **Install [Cygwin](http://www.cygwin.com) on your machine**. Cygwin provides a Linux distribution-like environment on Windows. Use this environment to compile and install TISEAN (as per the instructions above for Linux or Mac). Matlab will then also need to be launched from Cygwin, using the command: `matlab &`. This instance of Matlab should then be able to call `system` commands through cygwin, including the ability to access the *TISEAN* binaries.
 
-2. **Sacrifice operations that rely on *TISEAN***. In total, *TISEAN*-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods.
+2. **Sacrifice operations that rely on *TISEAN***. In total, *TISEAN*-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods. You can retrieve just operation ids (**op_id**) that do not have the keyword 'tisean' using the `SQL_getids`.
