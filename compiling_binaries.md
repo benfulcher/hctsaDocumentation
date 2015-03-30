@@ -49,8 +49,8 @@ If Matlab’s system paths are set up correctly, this command should return the 
 
 ### Installing *TISEAN* on Windows
 
-If you are running Matlab from Windows, you can either use the TISEAN binaries compiled on a 32-bit system (available [here](http://www.mpipks-dresden.mpg.de/~tisean/windows_3.0.0.html)).
-Most likely, you are using a 64-bit system, in which case, there are two options:
+If you are running Matlab from Windows, you need a mechanism for Matlab to call `system` commands and find compiled TISEAN binaries.
+There are two options:
 
 1. **Install [Cygwin](http://www.cygwin.com) on your machine**. Cygwin provides a Linux distribution-like environment on Windows. Use this environment to compile and install TISEAN (as per the instructions above for Linux or Mac). Matlab will then also need to be launched from Cygwin, using the command: `matlab &`. This instance of Matlab should then be able to call `system` commands through cygwin, including the ability to access the *TISEAN* binaries.
 
