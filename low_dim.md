@@ -6,6 +6,7 @@ This can be done for a time-series dataset as follows:
 
     TSQ_plot_pca('norm','ts')
     
+This uses the normalized data (specifying `'norm'`), plotting time series (specifying `'ts'`) in the reduced, two-dimensional principal components space of operations (the leading two principal components of the data matrix).
 By default, the user will be prompted to select 10 points on the plot to annotate with time series.
 After selecting 10 points, we have the following:
 
