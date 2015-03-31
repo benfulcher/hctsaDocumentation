@@ -22,3 +22,6 @@ Annotation properties can be altered with some detail by specifying properties a
     showDistributions = 0; % don't plot marginal distributions
     TSQ_plot_pca('norm','ts',showDistributions,'',annotateParams)
 ```
+
+yields:
+
