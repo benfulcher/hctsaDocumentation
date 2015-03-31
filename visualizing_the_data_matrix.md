@@ -24,4 +24,4 @@ We then:
 2. Normalized it, using `TSQ_normalize('',[0.7,0.7])`
 3. Clustered it, using `TSQ_cluster('euclidean','average', 'corr_fast', 'average')`
 
-We now have normalized data in **HCTSA_N.mat** and clustered data in **HCTSA_cl.mat**.
+We now have normalized data in **HCTSA_N.mat** and clustered data in **HCTSA_cl.mat**, that can be visualized using `TSQ_plot_DataMatrix('norm')` and `TSQ_plot_DataMatrix('cl')`, respectively.
