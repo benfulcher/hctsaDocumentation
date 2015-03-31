@@ -30,7 +30,7 @@ The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, resp
 ### Visualizing the normalized (unclustered) data matrix
 Running `TSQ_plot_DataMatrix('norm')` yields:
 
-![](Screen Shot 2015-03-31 at 17.36.35.png)
+![](normalized_data_matrix.png)
 
 where black rectangles label missing values, and other values are shown from low (blue) to high (red) after normalization using the scaled outlier-robust sigmoidal transformation.
 Due to the size of the matrix, operations are not labeled.
