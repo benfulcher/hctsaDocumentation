@@ -18,4 +18,8 @@ When data is grouped according to a set of distinct keywords and stored as group
 
 ## Examples
 
-For example, we used a set of 9000 operations on 1000 diverse empirical time series. We then retrieved all of the data from the database (`TSQ_prepared(TSQ_prepared(1:1000,1:9000))`)
+For example, we used a set of 9000 operations on 1000 diverse empirical time series.
+We then:
+1. Retrieved all of the data from the database, using `TSQ_prepared(1:1000,1:10000)`
+2. Normalized it, using `TSQ_normalize('',[0.7,0.7])`
+3. Clustered it, using `TSQ_cluster`
