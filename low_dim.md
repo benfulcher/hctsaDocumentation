@@ -20,6 +20,7 @@ After selecting 10 points, we have the following:
 Annotation properties can be altered with some detail by specifying properties as the `annotateParams` input variable, for example:
 
 ```matlab
+    % First set up the annotateParams structure:
     annotateParams = struct;
     annotateParams.n = 8; % annotate 8 time series
     annotateParams.maxL = 150; % annotates the first 150 samples of time series
@@ -31,3 +32,8 @@ Annotation properties can be altered with some detail by specifying properties a
 
 yields:
 
+![annotated plot](lowDimAnnotated.png)
+
+## Plotting groups of time series
+
+If groups of time series have been specified (using `TSQ_LabelGroups`)
