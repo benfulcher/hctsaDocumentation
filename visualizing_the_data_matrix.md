@@ -16,10 +16,12 @@ Visualizing the clustered matrix is the default behavior; but for some (large) d
 
 When data is grouped according to a set of distinct keywords and stored as group metadata in the **HCTSA_norm.mat** or **HCTSA_cl.mat** files (using the `TSQ_LabelGroups` function), these can also be visualized using different colormaps by setting the second input to `1`, e.g., `TSQ_plot_DataMatrix('cl',1)`.
 
-## Examples
+## Example usage
 
 For example, we used a set of 9000 operations on 1000 diverse empirical time series.
 We then:
 1. Retrieved all of the data from the database, using `TSQ_prepared(1:1000,1:10000)`
 2. Normalized it, using `TSQ_normalize('',[0.7,0.7])`
-3. Clustered it, using `TSQ_cluster`
+3. Clustered it, using `TSQ_cluster('euclidean','average', 'corr_fast', 'average')`
+
+We now have normalized data in **HCTSA_N.mat** and clustered data in **HCTSA_cl.mat**.
