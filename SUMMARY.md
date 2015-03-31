@@ -19,6 +19,6 @@
    * [Filtering and normalizing](filtering_and_normalizing.md)
    * [Clustering rows and columns](clustering_rows_and_columns.md)
    * [Visualizing the data matrix](visualizing_the_data_matrix.md)
-   * Low dimensional representations
+   * [Low dimensional representations](low_dim.md)
 * [Error handling and maintenance](maintenance.md)
 
