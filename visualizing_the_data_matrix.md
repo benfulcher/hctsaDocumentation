@@ -22,7 +22,7 @@ When data is grouped according to a set of distinct keywords and stored as group
 For example, we used a set of 9000 operations on 100 diverse empirical time series.
 We then:
 1. Retrieved all of the data from the database, using `TSQ_prepared(1:100,1:10000)`
-2. Normalized it, using `TSQ_normalize('scaledSQzscore',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values and164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 998 x 6645 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
+2. Normalized it, using `TSQ_normalize('scaledSQzscore',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values and164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 99 x 7225 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
 3. Clustered it, using `TSQ_cluster('euclidean','average', 'corr_fast', 'average')`, which uses a faster approximation for correlations involving bad values. The result is a re-ordered data matrix and associated metadata saved in **HCTSA_cl.mat**.
 
 The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, respectively, can now be visualized using `TSQ_plot_DataMatrix('norm')` and `TSQ_plot_DataMatrix('cl')`, respectively.
