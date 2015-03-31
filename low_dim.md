@@ -15,7 +15,7 @@ Annotation properties can be altered with some detail by specifying properties a
 
 ```matlab
     annotateParams = struct;
-    annotateParams.n = 5; % plot 5 points
+    annotateParams.n = 8; % annotate 8 time series
     annotateParams.maxL = 100; % annotates first 100 samples of time series
     annotateParams.userInput = 0; % points not selected by user but allocated randomly
     annotateParams.textAnnotation = 0; % don't display names of annotated time series
