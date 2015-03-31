@@ -19,5 +19,6 @@ Annotation properties can be altered with some detail by specifying properties a
     annotateParams.maxL = 100; % annotates first 100 samples of time series
     annotateParams.userInput = 0; % points not selected by user but allocated randomly
     annotateParams.textAnnotation = 0; % don't display names of annotated time series
-    TSQ_plot_pca('norm','ts',1,'',annotateParams)
+    showDistributions = 0; % don't plot marginal distributions
+    TSQ_plot_pca('norm','ts',showDistributions,'',annotateParams)
 ```
