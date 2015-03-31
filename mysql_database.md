@@ -74,8 +74,9 @@ Note that if your database is not set up on your local machine (i.e., `localhost
 
 Note also that the `SQL_opendatabase` function uses Matlab's *Database Toolbox* if a license is available, but otherwise will use java commands; both are supported and should give identical operational behavior.
 
+## Changing to a new database
 
-### Setting up an ssh tunnel to a mySQL server
+## Setting up an ssh tunnel to a mySQL server
 <!-- {#sec:sqlssh} -->
 
 In some cases, the mySQL server you wish to connect to requires an ssh tunnel.
