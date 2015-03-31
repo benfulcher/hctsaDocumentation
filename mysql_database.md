@@ -76,6 +76,9 @@ Note also that the `SQL_opendatabase` function uses Matlab's *Database Toolbox* 
 
 ## Changing to a new database
 
+If you want to start writing a new dataset to a new database, or start retrieving data from a different database, you will need to change the database that Matlab is configured to connect to.
+This can be done using the `SQL_ChangeDatabase` script.
+
 ## Setting up an ssh tunnel to a mySQL server
 <!-- {#sec:sqlssh} -->
 
