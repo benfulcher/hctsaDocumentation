@@ -35,6 +35,8 @@ Running `TSQ_plot_DataMatrix('norm')` yields:
 where black rectangles label missing values, and other values are shown from low (blue) to high (red) after normalization using the scaled outlier-robust sigmoidal transformation.
 Due to the size of the matrix, operations are not labeled.
 
+### Visualizing the normalized (unclustered) data matrix
+
 It can be useful to display the matrix with the order of time series and operations preserved, but the relationships between rows and columns can be difficult to visualize.
 To display the clustered version of the data matrix, we run `TSQ_plot_DataMatrix('cl')`, yielding:
 
