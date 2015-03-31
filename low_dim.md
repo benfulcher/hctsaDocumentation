@@ -38,4 +38,5 @@ yields:
 
 ## Plotting groups of time series
 
-If groups of time series have been specified (using `TSQ_LabelGroups`)
+If groups of time series have been specified (using `TSQ_LabelGroups`), then these are automatically recognized by `TSQ_plot_pca`, which will then distinguish the labeled groups in the resulting 2-dimensional annotated time-series plot.
+
