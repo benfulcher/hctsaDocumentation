@@ -74,10 +74,11 @@ Note that if your database is not set up on your local machine (i.e., `localhost
 
 Note also that the `SQL_opendatabase` function uses Matlab's *Database Toolbox* if a license is available, but otherwise will use java commands; both are supported and should give identical operational behavior.
 
-## Changing to a new database
+## Changing between different databases
 
 To start writing a new dataset to a new database, or start retrieving data from a different database, you will need to change the database that Matlab is configured to connect to.
 This can be done using the `SQL_ChangeDatabase` script (which walks you through the steps and writes over the existing **sql_settings.conf** file), or by altering the **sql_settings.conf** file directly.
+
 Note that one can swap between multiple databases easily by commenting out lines of the **sql_settings.conf** file (adding `#` to the start of a line to comment it out).
 
 ## Setting up an ssh tunnel to a mySQL server
