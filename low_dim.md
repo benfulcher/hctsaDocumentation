@@ -27,6 +27,8 @@ Annotation properties can be altered with some detail by specifying properties a
     annotateParams.userInput = 0; % points not selected by user but allocated randomly
     annotateParams.textAnnotation = 0; % don't display names of annotated time series
     showDistributions = 0; % don't plot marginal distributions
+    
+    % Then generate a plot using these settings:
     TSQ_plot_pca('norm','ts',showDistributions,'',annotateParams)
 ```
 
