@@ -43,4 +43,4 @@ Running `TSQ_plot_DataMatrix('cl')`, yields:
 
 ![](Screen Shot 2015-03-31 at 17.40.14.png)
 
-This representation reveals correlated patterns of behavior in different types of operations, and similar sets of properties between different types of time series.
+By reordering rows and columns, this representation reveals correlated patterns of outputs across different types of operations, and similar sets of properties between different types of time series.
