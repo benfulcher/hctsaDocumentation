@@ -17,6 +17,9 @@ For our assorted set of time series, this produces the following:
 ![](timeSeriesPlot.png)
 
 Showing 10 examples of time series, equally-spaced through the **ts_id**s in **HCTSA_N.mat**.
+
+## Freeform plotting
+
 Many more custom plotting options are available by passing an options structure to `TSQ_plot_timeseries`, including the 'freeform' option which allows very many time series to be shown in a single plot (without the usual axis borders):
 
     % Plot as a freeform plot without labeling time series:
