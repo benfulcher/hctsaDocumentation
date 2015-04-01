@@ -39,7 +39,7 @@ Due to the size of the matrix, operations are not labeled.
 
 It can be useful to display the matrix with the order of time series and operations preserved, but the relationships between rows and columns can be difficult to visualize.
 
-Running `TSQ_plot_DataMatrix('cl')`, yields:
+Running `TSQ_plot_DataMatrix('cl')`, plots the data contained in **HCTSA_cl.mat**, yielding:
 
 ![](clustered_data_matrix.png)
 
