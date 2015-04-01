@@ -64,4 +64,4 @@ And then selecting the 6 points to annotate time series to, produces the followi
 ![](PC_noisy_periodic.png)
 
 Notice how the two labeled groups have been distinguished as red and blue points, and a linear classification boundary has been added (with in-sample misclassification rate annotated to the title and to each individual principal component).
-If marginal distributions are plotted (setting `showDistribution = 1` above), they are also labeled.
+If marginal distributions are plotted (setting `showDistribution = 1` above), they are also labeled according to the same colors.
