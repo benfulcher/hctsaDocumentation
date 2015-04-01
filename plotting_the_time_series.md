@@ -23,4 +23,4 @@ Many more custom plotting options are available by passing an options structure 
 
 ![](freeform_timeSeries_Plot.png)
 
-producing a picture of 
+producing a picture of time series spaced through the rows of the data matrix.
