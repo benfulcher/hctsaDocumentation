@@ -28,7 +28,7 @@ We then:
 The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, respectively, can now be visualized using `TSQ_plot_DataMatrix('norm')` and `TSQ_plot_DataMatrix('cl')`, respectively.
 
 ### Visualizing the normalized (unclustered) data matrix
-Running `TSQ_plot_DataMatrix('norm')` yields:
+Running `TSQ_plot_DataMatrix('norm')` plots the data contained in **HCTSA_N.mat**, yielding:
 
 ![](normalized_data_matrix.png)
 
