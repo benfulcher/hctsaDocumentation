@@ -17,5 +17,5 @@ For our assorted set of time series, this produces the following:
 Showing 10 examples of time series, equally-spaced through the **ts_id**s in **HCTSA_N.mat**.
 Many more custom plotting options are available by passing an options structure to `TSQ_plot_timeseries`, including the 'freeform' option which allows very many time series to be shown in a single plot (without the usual axis borders):
     
-    plotOptions = struct('freeform',1);
+    plotOptions = struct('freeform',1,'displayTitles',0);
     TSQ_plot_timeseries('norm','all',50,200,plotOptions);
