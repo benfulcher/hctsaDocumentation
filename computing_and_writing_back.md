@@ -34,4 +34,4 @@ This can be done by simply running:
         TSQ_agglomerate;
 
 Depending on database latencies, this can be a relatively slow process, up to 10-20 s per time series, updating each row in the **Results** table individually using mySQL **UPDATE** statements.
-However, the latency in this step means that the computation can be distributed across multiple compute nodes, and that data can be retrieved systematically.
+However, the latency in this step means that the computation can be distributed across multiple compute nodes, and that stored data can be retrieved systematically.
