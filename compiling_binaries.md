@@ -43,7 +43,7 @@ The `startup.m` code also adds the **DYLD_LIBRARY_PATH**, which is also required
 If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv('PATH')` in Matlab), then you will have to add this path manually.
 You can test that Matlab can see the *TISEAN* binaries by typing, for example, the following into Matlab:
 
-    >> !which nstat_z
+        >> !which nstat_z
 
 If Matlab’s system paths are set up correctly, this command should return the path to your compiled *TISEAN* binary, `nstat_z`.
 
