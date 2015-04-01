@@ -29,7 +29,7 @@ Some applications can tolerate some special-valued outputs from operations (like
 
 ### Setting the normalizing transformation
 
-Similarly, it makes sense to weight each operation equally for the purposes dimensionality reduction, and thus normalize all operations to the same range using a transformation like ‘scaledSQzscore’, ‘scaledSigmoid’, or ‘mixedSigmoid’.
+It makes sense to weight each operation equally for the purposes dimensionality reduction, and thus normalize all operations to the same range using a transformation like ‘scaledSQzscore’, ‘scaledSigmoid’, or ‘mixedSigmoid’.
 For the case of calculating mutual information distances between operations, however, one would rather not distort the distributions and perform no normalization, using ‘raw’ or a
 linear transformation like ‘zscore’, for example.
 The list of implemented normalization transformations can be found in the function `BF_NormalizeMatrix`.
