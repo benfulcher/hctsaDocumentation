@@ -20,15 +20,21 @@ Note that the 'scaledSQzscore' transformation does not tolerate distributions wi
 
 <!--The first input controls the normalization method, in this case a , and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).-->
 
-## Setting the filtering parameters
+### Setting the filtering parameters
 
 For some applications, the filtering thresholds can be relaxed.
 For example, setting the second input to `[0.7,0.9]`, removes time series with less than 70% good values, and then removes operations with less than 90% good values.
 <!--When neither value is 1.0, this can leave **NaN** values in the resulting data matrix, which can affect some calculations that cannot deal with missing values (such as PCA).-->
-Some applications can tolerate some special-valued outputs from operations (like some clustering methods, where distances are simply calculated using those operations that are did not produce special-valued outputs for each pair of objects), but others cannot (like Principal Components Analysis); the filtering parameters should be specified accordingly. Similarly, it makes sense to weight each operation equally for the purposes dimensionality reduction, and thus normalize all operations to the same range using a transformation like ‘scaledSQzscore’, ‘scaledSigmoid’, or ‘mixedSigmoid’.
+Some applications can tolerate some special-valued outputs from operations (like some clustering methods, where distances are simply calculated using those operations that are did not produce special-valued outputs for each pair of objects), but others cannot (like Principal Components Analysis); the filtering parameters should be specified accordingly.
+
+### Setting the normalizing transformation
+
+Similarly, it makes sense to weight each operation equally for the purposes dimensionality reduction, and thus normalize all operations to the same range using a transformation like ‘scaledSQzscore’, ‘scaledSigmoid’, or ‘mixedSigmoid’.
 For the case of calculating mutual information distances between operations, however, one would rather not distort the distributions and perform no normalization, using ‘raw’ or a
 linear transformation like ‘zscore’, for example.
 The list of implemented normalization transformations can be found in the function `BF_NormalizeMatrix`.
+
+
 
 <!--An example usage is as follows:-->
 <!--Another example:-->
@@ -37,5 +43,7 @@ The list of implemented normalization transformations can be found in the functi
 
 <!--This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) containing any special values, leaving a data matrix containing no special (or missing) values.-->
 <!--No normalizing transformation is applied to the remaining operations.-->
+
+
 
 Analysis can now be performed on the data contained in **HCTSA_N.mat**, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TSQ_normalize`, which will overwrite the existing **HCTSA_N.mat** with the results of the new normalization and filtration settings.
