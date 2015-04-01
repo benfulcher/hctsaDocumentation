@@ -20,6 +20,7 @@ Note that the 'scaledSQzscore' transformation does not tolerate distributions wi
 
 <!--The first input controls the normalization method, in this case a , and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).-->
 
+## Setting the filtering parameters
 
 For some applications, the filtering thresholds can be relaxed.
 For example, setting the second input to `[0.7,0.9]`, removes time series with less than 70% good values, and then removes operations with less than 90% good values.
