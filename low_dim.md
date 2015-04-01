@@ -55,8 +55,8 @@ Now when we plot the dataset in `TSQ_plot_pca`, it will automatically distinguis
 
 Running the following:
 
-    >> annotateParams = struct('n',6);
-    >> showDistribution = 1;
+    >> annotateParams = struct('n',6); % annotate 6 time series
+    >> showDistribution = 1; % plot marginal distributions
     >> TSQ_plot_pca('norm','ts',showDistribution,'',annotateParams);
     
 And then selecting the 6 points to annotate time series to, produces the following:
