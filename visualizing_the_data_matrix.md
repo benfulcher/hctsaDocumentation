@@ -57,7 +57,7 @@ When the time series have been assigned to groups , this can be accessed by sett
     plotGroups = 1;
     TSQ_plot_DataMatrix('cl',plotGroups);
     
-yields the following:
+producing the following:
 
 ![](plot_DataMatrix_grouped.png)
 
