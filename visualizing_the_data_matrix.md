@@ -49,8 +49,11 @@ By reordering rows and columns, this representation reveals correlated patterns 
 
 When the time series have been assigned to groups (using the `TSQ_LabelGroups` function), this can be accessed by setting the second input to 1:
 
+    plotGroups = 0;
+    TSQ_plot_DataMatrix('cl',plotGroups);
     plotGroups = 1;
     TSQ_plot_DataMatrix('cl',plotGroups)
     
 yields the following:
 
+![](plot_DataMatrix_grouped.png)
