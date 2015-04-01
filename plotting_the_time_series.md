@@ -20,10 +20,10 @@ Showing 10 examples of time series, equally-spaced through the **ts_id**s in **H
 
 ## Freeform plotting
 
-Many more custom plotting options are available by passing an options structure to `TSQ_plot_timeseries`, including the 'freeform' option which allows very many time series to be shown in a single plot (without the usual axis borders):
+Many more custom plotting options are available by passing an options structure to `TSQ_plot_timeseries`, including the `'plotFreeForm'` option which allows very many time series to be shown in a single plot (without the usual axis borders):
 
     % Plot as a freeform plot without labeling time series:
-    plotOptions = struct('freeform',1,'displayTitles',0);
+    plotOptions = struct('plotFreeForm',1,'displayTitles',0);
     TSQ_plot_timeseries('norm','all',40,300,plotOptions);
 
 ![](freeform_timeSeries_Plot.png)
