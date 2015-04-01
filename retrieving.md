@@ -22,12 +22,15 @@ Once data has been retrieved, as described above, class labels can be assigned t
 
 The example below assigns labels to two groups of time series in the **HCTSA_loc.mat** (specifying `'orig'`), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
 
-    >> keywordGroups1 = {'parkinsons','healthy'};
-    >> keywordGroups2 = {'parkinsons',50;'healthy',50};
-    >> groupIndices = TSQ_LabelGroups('orig',keywordGroups1,'ts',1)
+    >> keywordGroups = {'parkinsons','healthy'};
+    >> groupIndices = TSQ_LabelGroups('orig',keywordGroups,'ts',1)
 
 The second input is a cell specifying the keyword string for each group.
-This can be done as above to select all examples matching the keyword constraints, or you can select (of the same form used for `SQL_getids`), with the first column specifying the keyword strings for each group, and the second column specifying the number of each label to include (`'0'` used to specify *all*).
+This can be done as above to select all examples matching the keyword constraints, or as follows:
+
+    >> keywordGroups = {'parkinsons',50;'healthy',50};
+
+or you can select (of the same form used for `SQL_getids`), with the first column specifying the keyword strings for each group, and the second column specifying the number of each label to include (`'0'` used to specify *all*).
 The final input, `1` (default), saves the group indices back to the data file, which can then be used by a range of other analysis functions.
 Group indices stay with the time series they are assigned to, e.g., after filtering and normalizing the data (using `TSQ_normalize`) and clustering the data (using `TSQ_cluster`) - the same group labels will stay with the time series.
 The group labels can be reassigned at any time by re-running the `TSQ_LabelGroups` function.
