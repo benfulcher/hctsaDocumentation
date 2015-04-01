@@ -30,7 +30,7 @@ This can be done as above to select all examples matching the keyword constraint
 
     >> keywordGroups = {'parkinsons',50;'healthy',50};
 
-for example, labels 50 random examples of each class, using the first column to specify the keyword strings for each group, and the second column to specify the number of each label to include (`'0'` used to specify *all*).
+for example, labels 50 random examples of each class, using the first column to specify the keyword strings for each group, and the second column to specify the number of each label to include (using `'0'` used to specify *all*).
 The final input, `1` (default), saves the group indices back to the data file, which can then be used by a range of other analysis functions.
 Group indices stay with the time series they are assigned to, e.g., after filtering and normalizing the data (using `TSQ_normalize`) and clustering the data (using `TSQ_cluster`) - the same group labels will stay with the time series.
 The group labels can be reassigned at any time by re-running the `TSQ_LabelGroups` function.
