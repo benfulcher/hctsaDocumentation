@@ -7,6 +7,7 @@ For example, to plot a set of time series that have not been assigned groups, we
     whatData = 'norm'; % Get data from HCTSA_N.mat
     plotWhatTimeSeries = 'all'; % plot examples from all time series
     plotHowMany = 10; % how many to plot
+    maxLength = 400; % maximum number of samples to plot for each time series
     TSQ_plot_timeseries(whatData,plotWhatTimeSeries,plotHowMany);
     
 For our assorted set of time series, this produces the following:
