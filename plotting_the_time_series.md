@@ -4,5 +4,5 @@ The *hctsa* package provides a simple means of plotting time series, via the `TS
 
 For example, to plot a set of time series that have not been assigned groups, we can run the following:
 
-    
+    whatData = 'norm'; % Get data from HCTSA_N.mat
     TSQ_plot_timeseries('norm','all',10)
