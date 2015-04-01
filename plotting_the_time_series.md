@@ -40,4 +40,4 @@ When the time series have been assigned groups (using `TSQ_LabelGroups`), this i
 
 ![](GroupedTimeSeriesPlot.png)
 
-In this case the two labeled groups of time series are recognized by the function: red (noisy), blue (no noise), and then 5 examples of each group are plotted, showing the first 500 samples of each time series.
+In this case the two labeled groups of time series are recognized by the function: red (noisy), blue (no noise), and then 5 time series in each group are plotted, showing the first 500 samples of each time series.
