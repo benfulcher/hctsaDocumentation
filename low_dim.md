@@ -20,7 +20,7 @@ The proportion of variance explained by each principal component is provided in 
 
 Annotation properties can be altered with some detail by specifying properties as the `annotateParams` input variable, for example:
 
-```matlab
+```
     % First set up the annotateParams structure:
     annotateParams = struct;
     annotateParams.n = 8; % annotate 8 time series
