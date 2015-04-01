@@ -15,6 +15,8 @@ The first input controls the normalization method, in this case a scaled, outlie
 The second input controls the filtering of time series and operations based on minimum thresholds for good values in the corresponding rows (corresponding to time series; filtered first) and columns (corresponding to operations; filtered second) of the data matrix.
 
 In the example above, time series (rows of the data matrix) with more than 20% special values (specifying 0.8) are first filtered out, and then operations (columns of the data matrix) containing any special values (specifying 1.0) are removed.
+Columns with approximately constant values are also filtered out.
+
 After filtering the data matrix, the outlier-robust ‘scaledSQzscore’ sigmoidal transformation is applied to all remaining operations (columns).
 The filtered, normalized matrix is saved to the file **HCTSA_N.mat**.
 
