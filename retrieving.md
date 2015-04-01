@@ -26,7 +26,7 @@ The example below assigns labels to two groups of time series in the **HCTSA_loc
     >> groupIndices = TSQ_LabelGroups('orig',keywordGroups,'ts',1)
 
 The second input is a cell specifying the keyword string for each group.
-This can be done as above to select all examples matching the keyword constraints, or as follows:
+This can be done as above to select all examples matching the keyword constraints, or as follows to specify how many should be labeled in each group:
 
     >> keywordGroups = {'parkinsons',50;'healthy',50};
 
