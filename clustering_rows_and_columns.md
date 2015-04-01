@@ -15,5 +15,3 @@ TSQ_cluster(distanceMetricRow, linkageMethodRow, distanceMetricCol, linkageMetho
 
 This function reads in the data from **HCTSA_N.mat**, reorders the rows and columns, and then outputs the new re-ordered data to **HCTSA_cl.mat**.
 Visualization functions (including `TSQ_plot_DataMatrix`) can read this in directly, using the general input label `'cl'`.
-
-Note that `TSQ_cluster` uses the mechanics of a more general unsupervised clustering function **TSQ_ClusterReorder** for performing the clustering.
