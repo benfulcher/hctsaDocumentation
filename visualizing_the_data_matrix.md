@@ -45,8 +45,10 @@ Running `TSQ_plot_DataMatrix('cl')`, yields:
 
 By reordering rows and columns, this representation reveals correlated patterns of outputs across different types of operations, and similar sets of properties between different types of time series.
 
-### Incorporating group information
+## Example: Incorporating group information
 
+In this example, we consider a set of 20 periodic and 20 noisy periodic signals.
+After retrieving the data (`TSQ_prepared`), normalizing it (`TSQ_normalize`), and then clustering it (`TSQ_cluster`)
 When the time series have been assigned to groups (using the `TSQ_LabelGroups` function), this can be accessed by setting the second input to 1:
 
     plotGroups = 0;
