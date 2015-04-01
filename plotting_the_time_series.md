@@ -11,3 +11,6 @@ For example, to plot a set of time series that have not been assigned groups, we
     
 For our assorted set of time series, this produces the following:
 
+![](timeSeriesPlot.png)
+
+Showing 10 examples of time series, equally-spaced through the **ts_id**s in **HCTSA_N.mat**.
