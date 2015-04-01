@@ -35,7 +35,7 @@ This example labels 50 random examples of each class, using the first column to 
 
 The final input, `saveBack` (=1 by default), saves the group indices back to the data file, in the above example, the **TimeSeries** structure array (in **HCTSA_loc.mat**) will be given a new field, **Group**, that contains the group index of each time series.
 Group indices stay with the time series they are assigned to, e.g., after filtering and normalizing the data (using `TSQ_normalize`) and clustering the data (using `TSQ_cluster`) - the same group labels will stay with the time series.
-These labels are used by a range of analysis functions (such as `TSQ_plot_pca`).
+These labels are used by a range of analysis functions (including `TSQ_plot_pca`).
 
 
 The group labels can be reassigned at any time by re-running the `TSQ_LabelGroups` function.
