@@ -29,7 +29,8 @@ The list of implemented normalization transformations can be found in the functi
 
 ### Setting the filtering parameters
 
-For some applications, the filtering thresholds can be relaxed.
+Filtering parameters depend on the application.
+Some applications can allow the filtering thresholds can be relaxed.
 For example, setting the second input to `[0.7,0.9]`, removes time series with less than 70% good values, and then removes operations with less than 90% good values.
 <!--When neither value is 1.0, this can leave **NaN** values in the resulting data matrix, which can affect some calculations that cannot deal with missing values (such as PCA).-->
 Some applications can tolerate some special-valued outputs from operations (like some clustering methods, where distances are simply calculated using those operations that are did not produce special-valued outputs for each pair of objects), but others cannot (like Principal Components Analysis); the filtering parameters should be specified accordingly.
