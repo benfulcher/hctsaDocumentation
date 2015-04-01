@@ -40,4 +40,4 @@ When the time series have been assigned groups (using `TSQ_LabelGroups`), this i
 
 ![](GroupedTimeSeriesPlot.png)
 
-In this case the two labeled groups of time series are recognized by the function, which then plots 
+In this case the two labeled groups of time series are recognized by the function, which then plots 5 examples of each, including the first 500 samples.
