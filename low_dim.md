@@ -59,7 +59,7 @@ Running the following:
     >> showDistribution = 1; % plot marginal distributions
     >> TSQ_plot_pca('norm','ts',showDistribution,'',annotateParams);
     
-And then selecting the 6 points to annotate time series to, produces the following:
+The function then directs you to select 6 points to annotate time series to, producing the following:
 
 ![](PC_noisy_periodic.png)
 
