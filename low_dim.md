@@ -44,4 +44,19 @@ If groups of time series have been specified (using `TSQ_LabelGroups`), then the
 Consider the sample dataset containing 20 periodic signals with additive noise (given the keyword **noisy** in the database), and 20 purely periodic signals (given the keyword **periodic** in the database).
 After retrieving and normalizing the data, we store the two groups in the metadata for the normalized dataset **HCTSA_N.mat**:
 
-    TSQ_LabelGroups('norm',{'noisy','periodic'},'ts')
+```matlab
+    >> TSQ_LabelGroups('norm',{'noisy','periodic'},'ts')
+    We found:
+    noisy -- 20 matches
+    periodic -- 20 matches
+    Saving group labels and information back to HCTSA_N.mat... Saved.
+```
+Now when we plot the dataset in `TSQ_plot_pca`, it will automatically distinguish the groups in the plot and attempt to classify the difference in the reduced principal components space.
+
+Running the following:
+
+    annotateParams = struct('n',6)
+    TSQ_plot_pca('norm','ts',1,'linclass',annotateParams)
+    
+And then selecting the 6 points to annotate time series to, produced the following:
+
