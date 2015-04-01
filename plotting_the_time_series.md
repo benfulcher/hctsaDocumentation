@@ -30,7 +30,7 @@ Many more custom plotting options are available by passing an options structure 
 
 producing an overview picture of 40 time series spaced through the rows of the data matrix.
 
-## Grouped time series
+## Dealing with groups of time series
 
 When the time series have been assigned groups (using `TSQ_LabelGroups`), this information is automatically incorporated into `TSQ_plot_timeseries`, which then plots a given number of each time series group, and colors them accordingly:
 
