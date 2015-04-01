@@ -22,7 +22,8 @@ Once data has been retrieved, as described above, class labels can be assigned t
 
 The example below assigns labels to two groups of time series in the **HCTSA_loc.mat** (specifying `'orig'`), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
 
-    >> groupIndices = TSQ_LabelGroups('orig',{'parkinsons','healthy'},'ts',1)
+    >> keywordGroups = {'parkinsons','healthy'};
+    >> groupIndices = TSQ_LabelGroups('orig',keywordGroups,'ts',1)
 
 The second input is a cell specifying the keyword string for each group.
 This can be done as above to select all examples matching the keyword constraints, or you can select (of the same form used for `SQL_getids`), with the first column specifying the keyword strings for each group, and the second column specifying the number of each label to include (`'0'` used to specify *all*).
