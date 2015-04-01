@@ -32,3 +32,5 @@ This task is performed by `TSQ_agglomerate`, which reads the data in `HCTSA_loc.
 This can be done by simply running:
 
         TSQ_agglomerate;
+
+Depending on database latencies, this can be a relatively slow process, typically taking 10-20 s per time series, updating each row in the **Results** table individually using mySQL **UPDATE** statements.
