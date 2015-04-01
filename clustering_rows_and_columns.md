@@ -4,6 +4,10 @@
 For the purposes of visualizing the data matrix, it is often desirable to have the rows and columns reordered to put similar rows adjacent to one another, and similarly to place similar columns adjacent to one another.
 This reordering can be done by the function `TSQ_cluster`, which has five inputs:
 
+    distanceMetricRow = 'euclidean'; % time-series feature distance
+    linkageMethodRow = 'average'; % linkage method
+    distanceMetricCol = 'corr_fast'; % a (poor) approximation of correlations with NaNs
+    linkageMethodCol = 'average'; % linkage method
     TSQ_cluster(ClusterMethRow, ClusterParamsRow, ClusterMethCol, ClusterParamsCol, SubSet);
 
 The inputs are as follows:
