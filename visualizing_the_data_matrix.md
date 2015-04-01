@@ -57,3 +57,5 @@ When the time series have been assigned to groups (using the `TSQ_LabelGroups` f
 yields the following:
 
 ![](plot_DataMatrix_grouped.png)
+
+When group information is not used (the left plot), the data is visualized in the normal blue/yellow/red color scheme, but when the pre-assigned groups are shown, we see that the clustered dataset separates perfectly into the two assigned groups (shown in green and blue colormap)
