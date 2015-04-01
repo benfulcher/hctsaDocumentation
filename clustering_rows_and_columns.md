@@ -5,12 +5,12 @@ For the purposes of visualizing the data matrix, it is often desirable to have t
 This reordering can be done by the function `TSQ_cluster`, which has five inputs:
 
 ```matlab
-    distanceMetricRow = 'euclidean'; % time-series feature distance
-    linkageMethodRow = 'average'; % linkage method
-    distanceMetricCol = 'corr_fast'; % a (poor) approximation of correlations with NaNs
-    linkageMethodCol = 'average'; % linkage method
+distanceMetricRow = 'euclidean'; % time-series feature distance
+linkageMethodRow = 'average'; % linkage method
+distanceMetricCol = 'corr_fast'; % a (poor) approximation of correlations with NaNs
+linkageMethodCol = 'average'; % linkage method
     
-    TSQ_cluster(distanceMetricRow, linkageMethodRow, distanceMetricCol, linkageMethodCol);
+TSQ_cluster(distanceMetricRow, linkageMethodRow, distanceMetricCol, linkageMethodCol);
 ```
 
 Note that `TSQ_cluster` uses the mechanics of a more general unsupervised clustering function **TSQ_us_cluster**, where more information about choices for clustering algorithms (for *ClusterMethRow* and *ClusterMethCol*) and the cells of parameters (for *ClusterParamsRow* and *ClusterParamsCol*) can be found.
