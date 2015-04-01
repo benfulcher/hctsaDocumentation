@@ -14,6 +14,7 @@ After selecting 10 points, we have the following:
 
 ![pca_image](pca_ungrouped.png)
 
+The proportion of variance explained by each principal component is provided in parentheses in the axis label.
 
 ## Customizing annotations
 
