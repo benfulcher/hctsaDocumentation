@@ -35,3 +35,4 @@ This can be done by simply running:
 
 Depending on database latencies, this can be a relatively slow process, up to 20-25 s per time series, updating each row in the **Results** table individually using *mySQL* **UPDATE** statements.
 However, the delay in this step means that the computation can be distributed across multiple compute nodes, and that stored data can be indexed and retrieved systematically.
+Keeping results in local Matlab files can be extremely inefficient, and can indeed be untenable for large datasets.
