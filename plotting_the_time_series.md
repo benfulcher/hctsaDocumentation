@@ -24,3 +24,7 @@ Many more custom plotting options are available by passing an options structure 
 ![](freeform_timeSeries_Plot.png)
 
 producing a picture of time series spaced through the rows of the data matrix.
+
+## Grouped time series
+
+When the time series have been assigned groups (using `TSQ_LabelGroups`), this information is automatically incorporated into `TSQ_plot_timeseries`
