@@ -56,8 +56,12 @@ Now when we plot the dataset in `TSQ_plot_pca`, it will automatically distinguis
 Running the following:
 
     >> annotateParams = struct('n',6);
-    >> TSQ_plot_pca('norm','ts',1,'linclass',annotateParams);
+    >> showDistribution = 1;
+    >> TSQ_plot_pca('norm','ts',showDistribution,'linclass',annotateParams);
     
 And then selecting the 6 points to annotate time series to, produces the following:
 
 ![](PC_noisy_periodic.png)
+
+Notice how the two labeled groups have been distinguished (red/blue points) and a linear classification boundary has been added.
+If distributions are plotted
