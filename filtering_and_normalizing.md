@@ -13,10 +13,10 @@ Example usage is as follows:
 
 The first input controls the normalization method, in this case a scaled, outlier-robust sigmoidal transformation, specified with 'scaledSQzscore'.
 The second input controls the filtering of time series and operations based on minimum thresholds for good values in the corresponding rows (corresponding to time series; filtered first) and columns (corresponding to operations; filtered second) of the data matrix.
+
 In the example above, time series (rows of the data matrix) with more than 20% special values (specifying 0.8) are first filtered out, and then operations (columns of the data matrix) containing any special values (specifying 1.0) are removed.
 After filtering the data matrix, the outlier-robust ‘scaledSQzscore’ sigmoidal transformation is applied to all remaining operations (columns).
 The filtered, normalized matrix is saved to the file **HCTSA_N.mat**.
-Note that the 'scaledSQzscore' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
 
 Details about what normalization is saved to the **HCTSA_N.mat** file as `normalizationInfo`, a structure that contains the normalization function, filtering options used, and the corresponding `TSQ_normalize` code that can be used to re-run the normalization.
 
@@ -28,6 +28,8 @@ It makes sense to weight each operation equally for the purposes dimensionality 
 For the case of calculating mutual information distances between operations, however, one would rather not distort the distributions and perform no normalization, using ‘raw’ or a
 linear transformation like ‘zscore’, for example.
 The list of implemented normalization transformations can be found in the function `BF_NormalizeMatrix`.
+
+Note that the 'scaledSQzscore' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
 
 ### Setting the filtering parameters
 
