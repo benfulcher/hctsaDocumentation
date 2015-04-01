@@ -28,7 +28,7 @@ Many more custom plotting options are available by passing an options structure 
 
 ![](freeform_timeSeries_Plot.png)
 
-producing a picture of time series spaced through the rows of the data matrix.
+producing an overview picture of 40 time series spaced through the rows of the data matrix.
 
 ## Grouped time series
 
@@ -40,4 +40,4 @@ When the time series have been assigned groups (using `TSQ_LabelGroups`), this i
 
 ![](GroupedTimeSeriesPlot.png)
 
-In this case the two labeled groups of time series are recognized by the function, which then plots 5 examples of each, showing the first 500 samples of each time series.
+In this case the two labeled groups of time series are recognized by the function: red (noisy), blue (no noise), and then 5 examples of each group are plotted, showing the first 500 samples of each time series.
