@@ -13,7 +13,6 @@ linkageMethodCol = 'average'; % linkage method
 TSQ_cluster(distanceMetricRow, linkageMethodRow, distanceMetricCol, linkageMethodCol);
 ```
 
-This function reads in the data from **HCTSA_N.mat**, reorders the rows and columns, then outputs the new re-ordered data to **HCTSA_cl.mat**.
+This function reads in the data from **HCTSA_N.mat**, reorders the rows and columns, and then outputs the new re-ordered data to **HCTSA_cl.mat**.
 
 Note that `TSQ_cluster` uses the mechanics of a more general unsupervised clustering function **TSQ_ClusterReorder** for performing the clustering.
-Note that the output of this function is to local Matlab files; in the same way that `TSQ_normalize` takes in **HCTSA_loc.mat** and outputs normalized versions as **HCTSA\_N.mat**, `TSQ_cluster` takes in **HCTSA\_N.mat** and writes output to a new file: **HCTSA\_cl.mat**, containing clustered (re-ordered) versions of the data in **HCTSA\_N.mat**.
