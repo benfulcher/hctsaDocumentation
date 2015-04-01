@@ -57,11 +57,11 @@ Running the following:
 
     >> annotateParams = struct('n',6);
     >> showDistribution = 1;
-    >> TSQ_plot_pca('norm','ts',showDistribution,'linclass',annotateParams);
+    >> TSQ_plot_pca('norm','ts',showDistribution,'',annotateParams);
     
 And then selecting the 6 points to annotate time series to, produces the following:
 
 ![](PC_noisy_periodic.png)
 
-Notice how the two labeled groups have been distinguished (red/blue points) and a linear classification boundary has been added.
-If distributions are plotted
+Notice how the two labeled groups have been distinguished as red and blue points, and a linear classification boundary has been added (with in-sample misclassification rate annotated to the title and to each individual principal component).
+If marginal distributions are plotted (setting `showDistribution = 1` above), they are also labeled.
