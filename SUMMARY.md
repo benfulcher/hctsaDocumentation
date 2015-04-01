@@ -20,5 +20,6 @@
    * [Clustering rows and columns](clustering_rows_and_columns.md)
    * [Visualizing the data matrix](visualizing_the_data_matrix.md)
    * [Low dimensional representations](low_dim.md)
+   * Plotting the time series
 * [Error handling and maintenance](maintenance.md)
 
