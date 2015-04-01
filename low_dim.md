@@ -45,7 +45,7 @@ Consider the sample dataset containing 20 periodic signals with additive noise (
 After retrieving and normalizing the data, we store the two groups in the metadata for the normalized dataset **HCTSA_N.mat**:
 
 ```matlab
-    >> TSQ_LabelGroups('norm',{'noisy','periodic'},'ts')
+    >> TSQ_LabelGroups('norm',{'noisy','periodic'},'ts');
     We found:
     noisy -- 20 matches
     periodic -- 20 matches
