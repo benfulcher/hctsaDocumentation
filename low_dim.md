@@ -22,15 +22,15 @@ Annotation properties can be altered with some detail by specifying properties a
 
 ```matlab
     % First set up the annotateParams structure:
-    annotateParams = struct;
-    annotateParams.n = 8; % annotate 8 time series
-    annotateParams.maxL = 150; % annotates the first 150 samples of time series
-    annotateParams.userInput = 0; % points not selected by user but allocated randomly
-    annotateParams.textAnnotation = 0; % don't display names of annotated time series
-    showDistributions = 0; % don't plot marginal distributions
+    >> annotateParams = struct;
+    >> annotateParams.n = 8; % annotate 8 time series
+    >> annotateParams.maxL = 150; % annotates the first 150 samples of time series
+    >> annotateParams.userInput = 0; % points not selected by user but allocated randomly
+    >> annotateParams.textAnnotation = 0; % don't display names of annotated time series
+    >> showDistributions = 0; % don't plot marginal distributions
     
     % Then generate a plot using these settings:
-    TSQ_plot_pca('norm','ts',showDistributions,'',annotateParams)
+    >> TSQ_plot_pca('norm','ts',showDistributions,'',annotateParams)
 ```
 
 yields:
