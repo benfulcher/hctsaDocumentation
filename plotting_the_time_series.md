@@ -15,4 +15,4 @@ For our assorted set of time series, this produces the following:
 ![](timeSeriesPlot.png)
 
 Showing 10 examples of time series, equally-spaced through the **ts_id**s in **HCTSA_N.mat**.
-
+Many more custom plotting options are available by passing an options structure
