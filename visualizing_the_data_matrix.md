@@ -45,5 +45,10 @@ Running `TSQ_plot_DataMatrix('cl')`, yields:
 
 By reordering rows and columns, this representation reveals correlated patterns of outputs across different types of operations, and similar sets of properties between different types of time series.
 
-### Using group information
+### Incorporating group information
 
+When the time series have been assigned to groups (using the `TSQ_LabelGroups` function), this can be accessed by setting the second input to 1:
+
+    plotGroups = 1;
+    TSQ_plot_DataMatrix('cl',plotGroups)
+    
