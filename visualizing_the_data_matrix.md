@@ -48,7 +48,8 @@ By reordering rows and columns, this representation reveals correlated patterns 
 ## Example: Incorporating group information
 
 In this example, we consider a set of 20 periodic and 20 noisy periodic signals.
-After retrieving the data (`TSQ_prepared`), we then assigned the time series to groups (using `TSQ_LabelGroups('orig',{'periodic','noisy'},'ts')`), normalized the data matrix (`TSQ_normalize`), and then clustered it (`TSQ_cluster`), we then wanted to visualize the data matrix.
+After retrieving the data (`TSQ_prepared`), we then assigned the time series to groups (using `TSQ_LabelGroups('orig',{'periodic','noisy'},'ts')`), normalized the data matrix (`TSQ_normalize`), and then clustered it (`TSQ_cluster`).
+So now we have a clustered data matrix containing thousands of summaries of each time series, as well as pre-assigned group information as to which time series are periodic and which are noisy.
 When the time series have been assigned to groups , this can be accessed by setting the second input to 1:
 
     plotGroups = 0;
