@@ -42,6 +42,6 @@ yields:
 If groups of time series have been specified (using `TSQ_LabelGroups`), then these are automatically recognized by `TSQ_plot_pca`, which will then distinguish the labeled groups in the resulting 2-dimensional annotated time-series plot.
 
 Consider the sample dataset containing 20 periodic signals with additive noise (given the keyword **noisy** in the database), and 20 purely periodic signals (given the keyword **periodic** in the database).
-After retrieving and normalizing the data, we store the two groups in the metadata for **HCTSA_N.mat**.
+After retrieving and normalizing the data, we store the two groups in the metadata for the normalized dataset **HCTSA_N.mat**:
 
     TSQ_LabelGroups('norm',{'noisy','periodic'},'ts')
