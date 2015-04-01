@@ -35,6 +35,7 @@ producing a picture of time series spaced through the rows of the data matrix.
 When the time series have been assigned groups (using `TSQ_LabelGroups`), this information is automatically incorporated into `TSQ_plot_timeseries`, which then plots a given number of each time series group, and colors them accordingly:
 
     numPerGroup = 5; % plot this many examples of each group of time series
+    plotHow = 'grouped'; % plot examples of each assigned group of time series
     TSQ_plot_timeseries('norm','',5,500);
 
 ![](GroupedTimeSeriesPlot.png)
