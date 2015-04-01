@@ -23,7 +23,7 @@ Once data has been retrieved, as described above, class labels can be assigned t
 The example below assigns labels to two groups of time series in the **HCTSA_loc.mat** (specifying `'orig'`), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
 
     keywordGroups = {'parkinsons','healthy'};
-    saveBack = 1;
+    saveBack = 1; % save the results back to HCTSA_loc.mat file
     TSQ_LabelGroups('orig',keywordGroups,'ts',saveBack);
 
 The second input is a cell specifying the keyword string for each group.
