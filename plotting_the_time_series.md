@@ -36,7 +36,7 @@ When the time series have been assigned groups (using `TSQ_LabelGroups`), this i
 
     numPerGroup = 5; % plot this many examples of each group of time series
     plotHow = 'grouped'; % plot examples of each assigned group of time series
-    TSQ_plot_timeseries('norm','',5,500);
+    TSQ_plot_timeseries('norm',plotHow,numPerGroup,500);
 
 ![](GroupedTimeSeriesPlot.png)
 
