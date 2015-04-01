@@ -9,4 +9,5 @@ For example, to plot a set of time series that have not been assigned groups, we
     plotHowMany = 10; % how many to plot
     TSQ_plot_timeseries(whatData,plotWhatTimeSeries,plotHowMany);
     
-    
+For our set of random empirical time series, this produces the following:
+
