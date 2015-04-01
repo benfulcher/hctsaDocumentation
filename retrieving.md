@@ -37,5 +37,4 @@ The final input, `saveBack` (=1 by default), saves the group indices back to the
 Group indices stay with the time series they are assigned to, e.g., after filtering and normalizing the data (using `TSQ_normalize`) and clustering the data (using `TSQ_cluster`) - the same group labels will stay with the time series.
 These labels are used by a range of analysis functions (including `TSQ_plot_pca`).
 
-
-The group labels can be reassigned at any time by re-running the `TSQ_LabelGroups` function.
+Group labels can be reassigned at any time by re-running the `TSQ_LabelGroups` function.
