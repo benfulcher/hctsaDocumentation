@@ -52,7 +52,7 @@ When the time series have been assigned to groups (using the `TSQ_LabelGroups` f
     plotGroups = 0;
     TSQ_plot_DataMatrix('cl',plotGroups);
     plotGroups = 1;
-    TSQ_plot_DataMatrix('cl',plotGroups)
+    TSQ_plot_DataMatrix('cl',plotGroups);
     
 yields the following:
 
