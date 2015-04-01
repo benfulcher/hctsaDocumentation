@@ -44,3 +44,6 @@ Running `TSQ_plot_DataMatrix('cl')`, yields:
 ![](clustered_data_matrix.png)
 
 By reordering rows and columns, this representation reveals correlated patterns of outputs across different types of operations, and similar sets of properties between different types of time series.
+
+### Using group information
+
