@@ -58,5 +58,6 @@ Running the following:
     annotateParams = struct('n',6)
     TSQ_plot_pca('norm','ts',1,'linclass',annotateParams)
     
-And then selecting the 6 points to annotate time series to, produced the following:
+And then selecting the 6 points to annotate time series to, produces the following:
 
+![](PC_noisy_periodic.png)
