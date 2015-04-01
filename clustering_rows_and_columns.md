@@ -8,7 +8,7 @@ This reordering can be done by the function `TSQ_cluster`, which has five inputs
     linkageMethodRow = 'average'; % linkage method
     distanceMetricCol = 'corr_fast'; % a (poor) approximation of correlations with NaNs
     linkageMethodCol = 'average'; % linkage method
-    TSQ_cluster(ClusterMethRow, ClusterParamsRow, ClusterMethCol, ClusterParamsCol, SubSet);
+    TSQ_cluster(distanceMetricRow, linkageMethodRow, distanceMetricCol, linkageMethodCol);
 
 The inputs are as follows:
 
