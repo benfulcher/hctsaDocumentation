@@ -28,7 +28,7 @@ In the command line (**not within Matlab**), after navigating to the **Toolboxes
     $ make install
 ```
 
-This should install the *TISEAN* binaries in your **~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr/bin`). Additional information about the *TISEAN* installation process is provided [on the *TISEAN* website](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html).
+This should install the *TISEAN* binaries in your **~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr`). Additional information about the *TISEAN* installation process is provided [on the *TISEAN* website](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html).
 
 If installation was successful then you should be able to access the newly-compiled binaries from the commandline, e.g., typing the command `which poincare` should return the path to the *TISEAN* function `poincare`.
 Otherwise, you should check that this directory is in your path, e.g., by adding
