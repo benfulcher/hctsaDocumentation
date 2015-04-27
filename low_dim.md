@@ -1,10 +1,10 @@
 # Low dimensional representations
 
-The software also provides a basic means of visualizing low-dimensional representations of the data, using PCA as `TSQ_plot_pca`.
+The software also provides a basic means of visualizing low-dimensional representations of the data, using PCA as `TS_plot_pca`.
 
 This can be done for a time-series dataset as follows:
 
-    >> TSQ_plot_pca('norm','ts');
+    >> TS_plot_pca('norm','ts');
     
 This uses the normalized data (specifying `'norm'`), plotting time series (specifying `'ts'`) in the reduced, two-dimensional principal components space of operations (the leading two principal components of the data matrix).
 
@@ -30,7 +30,7 @@ Annotation properties can be altered with some detail by specifying properties a
     showDistributions = 0; % don't plot marginal distributions
     
     % Then generate a plot using these settings:
-    TSQ_plot_pca('norm','ts',showDistributions,'',annotateParams)
+    TS_plot_pca('norm','ts',showDistributions,'',annotateParams)
 ```
 
 yields:
@@ -39,25 +39,25 @@ yields:
 
 ## Plotting grouped time series
 
-If groups of time series have been specified (using `TSQ_LabelGroups`), then these are automatically recognized by `TSQ_plot_pca`, which will then distinguish the labeled groups in the resulting 2-dimensional annotated time-series plot.
+If groups of time series have been specified (using `TS_LabelGroups`), then these are automatically recognized by `TS_plot_pca`, which will then distinguish the labeled groups in the resulting 2-dimensional annotated time-series plot.
 
 Consider the sample dataset containing 20 periodic signals with additive noise (given the keyword **noisy** in the database), and 20 purely periodic signals (given the keyword **periodic** in the database).
 After retrieving and normalizing the data, we store the two groups in the metadata for the normalized dataset **HCTSA_N.mat**:
 
 ```matlab
-    >> TSQ_LabelGroups('norm',{'noisy','periodic'},'ts');
+    >> TS_LabelGroups('norm',{'noisy','periodic'},'ts');
     We found:
     noisy -- 20 matches
     periodic -- 20 matches
     Saving group labels and information back to HCTSA_N.mat... Saved.
 ```
-Now when we plot the dataset in `TSQ_plot_pca`, it will automatically distinguish the groups in the plot and attempt to classify the difference in the reduced principal components space.
+Now when we plot the dataset in `TS_plot_pca`, it will automatically distinguish the groups in the plot and attempt to classify the difference in the reduced principal components space.
 
 Running the following:
 
     >> annotateParams = struct('n',6); % annotate 6 time series
     >> showDistribution = 1; % plot marginal distributions
-    >> TSQ_plot_pca('norm','ts',showDistribution,'',annotateParams);
+    >> TS_plot_pca('norm','ts',showDistribution,'',annotateParams);
     
 The function then directs you to select 6 points to annotate time series to, producing the following:
 

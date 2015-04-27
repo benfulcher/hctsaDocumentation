@@ -23,4 +23,3 @@
    * [Low dimensional representations](low_dim.md)
    * [Plotting the time series](plotting_the_time_series.md)
 * [Error handling and maintenance](maintenance.md)
-

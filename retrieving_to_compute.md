@@ -1,4 +1,4 @@
-# Retrieving data from the database using `TSQ_prepared`
+# Retrieving data from the database using `SQL_retrieve`
 <!--{#sec:tsq_prepared}-->
 
 Retrieving data from the **Results** table of the database is typically done for one of two purposes:
@@ -6,23 +6,23 @@ Retrieving data from the **Results** table of the database is typically done for
 1. To calculate as-yet uncalculated entries to be stored back into the database, and
 2. To analyze already-computed data stored in the database in Matlab.
 
-The function `TSQ_prepared` performs both of these functions, using different inputs.
-Here we describe the use of the `TSQ_prepared` function for the purposes of populating uncalculated (NULL) entries in the **Results** table of the database in Matlab.
+The function `SQL_retrieve` performs both of these functions, using different inputs.
+Here we describe the use of the `SQL_retrieve` function for the purposes of populating uncalculated (NULL) entries in the **Results** table of the database in Matlab.
 
-For calculating missing entries in the database, `TSQ_prepared` can be run as follows:
+For calculating missing entries in the database, `SQL_retrieve` can be run as follows:
 
-        TSQ_prepared(ts_ids, op_ids, 'null');
+        SQL_retrieve(ts_ids, op_ids, 'null');
 
 The third input, `'null'`, retrieves **ts_id**s and **op_id**s from the sets provided that contain (as-yet) uncalculated (i.e., NULL) elements in the database; these can then be calculated and stored back in the database.
 An example usage is given below:
 
-        TSQ_prepared([1,3], 1:500, 'null');
+        SQL_retrieve([1,3], 1:500, 'null');
 
 Running this code will retrieve data for time series with **ts_id**s 1 and 3 and operations with **op_id**s in the range 1 to 500, keeping only the rows and columns of the resulting time series x operations matrix that contain NULLs.
 
 When calculations are complete and one wishes to analyze all of the data stored in the database (not just NULL entries requiring computation), the third input should be set to ‘all’ to retrieve all entries in the **Results** table of the database, as described [later](retrieving.md).
 
-`TSQ_prepared` writes to a local Matlab file, **HCTSA_loc.mat**, that contains the data retrieved from the database.
+`SQL_retrieve` writes to a local Matlab file, **HCTSA_loc.mat**, that contains the data retrieved from the database.
 It contains the following elements:
 
 -   **TS_DataMat** is an *n* x *m* matrix corresponding to the *n* time series and *m* operations retrieved from the database. Elements of **TS\_DataMat** correspond to the result of applying each operation to each time series.

@@ -1,4 +1,4 @@
-# Visualizing the data matrix using `TSQ_plot_DataMatrix`
+# Visualizing the data matrix using `TS_plot_DataMatrix`
 <!--{#sec:visualizing}-->
 
 <!--There are many tasks that involve understanding the rich structure contained in data matrices by visualizing them.-->
@@ -9,26 +9,26 @@
 
 The clustered data matrix in **HCTSA_cl.mat** can be visualized by running
 
-        TSQ_plot_DataMatrix('cl')
+        TS_plot_DataMatrix('cl')
 
 This will produce a colored visualization of the data matrix such as that shown below.
 
-Visualizing the clustered matrix is the default behavior; but for some (large) datasets, reordering the rows and columns can be a time and computationally expensive task, in which case the normalized matrix can be plotted by instead specifying `TSQ_plot_DataMatrix('norm')`.
+Visualizing the clustered matrix is the default behavior; but for some (large) datasets, reordering the rows and columns can be a time and computationally expensive task, in which case the normalized matrix can be plotted by instead specifying `TS_plot_DataMatrix('norm')`.
 
-When data is grouped according to a set of distinct keywords and stored as group metadata in the **HCTSA_norm.mat** or **HCTSA_cl.mat** files (using the `TSQ_LabelGroups` function), these can also be visualized using different colormaps by setting the second input to `1`, e.g., `TSQ_plot_DataMatrix('cl',1)`.
+When data is grouped according to a set of distinct keywords and stored as group metadata in the **HCTSA_norm.mat** or **HCTSA_cl.mat** files (using the `TS_LabelGroups` function), these can also be visualized using different colormaps by setting the second input to `1`, e.g., `TS_plot_DataMatrix('cl',1)`.
 
 ## Example usage
 
 For example, we used a set of 9000 operations on 100 diverse empirical time series.
 We then:
-1. Retrieved all of the data from the database, using `TSQ_prepared(1:100,1:10000)`
-2. Normalized it, using `TSQ_normalize('scaledSQzscore',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values and164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 99 x 7225 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
-3. Clustered it, using `TSQ_cluster('euclidean','average', 'corr_fast', 'average')`, which uses a faster approximation for correlations involving bad values. The result is a re-ordered data matrix and associated metadata saved in **HCTSA_cl.mat**.
+1. Retrieved all of the data from the database, using `SQL_retrieve(1:100,1:10000)`
+2. Normalized it, using `TS_normalize('scaledSQzscore',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values and164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 99 x 7225 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
+3. Clustered it, using `TS_cluster('euclidean','average', 'corr_fast', 'average')`, which uses a faster approximation for correlations involving bad values. The result is a re-ordered data matrix and associated metadata saved in **HCTSA_cl.mat**.
 
-The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, respectively, can now be visualized using `TSQ_plot_DataMatrix('norm')` and `TSQ_plot_DataMatrix('cl')`, respectively.
+The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, respectively, can now be visualized using `TS_plot_DataMatrix('norm')` and `TS_plot_DataMatrix('cl')`, respectively.
 
 ### Visualizing the normalized (unclustered) data matrix
-Running `TSQ_plot_DataMatrix('norm')` plots the data contained in **HCTSA_N.mat**, yielding:
+Running `TS_plot_DataMatrix('norm')` plots the data contained in **HCTSA_N.mat**, yielding:
 
 ![](normalized_data_matrix.png)
 
@@ -39,7 +39,7 @@ Due to the size of the matrix, operations are not labeled.
 
 It can be useful to display the matrix with the order of time series and operations preserved, but the relationships between rows and columns can be difficult to visualize.
 
-Running `TSQ_plot_DataMatrix('cl')`, plots the data contained in **HCTSA_cl.mat**, yielding:
+Running `TS_plot_DataMatrix('cl')`, plots the data contained in **HCTSA_cl.mat**, yielding:
 
 ![](clustered_data_matrix.png)
 
@@ -48,14 +48,14 @@ By reordering rows and columns, this representation reveals correlated patterns 
 ## Example: Incorporating group information
 
 In this example, we consider a set of 20 periodic and 20 noisy periodic signals.
-After retrieving the data (`TSQ_prepared`), we then assigned the time series to groups (using `TSQ_LabelGroups('orig',{'periodic','noisy'},'ts')`), normalized the data matrix (`TSQ_normalize`), and then clustered it (`TSQ_cluster`).
+After retrieving the data (`SQL_retrieve`), we then assigned the time series to groups (using `TS_LabelGroups('orig',{'periodic','noisy'},'ts')`), normalized the data matrix (`TS_normalize`), and then clustered it (`TS_cluster`).
 So now we have a clustered data matrix containing thousands of summaries of each time series, as well as pre-assigned group information as to which time series are periodic and which are noisy.
 When the time series have been assigned to groups , this can be accessed by setting the second input to 1:
 
     plotGroups = 0;
-    TSQ_plot_DataMatrix('cl',plotGroups);
+    TS_plot_DataMatrix('cl',plotGroups);
     plotGroups = 1;
-    TSQ_plot_DataMatrix('cl',plotGroups);
+    TS_plot_DataMatrix('cl',plotGroups);
     
 producing the following two plots:
 

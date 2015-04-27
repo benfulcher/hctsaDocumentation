@@ -1,15 +1,15 @@
-# Filtering and normalizing the data using `TSQ_normalize`
+# Filtering and normalizing the data using `TS_normalize`
 <!--{#sec:normalization}-->
 
 The first step in analyzing a dataset involves processing the data matrix.
 This involves filtering out operations or time series that produced many errors or special-valued outputs, and then normalizing of the output of all operations, which is typically done in-sample, according to an outlier-robust sigmoidal transform (although other normalizing transformations can be selected).
-Both of these tasks are performed using the function `TSQ_normalize`.
-The `TSQ_normalize` function writes the new, filtered, normalized matrix to a local file called **HCTSA_N**.
+Both of these tasks are performed using the function `TS_normalize`.
+The `TS_normalize` function writes the new, filtered, normalized matrix to a local file called **HCTSA_N**.
 This contains normalized, and trimmed versions of the information in `HCTSA_loc.mat`.
 
 Example usage is as follows:
 
-        TSQ_normalize('scaledSQzscore',[0.8,1.0]);
+        TS_normalize('scaledSQzscore',[0.8,1.0]);
 
 The first input controls the normalization method, in this case a scaled, outlier-robust sigmoidal transformation, specified with 'scaledSQzscore'.
 The second input controls the filtering of time series and operations based on minimum thresholds for good values in the corresponding rows (corresponding to time series; filtered first) and columns (corresponding to operations; filtered second) of the data matrix.
@@ -19,7 +19,7 @@ Columns with approximately constant values are also filtered out.
 After filtering the data matrix, the outlier-robust ‘scaledSQzscore’ sigmoidal transformation is applied to all remaining operations (columns).
 The filtered, normalized matrix is saved to the file **HCTSA_N.mat**.
 
-Details about what normalization is saved to the **HCTSA_N.mat** file as `normalizationInfo`, a structure that contains the normalization function, filtering options used, and the corresponding `TSQ_normalize` code that can be used to re-run the normalization.
+Details about what normalization is saved to the **HCTSA_N.mat** file as `normalizationInfo`, a structure that contains the normalization function, filtering options used, and the corresponding `TS_normalize` code that can be used to re-run the normalization.
 
 <!--The first input controls the normalization method, in this case a , and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).-->
 
@@ -45,11 +45,11 @@ Some applications can tolerate some special-valued outputs from operations (like
 <!--An example usage is as follows:-->
 <!--Another example:-->
 
-<!--        TSQ_normalize('raw',[0.8,1]);-->
+<!--        TS_normalize('raw',[0.8,1]);-->
 
 <!--This filters time series (rows of the data matrix) with more than 20% special-values, then filters out operations (columns of the data matrix) containing any special values, leaving a data matrix containing no special (or missing) values.-->
 <!--No normalizing transformation is applied to the remaining operations.-->
 
 
 
-Analysis can now be performed on the data contained in **HCTSA_N.mat**, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TSQ_normalize`, which will overwrite the existing **HCTSA_N.mat** with the results of the new normalization and filtration settings.
+Analysis can now be performed on the data contained in **HCTSA_N.mat**, in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TS_normalize`, which will overwrite the existing **HCTSA_N.mat** with the results of the new normalization and filtration settings.

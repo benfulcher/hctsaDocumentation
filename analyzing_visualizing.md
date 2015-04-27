@@ -9,5 +9,5 @@ Setting up the problem, guiding the methodology, and interpreting the results re
 Once a highly comparative dataset is produced, users can be creative in their exploration and analysis of the data, or draw upon a library of analytic techniques that we have developed.
 
 The two main components of an *hctsa* analysis pipeline are:
-1. Retrieving results from the database using `TSQ_prepared`, described [here](retrieving.md).
-2. Filtering and normalizing the data using `TSQ_normalize`, described [here](filtering_and_normalizing.md).
+1. Retrieving results from the database using `SQL_retrieve`, described [here](retrieving.md).
+2. Filtering and normalizing the data using `TS_normalize`, described [here](filtering_and_normalizing.md).

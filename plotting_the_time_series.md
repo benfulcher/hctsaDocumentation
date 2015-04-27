@@ -1,6 +1,6 @@
 # Plotting the time series
 
-The *hctsa* package provides a simple means of plotting time series, via the `TSQ_plot_timeseries` function.
+The *hctsa* package provides a simple means of plotting time series, via the `TS_plot_timeseries` function.
 
 ## Basic plotting
 
@@ -10,7 +10,7 @@ For example, to plot a set of time series that have not been assigned groups, we
     plotWhatTimeSeries = 'all'; % plot examples from all time series
     plotHowMany = 10; % how many to plot
     maxLength = 400; % maximum number of samples to plot for each time series
-    TSQ_plot_timeseries(whatData,plotWhatTimeSeries,plotHowMany);
+    TS_plot_timeseries(whatData,plotWhatTimeSeries,plotHowMany);
     
 For our assorted set of time series, this produces the following:
 
@@ -20,11 +20,11 @@ Showing 10 examples of time series, equally-spaced through the **ts_id**s in **H
 
 ## Freeform plotting
 
-Many more custom plotting options are available by passing an options structure to `TSQ_plot_timeseries`, including the `'plotFreeForm'` option which allows very many time series to be shown in a single plot (without the usual axis borders):
+Many more custom plotting options are available by passing an options structure to `TS_plot_timeseries`, including the `'plotFreeForm'` option which allows very many time series to be shown in a single plot (without the usual axis borders):
 
     % Plot as a freeform plot without labeling time series:
     plotOptions = struct('plotFreeForm',1,'displayTitles',0);
-    TSQ_plot_timeseries('norm','all',40,300,plotOptions);
+    TS_plot_timeseries('norm','all',40,300,plotOptions);
 
 ![](freeform_timeSeries_Plot.png)
 
@@ -32,11 +32,11 @@ producing an overview picture of 40 time series spaced through the rows of the d
 
 ## Dealing with groups of time series
 
-When the time series have been assigned groups (using `TSQ_LabelGroups`), this information is automatically incorporated into `TSQ_plot_timeseries`, which then plots a given number of each time series group, and colors them accordingly:
+When the time series have been assigned groups (using `TS_LabelGroups`), this information is automatically incorporated into `TS_plot_timeseries`, which then plots a given number of each time series group, and colors them accordingly:
 
     numPerGroup = 5; % plot this many examples of each group of time series
     plotHow = 'grouped'; % plot examples of each assigned group of time series
-    TSQ_plot_timeseries('norm',plotHow,numPerGroup,500);
+    TS_plot_timeseries('norm',plotHow,numPerGroup,500);
 
 ![](GroupedTimeSeriesPlot.png)
 
