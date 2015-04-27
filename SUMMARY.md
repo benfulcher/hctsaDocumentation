@@ -14,6 +14,7 @@
    * [Computing operations and writing back to the database](computing_and_writing_back.md)
    * [Cycling through computations using runscripts](computing_runscripts.md)
    * [Dealing with errors](dealing_with_errors.md)
+   * Clearing or removing data
 * [Analyzing and visualizing results](analyzing_visualizing.md)
    * [Retrieving and grouping data from the database](retrieving.md)
    * [Filtering and normalizing](filtering_and_normalizing.md)
