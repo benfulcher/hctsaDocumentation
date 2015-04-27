@@ -1,4 +1,4 @@
-# Clearing or removing data
+# Clearing or removing data from the database using `SQL_clear_remove`
 
 Sometimes you might wish to remove a problematic set of time series from the database (that might have been input incorrectly, for example), including their metadata, and all records of computed data.
 Other times you might find a problem with the implementation of one of the operations. In this case, you would like to retain that operation in the database, but flush all of the data currently computed for it (so that you can recompute new values).
@@ -11,9 +11,9 @@ Example usages are given below:
 % Clear time series with ts_ids in the range 10-15
 SQL_clear_remove('ts',10:15,0);
 
-% Remove time series with ts_ids in the range 10:15
+% Remove time series with ts_ids in the range 10-15
 SQL_clear_remove('ts',10:15,1);
 
-% Remove time series with ts_ids in the range 10:15
-SQL_clear_remove('ts',10:15,1);
+% Clear operations with op_ids in the range 100-200
+SQL_clear_remove('ops',100:200,0);
 ```
