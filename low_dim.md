@@ -12,7 +12,7 @@ By default, the user will be prompted to select 10 points on the plot to annotat
 
 After selecting 10 points, we have the following:
 
-![pca_image](pca_ungrouped.png)
+![pca_image](img/pca_ungrouped.png)
 
 The proportion of variance explained by each principal component is provided in parentheses in the axis label.
 
@@ -35,7 +35,7 @@ Annotation properties can be altered with some detail by specifying properties a
 
 yields:
 
-![annotated plot](lowDimAnnotated.png)
+![annotated plot](img/lowDimAnnotated.png)
 
 ## Plotting grouped time series
 
@@ -61,7 +61,7 @@ Running the following:
     
 The function then directs you to select 6 points to annotate time series to, producing the following:
 
-![](PC_noisy_periodic.png)
+![](img/PC_noisy_periodic.png)
 
 Notice how the two labeled groups have been distinguished as red and blue points, and a linear classification boundary has been added (with in-sample misclassification rate annotated to the title and to each individual principal component).
 If marginal distributions are plotted (setting `showDistribution = 1` above), they are labeled according to the same colors.

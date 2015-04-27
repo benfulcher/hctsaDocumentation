@@ -14,7 +14,7 @@ For example, to plot a set of time series that have not been assigned groups, we
     
 For our assorted set of time series, this produces the following:
 
-![](timeSeriesPlot.png)
+![](img/timeSeriesPlot.png)
 
 Showing 10 examples of time series, equally-spaced through the **ts_id**s in **HCTSA_N.mat**.
 
@@ -26,7 +26,7 @@ Many more custom plotting options are available by passing an options structure 
     plotOptions = struct('plotFreeForm',1,'displayTitles',0);
     TS_plot_timeseries('norm','all',40,300,plotOptions);
 
-![](freeform_timeSeries_Plot.png)
+![](img/freeform_timeSeries_Plot.png)
 
 producing an overview picture of 40 time series spaced through the rows of the data matrix.
 
@@ -38,6 +38,6 @@ When the time series have been assigned groups (using `TS_LabelGroups`), this in
     plotHow = 'grouped'; % plot examples of each assigned group of time series
     TS_plot_timeseries('norm',plotHow,numPerGroup,500);
 
-![](GroupedTimeSeriesPlot.png)
+![](img/GroupedTimeSeriesPlot.png)
 
 In this case the two labeled groups of time series are recognized by the function: red (noisy), blue (no noise), and then 5 time series in each group are plotted, showing the first 500 samples of each time series.

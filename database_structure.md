@@ -27,5 +27,5 @@ Applications similar to *Sequal Pro* exist for Windows and Linux platforms.
 Applications that allow the database to be inspected are extremely useful, however they should ***not*** be used to manipulate the database directly.
 Instead, Matlab scripts should be used to interact with the database to ensure that the proper relationships between the different tables are maintained (including the indexing of keyword labels).
 
-![SQLPro for Mac](SQLProScreenshot.png)
+![SQLPro for Mac](img/SQLProScreenshot.png)
 <!--Visualizing the **Operations** table in the database using *Sequel Pro* for Mac. Similar applications exist for Windows and Linux platforms. -->

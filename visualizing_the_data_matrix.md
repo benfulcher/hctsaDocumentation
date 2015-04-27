@@ -30,7 +30,7 @@ The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, resp
 ### Visualizing the normalized (unclustered) data matrix
 Running `TS_plot_DataMatrix('norm')` plots the data contained in **HCTSA_N.mat**, yielding:
 
-![](normalized_data_matrix.png)
+![](img/normalized_data_matrix.png)
 
 where black rectangles label missing values, and other values are shown from low (blue) to high (red) after normalization using the scaled outlier-robust sigmoidal transformation.
 Due to the size of the matrix, operations are not labeled.
@@ -41,7 +41,7 @@ It can be useful to display the matrix with the order of time series and operati
 
 Running `TS_plot_DataMatrix('cl')`, plots the data contained in **HCTSA_cl.mat**, yielding:
 
-![](clustered_data_matrix.png)
+![](img/clustered_data_matrix.png)
 
 By reordering rows and columns, this representation reveals correlated patterns of outputs across different types of operations, and similar sets of properties between different types of time series.
 
@@ -59,6 +59,6 @@ When the time series have been assigned to groups , this can be accessed by sett
     
 producing the following two plots:
 
-![](plot_DataMatrix_grouped.png)
+![](img/plot_DataMatrix_grouped.png)
 
 When group information is not used (the left plot), the data is visualized in the normal blue/yellow/red color scheme, but when the pre-assigned groups are shown, we see that the clustered dataset separates perfectly into the two assigned groups (shown in green and blue colormap).
