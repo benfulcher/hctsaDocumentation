@@ -15,7 +15,7 @@ When applying thousands of time-series analysis methods to diverse datasets, man
 Some time series may be inappropriate (such as fitting a positive-only distribution to data that is not positive), or measuring stationarity across 2,000 datapoints in time series that are shorter than 2,000 samples.
 Other times, an optimization routine may fail, or some unknown error may be called.
 
-To visualize
+The function `TS_InspectQuality` allows one to visualize these situations.
 
 ## Filtering and normalizng data using `TS_normalize`
 
