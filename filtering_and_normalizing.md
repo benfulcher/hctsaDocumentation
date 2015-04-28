@@ -15,7 +15,8 @@ When applying thousands of time-series analysis methods to diverse datasets, man
 Some time series may be inappropriate (such as fitting a positive-only distribution to data that is not positive), or measuring stationarity across 2,000 datapoints in time series that are shorter than 2,000 samples.
 Other times, an optimization routine may fail, or some unknown error may be called.
 
-The function `TS_InspectQuality` allows one to visualize these situations.
+It is not necessary, but if one wishes to visualize these situations, the function `TS_InspectQuality` can be used.
+
 It can be run in three modes:
 1. `TS_InspectQuality('full');` plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
 2. `TS_InspectQuality('reduced');` as `'full'`, but includes only columns where special values occured.
