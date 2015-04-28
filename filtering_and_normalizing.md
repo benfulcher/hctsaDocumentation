@@ -16,6 +16,8 @@ Some time series may be inappropriate (such as fitting a positive-only distribut
 Other times, an optimization routine may fail, or some unknown error may be called.
 
 The function `TS_InspectQuality` allows one to visualize these situations.
+It can be run in three modes:
+1. 
 
 ## Filtering and normalizng data using `TS_normalize`
 
