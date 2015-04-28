@@ -7,6 +7,9 @@ It is up to personal preference of the user whether to keep all time-series data
 Time series are added using the same function used to add master operations and operations to the database, `SQL_add`, which imports time series data (stored in time-series data files) and associated keyword metadata (assigned to each time series) to the database.
 The time-series data files to import, and the keywords to assign to each time series are specified in either: (i) an appropriately formatted matlab (`.mat`) file, or (ii) a structured input text file, as explained below.
 
+When keywords are provided, time series are indexed according to them in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate** of the database.
+Assigning keywords to time series makes it easier to retrieve a set of time series with a given set of keywords for analysis, and to group time series annotated with different keywords for classification tasks.
+
 Every time series added to the database is assigned a unique integer identifier, **ts\_id**, which can be used to retrieve specific time series from the database.
 
 ## *Example*: Adding a set of time series to the database
@@ -53,11 +56,6 @@ For example, consider the following input file, containing three lines (one for 
     
 Running `SQL_add` with this input file will add three time series to the database. The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
 Note that keywords should be separated only by commas and not whitespace.
-
-When keywords are provided, time series are indexed according to them in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate** of the database.
-Assigning keywords to time series makes it easier to retrieve a set of time series with a given set of keywords for analysis, and to group time series annotated with different keywords for classification tasks.
-
-#### Time-series data files
 
 `SQL_add` will attempt to find each time-series data file specified in the input file and read it (using `dlmread`).
 Data files should thus be accessible in the Matlab path.
