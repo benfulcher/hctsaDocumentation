@@ -37,9 +37,10 @@ keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keyw
 
 % Save these variables out to INP_test.mat:
 save('INP_test.mat','timeSeriesData','labels','keywords');
-```
 
-These time series could then be added to the database using `SQL_add('ts','INP_test.mat')`.
+% Add these time series to the database using SQL_add:
+SQL_add('ts','INP_test.mat')
+```
 
 ### Input file format 2 (text file)
 
