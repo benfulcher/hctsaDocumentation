@@ -36,7 +36,7 @@ labels = {'informativeLabel1','informativeLabel2'}; % data labels
 keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keywords
 
 % Save these variables out to INP_test.mat:
-save('INP_test.mat','timeSeriesData','labels','keywords')
+save('INP_test.mat','timeSeriesData','labels','keywords');
 ```
 
 Saving these variables to a .mat file (e.g., using ``) would then form a usable input as `SQL_add('ts','INP_test.mat')`.
