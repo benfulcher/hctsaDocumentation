@@ -9,11 +9,11 @@ In this section we describe how to
 
 
 
-## Visualizing special values and errors
+## Visualizing special values and errors using `TS_InspectQuality`
 
 When applying thousands of time-series analysis methods to diverse datasets, many operations can give results that are not .
 
-## Using `TS_normalize`
+## Filtering and normalizng data using `TS_normalize`
 
 The first step in analyzing a dataset involves processing the data matrix.
 This involves filtering out operations or time series that produced many errors or special-valued outputs, and then normalizing of the output of all operations, which is typically done in-sample, according to an outlier-robust sigmoidal transform (although other normalizing transformations can be selected).
