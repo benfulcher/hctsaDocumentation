@@ -31,7 +31,8 @@ When using a .mat file input, the `SQL_add` function expects the .mat file to co
 * `labels`: a *N*x1 cell of unique strings containing a named label for each time series.
 * `keywords`: a *N*x1 cell of strings, where each element contains a comma-delimited set of keywords (one for each time series).
 
-An example involving two time series (showing only the first two values shown of each):
+An example involving two time series is below.
+In this example, we add two time series (showing only the first two values shown of each), with associated labels
 
 ```
 timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}; % (a cell of vectors)
