@@ -55,14 +55,17 @@ SQL_add('ts','INP_test.mat');
 
 ### Input file format 2 (text file)
 
-The `SQL_add` function expects the input text file to be formatted with each row specifying: (i) the file name of a time-series data file and (ii) comma-delimited keywords, with white space separating them.
+When using a text file input, the input file now specifies filenames of time series to be added to the database, which Matlab will then load and store the data directly into the database (using `dlmread`).
+The input text file should be formatted as rows with each row specifying two whitespace separated entries: (i) the file name of a time-series data file and (ii) comma-delimited keywords.
+
 For example, consider the following input file, containing three lines (one for each time series to be added to the database):
 
     gaussianwhitenoise_001.dat     noise,gaussian
     gaussianwhitenoise_002.dat     noise,gaussian
     sinusoid_001.dat               periodic,sine
     
-Running `SQL_add` with this input file will add three time series to the database. The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
+Running `SQL_add` with this input file will add three time series to the database.
+The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
 Note that keywords should be separated only by commas and not whitespace.
 
 `SQL_add` will attempt to find each time-series data file specified in the input file and read it (using `dlmread`).
