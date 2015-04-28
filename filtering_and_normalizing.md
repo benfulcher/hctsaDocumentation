@@ -1,6 +1,8 @@
 # Filtering and normalizing the data using `TS_normalize`
 <!--{#sec:normalization}-->
 
+The first step in analyzing a dataset involves processing the data matrix.
+
 ## Visualizing special values and errors
 
 When applying thousands of time-series analysis methods to diverse datasets, many operations can give results that are not .
