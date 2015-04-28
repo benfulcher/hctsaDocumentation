@@ -5,18 +5,32 @@ After setting up a database with a library of time-series features, the next tas
 It is up to personal preference of the user whether to keep all time-series data in a single database, or have a different database for each dataset.
 
 Time series are added using the same function used to add master operations and operations to the database, `SQL_add`, which imports time series data (stored in time-series data files) and associated keyword metadata (assigned to each time series) to the database.
-The time-series data files to import, and the keywords to assign to each time series are specified in a structured input file, as explained below.
+The time-series data files to import, and the keywords to assign to each time series are specified in either: (i) an appropriately formatted matlab (`.mat`) file, or (ii) a structured input text file, as explained below.
 
 Every time series added to the database is assigned a unique integer identifier, **ts\_id**, which can be used to retrieve specific time series from the database.
 
 ## *Example*: Adding a set of time series to the database
 Adding a set of time series to the database requires an appropriately formatted input file, **INP_ts.txt**, for example, the appropriate code is:
 
+    % Add time series (stored in data files) using an input text file
     SQL_add('ts','INP_ts.txt');
+    % Add time series (embedded in a .mat file):
+    SQL_add('ts','INP_ts.mat');
 
 We provide an example input file in the **Database** directory as **INP_test_ts.txt**, which can be added to the database, following the syntax above, using `SQL_add('ts','INP_test_ts.txt')`.
 
-### Input file format
+### Input file format 1 (.mat file)
+
+When using a .mat file, the `SQL_add` function expects the .mat file to contain three variables:
+
+* `timeSeriesData`: either a *N*x1 cell (for *N* time series), where each element contains a vector of time-series values, or a *N*x*M* matrix, where each row specifies the values of a time series (all of length *M*).
+* `labels`: a *N*x1 cell of unique strings containing a named label for each time series.
+* `keywords`: a *N*x1 cell of strings, where each element contains a comma-delimited set of keywords (one for each time series).
+
+An example involving two time series: `timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}` (a cell of vectors), `labels = {'informativeLabel1','informativeLabel2'}`, and `keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}`.
+Saving these variables to a .mat file (e.g., using `save('INP_test.mat','timeSeriesData','labels','keywords')`) would then form a usable input as `SQL_add('ts','INP_test.mat')`.
+
+### Input file format 2 (text file)
 
 The `SQL_add` function expects the input text file to be formatted with each row specifying: (i) the file name of a time-series data file and (ii) comma-delimited keywords, with white space separating them.
 For example, consider the following input file, containing three lines (one for each time series to be added to the database):
