@@ -12,14 +12,14 @@ Assigning keywords to time series makes it easier to retrieve a set of time seri
 
 When added to the *mySQL* database, every time series added to the database is assigned a unique integer identifier, **ts\_id**, which can be used to retrieve specific time series from the database.
 
-## *Example*: Adding a set of time series to the database
+## `SQL_add` syntax
 Adding a set of time series to the database requires an appropriately formatted input file, **INP_ts.txt**, for example, the appropriate code is:
 
-    % Add time series (stored in data files) using an input text file:
-    SQL_add('ts','INP_ts.txt');
-    
     % Add time series (embedded in a .mat file):
     SQL_add('ts','INP_ts.mat');
+    
+    % Add time series (stored in data files) using an input text file:
+    SQL_add('ts','INP_ts.txt');
 
 We provide an example input file in the **Database** directory as **INP_test_ts.txt**, which can be added to the database, following the syntax above, using `SQL_add('ts','INP_test_ts.txt')`.
 
