@@ -21,7 +21,7 @@ Adding a set of time series to the database requires an appropriately formatted 
     % Add time series (stored in data files) using an input text file:
     SQL_add('ts','INP_ts.txt');
 
-Using an input .mat file is generally easier when the data is already stored in variables in Matlab, but the input text file method is better suited to when individual time-series data already exist as text files.
+Using an input .mat file is generally easier when the data is already stored as variables in Matlab, whereas the input text file method is better suited to when individual time-series data already exist as text files.
 
 We provide an example input file in the **Database** directory as **INP_test_ts.txt**, which can be added to the database, following the syntax above, using `SQL_add('ts','INP_test_ts.txt')`, as well as a sample .mat file input as **INP_test_ts.mat**, which can be added as `SQL_add('ts','INP_test_ts.mat')`.
 
