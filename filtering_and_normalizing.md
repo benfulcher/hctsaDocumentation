@@ -11,7 +11,11 @@ In this section we describe how to
 
 ## Visualizing special values and errors using `TS_InspectQuality`
 
-When applying thousands of time-series analysis methods to diverse datasets, many operations can give results that are not .
+When applying thousands of time-series analysis methods to diverse datasets, many operations can give results that are not all real numbers.
+Some time series may be inappropriate (such as fitting a positive-only distribution to data that is not positive), or measuring stationarity across 2,000 datapoints in time series that are shorter than 2,000 samples.
+Other times, an optimization routine may fail, or some unknown error may be called.
+
+To visualize
 
 ## Filtering and normalizng data using `TS_normalize`
 
