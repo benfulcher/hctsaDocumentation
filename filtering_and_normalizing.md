@@ -2,8 +2,7 @@
 <!--{#sec:normalization}-->
 
 The first step in analyzing a dataset involves processing the data matrix, which can be done using `TS_normalize`.
-In this section we describe how to do this, and also how to visualize any special-valued outputs in your data (using `TS_InspectQuality`).
-
+In this section we describe how to achieve this, and also how to visualize any special-valued outputs in your data (using `TS_InspectQuality`).
 
 ## Visualizing special values and errors using `TS_InspectQuality`
 
