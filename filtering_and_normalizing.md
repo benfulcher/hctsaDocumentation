@@ -1,8 +1,8 @@
-# Filtering and normalizing the data using `TS_normalize`
+# Inspecting, filtering, and normalizing the data
 <!--{#sec:normalization}-->
 
 The first step in analyzing a dataset involves processing the data matrix.
-In this section we describe how to
+In this section we describe how to:
 
 1. Visualize any special-valued outputs in your data (using `TS_InspectQuality`), and
 2. Filter and normalize the data matrix (using `TS_normalize`).
