@@ -17,7 +17,9 @@ Other times, an optimization routine may fail, or some unknown error may be call
 
 The function `TS_InspectQuality` allows one to visualize these situations.
 It can be run in three modes:
-1. `TS_InspectQuality('full');` plots the full data matrix, and shows where each possible special-valued output can occur (
+1. `TS_InspectQuality('full');` plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
+2. `TS_InspectQuality('reduced');` as `'full'`, but includes only columns where special values occured.
+3. `TS_InspectQuality('master');` plots which types of special-valued outputs were encountered for each master operation.
 
 ## Filtering and normalizng data using `TS_normalize`
 
