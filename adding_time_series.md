@@ -32,18 +32,20 @@ When using a .mat file input, the `SQL_add` function expects the .mat file to co
 * `keywords`: a *N*x1 cell of strings, where each element contains a comma-delimited set of keywords (one for each time series).
 
 An example involving two time series is below.
-In this example, we add two time series (showing only the first two values shown of each), with associated labels
+In this example, we add two time series (showing only the first two values shown of each), which are labeled according to .dat files from a hypothetical EEG experiment, and assigned keywords (which are separated by commas and no whitespace).
+In this case, both are assigned keywords 'subject1' and 'eeg' and, additionally, the first time series is assigned 'trial1', and the second 'trial2' (these labels can be used later to retrieve individual time series).
+Note that the labels can be anything, and that keywords are optional.
 
 ```
 timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}; % (a cell of vectors)
-labels = {'informativeLabel1','informativeLabel2'}; % data labels
+labels = {'EEGExperiment_sub1_trail1.dat','EEGExperiment_sub1_trail2.dat'}; % data labels
 keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keywords
 
 % Save these variables out to INP_test.mat:
 save('INP_test.mat','timeSeriesData','labels','keywords');
 
 % Add these time series to the database using SQL_add:
-SQL_add('ts','INP_test.mat')
+SQL_add('ts','INP_test.mat');
 ```
 
 ### Input file format 2 (text file)
