@@ -14,6 +14,7 @@ Adding a set of time series to the database requires an appropriately formatted 
 
     % Add time series (stored in data files) using an input text file
     SQL_add('ts','INP_ts.txt');
+    
     % Add time series (embedded in a .mat file):
     SQL_add('ts','INP_ts.mat');
 
