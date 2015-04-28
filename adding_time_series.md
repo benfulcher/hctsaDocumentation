@@ -24,7 +24,7 @@ Adding a set of time series to the database requires an appropriately formatted 
 We provide an example input file in the **Database** directory as **INP_test_ts.txt**, which can be added to the database, following the syntax above, using `SQL_add('ts','INP_test_ts.txt')`, as well as a sample .mat file input as **INP_test_ts.mat**, which can be added as `SQL_add('ts','INP_test_ts.mat')`.
 
 Note that when using the .mat file input method, time-series data is stored in the database to six significant figures.
-However, when using the .txt file input method, time-series data values are stored as written in the file.
+However, when using the .txt file input method, time-series data values are stored in the database as written in the file.
 
 ### Input file format 1 (.mat file)
 
