@@ -12,7 +12,7 @@ Every time series added to the database is assigned a unique integer identifier,
 ## *Example*: Adding a set of time series to the database
 Adding a set of time series to the database requires an appropriately formatted input file, **INP_ts.txt**, for example, the appropriate code is:
 
-    % Add time series (stored in data files) using an input text file
+    % Add time series (stored in data files) using an input text file:
     SQL_add('ts','INP_ts.txt');
     
     % Add time series (embedded in a .mat file):
@@ -22,7 +22,7 @@ We provide an example input file in the **Database** directory as **INP_test_ts.
 
 ### Input file format 1 (.mat file)
 
-When using a .mat file, the `SQL_add` function expects the .mat file to contain three variables:
+When using a .mat file input, the `SQL_add` function expects the .mat file to contain three variables:
 
 * `timeSeriesData`: either a *N*x1 cell (for *N* time series), where each element contains a vector of time-series values, or a *N*x*M* matrix, where each row specifies the values of a time series (all of length *M*).
 * `labels`: a *N*x1 cell of unique strings containing a named label for each time series.
