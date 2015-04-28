@@ -28,8 +28,18 @@ When using a .mat file input, the `SQL_add` function expects the .mat file to co
 * `labels`: a *N*x1 cell of unique strings containing a named label for each time series.
 * `keywords`: a *N*x1 cell of strings, where each element contains a comma-delimited set of keywords (one for each time series).
 
-An example involving two time series: `timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}` (a cell of vectors), `labels = {'informativeLabel1','informativeLabel2'}`, and `keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}`.
-Saving these variables to a .mat file (e.g., using `save('INP_test.mat','timeSeriesData','labels','keywords')`) would then form a usable input as `SQL_add('ts','INP_test.mat')`.
+An example involving two time series (showing only the first two values shown of each):
+
+```
+timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}; % (a cell of vectors)
+labels = {'informativeLabel1','informativeLabel2'}; % data labels
+keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keywords
+
+% Save these variables out to INP_test.mat:
+save('INP_test.mat','timeSeriesData','labels','keywords')
+```
+
+Saving these variables to a .mat file (e.g., using ``) would then form a usable input as `SQL_add('ts','INP_test.mat')`.
 
 ### Input file format 2 (text file)
 
