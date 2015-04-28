@@ -39,7 +39,7 @@ When using a .mat file input, the `SQL_add` function expects the .mat file to co
 An example involving two time series is below.
 In this example, we add two time series (showing only the first two values shown of each), which are labeled according to .dat files from a hypothetical EEG experiment, and assigned keywords (which are separated by commas and no whitespace).
 In this case, both are assigned keywords 'subject1' and 'eeg' and, additionally, the first time series is assigned 'trial1', and the second 'trial2' (these labels can be used later to retrieve individual time series).
-Note that the labels can be anything, and that keywords are optional.
+Note that the labels do not need to specify filenames, but can be any useful label for a given time series.
 
 ```
 timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}; % (a cell of vectors)
@@ -55,7 +55,11 @@ SQL_add('ts','INP_test.mat');
 
 ### Input file format 2 (text file)
 
-When using a text file input, the input file now specifies filenames of time series to be added to the database, which Matlab will then load and store the data directly into the database (using `dlmread`).
+When using a text file input, the input file now specifies filenames of time series to be added to the database, which Matlab will then attempt to load (using `dlmread`), and then store in the database.
+Data files should thus be accessible in the Matlab path.
+Each time-series data file should have a single real number on each row, specifying the ordered values that make up the time series.
+Once imported, the time-series data is stored in the database; thus the original time-series data files are no longer required, and can be removed from the Matlab path.
+
 The input text file should be formatted as rows with each row specifying two whitespace separated entries: (i) the file name of a time-series data file and (ii) comma-delimited keywords.
 
 For example, consider the following input file, containing three lines (one for each time series to be added to the database):
@@ -67,8 +71,3 @@ For example, consider the following input file, containing three lines (one for 
 Running `SQL_add` with this input file will add three time series to the database.
 The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
 Note that keywords should be separated only by commas and not whitespace.
-
-`SQL_add` will attempt to find each time-series data file specified in the input file and read it (using `dlmread`).
-Data files should thus be accessible in the Matlab path.
-Each time-series data file should have a single real number on each row, specifying the ordered values that make up the time series.
-Once imported, the time-series data is stored in the database; thus the original time-series data files are no longer required, and can be removed from the Matlab path.
