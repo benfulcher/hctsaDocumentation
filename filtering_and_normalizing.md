@@ -17,7 +17,7 @@ Other times, an optimization routine may fail, or some unknown error may be call
 
 The function `TS_InspectQuality` allows one to visualize these situations.
 It can be run in three modes:
-1. 
+1. `TS_InspectQuality('full');` plots the full data matrix, and shows where each possible special-valued output can occur (
 
 ## Filtering and normalizng data using `TS_normalize`
 
