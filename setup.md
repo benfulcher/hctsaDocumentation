@@ -22,7 +22,7 @@ Note that the above steps are one-off installation steps; once the software is i
 
 ## Importing a time-series dataset
 
-Once installed, if using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) using the `SQL_add` command, described.
+Once installed, if using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) using the `SQL_add` command.
 Custom [master operations](adding_master_operations.md) and [operations](adding_operations.md) can also be added, if required.
 
 ## Computation, processing, and analysis
