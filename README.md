@@ -1,6 +1,7 @@
 # Performing Highly Comparative Time-Series Analysis in Matlab using *hctsa*
 
-This manual outlines steps required to set up and implement highly comparative analysis methods on a system using an interface between Matlab and a _mySQL_ database using the [*hctsa* package](https://github.com/SystemsAndSignalsGroup/hctsa).
+This manual outlines steps required to set up and implement highly comparative analysis methods on a system using an interface between Matlab and a _mySQL_ database using the *hctsa* package.
+<!--(https://github.com/SystemsAndSignalsGroup/hctsa)-->
 This manual is an accompaniment this software.
 It will take you through the steps required to run highly comparative time-series analysis, as described in our papers:
 
