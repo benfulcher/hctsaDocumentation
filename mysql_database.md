@@ -70,6 +70,7 @@ An example usage is as follows:
 
 For this to work, the **sql_settings.conf** file must be set up properly.
 This file specifies (in unencrypted plain text!) the login details for your mySQL database in the form `hostName,databaseName,username,password`.
+
 An example **sql_settings.conf** file:
 
     localhost,myTestDatabase,benfulcher,myInsecurePassword
