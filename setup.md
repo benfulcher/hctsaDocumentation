@@ -21,6 +21,7 @@ This section contains additional details about each of these steps.
 ## Next steps
 
 Once installed, if using our default library of operations, the typical next step is to add a dataset of time series using the `SQL_add` command, described [here](adding_time_series.md).
+Custom [master operations] and [operations] can also be added, if required.
 
 <!--1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.-->
 
