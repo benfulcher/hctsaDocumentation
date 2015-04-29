@@ -18,6 +18,8 @@ After the database is set up, the rest of the package can be installed by runnin
 
 This section contains additional details about each of these steps.
 
+## Quick start: Installing the *hctsa* code package
+
 <!--1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.-->
 
 <!--## Setting up-->
