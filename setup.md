@@ -17,9 +17,6 @@ This section contains additional details about each of these steps.
 
 Note that the above steps are one-off installation steps; once the software is installed and compiled, a typical workflow will simply involve opening Matlab, running the `startup.m` script (which adds all paths required for the *hctsa* software), and then working from any desired directory.
 
-At the start of any analysis using the *hctsa* package, required directories must be added to the *Matlab* path using the `startup.m` script.
-This function keeps track of functions for operations, for analysis, third-party toolboxes, and time-series data files, which could be easily altered at any point.
-
 ## Importing a time-series dataset
 
 Once installed, if using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) using the `SQL_add` command.
