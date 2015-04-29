@@ -101,6 +101,6 @@ The port forward can be set up in the terminal using a command like:
 
 This command connects port 1234 on your local computer to port 3306 (the default mySQL port) on the server.
 Now, telling Matlab to connect to `localhost` through port 1234 will connect it, through the established ssh tunnel, to the server.
-This can be achieved by specifying the server as `localhost` and the port number as 1234 in the `sql_settings.conf` file (or during the `install` process), which can be specified as the (optional) fifth entry, i.e.,:
+This can be achieved by specifying the server as `localhost` and the port number as 1234 in the **sql_settings.conf** file (or during the `install` process), which can be specified as the (optional) fifth entry, i.e.,:
 
     hostname,databasename,username,password,1234
