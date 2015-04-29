@@ -11,7 +11,11 @@ Once a relevant section of the data matrix has been retrieved, we can calculate 
 Calculations are performed using the function `TS_compute`, which stores results back into the matrices in `HCTSA_loc`.
 This function can be run without inputs:
 
-        TS_compute;
+    % Compute missing values in HCTSA_loc.mat:
+    TS_compute;
+    
+    % Compute missing values in HCTSA_loc.mat using parallel processing:
+    TS_compute(1);
 
 Inputs to the function are optional and can be used to specify:
 
