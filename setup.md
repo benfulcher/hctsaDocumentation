@@ -7,8 +7,8 @@ This function keeps track of functions for operations, for analysis, third-party
 
 The *hctsa* package requires some preliminary set up to work with a *mySQL* database:
 
-1. Installation of *mySQL*, either locally, or on an accessible server.
-2. Setting up Matlab with a *mySQL* java 
+1. Installation of *mySQL*, either locally, or on an accessible server (must be done independently).
+2. Setting up Matlab with a *mySQL* java connector (done by running the `install_jconnector` script).
 
 should be set up by running the `install.m` script, which:
 
