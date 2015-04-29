@@ -15,9 +15,9 @@ It is not necessary, but if one wishes to visualize these situations, the functi
 It can be run in four modes:
 
 1. `TS_InspectQuality('summary');` Summarizes the proportion of special-valued outputs in each operation as a bar plot, ordered by the proportion of special-valued outputs.
-2. `TS_InspectQuality('full');` Plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
-3. `TS_InspectQuality('reduced');` As `'full'`, but includes only columns where special values occured.
-4. `TS_InspectQuality('master');` Plots which types of special-valued outputs were encountered for each master operation.
+2. `TS_InspectQuality('master');` Plots which types of special-valued outputs were encountered for each master operation.
+3. `TS_InspectQuality('full');` Plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
+4. `TS_InspectQuality('reduced');` As `'full'`, but includes only columns where special values occured.
 
 
 ## Filtering and normalizng data using `TS_normalize`
