@@ -23,7 +23,7 @@ Note that the above steps are one-off installation steps; once the software is i
 Once installed, if using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) using the `SQL_add` command, described.
 Custom [master operations](adding_master_operations.md) and [operations](adding_operations.md) can also be added, if required.
 
-## Next steps
+## Next steps: computation and analysis
 
 After installing the software and importing a time-series dataset to a *mySQL* database, the process by which data is retrieved from the database (using `SQL_retrieve`), feature sets computed (using `TS_compute`), and data stored back in the database (`SQL_store`) is described in detail [here](calculating.md).
 
