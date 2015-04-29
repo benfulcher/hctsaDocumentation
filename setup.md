@@ -24,7 +24,8 @@ Custom [master operations](adding_master_operations.md) and [operations](adding_
 
 ## Next steps
 
-After installing and importing a time-series dataset, 
+After installing the software and importing a time-series dataset, the process by which data is retrieved from the database (using `SQL_retrieve`), feature sets computed (using `TS_compute`), and data stored back in the database (`SQL_store`) is described in detail [here](calculating.md).
+Once all features are computed for a dataset, some basic plotting and analysis functions are also provided with the software, as described [here](analyzing_visualizing.md).
 
 
 <!--1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.-->
