@@ -14,7 +14,7 @@ It can be good practice to visualize this after a computation to see where thing
 
 It can be run in four modes:
 
-1. `TS_InspectQuality('summary');` [default]: Summarizes the proportion of special-valued outputs in each operation as a bar plot, ordered by the proportion of special-valued outputs.
+1. `TS_InspectQuality('summary');` [default] Summarizes the proportion of special-valued outputs in each operation as a bar plot, ordered by the proportion of special-valued outputs.
 2. `TS_InspectQuality('master');` Plots which types of special-valued outputs were encountered for each master operation.
 3. `TS_InspectQuality('full');` Plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
 4. `TS_InspectQuality('reduced');` As `'full'`, but includes only columns where special values occured.
