@@ -27,7 +27,7 @@ Custom [master operations](adding_master_operations.md) and [operations](adding_
 
 ## Computation, processing, and analysis
 
-After installing the software and importing a time-series dataset to a *mySQL* database, the process by which data is retrieved from the database to local Matlab files (using `SQL_retrieve`), feature sets computed (using `TS_compute`), and data stored back in the database (`SQL_store`) is described in detail [here](calculating.md).
+After installing the software and importing a time-series dataset to a *mySQL* database, the process by which data is retrieved from the database to local Matlab files (using `SQL_retrieve`), feature sets computed within Matlab (using `TS_compute`), and computed data stored back in the database (`SQL_store`) is described in detail [here](calculating.md).
 
 Once a desired set of features has been computed for a time-series dataset, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).
 
