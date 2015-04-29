@@ -18,14 +18,16 @@ After the database is set up, the rest of the package can be installed by runnin
 
 This section contains additional details about each of these steps.
 
-Once installed, if using our default library of operations, the typical next step is to add a dataset of time series using the `SQL_add` command, described [here](adding_time_series.md).
-Custom [master operations](adding_master_operations.md) and [operations](adding_operations.md) can also be added, if required.
+Note that the above steps are one-off installation steps; once the software is installed and compiled, a typical workflow will simply involve opening Matlab, running the `startup.m` script (which adds all paths required for the *hctsa* software), and then working from any desired directory. 
 
+Once installed, if using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) using the `SQL_add` command, described.
+Custom [master operations](adding_master_operations.md) and [operations](adding_operations.md) can also be added, if required.
 
 ## Next steps
 
 After installing the software and importing a time-series dataset, the process by which data is retrieved from the database (using `SQL_retrieve`), feature sets computed (using `TS_compute`), and data stored back in the database (`SQL_store`) is described in detail [here](calculating.md).
-Once all features are computed for a dataset, some basic plotting and analysis functions are also provided with the software, as described [here](analyzing_visualizing.md).
+
+Once all features are computed for a dataset, a range of basic plotting and analysis functions are also provided with the software, as described [here](analyzing_visualizing.md).
 
 
 <!--1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.-->
