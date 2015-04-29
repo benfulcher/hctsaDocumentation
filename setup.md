@@ -14,7 +14,7 @@ After the database is set up, the rest of the package can be installed by runnin
 
 1. [if required] Sets up Matlab to be able to communicate with the *mySQL* server and creates a new database to store Matlab calculations in, described [here](mysql_database.md).
 2. Populates the database with our default library of master operations and operations (using `SQL_add` commands), described [here](populating.md).
-3. Compiles **mex** binaries required to evaluate all operations, described [here](compiling_binaries.md). In addition to the mex files compiled in the `install.m` script, the user is additionally required to compile the *TISEAN* binaries if desired [in the commandline](compiling_binaries.md).
+3. Compiles **mex** binaries required to evaluate all operations, described [here](compiling_binaries.md). In addition to the mex files compiled by the `install` script, the user is additionally required to compile the *TISEAN* binaries if desired [in the commandline](compiling_binaries.md).
 
 This section contains additional details about each of these steps.
 
@@ -24,7 +24,7 @@ Custom [master operations](adding_master_operations.md) and [operations](adding_
 
 ## Next steps
 
-
+After installing and importing a time-series dataset, 
 
 
 <!--1. Sets up a *mySQL* server and database, populates the database with our standard library of functions and operations, and then compiles all of the mex functions required by Matlab to run all of the operations.-->
