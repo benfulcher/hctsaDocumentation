@@ -12,7 +12,7 @@ This is the simplest way to get the *hctsa* working on a time-series dataset.
 The *hctsa* package can be installed by running the `install` script, which adds the required paths to dependent toolboxes, and compiles mex binaries to work on your system.
 This is a one-off installation step; future work can involve simply loading the paths (using the `startup` script).
 
-### Importing a time-series dataset
+### Initializing a time-series dataset using `TS_init`
 When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the time series and operations, and the results of the computation.
 This can be achieved using the `TS_init` function, whose arguments specify the input files for this information.
 An example usage is as follows:
@@ -21,6 +21,12 @@ TS_init('INP_test_ts.mat');
 ```
 where details of a time-series dataset are specified in the **INP_test_ts.mat** file.
 By default, `TS_init` will load our full library of operations as features (which are detailed in the files **INP_mops.txt** and **INP_ops.txt**); custom input files can be used to specify custom sets of operations.
+
+### Computation, processing, and analysis
+
+After initializing a **HCTSA_loc.mat** file, feature sets are computed within Matlab (using `TS_compute`), which stores the results back to this local file.
+
+After the computation is complete for a time-series dataset, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).
 
 ## 2. Installing the *hctsa* code package to work with a *mySQL* database
 
