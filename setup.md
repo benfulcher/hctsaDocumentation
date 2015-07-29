@@ -26,9 +26,7 @@ By default, `TS_init` will load our full library of operations as features (whic
 
 After initializing a **HCTSA_loc.mat** file, computing all operations on all time series is done [within Matlab](computing_and_writing_back.md) using `TS_compute`, which stores the results back to this local file.
 
-After the computation is complete for a time-series dataset, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).
-
-
+After the computation is complete, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).
 
 ---
 
