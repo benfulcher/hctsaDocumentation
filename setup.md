@@ -5,7 +5,7 @@ The *hctsa* package can either be used in two ways:
 1. Completely within Matlab, for quick and easy analysis of a particular time-series dataset
 2. Using a link between Matlab and a *mySQL* database, which allows the user to accommodate datasets that may grow over time, or to exploit distributed computation (across nodes of a compute cluster, for example).
 
-## 1. Installing the *hctsa* package without a link to a *mySQL* database
+## 1. Installing the *hctsa* package **without** a link to a *mySQL* database
 This is the simplest way to get the *hctsa* working on a time-series dataset.
 The *hctsa* package can be installed by running the `install` script, which adds the required paths to dependent toolboxes, and compiles mex binaries to work on your system.
 This is a one-off installation step; future work can involve simply loading the paths (using the `startup` script).
