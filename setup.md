@@ -20,7 +20,7 @@ An example usage is as follows:
 TS_init('INP_test_ts.mat');
 ```
 where details of a time-series dataset are specified in the **INP_test_ts.mat** file.
-By default, `TS_init` will load our full library of operations as features (which are detailed in the files **INP_mops.txt** and **INP_ops.txt**); custom files can be used to specify custom sets of operations.
+By default, `TS_init` will load our full library of operations as features (which are detailed in the files **INP_mops.txt** and **INP_ops.txt**); custom input files can be used to specify custom sets of operations.
 
 ## 2. Installing the *hctsa* code package to work with a *mySQL* database
 
