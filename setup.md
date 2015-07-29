@@ -1,8 +1,5 @@
 # Getting started
 
-At the start of any analysis using the *hctsa* package, required directories must be added to the *Matlab* path using the `startup` script.
-This function keeps track of functions for operations, for analysis, third-party toolboxes, and time-series data files, which could be easily altered at any point.
-
 ## Installing the *hctsa* code package
 
 The *hctsa* package requires some preliminary set up to work with a *mySQL* database, described [here](mysql_database.md):
@@ -18,7 +15,7 @@ After the database is set up, the rest of the package can be installed by runnin
 
 This section contains additional details about each of these steps.
 
-Note that the above steps are one-off installation steps; once the software is installed and compiled, a typical workflow will simply involve opening Matlab, running the `startup.m` script (which adds all paths required for the *hctsa* software), and then working within Matlab from any desired directory.
+Note that the above steps are one-off installation steps; once the software is installed and compiled, a typical workflow will simply involve opening Matlab, running the `startup` script (which adds all paths required for the *hctsa* software), and then working within Matlab from any desired directory.
 
 ## Importing a time-series dataset
 
