@@ -15,8 +15,8 @@ The suite of plotting and analysis tools that we provide with *hctsa* by default
 
 Available plotting and analysis functions include:
 * Visualizing structure in the data matrix using `TS_plot_DataMatrix` ([described here](visualizing_the_data_matrix.md)).
-* Visualizing the time-series traces using `TS_plot_TimeSeries`
+* Visualizing the time-series traces using `TS_plot_TimeSeries` ([described here](plotting_the_time_series.md))
 * Visualizing low-dimensional structure in the data using `TS_plot_pca` ([described here](low_dim.md)).
 * Exploring similar matches to a target time series using `TS_SimSearch`.
 
-Note that, for classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](retrieving.md).
+Note that, for classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](retrieving.md); this group label information is stored in the local **HCTSA** file, and used by default in the various plotting and analysis functions provided.
