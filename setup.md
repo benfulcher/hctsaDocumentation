@@ -28,6 +28,13 @@ After initializing a **HCTSA_loc.mat** file, feature sets are [computed within M
 
 After the computation is complete for a time-series dataset, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).
 
+
+
+---
+
+
+---
+
 ## 2. Installing the *hctsa* code package to work with a *mySQL* database
 
 The *hctsa* package requires some preliminary set up to work with a *mySQL* database, described [here](mysql_database.md):
