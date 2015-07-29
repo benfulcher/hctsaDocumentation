@@ -12,5 +12,8 @@ Users can be creative in their exploration and analysis of the data, or draw upo
 After retrieving first main component of an *hctsa* analysis involves filtering and normalizing the data using `TS_normalize`, described [here](filtering_and_normalizing.md), which produces a file called **HCTSA_N.mat**.
 Information about the similarity of pairs of time series and operations can be computed using `TS_cluster`, which stores this information in **HCTSA_N.mat**.
 The suite of plotting and analysis tools that we provide with *hctsa* by default work with this normalized data, stored in **HCTSA_N.mat**.
+These include:
+* Visualizing structure in the data matrix using `TS_plot_DataMatrix` ([here](visualizing_the_data_matrix.md))
+* 
 
 Note that, for classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](retrieving.md).
