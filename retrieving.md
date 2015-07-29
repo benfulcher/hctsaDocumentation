@@ -14,7 +14,7 @@ Running the code in this way, using the ‘all’ tag, ensures that the full ran
 
 The database structure provides much flexibility in storing and indexing the large datasets that can be analyzed using the *hctsa* approach, however the process of retrieving and storing large amounts of data from a database can take a considerable amount of time, depending on database latencies.
 
-## Grouping elements using `TS_LabelGroups`
+# Grouping elements using `TS_LabelGroups`
 <!--{#sec:grouping_variables}-->
 
 Highly comparative analyses often involve classification tasks, in which each observation is assigned a (numeric) class label.
