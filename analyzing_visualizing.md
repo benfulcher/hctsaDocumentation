@@ -9,6 +9,8 @@ Setting up the problem, guiding the methodology, and interpreting the results re
 
 Users can be creative in their exploration and analysis of the data, or draw upon a library of basic analytic techniques that we have developed.
 
+For classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](retrieving.md).
+
 The first main component of an *hctsa* analysis involves filtering and normalizing the data using `TS_normalize`, described [here](filtering_and_normalizing.md), which produces a file called **HCTSA_N.mat**.
 Information about the similarity of pairs of time series and operations can be computed using `TS_cluster`, which stores this information in **HCTSA_N.mat**.
 The suite of plotting and analysis tools that we provide with *hctsa* by default work with this normalized data, stored in **HCTSA_N.mat**.
