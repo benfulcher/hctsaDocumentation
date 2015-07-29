@@ -7,8 +7,8 @@ The result can be used to perform a wide variety of highly comparative analyses,
 The types of analysis employed should the suit specific time-series analysis tasks of interest.
 Setting up the problem, guiding the methodology, and interpreting the results requires strong scientific input that should draw on domain knowledge, including the questions asked of the data, experience performing data analysis, and statistical considerations.
 
-Users can be creative in their exploration and analysis of the data, or draw upon a library of analytic techniques that we have developed.
+Users can be creative in their exploration and analysis of the data, or draw upon a library of basic analytic techniques that we have developed.
 
-The two main components of an *hctsa* analysis pipeline are:
-
-2. Filtering and normalizing the data using `TS_normalize`, described [here](filtering_and_normalizing.md).
+The first main component of an *hctsa* analysis involves filtering and normalizing the data using `TS_normalize`, described [here](filtering_and_normalizing.md), which produces a file called **HCTSA_N.mat**.
+Information about the similarity of pairs of time series and operations can be computed using `TS_cluster`, which stores this information in **HCTSA_N.mat**.
+The suite of plotting and analysis tools that we provide with *hctsa* by default work with this normalized data, stored in **HCTSA_N.mat**.
