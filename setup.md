@@ -1,5 +1,7 @@
 # Getting started
 
+The *hctsa* package can either be used within Matlab for analysis of datasets
+
 ## Installing the *hctsa* code package
 
 The *hctsa* package requires some preliminary set up to work with a *mySQL* database, described [here](mysql_database.md):
