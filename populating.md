@@ -1,37 +1,12 @@
 # Populating the database with time series and operations using `SQL_add`
 <!--{#sec:PopulatingDatabase}-->
 
-## Overview
-
-As explained [above](database_structure.md), the *mySQL* database is structured into 3 parts:
-
-1. *Master Operations* specify pieces of code (Matlab functions) and their inputs to be computed. Taking in a time series, master operations often generate a large number of outputs, each of which can be identified with an *operation* (or *feature*).
-2. *Operations* (or *features*) are a single number summarizing some measure of structure in a time series. In *hctsa*, each operation links to an output from a piece of evaluated code (a *master operation*).
-3. *Time series* are univariate, uniformly sampled, time-ordered measurements. The data, and keyword labels for each time series are stored in the database.
-
-These three different objects are summarized below:
-
-| | **Master Operation** | **Operation** | **Time Series** |
-|:-------------:|:-------------:|:-------------:|
-| **Summary**: | Code and inputs to execute | Single feature | Univariate data|
-| **Example**: | `CO_AutoCorr(x,1:5,'TimeDomain')` | `AC_1` | [1.2, 33.7, -0.1, ...] |
-| **Database identifier**: | mop\_id | op\_id | ts\_id |
-| **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
-
-In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (*x*) at lags 1, 2, ..., 5.
-Each operation is a single number that draws on this set of outputs, for example, the autocorrelation at lag 1, which is named `AC_1`, for example.
-Details of how to name, label, and structure these dependencies are provided in this section.
-
-
-A given highly comparative time-series analysis requires the user to specify a set of code to evaluate (*master operations*), and their associated individual outputs (*operations*), and a time-series database (*time series*).
-We provide a default library of approximately 9000 *operations* (derived from approximately 1300 unique *master operations*) with the *hctsa* package.
-This can be customized, and additional pieces of code can also be added to the repository, in addition to adding the time series making up the dataset to be analyzed.
-This is achieved using `SQL_add` commands, as described below.
+When linking Matlab to a *mySQL* database, metadata associated with time series, operations, and master operations, as well as the results of computations are all stored in an indexed database.
+Adding master operations, operations, and time series to the database can be achieved using the `SQL_add` function, as described below.
 
 ## Using `SQL_add`
 
-Adding time series, master operations, and operations to the database are achieved using the function `SQL_add`.
-It has two key inputs that specify:
+`SQL_add` has two key inputs that specify:
 
 1. Whether to import a set of time series (specify `‘ts’`), a set of operations (specify `‘ops’`), or a set of master operations (specify `‘mops’`),
 2. The name of the input text file that contains appropriately-formatted information about the time series, master operations, or operations to be imported.
@@ -44,3 +19,60 @@ Users wishing to add additional features using custom time-series code or differ
 ***REMINDER***: Manually editing the database, including adding or deleting rows, is very dangerous, as it can create inconsistencies and errors in the database structure.
 Adding time series and operations to the database should only be done using `SQL_add` which sets up the **Results** table of the database and ensures that the indexing relationships in the database
 are properly maintained.
+
+### *Example*: Adding our library of master operations to the database
+<!--{#sec:addingMops}-->
+
+By default, the `install` script populates the database with the default library of highly comparative time-series analysis code.
+The formatted input file specifying these pieces of code and their input parameters is **INP_mops.txt** in the **Database** directory of the repository.
+This step can be reproduced using the following command:
+
+    SQL_add('mops','INP_mops.txt');
+
+Once added, each master operation is assigned a unique integer, **mop_id**, that can be used to identify it.
+For example, when adding individual operations, the **mop_id** is used to map each individual operation to a corresponding master operation.
+
+#### Adding new pieces of executable code to the database
+
+New functions and their input parameters to execute can be added to the database using `SQL_add` in the same way as described above.
+For example, lines corresponding to the new code can be added to the current **INP_mops.txt** file, or by generating a new input file and running `SQL_add` on the new input file.
+Once in the database, the software will then run the new pieces of code.
+Note that `SQL_add` checks for repeats that already exist in the database, so that duplicate database entries cannot be added with `SQL_add`.
+
+New code added to the database should be checked for the following:
+1. Output is a real number or structure (and uses an output of NaN to assign all outputs to a NaN).
+2. The function is accessible in the Matlab path.
+3. Output(s) from the function have matching operations (or features), which also need to be [added to the database](adding_operations.md).
+
+Corresponding operations (or features) will then need to added separately, to link to the structured outputs of master operations.
+
+### *Example*: Adding our library of operations to the database
+Operations can be added to the *mySQL* database using an [appropriately-formatted input file](input_files.md), such as `INP_ops.txt`, as follows:
+
+    SQL_add('ops','INP_ops.txt');
+
+Every operation added to the database will be given a unique integer identifier, **op_id**, which provides a common way of retrieving specific operations from the database.
+
+Note that after (hopefully successfully) adding the operations to the database, the `SQL_add` function indexes the operation keywords to an **OperationKeywords** table that produces a unique identifier for each keyword, and another linking table that allows operations with each keyword to be retrieved efficiently.
+
+### Adding time series to the database
+
+After setting up a database with a library of time-series features, the next task is to add a dataset of time series to the database.
+It is up to the user whether to keep all time-series data in a single database, or have a different database for each dataset.
+
+Time series are added using the same function used to add master operations and operations to the database, `SQL_add`, which imports time series data (stored in time-series data files) and associated keyword metadata (assigned to each time series) to the database.
+
+Time series can be indexed by assigning keywords to them (which are stored in the **TimeSeriesKeywords** table and associated index table, **TsKeywordsRelate** of the database).
+
+When added to the *mySQL* database, every time series added to the database is assigned a unique integer identifier, **ts\_id**, which can be used to retrieve specific time series from the database.
+
+## `SQL_add` syntax
+Adding a set of time series to the database requires an [appropriately formatted input file](input_files.md), following either of the following:
+
+    % Add time series (embedded in a .mat file):
+    SQL_add('ts','INP_ts.mat');
+
+    % Add time series (stored in data files) using an input text file:
+    SQL_add('ts','INP_ts.txt');
+
+We provide an example input file in the **Database** directory as **INP_test_ts.txt**, which can be added to the database, following the syntax above, using `SQL_add('ts','INP_test_ts.txt')`, as well as a sample .mat file input as **INP_test_ts.mat**, which can be added as `SQL_add('ts','INP_test_ts.mat')`.
