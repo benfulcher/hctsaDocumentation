@@ -7,13 +7,13 @@ The *hctsa* package can either be used in two ways:
 
 See instructions below for which of these options best suits your use of the *hctsa* package.
 
-## 1. Installing the *hctsa* package WITHOUT a link to a *mySQL* database
-This is the simplest way to get the *hctsa* working on a time-series dataset.
+## 1. Installing the *hctsa* package *without* a link to a *mySQL* database
+This is the simplest way to get the *hctsa* up and running.
 The *hctsa* package can be installed by running the `install` script, which adds the required paths to dependent toolboxes, and compiles mex binaries to work on your system.
-This is a one-off installation step; future work can involve simply loading the paths (using the `startup` script).
+Note that this is a one-off installation step; future use can start by simply loading the paths required by the *hctsa* package using the `startup` script.
 
 ### Initializing a time-series dataset using `TS_init`
-When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the time series and operations, and the results of the computation.
+When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the time series and operations, and the results of the time-series analysis computation.
 This can be achieved using the `TS_init` function, whose arguments specify the input files for this information.
 An example usage is as follows:
 ```
@@ -29,7 +29,6 @@ After initializing a **HCTSA_loc.mat** file, computing all operations on all tim
 After the computation is complete, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).
 
 ---
-
 
 ---
 
