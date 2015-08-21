@@ -13,8 +13,8 @@ The *hctsa* package can be installed by running the `install` script, which adds
 Note that this is a one-off installation step; future use can start by simply loading the paths required by the *hctsa* package using the `startup` script.
 
 ### Initializing a time-series dataset using `TS_init`
-When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the time series and operations, and the results of the time-series analysis computation.
-This can be achieved using the `TS_init` function, whose arguments specify the input files for this information.
+When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the time series and operations, and the results of applying all operations to all time series.
+This can be achieved using the `TS_init` function, whose arguments specify the [input files][inputFiles.md] for this information.
 An example usage is as follows:
 ```
 TS_init('INP_test_ts.mat');
