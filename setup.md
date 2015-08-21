@@ -10,7 +10,7 @@ See instructions below for which of these options best suits your use of the *hc
 ## 1. Installing the *hctsa* package *without* a link to a *mySQL* database
 This is the simplest way to get the *hctsa* up and running.
 The *hctsa* package can be installed by running the `install` script, which adds the required paths to dependent toolboxes, and compiles mex binaries to work on your system.
-Once this one-off installation step is complete, you're ready to go! (You can optionally compile TISEAN routines for your system to have access to additional operations). Future use can start by simply loading the paths required by the *hctsa* package using the `startup` script.
+Once this one-off installation step is complete, you're ready to go! (NB: you can optionally [compile TISEAN routines](compiling_tisean.md) for your system to have access to additional operations). Future use can start by simply loading the paths required by the *hctsa* package using the `startup` script.
 
 ### Initializing a time-series dataset using `TS_init`
 When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the time series and operations, and the results of applying all operations to all time series.
