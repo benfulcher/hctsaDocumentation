@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [Setting up the mySQL database](mysql_database.md)
 * [Installing and setting up](setup.md)
    * [Setting up the mySQL database](mysql_database.md)
    * [The database structure](database_structure.md)
