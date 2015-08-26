@@ -73,7 +73,7 @@ When the time comes to perform computations on data using the methods in the dat
 For the above example, Matlab will attempt to run both `CO_tc3(y,1)` and `ST_length(x)`, and thus the functions `CO_tc3.m` and `ST_length.m` must be in the Matlab path.
 Recall that the script `startup.m`, which should be run at the start of each session using *hctsa*, handles the addition of paths required for the default code library.
 
-## Adding custom operations
+## Adding custom operations (features)
 
 The input file, e.g., `INP_ops.txt` (in the **Database** directory of the repository) should contain a row for every operation, and use labels that correspond to master operations.
 An example excerpt from such a file is below:
@@ -89,7 +89,7 @@ An example excerpt from such a file is below:
 ```
 
 The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace).
-White space is used to separate the three entries on each line of the input file.
+Whitespace is used to separate the three entries on each line of the input file.
 In this example, the master operation labeled `CO_tc3_y_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named **'length'** here.
 The two keywords 'correlation' and 'nonlinear' are added to the `CO_tc3_1` operations, while the keywords ‘raw’ and ‘lengthDependent’ are added to the operation called `length`.
 These keywords can be used to organize and filter the set of operations used for a given analysis task.

@@ -4,16 +4,24 @@
 When linking Matlab to a *mySQL* database, metadata associated with time series, operations, and master operations, as well as the results of computations are all stored in an indexed database.
 Adding master operations, operations, and time series to the database can be achieved using the `SQL_add` function, as described below.
 
+The following table summarizes the terminology used for each type of object in hctsa land:
+
+| | **Master Operation** | **Operation** | **Time Series** |
+|:-------------:|:-------------:|:-------------:|
+| **Database identifier**: | mop\_id | op\_id | ts\_id |
+| **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
+
+
 ## Using `SQL_add`
 
 `SQL_add` has two key inputs that specify:
 
 1. Whether to import a set of time series (specify `‘ts’`), a set of operations (specify `‘ops’`), or a set of master operations (specify `‘mops’`),
-2. The name of the input text file that contains appropriately-formatted information about the time series, master operations, or operations to be imported.
+2. The name of the input file that contains [appropriately-formatted information](input_files.md) about the time series, master operations, or operations to be imported.
 
-In this section, we describe how to use `SQL_add` to add [master operations](adding_master_operations.md), [operations](adding_operations.md), and [time series](adding_time_series.md) to the database.
+In this section, we describe how to use `SQL_add` to add master operations, operations, and time series to the database.
 
-Users wishing to run the default *hctsa* code library their own time-series dataset will only need to [add time series](adding_time_series.md) to the database, as the full operation library is added by the `install.m` script.
+Users wishing to run the default *hctsa* code library their own time-series dataset will only need to add time series to the database, as the full operation library is added by default by the `install.m` script.
 Users wishing to add additional features using custom time-series code or different types of inputs to existing code files, can either edit the default *INP_ops.txt* and *INP_mops.txt* files provided with the repository, or create new input files for their custom analysis methods (as explained for [operations](adding_operations.md) and [master operations](adding_master_operations.md)).
 
 ***REMINDER***: Manually editing the database, including adding or deleting rows, is very dangerous, as it can create inconsistencies and errors in the database structure.
@@ -66,7 +74,6 @@ Time series can be indexed by assigning keywords to them (which are stored in th
 
 When added to the *mySQL* database, every time series added to the database is assigned a unique integer identifier, **ts\_id**, which can be used to retrieve specific time series from the database.
 
-## `SQL_add` syntax
 Adding a set of time series to the database requires an [appropriately formatted input file](input_files.md), following either of the following:
 
     % Add time series (embedded in a .mat file):

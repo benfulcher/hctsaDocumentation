@@ -14,25 +14,18 @@ These three different objects are summarized below:
 |:-------------:|:-------------:|:-------------:|
 | **Summary**: | Code and inputs to execute | Single feature | Univariate data|
 | **Example**: | `CO_AutoCorr(x,1:5,'TimeDomain')` | `AC_1` | [1.2, 33.7, -0.1, ...] |
-| **Database identifier**: | mop\_id | op\_id | ts\_id |
-| **Input to** `SQL_add`: | 'mops' | 'ops' | 'ts' |
 
 In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (*x*) at lags 1, 2, ..., 5.
 Each operation is a single number that draws on this set of outputs, for example, the autocorrelation at lag 1, which is named `AC_1`, for example.
 Details of how to name, label, and structure these dependencies are provided in this section.
 
-
 A given highly comparative time-series analysis requires the user to specify a set of code to evaluate (*master operations*), and their associated individual outputs (*operations*), and a time-series database (*time series*).
-We provide a default library of approximately 9000 *operations* (derived from approximately 1300 unique *master operations*) with the *hctsa* package.
+We provide a default library of over 9,000 *operations* (derived from approximately 1,300 unique *master operations*) with the *hctsa* package.
 This can be customized, and additional pieces of code can also be added to the repository, in addition to adding the time series making up the dataset to be analyzed.
-
-
 
 Assigning keywords to time series makes it easier to retrieve a set of time series with a given set of keywords for analysis, and to group time series annotated with different keywords for classification tasks.
 
-
-In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters, e.g., `CO_AutoCorr(x)`, which runs the `CO_AutoCorr` function on an input time series, *x*.
-
+As described above, in our system, a *master operation* refers to a piece of Matlab code and a set of input parameters.
 Valid outputs from a master operation are:
 1. A real number,
 2. A structure containing real numbers,
