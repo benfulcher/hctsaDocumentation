@@ -23,41 +23,7 @@ Running this code will retrieve data for time series with **ts_id**s 1 and 3 and
 When calculations are complete and one wishes to analyze all of the data stored in the database (not just NULL entries requiring computation), the third input should be set to ‘all’ to retrieve all entries in the **Results** table of the database, as described [later](retrieving.md).
 
 `SQL_retrieve` writes to a local Matlab file, **HCTSA_loc.mat**, that contains the data retrieved from the database.
-It contains the following elements:
 
--   **TS_DataMat** is an *n* x *m* matrix corresponding to the *n* time series and *m* operations retrieved from the database. Elements of **TS\_DataMat** correspond to the result of applying each operation to each time series.
-
--   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output. Quality labels are described below.
-
--   **TS_CalcTimes** is an *n* x *m* matrix containing calculation times for each operation output. Note that for operations that point to a structure produced by a master operation operations, the calculation time stored is that taken to compute the entire master function from which they were derived.
-
--   **TimeSeries** is a structure array containing metadata about the time series retrieved (corresponding to rows of the **TS_** matrices).
-
--   **Operations** is a structure array containing metadata about the operations retrieved (columns of the **TS_** matrices).
-
--   **MasterOperations** is a structure array containing metadata about the master operations retrieved, corresponding to the code evaluated that is referenced by each operation.
-
-NULL entries in the database are converted to NaN entries in the local Matlab matrices.
-
-## Quality labels
-
-*Quality labels* are used to indicate when operations take non-real values, or when fatal errors were encountered.
-Quality labels are stored in the **Quality** column of the **Results** table in the *mySQL* database, and in local Matlab files as the **TS_Quality** matrix.
-
-When the quality label is nonzero, this indicates that a *special-valued output* occurred.
-In this case, the output value of the operation is set to zero, as a convention, and the quality label codes the special output value:
-
-| **Quality label** | **Description** |
-|:-------------:|:-------------:|
-| 0 | No problems with calculation. Output was a real number. |
-| 1 | A fatal error was encountered. |
-| 2 | Output of the code was **NaN**.|
-| 3 | Output of the code was **Inf**. |
-| 4 | Output of the code was **-Inf** |
-| 5 | Output had a non-zero imaginary component |
-| 6 | Output was empty (e.g., `[]`) |
-| 7 | Field specified for this operation did not exist in the master operation output structure |
-     
 <!-- **Quality labels**. These are stored in the **Quality** column of
   the **Results** table in the *mySQL* database (and
   locally in **TS_Quality** matrix). Values are used to indicate

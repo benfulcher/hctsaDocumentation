@@ -73,7 +73,7 @@ When the time comes to perform computations on data using the methods in the dat
 For the above example, Matlab will attempt to run both `CO_tc3(y,1)` and `ST_length(x)`, and thus the functions `CO_tc3.m` and `ST_length.m` must be in the Matlab path.
 Recall that the script `startup.m`, which should be run at the start of each session using *hctsa*, handles the addition of paths required for the default code library.
 
-## Adding custom operations (features)
+## Adding operations (features)
 
 The input file, e.g., `INP_ops.txt` (in the **Database** directory of the repository) should contain a row for every operation, and use labels that correspond to master operations.
 An example excerpt from such a file is below:
