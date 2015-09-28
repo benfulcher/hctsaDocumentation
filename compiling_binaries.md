@@ -22,10 +22,10 @@ If you are running Linux or Mac and running highly comparative time-series analy
 In the command line (**not within Matlab**), after navigating to the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
 
 ```bash
-    $ ./configure
-    $ make clean
-    $ make
-    $ make install
+$ ./configure
+$ make clean
+$ make
+$ make install
 ```
 
 This should install the *TISEAN* binaries in your **~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr`). Additional information about the *TISEAN* installation process is provided [on the *TISEAN* website](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html).
@@ -43,9 +43,9 @@ The `startup.m` code also adds the **DYLD_LIBRARY_PATH**, which is also required
 If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv('PATH')` in Matlab), then you will have to add this path manually.
 You can test that Matlab can see the *TISEAN* binaries by typing, for example, the following into Matlab:
 
-        >> !which nstat_z
+        >> !which poincare
 
-If Matlab’s system paths are set up correctly, this command should return the path to your compiled *TISEAN* binary, `nstat_z`.
+If Matlab’s system paths are set up correctly, this command should return the path to your compiled *TISEAN* binary, `poincare`.
 
 ### Installing *TISEAN* on Windows
 

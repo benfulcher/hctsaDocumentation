@@ -2,11 +2,11 @@
 
 ## Overview
 
-As explained [above](database_structure.md), the *mySQL* database is structured into 3 parts:
+The hctsa framework contains three basic objects:
 
-1. *Master Operations* specify pieces of code (Matlab functions) and their inputs to be computed. Taking in a time series, master operations often generate a large number of outputs, each of which can be identified with an *operation* (or *feature*).
-2. *Operations* (or *features*) are a single number summarizing some measure of structure in a time series. In *hctsa*, each operation links to an output from a piece of evaluated code (a *master operation*).
-3. *Time series* are univariate, uniformly sampled, time-ordered measurements. The data, and keyword labels for each time series are stored in the database.
+1. *Master Operations* specify pieces of code (Matlab functions) and their inputs to be computed. Taking in a single time series, master operations can generate a large number of outputs as a Matlab structure, each of which can be identified with a single *operation* (or 'feature').
+2. *Operations* (or 'features') are a single number summarizing some measure of structure in a time series. In *hctsa*, each operation links to an output from a piece of evaluated code (a *master operation*).
+3. *Time series* are univariate, uniformly sampled, time-ordered measurements.
 
 These three different objects are summarized below:
 
@@ -17,37 +17,26 @@ These three different objects are summarized below:
 
 In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (*x*) at lags 1, 2, ..., 5.
 Each operation is a single number that draws on this set of outputs, for example, the autocorrelation at lag 1, which is named `AC_1`, for example.
-Details of how to name, label, and structure these dependencies are provided in this section.
 
-A given highly comparative time-series analysis requires the user to specify a set of code to evaluate (*master operations*), and their associated individual outputs (*operations*), and a time-series database (*time series*).
-We provide a default library of over 9,000 *operations* (derived from approximately 1,300 unique *master operations*) with the *hctsa* package.
+In the hctsa framework, these objects are stored as structure arrays, containing all of their associated keywords and metadata (and actual time-series data in the case of time series).
+
+The user must specify a set of code to evaluate (*master operations*), their associated individual outputs to measure (*operations*), and a set of time series to evaluate the features on (*time series*).
+
+We provide a default library of approximately 9,000 *operations* (derived from approximately 1,300 unique *master operations*).
 This can be customized, and additional pieces of code can also be added to the repository, in addition to adding the time series making up the dataset to be analyzed.
 
-Assigning keywords to time series makes it easier to retrieve a set of time series with a given set of keywords for analysis, and to group time series annotated with different keywords for classification tasks.
+### The results of a hctsa analysis
+Having specified a set of Master operations, operations, and time series, the results of computing these functions in the time series data are stored in three matrices:
 
-As described above, in our system, a *master operation* refers to a piece of Matlab code and a set of input parameters.
-Valid outputs from a master operation are:
-1. A real number,
-2. A structure containing real numbers,
-3. **NaN** to indicate that the input time series is not appropriate for this code.
+-   **TS_DataMat** is the *n* x *m* data matrix containing the results of applying *m* operations to the *n* time series.
 
-The (potentially many) outputs from a master operation can thus be mapped to individual operations (or features), which are single real numbers summarizing a time series that make up individual columns of the resulting data matrix.
+-   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output (coding different outputs such as errors or NaNs). Quality labels are described in the section below.
+
+-   **TS_CalcTime** is an *n* x *m* matrix containing calculation times for each operation output. Note that the calculation time stored is for the master operation.
 
 ## Working with HCTSA files
-Each `HCTSA_*.mat` file includes the following key elements:
-
--   **TS_DataMat** is an *n* x *m* matrix corresponding to the *n* time series and *m* operations retrieved from the database. Elements of **TS_DataMat** correspond to the result of applying each operation to each time series.
-
--   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output. Quality labels are described in the section below.
-
--   **TS_CalcTime** is an *n* x *m* matrix containing calculation times for each operation output. Note that for operations that point to a structure produced by a master operation operations, the calculation time stored is that taken to compute the entire master function from which they were derived.
-
--   **TimeSeries** is a structure array containing information about the time series retrieved (corresponding to rows of the **TS_** matrices).
-
--   **Operations** is a structure array containing information about the operations retrieved (columns of the **TS_** matrices).
-
--   **MasterOperations** is a structure array containing information about the master operations retrieved, corresponding to the code evaluated that is referenced by each operation.
-
+Each `HCTSA_*.mat` file includes the structure arrays described above: for **TimeSeries** (corresponding to the rows of the **TS_** matrices), **Operations** (corresponding to columns of the **TS_** matrices), and **MasterOperations**, corresponding to the code evaluated to compute the operations.
+In addition, the results are stored as above: **TS_DataMat**, **TS_Quality**, and **TS_CalcTime**.
 
 ## Quality labels
 

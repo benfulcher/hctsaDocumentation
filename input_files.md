@@ -57,6 +57,15 @@ Note that keywords should be separated only by commas and not whitespace.
 
 
 ## Adding master operations
+In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters.
+
+Valid outputs from a master operation are:
+1. A single real number,
+2. A structure containing real numbers,
+3. **NaN** to indicate that the input time series is not appropriate for this code.
+
+The (potentially many) outputs from a master operation can thus be mapped to individual operations (or features), which are single real numbers summarizing a time series that make up individual columns of the resulting data matrix.
+
 Two example lines from the input file, **INP_mops.txt**, are as follows:
 
     CO_tc3(y,1)     CO_tc3_y_1
