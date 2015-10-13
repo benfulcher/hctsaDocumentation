@@ -1,20 +1,19 @@
 # Compiling binaries
 
 Some external code packages require compiled binary code to be used.
-Compilation of the mex code is handled as part of the `install.m` script, but the *TISEAN* package binaries will need to be compiled separately in the commandline.
+Compilation of the mex code is handled by `compile_mex` as part of the `install` script, but the *TISEAN* package binaries need to be compiled separately in the commandline.
 
 ## Compiling mex code
-<!--{#sec:CompilingMexCode}-->
 
-Many of the operations (especially external code packages) rely on mex functions, pieces of code not written in Matlab, that need to be compiled to run natively on each system architecture.
+Many of the operations (especially external code packages) rely on mex functions (pieces of code written in C or fortran), that need to be compiled to run natively on a given system architecture.
 To ensure that as many operations as possible run successfully on your data, you should compile these mex functions for your system.
 This requires working compilers (e.g., gcc, g++) to be installed on your system, which can be configured using `mex -setup` (cf. `doc mex` for more information).
+
 Once mex is set up, the mex functions used in the time-series code repository can be compiled by navigating to the **Toolboxes** directory and then running `compile_mex`.
 
 ## Compiling the *TISEAN* binaries
-<!--{#sec:CompilingTisean}-->
 
-Some operations rely on the [*TISEAN* nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html), which Matlab accesses via `system` commands, so the *TISEAN* binaries ***cannot*** be installed from within Matlab, but instead must be installed from the command line.
+Some operations rely on the [*TISEAN* nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html), which Matlab accesses via the terminal using `system` commands, so the *TISEAN* binaries ***cannot*** be installed from within Matlab, but instead must be installed from the command line.
 If you are running Linux or Mac and running highly comparative time-series analysis, we will that you are familiar with the command line, while those running Windows will require an alternate method to install *TISEAN*, as explained below.
 
 ### Installing *TISEAN* on Linux or Mac
