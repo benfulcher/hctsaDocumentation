@@ -1,4 +1,4 @@
-# Structure of *hctsa*
+# Structure of the *hctsa* package
 
 ## Overview
 
