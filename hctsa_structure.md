@@ -34,7 +34,7 @@ Having specified a set of master operations, operations, and time series, the re
 
 -   **TS_CalcTime** is an *n* x *m* matrix containing calculation times for each operation output. Note that the calculation time stored is for the corresponding master operation.
 
-## Working with HCTSA files
+### Working with HCTSA files
 Each `HCTSA_*.mat` file includes the structure arrays described above: for **TimeSeries** (corresponding to the rows of the **TS_** matrices), **Operations** (corresponding to columns of the **TS_** matrices), and **MasterOperations**, corresponding to the code evaluated to compute the operations.
 In addition, the results are stored as above: **TS_DataMat**, **TS_Quality**, and **TS_CalcTime**.
 
