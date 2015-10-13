@@ -2,9 +2,9 @@
 
 * [Introduction](README.md)
 * [Installing and setting up](setup.md)
+   * [Working within Matlab](within_matlab.md)
    * [Compiling binaries](compiling_binaries.md)
    * [hctsa structure](hctsa_structure.md)
-* [Working within Matlab](within_matlab.md)
 * [Working with the mySQL database](overview_mysql_database.md)
    * [Setting up the mySQL database](setup_mysql_database.md)
    * [The database structure](database_structure.md)
