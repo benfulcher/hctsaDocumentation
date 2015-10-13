@@ -18,7 +18,7 @@ If you are running Linux or Mac, we will assume that you are familiar with the c
 
 ### Installing *TISEAN* on Linux or Mac
 
-In the command line (**not within Matlab**), after navigating to the **Toolboxes/Tisean_3.0.1** directory of the repository, run the following chain of commands:
+In the command line (**not within Matlab**), navigate to the **Toolboxes/Tisean_3.0.1** directory of the repository, then run the following chain of commands:
 
 ```bash
 $ ./configure
@@ -30,7 +30,7 @@ $ make install
 This should install the *TISEAN* binaries in your **~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr`). Additional information about the *TISEAN* installation process is provided [on the *TISEAN* website](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html).
 
 If installation was successful then you should be able to access the newly-compiled binaries from the commandline, e.g., typing the command `which poincare` should return the path to the *TISEAN* function `poincare`.
-Otherwise, you should check that this directory is in your path, e.g., by adding
+Otherwise, you should check that the install directory is in your system path, e.g., by adding the following:
 
         export PATH=$PATH:$HOME/bin
 
@@ -53,4 +53,4 @@ There are two options:
 
 1. **Install [Cygwin](http://www.cygwin.com) on your machine**. Cygwin provides a Linux distribution-like environment on Windows. Use this environment to compile and install TISEAN (as per the instructions above for Linux or Mac). Matlab will then also need to be launched from Cygwin, using the command: `matlab &`. This instance of Matlab should then be able to call `system` commands through cygwin, including the ability to access the *TISEAN* binaries.
 
-2. **Sacrifice operations that rely on *TISEAN***. In total, *TISEAN*-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods. For example, you can retrieve just operation ids (**op_id**) that do *not* have the keyword 'tisean' using the `SQL_getids()` function: `op_ids = SQL_getids('ops',[],{},{'tisean'});` -- which can be added to the [runscript](computing_runscripts.md), for example.
+2. **Sacrifice operations that rely on *TISEAN***. In total, *TISEAN*-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods.
