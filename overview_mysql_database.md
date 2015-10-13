@@ -4,7 +4,7 @@ When running large-scale *hctsa* computations, it can be useful to set up a *myS
 
 The *hctsa* software comes with this functionality, allowing a more powerful, distributed way to compute and store results of a large-scale computation.
 
-This section outlines the steps involved in setting up, and running hctsa computations using a linked *mySQL* database.
+This chapter outlines the steps involved in setting up, and running hctsa computations using a linked *mySQL* database.
 
 ## Installing the *hctsa* code package to work with a *mySQL* database
 
