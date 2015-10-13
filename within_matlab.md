@@ -1,4 +1,4 @@
-# Running *hctsa* within Matlab
+# An example analysis using *hctsa* in Matlab
 
 For small-scale, or non-distributed *hctsa* computations, the software can be run completely within Matlab (without linked to an external database).
 
