@@ -2,7 +2,7 @@
 
 ## Overview
 
-The hctsa framework contains three basic objects:
+The hctsa framework consists of three basic objects:
 
 1. *Master Operations* specify pieces of code (Matlab functions) and their inputs to be computed. Taking in a single time series, master operations can generate a large number of outputs as a Matlab structure, each of which can be identified with a single *operation* (or 'feature').
 2. *Operations* (or 'features') are a single number summarizing some measure of structure in a time series. In *hctsa*, each operation links to an output from a piece of evaluated code (a *master operation*).
