@@ -4,6 +4,7 @@
 * [Installing and setting up](setup.md)
    * [Compiling binaries](compiling_binaries.md)
    * [hctsa structure](hctsa_structure.md)
+* [Working within Matlab](within_matlab.md)
 * [Working with the mySQL database](overview_mysql_database.md)
    * [Setting up the mySQL database](setup_mysql_database.md)
    * [The database structure](database_structure.md)
@@ -14,7 +15,6 @@
    * [Cycling through computations using runscripts](computing_runscripts.md)
    * [Clearing or removing data](clearing_or_removing_data.md)
    * [Retrieving data from the database](retrieving.md)
-* [Working within Matlab](within_matlab.md)
 * [Running hctsa computations](calculating.md)
    * [Input files](input_files.md)
    * [Inspecting errors](dealing_with_errors.md)
@@ -27,3 +27,4 @@
    * [Low dimensional representation](low_dim.md)
    * [Finding nearest neighbors](simsearch.md)
 * [Error handling and maintenance](maintenance.md)
+
