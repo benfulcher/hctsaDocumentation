@@ -15,7 +15,7 @@ Once this one-off installation step is complete, you're ready to go! (NB: to als
 Future use of the package can begin by simply loading the paths required by the *hctsa* package using the `startup` script.
 
 ### Initializing a time-series dataset using `TS_init`
-When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the time series and operations, and the results of applying all operations to all time series.
+When running *hctsa* within Matlab, the first step of any analysis is to initialize a **HCTSA_loc.mat** file, which contains all of the information about the set of time series and operations in your analysis, and stores the results of applying all operations to all time series.
 This can be achieved using the `TS_init` function, whose arguments specify the [input files](inputFiles.md) for this information.
 An example usage is as follows:
 ```
@@ -26,11 +26,11 @@ By default, `TS_init` will load our full library of operations as features (whic
 
 ### Computation, processing, and analysis
 
-After initializing a **HCTSA_loc.mat** file, computing all operations on all time series is done [within Matlab](computing_and_writing_back.md) using `TS_compute`, which stores the results back to this local file.
+After initializing an **HCTSA_loc.mat** file, [computing all operations](computing_and_writing_back.md) on all time series is done using `TS_compute`, which stores the results back to this local file.
 
-While this is running, you may like to get a feel for how the results will be structured, as local Matlab files containing matrices (for storing the results) and structure arrays (for storing information about the time-series data and operations), [here](hctsa_structure.md).
+The results are structured in local Matlab files containing matrices (that store the results of the computations) and structure arrays (that store information about the time-series data and operations), as described [here](hctsa_structure.md).
 
-After the computation is complete, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).
+After the computation is complete, [a range of processing, analysis, and plotting functions](analyzing_visualizing.md) are also provided with the software.
 
 ---
 
