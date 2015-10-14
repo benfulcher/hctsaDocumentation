@@ -7,8 +7,8 @@
    * [Working within Matlab](within_matlab.md)
 * [Running hctsa computations](calculating.md)
    * [Input files](input_files.md)
-   * [Inspecting errors](dealing_with_errors.md)
    * running_computations.md
+   * [Inspecting errors](dealing_with_errors.md)
 * [Analyzing and visualizing results](analyzing_visualizing.md)
    * [Assigning group labels to data](grouping.md)
    * [Filtering and normalizing](filtering_and_normalizing.md)
