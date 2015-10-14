@@ -1,7 +1,6 @@
 # Performing calculations using `TS_compute`
-<!--{#sec:performing_calculations}-->
 
-Once a relevant section of the data matrix has been retrieved, we can calculate values that have not previously been calculated, indicated by NULL entries in the **Results** table of the database, and NaN entries in the corresponding `HCTSA_loc.mat`.
+Once a time-series dataset and the operation library has been specified,  NaN entries in the corresponding `HCTSA_loc.mat`.
 
 Calculations are performed using the function `TS_compute`, which stores results back into the matrices in `HCTSA_loc`.
 This function can be run without inputs:
