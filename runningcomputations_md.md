@@ -9,7 +9,7 @@ This function can be run without inputs:
     TS_compute;
 
 
-## Custom settings for running TS_compute
+## Custom settings for running `TS_compute`
 
 By specifying the first input to 1 to calculate across available cores using the Matlab Parallel Processing Toolbox:
 
