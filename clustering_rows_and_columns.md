@@ -13,5 +13,5 @@ linkageMethodCol = 'average'; % linkage method
 TS_cluster(distanceMetricRow, linkageMethodRow, distanceMetricCol, linkageMethodCol);
 ```
 
-This function reads in the data from **HCTSA_N.mat**, reorders the rows and columns, and then outputs the new re-ordered data to **HCTSA_cl.mat**.
+This function reads in the data from `HCTSA_N.mat`, and stores the re-ordering of rows and columns back into `HCTSA_N.mat`.
 Visualization functions (including `TS_plot_DataMatrix`) can read this in directly, using the general input label `'cl'`.
