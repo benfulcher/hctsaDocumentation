@@ -1,9 +1,19 @@
-# Inspecting errors using `TS_InspectQuality`
+# Visualizing special values and errors using `TS_InspectQuality`
 
 Errors in particular pieces of code can often occur when applying them to large numbers of time series.
 Some errors are not problems with the code, but represent issues with applying particular sets of code to particular time series, such as when a Matlab fitting function reaches the maximum number of iterations and returns an error.
 Other errors are genuine problems with the code that need to be corrected.
 Both cases are labeled as errors in our framework.
+
+
+It can be good practice to visualize this after a computation to see where things might be going wrong, using `TS_InspectQuality`.
+This can be run in four modes:
+
+1. `TS_InspectQuality('summary');` [default] Summarizes the proportion of special-valued outputs in each operation as a bar plot, ordered by the proportion of special-valued outputs.
+2. `TS_InspectQuality('master');` Plots which types of special-valued outputs were encountered for each master operation.
+3. `TS_InspectQuality('full');` Plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
+4. `TS_InspectQuality('reduced');` As `'full'`, but includes only columns where special values occurred.
+
 
 Operations that produced errors, or other special values (such as NaNs, Infs, etc.), can be inspected using the `TS_InspectQuality` function (which loads in data from **HCTSA_loc.mat**).
 This can be run in different modes:
@@ -14,6 +24,16 @@ This can be run in different modes:
 For example, running `TS_InspectQuality('summary')` loads in data from **HCTSA_loc.mat** and produces the following, which can be zoomed in on and explored to understand which features are producing problematic outputs:
 
 ![pca_image](img/InspectQuality.png)
+
+
+In this section we describe how to achieve this, and also how to visualize any special-valued outputs in your data (using `TS_InspectQuality`).
+
+When applying thousands of time-series analysis methods to diverse datasets, many operations can give results that are not all real numbers.
+Some time series may be inappropriate (such as fitting a positive-only distribution to data that is not positive), or measuring stationarity across 2,000 datapoints in time series that are shorter than 2,000 samples.
+Other times, an optimization routine may fail, or some unknown error may be called.
+
+
+
 
 ## Errors with compiled code
 Note that errors returned from Matlab files do not halt the progress of the computation (using `try-catch` statements), but errors with compiled **mex** functions (or external commandline packages like TISEAN) can produce a fault that crashes Matlab or the system.
