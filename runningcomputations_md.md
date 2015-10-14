@@ -15,8 +15,8 @@ Or, by specifying the first input to 1 to calculate across available cores using
 
 You can also specify a custom range of ts_ids and op_ids to compute:
 
-    % Compute missing values in HCTSA_loc.mat for ts_ids from 1:10 and op_ids from 1:1000 using parallel processing:
-    TS_compute(1,1:10,1:1000);
+    % Compute missing values in HCTSA_loc.mat for ts_ids from 1:10 and op_ids from 1:1000
+    TS_compute(0,1:10,1:1000);
 
 Specify what values should be recomputed:
 
