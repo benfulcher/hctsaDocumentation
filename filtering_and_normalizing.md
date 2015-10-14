@@ -2,23 +2,6 @@
 <!--{#sec:normalization}-->
 
 The first step in analyzing a dataset involves processing the data matrix, which can be done using `TS_normalize`.
-In this section we describe how to achieve this, and also how to visualize any special-valued outputs in your data (using `TS_InspectQuality`).
-
-## Visualizing special values and errors using `TS_InspectQuality`
-
-When applying thousands of time-series analysis methods to diverse datasets, many operations can give results that are not all real numbers.
-Some time series may be inappropriate (such as fitting a positive-only distribution to data that is not positive), or measuring stationarity across 2,000 datapoints in time series that are shorter than 2,000 samples.
-Other times, an optimization routine may fail, or some unknown error may be called.
-
-It can be good practice to visualize this after a computation to see where things might be going wrong, using `TS_InspectQuality`.
-
-It can be run in four modes:
-
-1. `TS_InspectQuality('summary');` [default] Summarizes the proportion of special-valued outputs in each operation as a bar plot, ordered by the proportion of special-valued outputs.
-2. `TS_InspectQuality('master');` Plots which types of special-valued outputs were encountered for each master operation.
-3. `TS_InspectQuality('full');` Plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
-4. `TS_InspectQuality('reduced');` As `'full'`, but includes only columns where special values occured.
-
 
 ## Filtering and normalizng data using `TS_normalize`
 
