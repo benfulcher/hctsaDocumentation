@@ -16,7 +16,6 @@
    * [Visualizing the data matrix](visualizing_the_data_matrix.md)
    * [Plotting the time series](plotting_the_time_series.md)
    * [Low dimensional representation](low_dim.md)
-   * [Finding nearest neighbors](simsearch.md)
 * [Working with the mySQL database](overview_mysql_database.md)
    * [Setting up the mySQL database](setup_mysql_database.md)
    * [The database structure](database_structure.md)
