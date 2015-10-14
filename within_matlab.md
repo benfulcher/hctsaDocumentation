@@ -1,7 +1,5 @@
 # An example analysis using *hctsa* in Matlab
 
-
-
 ## Initiating using `TS_init`
 
 As described in the [overview section](setup.md), initiating a dataset involves specifying an input file for each of:
