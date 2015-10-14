@@ -13,7 +13,13 @@ Or, by specifying the first input to 1 to calculate across available cores using
     % Compute missing values in HCTSA_loc.mat using parallel processing:
     TS_compute(1);
 
-By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the third input to zero.
+
+    % Compute missing values in HCTSA_loc.mat for ts_ids from 1:10 and op_ids from 1:1000 using parallel processing:
+    TS_compute(1,1:10,1:1000);
+
+By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero.
+
+
 
 Running `TS_compute` will begin running operations on time series in `HCTSA_loc.mat` for which elements in **TS\_DataMat** are **NaN**s (indicating that they have not been run before) or have a [quality label](retrieving_to_compute.md) of 1 (indicating a prior error).
 The results will be stored back in the matrices of `HCTSA_loc.mat`, i.e., **TS\_DataMat** (output of each operation on each time series), **TS\_CalcTime** (calculation time for each operation on each time series), and **TS\_Quality** (labels indicating errors or special-valued outputs).
