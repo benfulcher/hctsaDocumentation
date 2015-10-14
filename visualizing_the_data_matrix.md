@@ -19,10 +19,8 @@ When data is grouped according to a set of distinct keywords and stored as group
 
 For example, we used a set of 9000 operations on 100 diverse empirical time series.
 We then:
-1. Normalized it, using `TS_normalize('scaledRobustSigmoid',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values and164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 99 x 7225 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
-2. Clustered it, using `TS_cluster('euclidean','average', 'corr_fast', 'average')`, which uses a faster approximation for correlations involving bad values. The result is a re-ordered data matrix and associated metadata saved in **HCTSA_cl.mat**.
-
-The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, respectively, can now be visualized using `TS_plot_DataMatrix('norm')` and `TS_plot_DataMatrix('cl')`, respectively.
+1. Normalized it, using `TS_normalize('scaledRobustSigmoid',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values, 164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 99 x 7225 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
+2. Clustered it, using `TS_cluster('euclidean','average', 'corr_fast', 'average')`, which uses a faster approximation for correlations involving bad values. The result is a re-ordered data matrix and associated metadata saved in **HCTSA_N.mat**.
 
 ### Visualizing the normalized (unclustered) data matrix
 Running `TS_plot_DataMatrix('norm')` plots the data contained in **HCTSA_N.mat**, yielding:
@@ -50,9 +48,9 @@ So now we have a clustered data matrix containing thousands of summaries of each
 When the time series have been assigned to groups , this can be accessed by setting the second input to 1:
 
     plotGroups = 0;
-    TS_plot_DataMatrix('cl',plotGroups);
+    TS_plot_DataMatrix('colorGroups',plotGroups);
     plotGroups = 1;
-    TS_plot_DataMatrix('cl',plotGroups);
+    TS_plot_DataMatrix('colorGroups',plotGroups);
     
 producing the following two plots:
 
