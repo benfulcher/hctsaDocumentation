@@ -11,15 +11,15 @@ The procedure involves three main steps:
 
 3. Write the results back to the **Results** table of the database (using `SQL_store`).
 
-This computational workflow is represented schematically below.
+<!--This computational workflow is represented schematically below:-->
 
-![**Computation workflow schematic.**](img/ComputationSchematic.png)
-
-This workflow is very well suited to distributed computing for large datasets, whereby each node can iterate over a small set of time series, with all the results being written back to a central location (the *mySQL* database).
-
+<!--![**Computation workflow schematic.**](img/ComputationSchematic.png)-->
 
 In order to calculate across large sections of the database, it is convenient to use runscripts, that allow large computations to be broken up into smaller pieces, and using `for` loops to cycle through these pieces.
 A sample script to iterate over these steps is the `sample_runscript`.
+
+This workflow is well suited to distributed computing for large datasets, whereby each node can iterate over a small set of time series, with all the results being written back to a central location (the *mySQL* database).
+
 
 By designating different sections of the database to cycle through, this procedure can also be used to (manually) distribute the computation across different machines.
 Retrieving a large section of the database at once can be problematic because it requires large disk reads and writes, uses a lot of memory, and if problems occur in the reading or writing to/from files, one may have to abandon a large number of existing computations.
