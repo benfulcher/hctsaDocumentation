@@ -9,7 +9,7 @@ Setting up the problem, guiding the methodology, and interpreting the results re
 
 The first main component of an *hctsa* analysis involves filtering and normalizing the data using `TS_normalize`, described [here](filtering_and_normalizing.md), which produces a file called **HCTSA_N.mat**.
 Information about the similarity of pairs of time series and operations can be computed using `TS_cluster`, described [here](clustering_rows_and_columns.md) which stores this information in **HCTSA_N.mat**.
-The suite of plotting and analysis tools that we provide with *hctsa* by default work with this normalized data, stored in **HCTSA_N.mat**.
+The suite of plotting and analysis tools that we provide with *hctsa* work with this normalized data, stored in **HCTSA_N.mat**, by default.
 
 Available plotting and analysis functions include:
 * Visualizing structure in the data matrix using `TS_plot_DataMatrix` ([described here](visualizing_the_data_matrix.md)).
