@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Installing and setting up](setup.md)
-   * [Working within Matlab](within_matlab.md)
+   * [Overview of an analysis](within_matlab.md)
    * [Compiling binaries](compiling_binaries.md)
    * [hctsa structure](hctsa_structure.md)
 * [Running hctsa computations](calculating.md)
