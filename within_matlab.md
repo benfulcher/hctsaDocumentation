@@ -31,10 +31,6 @@ Through this initialization process, each time series will be assigned a unique 
 
 Computations can be run on the hctsa dataset stored in `HCTSA_loc.mat` file using `TS_compute`, which is described [here](calculating.md).
 
-Note that if you want to use a distributed set up (which is better suited to [a linked a mySQL database](overview_mysql_database.md)), you can run computations across different nodes by splitting the Matlab file into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
-`TS_subset('loc',1:100)` will generate a new file, **HCTSA_loc_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
-These can then be recombined using `TS_combine`.
-
 ## Analyzing
 
 Once all computations are complete, analysis can proceed using a suite of analysis and visualization functions described [here](analyzing_visualizing.md).
