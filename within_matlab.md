@@ -11,26 +11,29 @@ More detail on these steps is provided below:
 
 ## Specifying a set of time series and operations using `TS_init`
 
-As described in the [overview section](setup.md), initiating a dataset involves specifying an input file for each of:
+As described in the [overview section](setup.md), initiating a dataset for an hctsa analysis involves specifying an input file for each of:
 1. the time series to analyze (`INP_ts.mat` or `INP_ts.txt`).
 1. the code to run (`INP_mops.txt`).
 1. the features to extract from that code (`INP_ops.txt`).
+
+Details of how to format these input files are [here](input_files.md).
 
 This is achieved using, for example:
 
     TS_init('INP_ts.mat','INP_mops.txt','INP_ops.txt')
 
-Details of how to format these input files are [here](input_files.md).
+This produces a matlab file, `HCTSA_loc.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](hctsa_structure.md)).
 Note that if only the first input file is provided, the default *hctsa* library of operations will be used.
 
-Note that through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
+Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation (which can be reassigned using `TS_ReIndex`).
 
 ## Computing using `TS_compute`
 
-Computations can then be run on the dataset using `TS_compute`, which is described [here](calculating.md).
+Computations can be run on the hctsa dataset stored in `HCTSA_loc.mat` file using `TS_compute`, which is described [here](calculating.md).
 
-Note that you want to use a distributed set up (which is better suited for a mySQL database), you can run computations across different nodes by splitting the Matlab file into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
+Note that if you want to use a distributed set up (which is better suited to [a linked a mySQL database](overview_mysql_database.md)), you can run computations across different nodes by splitting the Matlab file into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
 `TS_subset('loc',1:100)` will generate a new file, **HCTSA_loc_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
+These can then be recombined using `TS_combine`.
 
 ## Analyzing
 
