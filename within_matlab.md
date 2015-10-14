@@ -1,6 +1,15 @@
 # An example analysis using *hctsa* in Matlab
 
-## Initiating using `TS_init`
+<!--## Overview of an analysis-->
+
+A basic sequence of a Matlab-based analysis is to:
+1. Initialize a **HCTSA_loc.mat** file, which contains all of the information about the set of time series and operations in your analysis, and stores the results of applying all operations to all time series (using the `TS_init` function, e.g., for an input file specifying a test dataset: `TS_init('INP_test_ts.mat');`),
+2. After initializing an **HCTSA_loc.mat** file, [computing all operations on all time series](running_computations.md) is done using `TS_compute`, which stores the results back to this local file. The results are structured in local Matlab files containing matrices (that store the results of the computations) and structure arrays (that store information about the time-series data and operations), as described [here](hctsa_structure.md).
+3. After the computation is complete, [a range of processing, analysis, and plotting functions](analyzing_visualizing.md) are also provided with the software.
+
+More detail on these steps is provided below:
+
+## Specifying a set of time series and operations using `TS_init`
 
 As described in the [overview section](setup.md), initiating a dataset involves specifying an input file for each of:
 1. the time series to analyze (`INP_ts.mat` or `INP_ts.txt`).
