@@ -4,7 +4,7 @@ The software also provides a basic means of visualizing low-dimensional represen
 
 This can be done for a time-series dataset as follows:
 
-    >> TS_plot_pca('norm','ts');
+    TS_plot_pca('norm','ts');
     
 This uses the normalized data (specifying `'norm'`), plotting time series (specifying `'ts'`) in the reduced, two-dimensional principal components space of operations (the leading two principal components of the data matrix).
 
