@@ -1,6 +1,6 @@
 # Setting up a custom dataset
-To set up a custom dataset of time-series data, pieces of Matlab code to run (master operations), and associated outputs from that code (operations), we use formatted input files.
-To explore a custom time-series dataset using one of our default sets of operations, all that needs to be specified is a time-series input file.
+Formatted input files are used to set up a custom dataset of time-series data, pieces of Matlab code to run (master operations), and associated outputs from that code (operations).
+By default, the set of operations and master operations is set to our library, and all that needs to be specified is a custom time-series dataset.
 In this section we describe the format of the input files used in the *hctsa* framework.
 
 ## Adding time series
