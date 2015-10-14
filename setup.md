@@ -5,7 +5,8 @@ The *hctsa* package can either be used in two ways:
 1. *Completely within Matlab*, recommended for quick and easy analysis of a particular time-series dataset
 2. *Using a link between Matlab and a mySQL database*, recommended for larger datasets requiring distributed computing set-ups, or datasets that may grow with time.
 
-Here we will mainly focus on using the software completely in Matlab; instructions for interacting with a mySQL database are in [a separate chapter](overview_mysql_database.md).
+Here we will mainly focus on using the software completely in Matlab, which is much simpler than setting up and using a *mySQL* database, and avoids the overheads of reading and writing large quantities of data between Matlab and a database.
+Instructions for interacting with a *mySQL* database are in [a separate chapter](overview_mysql_database.md).
 
 ## Installing the *hctsa* package
 This is the simplest way to get the *hctsa* up and running.
