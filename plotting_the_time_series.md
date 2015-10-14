@@ -32,7 +32,7 @@ producing an overview picture of 40 time series spaced through the rows of the d
 
 ## Dealing with groups of time series
 
-When the time series have been assigned groups (using `TS_LabelGroups`), this information is automatically incorporated into `TS_plot_timeseries`, which then plots a given number of each time series group, and colors them accordingly:
+When the time series have been assigned groups (using `TS_LabelGroups`, [here](grouping.md)), this information is automatically incorporated into `TS_plot_timeseries`, which then plots a given number of each time series group, and colors them accordingly:
 
     numPerGroup = 5; % plot this many examples of each group of time series
     plotHow = 'grouped'; % plot examples of each assigned group of time series
