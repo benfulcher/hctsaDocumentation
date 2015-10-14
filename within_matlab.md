@@ -4,10 +4,10 @@
 
 A basic sequence of a Matlab-based analysis is to:
 1. Initialize a **HCTSA_loc.mat** file, which contains all of the information about the set of time series and operations in your analysis, and stores the results of applying all operations to all time series (using the `TS_init` function, e.g., for an input file specifying a test dataset: `TS_init('INP_test_ts.mat');`),
-2. After initializing an **HCTSA_loc.mat** file, [computing all operations on all time series](running_computations.md) is done using `TS_compute`, which stores the results back to this local file. The results are structured in local Matlab files containing matrices (that store the results of the computations) and structure arrays (that store information about the time-series data and operations), as described [here](hctsa_structure.md).
+2. After initializing an **HCTSA_loc.mat** file, [computing all operations on all time series](calculating.md) is done using `TS_compute`, which stores the results back to this local file. The results are structured in local Matlab files containing matrices (that store the results of the computations) and structure arrays (that store information about the time-series data and operations), as described [here](hctsa_structure.md).
 3. After the computation is complete, [a range of processing, analysis, and plotting functions](analyzing_visualizing.md) are also provided with the software.
 
-More detail on these steps is provided below:
+More detail on the initialization step is provided below:
 
 ## Specifying a set of time series and operations using `TS_init`
 
@@ -26,11 +26,3 @@ This produces a matlab file, `HCTSA_loc.mat`, containing all of the structures r
 Note that if only the first input file is provided, the default *hctsa* library of operations will be used.
 
 Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation (which can be reassigned using `TS_ReIndex`).
-
-## Computing using `TS_compute`
-
-Computations can be run on the hctsa dataset stored in `HCTSA_loc.mat` file using `TS_compute`, which is described [here](calculating.md).
-
-## Analyzing
-
-Once all computations are complete, analysis can proceed using a suite of analysis and visualization functions described [here](analyzing_visualizing.md).
