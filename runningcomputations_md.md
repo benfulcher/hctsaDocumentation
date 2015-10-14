@@ -8,6 +8,10 @@ This function can be run without inputs:
     % Compute all missing values in HCTSA_loc.mat:
     TS_compute;
 
+Running `TS_compute` will begin running operations on time series in `HCTSA_loc.mat` for which elements in **TS\_DataMat** are **NaN**s (indicating that they have not been run before) or have a [quality label](retrieving_to_compute.md) of 1 (indicating a prior error).
+The results will be stored back in the matrices of `HCTSA_loc.mat`, i.e., **TS_DataMat** (output of each operation on each time series), **TS_CalcTime** (calculation time for each operation on each time series), and **TS_Quality** (labels indicating errors or special-valued outputs).
+
+When all NULL entries in **TS_DataMat** have been calculated, **TS_compute** saves the results back to the local file: `HCTSA_loc.mat`.
 
 ## Custom settings for running `TS_compute`
 
@@ -26,14 +30,12 @@ Specify what values should be recomputed:
     % Compute all values that have never previous been calculated or previously returned an error:
     TS_compute(0,[],[],'error');
 
-By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero:
+To run the same procedure on a custom file (that is not `HCTSA_loc.mat`), you can specify this also:
+
+    % Compute all missing values in my_HCTSA_file.mat:
+    TS_compute(0,[],[],'missing','my_HCTSA_file.mat',0);
 
 By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero:
 
-    % Compute all missing values, suppressing output to screen:
+    % Compute all missing values in HCTSA_loc.mat, suppressing output to screen:
     TS_compute(0,[],[],'missing','',0);
-
-Running `TS_compute` will begin running operations on time series in `HCTSA_loc.mat` for which elements in **TS\_DataMat** are **NaN**s (indicating that they have not been run before) or have a [quality label](retrieving_to_compute.md) of 1 (indicating a prior error).
-The results will be stored back in the matrices of `HCTSA_loc.mat`, i.e., **TS_DataMat** (output of each operation on each time series), **TS_CalcTime** (calculation time for each operation on each time series), and **TS_Quality** (labels indicating errors or special-valued outputs).
-
-When all NULL entries in **TS_DataMat** have been calculated, **TS_compute** saves the results back to the local file: `HCTSA_loc.mat`.
