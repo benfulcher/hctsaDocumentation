@@ -1,8 +1,9 @@
 # Inspecting errors using `TS_InspectQuality`
 
-Errors in particular pieces of code can often occur when applying them to large numbers of time series. Some errors are not problems with the code, but problems with applying particular sets of code to particular time series, such as when a Matlab fitting function reaches the maximum number of iterations and returns an error.
-These are kept and stored as errors.
+Errors in particular pieces of code can often occur when applying them to large numbers of time series.
+Some errors are not problems with the code, but represent issues with applying particular sets of code to particular time series, such as when a Matlab fitting function reaches the maximum number of iterations and returns an error.
 Other errors are genuine problems with the code that need to be corrected.
+Both cases are labeled as errors in our framework.
 
 Operations that produced errors, or other special values (such as NaNs, Infs, etc.), can be inspected using the `TS_InspectQuality` function (which loads in data from **HCTSA_loc.mat**).
 This can be run in three different modes:
