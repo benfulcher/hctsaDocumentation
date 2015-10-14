@@ -5,12 +5,15 @@ Once a time-series dataset and the operation library has been specified,  NaN en
 Calculations are performed using the function `TS_compute`, which stores results back into the matrices in `HCTSA_loc`.
 This function can be run without inputs:
 
-    % Compute missing values in HCTSA_loc.mat:
+    % Compute all missing values in HCTSA_loc.mat:
     TS_compute;
 
-Or, by specifying the first input to 1 to calculate across available cores using the Matlab Parallel Processing Toolbox:
 
-    % Compute missing values in HCTSA_loc.mat using parallel processing:
+## Custom settings for running TS_compute
+
+By specifying the first input to 1 to calculate across available cores using the Matlab Parallel Processing Toolbox:
+
+    % Compute all missing values in HCTSA_loc.mat using parallel processing:
     TS_compute(1);
 
 You can also specify a custom range of ts_ids and op_ids to compute:
@@ -23,9 +26,12 @@ Specify what values should be recomputed:
     % Compute all values that have never previous been calculated or previously returned an error:
     TS_compute(0,[],[],'error');
 
-By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero.
+By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero:
 
+By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero:
 
+    % Compute all missing values, suppressing output to screen:
+    TS_compute(0,[],[],'missing','',0);
 
 Running `TS_compute` will begin running operations on time series in `HCTSA_loc.mat` for which elements in **TS\_DataMat** are **NaN**s (indicating that they have not been run before) or have a [quality label](retrieving_to_compute.md) of 1 (indicating a prior error).
 The results will be stored back in the matrices of `HCTSA_loc.mat`, i.e., **TS_DataMat** (output of each operation on each time series), **TS_CalcTime** (calculation time for each operation on each time series), and **TS_Quality** (labels indicating errors or special-valued outputs).
