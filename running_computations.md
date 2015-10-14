@@ -37,3 +37,10 @@ By default, all computations will be displayed to screen (which is useful for er
 
     % Compute all missing values in HCTSA_loc.mat, suppressing output to screen:
     TS_compute(0,[],[],'missing','',0);
+
+## Distributing computations
+
+Distributing computations across multiple computers on a large scale is better suited to [a linked a mySQL database](overview_mysql_database.md)), however, this can also be achieved in a basic way within Matlab.
+A local Matlab file (`HCTSA_loc.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
+`TS_subset('loc',1:100)` will generate a new file, **HCTSA_loc_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
+Each such subset can then be run on a different computer, and the results later recombined into a single HCTSA file using `TS_combine`.
