@@ -1,8 +1,6 @@
 # An example analysis using *hctsa* in Matlab
 
-For small-scale, or non-distributed *hctsa* computations, the software can be run completely within Matlab (without linked to an external database).
 
-This is much simpler than setting up and using a *mySQL* database, and avoids the overheads of reading and writing large quantities of data between Matlab and a database.
 
 ## Initiating using `TS_init`
 
