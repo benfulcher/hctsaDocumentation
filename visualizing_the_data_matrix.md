@@ -7,23 +7,20 @@
 <!--### Visualizing the data matrix using -->
 <!--{#sec:visDatamatrix}-->
 
-The clustered data matrix in **HCTSA_cl.mat** can be visualized by running
+The clustered data matrix (if clustering has been performed, otherwise the non-clustered data matrix is used) can be visualized by running
 
-        TS_plot_DataMatrix('cl')
+        TS_plot_DataMatrix
 
 This will produce a colored visualization of the data matrix such as that shown below.
 
-Visualizing the clustered matrix is the default behavior; but for some (large) datasets, reordering the rows and columns can be a time and computationally expensive task, in which case the normalized matrix can be plotted by instead specifying `TS_plot_DataMatrix('norm')`.
-
-When data is grouped according to a set of distinct keywords and stored as group metadata in the **HCTSA_norm.mat** or **HCTSA_cl.mat** files (using the `TS_LabelGroups` function), these can also be visualized using different colormaps by setting the second input to `1`, e.g., `TS_plot_DataMatrix('cl',1)`.
+When data is grouped according to a set of distinct keywords and stored as group metadata (using the `TS_LabelGroups` [function](grouping.md)), these can also be visualized using `TS_plot_DataMatrix('colorGroups',1)`.
 
 ## Example usage
 
 For example, we used a set of 9000 operations on 100 diverse empirical time series.
 We then:
-1. Retrieved all of the data from the database, using `SQL_retrieve(1:100,1:10000)`
-2. Normalized it, using `TS_normalize('scaledSQzscore',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values and164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 99 x 7225 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
-3. Clustered it, using `TS_cluster('euclidean','average', 'corr_fast', 'average')`, which uses a faster approximation for correlations involving bad values. The result is a re-ordered data matrix and associated metadata saved in **HCTSA_cl.mat**.
+1. Normalized it, using `TS_normalize('scaledRobustSigmoid',[0.7,0.9])`. This removed 1 time series with fewer than 70% good values, 2476 operations with fewer than 90% good values and164 operations with near-constant outputs, and 114 operations with zero interquartile range, leaving a 99 x 7225 normalized data matrix containing 0.38% special values saved in **HCTSA_N.mat**.
+2. Clustered it, using `TS_cluster('euclidean','average', 'corr_fast', 'average')`, which uses a faster approximation for correlations involving bad values. The result is a re-ordered data matrix and associated metadata saved in **HCTSA_cl.mat**.
 
 The normalized and clustered data, in **HCTSA_N.mat** and **HCTSA_cl.mat**, respectively, can now be visualized using `TS_plot_DataMatrix('norm')` and `TS_plot_DataMatrix('cl')`, respectively.
 
