@@ -13,10 +13,15 @@ Or, by specifying the first input to 1 to calculate across available cores using
     % Compute missing values in HCTSA_loc.mat using parallel processing:
     TS_compute(1);
 
-You can also specify a custom range of ts_ids and op_ids to compute
+You can also specify a custom range of ts_ids and op_ids to compute:
 
     % Compute missing values in HCTSA_loc.mat for ts_ids from 1:10 and op_ids from 1:1000 using parallel processing:
     TS_compute(1,1:10,1:1000);
+
+Specify what values should be recomputed:
+
+    % Compute all values that have never previous been calculated or previously returned an error:
+    TS_compute(0,[],[],'error');
 
 By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero.
 
