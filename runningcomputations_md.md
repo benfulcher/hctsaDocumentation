@@ -9,9 +9,7 @@ This function can be run without inputs:
     TS_compute;
 
 Running `TS_compute` will begin running operations on time series in `HCTSA_loc.mat` for which elements in **TS\_DataMat** are **NaN**s (indicating that they have not been run before).
-The results will be stored back in the matrices of `HCTSA_loc.mat`, i.e., **TS_DataMat** (output of each operation on each time series), **TS_CalcTime** (calculation time for each operation on each time series), and **TS_Quality** (labels indicating errors or special-valued outputs).
-
-When all NULL entries in **TS_DataMat** have been calculated, **TS_compute** saves the results back to the local file: `HCTSA_loc.mat`.
+Results will be stored back in the matrices of `HCTSA_loc.mat`, i.e., **TS_DataMat** (output of each operation on each time series), **TS_CalcTime** (calculation time for each operation on each time series), and **TS_Quality** (labels indicating errors or special-valued outputs).
 
 ## Custom settings for running `TS_compute`
 
