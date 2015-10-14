@@ -18,3 +18,6 @@ Available plotting and analysis functions include:
 * Exploring similar matches to a target time series using `TS_SimSearch`.
 
 Note that, for classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](retrieving.md); this group label information is stored in the local **HCTSA** file, and used by default in the various plotting and analysis functions provided.
+Additional basic functions are provided for basic time-series classification tasks:
+* 
+
