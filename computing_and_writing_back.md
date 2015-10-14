@@ -6,7 +6,7 @@ These functions are described below.
 ## Performing calculations using `TS_compute`
 <!--{#sec:performing_calculations}-->
 
-Values retrieved using `SQL_retrieve` (to the local `HCTSA_loc.mat` file) that have not previously been calculated are evaluated using `TS_compute`, as described [here](computing_results.md).
+Values retrieved using `SQL_retrieve` (to the local `HCTSA_loc.mat` file) that have not previously been calculated are evaluated using `TS_compute`, as described [here](running_computations.md).
 These results can then be inspected directly (if needed), or simply written back to the database using `SQL_store`, as described below.
 
 ## Writing calculations back to the database using `SQL_store`
