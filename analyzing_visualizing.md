@@ -11,15 +11,15 @@ The first main component of an *hctsa* analysis involves filtering and normalizi
 Information about the similarity of pairs of time series and operations can be computed using `TS_cluster`, described [here](clustering_rows_and_columns.md) which stores this information in **HCTSA_N.mat**.
 The suite of plotting and analysis tools that we provide with *hctsa* work with this normalized data, stored in **HCTSA_N.mat**, by default.
 
-Available plotting and analysis functions include:
-* Visualizing structure in the data matrix using `TS_plot_DataMatrix` ([described here](visualizing_the_data_matrix.md)).
-* Visualizing the time-series traces using `TS_plot_TimeSeries` ([described here](plotting_the_time_series.md))
-* Visualizing low-dimensional structure in the data using `TS_plot_pca` ([described here](low_dim.md)).
-* Exploring similar matches to a target time series using `TS_SimSearch`.
-* Visualizing the behavior of a given operation across the time-series dataset using `TS_FeatureSummary`.
+## Plotting and analysis functions:
+* Visualizing structure in the data matrix using [`TS_plot_DataMatrix`](visualizing_the_data_matrix.md).
+* Visualizing the time-series traces using [`TS_plot_TimeSeries`](plotting_the_time_series.md).
+* Visualizing low-dimensional structure in the data using [`TS_plot_pca`](low_dim.md).
+* Exploring similar matches to a target time series using [`TS_SimSearch`](sim_search.md).
+* Visualizing the behavior of a given operation across the time-series dataset using [`TS_FeatureSummary`](feature_summary.md).
 
-For time-series classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](grouping.md); this group label information is stored in the local **HCTSA** file, and used by default in the various plotting and analysis functions provided.
+## Tools for classification tasks:
+For time-series classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](grouping.md); this group label information is stored in the local **HCTSA*.mat** file, and used by default in the various plotting and analysis functions provided.
 Additional analysis functions are provided for basic time-series classification tasks:
 * Determine the features that (individually) best distinguish between the labeled groups using `TS_TopFeatures`
 * Explore the classification performance of the full library of features using `TS_classify`
-
