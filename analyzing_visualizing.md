@@ -21,5 +21,5 @@ The suite of plotting and analysis tools that we provide with *hctsa* work with 
 ## Tools for classification tasks:
 For time-series classification tasks, groups of time series can be labeled using the `TS_LabelGroups` function described [here](grouping.md); this group label information is stored in the local **HCTSA*.mat** file, and used by default in the various plotting and analysis functions provided.
 Additional analysis functions are provided for basic time-series classification tasks:
-* Determine the features that (individually) best distinguish between the labeled groups using `TS_TopFeatures`
-* Explore the classification performance of the full library of features using `TS_classify`
+* Explore the classification performance of the full library of features using [`TS_classify`](ts_classify.md)
+* Determine the features that (individually) best distinguish between the labeled groups using [`TS_TopFeatures`](ts_topfeatures.md)

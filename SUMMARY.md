@@ -18,6 +18,8 @@
    * [Low dimensional representation](low_dim.md)
    * [Finding nearest neighbors](sim_search.md)
    * [Investigating specific operations](feature_summary.md)
+   * [Exploring classification accuracy](ts_classify.md)
+   * [Finding informative features](ts_topfeatures.md)
 * [Working with the mySQL database](overview_mysql_database.md)
    * [Setting up the mySQL database](setup_mysql_database.md)
    * [The database structure](database_structure.md)
