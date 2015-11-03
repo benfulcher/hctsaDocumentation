@@ -7,4 +7,4 @@ When performing a highly comparative time-series analysis, we have computed a la
 A simple way to determine which individual features are useful for distinguishing the labeled classes of your dataset is to compare each feature individually in terms of its ability to separate the labeled classes of time series.
 This can be achieved using the `TS_TopFeatures` function.
 
-This function 
+This function
