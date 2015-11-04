@@ -10,6 +10,8 @@ The example below assigns labels to two groups of time series in the **HCTSA_loc
 
 The first input is a cell specifying the keyword string to use to match each group.
 
+To automatically detect unique keywords for labelling, `TS_LabelGroups` can be run with an empty first input, as `TS_LabelGroups([],'loc');`
+
 By default, this function saves the group indices back to the data file (in this example, **HCTSA_loc.mat**), by adding a new field, **Group**, to the **TimeSeries** structure array, which contains the group index of each time series.
 
 Group indices stay with the time series they are assigned to after filtering and normalizing the data (using `TS_normalize`).
