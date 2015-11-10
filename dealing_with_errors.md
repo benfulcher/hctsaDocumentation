@@ -16,7 +16,7 @@ This can be run in four modes:
 3. `TS_InspectQuality('full');` Plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
 4. `TS_InspectQuality('reduced');` As `'full'`, but includes only columns where special values occurred.
 
-For example, running `TS_InspectQuality('summary')` loads in data from **HCTSA_loc.mat** and produces the following, which can be zoomed in on and explored to understand which features are producing problematic outputs:
+For example, running `TS_InspectQuality('summary')` loads in data from **HCTSA.mat** and produces the following, which can be zoomed in on and explored to understand which features are producing problematic outputs:
 
 ![pca_image](img/InspectQuality.png)
 

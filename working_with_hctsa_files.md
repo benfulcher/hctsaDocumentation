@@ -32,13 +32,13 @@ The function `TS_local_clear_remove` achieves these tasks when working directly 
 
 It loads in a an hctsa .mat data file, clears or removes the specified time series or operations, and then writes the result back to the file.
 
-*Example 1*: clear all computed data from time series with IDs 1:5 from HCTSA_loc.mat:
+*Example 1*: clear all computed data from time series with IDs 1:5 from `HCTSA.mat` (specifying `'raw'`):
 
-    TS_local_clear_remove('ts',1:5,0,'loc');
+    TS_local_clear_remove('ts',1:5,0,'raw');
 
-*Example 2*: remove operations with the keyword 'tisean' from HCTSA_loc.mat:
+*Example 2*: remove operations with the keyword 'tisean' from `HCTSA.mat`:
 
-    TS_local_clear_remove('ops',TS_getIDs('tisean','loc','ops'),1,'loc');
+    TS_local_clear_remove('ops',TS_getIDs('tisean','raw','ops'),1,'raw');
 
 See the documentation in the function file for additional details about the inputs.
 
@@ -54,9 +54,9 @@ This can be done with `TS_subset`, which takes in a hctsa dataset and generates 
 Note that the subset in this case will have be normalized using the full dataset of all time series, and just this subset (with IDs up to 100) are now being analyzed.
 Depending on the normalization method used, different results would be obtained if the subsetting was performed prior to normalization.
 
-*Example 2*: From `HCTSA_loc.mat`, save a subset of that dataset to 'HCTSA_loc_healthy.mat' containing only time series tagged with the 'healthy' keyword:
+*Example 2*: From `HCTSA.mat`, save a subset of that dataset to 'HCTSA_healthy.mat' containing only time series tagged with the 'healthy' keyword:
 
-    TS_subset('loc',TS_getIDs('healthy','loc'),[],1,'HCTSA_loc_healthy.mat')
+    TS_subset('HCTSA.mat',TS_getIDs('healthy','loc'),[],1,'HCTSA_healthy.mat')
 
 ## Combining multiple *hctsa* datasets using `TS_combine`
 
@@ -72,8 +72,7 @@ To combine *hctsa* data files, you can use the `TS_combine` function.
 The third input, `compare_tsids`, controls the behavior of the function in combining time series.
 By setting this to 1, `TS_combine` assumes that the TimeSeries IDs are comparable between the datasets (e.g., most common when using a [mySQL database to store *hctsa* data](overview_mysql_database.md)), and thus filters out duplicates so that the resulting *hctsa* dataset contains a unique set of time series.
 By setting this to 0 (default), the output will contain a union of time series present in each of the two *hctsa* datasets.
+In the case that duplicate TimeSeries IDs exist in the combination file, a new index will be generated in the combined file (where IDs assigned to time series are re-assigned as unique integers using `TS_ReIndex`).
 
 In combining operations, this function works differently when data have been stored in a unified [*mySQL* database](overview_mysql_database.md), in which case operation IDs can be compared meaningfully and combined as an intersection.
 However, when *hctsa* datasets have been generated using `TS_init`, the function will check that the same set of operations have been used in both files.
-
-## Resetting the IDs assigned to time series and operations using `TS_ReIndex`

@@ -5,7 +5,7 @@ The first step in analyzing a dataset involves processing the data matrix, which
 This involves filtering out operations or time series that produced many errors or special-valued outputs, and then normalizing of the output of all operations, which is typically done in-sample, according to an outlier-robust sigmoidal transform (although other normalizing transformations can be selected).
 Both of these tasks are performed using the function `TS_normalize`.
 The `TS_normalize` function writes the new, filtered, normalized matrix to a local file called `HCTSA_N.mat`.
-This contains normalized, and trimmed versions of the information in `HCTSA_loc.mat`.
+This contains normalized, and trimmed versions of the information in `HCTSA.mat`.
 
 Example usage is as follows:
 

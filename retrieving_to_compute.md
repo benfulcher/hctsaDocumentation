@@ -22,7 +22,7 @@ Running this code will retrieve data for time series with **ts_id**s 1 and 3 and
 
 When calculations are complete and one wishes to analyze all of the data stored in the database (not just NULL entries requiring computation), the third input should be set to ‘all’ to retrieve all entries in the **Results** table of the database, as described [later](retrieving.md).
 
-`SQL_retrieve` writes to a local Matlab file, **HCTSA_loc.mat**, that contains the data retrieved from the database.
+`SQL_retrieve` writes to a local Matlab file, **HCTSA.mat**, that contains the data retrieved from the database.
 
 <!-- **Quality labels**. These are stored in the **Quality** column of
   the **Results** table in the *mySQL* database (and

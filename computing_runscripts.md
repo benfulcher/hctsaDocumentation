@@ -5,7 +5,7 @@ As described in this section, computation involves three main steps:
 
 The procedure involves three main steps:
 
-1. Retrieve a set of time series and operations from (the **Results** table) of the database to a local Matlab file, **HCTSA\_loc.mat** (using `SQL_retrieve`).
+1. Retrieve a set of time series and operations from (the **Results** table) of the database to a local Matlab file, **HCTSA.mat** (using `SQL_retrieve`).
 
 2. Compute the operations on the retrieved time series in Matlab and store the results locally (using `TS_compute`).
 

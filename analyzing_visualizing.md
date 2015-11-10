@@ -1,7 +1,7 @@
 # Performing highly comparative analysis
 <!--{#sec:analyzing}-->
 
-Once a set of operations have been computed on a time-series dataset, the results are stored in a local **HCTSA_loc.mat** file.
+Once a set of operations have been computed on a time-series dataset, the results are stored in a local **HCTSA.mat** file.
 The result can be used to perform a wide variety of highly comparative analyses, such as those outlined in [our paper](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full).
 
 The type of analysis employed should the be motivated by the specific time-series analysis task at hand.

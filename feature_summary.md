@@ -19,7 +19,7 @@ Because no group information is provided, time series are colored at random.
 
 ## Plotting for labeled groups of time series
 
-When time series groups have been labeled (using [`TS_LabelGroups`](grouping.md) as: `TS_LabelGroups({'seizure','eyesOpen','eyesClosed'},'loc');`), `TS_FeatureSummary` will plot the distribution for each class separately, as well as an overall distribution.
+When time series groups have been labeled (using [`TS_LabelGroups`](grouping.md) as: `TS_LabelGroups({'seizure','eyesOpen','eyesClosed'},'raw');`), `TS_FeatureSummary` will plot the distribution for each class separately, as well as an overall distribution.
 Annotated points can then be added to each class-specific distributions.
 In the example shown below, we can see that the 'noisy' class (red) has low values for this feature (`CO_tc3_2_denom`), whereas the 'periodic' class mostly has high values.
 
