@@ -30,6 +30,6 @@ All sets can be specified as follows:
     TS_init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
 
 `TS_init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](hctsa_structure.md)).
-Note that if only the first input file is provided, the default *hctsa* library of operations will be used.
+<!-- Note that if only the first input file is provided, the default *hctsa* library of operations will be used. -->
 
 Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation (which can be reassigned using `TS_ReIndex`).
