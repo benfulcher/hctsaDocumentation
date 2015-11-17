@@ -1,9 +1,9 @@
 # Performing calculations using `TS_compute`
 
-Once a time-series dataset and the operation library has been specified,  NaN entries in the corresponding `HCTSA.mat`.
+Once a time-series dataset and the operation library has been specified, and an *hctsa* dataset initialized (using `TS_init`), all results entries in the resulting `HCTSA.mat` are set to `NaN`, corresponding to results that are as yet uncomputed.
 
 Calculations are performed using the function `TS_compute`, which stores results back into the matrices in `HCTSA.mat`.
-This function can be run without inputs:
+This function can be run without inputs to compute all missing values in the default hctsa file, `HCTSA.mat`:
 
     % Compute all missing values in HCTSA.mat:
     TS_compute;
@@ -37,6 +37,11 @@ By default, all computations will be displayed to screen (which is useful for er
 
     % Compute all missing values in HCTSA.mat, suppressing output to screen:
     TS_compute(0,[],[],'missing','',0);
+
+### Computing a full dataset
+
+For larger datasets, it is sensible to compute small sections of the dataset at a time (and save the results to file), eventually covering the full dataset iteratively.
+We have provided a sample runscript for this purpose as `sample_runscript_matlab`, which allows the user to specify the increment at which results are saved back to `HCTSA.mat` (or any custom file).
 
 ## Distributing computations
 

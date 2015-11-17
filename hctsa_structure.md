@@ -2,7 +2,7 @@
 
 ## Overview
 
-The hctsa framework consists of three basic objects:
+The *hctsa* framework consists of three basic objects:
 
 1. *Master Operations* specify pieces of code (Matlab functions) and their inputs to be computed. Taking in a single time series, master operations can generate a large number of outputs as a Matlab structure, each of which can be identified with a single *operation* (or 'feature').
 2. *Operations* (or 'features') are a single number summarizing some measure of structure in a time series. In *hctsa*, each operation links to an output from a piece of evaluated code (a *master operation*).
@@ -18,14 +18,14 @@ These three different objects are summarized below:
 In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (*x*) at lags 1, 2, ..., 5.
 Each operation (or 'feature') is a single number that draws on this set of outputs, for example, the autocorrelation at lag 1, which is named `AC_1`, for example.
 
-In the hctsa framework, master operations, operations, and time series are stored as structure arrays that contain all of their associated keywords and metadata (and actual time-series data in the case of time series).
+In the *hctsa* framework, master operations, operations, and time series are stored as structure arrays that contain all of their associated keywords and metadata (and actual time-series data in the case of time series).
 
-For a given hctsa analysis, the user must specify a set of code to evaluate (*master operations*), their associated individual outputs to measure (*operations*), and a set of time series to evaluate the features on (*time series*).
+For a given *hctsa* analysis, the user must specify a set of code to evaluate (*master operations*), their associated individual outputs to measure (*operations*), and a set of time series to evaluate the features on (*time series*).
 
 We provide a default library of approximately 8,000 *operations* (derived from approximately 1,100 unique *master operations*).
 This can be customized, and additional pieces of code can also be added to the repository.
 
-### The results of a hctsa analysis
+### The results of a *hctsa* analysis
 Having specified a set of master operations, operations, and time series, the results of computing these functions in the time series data are stored in three matrices:
 
 -   **TS_DataMat** is an *n* x *m* data matrix containing the results of applying *m* operations to the *n* time series.

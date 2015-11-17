@@ -1,12 +1,12 @@
 # Compiling binaries
 
 Some external code packages require compiled binary code to be used.
-Compilation of the mex code is handled by `compile_mex` as part of the `install` script, but the *TISEAN* package binaries need to be compiled separately in the commandline.
+Compilation of the mex code is handled by `compile_mex` as part of the `install` script, but the *TISEAN* package binaries need to be compiled separately in the command line.
 
 ## Compiling mex code
 
-Many of the operations (especially external code packages) rely on mex functions (pieces of code written in C or fortran), that need to be compiled to run natively on a given system architecture.
-To ensure that as many operations as possible run successfully on your data, you should compile these mex functions for your system.
+Many of the operations (especially external code packages) rely on *mex* functions (pieces of code written in C or fortran), that need to be compiled to run natively on a given system architecture.
+To ensure that as many operations as possible run successfully on your data, you should compile these *mex* functions for your system.
 This requires working compilers (e.g., gcc, g++) to be installed on your system, which can be configured using `mex -setup` (cf. `doc mex` for more information).
 
 Once mex is set up, the mex functions used in the time-series code repository can be compiled by navigating to the **Toolboxes** directory and then running `compile_mex`.
@@ -42,7 +42,7 @@ The `startup.m` code also adds the **DYLD_LIBRARY_PATH**, which is also required
 If you choose to use a custom location for the *TISEAN* binaries, that is not in the default Matlab system path (`getenv('PATH')` in Matlab), then you will have to add this path manually.
 You can test that Matlab can see the *TISEAN* binaries by typing, for example, the following into Matlab:
 
-        >> !which poincare
+    >> !which poincare
 
 If Matlab’s system paths are set up correctly, this command should return the path to your compiled *TISEAN* binary, `poincare`.
 
@@ -54,3 +54,10 @@ There are two options:
 1. **Install [Cygwin](http://www.cygwin.com) on your machine**. Cygwin provides a Linux distribution-like environment on Windows. Use this environment to compile and install TISEAN (as per the instructions above for Linux or Mac). Matlab will then also need to be launched from Cygwin, using the command: `matlab &`. This instance of Matlab should then be able to call `system` commands through cygwin, including the ability to access the *TISEAN* binaries.
 
 2. **Sacrifice operations that rely on *TISEAN***. In total, *TISEAN*-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods.
+
+### Ignoring *TISEAN* functions
+
+If you decide not to use functions from the *TISEAN* package, they can be permanently removed from a given *hctsa* dataset.
+
+1. To filter a local Matlab *hctsa* file (e.g., `HCTSA.mat`), you can use the following: `TS_local_clear_remove('ops',TS_getIDs('tisean','raw','ops'),1,'raw');`, which will remove all operations with the 'tisean' keyword from the *hctsa* dataset in `HCTSA.mat`.
+2. If using a *mySQL* database, TISEAN functions can be removed from the database as follows: `SQL_clear_remove('ops',SQL_getids('ops',0,'tisean',{}),1)`.

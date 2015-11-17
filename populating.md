@@ -4,7 +4,7 @@
 When linking Matlab to a *mySQL* database, metadata associated with time series, operations, and master operations, as well as the results of computations are all stored in an indexed database.
 Adding master operations, operations, and time series to the database can be achieved using the `SQL_add` function, as described below.
 
-The following table summarizes the terminology used for each type of object in hctsa land:
+The following table summarizes the terminology used for each type of object in *hctsa* land:
 
 | | **Master Operation** | **Operation** | **Time Series** |
 |:-------------:|:-------------:|:-------------:|

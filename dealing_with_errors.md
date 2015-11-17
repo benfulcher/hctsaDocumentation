@@ -24,3 +24,17 @@ For example, running `TS_InspectQuality('summary')` loads in data from **HCTSA.m
 Note that errors returned from Matlab files do not halt the progress of the computation (using `try-catch` statements), but errors with compiled **mex** functions (or external commandline packages like TISEAN) can produce a fault that crashes Matlab or the system.
 We have performed some basic testing on all mex functions, but for some unusual time series, such faults may still occur.
 These situations must be dealt with by either identifying and fixing the problem in the original source code and recompiling, or by removing the problem code.
+
+## Troubleshooting errors
+When getting information on operations that produce special-valued outputs (getting IDs listed from `TS_InspectQuality`), it can be useful to then test examples by re-running pieces of code with the problematic data.
+The function `TS_WhichProblemTS` can be used to retrieve time series from an *hctsa* dataset that caused a problem for a given operation.
+
+Usage is as follows:
+
+    % Find time series that failed for the operation with ID = 684.
+    [ts_ind, dataCell, codeEval] = TS_WhichProblemTS(684);
+
+This provides the list of time series IDs (`ts_ind`), their time-series data vectors (`dataCell`), and the code to evaluate the given operation (in this case, the master operation code corresponding to the operation with ID 684).
+
+You can then pick an example time series (e.g., the first problem time series: `x = dataCell{1}; y = zscore(x)`), and then copy and paste the code in codeEval into the command line to evaluate the code for this time series.
+This method allows easy debugging and inspection of examples of time-series data that caused problems for particular operations flagged through the `TS_InspectQuality` process.

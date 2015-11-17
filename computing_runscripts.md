@@ -1,7 +1,6 @@
 # Cycling through computations using runscripts
 
-As described in this section, computation involves three main steps:
-
+As described above, computation involves three main steps:
 
 The procedure involves three main steps:
 
@@ -16,7 +15,7 @@ The procedure involves three main steps:
 <!--![**Computation workflow schematic.**](img/ComputationSchematic.png)-->
 
 It is usually the most efficient practice to retrieve a small number of time series at each iteration of the `SQL_retrieve`–`TS_compute`–`SQL_store` loop, and distribute this computation across multiple machines if possible.
-An example runscript is given in the code that accompanies this document, as `sample_runscript.m`, which retrieves a single time series at a time, computes it, and then writes the results back to the database in a loop.
+An example runscript is given in the code that accompanies this document, as `sample_runscript_sql`, which retrieves a single time series at a time, computes it, and then writes the results back to the database in a loop.
 This can be viewed as a template for runscripts that one may wish to use when performing time-series calculations across the database.
 
 This workflow is well suited to distributed computing for large datasets, whereby each node can iterate over a small set of time series, with all the results being written back to a central location (the *mySQL* database).

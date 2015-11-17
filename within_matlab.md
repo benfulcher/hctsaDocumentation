@@ -13,7 +13,7 @@ More detail on the initialization step is provided below:
 
 ## Specifying a set of time series and operations using `TS_init`
 
-As described in the [overview section](setup.md), initiating a dataset for an hctsa analysis involves specifying an input file for each of:
+As described in the [overview section](setup.md), initiating a dataset for an *hctsa* analysis involves specifying an input file for each of:
 1. the time series to analyze (`INP_ts.mat` or `INP_ts.txt`).
 2. the code to run (`INP_mops.txt`).
 3. the features to extract from that code (`INP_ops.txt`).

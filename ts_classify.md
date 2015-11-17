@@ -1,6 +1,6 @@
 # Exploring classification rate using `TS_classify`
 
-When performing a time-series classification task, a basic first exploration of the data is to investigate how accurately a classifier can performing using all of the features computed in your hctsa analysis.
+When performing a time-series classification task, a basic first exploration of the data is to investigate how accurately a classifier can performing using all of the features computed in your *hctsa* analysis.
 This can be done by running `TS_classify`.
 The function requires that group labels be assigned to the time series, using `TS_LabelGroups`.
 For example, running the function on a dataset with three classes of five time series each, as `TS_classify('norm')`, produces:
