@@ -9,12 +9,10 @@ Here we will mainly focus on using the software completely in Matlab, which is m
 Instructions for interacting with a *mySQL* database are in [a separate chapter](overview_mysql_database.md).
 
 ## Installing the *hctsa* package
-This is the simplest way to get the *hctsa* up and running.
-The *hctsa* package can be installed by running the `install` script, which adds the required paths to dependent time-series packages (toolboxes), and compiles mex binaries to work on your system.
-Once this one-off installation step is complete, you're ready to go! (NB: to also include additional functions from the TISEAN pacakge, you'll need to [compile TISEAN routines](compiling_binaries.md)).
+The simplest way to get the *hctsa* package up and running is to run the `install` script, which adds the required paths to dependent time-series packages (toolboxes), and compiles *mex* binaries to work on your system architecture.
+Once this one-off installation step is complete, you're ready to go! (NB: to include additional functions from the TISEAN nonlinear time-series analysis package, you'll also need to [compile TISEAN routines](compiling_binaries.md)).
 
-Future use of the package can begin by simply loading the paths required by the *hctsa* package using the `startup` script.
-
+After installing, future use of the package can begin by simply loading the paths required by the *hctsa* package using the `startup` script.
 
 <!------->
 

@@ -1,15 +1,16 @@
 # An example analysis using *hctsa* in Matlab
 
+At its core, *hctsa* analysis involves computing a library of different types of time-series analysis features (called *operations*) on a time-series dataset.
 <!--## Overview of an analysis-->
 
 The basic sequence of a Matlab-based *hctsa* analysis is to:
-1. Initialize a `HCTSA.mat` file, which contains all of the information about the set of time series and operations in your analysis, and stores the results of applying all operations to all time series (using the `TS_init` function described below),
+1. *Initialize* a `HCTSA.mat` file, which contains all of the information about the set of time series and operations in your analysis, as well as the results of applying all operations to all time series (using the `TS_init` function described below),
 
-2. After initializing an `HCTSA.mat` file, [computing all operations on all time series](calculating.md) is done using `TS_compute`, which stores the results back to this local file. The results are structured in local Matlab files containing matrices (that store the results of the computations) and structure arrays (that store information about the time-series data and operations), as described [here](hctsa_structure.md).
+2. These operations can be computed on your time-series data using [`TS_compute`](calculating.md). The results are structured in the local `HCTSA.mat` file containing matrices (that store the results of the computations) and structure arrays (that store information about the time-series data and operations), as described [here](hctsa_structure.md).
 
 3. After the computation is complete, [a range of processing, analysis, and plotting functions](analyzing_visualizing.md) are also provided with the software.
 
-More detail on the initialization step is provided below:
+More detail on the initialization step (1) is provided below:
 
 ## Specifying a set of time series and operations using `TS_init`
 
