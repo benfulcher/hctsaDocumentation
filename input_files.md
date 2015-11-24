@@ -3,6 +3,29 @@ Formatted input files are used to set up a custom dataset of time-series data, p
 By default, the set of operations and master operations is set to our library, and all that needs to be specified is a custom time-series dataset.
 In this section we describe the format of the input files used in the *hctsa* framework.
 
+## Specifying a set of time series and operations using `TS_init`
+
+Initiating a dataset for an *hctsa* analysis involves specifying an input file for each of:
+1. the time series to analyze (`INP_ts.mat` or `INP_ts.txt`).
+2. the code to run (`INP_mops.txt`).
+3. the features to extract from that code (`INP_ops.txt`).
+
+Details of how to format these input files are [here](input_files.md).
+
+To use the default library of operations, you can initiate a time-series dataset using the following:
+
+    TS_init('INP_test_ts.mat');
+
+All sets can be specified as follows:
+
+    TS_init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
+
+`TS_init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](hctsa_structure.md)).
+<!-- Note that if only the first input file is provided, the default *hctsa* library of operations will be used. -->
+
+Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation (which can be reassigned using `TS_ReIndex`).
+
+
 ## Adding time series
 When formatting a time series input file, two formats are available:
 * *.mat file input*, which is suited to data that are already stored as variables in Matlab,

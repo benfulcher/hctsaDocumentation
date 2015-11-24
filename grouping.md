@@ -2,7 +2,7 @@
 <!--{#sec:grouping_variables}-->
 
 Highly comparative analyses often involve classification tasks, in which each observation is assigned a (numeric) class label.
-Once data has been retrieved, as described above, class labels can be assigned to each time series in a dataset, and stored in the local `HCTSA_*.mat` files using the function `TS_LabelGroups`.
+Once data has been retrieved, as described above, class labels can be assigned to each time series in a dataset, and stored in the local `HCTSA*.mat` files using the function `TS_LabelGroups`.
 
 The example below assigns labels to two groups of time series in the `HCTSA.mat` (specifying the shorthand `'raw'` for this default, un-normalized data), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
 
