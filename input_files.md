@@ -1,7 +1,7 @@
-# Setting up a custom dataset
+# Initiating an *hctsa* analysis using a custom dataset
 Formatted input files are used to set up a custom dataset of time-series data, pieces of Matlab code to run (master operations), and associated outputs from that code (operations).
-By default, the set of operations and master operations is set to our library, and all that needs to be specified is a custom time-series dataset.
-In this section we describe the format of the input files used in the *hctsa* framework.
+By default, you can simply specify a custom time-series dataset and the default operation library wil be used.
+In this section we describe how to initiate an *hctsa* analysis, including how to format the input files used in the *hctsa* framework.
 
 ## Specifying a set of time series and operations using `TS_init`
 
@@ -12,18 +12,18 @@ Initiating a dataset for an *hctsa* analysis involves specifying an input file f
 
 Details of how to format these input files are [here](input_files.md).
 
-To use the default library of operations, you can initiate a time-series dataset using the following:
+To use the default library of operations, you can initiate a time-series dataset (e.g., as specified in the .mat file, `INP_test_ts.mat`) using the following:
 
     TS_init('INP_test_ts.mat');
 
-All sets can be specified as follows:
+To specify all sets of master operations and operations, you can use the following:
 
     TS_init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
 
 `TS_init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](hctsa_structure.md)).
 <!-- Note that if only the first input file is provided, the default *hctsa* library of operations will be used. -->
 
-Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation (which can be reassigned using `TS_ReIndex`).
+Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
 
 
 ## Adding time series
@@ -36,11 +36,11 @@ However, when using the .txt file input method, time-series data values are stor
 
 ### Input file format 1 (.mat file)
 
-When using a .mat file input, the `SQL_add` function expects the .mat file to contain three variables:
+When using a .mat file input, the .mat file should contain three variables:
 
-* `timeSeriesData`: either a *N* x 1 cell (for *N* time series), where each element contains a vector of time-series values, or a *N*x*M* matrix, where each row specifies the values of a time series (all of length *M*).
+* `timeSeriesData`: either a *N* x 1 cell (for *N* time series), where each element contains a vector of time-series values, or a *N* x *M* matrix, where each row specifies the values of a time series (all of length *M*).
 * `labels`: a *N* x 1 cell of unique strings containing a named label for each time series.
-* `keywords`: a *N* x 1 cell of strings, where each element contains a comma-delimited set of keywords (one for each time series).
+* `keywords`: a *N* x 1 cell of strings, where each element contains a comma-delimited set of keywords (one for each time series), containing *no whitespace*.
 
 An example involving two time series is below.
 In this example, we add two time series (showing only the first two values shown of each), which are labeled according to .dat files from a hypothetical EEG experiment, and assigned keywords (which are separated by commas and no whitespace).
@@ -49,21 +49,21 @@ Note that the labels do not need to specify filenames, but can be any useful lab
 
 ```
 timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}; % (a cell of vectors)
-labels = {'EEGExperiment_sub1_trail1.dat','EEGExperiment_sub1_trail2.dat'}; % data labels
-keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keywords
+labels = {'EEGExperiment_sub1_trail1.dat','EEGExperiment_sub1_trail2.dat'}; % data labels for each time series
+keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keywords for each time series
 
 % Save these variables out to INP_test.mat:
 save('INP_test.mat','timeSeriesData','labels','keywords');
 
-% Add these time series to the database using SQL_add:
-SQL_add('ts','INP_test.mat');
+% Initialize a new hctsa analysis using these data and the default feature library:
+TS_init('INP_test.mat');
 ```
 
 ### Input file format 2 (text file)
 
-When using a text file input, the input file now specifies filenames of time series to be added to the database, which Matlab will then attempt to load (using `dlmread`), and then store in the database.
+When using a text file input, the input file now specifies filenames of time series data files, which Matlab will then attempt to load (using `dlmread`).
 Data files should thus be accessible in the Matlab path.
-Each time-series data file should have a single real number on each row, specifying the ordered values that make up the time series.
+Each time-series text file should have a single real number on each row, specifying the ordered values that make up the time series.
 Once imported, the time-series data is stored in the database; thus the original time-series data files are no longer required, and can be removed from the Matlab path.
 
 The input text file should be formatted as rows with each row specifying two whitespace separated entries: (i) the file name of a time-series data file and (ii) comma-delimited keywords.
@@ -74,10 +74,8 @@ For example, consider the following input file, containing three lines (one for 
     gaussianwhitenoise_002.dat     noise,gaussian
     sinusoid_001.dat               periodic,sine
 
-Running `SQL_add` with this input file will add three time series to the database.
-The time series stored in the files **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the time series stored in the file **sinusoid_001.dat** will be added with keywords ‘periodic’ and ‘sine’.
-Note that keywords should be separated only by commas and not whitespace.
-
+Using this input file, a new analysis will contain 3 time series, **gaussianwhitenoise_001.dat** and **gaussianwhitenoise_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the data in **sinusoid_001.dat** will be assigned keywords ‘periodic’ and ‘sine’.
+Note that keywords should be separated *only* by commas (and no whitespace).
 
 ## Adding master operations
 In our system, a *master operation* refers to a piece of Matlab code and a set of input parameters.
@@ -89,7 +87,7 @@ Valid outputs from a master operation are:
 
 The (potentially many) outputs from a master operation can thus be mapped to individual operations (or features), which are single real numbers summarizing a time series that make up individual columns of the resulting data matrix.
 
-Two example lines from the input file, **INP_mops.txt**, are as follows:
+Two example lines from the input file, **INP_mops.txt** (in the **Database** directory of the repository), are as follows:
 
     CO_tc3(y,1)     CO_tc3_y_1
     ST_length(x)    ST_length
@@ -111,7 +109,7 @@ The input file, e.g., `INP_ops.txt` (in the **Database** directory of the reposi
 An example excerpt from such a file is below:
 
 
-```bash
+```
     CO_tc3_y_1.raw     CO_tc3_1_raw      correlation,nonlinear
     CO_tc3_y_1.abs     CO_tc3_1_abs      correlation,nonlinear
     CO_tc3_y_1.num     CO_tc3_1_num      correlation,nonlinear

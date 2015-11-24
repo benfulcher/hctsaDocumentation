@@ -9,9 +9,9 @@ distanceMetricRow = 'euclidean'; % time-series feature distance
 linkageMethodRow = 'average'; % linkage method
 distanceMetricCol = 'corr_fast'; % a (poor) approximation of correlations with NaNs
 linkageMethodCol = 'average'; % linkage method
-    
+
 TS_cluster(distanceMetricRow, linkageMethodRow, distanceMetricCol, linkageMethodCol);
 ```
 
 This function reads in the data from `HCTSA_N.mat`, and stores the re-ordering of rows and columns back into `HCTSA_N.mat` in the **ts_clust** and **op_clust** (and, if the size is manageable, also the pairwise distance information).
-Visualization functions (such as `TS_plot_DataMatrix`) can then take advantage of this information, using the general input label `'cl'`.
+Visualization functions (such as [`TS_plot_DataMatrix`](visualizing_the_data_matrix.md) and [`TS_SimSearch`](sim_search.md)) can then take advantage of this information, using the general input label `'cl'`.

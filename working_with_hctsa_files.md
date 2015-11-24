@@ -64,9 +64,9 @@ This can be done with `TS_subset`, which takes in a *hctsa* dataset and generate
 Note that the subset in this case will have be normalized using the full dataset of all time series, and just this subset (with IDs up to 100) are now being analyzed.
 Depending on the normalization method used, different results would be obtained if the subsetting was performed prior to normalization.
 
-*Example 2*: From `HCTSA.mat`, save a subset of that dataset to 'HCTSA_healthy.mat' containing only time series tagged with the 'healthy' keyword:
+*Example 2*: From `HCTSA.mat` (`'raw'`), save a subset of that dataset to 'HCTSA_healthy.mat' containing only time series tagged with the 'healthy' keyword:
 
-    TS_subset('HCTSA.mat',TS_getIDs('healthy','loc'),[],1,'HCTSA_healthy.mat')
+    TS_subset('raw',TS_getIDs('healthy','raw'),[],1,'HCTSA_healthy.mat')
 
 ## Combining multiple *hctsa* datasets using `TS_combine`
 

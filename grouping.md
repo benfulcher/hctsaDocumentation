@@ -6,7 +6,7 @@ Once data has been retrieved, as described above, class labels can be assigned t
 
 The example below assigns labels to two groups of time series in the `HCTSA.mat` (specifying the shorthand `'raw'` for this default, un-normalized data), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
 
-    TS_LabelGroups({'parkinsons','healthy'},'raw');
+    >> TS_LabelGroups({'parkinsons','healthy'},'raw');
 
 The first input is a cell specifying the keyword string to use to match each group.
 
@@ -17,4 +17,4 @@ By default, this function saves the group indices back to the data file (in this
 Group indices stay with the time series they are assigned to after filtering and normalizing the data (using `TS_normalize`).
 Group labels can be reassigned at any time by re-running the `TS_LabelGroups` function.
 
-Group labels are used by a range of analysis functions, including `TS_plot_pca`, `TS_TopFeatures`, `TS_classify`.
+Group labels are used by a range of analysis functions, including `TS_plot_pca`, `TS_TopFeatures`, and `TS_classify`.

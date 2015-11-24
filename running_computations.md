@@ -38,14 +38,14 @@ By default, all computations will be displayed to screen (which is useful for er
     % Compute all missing values in HCTSA.mat, suppressing output to screen:
     TS_compute(0,[],[],'missing','',0);
 
-### Computing a full dataset
+## Computing a full dataset
 
 For larger datasets, it is sensible to compute small sections of the dataset at a time (and save the results to file), eventually covering the full dataset iteratively.
 We have provided a sample runscript for this purpose as `sample_runscript_matlab`, which allows the user to specify the increment at which results are saved back to `HCTSA.mat` (or any custom file).
 
-## Distributing computations
+### Distributing computations
 
-Distributing computations across multiple computers on a large scale is better suited to [a linked a mySQL database](overview_mysql_database.md)), however, this can also be achieved in a basic way within Matlab.
+Distributing computations across multiple computers on a large scale is better suited to [a linked a mySQL database](overview_mysql_database.md), however, this can also be achieved in a basic way within Matlab.
 A local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
-`TS_subset('loc',1:100)` will generate a new file, **HCTSA_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
-Each such subset can then be run on a different computer, and the results later recombined into a single HCTSA file using `TS_combine`.
+`TS_subset('raw',1:100)` will generate a new file, **HCTSA_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
+Each such subset can then be run on a different computer, and the results later recombined into a single HCTSA file using `TS_combine`, as described [here](working_with_hctsa_files.md).

@@ -15,7 +15,7 @@ Produces the following plot (where 6 points on the distribution have been clicke
 ![](img/TS_FeatureSummary.png)
 
 You can visually see that time series with more autocorrelated patterns through time receive higher values from this operation.
-Because no group information is provided, time series are colored at random.
+Because no group information is present in this dataset, the time series are colored at random.
 
 ## Plotting for labeled groups of time series
 
