@@ -44,11 +44,11 @@ We assigned the time series to groups (using `TS_LabelGroups('orig',{'periodic',
 So now we have a clustered data matrix containing thousands of summaries of each time series, as well as pre-assigned group information as to which time series are periodic and which are noisy.
 When the time series have been assigned to groups , this can be accessed by setting the second input to 1:
 
-    TS_plot_DataMatrix('colorGroups',0); % don't color according to group labels
-    TS_plot_DataMatrix('colorGroups',1); % color according to group labels
+    TS_plot_DataMatrix('cl','colorGroups',0); % don't color according to group labels
+    TS_plot_DataMatrix('cl','colorGroups',1); % color according to group labels
 
 producing the following two plots:
 
-![](img/plot_DataMatrix_grouped.png)
+![](img/DataMatrix_together.png)
 
-When group information is not used (the left plot), the data is visualized in the default blue/yellow/red color scheme, but when the pre-assigned groups are shown, we see that the clustered dataset separates perfectly into the two assigned groups (shown using green and blue colormaps).
+When group information is *not used* (the left plot), the data is visualized in the default blue/yellow/red color scheme, but when the assigned groups are colored (right plot), we see that the clustered dataset separates perfectly into the periodic (green) and noisy (blue) time series, and we can visualize the features that contribute to the separation.

@@ -11,12 +11,12 @@ For example, to plot a set of time series that have not been assigned groups, we
     plotHowMany = 10; % how many to plot
     maxLength = 400; % maximum number of samples to plot for each time series
     TS_plot_timeseries(whatData,plotWhatTimeSeries,plotHowMany);
-    
+
 For our assorted set of time series, this produces the following:
 
 ![](img/timeSeriesPlot.png)
 
-Showing 10 examples of time series, equally-spaced through the **ts_id**s in **HCTSA_N.mat**.
+Showing 10 examples of time series, equally-spaced through the TimeSeries IDs in `HCTSA_N.mat`.
 
 ## Freeform plotting
 
