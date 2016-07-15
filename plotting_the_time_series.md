@@ -10,13 +10,13 @@ For example, to plot a set of time series that have not been assigned groups, we
     plotWhatTimeSeries = 'all'; % plot examples from all time series
     plotHowMany = 10; % how many to plot
     maxLength = 400; % maximum number of samples to plot for each time series
-    TS_plot_timeseries(whatData,plotWhatTimeSeries,plotHowMany);
+    TS_plot_timeseries(whatData,plotHowMany,plotWhatTimeSeries,maxLength);
 
 For our assorted set of time series, this produces the following:
 
 ![](img/timeSeriesPlot.png)
 
-Showing 10 examples of time series, equally-spaced through the TimeSeries IDs in `HCTSA_N.mat`.
+Showing the first 400 samples of 10 selected time series, equally-spaced through the TimeSeries IDs in `HCTSA_N.mat`.
 
 ## Freeform plotting
 
@@ -24,11 +24,11 @@ Many more custom plotting options are available by passing an options structure 
 
     % Plot as a freeform plot without labeling time series:
     plotOptions = struct('plotFreeForm',1,'displayTitles',0);
-    TS_plot_timeseries('norm','all',40,300,plotOptions);
+    TS_plot_timeseries('norm',40,'all',300,plotOptions);
 
 ![](img/freeform_timeSeries_Plot.png)
 
-producing an overview picture of 40 time series spaced through the rows of the data matrix.
+producing an overview picture of the first 300 samples of 40 time series (spaced through the rows of the data matrix).
 
 ## Dealing with groups of time series
 
@@ -36,7 +36,7 @@ When the time series have been assigned groups (using `TS_LabelGroups`, [here](g
 
     numPerGroup = 5; % plot this many examples of each group of time series
     plotHow = 'grouped'; % plot examples of each assigned group of time series
-    TS_plot_timeseries('norm',plotHow,numPerGroup,500);
+    TS_plot_timeseries('norm',numPerGroup,plotHow,500);
 
 ![](img/GroupedTimeSeriesPlot.png)
 
