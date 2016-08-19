@@ -17,6 +17,14 @@ Produces the following plot (where 6 points on the distribution have been clicke
 You can visually see that time series with more autocorrelated patterns through time receive higher values from this operation.
 Because no group information is present in this dataset, the time series are colored at random.
 
+Running TS_FeatureSummary in violin plot mode provides another representation of the same result:
+
+    TS_FeatureSummary(4310, 'raw', 1);
+
+This plots the distribution of feature 4310 from `HCTSA.mat` as a violin plot, with time series at different points through the distribution shown to the right of the plot:
+
+![](img/TS_FeatureSummary_violin.png)
+
 ## Plotting for labeled groups of time series
 
 When time series groups have been labeled (using [`TS_LabelGroups`](grouping.md) as: `TS_LabelGroups({'seizure','eyesOpen','eyesClosed'},'raw');`), `TS_FeatureSummary` will plot the distribution for each class separately, as well as an overall distribution.
