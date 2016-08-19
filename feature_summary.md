@@ -19,9 +19,10 @@ Because no group information is present in this dataset, the time series are col
 
 Running TS_FeatureSummary in violin plot mode provides another representation of the same result:
 
-    TS_FeatureSummary(4310, 'raw', 1);
+    annotateParams = struct('maxL',500);
+    TS_FeatureSummary(4310, 'raw', 1, annotateParams);
 
-This plots the distribution of feature 4310 from `HCTSA.mat` as a violin plot, with time series at different points through the distribution shown to the right of the plot:
+This plots the distribution of feature 4310 from `HCTSA.mat` as a violin plot, with ten 500-point time series subsegments annotated at different points through the distribution, shown to the right of the plot:
 
 ![](img/TS_FeatureSummary_violin.png)
 
