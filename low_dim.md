@@ -4,8 +4,10 @@ The software also provides a basic means of visualizing low-dimensional represen
 
 This can be done for a time-series dataset as follows:
 
-    TS_plot_pca('norm','ts');
-    
+```matlab
+TS_plot_pca('norm','ts');
+```
+
 This uses the normalized data (specifying `'norm'`), plotting time series (specifying `'ts'`) in the reduced, two-dimensional principal components space of operations (the leading two principal components of the data matrix).
 
 By default, the user will be prompted to select 10 points on the plot to annotate with their corresponding time series, which are annotated as the first 300 points of that time series (and their names by default).
@@ -20,17 +22,17 @@ The proportion of variance explained by each principal component is provided in 
 
 Annotation properties can be altered with some detail by specifying properties as the `annotateParams` input variable, for example:
 
-```
-    % First set up the annotateParams structure:
-    annotateParams = struct;
-    annotateParams.n = 8; % annotate 8 time series
-    annotateParams.maxL = 150; % annotates the first 150 samples of time series
-    annotateParams.userInput = 0; % points not selected by user but allocated randomly
-    annotateParams.textAnnotation = 0; % don't display names of annotated time series
-    showDistributions = 0; % don't plot marginal distributions
-    
-    % Then generate a plot using these settings:
-    TS_plot_pca('norm','ts',showDistributions,'',annotateParams)
+```matlab
+% First set up the annotateParams structure:
+annotateParams = struct;
+annotateParams.n = 8; % annotate 8 time series
+annotateParams.maxL = 150; % annotates the first 150 samples of time series
+annotateParams.userInput = 0; % points not selected by user but allocated randomly
+annotateParams.textAnnotation = 0; % don't display names of annotated time series
+showDistributions = 0; % don't plot marginal distributions
+
+% Then generate a plot using these settings:
+TS_plot_pca('norm','ts',showDistributions,'',annotateParams)
 ```
 
 yields:
@@ -45,20 +47,24 @@ Consider the sample dataset containing 20 periodic signals with additive noise (
 After retrieving and normalizing the data, we store the two groups in the metadata for the normalized dataset **HCTSA_N.mat**:
 
 ```matlab
-    >> TS_LabelGroups('norm',{'noisy','periodic'},'ts');
-    We found:
-    noisy -- 20 matches
-    periodic -- 20 matches
-    Saving group labels and information back to HCTSA_N.mat... Saved.
+TS_LabelGroups('norm',{'noisy','periodic'},'ts');
+```
+```
+We found:
+noisy -- 20 matches
+periodic -- 20 matches
+Saving group labels and information back to HCTSA_N.mat... Saved.
 ```
 Now when we plot the dataset in `TS_plot_pca`, it will automatically distinguish the groups in the plot and attempt to classify the difference in the reduced principal components space.
 
 Running the following:
 
-    >> annotateParams = struct('n',6); % annotate 6 time series
-    >> showDistribution = 1; % plot marginal distributions
-    >> TS_plot_pca('norm','ts',showDistribution,'',annotateParams);
-    
+```matlab
+>> annotateParams = struct('n',6); % annotate 6 time series
+>> showDistribution = 1; % plot marginal distributions
+>> TS_plot_pca('norm','ts',showDistribution,'',annotateParams);
+```
+
 The function then directs you to select 6 points to annotate time series to, producing the following:
 
 ![](img/PC_noisy_periodic.png)
