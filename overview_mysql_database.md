@@ -13,17 +13,17 @@ The *hctsa* package requires some preliminary set up to work with a *mySQL* data
 1. Installation of *mySQL*, either locally, or on an accessible server.
 2. Setting up Matlab with a *mySQL* java connector (done by running the `install_jconnector` script in the **Database** directory, and then restarting Matlab).
 
-After the database is set up, the rest of the package can be installed by running the `install` script, which:
+After the database is set up, and the packages required by *hctsa* are installed (by running the `install` script), linking to a *mySQL* database can be done by running the `install_database` script, which:
 
-1. (if required) Sets up Matlab to be able to communicate with the *mySQL* server and creates a new database to store Matlab calculations in, described [here](mysql_database.md).
+1. Sets up Matlab to be able to communicate with the *mySQL* server and creates a new database to store Matlab calculations in, described [here](mysql_database.md).
 2. Populates the database with our default library of master operations and operations, as described [here](populating.md). (NB: a description of the terminology of 'master operations': a set of input arguments to an analysis function, and 'operations': a single time-series feature, is [here](populating.md)).
-3. Compiles **mex** binaries required to evaluate all operations, described [here](compiling_binaries.md). In addition to the mex files compiled by the `install` script, the user is additionally required to compile the *TISEAN* binaries if desired [in the commandline](compiling_binaries.md).
+<!-- 3. Compiles **mex** binaries required to evaluate all operations, described [here](compiling_binaries.md). In addition to the mex files compiled by the `install` script, the user is additionally required to compile the *TISEAN* binaries if desired [in the commandline](compiling_binaries.md). -->
 
 This section contains additional details about each of these steps.
 
 Note that the above steps are one-off installation steps; once the software is installed and compiled, a typical workflow will simply involve opening Matlab, running the `startup` script (which adds all paths required for the *hctsa* software), and then working within Matlab from any desired directory.
 
-### Importing a time-series dataset
+### Adding a time-series dataset
 
 Once installed using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) to the database using the `SQL_add` command.
 Custom [master operations](adding_master_operations.md) and [operations](adding_operations.md) can also be added, if required.
