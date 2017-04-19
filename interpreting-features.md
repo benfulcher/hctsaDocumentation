@@ -33,3 +33,5 @@ There are also keywords like _'locdep'_ (location dependent: features that chang
 
 ### Inspecting code
 Mostly, the user will want to find more specific detailed information beyond just the category of the literature from which a given feature was derived.
+For example, say we were interested in the top performing feature in the list above:
+    [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
