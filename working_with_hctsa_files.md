@@ -12,13 +12,13 @@ Many time-series classification problems involve filtering subsets of time serie
 Most filtering functions (such as those listed in this section), require you to specify a range of IDs of TimeSeries or Operations in order to specify them.
 Recall that each TimeSeries and Operation is assigned a unique ID (assed as the ID field in the corresponding structure array).
 To quickly get the IDs of time series that match a given keyword, the following function can be used:
-
+```matlab
     TimeSeriesIDs = TS_getIDs(theKeyword,'HCTSA_N.mat');
-
+```
 Or the IDs of operations tagged with the 'entropy' keyword:
-
+```matlab
     OperationIDs = TS_getIDs('entropy','norm','ops');
-
+```
 These IDs can then be used in the functions below (e.g., to clear data, or extract a subset of data).
 
 Note that to get a quick impression of the unique time-series keywords present in a dataset, use the function `TS_WhatKeywords`, which gives a text summary of the unique keywords in an *hctsa* dataset.
