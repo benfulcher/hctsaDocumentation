@@ -48,7 +48,7 @@ We may then wish to understand the code file that produces this feature. We can 
 Inspecting the part before the '.' in the CodeString field tells us the name _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature: `FC_LocalSimple_mean3`.
 We can use the MasterID to get more information about about this from the MasterOperations structure array:
 ```
->>disp(MasterOperations([MasterOperations.ID]==836));
+>> disp(MasterOperations([MasterOperations.ID]==836));
        ID: 836
     Label: 'FC_LocalSimple_mean3'
      Code: 'FC_LocalSimple(y,'mean',3)'
