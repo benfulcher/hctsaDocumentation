@@ -117,4 +117,4 @@ Our intuition that time series with longer correlation timescales will have high
 
 ### Summary
 In practice, the _hctsa_ contains a large number of features, many of which can be expected to be highly inter-correlated on a given time-series dataset.
-It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by TS_TopFeatures (cf. [](ts_topfeatures.md)), or by searching for similar features (cf. [Finding nearest neighbors](sim_search.md))
+It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by TS_TopFeatures (cf. [Finding informative features](ts_topfeatures.md)), or by searching for similar features (cf. [Finding nearest neighbors](sim_search.md))
