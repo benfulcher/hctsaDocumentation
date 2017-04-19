@@ -43,7 +43,7 @@ In the example shown below, we can see that the 'noisy' class \(red\) has low va
 `TS_SingleFeature` provides a simpler way of seeing the class distributions without annotations, as either kernel-smoothed distributions, as in `TS_FeatureSummary`, or as violin plots.  
 See below for example implementations:
 
-```
+```matlab
 opid = 500; makeViolin = false;
 TS_SingleFeature('raw',opid,makeViolin);
 ```
@@ -52,7 +52,7 @@ Shows the distributions with classification bar underneath \(for where a linear 
 
 ![](img/TS_SingleFeature_1.png)
 
-```
+```matlab
 opid = 500; makeViolin = true;
 TS_SingleFeature('raw',opid,makeViolin);
 ```
