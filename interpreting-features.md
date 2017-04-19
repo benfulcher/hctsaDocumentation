@@ -64,7 +64,7 @@ This tells us that the code used to produce our feature was `FC_LocalSimple(y,'m
 We can inspect this code `FC_LocalSimple`, which is, like all code files for computing time-series features, located in the Operations directory of the _hctsa_ repository.  
 We can get information about this function in the commandline:
 
-```
+```matlab
 >> help FC_LocalSimple
   FC_LocalSimple    Simple local time-series forecasting.
 
