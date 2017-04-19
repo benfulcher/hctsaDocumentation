@@ -5,9 +5,9 @@ Highly comparative analyses often involve classification tasks, in which each ob
 Once data has been retrieved, as described above, class labels can be assigned to each time series in a dataset, and stored in the local `HCTSA*.mat` files using the function `TS_LabelGroups`.
 
 The example below assigns labels to two groups of time series in the `HCTSA.mat` (specifying the shorthand `'raw'` for this default, un-normalized data), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
-
+```matlab
     >> TS_LabelGroups({'parkinsons','healthy'},'raw');
-
+```
 The first input is a cell specifying the keyword string to use to match each group.
 
 To automatically detect unique keywords for labelling, `TS_LabelGroups` can be run with an empty first input, as `TS_LabelGroups([],'raw');`
