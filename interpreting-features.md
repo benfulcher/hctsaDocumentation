@@ -35,3 +35,15 @@ There are also keywords like _'locdep'_ (location dependent: features that chang
 Mostly, the user will want to find more specific detailed information beyond just the category of the literature from which a given feature was derived.
 For example, say we were interested in the top performing feature in the list above:
     [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
+
+We may then wish to understand the code file that produces this feature. We can use the feature ID (3016) provided:
+```
+>> disp(Operations([Operations.ID]==3016));
+            ID: 3016
+          Name: 'FC_LocalSimple_mean3_taures'
+      Keywords: 'forecasting'
+    CodeString: 'FC_LocalSimple_mean3.taures'
+      MasterID: 836
+```
+
+
