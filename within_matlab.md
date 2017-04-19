@@ -13,10 +13,10 @@ The basic sequence of a Matlab-based *hctsa* analysis is to:
 ## *Example 1*: Compute a feature vector for a time series
 
 As a quick check of your operation library, you can compute the full default code library on a time-series data vector (a column vector of real numbers) as follows:
-
+```matlab
     >> x = randn(500,1); % A random time-series
     >> featVector = TS_CalculateFeatureVector(x,0); % compute the default feature vector for x
-
+```
 ## *Example 2*: Analyze a time-series dataset
 
 Suppose you have have a time-series dataset to analyze.
