@@ -57,9 +57,9 @@ An example is shown below.
 ## Other details
 
 Multiple output plots can be produced simultaneously by specifying many types of plots as follows:
-
+```matlab
     TS_SimSearch(1,'whatPlots',{'matrix','network','scatter'})
-
+```
 This produces a plot of each type.
 
 Note that pairwise distances can be pre-computed and saved in the `HCTSA*.mat` file using `TS_PairwiseDist` for custom distance metrics (which is done by default in `TS_cluster` for datasets containing fewer than 1000 objects).
