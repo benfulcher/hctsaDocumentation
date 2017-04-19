@@ -99,5 +99,6 @@ out.ac2 = CO_AutoCorr(res,2,'Fourier');
 out.taures = CO_FirstZero(res,'ac');
 ```
 This shows us that, after doing the local mean prediction, this function then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions.
+We see that the `taures` output computes the `CO_FirstZero` of the residuals, which computes the first zero of the autocorrelation function (e.g., `help CO_FirstZero`).
 
 
