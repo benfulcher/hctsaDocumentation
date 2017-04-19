@@ -23,7 +23,7 @@ Showing the first 400 samples of 10 selected time series, equally-spaced through
 Many more custom plotting options are available by passing an options structure to `TS_plot_timeseries`, including the `'plotFreeForm'` option which allows very many time series to be shown in a single plot (without the usual axis borders):
 ```matlab
     % Plot as a freeform plot without labeling time series:
-    plotOptions = struct('plotFreeForm',true,'displayTitles',0);
+    plotOptions = struct('plotFreeForm',true,'displayTitles',false);
     TS_plot_timeseries('norm',40,'all',300,plotOptions);
 ```
 ![](img/freeform_timeSeries_Plot.png)
