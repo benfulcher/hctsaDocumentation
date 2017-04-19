@@ -46,6 +46,7 @@ We may then wish to understand the code file that produces this feature. We can 
       MasterID: 836
 ```
 Inspecting the part before the '.' in the CodeString field tells us the name _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature: `FC_LocalSimple_mean3`.
+The text following the dot, '.', tells us the field of the output structure produced by the Matlab function that was run: `taures`.
 We can use the MasterID to get more information about about this from the MasterOperations structure array:
 ```
 >> disp(MasterOperations([MasterOperations.ID]==836));
@@ -53,3 +54,4 @@ We can use the MasterID to get more information about about this from the Master
     Label: 'FC_LocalSimple_mean3'
      Code: 'FC_LocalSimple(y,'mean',3)'
 ```
+This tells us that the code used to produce 
