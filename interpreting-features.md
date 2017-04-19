@@ -115,4 +115,4 @@ On the plot on the right, we see how this feature orders time series (with the d
 Our intuition that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction holds visually.
 
 ### Summary
-In practice, the _hctsa_ contains a large number of features, many of which can be expected to be highly inter-correlated on a given time-series dataset. It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by TS_TopFeatures (cf. [Finding informative features](ts_topfeatures.md)), or by searching for similar features (cf. [Finding nearest neighbors](sim_search.md))
+In practice, the _hctsa_ contains a large number of features, many of which can be expected to be highly inter-correlated on a given time-series dataset. It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by TS_TopFeatures (cf. [Finding informative features](ts_topfeatures.md)), or by searching for similar features (cf. [Finding nearest neighbors](sim_search.md)).
