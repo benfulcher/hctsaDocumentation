@@ -103,5 +103,5 @@ We see that the `taures` output computes the `CO_FirstZero` of the residuals, wh
 When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_taures`, will have a high value.
 
 ### Looking at outputs
-Once we've seen the code that was used to produce a feature, and started to think about how such a computation might be useful for our given time-series analysis problem, we can check out intuition by inspecting its performance on our dataset.
-[Investigating specific operations](feature_summary.md)
+Once we've seen the code that was used to produce a feature, and started to think about how such a computation might be useful for our given time-series analysis problem, we can check out intuition by inspecting its performance on our dataset (as described in [Investigating specific operations](feature_summary.md)).
+
