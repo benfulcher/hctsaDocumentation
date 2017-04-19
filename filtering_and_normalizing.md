@@ -8,9 +8,9 @@ The `TS_normalize` function writes the new, filtered, normalized matrix to a loc
 This contains normalized, and trimmed versions of the information in `HCTSA.mat`.
 
 Example usage is as follows:
-
+```matlab
     TS_normalize('scaledRobustSigmoid',[0.8,1.0]);
-
+```
 The first input controls the normalization method, in this case a scaled, outlier-robust sigmoidal transformation, specified with 'scaledRobustSigmoid'.
 The second input controls the filtering of time series and operations based on minimum thresholds for good values in the corresponding rows (corresponding to time series; filtered first) and columns (corresponding to operations; filtered second) of the data matrix.
 
