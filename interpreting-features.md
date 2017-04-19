@@ -26,7 +26,7 @@ Often an analysis, such as running `TS_TopFeatures`, yields a list of features, 
 
 Functions like `TS_TopFeatures` are helpful in showing us how these different types of features might cluster into groups that measure similar properties, but even when we have a group of similar features, how can we start to interpret and understand what these features are actually measuring?
 
-### Keywords
+### Inspecting keywords
 
 The simplest way of interpreting what sort of property a feature might be measuring is from its keywords, that often label individual features by the class of time-series analysis method from which they were derived.  
 In the list above, we see keywords listed in parentheses, as _'forecasting'_ \(methods related to predicting future values of a time series\), _'entropy'_ \(methods related to predictability and information content in a time series\), and _'wavelet'_ \(features derived from wavelet transforms of the time series\).  
@@ -100,6 +100,7 @@ out.taures = CO_FirstZero(res,'ac');
 ```
 This shows us that, after doing the local mean prediction, this function then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions.
 We see that the `taures` output computes the `CO_FirstZero` of the residuals, which computes the first zero of the autocorrelation function (e.g., `help CO_FirstZero`).
-When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature will have a high value.
+When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_taures`, will have a high value.
 
-
+### Looking at outputs
+Once we've seen the code that was used to produce a feature, and started to think about how such a computation might be useful for our given time-series analysis problem, we can check out intuition by inspecting its performance on our dataset.
