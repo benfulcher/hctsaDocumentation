@@ -8,7 +8,7 @@ The function takes in an operation ID as it's input \(and can also take inputs s
 
 For example, the following:
 
-```
+```matlab
 TS_FeatureSummary(100)
 ```
 
