@@ -108,6 +108,5 @@ Once we've seen the code that was used to produce a feature, and started to thin
 For example, we can run the following:
 
 ```matlab
-annotateParams = struct('maxL',500);
-TS_FeatureSummary(3016, 'raw', 1, annotateParams);
+TS_FeatureSummary(3016,'raw',true);
 ```
