@@ -4,15 +4,16 @@ When performing a time-series classification task, a basic first exploration of 
 This can be done by running `TS_classify`.
 The function requires that group labels be assigned to the time series, using `TS_LabelGroups`.
 For example, running the function on a dataset with three classes of five time series each, as `TS_classify('norm')`, produces:
-
+```
     Classification rate (3-class) using 5-fold svm classification with 8192 features:
     73.333 +/- 14.907%
-
+```
 In this case, the function has attempted to learn a linear svm classifier on the features to predict the labels assigned to the data, using 5-fold cross validation (note that the default is 10-fold, but for smaller datasets such as this one, fewer folds are used automatically).
 The results show that using 8192 features we obtain a mean classification accuracy of 73.3% (with a standard deviation over the 5-folds of 14.9%).
 
 If the 3rd input to the function is set to 1 (or fewer than 3 inputs are provided), the function then computes the top 10 PCs of the data matrix, and uses them to classify the time series, yielding:
 
+```
     Computing top 10 PCs... Done.
     Computing classification rates keeping top 1--10 PCs...
     1 PCs:   73.333 +/- 27.889%
@@ -25,7 +26,7 @@ If the 3rd input to the function is set to 1 (or fewer than 3 inputs are provide
     8 PCs:   53.333 +/- 18.257%
     9 PCs:   40.000 +/- 27.889%
     10 PCs:   33.333 +/- 33.333%
-
+```
 The plot shows this information graphically:
 
 ![](img/TS_classify.png)
