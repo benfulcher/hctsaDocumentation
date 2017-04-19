@@ -29,4 +29,4 @@ Functions like `TS_TopFeatures` are helpful in showing us how these different ty
 ### Keywords
 The simplest way of interpreting what sort of property a feature might be measuring is from its keywords, that often label individual features by the class of time-series analysis method from which they were derived.
 In the list above, we see keywords listed in parentheses, as _'forecasting'_ (methods related to predicting future values of a time series), _'entropy'_ (methods related to predictability and information content in a time series), and _'wavelet'_ (features derived from wavelet transforms of the time series).
-There are also keywords like _'locdep'_ (location dependent: features that change under mean shifts of a time series), _'spreaddep'_ (spread dependent: features that change under rescaling about the mean)
+There are also keywords like _'locdep'_ (location dependent: features that change under mean shifts of a time series), _'spreaddep'_ (spread dependent: features that change under rescaling about their mean), and _'lengthdep'_ (length dependent: features that are highly sensitive to the length of a time series).
