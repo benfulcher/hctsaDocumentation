@@ -48,11 +48,11 @@ A range of visualization scripts are then available to analyze the results, such
     >> TS_plot_DataMatrix; % plot the data matrix
 ```
 To inspect a low-dimensional representation of the data:
-
+```matlab
     >> TS_plot_pca;
-
+```
 Or to determine which features are best at classifying the labeled groups of time series in your dataset:
-
+```matlab
     >> TS_TopFeatures;
-
+```
 Each of these functions can be run with a range of input settings.
