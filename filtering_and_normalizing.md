@@ -17,9 +17,9 @@ The second input controls the filtering of time series and operations based on m
 In the example above, time series (rows of the data matrix) with more than 20% special values (specifying 0.8) are first filtered out, and then operations (columns of the data matrix) containing any special values (specifying 1.0) are removed.
 Columns with approximately constant values are also filtered out.
 After filtering the data matrix, the outlier-robust ‘scaledRobustSigmoid’ sigmoidal transformation is applied to all remaining operations (columns).
-The filtered, normalized matrix is saved to the file **HCTSA_N.mat**.
+The filtered, normalized matrix is saved to the file `HCTSA_N.mat`.
 
-Details about what normalization is saved to the **HCTSA_N.mat** file as `normalizationInfo`, a structure that contains the normalization function, filtering options used, and the corresponding `TS_normalize` code that can be used to re-run the normalization.
+Details about what normalization is saved to the `HCTSA_N.mat` file as `normalizationInfo`, a structure that contains the normalization function, filtering options used, and the corresponding `TS_normalize` code that can be used to re-run the normalization.
 
 <!--The first input controls the normalization method, in this case a , and the second input controls the filtering, in this case each time series needs to produce at least 80% good-valued outputs (setting 0.8), or they are removed, and then operations with less than 100% good-valued outputs are removed (setting 1.0).-->
 
