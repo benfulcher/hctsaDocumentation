@@ -13,8 +13,9 @@ The plots to produce are specified as a cell using the 'whatPlots' input.
 
 ## Pairwise similarity matrix of neighbors
 
+```matlab
     TS_SimSearch('whatPlots',{'matrix'});
-
+```
 To investigate the pairwise relationships between all neighbors retrieved, you specify the `'matrix'` option of the `TS_SimSearch` function.
 An example output using a publicly-available [EEG dataset](http://epileptologie-bonn.de/cms/front_content.php?idcat=193&lang=3), retrieving 14 neighbors from the time series with ID = 1, as `TS_SimSearch(1,'whatPlots',{'matrix'},'numNeighbors',14)`, is shown below:
 
