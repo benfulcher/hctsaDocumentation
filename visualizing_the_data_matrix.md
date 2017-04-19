@@ -47,7 +47,7 @@ When the time series have been assigned to groups , this can be accessed by sett
 ```matlab
     TS_plot_DataMatrix('cl','colorGroups',0); % don't color according to group labels
     TS_plot_DataMatrix('cl','colorGroups',1); % color according to group labels
-
+```
 producing the following two plots:
 
 ![](img/DataMatrix_together.png)
