@@ -22,31 +22,31 @@ As a quick check of your operation library, you can compute the full default cod
 Suppose you have have a time-series dataset to analyze.
 You first generate a formatted `INP_ts.mat` input file containing your time series data and associated name and keyword labels, as described [here](input_files.md).
 You then initialize an *hctsa* calculation using the default library of features:
-
+```matlab
     >> TS_init('INP_ts.mat');
-
-This generates a local file, `HCTSA.mat` containing the associated metadata for your time series, as well as information about the full time-series feature library (**Operations**) and the set of functions and code to call to evaluate them (**MasterOperations**), as described [here](hctsa_structure.md).
+```
+This generates a local file, `HCTSA.mat` containing the associated metadata for your time series, as well as information about the full time-series feature library (`Operations`) and the set of functions and code to call to evaluate them (`MasterOperations`), as described [here](hctsa_structure.md).
 
 Next you want to evaluate the code on all of the time series in your dataset.
 For this you can simply run:
-
+```matlab
     >> TS_compute;
-
+```
 As described [here](running_computations), or, for larger datasets, using a script to regularly save back to the local file (cf. `sample_runscript_matlab`).
 
 Having run your calculations, you may then want to label your data using the keywords you provided in the case that you have labeled groups of time series:
-
+```matlab
     >> TS_LabelGroups;
-
+```
 and then normalize and filter the data using the default sigmoidal transformation:
-
+```matlab
     >> TS_normalize;
-
+```
 A range of visualization scripts are then available to analyze the results, such as plotting the reordered data matrix:
-
+```matlab
     >> TS_cluster; % compute a reordering of data and features
     >> TS_plot_DataMatrix; % plot the data matrix
-
+```
 To inspect a low-dimensional representation of the data:
 
     >> TS_plot_pca;
