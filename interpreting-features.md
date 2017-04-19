@@ -26,4 +26,5 @@ Often an analysis, such as running `TS_TopFeatures`, yields a list of features, 
 
 Functions like `TS_TopFeatures` are helpful in showing us how these different types of features might cluster into groups that measure similar properties, but even when we have a group of similar features, how can we start to interpret and understand what these features are actually measuring?
 
-All feature names are listed in 
+### Keywords
+The first step is the keywords
