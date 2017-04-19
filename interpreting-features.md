@@ -100,7 +100,7 @@ out.taures = CO_FirstZero(res,'ac');
 ```
 This shows us that, after doing the local mean prediction, this function then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions.
 We see that the `taures` output computes the `CO_FirstZero` of the residuals, which computes the first zero of the autocorrelation function (e.g., `help CO_FirstZero`).
-When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_taures`, will have a high value.
+When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature, `![FC_LocalSimple_mean3_taures](/assets/Screen Shot 2017-04-19 at 16.19.09.png)`, will have a high value.
 
 ### Looking at outputs
 Once we've seen the code that was used to produce a feature, and started to think about how such a computation might be useful for our given time-series analysis problem, we can check out intuition by inspecting its performance on our dataset (as described in [Investigating specific operations](feature_summary.md)).
@@ -110,3 +110,11 @@ For example, we can run the following:
 ```matlab
 TS_FeatureSummary(3016,'raw',true);
 ```
+which produces the following plot on our noisy sinusoid dataset:
+![](img/FeatureSummaryForInterpretation.png)
+On the plot on the right, we see how this feature orders time series (with the distribution of values shown on the left, and split between the two groups: 'noisy', and 'periodic').
+Our intuition that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction holds visually.
+
+### Summary
+In practice, the _hctsa_ contains a large number of features, many of which can be expected to be highly inter-correlated on a given time-series dataset.
+It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by TS_TopFeatures (cf. [](ts_topfeatures.md)), or by searching for similar features (cf. [Finding nearest neighbors](sim_search.md))
