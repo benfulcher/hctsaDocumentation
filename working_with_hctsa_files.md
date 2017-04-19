@@ -59,16 +59,16 @@ Sometimes it's useful to retrieve a subset of an *hctsa* dataset, when analyzing
 This can be done with `TS_subset`, which takes in a *hctsa* dataset and generates the desired subset, which can be saved to a new .mat file.
 
 *Example 1*: Import data from 'HCTSA_N.mat', then save a new dataset containing only time series with IDs in the range 1--100, and all operations, to 'HCTSA_N_subset.mat' (see documentation for all inputs).
-
+```matlab
     TS_subset('norm',1:100,[],1,'HCTSA_N_subset.mat')
-
+```
 Note that the subset in this case will have be normalized using the full dataset of all time series, and just this subset (with IDs up to 100) are now being analyzed.
 Depending on the normalization method used, different results would be obtained if the subsetting was performed prior to normalization.
 
 *Example 2*: From `HCTSA.mat` (`'raw'`), save a subset of that dataset to 'HCTSA_healthy.mat' containing only time series tagged with the 'healthy' keyword:
-
+```matlab
     TS_subset('raw',TS_getIDs('healthy','raw'),[],1,'HCTSA_healthy.mat')
-
+```
 ## Combining multiple *hctsa* datasets using `TS_combine`
 
 When analyzing a growing dataset, sometimes new data needs to be combined with computations on existing data.
