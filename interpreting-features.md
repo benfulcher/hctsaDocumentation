@@ -2,7 +2,8 @@
 
 Often an analysis, such as running `TS_TopFeatures`, yields a list of features, such as:
 
-    [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
+```
+[3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
 [3067] FC_LocalSimple_median3_taures (forecasting) -- 58.14%
 [2748] EN_mse_1-10_2_015_sampen_s3 (entropy,sampen,mse) -- 54.10%
 [7202] MF_StateSpace_n4sid_3_05_1_k_1 (model) -- 53.87%
@@ -42,3 +43,6 @@ Often an analysis, such as running `TS_TopFeatures`, yields a list of features, 
 [2747] EN_mse_1-10_2_015_sampen_s2 (entropy,sampen,mse) -- 50.35%
 [4201] SC_FluctAnal_mag_2_dfa_50_2_logi_ssr (scaling) -- 50.34%
 [6946] MF_steps_ahead_ss_best_6_meandiffrms (model,prediction) -- 50.33%
+```
+
+With names like these, how can we start to interpret and understand what these features are actually measuring?
