@@ -27,4 +27,6 @@ Often an analysis, such as running `TS_TopFeatures`, yields a list of features, 
 Functions like `TS_TopFeatures` are helpful in showing us how these different types of features might cluster into groups that measure similar properties, but even when we have a group of similar features, how can we start to interpret and understand what these features are actually measuring?
 
 ### Keywords
-The first step is the keywords
+The simplest way of interpreting what sort of property a feature might be measuring is from its keywords, that often label individual features by the class of time-series analysis method from which they were derived.
+In the list above, we see keywords listed in parentheses, as _'forecasting'_ (methods related to predicting future values of a time series), _'entropy'_ (methods related to predictability and information content in a time series), and _'wavelet'_ (features derived from wavelet transforms of the time series).
+There are also keywords like _'locdep'_ (location dependent: features that change under mean shifts of a time series), _'spreaddep'_ (spread dependent: features that change under rescaling about the mean)
