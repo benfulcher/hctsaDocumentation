@@ -21,7 +21,7 @@ Because no group information is present in this dataset, the time series are col
 
 Running TS\_FeatureSummary in violin plot mode provides another representation of the same result:
 
-```
+```matlab
 annotateParams = struct('maxL',500);
 TS_FeatureSummary(4310, 'raw', 1, annotateParams);
 ```
