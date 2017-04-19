@@ -40,7 +40,7 @@ For example, say we were interested in the top performing feature in the list ab
 
 We may then wish to understand the code file that produces this feature. We can use the feature ID \(3016\) provided in square brackets to get information from the Operations structure array:
 
-```
+```matlab
 >> disp(Operations([Operations.ID]==3016));
             ID: 3016
           Name: 'FC_LocalSimple_mean3_taures'
