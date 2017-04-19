@@ -58,4 +58,30 @@ This tells us that the code used to produce our feature was `FC_LocalSimple(y,'m
 We can inspect this code `FC_LocalSimple`, which is, like all code files for computing time-series features, located in the Operations directory of the _hctsa_ repository.
 We can get information about this function in the commandline:
 
+```
+>> help FC_LocalSimple
+  FC_LocalSimple    Simple local time-series forecasting.
+ 
+  Simple predictors using the past trainLength values of the time series to
+  predict its next value.
+ 
+ ---INPUTS:
+  y, the input time series
+ 
+  forecastMeth, the forecasting method:
+           (i) 'mean': local mean prediction using the past trainLength time-series
+                        values,
+           (ii) 'median': local median prediction using the past trainLength
+                          time-series values
+           (iii) 'lfit': local linear prediction using the past trainLength
+                          time-series values.
+ 
+  trainLength, the number of time-series values to use to forecast the next value
+ 
+ ---OUTPUTS: the mean error, stationarity of residuals, Gaussianity of
+  residuals, and their autocorrelation structure.
+```
+
+
+
 Inspecting the code used to compute our feature, `FC_LocalSimple(y,'mean',3)`, this tells us that the code is doing forecasting using the mean (since the second input to `FC_LocalSimple`, `forecastMeth` is set to 'mean') of the previous three values (since the third input to `FC_LocalSimple`, `trainLength` is set to 3).
