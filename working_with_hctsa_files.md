@@ -13,11 +13,11 @@ Most filtering functions (such as those listed in this section), require you to 
 Recall that each TimeSeries and Operation is assigned a unique ID (assed as the ID field in the corresponding structure array).
 To quickly get the IDs of time series that match a given keyword, the following function can be used:
 ```matlab
-    TimeSeriesIDs = TS_getIDs(theKeyword,'HCTSA_N.mat');
+TimeSeriesIDs = TS_getIDs(theKeyword,'HCTSA_N.mat');
 ```
 Or the IDs of operations tagged with the 'entropy' keyword:
 ```matlab
-    OperationIDs = TS_getIDs('entropy','norm','ops');
+OperationIDs = TS_getIDs('entropy','norm','ops');
 ```
 These IDs can then be used in the functions below (e.g., to clear data, or extract a subset of data).
 
@@ -36,19 +36,19 @@ The function `TS_local_clear_remove` achieves these tasks when working directly 
 
 *Example 1*: Clear all computed data from time series with IDs 1:5 from `HCTSA.mat` (specifying `'raw'`):
 ```matlab
-    TS_local_clear_remove('ts',1:5,0,'raw');
+TS_local_clear_remove('ts',1:5,0,'raw');
 ```
 *Example 2*: Remove all operations with the keyword 'tisean' (that depend on the [TISEAN package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html)) from `HCTSA.mat`:
 ```matlab
-    TS_local_clear_remove('ops',TS_getIDs('tisean','raw','ops'),1,'raw');
+TS_local_clear_remove('ops',TS_getIDs('tisean','raw','ops'),1,'raw');
 ```
 *Example 3*: Remove all operations that require positive-only data (the `'posOnly'` keyword) from `HCTSA.mat`:
 ```matlab
-    TS_local_clear_remove('ops',TS_getIDs('posOnly','raw','ops'),1,'raw');
+TS_local_clear_remove('ops',TS_getIDs('posOnly','raw','ops'),1,'raw');
 ```
 *Example 4*: Remove all operations that are location dependent (the `'locdep'` keyword) from `HCTSA.mat`:
 ```matlab
-    TS_local_clear_remove('ops',TS_getIDs('locdep','raw','ops'),1,'raw');
+TS_local_clear_remove('ops',TS_getIDs('locdep','raw','ops'),1,'raw');
 ```
 
 See the documentation in the function file for additional details about the inputs to `TS_local_clear_remove`.
@@ -60,14 +60,14 @@ This can be done with `TS_subset`, which takes in a *hctsa* dataset and generate
 
 *Example 1*: Import data from 'HCTSA_N.mat', then save a new dataset containing only time series with IDs in the range 1--100, and all operations, to 'HCTSA_N_subset.mat' (see documentation for all inputs).
 ```matlab
-    TS_subset('norm',1:100,[],1,'HCTSA_N_subset.mat')
+TS_subset('norm',1:100,[],1,'HCTSA_N_subset.mat')
 ```
 Note that the subset in this case will have be normalized using the full dataset of all time series, and just this subset (with IDs up to 100) are now being analyzed.
 Depending on the normalization method used, different results would be obtained if the subsetting was performed prior to normalization.
 
 *Example 2*: From `HCTSA.mat` (`'raw'`), save a subset of that dataset to 'HCTSA_healthy.mat' containing only time series tagged with the 'healthy' keyword:
 ```matlab
-    TS_subset('raw',TS_getIDs('healthy','raw'),[],1,'HCTSA_healthy.mat')
+TS_subset('raw',TS_getIDs('healthy','raw'),[],1,'HCTSA_healthy.mat')
 ```
 ## Combining multiple *hctsa* datasets using `TS_combine`
 
@@ -77,9 +77,9 @@ Alternatively, when computing a large dataset, sometimes you may wish to compute
 To combine *hctsa* data files, you can use the `TS_combine` function.
 
 *Example*: combine *hctsa* datasets stored in the files `HCTSA_healthy.mat` and `HCTSA_disease.mat` into a new combined file, `HCTSA_combined.mat`:
-
-    TS_combine('HCTSA_healthy.mat','HCTSA_disease.mat',0,'HCTSA_combined.mat')
-
+```matlab
+TS_combine('HCTSA_healthy.mat','HCTSA_disease.mat',0,'HCTSA_combined.mat')
+```
 The third input, `compare_tsids`, controls the behavior of the function in combining time series.
 By setting this to 1, `TS_combine` assumes that the TimeSeries IDs are comparable between the datasets (e.g., most common when using a [*mySQL* database to store *hctsa* data](overview_mysql_database.md)), and thus filters out duplicates so that the resulting *hctsa* dataset contains a unique set of time series.
 By setting this to 0 (default), the output will contain a union of time series present in each of the two *hctsa* datasets.
