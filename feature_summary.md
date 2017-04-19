@@ -9,7 +9,7 @@ The function takes in an operation ID as it's input \(and can also take inputs s
 For example, the following:
 
 ```matlab
-TS_FeatureSummary(100)
+    TS_FeatureSummary(100)
 ```
 
 Produces the following plot \(where 6 points on the distribution have been clicked on to annotate them with short time-series segments\):
