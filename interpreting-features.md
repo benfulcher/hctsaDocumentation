@@ -36,7 +36,7 @@ Mostly, the user will want to find more specific detailed information beyond jus
 For example, say we were interested in the top performing feature in the list above:
     [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
 
-We may then wish to understand the code file that produces this feature. We can use the feature ID (3016) provided:
+We may then wish to understand the code file that produces this feature. We can use the feature ID (3016) provided in square brackets to get information from the Operations structure array:
 ```
 >> disp(Operations([Operations.ID]==3016));
             ID: 3016
