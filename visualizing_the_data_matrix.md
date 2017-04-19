@@ -44,6 +44,7 @@ We assigned the time series to groups (using `TS_LabelGroups('orig',{'periodic',
 So now we have a clustered data matrix containing thousands of summaries of each time series, as well as pre-assigned group information as to which time series are periodic and which are noisy.
 When the time series have been assigned to groups , this can be accessed by setting the second input to 1:
 
+```matlab
     TS_plot_DataMatrix('cl','colorGroups',0); % don't color according to group labels
     TS_plot_DataMatrix('cl','colorGroups',1); % color according to group labels
 
