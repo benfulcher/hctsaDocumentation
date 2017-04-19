@@ -53,7 +53,7 @@ Shows the distributions with classification bar underneath \(for where a linear 
 ![](img/TS_SingleFeature_1.png)
 
 ```
-opid = 500; makeViolin = 1;
+opid = 500; makeViolin = true;
 TS_SingleFeature('raw',opid,makeViolin);
 ```
 
