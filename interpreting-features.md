@@ -89,8 +89,7 @@ We can get information about this function in the commandline:
 
 Inspecting the code used to compute our feature, `FC_LocalSimple(y,'mean',3)`, this tells us that the code is doing forecasting using the mean (since the second input to `FC_LocalSimple`, `forecastMeth` is set to 'mean') of the previous three values (since the third input to `FC_LocalSimple`, `trainLength` is set to 3).  
 To understand what the specific output quantity from this code is that came up as being highly informative in our `TS_TopFeatures` analysis, we need to look for the output labeled `taures`.  
-For this, we'll need to look into the code file, `FC_LocalSimple`, to see where this output is computed.  
-We find the following lines of code within `FC_LocalSimple`:
+For this, we'll need to look into the code file, `FC_LocalSimple`, to see where this output is computed. We find the following lines of code within `FC_LocalSimple`:
 ```matlab
 % Autocorrelation structure of the residuals:
 out.ac1 = CO_AutoCorr(res,1,'Fourier');
