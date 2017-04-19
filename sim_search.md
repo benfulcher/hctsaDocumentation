@@ -45,9 +45,9 @@ The target is distinguished (as purple in this case), and the other classes of t
 Again, you can see that the EEG time series during seizure (blue) are distinguished from eyes open (red) and eyes closed (green).
 
 ## Pairwise similarity matrix of neighbors
-
+```matlab
     TS_SimSearch(1,'whatPlots',{'scatter'});
-
+```
 The scatter setting visualizes the relationship between the target and each of 12 time series with the most similar properties to the target.
 Each subplot is a scatter of the (normalized) outputs of each feature for the specified target (x-axis) and the match (y-axis).
 An example is shown below.
