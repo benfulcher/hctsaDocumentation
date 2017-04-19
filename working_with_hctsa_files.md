@@ -35,20 +35,21 @@ The function `TS_local_clear_remove` achieves these tasks when working directly 
 `TS_local_clear_remove` loads in a an *hctsa* .mat data file, clears or removes the specified time series or operations, and then writes the result back to the file.
 
 *Example 1*: Clear all computed data from time series with IDs 1:5 from `HCTSA.mat` (specifying `'raw'`):
-
+```matlab
     TS_local_clear_remove('ts',1:5,0,'raw');
-
+```
 *Example 2*: Remove all operations with the keyword 'tisean' (that depend on the [TISEAN package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html)) from `HCTSA.mat`:
-
+```matlab
     TS_local_clear_remove('ops',TS_getIDs('tisean','raw','ops'),1,'raw');
-
+```
 *Example 3*: Remove all operations that require positive-only data (the `'posOnly'` keyword) from `HCTSA.mat`:
-
+```matlab
     TS_local_clear_remove('ops',TS_getIDs('posOnly','raw','ops'),1,'raw');
-
+```
 *Example 4*: Remove all operations that are location dependent (the `'locdep'` keyword) from `HCTSA.mat`:
-
+```matlab
     TS_local_clear_remove('ops',TS_getIDs('locdep','raw','ops'),1,'raw');
+```
 
 See the documentation in the function file for additional details about the inputs to `TS_local_clear_remove`.
 
