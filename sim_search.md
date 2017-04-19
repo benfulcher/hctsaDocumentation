@@ -33,9 +33,9 @@ In this case we see that the purple and green classes are relatively similar und
 
 Another way to visualize the similarity (under our feature-based distance metric) of all pairs of neighbors is using a network visualization.
 This is specified as:
-
+```matlab
     TS_SimSearch(1,'whatPlots',{'network'});
-
+```
 which produces something like the following:
 ![](img/TS_SimSearch_network.png)
 
