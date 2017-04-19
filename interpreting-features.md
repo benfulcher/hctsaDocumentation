@@ -54,4 +54,5 @@ We can use the MasterID to get more information about about this from the Master
     Label: 'FC_LocalSimple_mean3'
      Code: 'FC_LocalSimple(y,'mean',3)'
 ```
-This tells us that the code used to produce 
+This tells us that the code used to produce our feature was `FC_LocalSimple(y,'mean',3)`.
+We can inspect this code `FC_LocalSimple`.
