@@ -99,7 +99,7 @@ out.taures = CO_FirstZero(res,'ac');
 ```
 This shows us that, after doing the local mean prediction, this function then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions.
 We see that the `taures` output computes the `CO_FirstZero` of the residuals, which computes the first zero of the autocorrelation function (e.g., `help CO_FirstZero`).
-When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature, `![FC_LocalSimple_mean3_taures](/assets/Screen Shot 2017-04-19 at 16.19.09.png)`, will have a high value.
+When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_taures`, will have a high value.
 
 ### Looking at outputs
 Once we've seen the code that was used to produce a feature, and started to think about how such a computation might be useful for our given time-series analysis problem, we can check out intuition by inspecting its performance on our dataset (as described in [Investigating specific operations](feature_summary.md)).
