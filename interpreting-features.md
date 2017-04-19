@@ -82,6 +82,4 @@ We can get information about this function in the commandline:
   residuals, and their autocorrelation structure.
 ```
 
-
-
 Inspecting the code used to compute our feature, `FC_LocalSimple(y,'mean',3)`, this tells us that the code is doing forecasting using the mean (since the second input to `FC_LocalSimple`, `forecastMeth` is set to 'mean') of the previous three values (since the third input to `FC_LocalSimple`, `trainLength` is set to 3).
