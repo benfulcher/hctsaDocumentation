@@ -49,4 +49,7 @@ Inspecting the part before the '.' in the CodeString field tells us the name _hc
 We can use the MasterID to get more information about about this from the MasterOperations structure array:
 ```
 >>disp(MasterOperations([MasterOperations.ID]==836));
-end
+       ID: 836
+    Label: 'FC_LocalSimple_mean3'
+     Code: 'FC_LocalSimple(y,'mean',3)'
+```
