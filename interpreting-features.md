@@ -105,3 +105,7 @@ When the local mean prediction still leaves alot of autocorrelation structure in
 ### Looking at outputs
 Once we've seen the code that was used to produce a feature, and started to think about how such a computation might be useful for our given time-series analysis problem, we can check out intuition by inspecting its performance on our dataset (as described in [Investigating specific operations](feature_summary.md)).
 
+```matlab
+annotateParams = struct('maxL',500);
+TS_FeatureSummary(4310, 'raw', 1, annotateParams);
+```
