@@ -55,4 +55,4 @@ We can use the MasterID to get more information about about this from the Master
      Code: 'FC_LocalSimple(y,'mean',3)'
 ```
 This tells us that the code used to produce our feature was `FC_LocalSimple(y,'mean',3)`.
-We can inspect this code `FC_LocalSimple`.
+We can inspect this code `FC_LocalSimple`, which is, like all code files for computing time-series features, located in the Operations directory of the hctsa repository.
