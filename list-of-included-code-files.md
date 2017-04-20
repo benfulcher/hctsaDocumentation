@@ -122,7 +122,7 @@
 | CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
 
-### Nonlinear time-series analysis and scaling
+### Nonlinear time-series analysis and fractal scaling
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
@@ -166,6 +166,8 @@
 | WL_scal2frq               | Frequency components in a periodic time series                               |
 
 ### Symbolic transformations
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 | SB_BinaryStats            | Statistics on a binary symbolization of the time series                      |
 | SB_BinaryStretch          | Characterizes stretches of 0/1 in time-series binarization                   |
 | SB_MotifThree             | Motifs in a coarse-graining of a time series to a 3-letter alphabet          |
