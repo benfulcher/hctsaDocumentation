@@ -129,7 +129,6 @@ Quantifying how properties of a time series change over time.
 | SY_StdNthDer              | Standard deviation of the nth derivative of the time series.                 |
 | SY_StdNthDerChange        | How the output of SY_StdNthDer changes with order parameter.                 |
 | SY_TISEAN_nstat_z         | Cross-forecast errors of zeroth-order time-series models                     |
-| SY_Trend                  | Quantifies various measures of trend in a time series.                       |
 | SY_VarRatioTest           | Variance ratio test for random walk.                                         |
 | _**Step detection:**_| |
 | CP_ML_StepDetect          | Analysis of discrete steps in a time series.                                 |
@@ -201,6 +200,7 @@ Quantifying how properties of a time series change over time.
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
+| SY_Trend                  | Quantifies various measures of trend in a time series.                       |
 | ST_FitPolynomial          | Goodness of a polynomial fit to a time series                                |
 | ST_Length                 | Length of an input data vector.                                              |
 | ST_LocalExtrema           | How local maximums and minimums vary across the time series.                 |
