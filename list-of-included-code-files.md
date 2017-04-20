@@ -164,6 +164,15 @@
 | WL_fBM                    | Parameters of fractional Gaussian noise/Brownian motion in a time series     |
 | WL_scal2frq               | Frequency components in a periodic time series                               |
 
+### Symbolic transformations
+| SB_BinaryStats            | Statistics on a binary symbolization of the time series                      |
+| SB_BinaryStretch          | Characterizes stretches of 0/1 in time-series binarization                   |
+| SB_MotifThree             | Motifs in a coarse-graining of a time series to a 3-letter alphabet          |
+| SB_MotifTwo               | Local motifs in a binary symbolization of the time series                    |
+| SB_TransitionMatrix       | transition probabilities between different time-series states                |
+| SB_TransitionpAlphabet    | How transition probabilities change with alphabet size.                      |
+
+
 | EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
 
 | HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
@@ -181,12 +190,6 @@
 | PP_Compare                | Compare how time-series properties change after pre-processing.              |
 | PP_Iterate                | How time-series properties change in response to iterative pre-processing.   |
 
-| SB_BinaryStats            | Statistics on a binary symbolization of the time series                      |
-| SB_BinaryStretch          | Characterizes stretches of 0/1 in time-series binarization                   |
-| SB_MotifThree             | Motifs in a coarse-graining of a time series to a 3-letter alphabet          |
-| SB_MotifTwo               | Local motifs in a binary symbolization of the time series                    |
-| SB_TransitionMatrix       | transition probabilities between different time-series states                |
-| SB_TransitionpAlphabet    | How transition probabilities change with alphabet size.                      |
 | SC_FluctAnal              | Implements fluctuation analysis by a variety of methods.                     |
 
 | ST_FitPolynomial          | Goodness of a polynomial fit to a time series                                |
