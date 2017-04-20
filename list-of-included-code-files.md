@@ -83,6 +83,8 @@ Entropy and complexity measures for time series
 
 ### Time-series model fitting and forecasting
 
+Fitting time-series models, and doing simple forecasting on time series.
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | MF_ARMA_orders            | Compares a range of ARMA models fitted to a time series.                     |
@@ -110,6 +112,8 @@ Entropy and complexity measures for time series
 
 ### Stationarity and step detection
 
+Quantifying how properties of a time series change over time.
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | SY_DriftingMean           | Mean and variance in local time-series subsegments.                          |
@@ -127,6 +131,7 @@ Entropy and complexity measures for time series
 | SY_TISEAN_nstat_z         | Cross-forecast errors of zeroth-order time-series models                     |
 | SY_Trend                  | Quantifies various measures of trend in a time series.                       |
 | SY_VarRatioTest           | Variance ratio test for random walk.                                         |
+| _**Step detection:**_| |
 | CP_ML_StepDetect          | Analysis of discrete steps in a time series.                                 |
 | CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
