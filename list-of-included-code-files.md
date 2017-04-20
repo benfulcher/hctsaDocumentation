@@ -5,7 +5,6 @@
 | CO_AddNoise               | Changes in the automutual information with the addition of noise             |
 | CO_AutoCorr               | Compute the autocorrelation of an input time series                          |
 | CO_AutoCorrShape          | How the autocorrelation function changes with the time lag.                  |
-| CO_CompareMinAMI          | Variability in first minimum of automutual information                       |
 | CO_Embed2                 | Statistics of the time series in a 2-dimensional embedding space             |
 | CO_Embed2_AngleTau        | Angle autocorrelation in a 2-dimensional embedding space                     |
 | CO_Embed2_Basic           | Point density statistics in a 2-d embedding space                            |
@@ -13,9 +12,7 @@
 | CO_Embed2_Shapes          | Shape-based statistics in a 2-d embedding space                              |
 | CO_FirstMin               | Time of first minimum in a given correlation function                        |
 | CO_FirstZero              | The first zero-crossing of a given autocorrelation function                  |
-| CO_HistogramAMI           | The automutual information of the distribution using histograms.             |
 | CO_NonlinearAutocorr      | A custom nonlinear autocorrelation of a time series.                         |
-| CO_RM_AMInformation       | Automutual information (Rudy Moddemeijer implementation)                     |
 | CO_StickAngles            | Analysis of line-of-sight angles between time-series data points.            |
 | CO_TranslateShape         | Statistics on datapoints inside geometric shapes across the time series      |
 | CO_f1ecac                 | The 1/e correlation length                                                   |
@@ -27,6 +24,13 @@
 | DK_theilerQ               | Computes Theiler's Q statistic                                               |
 | DK_timerev                | Time reversal asymmetry statistic                                            |
 
+### Correlation
+
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
+| CO_RM_AMInformation       | Automutual information (Rudy Moddemeijer implementation)                     |
+| CO_CompareMinAMI          | Variability in first minimum of automutual information                       |
+| CO_HistogramAMI           | The automutual information of the distribution using histograms.             |
 | IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
 
 
@@ -59,7 +63,7 @@
 | DN_pleft                  | Distance from the mean at which a given proportion of data are more distant. |
 | HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
 
-### Entropy
+### Entropy and information theory
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
