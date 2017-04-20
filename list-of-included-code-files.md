@@ -1,3 +1,7 @@
+## List of code files used in _hctsa_
+
+Here we provide a full list of Matlab code files, organized loosely into broad categories, and with brief descriptions.
+
 ### Distribution
 
 Code summarizing properties of the distribution of values in a time series (disregarding their sequence through time).
