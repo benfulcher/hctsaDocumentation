@@ -106,21 +106,9 @@
 | CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
 
-
-
-
-| DT_IsSeasonal             | A simple test of seasonality.                                                |
-
-
-| EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
-
-| HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
-| HT_HypothesisTest         | Statistical hypothesis test applied to a time series.                        |
-| IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
-| MD_hrv_classic            | Classic heart rate variability (HRV) statistics.                             |
-| MD_pNN                    | pNNx measures of heart rate variability.                                     |
-| MD_polvar                 | The POLVARd measure of a time series.                                        |
-| MD_rawHRVmeas             | Heart rate variability (HRV) measures of a time series.                      |
+### Nonlinear time-series analysis
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 
 | NL_BoxCorrDim             | Correlation dimension of a time series.                                      |
 | NL_DVV                    | Delay Vector Variance method for real and complex signals.                   |
@@ -139,6 +127,22 @@
 | NL_TSTL_dimensions        | box counting, information, and correlation dimension of a time series.       |
 | NL_crptool_fnn            | Analyzes the false-nearest neighbours statistic.                             |
 | NL_embed_PCA              | Principal Components analysis of a time series in an embedding space.        |
+
+
+| DT_IsSeasonal             | A simple test of seasonality.                                                |
+
+
+| EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
+
+| HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
+| HT_HypothesisTest         | Statistical hypothesis test applied to a time series.                        |
+| IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
+| MD_hrv_classic            | Classic heart rate variability (HRV) statistics.                             |
+| MD_pNN                    | pNNx measures of heart rate variability.                                     |
+| MD_polvar                 | The POLVARd measure of a time series.                                        |
+| MD_rawHRVmeas             | Heart rate variability (HRV) measures of a time series.                      |
+
+
 | NW_VisibilityGraph        | Visibility graph analysis of a time series.                                  |
 | PD_PeriodicityWang        | Periodicity extraction measure of Wang et al.                                |
 | PH_ForcePotential         | Couples the values of the time series to a dynamical system                  |
