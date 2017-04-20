@@ -19,12 +19,12 @@
 | CO_fzcglscf               | The first zero-croessing of the generalized self-correlation function        |
 | CO_glscf                  | The generalized linear self-correlation function of a time series.           |
 | CO_tc3                    | Normalized nonlinear autocorrelation function, tc3.                          |
-| CO_trev                   | The trev function of a time series.                                          |
+| CO_trev                   | Normalized nonlinear autocorrelation, trev function of a time series         |
 | DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
 | DK_theilerQ               | Computes Theiler's Q statistic                                               |
 | DK_timerev                | Time reversal asymmetry statistic                                            |
 
-### Correlation
+### Automutual information
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
@@ -32,7 +32,6 @@
 | CO_CompareMinAMI          | Variability in first minimum of automutual information                       |
 | CO_HistogramAMI           | The automutual information of the distribution using histograms.             |
 | IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
-
 
 
 ### Distribution
@@ -61,6 +60,7 @@
 | DN_Withinp                | Proportion of data points within p standard deviations of the mean.          |
 | DN_cv                     | Coefficient of variation                                                     |
 | DN_pleft                  | Distance from the mean at which a given proportion of data are more distant. |
+| EN_DistributionEntropy    | Distributional entropy.                                                      |
 | HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
 
 ### Entropy and information theory
@@ -69,7 +69,6 @@
 |---------------------------|------------------------------------------------------------------------------|
 | EN_ApEn                   | Approximate Entropy of a time series                                         |
 | EN_CID                    | Simple complexity measure of a time series.                                  |
-| EN_DistributionEntropy    | Distributional entropy.                                                      |
 | EN_MS_LZcomplexity        | Lempel-Ziv complexity of a n-bit encoding of a time series                   |
 | EN_MS_shannon             | Approximate Shannon entropy of a time series.                                |
 | EN_PermEn                 | Permutation Entropy of a time series.                                        |
