@@ -97,6 +97,7 @@
 | FC_LocalSimple            | Simple local time-series forecasting.                                        |
 | FC_LoopLocalSimple        | How simple local forecasting depends on window length.                       |
 | FC_Surprise               | How surprised you would be of the next data point given recent memory.       |
+| PP_ModelFit               | See if AR model fit improves with different preprocessings                   |
 
 ### Step detection
 
@@ -127,6 +128,10 @@
 | NL_TSTL_dimensions        | box counting, information, and correlation dimension of a time series.       |
 | NL_crptool_fnn            | Analyzes the false-nearest neighbours statistic.                             |
 | NL_embed_PCA              | Principal Components analysis of a time series in an embedding space.        |
+| SC_MMA                    | Physionet implementation of multiscale multifractal analysis                 |
+| SC_fastdfa                | Matlab wrapper for Max Little's ML_fastdfa code                              |
+| SD_SurrogateTest          | Analyzes test statistics obtained from surrogate time series                 |
+| SD_TSTL_surrogates        | Surrogate time-series analysis                                               |
 
 
 | DT_IsSeasonal             | A simple test of seasonality.                                                |
@@ -149,7 +154,7 @@
 | PH_Walker                 | Simulates a hypothetical walker moving through the time domain.              |
 | PP_Compare                | Compare how time-series properties change after pre-processing.              |
 | PP_Iterate                | How time-series properties change in response to iterative pre-processing.   |
-| PP_ModelFit               | See if AR model fit improves with different preprocessings                   |
+
 | SB_BinaryStats            | Statistics on a binary symbolization of the time series                      |
 | SB_BinaryStretch          | Characterizes stretches of 0/1 in time-series binarization                   |
 | SB_MotifThree             | Motifs in a coarse-graining of a time series to a 3-letter alphabet          |
@@ -157,10 +162,7 @@
 | SB_TransitionMatrix       | transition probabilities between different time-series states                |
 | SB_TransitionpAlphabet    | How transition probabilities change with alphabet size.                      |
 | SC_FluctAnal              | Implements fluctuation analysis by a variety of methods.                     |
-| SC_MMA                    | Physionet implementation of multiscale multifractal analysis                 |
-| SC_fastdfa                | Matlab wrapper for Max Little's ML_fastdfa code                              |
-| SD_SurrogateTest          | Analyzes test statistics obtained from surrogate time series                 |
-| SD_TSTL_surrogates        | Surrogate time-series analysis                                               |
+
 | SP_Summaries              | Statistics of the power spectrum of a time series                            |
 | ST_FitPolynomial          | Goodness of a polynomial fit to a time series                                |
 | ST_Length                 | Length of an input data vector.                                              |
