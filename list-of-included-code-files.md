@@ -151,7 +151,11 @@
 | TSTL_localdensity         | Local density estimates in the time-delay embedding space                    |
 
 
+### Basis functions and periodicity
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 | DT_IsSeasonal             | A simple test of seasonality.                                                |
+| PD_PeriodicityWang        | Periodicity extraction measure of Wang et al.                                |
 
 
 | EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
@@ -166,7 +170,6 @@
 
 
 | NW_VisibilityGraph        | Visibility graph analysis of a time series.                                  |
-| PD_PeriodicityWang        | Periodicity extraction measure of Wang et al.                                |
 | PH_ForcePotential         | Couples the values of the time series to a dynamical system                  |
 | PH_Walker                 | Simulates a hypothetical walker moving through the time domain.              |
 | PP_Compare                | Compare how time-series properties change after pre-processing.              |
