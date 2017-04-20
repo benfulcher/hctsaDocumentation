@@ -183,7 +183,7 @@
 | SB_TransitionpAlphabet    | How transition probabilities change with alphabet size.                      |
 
 
-| EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
+| EX_MovingThreshold        | Moving threshold model for extreme events in a time series                   |
 
 
 | HT_HypothesisTest         | Statistical hypothesis test applied to a time series.                        |
