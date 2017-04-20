@@ -132,6 +132,8 @@
 | SC_fastdfa                | Matlab wrapper for Max Little's ML_fastdfa code                              |
 | SD_SurrogateTest          | Analyzes test statistics obtained from surrogate time series                 |
 | SD_TSTL_surrogates        | Surrogate time-series analysis                                               |
+| TSTL_delaytime            | Optimal delay time using the method of Parlitz and Wichard.                  |
+| TSTL_localdensity         | Local density estimates in the time-delay embedding space                    |
 
 
 | DT_IsSeasonal             | A simple test of seasonality.                                                |
@@ -184,8 +186,7 @@
 | SY_TISEAN_nstat_z         | Cross-forecast errors of zeroth-order time-series models                     |
 | SY_Trend                  | Quantifies various measures of trend in a time series.                       |
 | SY_VarRatioTest           | Variance ratio test for random walk.                                         |
-| TSTL_delaytime            | Optimal delay time using the method of Parlitz and Wichard.                  |
-| TSTL_localdensity         | Local density estimates in the time-delay embedding space                    |
+
 | WL_DetailCoeffs           | Detail coefficients of a wavelet decomposition.                              |
 | WL_coeffs                 | Wavelet decomposition of the time series.                                    |
 | WL_cwt                    | Continuous wavelet transform of a time series                                |
