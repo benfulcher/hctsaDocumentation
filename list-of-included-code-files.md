@@ -23,6 +23,10 @@
 | CO_glscf                  | The generalized linear self-correlation function of a time series.           |
 | CO_tc3                    | Normalized nonlinear autocorrelation function, tc3.                          |
 | CO_trev                   | The trev function of a time series.                                          |
+| DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
+| DK_theilerQ               | Computes Theiler's Q statistic                                               |
+| DK_timerev                | Time reversal asymmetry statistic                                            |
+
 
 ### Distribution
 
@@ -68,7 +72,10 @@
 | EN_rpde                   | Recurrence period density entropy (RPDE).                                    |
 | EN_wentropy               | Entropy of time series using wavelets.                                       |
 
-### Time-series model fitting
+### Time-series model fitting and forecasting
+
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 | MF_ARMA_orders            | Compares a range of ARMA models fitted to a time series.                     |
 | MF_AR_arcov               | Fits an AR model of a given order, p.                                        |
 | MF_CompareAR              | Compares model fits of various orders to a time series.                      |
@@ -87,23 +94,26 @@
 | MF_hmm_CompareNStates     | Hidden Markov Model (HMM) fitting to a time series.                          |
 | MF_hmm_fit                | Fits a Hidden Markov Model to sequential data.                               |
 | MF_steps_ahead            | Goodness of model predictions across prediction lengths                      |
+| FC_LocalSimple            | Simple local time-series forecasting.                                        |
+| FC_LoopLocalSimple        | How simple local forecasting depends on window length.                       |
+| FC_Surprise               | How surprised you would be of the next data point given recent memory.       |
 
+### Step detection
 
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 | CP_ML_StepDetect          | Analysis of discrete steps in a time series.                                 |
 | CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
-| DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
-| DK_theilerQ               | Computes Theiler's Q statistic                                               |
-| DK_timerev                | Time reversal asymmetry statistic                                            |
+
+
 
 
 | DT_IsSeasonal             | A simple test of seasonality.                                                |
 
 
 | EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
-| FC_LocalSimple            | Simple local time-series forecasting.                                        |
-| FC_LoopLocalSimple        | How simple local forecasting depends on window length.                       |
-| FC_Surprise               | How surprised you would be of the next data point given recent memory.       |
+
 | HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
 | HT_HypothesisTest         | Statistical hypothesis test applied to a time series.                        |
 | IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
