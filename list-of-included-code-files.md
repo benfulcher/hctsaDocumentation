@@ -99,10 +99,25 @@
 | FC_Surprise               | How surprised you would be of the next data point given recent memory.       |
 | PP_ModelFit               | See if AR model fit improves with different preprocessings                   |
 
-### Step detection
+### Stationarity and step detection
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
+| SY_DriftingMean           | Mean and variance in local time-series subsegments.                          |
+| SY_DynWin                 | How stationarity estimates depend on the number of time-series subsegments   |
+| SY_KPSStest               | The KPSS stationarity test.                                                  |
+| SY_LocalDistributions     | Compares the distribution in consecutive time-series segments                |
+| SY_LocalGlobal            | Compares local statistics to global statistics of a time series.             |
+| SY_PPtest                 | Phillips-Peron unit root test.                                               |
+| SY_RangeEvolve            | How the time-series range changes across time.                               |
+| SY_SlidingWindow          | Sliding window measures of stationarity.                                     |
+| SY_SpreadRandomLocal      | Bootstrap-based stationarity measure.                                        |
+| SY_StatAv                 | Simple mean-stationarity metric, StatAv.                                     |
+| SY_StdNthDer              | Standard deviation of the nth derivative of the time series.                 |
+| SY_StdNthDerChange        | How the output of SY_StdNthDer changes with order parameter.                 |
+| SY_TISEAN_nstat_z         | Cross-forecast errors of zeroth-order time-series models                     |
+| SY_Trend                  | Quantifies various measures of trend in a time series.                       |
+| SY_VarRatioTest           | Variance ratio test for random walk.                                         |
 | CP_ML_StepDetect          | Analysis of discrete steps in a time series.                                 |
 | CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
@@ -171,21 +186,7 @@
 | ST_LocalExtrema           | How local maximums and minimums vary across the time series.                 |
 | ST_MomentCorr             | Correlations between simple statistics in local windows of a time series.    |
 | ST_SimpleStats            | Basic statistics about an input time series                                  |
-| SY_DriftingMean           | Mean and variance in local time-series subsegments.                          |
-| SY_DynWin                 | How stationarity estimates depend on the number of time-series subsegments   |
-| SY_KPSStest               | The KPSS stationarity test.                                                  |
-| SY_LocalDistributions     | Compares the distribution in consecutive time-series segments                |
-| SY_LocalGlobal            | Compares local statistics to global statistics of a time series.             |
-| SY_PPtest                 | Phillips-Peron unit root test.                                               |
-| SY_RangeEvolve            | How the time-series range changes across time.                               |
-| SY_SlidingWindow          | Sliding window measures of stationarity.                                     |
-| SY_SpreadRandomLocal      | Bootstrap-based stationarity measure.                                        |
-| SY_StatAv                 | Simple mean-stationarity metric, StatAv.                                     |
-| SY_StdNthDer              | Standard deviation of the nth derivative of the time series.                 |
-| SY_StdNthDerChange        | How the output of SY_StdNthDer changes with order parameter.                 |
-| SY_TISEAN_nstat_z         | Cross-forecast errors of zeroth-order time-series models                     |
-| SY_Trend                  | Quantifies various measures of trend in a time series.                       |
-| SY_VarRatioTest           | Variance ratio test for random walk.                                         |
+
 
 | WL_DetailCoeffs           | Detail coefficients of a wavelet decomposition.                              |
 | WL_coeffs                 | Wavelet decomposition of the time series.                                    |
