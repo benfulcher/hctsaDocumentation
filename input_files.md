@@ -10,7 +10,7 @@ Initiating a dataset for an *hctsa* analysis involves specifying an input file f
 2. the code to run (`INP_mops.txt`).
 3. the features to extract from that code (`INP_ops.txt`).
 
-Details of how to format these input files are [here](input_files.md).
+Details of how to format these input files are described below.
 
 To use the default library of operations, you can initiate a time-series dataset (e.g., as specified in the .mat file, `INP_test_ts.mat`) using the following:
 
