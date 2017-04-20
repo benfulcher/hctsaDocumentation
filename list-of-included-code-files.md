@@ -57,13 +57,15 @@ Code summarizing basic properties of how values of a time series are correlated 
 | DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
 | DK_theilerQ               | Computes Theiler's Q statistic                                               |
 | DK_timerev                | Time reversal asymmetry statistic                                            |
-|_Automutual information:_||
+|_**Automutual information:**_||
 | CO_RM_AMInformation       | Automutual information (Rudy Moddemeijer implementation)                     |
 | CO_CompareMinAMI          | Variability in first minimum of automutual information                       |
 | CO_HistogramAMI           | The automutual information of the distribution using histograms.             |
 | IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
 
 ### Entropy and information theory
+
+Entropy and complexity measures for time series
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
