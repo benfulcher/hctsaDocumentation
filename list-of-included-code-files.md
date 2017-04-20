@@ -17,7 +17,7 @@
 | CO_NonlinearAutocorr      | A custom nonlinear autocorrelation of a time series.                         |
 | CO_RM_AMInformation       | Automutual information (Rudy Moddemeijer implementation)                     |
 | CO_StickAngles            | Analysis of line-of-sight angles between time-series data points.            |
-| CO_TranslateShape         | Statistics on the number of datapoints residing inside                       |
+| CO_TranslateShape         | Statistics on datapoints inside geometric shapes across the time series      |
 | CO_f1ecac                 | The 1/e correlation length                                                   |
 | CO_fzcglscf               | The first zero-croessing of the generalized self-correlation function        |
 | CO_glscf                  | The generalized linear self-correlation function of a time series.           |
@@ -26,6 +26,9 @@
 | DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
 | DK_theilerQ               | Computes Theiler's Q statistic                                               |
 | DK_timerev                | Time reversal asymmetry statistic                                            |
+
+| IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
+
 
 
 ### Distribution
@@ -54,6 +57,7 @@
 | DN_Withinp                | Proportion of data points within p standard deviations of the mean.          |
 | DN_cv                     | Coefficient of variation                                                     |
 | DN_pleft                  | Distance from the mean at which a given proportion of data are more distant. |
+| HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
 
 ### Entropy
 
@@ -178,9 +182,10 @@
 
 | EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
 
-| HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
+
 | HT_HypothesisTest         | Statistical hypothesis test applied to a time series.                        |
-| IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
+
+
 | MD_hrv_classic            | Classic heart rate variability (HRV) statistics.                             |
 | MD_pNN                    | pNNx measures of heart rate variability.                                     |
 | MD_polvar                 | The POLVARd measure of a time series.                                        |
