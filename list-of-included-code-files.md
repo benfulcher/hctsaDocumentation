@@ -1,5 +1,7 @@
 ### Distribution
 
+Code summarizing properties of the distribution of values in a time series (disregarding their sequence through time).
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | DN_Burstiness             | Burstiness statistic of a time series                                        |
@@ -30,6 +32,8 @@
 
 ### Correlation
 
+Code summarizing basic properties of how values of a time series are correlated through time.
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | CO_AddNoise               | Changes in the automutual information with the addition of noise             |
@@ -53,11 +57,7 @@
 | DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
 | DK_theilerQ               | Computes Theiler's Q statistic                                               |
 | DK_timerev                | Time reversal asymmetry statistic                                            |
-
-### Automutual information
-
-| Code file                 | Description                                                                  |
-|---------------------------|------------------------------------------------------------------------------|
+|_Automutual information_||
 | CO_RM_AMInformation       | Automutual information (Rudy Moddemeijer implementation)                     |
 | CO_CompareMinAMI          | Variability in first minimum of automutual information                       |
 | CO_HistogramAMI           | The automutual information of the distribution using histograms.             |
