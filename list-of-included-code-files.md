@@ -28,12 +28,6 @@
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
-| CP_ML_StepDetect          | Analysis of discrete steps in a time series.                                 |
-| CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
-| CP_wavelet_varchg         | Variance change points in a time series.                                     |
-| DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
-| DK_theilerQ               | Computes Theiler's Q statistic                                               |
-| DK_timerev                | Time reversal asymmetry statistic                                            |
 | DN_Burstiness             | Burstiness statistic of a time series                                        |
 | DN_CompareKSFit           | Fits a distribution to data.                                                 |
 | DN_CustomSkewness         | Custom skewness measures                                                     |
@@ -56,6 +50,21 @@
 | DN_Withinp                | Proportion of data points within p standard deviations of the mean.          |
 | DN_cv                     | Coefficient of variation                                                     |
 | DN_pleft                  | Distance from the mean at which a given proportion of data are more distant. |
+
+### Entropy
+
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
+
+
+| CP_ML_StepDetect          | Analysis of discrete steps in a time series.                                 |
+| CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
+| CP_wavelet_varchg         | Variance change points in a time series.                                     |
+| DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
+| DK_theilerQ               | Computes Theiler's Q statistic                                               |
+| DK_timerev                | Time reversal asymmetry statistic                                            |
+
+
 | DT_IsSeasonal             | A simple test of seasonality.                                                |
 | EN_ApEn                   | Approximate Entropy of a time series                                         |
 | EN_CID                    | Simple complexity measure of a time series.                                  |
