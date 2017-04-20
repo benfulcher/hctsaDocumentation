@@ -57,6 +57,7 @@ Code summarizing basic properties of how values of a time series are correlated 
 | DK_crinkle                | Computes James Theiler's crinkle statistic                                   |
 | DK_theilerQ               | Computes Theiler's Q statistic                                               |
 | DK_timerev                | Time reversal asymmetry statistic                                            |
+| NL_embed_PCA              | Principal Components analysis of a time series in an embedding space.        |
 |_**Automutual information:**_||
 | CO_RM_AMInformation       | Automutual information (Rudy Moddemeijer implementation)                     |
 | CO_CompareMinAMI          | Variability in first minimum of automutual information                       |
@@ -137,6 +138,8 @@ Quantifying how properties of a time series change over time.
 
 ### Nonlinear time-series analysis and fractal scaling
 
+Nonlinear time-series analysis methods, including embedding dimensions and fluctuation analysis.
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | NL_BoxCorrDim             | Correlation dimension of a time series.                                      |
@@ -155,17 +158,20 @@ Quantifying how properties of a time series change over time.
 | NL_TSTL_acp               | acp function in TSTOOL                                                       |
 | NL_TSTL_dimensions        | box counting, information, and correlation dimension of a time series.       |
 | NL_crptool_fnn            | Analyzes the false-nearest neighbours statistic.                             |
-| NL_embed_PCA              | Principal Components analysis of a time series in an embedding space.        |
-| SC_MMA                    | Physionet implementation of multiscale multifractal analysis                 |
-| SC_fastdfa                | Matlab wrapper for Max Little's ML_fastdfa code                              |
-| SC_FluctAnal              | Implements fluctuation analysis by a variety of methods.                     |
 | SD_SurrogateTest          | Analyzes test statistics obtained from surrogate time series                 |
 | SD_TSTL_surrogates        | Surrogate time-series analysis                                               |
 | TSTL_delaytime            | Optimal delay time using the method of Parlitz and Wichard.                  |
 | TSTL_localdensity         | Local density estimates in the time-delay embedding space                    |
+|_**Fluctuation analysis:**_||
+| SC_MMA                    | Physionet implementation of multiscale multifractal analysis                 |
+| SC_fastdfa                | Matlab wrapper for Max Little's ML_fastdfa code                              |
+| SC_FluctAnal              | Implements fluctuation analysis by a variety of methods.                     |
 
 
 ### Fourier and wavelet transforms, periodicity measures
+
+Properties of the time-series power spectrum, wavelet spectrum, and other periodicity measures.
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | SP_Summaries              | Statistics of the power spectrum of a time series                            |
@@ -179,6 +185,8 @@ Quantifying how properties of a time series change over time.
 | WL_scal2frq               | Frequency components in a periodic time series                               |
 
 ### Symbolic transformations
+Properties of a discrete symbolization of a time series.
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | SB_BinaryStats            | Statistics on a binary symbolization of the time series                      |
@@ -189,6 +197,9 @@ Quantifying how properties of a time series change over time.
 | SB_TransitionpAlphabet    | How transition probabilities change with alphabet size.                      |
 
 ### Statistics from biomedical signal processing
+
+Simple time-series properties derived mostly from the heart rate variability (HRV) literature.
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | MD_hrv_classic            | Classic heart rate variability (HRV) statistics.                             |
@@ -197,6 +208,8 @@ Quantifying how properties of a time series change over time.
 | MD_rawHRVmeas             | Heart rate variability (HRV) measures of a time series.                      |
 
 ### Basic statistics, trend
+
+Basic statistics of a time series, including measures of trend.
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
@@ -208,6 +221,8 @@ Quantifying how properties of a time series change over time.
 | ST_SimpleStats            | Basic statistics about an input time series                                  |
 
 ### Others
+
+Other properties, like extreme values, visibility graphs, physics-based simulations, and dependence on pre-processings applied to a time series.
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
