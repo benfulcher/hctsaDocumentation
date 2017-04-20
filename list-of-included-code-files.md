@@ -1,4 +1,4 @@
-| Code file                    | helpLines                                                                    |
+| Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | CO_AddNoise               | Changes in the automutual information with the addition of noise             |
 | CO_AutoCorr               | Compute the autocorrelation of an input time series                          |
