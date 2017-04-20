@@ -1,7 +1,6 @@
 ### Correlation
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
-| _Correlation_|
 | CO_AddNoise               | Changes in the automutual information with the addition of noise             |
 | CO_AutoCorr               | Compute the autocorrelation of an input time series                          |
 | CO_AutoCorrShape          | How the autocorrelation function changes with the time lag.                  |
