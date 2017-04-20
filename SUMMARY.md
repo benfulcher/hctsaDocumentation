@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+  * [List of included code files](list-of-included-code-files.md)
 * [Installing and setting up](setup.md)
   * [Structure of the hctsa framework](hctsa_structure.md)
   * [Overview of an hctsa analysis](within_matlab.md)
