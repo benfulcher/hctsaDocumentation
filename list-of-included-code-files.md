@@ -151,12 +151,18 @@
 | TSTL_localdensity         | Local density estimates in the time-delay embedding space                    |
 
 
-### Basis functions and periodicity
+### Fourier and wavelet transforms, periodicity measures
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
+| SP_Summaries              | Statistics of the power spectrum of a time series                            |
 | DT_IsSeasonal             | A simple test of seasonality.                                                |
 | PD_PeriodicityWang        | Periodicity extraction measure of Wang et al.                                |
-
+| WL_DetailCoeffs           | Detail coefficients of a wavelet decomposition.                              |
+| WL_coeffs                 | Wavelet decomposition of the time series.                                    |
+| WL_cwt                    | Continuous wavelet transform of a time series                                |
+| WL_dwtcoeff               | Discrete wavelet transform coefficients.                                     |
+| WL_fBM                    | Parameters of fractional Gaussian noise/Brownian motion in a time series     |
+| WL_scal2frq               | Frequency components in a periodic time series                               |
 
 | EX_MovingThreshold        | Moving threshold model for extreme events in a                               |
 
@@ -183,7 +189,6 @@
 | SB_TransitionpAlphabet    | How transition probabilities change with alphabet size.                      |
 | SC_FluctAnal              | Implements fluctuation analysis by a variety of methods.                     |
 
-| SP_Summaries              | Statistics of the power spectrum of a time series                            |
 | ST_FitPolynomial          | Goodness of a polynomial fit to a time series                                |
 | ST_Length                 | Length of an input data vector.                                              |
 | ST_LocalExtrema           | How local maximums and minimums vary across the time series.                 |
@@ -191,9 +196,3 @@
 | ST_SimpleStats            | Basic statistics about an input time series                                  |
 
 
-| WL_DetailCoeffs           | Detail coefficients of a wavelet decomposition.                              |
-| WL_coeffs                 | Wavelet decomposition of the time series.                                    |
-| WL_cwt                    | Continuous wavelet transform of a time series                                |
-| WL_dwtcoeff               | Discrete wavelet transform coefficients.                                     |
-| WL_fBM                    | Parameters of fractional Gaussian noise/Brownian motion in a time series     |
-| WL_scal2frq               | Frequency components in a periodic time series                               |
