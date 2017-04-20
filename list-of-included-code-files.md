@@ -1,4 +1,5 @@
 ### Correlation
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | CO_AddNoise               | Changes in the automutual information with the addition of noise             |
@@ -22,6 +23,11 @@
 | CO_glscf                  | The generalized linear self-correlation function of a time series.           |
 | CO_tc3                    | Normalized nonlinear autocorrelation function, tc3.                          |
 | CO_trev                   | The trev function of a time series.                                          |
+
+### Distribution
+
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 | CP_ML_StepDetect          | Analysis of discrete steps in a time series.                                 |
 | CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
