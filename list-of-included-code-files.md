@@ -1,3 +1,33 @@
+### Distribution
+
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
+| DN_Burstiness             | Burstiness statistic of a time series                                        |
+| DN_CompareKSFit           | Fits a distribution to data.                                                 |
+| DN_CustomSkewness         | Custom skewness measures                                                     |
+| DN_FitKernelSmooth        | Statistics of a kernel-smoothed distribution of the data.                    |
+| DN_Fit_mle                | Maximum likelihood distribution fit to data.                                 |
+| DN_HighLowMu              | The highlowmu statistic.                                                     |
+| DN_HistogramMode          | Mode of a data vector.                                                       |
+| DN_Mean                   | A given measure of location of a data vector.                                |
+| DN_MinMax                 | The maximum and minimum values of the input data vector                      |
+| DN_Moments                | A moment of the distribution of the input time series.                       |
+| DN_OutlierInclude         | How statistics depend on distributional outliers.                            |
+| DN_OutlierTest            | How distributional statistics depend on distributional outliers.             |
+| DN_ProportionValues       | Proportion of values in a data vector.                                       |
+| DN_Quantile               | Quantile of the data vector                                                  |
+| DN_RemovePoints           | How time-series properties change as points are removed.                     |
+| DN_SimpleFit              | Fit distributions or simple time-series models to the data.                  |
+| DN_Spread                 | Measure of spread of the input time series.                                  |
+| DN_TrimmedMean            | Mean of the trimmed time series using trimmean.                              |
+| DN_Unique                 | The proportion of the time series that are unique values                     |
+| DN_Withinp                | Proportion of data points within p standard deviations of the mean.          |
+| DN_cv                     | Coefficient of variation                                                     |
+| DN_pleft                  | Distance from the mean at which a given proportion of data are more distant. |
+| EN_DistributionEntropy    | Distributional entropy.                                                      |
+| HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
+
+
 ### Correlation
 
 | Code file                 | Description                                                                  |
@@ -32,36 +62,6 @@
 | CO_CompareMinAMI          | Variability in first minimum of automutual information                       |
 | CO_HistogramAMI           | The automutual information of the distribution using histograms.             |
 | IN_AutoMutualInfoStats    | Statistics on automutual information function for a time series.             |
-
-
-### Distribution
-
-| Code file                 | Description                                                                  |
-|---------------------------|------------------------------------------------------------------------------|
-| DN_Burstiness             | Burstiness statistic of a time series                                        |
-| DN_CompareKSFit           | Fits a distribution to data.                                                 |
-| DN_CustomSkewness         | Custom skewness measures                                                     |
-| DN_FitKernelSmooth        | Statistics of a kernel-smoothed distribution of the data.                    |
-| DN_Fit_mle                | Maximum likelihood distribution fit to data.                                 |
-| DN_HighLowMu              | The highlowmu statistic.                                                     |
-| DN_HistogramMode          | Mode of a data vector.                                                       |
-| DN_Mean                   | A given measure of location of a data vector.                                |
-| DN_MinMax                 | The maximum and minimum values of the input data vector                      |
-| DN_Moments                | A moment of the distribution of the input time series.                       |
-| DN_OutlierInclude         | How statistics depend on distributional outliers.                            |
-| DN_OutlierTest            | How distributional statistics depend on distributional outliers.             |
-| DN_ProportionValues       | Proportion of values in a data vector.                                       |
-| DN_Quantile               | Quantile of the data vector                                                  |
-| DN_RemovePoints           | How time-series properties change as points are removed.                     |
-| DN_SimpleFit              | Fit distributions or simple time-series models to the data.                  |
-| DN_Spread                 | Measure of spread of the input time series.                                  |
-| DN_TrimmedMean            | Mean of the trimmed time series using trimmean.                              |
-| DN_Unique                 | The proportion of the time series that are unique values                     |
-| DN_Withinp                | Proportion of data points within p standard deviations of the mean.          |
-| DN_cv                     | Coefficient of variation                                                     |
-| DN_pleft                  | Distance from the mean at which a given proportion of data are more distant. |
-| EN_DistributionEntropy    | Distributional entropy.                                                      |
-| HT_DistributionTest       | Hypothesis test for distributional fits to a data vector.                    |
 
 ### Entropy and information theory
 
@@ -182,30 +182,33 @@
 | SB_TransitionMatrix       | transition probabilities between different time-series states                |
 | SB_TransitionpAlphabet    | How transition probabilities change with alphabet size.                      |
 
-
-| EX_MovingThreshold        | Moving threshold model for extreme events in a time series                   |
-
-
-| HT_HypothesisTest         | Statistical hypothesis test applied to a time series.                        |
-
-
+### Statistics from biomedical signal processing
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 | MD_hrv_classic            | Classic heart rate variability (HRV) statistics.                             |
 | MD_pNN                    | pNNx measures of heart rate variability.                                     |
 | MD_polvar                 | The POLVARd measure of a time series.                                        |
 | MD_rawHRVmeas             | Heart rate variability (HRV) measures of a time series.                      |
 
+### Basic statistics, trend
 
-| NW_VisibilityGraph        | Visibility graph analysis of a time series.                                  |
-| PH_ForcePotential         | Couples the values of the time series to a dynamical system                  |
-| PH_Walker                 | Simulates a hypothetical walker moving through the time domain.              |
-| PP_Compare                | Compare how time-series properties change after pre-processing.              |
-| PP_Iterate                | How time-series properties change in response to iterative pre-processing.   |
-
-
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
 | ST_FitPolynomial          | Goodness of a polynomial fit to a time series                                |
 | ST_Length                 | Length of an input data vector.                                              |
 | ST_LocalExtrema           | How local maximums and minimums vary across the time series.                 |
 | ST_MomentCorr             | Correlations between simple statistics in local windows of a time series.    |
 | ST_SimpleStats            | Basic statistics about an input time series                                  |
+
+### Others
+| Code file                 | Description                                                                  |
+|---------------------------|------------------------------------------------------------------------------|
+| EX_MovingThreshold        | Moving threshold model for extreme events in a time series                   |
+| HT_HypothesisTest         | Statistical hypothesis test applied to a time series.                        |
+| NW_VisibilityGraph        | Visibility graph analysis of a time series.                                  |
+| PH_ForcePotential         | Couples the values of the time series to a dynamical system                  |
+| PH_Walker                 | Simulates a hypothetical walker moving through the time domain.              |
+| PP_Compare                | Compare how time-series properties change after pre-processing.              |
+| PP_Iterate                | How time-series properties change in response to iterative pre-processing.   |
 
 
