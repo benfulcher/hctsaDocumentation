@@ -201,6 +201,7 @@
 | ST_SimpleStats            | Basic statistics about an input time series                                  |
 
 ### Others
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
 | EX_MovingThreshold        | Moving threshold model for extreme events in a time series                   |
