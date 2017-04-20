@@ -107,9 +107,9 @@
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
 
 ### Nonlinear time-series analysis
+
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
-
 | NL_BoxCorrDim             | Correlation dimension of a time series.                                      |
 | NL_DVV                    | Delay Vector Variance method for real and complex signals.                   |
 | NL_MS_fnn                 | False nearest neighbors of a time series.                                    |
