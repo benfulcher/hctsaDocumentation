@@ -122,7 +122,7 @@
 | CP_l1pwc_sweep_lambda     | Dependence of step detection on regularization parameter.                    |
 | CP_wavelet_varchg         | Variance change points in a time series.                                     |
 
-### Nonlinear time-series analysis
+### Nonlinear time-series analysis and scaling
 
 | Code file                 | Description                                                                  |
 |---------------------------|------------------------------------------------------------------------------|
@@ -145,6 +145,7 @@
 | NL_embed_PCA              | Principal Components analysis of a time series in an embedding space.        |
 | SC_MMA                    | Physionet implementation of multiscale multifractal analysis                 |
 | SC_fastdfa                | Matlab wrapper for Max Little's ML_fastdfa code                              |
+| SC_FluctAnal              | Implements fluctuation analysis by a variety of methods.                     |
 | SD_SurrogateTest          | Analyzes test statistics obtained from surrogate time series                 |
 | SD_TSTL_surrogates        | Surrogate time-series analysis                                               |
 | TSTL_delaytime            | Optimal delay time using the method of Parlitz and Wichard.                  |
@@ -190,7 +191,6 @@
 | PP_Compare                | Compare how time-series properties change after pre-processing.              |
 | PP_Iterate                | How time-series properties change in response to iterative pre-processing.   |
 
-| SC_FluctAnal              | Implements fluctuation analysis by a variety of methods.                     |
 
 | ST_FitPolynomial          | Goodness of a polynomial fit to a time series                                |
 | ST_Length                 | Length of an input data vector.                                              |
