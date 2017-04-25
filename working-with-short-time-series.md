@@ -14,4 +14,4 @@ After filtering and normalizing (`TS_normalize`) and clustering (`TS_cluster`), 
 
 ![](/assets/GeneExpressionExample.png)
 
-Visually, we can see that genes with similar expression profiles over time have been clustered together based on their 2829-long feature vector representations.
+Visually, using the time series plots to the left of the colored matrix, we can see that genes with similar temporal expression profiles are clustered together based on their 2829-long feature vector representations.
