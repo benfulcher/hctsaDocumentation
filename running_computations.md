@@ -4,44 +4,53 @@ Once a time-series dataset and the operation library has been specified, and an 
 
 Calculations are performed using the function `TS_compute`, which stores results back into the matrices in `HCTSA.mat`.
 This function can be run without inputs to compute all missing values in the default hctsa file, `HCTSA.mat`:
-
+```matlab
     % Compute all missing values in HCTSA.mat:
     TS_compute;
-
+```
 Running `TS_compute` will begin running operations on time series in `HCTSA.mat` for which elements in **TS\_DataMat** are **NaN**s (indicating that they have not been run before).
 Results will be stored back in the matrices of `HCTSA.mat`, i.e., **TS_DataMat** (output of each operation on each time series), **TS_CalcTime** (calculation time for each operation on each time series), and **TS_Quality** (labels indicating errors or special-valued outputs).
 
 ## Custom settings for running `TS_compute`
 
 By specifying the first input to 1 to calculate across available cores using the Matlab Parallel Processing Toolbox:
-
+```matlab
     % Compute all missing values in HCTSA.mat using parallel processing:
     TS_compute(true);
-
+```
 You can also specify a custom range of ts_ids and op_ids to compute:
-
+```matlab
     % Compute missing values in HCTSA.mat for ts_ids from 1:10 and op_ids from 1:1000
     TS_compute(0,1:10,1:1000);
-
+```
 Specify what values should be recomputed:
-
+```
     % Compute all values that have never previous been calculated or previously returned an error:
     TS_compute(0,[],[],'error');
-
+```
 To run the same procedure on a custom file (that is not `HCTSA.mat`), you can specify this also:
-
+```matlab
     % Compute all missing values in my_HCTSA_file.mat:
     TS_compute(0,[],[],'missing','my_HCTSA_file.mat',0);
-
+```
 By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero:
-
+```matlab
     % Compute all missing values in HCTSA.mat, suppressing output to screen:
     TS_compute(0,[],[],'missing','',0);
+```
 
-## Computing a full dataset
+## Computation approaches for full datasets
 
 For larger datasets, it is sensible to compute small sections of the dataset at a time (and save the results to file), eventually covering the full dataset iteratively.
 We have provided a sample runscript for this purpose as `sample_runscript_matlab`, which allows the user to specify the increment at which results are saved back to `HCTSA.mat` (or any custom file).
+
+### Computation time scaling
+
+The scaling of the time taken to compute 7749 features of v0.93 of _hctsa_ is shown below. The figure compares results using a single core (e.g., `TS_compute(false)`) to results using a 16-core machine, with parallelization enabled (e.g., `TS_compute(true)`).
+
+![](/assets/computeScaling.png)
+
+
 
 ### Distributing computations
 
@@ -49,3 +58,23 @@ Distributing computations across multiple computers on a large scale is better s
 A local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
 `TS_subset('raw',1:100)` will generate a new file, **HCTSA_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
 Each such subset can then be run on a different computer, and the results later recombined into a single HCTSA file using `TS_combine`, as described [here](working_with_hctsa_files.md).
+
+
+
+
+## Computing approaches
+Depending on the size of the dataset, whether it may grow in the future, and the computational resources available, a different computing approach may be selected. When multiple cores are available, it is always recommended to use the parallel setting (i.e., as `TS_compute(true)`).
+Note that if computation times are too long for the resources at hand, one can always choose a reduced set of features, rather than the full set of >7000, to get a preliminary understanding of their data.
+
+### On a single machine
+If only a single machine is available for computation, there are a couple of options:
+
+1. For small datasets, when it is feasible to run all computations in a single go, it is easiest to run computations within Matlab in a single call of `TS_compute`.
+2. For larger datasets that may run for a long time on a single machine, one may wish to use something like the provided `sample_runscript_matlab` script, where `TS_compute` commands are run in a loop over time series, saving results back to file (`HCTSA.mat`) at specified increments.
+
+## On a distributed cluster (using Matlab)
+On a cluster, shell scripts can be set up to queue batch jobs, where each batch job loops across a set of time series.
+For example,
+```matlab
+TS_subset('../HCTSA.mat',tsid_min:tsid_max,[],1,customFile);
+```
