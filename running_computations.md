@@ -60,7 +60,7 @@ If only a single machine is available for computation, there are a couple of opt
 1. For small datasets, when it is feasible to run all computations in a single go, it is easiest to run computations within Matlab in a single call of `TS_compute`.
 2. For larger datasets that may run for a long time on a single machine, one may wish to use something like the provided `sample_runscript_matlab` script, where `TS_compute` commands are run in a loop over time series, compute small sections of the dataset at a time (and then saving the results to file, e.g., `HCTSA.mat`), eventually covering the full dataset iteratively.
 
-### On a distributed compute cluster (using Matlab)
+### On a distributed compute cluster using Matlab
 
 With a distributed computing setup, a local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g., `TS_subset('raw',1:100)` will generate a new file, **HCTSA_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
 Computing features for time series in each such subset can then be run on a different compute node (by queuing batch jobs that each work on a given subset of time seires), and the results later recombined into a single `HCTSA.mat` file using `TS_combine` commands, as described [here](working_with_hctsa_files.md).
