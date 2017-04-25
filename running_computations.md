@@ -16,7 +16,7 @@ Results will be stored back in the matrices of `HCTSA.mat`, i.e., **TS_DataMat**
 By specifying the first input to 1 to calculate across available cores using the Matlab Parallel Processing Toolbox:
 
     % Compute all missing values in HCTSA.mat using parallel processing:
-    TS_compute(1);
+    TS_compute(true);
 
 You can also specify a custom range of ts_ids and op_ids to compute:
 
