@@ -13,12 +13,12 @@ Results will be stored back in the matrices of `HCTSA.mat`, i.e., `TS_DataMat` (
 
 ## Custom settings for running `TS_compute`
 
-By specifying the first input to 1 to calculate across available cores using the Matlab Parallel Processing Toolbox:
+Set the first input to `true` to calculate across available cores using the Matlab Parallel Processing Toolbox:
 ```matlab
     % Compute all missing values in HCTSA.mat using parallel processing:
     TS_compute(true);
 ```
-You can also specify a custom range of ts_ids and op_ids to compute:
+You can also specify a custom range of `ts_id` and `op_id` to compute:
 ```matlab
     % Compute missing values in HCTSA.mat for ts_ids from 1:10 and op_ids from 1:1000
     TS_compute(false,1:10,1:1000);
@@ -31,12 +31,12 @@ Specify what values should be recomputed:
 To run the same procedure on a custom file (that is not `HCTSA.mat`), you can specify this also:
 ```matlab
     % Compute all missing values in my_HCTSA_file.mat:
-    TS_compute(false,[],[],'missing','my_HCTSA_file.mat',0);
+    TS_compute(false,[],[],'missing','my_HCTSA_file.mat');
 ```
-By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero:
+By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to `false`:
 ```matlab
     % Compute all missing values in HCTSA.mat, suppressing output to screen:
-    TS_compute(false,[],[],'missing','',0);
+    TS_compute(false,[],[],'missing','',false);
 ```
 
 ## Computation approaches for full datasets
