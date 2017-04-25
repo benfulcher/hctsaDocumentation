@@ -33,7 +33,7 @@ To run the same procedure on a custom file (that is not `HCTSA.mat`), you can sp
     % Compute all missing values in my_HCTSA_file.mat:
     TS_compute(false,[],[],'missing','my_HCTSA_file.mat');
 ```
-By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to `false`:
+By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final (6th) input to `false`:
 ```matlab
     % Compute all missing values in HCTSA.mat, suppressing output to screen:
     TS_compute(false,[],[],'missing','',false);
