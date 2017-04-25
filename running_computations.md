@@ -21,22 +21,22 @@ By specifying the first input to 1 to calculate across available cores using the
 You can also specify a custom range of ts_ids and op_ids to compute:
 ```matlab
     % Compute missing values in HCTSA.mat for ts_ids from 1:10 and op_ids from 1:1000
-    TS_compute(0,1:10,1:1000);
+    TS_compute(false,1:10,1:1000);
 ```
 Specify what values should be recomputed:
 ```matlab
     % Compute all values that have never previous been calculated or previously returned an error:
-    TS_compute(0,[],[],'error');
+    TS_compute(false,[],[],'error');
 ```
 To run the same procedure on a custom file (that is not `HCTSA.mat`), you can specify this also:
 ```matlab
     % Compute all missing values in my_HCTSA_file.mat:
-    TS_compute(0,[],[],'missing','my_HCTSA_file.mat',0);
+    TS_compute(false,[],[],'missing','my_HCTSA_file.mat',0);
 ```
 By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final input to zero:
 ```matlab
     % Compute all missing values in HCTSA.mat, suppressing output to screen:
-    TS_compute(0,[],[],'missing','',0);
+    TS_compute(false,[],[],'missing','',0);
 ```
 
 ## Computation approaches for full datasets
