@@ -62,7 +62,7 @@ If only a single machine is available for computation, there are a couple of opt
 
 ### On a distributed compute cluster (using Matlab)
 
-Distributing computations across multiple computers on a large scale is better suited to [a linked a mySQL database](overview_mysql_database.md), however, this can also be achieved in a basic way within Matlab.
+, however, this can also be achieved in a basic way within Matlab.
 A local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
 `TS_subset('raw',1:100)` will generate a new file, **HCTSA_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
 Each such subset can then be run on a different computer, and the results later recombined into a single HCTSA file using `TS_combine`, as described [here](working_with_hctsa_files.md).
@@ -74,5 +74,8 @@ For example,
 TS_subset('../HCTSA.mat',tsid_min:tsid_max,[],1,customFile);
 ```
 
-### On a distributed compute cluster (using mySQL)
+### Using mySQL to facilitate distributed computing
 
+Distributing computations across multiple computers on a large scale is better suited to [a linked a mySQL database](overview_mysql_database.md), which also best accomodates datasets that grow with time, as new time series can be easily added to the database.
+In this case, computation proceeds similarly to above, on a cluster, where shell scripts can be used to distribute jobs across cores, that all write to a centralized _mySQL_ server.
+Indeed, any machine can easily be used to contribute results, by assigning them different subsets of time series IDs to compute and write to the server.
