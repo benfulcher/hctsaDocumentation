@@ -13,3 +13,5 @@ An application to gene expression data in a cerebellar brain region, r1A, across
 After filtering and normalizing (`TS_normalize`) and clustering (`TS_cluster`), we plotted the clustered time-series data matrix (`TS_plot_DataMatrix('cl')`):
 
 ![](/assets/GeneExpressionExample.png)
+
+Visually, we can see that genes with similar expression profiles over time have been clustered together based on their 2829-long feature vector representations.
