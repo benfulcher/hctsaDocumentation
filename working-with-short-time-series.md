@@ -8,8 +8,8 @@ The number of features with a meaningful output, from time series as short as 5 
 In each case, over 3000 features can be computed.
 However, note that one must be careful when representing a 5-dimensional object, with thousands of features, the vast majority of which will be highly redundant.
 
-### Sample application to gene expression data
-An application to gene expression data in a cerebellar brain region, r1A, across seven developmental time points (from the Allen Institute's [Developing Mouse Brain Atlas]((http://developingmouse.brain-map.org)), for a subset of 50 genes was performed to demonstrate the feasibility of running _hctsa_ analysis on datasets of short time series.
+### Sample application to developmental gene expression data
+To demonstrate the feasibility of running _hctsa_ analysis on datasets of short time series, we applied _hctsa_ to gene expression data in the cerebellar brain region, r1A, across seven developmental time points (from the Allen Institute's [Developing Mouse Brain Atlas]((http://developingmouse.brain-map.org)), for a subset of 50 genes.
 After filtering and normalizing (`TS_normalize`) and clustering (`TS_cluster`), we plotted the clustered time-series data matrix (`TS_plot_DataMatrix('cl')`):
 
 ![](/assets/GeneExpressionExample.png)
