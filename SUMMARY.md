@@ -11,6 +11,7 @@
   * [Performing calculations](running_computations.md)
   * [Inspecting errors](dealing_with_errors.md)
   * [Working with hctsa files](working_with_hctsa_files.md)
+  * [Computation time](computation-time.md)
 * [Analyzing and visualizing results](analyzing_visualizing.md)
   * [Assigning group labels to data](grouping.md)
   * [Filtering and normalizing](filtering_and_normalizing.md)
