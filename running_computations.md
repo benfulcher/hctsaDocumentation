@@ -58,19 +58,9 @@ Note that if computation times are too long for the resources at hand, one can a
 If only a single machine is available for computation, there are a couple of options:
 
 1. For small datasets, when it is feasible to run all computations in a single go, it is easiest to run computations within Matlab in a single call of `TS_compute`.
-2. For larger datasets that may run for a long time on a single machine, one may wish to use something like the provided `sample_runscript_matlab` script, where `TS_compute` commands are run in a loop over time series, compute small sections of the dataset at a time (and then saving the results to file, `HCTSA.mat`), eventually covering the full dataset.
+2. For larger datasets that may run for a long time on a single machine, one may wish to use something like the provided `sample_runscript_matlab` script, where `TS_compute` commands are run in a loop over time series, compute small sections of the dataset at a time (and then saving the results to file, e.g., `HCTSA.mat`), eventually covering the full dataset iteratively.
 
-
-
-
-  it is sensible to compute small sections of the dataset at a time (and save the results to file), eventually covering the full dataset iteratively.
-We have provided a sample runscript for this purpose as `sample_runscript_matlab`, which allows the user to specify the increment at which results are saved back to `HCTSA.mat` (or any custom file).
-
-
-
-
-
-### Distributing computations
+### On a distributed compute cluster (using Matlab)
 
 Distributing computations across multiple computers on a large scale is better suited to [a linked a mySQL database](overview_mysql_database.md), however, this can also be achieved in a basic way within Matlab.
 A local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g.,
@@ -78,12 +68,11 @@ A local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_sub
 Each such subset can then be run on a different computer, and the results later recombined into a single HCTSA file using `TS_combine`, as described [here](working_with_hctsa_files.md).
 
 
-
-
-
-## On a distributed cluster (using Matlab)
 On a cluster, shell scripts can be set up to queue batch jobs, where each batch job loops across a set of time series.
 For example,
 ```matlab
 TS_subset('../HCTSA.mat',tsid_min:tsid_max,[],1,customFile);
 ```
+
+### On a distributed compute cluster (using mySQL)
+
