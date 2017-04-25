@@ -4,4 +4,5 @@ The scaling of the time taken to compute 7749 features of v0.93 of _hctsa_ is sh
 
 ![](/assets/computeScaling.png)
 
+## Computing approaches
 For small 
