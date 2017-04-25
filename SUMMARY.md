@@ -23,6 +23,7 @@
   * [Exploring classification accuracy](ts_classify.md)
   * [Finding informative features](ts_topfeatures.md)
   * [Interpreting features](interpreting-features.md)
+  * [Working with short time series](working-with-short-time-series.md)
 * [Working with a mySQL database](overview_mysql_database.md)
   * [Setting up the mySQL database](setup_mysql_database.md)
   * [The database structure](database_structure.md)
