@@ -8,7 +8,7 @@ This function can be run without inputs to compute all missing values in the def
     % Compute all missing values in HCTSA.mat:
     TS_compute;
 ```
-Running `TS_compute` will begin running operations on time series in `HCTSA.mat` for which elements in `TS_DataMat` are `NaN`s (indicating that they have not been run before).
+Running `TS_compute` will begin running operations on time series in `HCTSA.mat` for which elements in `TS_DataMat` are `NaN`, indicating that they have not been run before.
 Results will be stored back in the matrices of `HCTSA.mat`, i.e., `TS_DataMat` (output of each operation on each time series), `TS_CalcTime` (calculation time for each operation on each time series), and `TS_Quality` (labels indicating errors or special-valued outputs).
 
 ## Custom settings for running `TS_compute`
