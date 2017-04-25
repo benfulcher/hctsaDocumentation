@@ -5,4 +5,6 @@ The scaling of the time taken to compute 7749 features of v0.93 of _hctsa_ is sh
 ![](/assets/computeScaling.png)
 
 ## Computing approaches
-For small 
+Depending on the size of the dataset, whether it may grow in the future, and the computational resources available, a different computing approach may be selected.
+
+1. For small datasets, it can be 
