@@ -24,7 +24,7 @@ You can also specify a custom range of ts_ids and op_ids to compute:
     TS_compute(0,1:10,1:1000);
 ```
 Specify what values should be recomputed:
-```
+```matlab
     % Compute all values that have never previous been calculated or previously returned an error:
     TS_compute(0,[],[],'error');
 ```
