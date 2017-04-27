@@ -35,12 +35,11 @@ The simplest way of interpreting what sort of property a feature might be measur
 
 ### Inspecting code
 
-To find more specific detailed information about a feature, beyond just a broad categorical label of the literature from which it was derived, the next step is find and inspect the code file that generates the feature of interest.
-For example, say we were interested in the top performing feature in the list above:
+To find more specific detailed information about a feature, beyond just a broad categorical label of the literature from which it was derived, the next step is find and inspect the code file that generates the feature of interest. For example, say we were interested in the top performing feature in the list above:
 ```
     [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
 ```
-We may then wish to understand the code file that produces this feature. We can use the feature ID \(3016\) provided in square brackets to get information from the Operations structure array:
+We can use the feature ID (3016) provided in square brackets to get information from the Operations structure array:
 
 ```matlab
 >> disp(Operations([Operations.ID]==3016));
@@ -51,7 +50,7 @@ We may then wish to understand the code file that produces this feature. We can 
       MasterID: 836
 ```
 
-Inspecting the part before the '.' in the CodeString field tells us the name _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature: `FC_LocalSimple_mean3`. The text following the dot, '.', tells us the field of the output structure produced by the Matlab function that was run: `taures`.  
+Inspecting the part before the '.' in the `CodeString` field tells us the name _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature: `FC_LocalSimple_mean3`. The text following the dot, '.', tells us the field of the output structure produced by the Matlab function that was run: `taures`.  
 We can use the `MasterID` to get more information about about this from the `MasterOperations` structure array:
 
 ```matlab
