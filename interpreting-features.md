@@ -40,7 +40,7 @@ To find more specific detailed information about a feature, beyond just a broad 
     [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
 ```
 We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction).
-We can use the feature ID (3016) provided in square brackets to get information from the Operations structure array:
+We can use the feature ID (3016) provided in square brackets to get information from the `Operations` structure array:
 
 ```matlab
 >> disp(Operations([Operations.ID]==3016));
