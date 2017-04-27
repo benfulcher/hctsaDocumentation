@@ -1,7 +1,7 @@
 ## Interpreting _hctsa_ features
 
-Often, an _hctsa_ analysis will yield a list of features that may be particularly relevant to a given time-series analysis task, e.g., features that robustly distinguish time series recorded from individuals with some disease diagnosis compared to healthy controls.
-, such as running `TS_TopFeatures`, yields a list of features, such as:
+Often, an _hctsa_ analysis will yield a list of features that may be particularly relevant to a given time-series analysis task, e.g., features that robustly distinguish time series recorded from individuals with some disease diagnosis compared to that of healthy controls. In cases like this, the next step for the analyst is to bridge the automated feature selection enabled by _hctsa_ to domain understanding.
+Consider a problem in which `TS_TopFeatures` is run to find features that accurately distinguish groups of time series, yielding a list of features like the following:
 
 ```
 [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
@@ -25,7 +25,7 @@ Often, an _hctsa_ analysis will yield a list of features that may be particularl
 [6946] MF_steps_ahead_ss_best_6_meandiffrms (model,prediction) -- 50.33%
 ```
 
-Functions like `TS_TopFeatures` are helpful in showing us how these different types of features might cluster into groups that measure similar properties, but even when we have a group of similar features, how can we start to interpret and understand what these features are actually measuring?
+Functions like `TS_TopFeatures` are helpful in showing us how these different types of features might cluster into groups that measure similar properties. This helps us to be able to inspect groups of similar, inter-correlated features together, but even when we have isolated such a group can we start to interpret and understand what these features are actually measuring?
 
 ### Inspecting keywords
 
