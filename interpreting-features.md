@@ -50,8 +50,8 @@ We can use the feature ID (3016) provided in square brackets to get information 
       MasterID: 836
 ```
 
-Inspecting the text before the dot, '.' in the `CodeString` field tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature: `FC_LocalSimple_mean3`. The text after the dot, '.', tells us the field of the output structure produced by the Matlab function that was run: `taures`.
-We can use the `MasterID` to get more information about about this from the `MasterOperations` structure array:
+Inspecting the text before the dot, '.', in the `CodeString` field (`FC_LocalSimple_mean3`) tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature. Whereas the text following the dot, '.', in the `CodeString` field (`taures`), tells us the field of the output structure produced by the Matlab function that was run.
+We can use the `MasterID` to get more information about the code that was run using the `MasterOperations` structure array:
 
 ```matlab
 >> disp(MasterOperations([MasterOperations.ID]==836));
@@ -60,9 +60,8 @@ We can use the `MasterID` to get more information about about this from the `Mas
      Code: 'FC_LocalSimple(y,'mean',3)'
 ```
 
-This tells us that the code used to produce our feature was `FC_LocalSimple(y,'mean',3)`.  
-We can inspect this code `FC_LocalSimple`, which is, like all code files for computing time-series features, located in the Operations directory of the _hctsa_ repository.  
-We can get information about this function in the commandline:
+This tells us that the code used to produce our feature was `FC_LocalSimple(y,'mean',3)`.
+We can get information about this function in the commandline by running a `help` command:
 
 ```matlab
 >> help FC_LocalSimple
@@ -88,7 +87,8 @@ We can get information about this function in the commandline:
   residuals, and their autocorrelation structure.
 ```
 
-Inspecting the code used to compute our feature, `FC_LocalSimple(y,'mean',3)`, this tells us that the code is doing forecasting using the mean (since the second input to `FC_LocalSimple`, `forecastMeth` is set to 'mean') of the previous three values (since the third input to `FC_LocalSimple`, `trainLength` is set to 3).  
+We can also inspect this code `FC_LocalSimple` directly for more information. Like all code files for computing time-series features, `FC_LocalSimple.m` is located in the Operations directory of the _hctsa_ repository.
+Inspecting the code file, we see that running `FC_LocalSimple(y,'mean',3)` does forecasting using local estimates of the time-series mean (since the second input to `FC_LocalSimple`, `forecastMeth` is set to `'mean'`), using the previous three time-series values to make the prediction (since the third input to `FC_LocalSimple`, `trainLength` is set to `3`).
 To understand what the specific output quantity from this code is that came up as being highly informative in our `TS_TopFeatures` analysis, we need to look for the output labeled `taures`.  
 For this, we'll need to look into the code file, `FC_LocalSimple`, to see where this output is computed. We find the following lines of code within `FC_LocalSimple`:
 ```matlab
