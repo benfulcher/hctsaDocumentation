@@ -31,16 +31,15 @@ Below we outline a procedure for how a user can go from a time-series feature se
 
 ### Inspecting keywords
 
-The simplest way of interpreting what sort of property a feature might be measuring is from its keywords, that often label individual features by the class of time-series analysis method from which they were derived.  
-In the list above, we see keywords listed in parentheses, as _'forecasting'_ \(methods related to predicting future values of a time series\), _'entropy'_ \(methods related to predictability and information content in a time series\), and _'wavelet'_ \(features derived from wavelet transforms of the time series\).  
-There are also keywords like _'locdep'_ \(location dependent: features that change under mean shifts of a time series\), _'spreaddep'_ \(spread dependent: features that change under rescaling about their mean\), and _'lengthdep'_ \(length dependent: features that are highly sensitive to the length of a time series\).
+The simplest way of interpreting what sort of property a feature might be measuring is from its keywords, that often label individual features by the class of time-series analysis method from which they were derived. In the list above, we see keywords listed in parentheses, as _'forecasting'_ \(methods related to predicting future values of a time series\), _'entropy'_ \(methods related to predictability and information content in a time series\), and _'wavelet'_ \(features derived from wavelet transforms of the time series\). There are also keywords like _'locdep'_ \(location dependent: features that change under mean shifts of a time series\), _'spreaddep'_ \(spread dependent: features that change under rescaling about their mean\), and _'lengthdep'_ \(length dependent: features that are highly sensitive to the length of a time series\).
 
 ### Inspecting code
 
-Mostly, the user will want to find more specific detailed information beyond just the category of the literature from which a given feature was derived.  
-For example, say we were interested in the top performing feature in the list above:  
-    \[3016\] FC\_LocalSimple\_mean3\_taures \(forecasting\) -- 59.97%
-
+To find more specific detailed information about a feature, beyond just a broad categorical label of the literature from which it was derived, the next step is find and inspect the code file that generates the feature of interest.
+For example, say we were interested in the top performing feature in the list above:
+```
+    [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
+```
 We may then wish to understand the code file that produces this feature. We can use the feature ID \(3016\) provided in square brackets to get information from the Operations structure array:
 
 ```matlab
