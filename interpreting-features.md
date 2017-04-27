@@ -50,7 +50,7 @@ We can use the feature ID (3016) provided in square brackets to get information 
       MasterID: 836
 ```
 
-Inspecting the part before the '.' in the `CodeString` field tells us the name _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature: `FC_LocalSimple_mean3`. The text following the dot, '.', tells us the field of the output structure produced by the Matlab function that was run: `taures`.  
+Inspecting the text before the dot, '.' in the `CodeString` field tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature: `FC_LocalSimple_mean3`. The text after the dot, '.', tells us the field of the output structure produced by the Matlab function that was run: `taures`.
 We can use the `MasterID` to get more information about about this from the `MasterOperations` structure array:
 
 ```matlab
