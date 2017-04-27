@@ -1,6 +1,7 @@
 ## Interpreting _hctsa_ features
 
-Often an analysis, such as running `TS_TopFeatures`, yields a list of features, such as:
+Often, an _hctsa_ analysis will yield a list of features that may be particularly relevant to a given time-series analysis task, e.g., features that robustly distinguish time series recorded from individuals with some disease diagnosis compared to healthy controls.
+, such as running `TS_TopFeatures`, yields a list of features, such as:
 
 ```
 [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
