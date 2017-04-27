@@ -25,7 +25,9 @@ Consider a problem in which `TS_TopFeatures` is run to find features that accura
 [6946] MF_steps_ahead_ss_best_6_meandiffrms (model,prediction) -- 50.33%
 ```
 
-Functions like `TS_TopFeatures` are helpful in showing us how these different types of features might cluster into groups that measure similar properties. This helps us to be able to inspect groups of similar, inter-correlated features together, but even when we have isolated such a group can we start to interpret and understand what these features are actually measuring?
+Functions like `TS_TopFeatures` are helpful in showing us how these different types of features might cluster into groups that measure similar properties. This helps us to be able to inspect sets of similar, inter-correlated features together as a group, but even when we have isolated such a group, how can we start to interpret and understand what these features are actually measuring?
+Some features in the list may be easy to interpret directly (e.g., `rms` in the list above is simply the root-mean-square of the distribution of time-series values), and others have clues in the name (e.g., features starting with `WL_coeffs` are to do with measuring wavelet coefficients, features starting with `EN_mse` correspond to measuring the multiscale entropy, mse, and features starting with `FC_LocalSimple_mean` are related to time-series forecasting using local means of the time series).
+Below we outline a procedure for how a user can go from a time-series feature selected by _hctsa_ towards a deeper understanding of the type of algorithm that feature is derived from, how that algorithm performs across the dataset, and thus how it can provide interpretable information about your specific time-series dataset.
 
 ### Inspecting keywords
 
