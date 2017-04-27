@@ -39,6 +39,7 @@ To find more specific detailed information about a feature, beyond just a broad 
 ```
     [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
 ```
+We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction).
 We can use the feature ID (3016) provided in square brackets to get information from the Operations structure array:
 
 ```matlab
@@ -108,9 +109,9 @@ For example, we can run the following:
 TS_FeatureSummary(3016,'raw',true);
 ```
 which produces a plot like that shown below. We have run this on a dataset containing noisy sine waves, labeled 'noisy' (red) and periodic signals without noise, labeled 'periodic' (blue):
-![](img/FeatureSummaryForInterpretation.png)
-On the plot on the right, we see how this feature orders time series (with the distribution of values shown on the left, and split between the two groups: 'noisy', and 'periodic').
-Our intuition that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction holds visually.
+![](img/FeatureSummaryForInterpretation.png) On the plot on the right, we see how this feature orders time series (with the distribution of values shown on the left, and split between the two groups: 'noisy', and 'periodic').
+Our intuition from the code, that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction, appears to hold visually on this dataset. In general, the mechanism provided by `TS_FeatureSummary` to visualize how a given feature orders time series, including across labeled groups, can be a very useful one for feature interpretation.
 
 ### Summary
-In practice, the _hctsa_ contains a large number of features, many of which can be expected to be highly inter-correlated on a given time-series dataset. It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by TS_TopFeatures (cf. [Finding informative features](ts_topfeatures.md)), or by searching for similar features to a given feature (cf. [Finding nearest neighbors](sim_search.md)). In a given domain context, the analyst typically needs to decide on the trade-off between more complicated features that may have slightly higher in-sample performance on a given task, and simpler, more interpretable features that may help guide domain understanding. The procedures outlined above are typically the first step to understanding a time-series analysis algorithm, and its relationship to alternatives that have been developed across science.
+_hctsa_ contains a large number of features, many of which can be expected to be highly inter-correlated on a given time-series dataset. It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by TS_TopFeatures (cf. [Finding informative features](ts_topfeatures.md)), or by searching for features with similar behavior on the dataset to a given feature of interest (cf. [Finding nearest neighbors](sim_search.md)).
+In a specific domain context, the analyst typically needs to decide on the trade-off between more complicated features that may have slightly higher in-sample performance on a given task, and simpler, more interpretable features that may help guide domain understanding. The procedures outlined above are typically the first step to understanding a time-series analysis algorithm, and its relationship to alternatives that have been developed across science.
