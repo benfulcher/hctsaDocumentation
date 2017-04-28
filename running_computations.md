@@ -1,24 +1,23 @@
 # Performing calculations using `TS_compute`
 
-Once a time-series dataset and the operation library has been specified, and an *hctsa* dataset initialized (using `TS_init`), all results entries in the resulting `HCTSA.mat` are set to `NaN`, corresponding to results that are as yet uncomputed.
+An _hctsa_ dataset has been initialized (specifying details of a time-series dataset and operations to include using `TS_init`), all results entries in the resulting `HCTSA.mat` are set to `NaN`, corresponding to results that are as yet uncomputed.
 
 Calculations are performed using the function `TS_compute`, which stores results back into the matrices in `HCTSA.mat`.
 This function can be run without inputs to compute all missing values in the default hctsa file, `HCTSA.mat`:
 ```matlab
     % Compute all missing values in HCTSA.mat:
-    TS_compute;
+    TS_compute();
 ```
-Running `TS_compute` will begin running operations on time series in `HCTSA.mat` for which elements in `TS_DataMat` are `NaN`, indicating that they have not been run before.
-Results will be stored back in the matrices of `HCTSA.mat`, i.e., `TS_DataMat` (output of each operation on each time series), `TS_CalcTime` (calculation time for each operation on each time series), and `TS_Quality` (labels indicating errors or special-valued outputs).
+`TS_compute` will begin evaluating operations on time series in `HCTSA.mat` for which elements in `TS_DataMat` are `NaN` (i.e., computations that have not been run previously). Results are stored back in the matrices of `HCTSA.mat`: `TS_DataMat` (output of each operation on each time series), `TS_CalcTime` (calculation time for each operation on each time series), and `TS_Quality` (labels indicating errors or special-valued outputs).
 
 ## Custom settings for running `TS_compute`
 
-Set the first input to `true` to calculate across available cores using the Matlab Parallel Processing Toolbox:
+(1) Computing features in parallel across available cores using Matlab's Parallel Processing Toolbox. This can be achieved by setting the first input to `true`:
 ```matlab
     % Compute all missing values in HCTSA.mat using parallel processing:
     TS_compute(true);
 ```
-You can also specify a custom range of `ts_id` and `op_id` to compute:
+(2) Computing across a custom range of time-series IDs (`ts_id`) and operation IDs (`op_id`). This can be achieved by setting the second and third inputs:
 ```matlab
     % Compute missing values in HCTSA.mat for ts_ids from 1:10 and op_ids from 1:1000
     TS_compute(false,1:10,1:1000);
