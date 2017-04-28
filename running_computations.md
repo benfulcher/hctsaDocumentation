@@ -62,7 +62,7 @@ If only a single machine is available for computation, there are a couple of opt
 
 ### On a distributed compute cluster using Matlab
 
-With a distributed computing setup, a local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g., `TS_subset('raw',1:100)` will generate a new file, `HCTSA_subset.mat` that contains just TimeSeries with IDs from 1 to 100.
+With a distributed computing setup, a local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g., `TS_subset('raw',1:100)` will generate a new file, `HCTSA_subset.mat` that contains just time series with IDs from 1 to 100.
 Computing features for time series in each such subset can then be run on a distributed computing setup. For example, with a different compute node computing a different subset (by queuing batch jobs that each work on a given subset of time series). Once all subsets have been computed, the results can then be recombined into a single `HCTSA.mat` file using `TS_combine` commands, as described [here](working_with_hctsa_files.md).
 
 ### Using mySQL to facilitate distributed computing
