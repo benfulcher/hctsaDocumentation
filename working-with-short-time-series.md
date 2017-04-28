@@ -6,8 +6,7 @@ However, time-series data are sometimes even shorter, including yearly economic 
 
 The number of features with a meaningful output, from time series as short as 5 samples, up to those with 500 samples, is shown below:
 ![](/img/LengthDependence.png)
-In each case, over 3000 features can be computed.
-However, note that one must be careful when representing a 5-dimensional object, with thousands of features, the vast majority of which will be highly redundant.
+In each case, over 3000 features can be computed. Note that one must be careful when representing a 5-dimensional object, with thousands of features, the vast majority of which will be highly intercorrelated.
 
 ### Sample application to developmental gene expression data
 To demonstrate the feasibility of running _hctsa_ analysis on datasets of short time series, we applied _hctsa_ to gene expression data in the cerebellar brain region, r1A, across seven developmental time points (from the Allen Institute's [Developing Mouse Brain Atlas]((http://developingmouse.brain-map.org)), for a subset of 50 genes.
