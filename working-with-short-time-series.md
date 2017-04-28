@@ -9,9 +9,9 @@ The number of features with a meaningful output, from time series as short as 5 
 In each case, over 3000 features can be computed. Note that one must be careful when representing a 5-dimensional object, with thousands of features, the vast majority of which will be highly intercorrelated.
 
 ### Sample application to developmental gene expression data
-To demonstrate the feasibility of running _hctsa_ analysis on datasets of short time series, we applied _hctsa_ to gene expression data in the cerebellar brain region, r1A, across seven developmental time points (from the Allen Institute's [Developing Mouse Brain Atlas]((http://developingmouse.brain-map.org)), for a subset of 50 genes.
-After filtering and normalizing (`TS_normalize`) and clustering (`TS_cluster`), we plotted the clustered time-series data matrix (`TS_plot_DataMatrix('cl')`):
+To demonstrate the feasibility of running _hctsa_ analysis on datasets of short time series, we applied _hctsa_ to gene expression data in the cerebellar brain region, r1A, across seven developmental time points (from the Allen Institute's [Developing Mouse Brain Atlas](http://developingmouse.brain-map.org)), for a subset of 50 genes.
+After filtering and normalizing (`TS_normalize`), then clustering (`TS_cluster`), we plotted the clustered time-series data matrix (`TS_plot_DataMatrix('cl')`):
 
 ![](/assets/GeneExpressionExample.png)
 
-Visually, using the time series plots to the left of the colored matrix, we can see that genes with similar temporal expression profiles are clustered together based on their 2829-long feature vector representations.
+Inspecting the time series plots to the left of the colored matrix, we can see that genes with similar temporal expression profiles are clustered together based on their 2829-long feature vector representations. Thus, these feature-based representations are a rich and meaningful representation of these short time-series data. Further, while these 2829-long feature vectors are shorter than those of longer time series, they still constitute a highly comprehensive representation that can be used as the starting point to obtain interpretable understanding in addressing specific domain questions.
