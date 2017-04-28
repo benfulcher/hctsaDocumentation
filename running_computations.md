@@ -22,17 +22,19 @@ This function can be run without inputs to compute all missing values in the def
     % Compute missing values in HCTSA.mat for ts_ids from 1:10 and op_ids from 1:1000
     TS_compute(false,1:10,1:1000);
 ```
-Specify what values should be recomputed:
+(3) Specifying what types of values should be computed:
 ```matlab
-    % Compute all values that have never previous been calculated or previously returned an error:
+    % Compute all values that have never been computed before (default)
+    TS_compute(false,[],[],'missing');
+    % Compute all values that have never previous been calculated OR have previously been computed but returned an error:
     TS_compute(false,[],[],'error');
 ```
-To run the same procedure on a custom file (that is not `HCTSA.mat`), you can specify this also:
+(4) Specifying a custom .mat file to operate on (`HCTSA.mat` is the default):
 ```matlab
     % Compute all missing values in my_HCTSA_file.mat:
     TS_compute(false,[],[],'missing','my_HCTSA_file.mat');
 ```
-By default, all computations will be displayed to screen (which is useful for error checking), but this functionality can be suppressed by setting the final (6th) input to `false`:
+(5) Suppress commandline output. All computations are displayed to screen by default (which can be overwhelming but is useful for error checking). This functionality can be suppressed by setting the final (6th) input to `false`:
 ```matlab
     % Compute all missing values in HCTSA.mat, suppressing output to screen:
     TS_compute(false,[],[],'missing','',false);
@@ -40,18 +42,17 @@ By default, all computations will be displayed to screen (which is useful for er
 
 ## Computation approaches for full datasets
 
-The optimal approach for computing features for full time-series datasets depends on the time-series length, the number of time series in the dataset, and the computational resources available.
-When multiple cores are available, it is always recommended to use the parallel setting (i.e., as `TS_compute(true)`).
+Computing features for full time-series datasets can be time consuming, especially for large datasets of long time series. An appropriate strategy therefore depends on the time-series length, the number of time series in the dataset, and the computational resources available. When multiple cores are available, it is always recommended to use the parallel setting (i.e., as `TS_compute(true)`).
 
 ### Computation time scaling
 
 The first thing to think about is how the time taken to compute 7749 features of v0.93 of _hctsa_ scales with the length of time series in your dataset (see plot below). The figure compares results using a single core (e.g., `TS_compute(false)`) to results using a 16-core machine, with parallelization enabled (e.g., `TS_compute(true)`).
 
-![](/assets/computeScaling.png)
+![](/img/computeScaling.png)
 
-Times may vary across on individual machines, but the above can be used as an estimate of the computation time per time series that can motivate the correct computation strategy for a given dataset.
+Times may vary across on individual machines, but the above plot can be used to estimate the computation time per time series, and thus help decide on an appropriate computation strategy for a given dataset.
 
-Note that if computation times are too long for the resources at hand, one can always choose a reduced set of features, rather than the full set of >7000, to get a preliminary understanding of their data.
+Note that if computation times are too long for the computational resources at hand, one can always choose a reduced set of features, rather than the full set of >7000, to get a preliminary understanding of the dataset.
 
 ### On a single machine
 If only a single machine is available for computation, there are a couple of options:
