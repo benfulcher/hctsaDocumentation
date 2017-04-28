@@ -67,7 +67,5 @@ Computing features for time series in each such subset can then be run on a dist
 
 ### Using mySQL to facilitate distributed computing
 
-Distributing computations across multiple computers on a large scale is better suited to [a linked a mySQL database](overview_mysql_database.md), which also best accomodates datasets that grow with time, as new time series can be easily added to the database.
-In this case, computation proceeds similarly to above, on a cluster, where shell scripts can be used to distribute jobs across cores, that all write to a centralized _mySQL_ server.
-Indeed, any machine can easily be used to contribute results, by assigning them different subsets of time series IDs to compute and write to the server.
-Full details for how to implement this are [here](overview_mysql_database.md).
+Distributing feature computations on a large-scale distributed computing setup can be better suited to a linked mySQL database, especially for datasets that grow with time, as new time series can be easily added to the database. In this case, computation proceeds similarly to above, where shell scripts on a distributed cluster computing environment can be used to distribute jobs across cores, with all individual jobs writing to a centralized _mySQL_ server.
+A set of Matlab code that generates an appropriately formatted mySQL database and interfaces with the database to facilitate _hctsa_ feature computation is included with the software package, and is described in detail [here](overview_mysql_database.md).
