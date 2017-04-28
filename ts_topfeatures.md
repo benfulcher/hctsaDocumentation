@@ -73,5 +73,4 @@ Here we see that most pairs of operations are quite dependent (at `|R| > ~0.8`),
 
 ---
 
-This function produces all of the basic visualizations required to achieve a basic understanding of the differences between the labeled classes of the dataset, and should be considered a first step in a more detailed analysis. For example, in this case we may investigate the top-performing features in more detail, to understand in detail what they are measuring, and how.
-This process is described in the [Interpreting features](interpreting_features.md) section.
+This function produces all of the basic visualizations required to achieve a basic understanding of the differences between the labeled classes of the dataset, and should be considered a first step in a more detailed analysis. For example, in this case we may investigate the top-performing features in more detail, to understand in detail what they are measuring, and how. This process is described in the [Interpreting features](interpreting_features.md) section.
