@@ -52,7 +52,7 @@ The first thing to think about is how the time taken to compute 7749 features of
 
 Times may vary across on individual machines, but the above plot can be used to estimate the computation time per time series, and thus help decide on an appropriate computation strategy for a given dataset.
 
-Note that if computation times are too long for the computational resources at hand, one can always choose a reduced set of features, rather than the full set of >7000, to get a preliminary understanding of the dataset. One such reduced set of features is in `INP_ops_reduced.txt`. We plan to reduced more refined reduced feature sets, determined according to different criteria, in future.
+Note that if computation times are too long for the computational resources at hand, one can always choose a reduced set of features, rather than the full set of >7000, to get a preliminary understanding of the dataset. One such reduced set of features is in `INP_ops_reduced.txt`. We plan to reduced additional reduced feature sets, determined according to different criteria, in future.
 
 ### On a single machine
 If only a single machine is available for computation, there are a couple of options:
@@ -63,7 +63,7 @@ If only a single machine is available for computation, there are a couple of opt
 ### On a distributed compute cluster using Matlab
 
 With a distributed computing setup, a local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_subset`, which outputs a new data file for a particular subset of your data, e.g., `TS_subset('raw',1:100)` will generate a new file, **HCTSA_subset.mat** that contains just TimeSeries with IDs from 1 to 100.
-Computing features for time series in each such subset can then be run on a different compute node (by queuing batch jobs that each work on a given subset of time seires), and the results later recombined into a single `HCTSA.mat` file using `TS_combine` commands, as described [here](working_with_hctsa_files.md).
+Computing features for time series in each such subset can then be run on a distributed computing setup. For example, with a different compute node computing a different subset (by queuing batch jobs that each work on a given subset of time series). Once all subsets have been computed, the results can then be recombined into a single `HCTSA.mat` file using `TS_combine` commands, as described [here](working_with_hctsa_files.md).
 
 ### Using mySQL to facilitate distributed computing
 
