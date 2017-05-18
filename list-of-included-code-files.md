@@ -2,6 +2,8 @@
 
 Here we provide a full list of Matlab code files, organized loosely into broad categories, and with brief descriptions.
 
+The full set of over 7700 features is produced by running all of the code files below, many of which produce a large number of outputs (e.g., some functions fit a time-series model and then output statistics including the parameters of the best-fitting model, measures of the model's goodness of fit, the optimal model order, and autocorrelation statistics on the residuals). Each function can also be run with a range of input parameters, with each parameter set yielding characteristic outputs (e.g., different inputs to CO_AutoCorr determine the method in which autocorrelation is computed, as well as the time lag at which autocorrelation is calculated, e.g., lag 1, lag 2, lag 3, etc.; ).
+
 ### Distribution
 
 Code summarizing properties of the distribution of values in a time series (disregarding their sequence through time).
@@ -27,7 +29,7 @@ Code summarizing properties of the distribution of values in a time series (disr
 | DN_Spread                 | Measure of spread of the input time series.                                  |
 | DN_TrimmedMean            | Mean of the trimmed time series using trimmean.                              |
 | DN_Unique                 | The proportion of the time series that are unique values                     |
-| DN_Withinp                | Proportion of data points within p standard deviations of the mean.          |
+| DN_Withinp                | Proportion of data points within _p_ standard deviations of the mean.          |
 | DN_cv                     | Coefficient of variation                                                     |
 | DN_pleft                  | Distance from the mean at which a given proportion of data are more distant. |
 | EN_DistributionEntropy    | Distributional entropy.                                                      |
