@@ -4,6 +4,7 @@ Here we provide a full list of Matlab code files, organized loosely into broad c
 
 The full default set of over 7700 features in _hctsa_ is produced by running all of the code files below, many of which produce a large number of outputs (e.g., some functions fit a time-series model and then output statistics including the parameters of the best-fitting model, measures of the model's goodness of fit, the optimal model order, and autocorrelation statistics on the residuals).
 In our default feature set, each function is also run with different sets of input parameters, with each parameter set yielding characteristic outputs. For example, different inputs to `CO_AutoCorr` determine the method in which autocorrelation is computed, as well as the time lag at which autocorrelation is calculated, e.g., lag 1, lag 2, lag 3, etc.; `WL_dwtcoeff` has inputs that set the mother wavelet to use, and level of wavelet decomposition; `FC_LocalSimple` has inputs that determine the time-series forecasting method to use and the size of the training window.
+The set of code files below and their input parameters that define the default _hctsa_ feature set are in the `INP_mops.txt` file of the _hctsa_ repository.
 
 ### Distribution
 
