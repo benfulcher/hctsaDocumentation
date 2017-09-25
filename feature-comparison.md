@@ -70,4 +70,5 @@ The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation c
 ![](/assets/Screen Shot 2017-09-25 at 18.42.09.png)
 
 **4. Interpreting**
-New features can be incorporated in the default set by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
+If your hot new feature shows distinctive performance, then it can be incorporated in the default set of features by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
+You might even consider sharing your new feature with the community by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa).
