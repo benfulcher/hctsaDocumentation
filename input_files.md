@@ -94,7 +94,8 @@ Two example lines from the input file, **INP_mops.txt** (in the **Database** dir
 
 Each line in the input file specifies two pieces of information, separated by whitespace:
 1. A piece of code and its input parameters.
-2. A unique label for that master operation (that can be referenced by [individual operations](adding_operations.md)).
+2. A unique label for that master operation (that can be referenced by individual operations).
+<!-- ](adding_operations.md) -->
 
 We use the convention that *x* refers to the input time series and *y* refers to a *z*-scored transformation of the input time series (i.e., $$(x - \mu_x)/\sigma_x$$).
 In the example above, the first line thus adds an entry in the database for running the code `CO_tc3` using a *z*-scored time series as input (*y*), with ‘1’ as the second input with the label **CO_tc3_y_1**, and the second line will add an entry for running the code `ST_length` using the non-*z*-scored time-series *x*, with the label **length**.
@@ -120,6 +121,6 @@ An example excerpt from such a file is below:
 
 The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace).
 Whitespace is used to separate the three entries on each line of the input file.
-In this example, the master operation labeled `CO_tc3_y_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named **'length'** here.
+In this example, the master operation labeled `CO_tc3_y_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named 'length' here.
 The two keywords 'correlation' and 'nonlinear' are added to the `CO_tc3_1` operations, while the keywords ‘raw’ and ‘lengthDependent’ are added to the operation called `length`.
 These keywords can be used to organize and filter the set of operations used for a given analysis task.

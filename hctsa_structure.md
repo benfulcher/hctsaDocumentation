@@ -30,7 +30,8 @@ Having specified a set of master operations, operations, and time series, the re
 
 -   **TS_DataMat** is an *n* x *m* data matrix containing the results of applying *m* operations to the *n* time series.
 
--   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output (coding different outputs such as errors or NaNs). Quality labels are described in the section below.
+-   **TS_Quality** is an *n* x *m* matrix containing quality labels for each operation output (coding different outputs such as errors or NaNs).
+Quality labels are described in the section below.
 
 -   **TS_CalcTime** is an *n* x *m* matrix containing calculation times for each operation output. Note that the calculation time stored is for the corresponding master operation.
 

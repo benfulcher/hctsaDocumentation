@@ -78,7 +78,7 @@ To combine *hctsa* data files, you can use the `TS_combine` function.
 
 *Example*: combine *hctsa* datasets stored in the files `HCTSA_healthy.mat` and `HCTSA_disease.mat` into a new combined file, `HCTSA_combined.mat`:
 ```matlab
-TS_combine('HCTSA_healthy.mat','HCTSA_disease.mat',0,'HCTSA_combined.mat')
+TS_combine('HCTSA_healthy.mat','HCTSA_disease.mat',false,false,'HCTSA_combined.mat')
 ```
 The third input, `compare_tsids`, controls the behavior of the function in combining time series.
 By setting this to 1, `TS_combine` assumes that the TimeSeries IDs are comparable between the datasets (e.g., most common when using a [*mySQL* database to store *hctsa* data](overview_mysql_database.md)), and thus filters out duplicates so that the resulting *hctsa* dataset contains a unique set of time series.
