@@ -27,9 +27,10 @@ MyHotFeature(y,'hot')     hot_master
 
 The interesting output of the structure output produced by `MyHotFeature(y,'hot')` is `hotFeature1`, which needs to be specified in another input text file, `INP_hot_features.txt`, for example, as:
 ```
-hot_master.hotFeature1     hot_feature1      nonlinear,hot,sexy
+hot_master.hotFeature1     hot_feature1      nonlinear,hot,bandwagon
 ```
-where we have given this feature three keywords: `nonlinear`, `hot`, and `sexy`.
+where we have given this feature three keywords: `nonlinear`, `hot`, and `bandwagon
+`.
 
 So now we are able to initiate a new *hctsa* calculation, specifying custom code calls (*master*) and features to extract from the code call (*features*), as:
 ```matlab
