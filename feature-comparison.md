@@ -65,7 +65,7 @@ We find that our feature is reproducing the behavior of the first zero of the au
 
 ![](/assets/Screen Shot 2017-09-25 at 18.43.11.png)
 
-The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation coefficients, $$r$$) produced by `TS_SimSearch` provides another visualization of the context of this hot new feature:
+The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation coefficients, $$r$$) produced by `TS_SimSearch` provides another visualization of the context of this hot new feature (in this case there are so many highly correlated features, that the matrix doesn't reveal much subtle structure):
 
 ![](/assets/Screen Shot 2017-09-25 at 18.42.09.png)
 
