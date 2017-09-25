@@ -67,7 +67,7 @@ We find that our feature is reproducing the behavior of the first zero of the au
 
 The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation coefficients, $$r$$) produced by `TS_SimSearch` provides another visualization of the context of this hot new feature:
 
-
+![](/assets/Screen Shot 2017-09-25 at 18.42.09.png)
 
 **4. Interpreting**
 New features can be incorporated in the default set by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
