@@ -8,7 +8,7 @@ Just like [similar time series to a target can be retrieved and visualized](sim_
 ### EXAMPLE: Determining the relationship between a new feature and existing features
 We use the example of a new feature, `hot_feature`, and attempt to determine what existing features exhibit similar performance to it.
 
-**1. Setting a data context**
+#### 1. Setting a data context
 The first step is defining the set of features to compare to (here we use the default *hctsa* library), and the set of time-series data that behavior is going to be assessed on.
 If you only ever analyze a particular type of data (e.g., rainfall), then perhaps you're more interested in which methods perform similarly on rainfall data.
 If you have just developed a new algorithm for time-series analysis and want to see how it performs across a range of interdisciplinary time-series data, then you may want to use a diverse set of time series sampled from across science.
@@ -17,7 +17,7 @@ We have curated a diverse interdisciplinary set of 1000 time series.
 Pre-computed results (using [v0.95 of *hctsa*](https://github.com/benfulcher/hctsa/releases/tag/v0.95) and Matlab 2017a) can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136), or features can be recomputed using our input file for the time-series dataset, also on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) (to ensure implementation consistencies on your local compute architecture; i.e., using `TS_init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_compute`](running_computations.md)).
 So now we have a context of the behavior of thousands of features on this diverse dataset with which to compare the behavior of our new feature, `hot-feature`.
 
-**2. Computing the new features**
+#### 2. Computing the new features
 So now we need to compute our three new features, `hot_feature1`, `hot_feature2`, and `hot_feature3`, on the data.
 To get the feature values, we could do this directly for isolated computations (using `TS_CalculateFeatureVector`), but in order to maintain the HCTSA structure, we instead produce a new `HCTSA.mat` file containing just `hot_feature` and the same time series.
 After generating an input file, `INP_hot_master.txt` containing the function call (using z-scored time series, `y`, and using a second input argument, `'hot'`):
@@ -40,7 +40,7 @@ This generates a new file, `HCTSA_hot.mat`, containing information about the 100
 >> TS_compute(false,[],[],'missing','HCTSA_hot.mat');
 ```
 
-**3. Combining and comparing**
+#### 3. Combining and comparing
 So now we have both a context of the behavior of a library of >7000 features on 1000 diverse time series, and we also have the behavior of our three hot new features.
 It is time to combine them and look for inter-relationships!
 
@@ -69,6 +69,6 @@ The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation c
 
 ![](/assets/Screen Shot 2017-09-25 at 18.42.09.png)
 
-**4. Interpreting**
+#### 4. Interpreting
 If your hot new feature shows distinctive performance, then it can be incorporated in the default set of features by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
 You might even consider sharing your new feature with the community by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa).
