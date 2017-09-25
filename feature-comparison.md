@@ -33,11 +33,11 @@ where we have given this feature three keywords: `nonlinear`, `hot`, and `bandwa
 
 So now we are able to initiate a new *hctsa* calculation, specifying custom code calls (*master*) and features to extract from the code call (*features*), as:
 ```matlab
->> TS_init('INP_Empirical1000.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
+TS_init('INP_Empirical1000.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
 ```
 This generates a new file, `HCTSA_hot.mat`, containing information about the 1000 time series, and the three hot features, which can then be computed as:
 ```matlab
->> TS_compute(false,[],[],'missing','HCTSA_hot.mat');
+TS_compute(false,[],[],'missing','HCTSA_hot.mat');
 ```
 
 #### 3. Combining and comparing
@@ -45,14 +45,14 @@ So now we have both a context of the behavior of a library of >7000 features on 
 It is time to combine them and look for inter-relationships!
 
 ```matlab
->> TS_combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',false,true,'HCTSA_merged.mat');
+TS_combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',false,true,'HCTSA_merged.mat');
 ```
 
 Now that we have all of the data in the same HCTSA file, we can use standard *hctsa* functions to explore; the most relevant is [`TS_SimSearch`](sim_search.md).
 We can find the ID assigned to our new `hot_feature` in the merged HCTSA file as:
 ```matlab
-    load('HCTSA_merged.mat','Operations');
-    Operations(strcmp({Operations.Name},'my_hot_feature'))
+load('HCTSA_merged.mat','Operations');
+Operations(strcmp({Operations.Name},'my_hot_feature'))
 ```
 which tells us that the ID of `my_hot_feature` in `HCTSA_merged.mat` is 7750.
 Then we can use [`TS_SimSearch`](sim_search.md) to explore the relationship of our hot new feature:
