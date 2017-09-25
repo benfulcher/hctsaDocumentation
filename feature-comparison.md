@@ -61,8 +61,11 @@ Then we can use [`TS_SimSearch`](sim_search.md) to explore the relationship of o
 TS_SimSearch(7750,'tsOrOps','ops','whatDataFile','HCTSA_merged.mat','whatPlots',{'scatter','matrix'})
 ```
 
-We find that our feature is reproducing the behavior of the first zero of the autocorrelation function:
+We find that our feature is reproducing the behavior of the first zero of the autocorrelation function (the first match: `first_zero_ac`; see [Interpreting Features](interpreting-features.md) for more info on how to interpret matching features):
 
+![](/assets/Screen Shot 2017-09-25 at 18.43.11.png)
+
+Looking at the pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation coefficients, $$r$$).
 
 **4. Interpreting**
 New features can be incorporated in the default set by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
