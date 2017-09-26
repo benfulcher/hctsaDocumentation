@@ -2,6 +2,7 @@
 
 This manual outlines the steps required to set up and implement highly comparative time-series analysis using the [hctsa package](https://github.com/SystemsAndSignalsGroup/hctsa), as described in our papers:
 
+* B. D. Fulcher [Feature-based time-series analysis](https://arxiv.org/abs/1709.08055). *arXiv* 1709.08055 (2017).
 * B. D. Fulcher & N. S. Jones. [Automatic time-series phenotyping using massive feature extraction](http://biorxiv.org/lookup/doi/10.1101/081463). *bioRxiv* 081463 (2016).
 * S. S. Sethi, V. Zerbi, N. Wenderoth, A. Fornito, B. D. Fulcher. [Structural connectome topology relates to regional BOLD signal dynamics in the mouse brain](http://aip.scitation.org/doi/10.1063/1.4979281). *Chaos* **27**, 047405 (2017) ([here for a preprint](http://biorxiv.org/lookup/doi/10.1101/085514)).
 * B. D. Fulcher & N. S. Jones. [Highly comparative feature-based time-series classification](http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425). *IEEE Trans. Knowl. Data Eng.* **26**, 3026 (2014).
