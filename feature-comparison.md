@@ -23,32 +23,7 @@ This ensures implementation consistencies on your local compute architecture; i.
 However, if you only ever analyze a particular type of data (e.g., rainfall), then perhaps you're more interested in which methods perform similarly on rainfall data.
 For this case, you can produce your own data context for custom data using properly structured input files [as explained here](input_files.md).
 
-### _EXAMPLE 1_: Determining the relationship between an existing _hctsa_ feature and the rest of the library.
-
-If using a set of 1000 time series, then this is easy because all the data is already computed in `HCTSA_Empirical1000.mat` on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) :relaxed:
-
-For example, say we want to find neighbors to the `fastdfa` algorithm from [Max Little's website](http://www.maxlittle.net/software/index.php).
-This algorithm is already implemented in _hctsa_ in the code `SC_fastdfa.m` as the feature `SC_fastdfa_exponent`.
-We can find the ID of this feature (ID=750):
-```matlab
-Operations(strcmp({Operations.Name},'SC_fastdfa_exponent'))
-```
-and then find similar features using [`TS_SimSearch`](sim_search.md), e.g., as:
-```matlab
-TS_SimSearch(750,'tsOrOps','ops','whatDataFile','HCTSA_Empirical1000.mat','whatPlots',{'scatter','matrix','network'})
-```
-Yielding:
-
-![](/img/SC_fastDFA_scatters.png)
-![](/img/SC_fastDFA_matrix.png)
-
-We see that other features in the library indeed have strong relationships to `SC_fastdfa_exponent`, including some unexpected relationships with the stationarity estimate, `StatAvl25`.
-
-Combining the network visualization with scatter plots produces the figures in [our original paper on the empirical structure of time series and their methods](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full) (cf. Sec. 2.4 of the [supplementary text](http://rsif.royalsocietypublishing.org/highwire/filestream/23294/field_highwire_adjunct_files/0/rsif20130048supp1.pdf)), see below:
-
-![](/img/ApEn_network.png)
-
-### _EXAMPLE 2_: Determining the relationship between a new feature and existing features
+### _EXAMPLE 1_: Determining the relationship between a new feature and existing features
 We use the example of a hot new feature, :boom: `hot_feature1` :boom:, recently published in _Science_ (and not yet in the _hctsa_ library), and attempt to determine whether it is completely new, or whether there are existing features that exhibit similar performance to it.
 Think first about the data context (described above), which allows you to understand the behavior of thousands of features on a diverse dataset with which to compare the behavior of our new feature, `hot_feature1`.
 This example uses the `Empirical1000` data context downloaded as `HCTSA_Empirical1000.mat` from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136).
@@ -94,7 +69,7 @@ load('HCTSA_merged.mat','Operations');
 Operations(strcmp({Operations.Name},'my_hot_feature'))
 ```
 which tells us that the ID of `my_hot_feature` in `HCTSA_merged.mat` is 7750.
-Then we can use [`TS_SimSearch`](sim_search.md) to explore the relationship of our hot new feature:
+Then we can use [`TS_SimSearch`](sim_search.md) to explore the relationship of our hot new feature to other features in the _hctsa_ library (in terms of linear, Pearson, correlations):
 
 ```matlab
 TS_SimSearch(7750,'tsOrOps','ops','whatDataFile','HCTSA_merged.mat','whatPlots',{'scatter','matrix'})
@@ -112,3 +87,42 @@ The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation c
 In this case, the hot new feature wasn't so hot: it was highly (linearly) correlated to many existing features (including the simple zero-crossing of the autocorrelation function, `first_zero_ac`), even across a highly diverse time-series dataset.
 However, if you have more luck and come up with a hot new feature that shows distinctive (and useful) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
 You might even celebrate your success by sharing your new feature with the community, by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa)!! :satisfied:
+
+
+### _EXAMPLE 2_: Determining the relationship between an existing _hctsa_ feature and the rest of the library.
+
+If using a set of 1000 time series, then this is easy because all the data is already computed in `HCTSA_Empirical1000.mat` on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) :relaxed:
+
+For example, say we want to find neighbors to the `fastdfa` algorithm from [Max Little's website](http://www.maxlittle.net/software/index.php).
+This algorithm is already implemented in _hctsa_ in the code `SC_fastdfa.m` as the feature `SC_fastdfa_exponent`.
+We can find the ID of this feature (ID=750):
+```matlab
+Operations(strcmp({Operations.Name},'SC_fastdfa_exponent'))
+```
+and then find similar features using [`TS_SimSearch`](sim_search.md), e.g., as:
+```matlab
+TS_SimSearch(750,'tsOrOps','ops','whatDataFile','HCTSA_Empirical1000.mat','whatPlots',{'scatter','matrix','network'})
+```
+Yielding:
+
+![](/img/SC_fastDFA_scatters.png)
+![](/img/SC_fastDFA_matrix.png)
+
+We see that other features in the library indeed have strong relationships to `SC_fastdfa_exponent`, including some unexpected relationships with the stationarity estimate, `StatAvl25`.
+
+Combining the network visualization with scatter plots produces the figures in [our original paper on the empirical structure of time series and their methods](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full) (cf. Sec. 2.4 of the [supplementary text](http://rsif.royalsocietypublishing.org/highwire/filestream/23294/field_highwire_adjunct_files/0/rsif20130048supp1.pdf)), see below:
+
+![](/img/ApEn_network.png)
+
+Specific pairwise relationships can be probed in more detail (visualizing the types of time series that drive any relationship) using TS_plot_2d, e.g., as:
+
+```matlab
+theFeatureIDs = [750,544]; % IDs for the two features of interest
+[TS_DataMat,TimeSeries,Operations] = TS_LoadData('HCTSA_Empirical1000.mat'); % load data
+featureData = TS_DataMat(:,theFeatureIDs); % take the subset
+operationNames = {Operations(theFeatureIDs).Name}; % names of the two features
+annotateParams = struct('n',6); % annotate six time series with the cursor
+% Generate an annotated 2-dimensional scatter plot:
+TS_plot_2d(featureData,TimeSeries,operationNames,{},annotateParams);
+```
+![](/img/SC_fastDFA_2d.png)
