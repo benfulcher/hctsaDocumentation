@@ -5,21 +5,32 @@ By representing features in terms of their outputs across a time-series dataset,
 The search can be done using a diverse range of real and model-generated data, or using a more specific dataset if this is more appropriate for a given application (e.g., looking just at EEG signals).
 Just like [similar time series to a target can be retrieved and visualized](sim_search.md), similar features to a given target feature can also be retrieved using `TS_SimSearch`.
 
-### EXAMPLE: Determining the relationship between a new feature and existing features
+This chapter will give instructions on how you can compare a new time-series analysis feature to our library of over 7000 time-series features using _hctsa_.
+We assume that the reader has [installed _hctsa_](setup.md), which will be required to work with files and compute features.
+
+### _EXAMPLE_: Determining the relationship between a new feature and existing features
 We use the example of a new feature, `hot_feature`, and attempt to determine what existing features exhibit similar performance to it.
 
 #### 1. Setting a data context
 The first step is defining the set of features to compare to (here we use the default *hctsa* library), and the set of time-series data that behavior is going to be assessed on.
-If you only ever analyze a particular type of data (e.g., rainfall), then perhaps you're more interested in which methods perform similarly on rainfall data.
 If you have just developed a new algorithm for time-series analysis and want to see how it performs across a range of interdisciplinary time-series data, then you may want to use a diverse set of time series sampled from across science.
+This can be easily achieved using our set of 1000 time series, a random selection of 25 such time series are plotted below (only the first 250 samples are plotted to aid visualization):
 
-We have curated a diverse interdisciplinary set of 1000 time series.
-Pre-computed results (using [v0.96 of *hctsa*](https://github.com/benfulcher/hctsa/releases/tag/v0.96) and Matlab 2017a) can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136), or features can be recomputed using our input file for the time-series dataset, also on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) (to ensure implementation consistencies on your local compute architecture; i.e., using `TS_init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_compute`](running_computations.md)).
+![](/img/Empirical1000_25_250samples.png)
+
+Pre-computed results (using [v0.96 of *hctsa*](https://github.com/benfulcher/hctsa/releases/tag/v0.96) and Matlab 2017a) can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136).
+Alternatively,features can be recomputed using our input file for the time-series dataset, using the input file provided in the same [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) data repository.
+This ensures implementation consistencies on your local compute architecture; i.e., using `TS_init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_compute`](running_computations.md)).
+
+However, if you only ever analyze a particular type of data (e.g., rainfall), then perhaps you're more interested in which methods perform similarly on rainfall data.
+For this case, you can produce your own data context for custom data using properly structured input files [as explained here](input_files.md).
+
 So now we have a context of the behavior of thousands of features on this diverse dataset with which to compare the behavior of our new feature, `hot-feature`.
 
 #### 2. Computing the new features
 So now we need to compute our new feature, `hot_feature1`, that was just published in PNAS, on the data.
 To get the feature values, we could do this directly for isolated computations (using `TS_CalculateFeatureVector`), but in order to maintain the HCTSA structure, we instead produce a new `HCTSA.mat` file containing just `hot_feature` and the same time series.
+Note that, to compare to the `HCTSA_Empirical1000.mat` file hosted on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136), you should use version 0.96 of _hctsa_ to ensure that the exact same set of features are used (allowing valid comparison).
 After generating an input file, `INP_hot_master.txt` containing the function call, that takes in a time series, `x`:
 ```
 MyHotFeature(x)     hot_master
@@ -73,5 +84,6 @@ The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation c
 ![](/assets/Screen Shot 2017-09-25 at 18.42.09.png)
 
 #### 5. Interpreting
-If your hot new feature shows distinctive performance, then it can be incorporated in the default set of features by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
-You might even consider sharing your new feature with the community by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa).
+In this case, the hot new feature wasn't so hot: it was highly correlated to many existing features (including the simple zero-crossing of the autocorrelation function, `first_zero_ac`), even across a highly diverse time-series dataset.
+However, if you have more luck and come up with a hot new feature that shows distinctive (and useful) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
+You might even celebrate your success by sharing your new feature with the community, by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa)!! :satisfied:
