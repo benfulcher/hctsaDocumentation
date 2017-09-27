@@ -15,7 +15,7 @@ This can be easily achieved using our set of 1000 time series, a random selectio
 
 ![](/img/Empirical1000_25_250samples.png)
 
-Pre-computed results (using [v0.96 of *hctsa*](https://github.com/benfulcher/hctsa/releases/tag/v0.96) and Matlab 2017a) can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) as `HCTSA_Empirical1000.mat`.
+Pre-computed results (using [v0.96 of *hctsa*](https://github.com/benfulcher/hctsa/releases/tag/v0.96) and _Matlab 2017a_) can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) as `HCTSA_Empirical1000.mat`.
 
 Alternatively, features can be recomputed using our input file for the time-series dataset, using the input file provided in the same [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) data repository.
 This ensures implementation consistencies on your local compute architecture; i.e., using `TS_init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_compute`](running_computations.md)).
