@@ -31,16 +31,19 @@ This example uses the `Empirical1000` data context downloaded as `HCTSA_Empirica
 #### 1. Computing the new features
 Getting the feature values for the new feature, `hot_feature1`, could be done directly (using `TS_CalculateFeatureVector`), but in order to maintain the HCTSA structure, we instead produce a new `HCTSA.mat` file containing just `hot_feature` and the same time series.
 Note that, to compare to the `HCTSA_Empirical1000.mat` file hosted on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136), you should use version 0.96 of _hctsa_ to ensure that the exact same set of features are used (allowing valid comparison).
-After generating an input file, `INP_hot_master.txt` containing the function call, that takes in a time series, `x`:
+
+We first generate an input file, `INP_hot_master.txt` containing the function call, that takes in a time series, `x`:
 ```
 MyHotFeature(x)     hot_master
 ```
+Any additional arguments to the function `MyHotFeature.m` should be specified here.
+`MyHotFeature.m` must also be in a form that outputs a structure (or a single real number, [as explained here](input_files.md)).
 
 The interesting field in the structure output produced by `MyHotFeature(x)` is `hotFeature1`, which needs to be specified in another input text file, `INP_hot_features.txt`, for example, as:
 ```
-hot_master.hotFeature1     hot_feature1      hot,pnas
+hot_master.hotFeature1     hot_feature1      hot,science
 ```
-where we have given this feature two keywords: `hot` and `pnas`.
+where we have given this feature two keywords: `hot` and `science`.
 
 So now we are able to initiate a new *hctsa* calculation, specifying custom code calls (*master*) and features to extract from the code call (*features*), as:
 ```matlab
