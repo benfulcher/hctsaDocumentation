@@ -24,7 +24,7 @@ However, if you only ever analyze a particular type of data (e.g., rainfall), th
 For this case, you can produce your own data context for custom data using properly structured input files [as explained here](input_files.md).
 
 ### _EXAMPLE 1_: Determining the relationship between a new feature and existing features
-We use the example of a hot new feature, :boom: `hot_feature1` :boom:, recently published in _Science_ (and not yet in the _hctsa_ library), and attempt to determine whether it is completely new, or whether there are existing features that exhibit similar performance to it.
+We use the (hypothetical) example of a hot new feature, :boom: `hot_feature1` :boom:, recently published in _Science_ (and not yet in the _hctsa_ library), and attempt to determine whether it is completely new, or whether there are existing features that exhibit similar performance to it.
 Think first about the data context (described above), which allows you to understand the behavior of thousands of features on a diverse dataset with which to compare the behavior of our new feature, `hot_feature1`.
 This example uses the `Empirical1000` data context downloaded as `HCTSA_Empirical1000.mat` from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136).
 
