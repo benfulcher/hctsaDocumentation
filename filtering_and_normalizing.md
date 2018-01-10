@@ -25,12 +25,12 @@ Details about what normalization is saved to the `HCTSA_N.mat` file as `normaliz
 
 ### Setting the normalizing transformation
 
-It makes sense to weight each operation equally for the purposes dimensionality reduction, and thus normalize all operations to the same range using a transformation like ‘scaledRobustSigmoid’, ‘scaledSigmoid’, or ‘mixedSigmoid’.
+It makes sense to weight each operation equally for the purposes of dimensionality reduction, and thus normalize all operations to the same range using a transformation like ‘scaledRobustSigmoid’, ‘scaledSigmoid’, or ‘mixedSigmoid’.
 For the case of calculating mutual information distances between operations, however, one would rather not distort the distributions and perform no normalization, using ‘raw’ or a
 linear transformation like ‘zscore’, for example.
-The list of implemented normalization transformations can be found in the function `BF_NormalizeMatrix`.
+The full list of implemented normalization transformations are listed in the function `BF_NormalizeMatrix`.
 
-Note that the 'scaledRobustSigmoid' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out.
+Note that the 'scaledRobustSigmoid' transformation does not tolerate distributions with an interquartile range of zero, which will be filtered out; 'mixedSigmoid' will treat these distributions in terms of their standard deviation (rather than interquartile range).
 
 ### Setting the filtering parameters
 
