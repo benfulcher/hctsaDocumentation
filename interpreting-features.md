@@ -98,7 +98,7 @@ out.ac2 = CO_AutoCorr(res,2,'Fourier');
 out.taures = CO_FirstZero(res,'ac');
 ```
 This shows us that, after doing the local mean prediction, `FC_LocalSimple` then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions (the outputs labeled `ac1`, `ac2`, and our output of interest: `taures`). The code shows that this `taures` output computes the `CO_FirstZero` of the residuals, which measures the first zero of the autocorrelation function (e.g., cf `help CO_FirstZero`).
-When the local mean prediction still leaves alot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_taures`, will thus take a high value.
+When the local mean prediction still leaves a lot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_taures`, will thus take a high value.
 
 ### Visualizing outputs
 Once we've seen the code that was used to produce a feature, and started to think about how such an algorithm might be measuring useful structure in our time series, we can then check our intuition by inspecting its performance on our dataset (as described in [Investigating specific operations](feature_summary.md)).
