@@ -1,7 +1,7 @@
 # Setting up the mySQL database
 
 We assume that the user has access to and appropriate read/write privileges for a local or network *mySQL* server database.
-Instructions on how to install and set up a *mySQL* database on a variety of operating systems can be found [here](![http://dev.mysql.com/doc/refman/5.7/en/installing.html](cover.jpg).
+Instructions on how to install and set up a *mySQL* database on a variety of operating systems can be found [here](http://dev.mysql.com/doc/refman/5.7/en/installing.html).
 
 ## Setting Matlab up to talk to a mySQL server using the java connector
 <!--{#sec:SettingUpJ}-->
