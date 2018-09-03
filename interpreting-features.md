@@ -109,8 +109,10 @@ For example, we can run the following:
 TS_FeatureSummary(3016,'raw',true);
 ```
 which produces a plot like that shown below. We have run this on a dataset containing noisy sine waves, labeled 'noisy' (red) and periodic signals without noise, labeled 'periodic' (blue):
-![](img/FeatureSummaryForInterpretation.png) On the plot on the right, we see how this feature orders time series (with the distribution of values shown on the left, and split between the two groups: 'noisy', and 'periodic').
-Our intuition from the code, that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction, appears to hold visually on this dataset. In general, the mechanism provided by `TS_FeatureSummary` to visualize how a given feature orders time series, including across labeled groups, can be a very useful one for feature interpretation.
+
+![](img/FeatureSummaryForInterpretation.png)
+
+In this plot, we see how this feature orders time series (with the distribution of values shown on the left, and split between the two groups: 'noisy', and 'periodic'). Our intuition from the code, that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction, appears to hold visually on this dataset. In general, the mechanism provided by `TS_FeatureSummary` to visualize how a given feature orders time series, including across labeled groups, can be very useful for feature interpretation.
 
 ### Summary
 _hctsa_ contains a large number of features, many of which can be expected to be highly inter-correlated on a given time-series dataset. It is thus crucial to explore how a given feature relates to other features in the library, e.g., using the correlation matrix produced by `TS_TopFeatures` (cf. [Finding informative features](ts_topfeatures.md)), or by searching for features with similar behavior on the dataset to a given feature of interest (cf. [Finding nearest neighbors](sim_search.md)).
