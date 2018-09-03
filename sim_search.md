@@ -37,6 +37,7 @@ This is specified as:
     TS_SimSearch(1,'whatPlots',{'network'});
 ```
 which produces something like the following:
+
 ![](img/TS_SimSearch_network.png)
 
 The strongest links are visualized as blue lines (by default, the top 40% of strongest links are plotted, cf. the legend showing 0.9, 0.8, 0.7, and 0.6 for the top 10%, 20%, 30%, and 40% of links, respectively).
