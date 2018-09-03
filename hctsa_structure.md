@@ -2,11 +2,11 @@
 
 ## Overview
 
-The *hctsa* framework consists of three basic objects:
+The *hctsa* framework consists of three basic objects containing relevant metadata:
 
 1. *Master Operations* specify pieces of code (Matlab functions) and their inputs to be computed. Taking in a single time series, master operations can generate a large number of outputs as a Matlab structure, each of which can be identified with a single *operation* (or 'feature').
 2. *Operations* (or 'features') are a single number summarizing some measure of structure in a time series. In *hctsa*, each operation links to an output from a piece of evaluated code (a *master operation*).
-3. *Time series* are univariate, uniformly sampled, time-ordered measurements.
+3. *Time series* are univariate and uniformly sampled time-ordered measurements.
 
 These three different objects are summarized below:
 
@@ -18,11 +18,11 @@ These three different objects are summarized below:
 In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (*x*) at lags 1, 2, ..., 5.
 Each operation (or 'feature') is a single number that draws on this set of outputs, for example, the autocorrelation at lag 1, which is named `AC_1`, for example.
 
-In the *hctsa* framework, master operations, operations, and time series are stored as structure arrays that contain all of their associated keywords and metadata (and actual time-series data in the case of time series).
+In the *hctsa* framework, master operations, operations, and time series are stored as **tables** that contain all of their associated keywords and metadata (and actual time-series data in the case of time series).
 
 For a given *hctsa* analysis, the user must specify a set of code to evaluate (*master operations*), their associated individual outputs to measure (*operations*), and a set of time series to evaluate the features on (*time series*).
 
-We provide a default library of approximately 8,000 *operations* (derived from approximately 1,100 unique *master operations*).
+We provide a default library of over 7,700 *operations* (derived from approximately 1,000 unique *master operations*).
 This can be customized, and additional pieces of code can also be added to the repository.
 
 ### The results of a *hctsa* analysis
@@ -36,7 +36,7 @@ Quality labels are described in the section below.
 -   **TS_CalcTime** is an *n* x *m* matrix containing calculation times for each operation output. Note that the calculation time stored is for the corresponding master operation.
 
 ### HCTSA .mat files
-Each `HCTSA*.mat` file includes the structure arrays described above: for **TimeSeries** (corresponding to the rows of the **TS_** matrices), **Operations** (corresponding to columns of the **TS_** matrices), and **MasterOperations**, corresponding to the code evaluated to compute the operations.
+Each `HCTSA*.mat` file includes the tables described above: for **TimeSeries** (corresponding to the rows of the **TS_** matrices), **Operations** (corresponding to columns of the **TS_** matrices), and **MasterOperations**, corresponding to the code evaluated to compute the operations.
 In addition, the results are stored as above: **TS_DataMat**, **TS_Quality**, and **TS_CalcTime**.
 
 ## Quality labels

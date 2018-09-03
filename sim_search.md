@@ -1,6 +1,6 @@
 # Visualizing the nearest neighbors of a time series using `TS_SimSearch`
 
-While the global structure of a time-series dataset can be investigated by plotting the data matrix ([`TS_plot_DataMatrix`](visualizing_the_data_matrix.md)) or a low-dimensional representation of it ([`TS_plot_pca`](low_dim.md)), sometimes it can be more interesting to retrieve and visualize relationships between a set of nearest neighbors to a particular time series of interest.
+While the global structure of a time-series dataset can be investigated by plotting the data matrix ([`TS_plot_DataMatrix`](visualizing_the_data_matrix.md)) or a low-dimensional representation of it ([`TS_PlotLowDim`](low_dim.md)), sometimes it can be more interesting to retrieve and visualize relationships between a set of nearest neighbors to a particular time series of interest.
 
 The *hctsa* framework provides a way to easily compute distances between pairs of time series, e.g., as a Euclidean distance between their normalized feature vectors.
 This allows very different time series (in terms of their origin, their method of recording and measurement, and their number of samples) to be compared straightforwardly according to their properties, measured by the algorithms in our *hctsa* library.
@@ -17,7 +17,7 @@ The plots to produce are specified as a cell using the 'whatPlots' input.
     TS_SimSearch('whatPlots',{'matrix'});
 ```
 To investigate the pairwise relationships between all neighbors retrieved, you specify the `'matrix'` option of the `TS_SimSearch` function.
-An example output using a publicly-available [EEG dataset](http://epileptologie-bonn.de/cms/front_content.php?idcat=193&lang=3), retrieving 14 neighbors from the time series with ID = 1, as `TS_SimSearch(1,'whatPlots',{'matrix'},'numNeighbors',14)`, is shown below:
+An example output using a publicly-available [EEG dataset](http://epileptologie-bonn.de/cms/front_content.php?idcat=193&lang=3), retrieving 14 neighbors from the time series with `ID = 1`, as `TS_SimSearch(1,'whatPlots',{'matrix'},'numNeighbors',14)`, is shown below:
 
 ![](img/TS_SimSearch_matrix.png)
 
@@ -39,7 +39,7 @@ This is specified as:
 which produces something like the following:
 ![](img/TS_SimSearch_network.png)
 
-The strongest links are visualized as blue lines (by default, the top 40% of strongest links are plotted, cf. the legend showing 0.9, 0.8, 0.7, and 0.6 for the top 10%, 20%, 30%, and 40% of links, respectivly).
+The strongest links are visualized as blue lines (by default, the top 40% of strongest links are plotted, cf. the legend showing 0.9, 0.8, 0.7, and 0.6 for the top 10%, 20%, 30%, and 40% of links, respectively).
 
 The target is distinguished (as purple in this case), and the other classes of time series are shown using color, with names and time-series segments annotated.
 Again, you can see that the EEG time series during seizure (blue) are distinguished from eyes open (red) and eyes closed (green).

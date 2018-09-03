@@ -10,7 +10,7 @@ Note that these types of tasks are easier to manage when *hctsa* data are stored
 Many time-series classification problems involve filtering subsets of time series based on keyword matching, where keywords are specified in the [input file](input_files.md) provided when initializing a dataset.
 
 Most filtering functions (such as those listed in this section), require you to specify a range of IDs of TimeSeries or Operations in order to specify them.
-Recall that each TimeSeries and Operation is assigned a unique ID (assed as the ID field in the corresponding structure array).
+Recall that each TimeSeries and Operation is assigned a unique ID (assed as the ID field in the corresponding metadata table).
 To quickly get the IDs of time series that match a given keyword, the following function can be used:
 ```matlab
 TimeSeriesIDs = TS_getIDs(theKeyword,'HCTSA_N.mat');

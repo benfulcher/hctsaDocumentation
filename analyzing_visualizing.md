@@ -14,7 +14,7 @@ The suite of plotting and analysis tools that we provide with *hctsa* work with 
 ## Plotting and analysis functions:
 * Visualizing structure in the data matrix using [`TS_plot_DataMatrix`](visualizing_the_data_matrix.md).
 * Visualizing the time-series traces using [`TS_plot_TimeSeries`](plotting_the_time_series.md).
-* Visualizing low-dimensional structure in the data using [`TS_plot_pca`](low_dim.md).
+* Visualizing low-dimensional structure in the data using [`TS_PlotLowDim`](low_dim.md).
 * Exploring similar matches to a target time series using [`TS_SimSearch`](sim_search.md).
 * Visualizing the behavior of a given operation across the time-series dataset using [`TS_FeatureSummary`](feature_summary.md).
 

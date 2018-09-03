@@ -40,25 +40,25 @@ To find more specific detailed information about a feature, beyond just a broad 
     [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
 ```
 We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction).
-We can use the feature ID (3016) provided in square brackets to get information from the `Operations` structure array:
+We can use the feature ID (`3016`) provided in square brackets to get information from the `Operations` metadata table:
 
 ```matlab
->> disp(Operations([Operations.ID]==3016));
-            ID: 3016
-          Name: 'FC_LocalSimple_mean3_taures'
-      Keywords: 'forecasting'
-    CodeString: 'FC_LocalSimple_mean3.taures'
-      MasterID: 836
+>> Operations(Operations.ID==3016,:)
+ID                 Name                   Keywords                CodeString              MasterID
+____    _____________________________    _____________    _____________________________    ________
+
+3016    'FC_LocalSimple_mean3_taures'    'forecasting'    'FC_LocalSimple_mean3.taures'    836
 ```
 
 Inspecting the text before the dot, '.', in the `CodeString` field (`FC_LocalSimple_mean3`) tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature. Whereas the text following the dot, '.', in the `CodeString` field (`taures`), tells us the field of the output structure produced by the Matlab function that was run.
-We can use the `MasterID` to get more information about the code that was run using the `MasterOperations` structure array:
+We can use the `MasterID` to get more information about the code that was run using the `MasterOperations` metadata table:
 
 ```matlab
->> disp(MasterOperations([MasterOperations.ID]==836));
-       ID: 836
-    Label: 'FC_LocalSimple_mean3'
-     Code: 'FC_LocalSimple(y,'mean',3)'
+>> MasterOperations(MasterOperations.ID==836,:)
+ID             Label                         Code            
+___    ______________________    ____________________________
+
+836    'FC_LocalSimple_mean3'    'FC_LocalSimple(y,'mean',3)'
 ```
 
 This tells us that the code used to produce our feature was `FC_LocalSimple(y,'mean',3)`.
@@ -66,26 +66,26 @@ We can get information about this function in the commandline by running a `help
 
 ```matlab
 >> help FC_LocalSimple
-  FC_LocalSimple    Simple local time-series forecasting.
+FC_LocalSimple    Simple local time-series forecasting.
 
-  Simple predictors using the past trainLength values of the time series to
-  predict its next value.
+Simple predictors using the past trainLength values of the time series to
+predict its next value.
 
- ---INPUTS:
-  y, the input time series
+---INPUTS:
+y, the input time series
 
-  forecastMeth, the forecasting method:
-           (i) 'mean': local mean prediction using the past trainLength time-series
-                        values,
-           (ii) 'median': local median prediction using the past trainLength
-                          time-series values
-           (iii) 'lfit': local linear prediction using the past trainLength
-                          time-series values.
+forecastMeth, the forecasting method:
+         (i) 'mean': local mean prediction using the past trainLength time-series
+                      values,
+         (ii) 'median': local median prediction using the past trainLength
+                        time-series values
+         (iii) 'lfit': local linear prediction using the past trainLength
+                        time-series values.
 
-  trainLength, the number of time-series values to use to forecast the next value
+trainLength, the number of time-series values to use to forecast the next value
 
- ---OUTPUTS: the mean error, stationarity of residuals, Gaussianity of
-  residuals, and their autocorrelation structure.
+---OUTPUTS: the mean error, stationarity of residuals, Gaussianity of
+residuals, and their autocorrelation structure.
 ```
 
 We can also inspect this code `FC_LocalSimple` directly for more information. Like all code files for computing time-series features, `FC_LocalSimple.m` is located in the Operations directory of the _hctsa_ repository. Inspecting the code file, we see that running `FC_LocalSimple(y,'mean',3)` does forecasting using local estimates of the time-series mean (since the second input to `FC_LocalSimple`, `forecastMeth` is set to `'mean'`), using the previous three time-series values to make the prediction (since the third input to `FC_LocalSimple`, `trainLength` is set to `3`).

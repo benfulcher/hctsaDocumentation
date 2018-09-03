@@ -69,7 +69,7 @@ This can be done manually by the researcher, or by using standard *hctsa* functi
 We can find the ID assigned to our new `hot_feature` in the merged HCTSA file as:
 ```matlab
 load('HCTSA_merged.mat','Operations');
-Operations(strcmp({Operations.Name},'my_hot_feature'))
+Operations(strcmp(Operations.Name,'my_hot_feature'),:)
 ```
 which tells us that the ID of `my_hot_feature` in `HCTSA_merged.mat` is 7750.
 Then we can use [`TS_SimSearch`](sim_search.md) to explore the relationship of our hot new feature to other features in the _hctsa_ library (in terms of linear, Pearson, correlations):
@@ -98,9 +98,9 @@ If using a set of 1000 time series, then this is easy because all the data is al
 
 For example, say we want to find neighbors to the `fastdfa` algorithm from [Max Little's website](http://www.maxlittle.net/software/index.php).
 This algorithm is already implemented in _hctsa_ in the code `SC_fastdfa.m` as the feature `SC_fastdfa_exponent`.
-We can find the ID of this feature (ID=750):
+We can find the ID of this feature by finding the matching row in the Operations table (`ID=750`):
 ```matlab
-Operations(strcmp({Operations.Name},'SC_fastdfa_exponent'))
+Operations(strcmp(Operations.Name,'SC_fastdfa_exponent'),:)
 ```
 and then find similar features using [`TS_SimSearch`](sim_search.md), e.g., as:
 ```matlab
@@ -117,13 +117,13 @@ Combining the network visualization with scatter plots produces the figures in [
 
 ![](/img/ApEn_network.png)
 
-Specific pairwise relationships can be probed in more detail (visualizing the types of time series that drive any relationship) using TS_plot_2d, e.g., as:
+Specific pairwise relationships can be probed in more detail (visualizing the types of time series that drive any relationship) using `TS_plot_2d`, e.g., as:
 
 ```matlab
 theFeatureIDs = [750,544]; % IDs for the two features of interest
 [TS_DataMat,TimeSeries,Operations] = TS_LoadData('HCTSA_Empirical1000.mat'); % load data
 featureData = TS_DataMat(:,theFeatureIDs); % take the subset
-operationNames = {Operations(theFeatureIDs).Name}; % names of the two features
+operationNames = Operations.Name(theFeatureIDs); % names of the two features
 annotateParams = struct('n',6); % annotate six time series with the cursor
 % Generate an annotated 2-dimensional scatter plot:
 TS_plot_2d(featureData,TimeSeries,operationNames,{},annotateParams);
