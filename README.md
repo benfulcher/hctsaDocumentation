@@ -1,6 +1,6 @@
 # Performing highly comparative time-series analysis in Matlab using _hctsa_
 
-This manual outlines the steps required to set up and implement highly comparative time-series analysis using the [hctsa package](https://github.com/SystemsAndSignalsGroup/hctsa), as described in our papers:
+This manual outlines the steps required to set up and implement highly comparative time-series analysis using the [hctsa package](https://github.com/benfulcher/hctsa), as described in our papers:
 
 * B.D. Fulcher and N.S. Jones. [_hctsa_: A computational framework for automated time-series phenotyping using massive feature extraction](http://www.cell.com/cell-systems/fulltext/S2405-4712%2817%2930438-6). _Cell Systems_ **5**, 527 \(2017\).
 * B.D. Fulcher [Feature-based time-series analysis](https://www.crcpress.com/Feature-Engineering-for-Machine-Learning-and-Data-Analytics/Dong-Liu/p/book/9781138744387), [preprint here](https://arxiv.org/abs/1709.08055). Feature Engineering for Machine Learning and Data Analytics, CRC Press, 87-116 \(2018\).
