@@ -14,7 +14,7 @@ Produces the following plot \(where 6 points on the distribution have been click
 
 ![](img/TS_FeatureSummary.png)
 
-You can visually see that time series with more autocorrelated patterns through time receive higher values from this operation. Because no group information is present in this dataset, the time series are colored at random.
+You can visually see that time series with more autocorrelated patterns through time receive higher values from this operation. Because groups have not been assigned to this dataset, the time series are colored at random.
 
 Running TS\_FeatureSummary in violin plot mode provides another representation of the same result:
 
