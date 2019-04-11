@@ -6,11 +6,11 @@ Once data has been retrieved, as described above, class labels can be assigned t
 
 The example below assigns labels to two groups of time series in the `HCTSA.mat` (specifying the shorthand `'raw'` for this default, un-normalized data), corresponding to those labeled as 'parkinsons' and those labeled as 'healthy':
 ```matlab
-TS_LabelGroups({'parkinsons','healthy'},'raw');
+TS_LabelGroups('raw',{'parkinsons','healthy'});
 ```
-The first input is a cell specifying the keyword string to use to match each group.
+The second input is a cell specifying the keyword string to use to match each group.
 
-To automatically detect unique keywords for labelling, `TS_LabelGroups` can be run with an empty first input, as `TS_LabelGroups([],'raw');`
+To automatically detect unique keywords for labeling, `TS_LabelGroups` can be run with an empty second input, as `TS_LabelGroups('raw',[]);`
 
 By default, this function saves the group indices back to the data file (in this example, `HCTSA.mat`), by adding a new field, `Group`, to the `TimeSeries` metadata table, which contains the group index of each time series.
 
