@@ -8,14 +8,14 @@ This chapter outlines the steps involved in setting up, and running *hctsa* comp
 
 ## Installing the *hctsa* code package to work with a *mySQL* database
 
-The *hctsa* package requires some preliminary set up to work with a *mySQL* database, described [here](mysql_database.md):
+The *hctsa* package requires some preliminary set up to work with a *mySQL* database, described [here](setup_mysql_database.md):
 
 1. Installation of *mySQL*, either locally, or on an accessible server.
 2. Setting up Matlab with a *mySQL* java connector (done by running the `install_jconnector` script in the **Database** directory, and then restarting Matlab).
 
 After the database is set up, and the packages required by *hctsa* are installed (by running the `install` script), linking to a *mySQL* database can be done by running the `install_database` script, which:
 
-1. Sets up Matlab to be able to communicate with the *mySQL* server and creates a new database to store Matlab calculations in, described [here](mysql_database.md).
+1. Sets up Matlab to be able to communicate with the *mySQL* server and creates a new database to store Matlab calculations in, described [here](setup_mysql_database.md).
 2. Populates the database with our default library of master operations and operations, as described [here](populating.md). (NB: a description of the terminology of 'master operations': a set of input arguments to an analysis function, and 'operations': a single time-series feature, is [here](populating.md)).
 <!-- 3. Compiles **mex** binaries required to evaluate all operations, described [here](compiling_binaries.md). In addition to the mex files compiled by the `install` script, the user is additionally required to compile the *TISEAN* binaries if desired [in the commandline](compiling_binaries.md). -->
 
