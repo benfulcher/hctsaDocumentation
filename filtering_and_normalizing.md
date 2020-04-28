@@ -40,8 +40,6 @@ For example, setting `[0.7,0.9]`, removes time series with less than 70% good va
 <!--When neither value is 1.0, this can leave **NaN** values in the resulting data matrix, which can affect some calculations that cannot deal with missing values (such as PCA).-->
 Some applications can tolerate some special-valued outputs from operations (like some clustering methods, where distances are simply calculated using those operations that are did not produce special-valued outputs for each pair of objects), but others cannot (like Principal Components Analysis); the filtering parameters should be specified accordingly.
 
-
-
 <!--An example usage is as follows:-->
 <!--Another example:-->
 
@@ -52,3 +50,20 @@ Some applications can tolerate some special-valued outputs from operations (like
 
 
 Analysis can be performed on the data contained in `HCTSA_N.mat` in the knowledge that different settings for filtering and normalizing the results can be applied at any time by simply rerunning `TS_normalize`, which will overwrite the existing `HCTSA_N.mat` with the results of the new normalization and filtration settings.
+
+### Filtering features using `TS_FilterData`
+
+It is often useful to check whether the feature-based classification results of a given analysis is driven by 'trivial' types of features that do not depend on the dynamical properties of the data, e.g., features sensitive to time-series length, location (e.g., mean), or spread (e.g., variance).
+Because these features are labeled as `'lengthdep'`, `'locdep'`, and `'spreaddep'`, you can easily filter these out to check the robustness of your analysis.
+
+An example:
+```matlab
+% Get the IDs of length-dependent features from the `HCTSA.mat` file:
+[ID_lengthDep,ID_notlengthDep] = TS_getIDs('lengthdep','raw','ops');
+
+% Generate a new file without these features, called 'HCTSA_locFilt':
+TS_FilterData('raw',[],ID_notlengthDep,'HCTSA_locFilt.mat');
+```
+
+You could use the same template to filter `'locdep'` or `'spreaddep'` features (or any other combination of keyword labels).
+You can then go ahead with analyzing the filtered HCTSA dataset as above, except using your new filename, `HCTSA_locFilt`.
