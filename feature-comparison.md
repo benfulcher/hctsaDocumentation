@@ -117,7 +117,7 @@ Combining the network visualization with scatter plots produces the figures in [
 
 ![](/img/ApEn_network.png)
 
-Specific pairwise relationships can be probed in more detail (visualizing the types of time series that drive any relationship) using `TS_plot_2d`, e.g., as:
+Specific pairwise relationships can be probed in more detail (visualizing the types of time series that drive any relationship) using `TS_Plot2d`, e.g., as:
 
 ```matlab
 theFeatureIDs = [750,544]; % IDs for the two features of interest
@@ -126,6 +126,6 @@ featureData = TS_DataMat(:,theFeatureIDs); % take the subset
 operationNames = Operations.Name(theFeatureIDs); % names of the two features
 annotateParams = struct('n',6); % annotate six time series with the cursor
 % Generate an annotated 2-dimensional scatter plot:
-TS_plot_2d(featureData,TimeSeries,operationNames,{},annotateParams);
+TS_Plot2d(featureData,TimeSeries,operationNames,{},annotateParams);
 ```
 ![](/img/SC_fastDFA_2d.png)

@@ -2,7 +2,7 @@
 
 Although many sections of the time-series analysis literature has worked to develop methods for quantifying complex temporal structure in long time-series recordings, many time series that are analyzed in practice are relatively short.
 _hctsa_ has been successfully applied to time-series classification problems in the data mining literature, which includes datasets of time series as short as 60 samples ([link to paper](http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425)).
-However, time-series data are sometimes even shorter, including yearly economic data across perhaps six years, or biological data measured at say 10 points across a lifespan. Although many features in _hctsa_ will not give a meaningful output when applied to a short time series, _hctsa_ includes methods for filtering such features (cf. [`TS_normalize`](filtering_and_normalizing.md)), after which the remaining features can be used for analysis.
+However, time-series data are sometimes even shorter, including yearly economic data across perhaps six years, or biological data measured at say 10 points across a lifespan. Although many features in _hctsa_ will not give a meaningful output when applied to a short time series, _hctsa_ includes methods for filtering such features (cf. [`TS_Normalize`](filtering_and_normalizing.md)), after which the remaining features can be used for analysis.
 
 The number of features with a meaningful output, from time series as short as 5 samples, up to those with as many as 500 samples, is shown below (where the maximum set of 7749 is shown as a dashed horizontal line):
 ![](/img/LengthDependence.png)
@@ -11,7 +11,7 @@ In each case, over 3000 features can be computed. Note that one must be careful 
 
 ### Example application to developmental gene expression data
 To demonstrate the feasibility of running _hctsa_ analysis on datasets of short time series, we applied _hctsa_ to gene expression data in the cerebellar brain region, r1A, across seven developmental time points (from the Allen Institute's [Developing Mouse Brain Atlas](http://developingmouse.brain-map.org)), for a subset of 50 genes.
-After filtering and normalizing (`TS_normalize`), then clustering (`TS_cluster`), we plotted the clustered time-series data matrix (`TS_plot_DataMatrix('cl')`):
+After filtering and normalizing (`TS_Normalize`), then clustering (`TS_Cluster`), we plotted the clustered time-series data matrix (`TS_PlotDataMatrix('cl')`):
 
 ![](/assets/GeneExpressionExample.png)
 

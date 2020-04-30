@@ -14,7 +14,7 @@ To automatically detect unique keywords for labeling, `TS_LabelGroups` can be ru
 
 By default, this function saves the group indices back to the data file (in this example, `HCTSA.mat`), by adding a new field, `Group`, to the `TimeSeries` metadata table, which contains the group index of each time series.
 
-Group indices stay with the time series they are assigned to after filtering and normalizing the data (using `TS_normalize`).
+Group indices stay with the time series they are assigned to after filtering and normalizing the data (using `TS_Normalize`).
 Group labels can be reassigned at any time by re-running the `TS_LabelGroups` function.
 
-Group labels are used by a range of analysis functions, including `TS_PlotLowDim`, `TS_TopFeatures`, and `TS_classify`.
+Group labels are used by a range of analysis functions, including `TS_PlotLowDim`, `TS_TopFeatures`, and `TS_Classify`.

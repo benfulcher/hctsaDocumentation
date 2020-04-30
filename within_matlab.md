@@ -40,12 +40,12 @@ TS_LabelGroups;
 ```
 and then normalize and filter the data using the default sigmoidal transformation:
 ```matlab
-TS_normalize;
+TS_Normalize;
 ```
 A range of visualization scripts are then available to analyze the results, such as plotting the reordered data matrix:
 ```matlab
-TS_cluster; % compute a reordering of data and features
-TS_plot_DataMatrix; % plot the data matrix
+TS_Cluster; % compute a reordering of data and features
+TS_PlotDataMatrix; % plot the data matrix
 ```
 To inspect a low-dimensional representation of the data:
 ```matlab

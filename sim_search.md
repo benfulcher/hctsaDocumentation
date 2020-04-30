@@ -1,6 +1,6 @@
 # Visualizing the nearest neighbors of a time series using `TS_SimSearch`
 
-While the global structure of a time-series dataset can be investigated by plotting the data matrix ([`TS_plot_DataMatrix`](visualizing_the_data_matrix.md)) or a low-dimensional representation of it ([`TS_PlotLowDim`](low_dim.md)), sometimes it can be more interesting to retrieve and visualize relationships between a set of nearest neighbors to a particular time series of interest.
+While the global structure of a time-series dataset can be investigated by plotting the data matrix ([`TS_PlotDataMatrix`](visualizing_the_data_matrix.md)) or a low-dimensional representation of it ([`TS_PlotLowDim`](low_dim.md)), sometimes it can be more interesting to retrieve and visualize relationships between a set of nearest neighbors to a particular time series of interest.
 
 The *hctsa* framework provides a way to easily compute distances between pairs of time series, e.g., as a Euclidean distance between their normalized feature vectors.
 This allows very different time series (in terms of their origin, their method of recording and measurement, and their number of samples) to be compared straightforwardly according to their properties, measured by the algorithms in our *hctsa* library.
@@ -63,6 +63,6 @@ Multiple output plots can be produced simultaneously by specifying many types of
 ```
 This produces a plot of each type.
 
-Note that pairwise distances can be pre-computed and saved in the `HCTSA*.mat` file using `TS_PairwiseDist` for custom distance metrics (which is done by default in `TS_cluster` for datasets containing fewer than 1000 objects).
+Note that pairwise distances can be pre-computed and saved in the `HCTSA*.mat` file using `TS_PairwiseDist` for custom distance metrics (which is done by default in `TS_Cluster` for datasets containing fewer than 1000 objects).
 `TS_SimSearch` checks for this information in the specified input data (containing the `ts_clust` or `op_clust` structure), and uses it to retrieve neighbors.
 If distances have not previously been computed, distances from the target are computed as euclidean distances (time series) or absolute correlation distances (operations) between feature vectors within `TS_SimSearch`.
