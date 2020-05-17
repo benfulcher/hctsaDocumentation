@@ -18,7 +18,7 @@ This can be easily achieved using our set of 1000 time series, a random selectio
 Pre-computed results (using [v0.96 of *hctsa*](https://github.com/benfulcher/hctsa/releases/tag/v0.96) and _Matlab 2017a_) can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) as `HCTSA_Empirical1000.mat`.
 
 Alternatively, features can be recomputed using our input file for the time-series dataset, using the input file provided in the same [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) data repository.
-This ensures implementation consistencies on your local compute architecture; i.e., using `TS_init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_compute`](running_computations.md)).
+This ensures implementation consistencies on your local compute architecture; i.e., using `TS_Init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_Compute`](running_computations.md)).
 
 However, if you only ever analyze a particular type of data (e.g., rainfall), then perhaps you're more interested in which methods perform similarly on rainfall data.
 For this case, you can produce your own data context for custom data using properly structured input files [as explained here](input_files.md).
@@ -47,11 +47,11 @@ where we have given this feature two keywords: `hot` and `science`.
 
 So now we are able to initiate a new *hctsa* calculation, specifying custom code calls (*master*) and features to extract from the code call (*features*), as:
 ```matlab
-TS_init('INP_Empirical1000.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
+TS_Init('INP_Empirical1000.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
 ```
 This generates a new file, `HCTSA_hot.mat`, containing information about the 1000 time series, and the three hot features, which can then be computed as:
 ```matlab
-TS_compute(false,[],[],'missing','HCTSA_hot.mat');
+TS_Compute(false,[],[],'missing','HCTSA_hot.mat');
 ```
 
 #### 2. Combining
@@ -59,7 +59,7 @@ So now we have both a context of the behavior of a library of >7000 features on 
 It is time to combine them and look for inter-relationships!
 
 ```matlab
-TS_combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',false,true,'HCTSA_merged.mat');
+TS_Combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',false,true,'HCTSA_merged.mat');
 ```
 
 #### 3. Comparing

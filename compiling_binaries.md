@@ -59,5 +59,5 @@ There are two options:
 
 If you decide not to use functions from the *TISEAN* package, they can be permanently removed from a given *hctsa* dataset.
 
-1. To filter a local Matlab *hctsa* file (e.g., `HCTSA.mat`), you can use the following: `TS_local_clear_remove('ops',TS_getIDs('tisean','raw','ops'),1,'raw');`, which will remove all operations with the 'tisean' keyword from the *hctsa* dataset in `HCTSA.mat`.
-2. If using a *mySQL* database, TISEAN functions can be removed from the database as follows: `SQL_clear_remove('ops',SQL_getids('ops',0,'tisean',{}),1)`.
+1. To filter a local Matlab *hctsa* file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('ops',TS_GetIDs('tisean','raw','ops'),1,'raw');`, which will remove all operations with the 'tisean' keyword from the *hctsa* dataset in `HCTSA.mat`.
+2. If using a *mySQL* database, TISEAN functions can be removed from the database as follows: `SQL_ClearRemove('ops',SQL_GetIDs('ops',0,'tisean',{}),1)`.

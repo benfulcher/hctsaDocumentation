@@ -59,7 +59,7 @@ Because these features are labeled as `'lengthdep'`, `'locdep'`, and `'spreaddep
 An example:
 ```matlab
 % Get the IDs of length-dependent features from the `HCTSA.mat` file:
-[ID_lengthDep,ID_notlengthDep] = TS_getIDs('lengthdep','raw','ops');
+[ID_lengthDep,ID_notlengthDep] = TS_GetIDs('lengthdep','raw','ops');
 
 % Generate a new file without these features, called 'HCTSA_locFilt':
 TS_FilterData('raw',[],ID_notlengthDep,'HCTSA_locFilt.mat');

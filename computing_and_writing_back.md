@@ -1,12 +1,12 @@
 # Computing operations on time series and writing back to the database
 
-After retrieving data from the *mySQL* database, missing entries (NULL in the database, and NaN in the local Matlab file) can be computed using `TS_compute`, and stored back to the database using `SQL_store`.
+After retrieving data from the *mySQL* database, missing entries (NULL in the database, and NaN in the local Matlab file) can be computed using `TS_Compute`, and stored back to the database using `SQL_store`.
 These functions are described below.
 
-## Performing calculations using `TS_compute`
+## Performing calculations using `TS_Compute`
 <!--{#sec:performing_calculations}-->
 
-Values retrieved using `SQL_retrieve` (to the local `HCTSA.mat` file) that have not previously been calculated are evaluated using `TS_compute`, as described [here](running_computations.md).
+Values retrieved using `SQL_Retrieve` (to the local `HCTSA.mat` file) that have not previously been calculated are evaluated using `TS_Compute`, as described [here](running_computations.md).
 These results can then be inspected directly (if needed), or simply written back to the database using `SQL_store`, as described below.
 
 ## Writing calculations back to the database using `SQL_store`

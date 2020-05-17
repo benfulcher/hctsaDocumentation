@@ -25,11 +25,11 @@ Note that the above steps are one-off installation steps; once the software is i
 
 ### Adding a time-series dataset
 
-Once installed using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) to the database using the `SQL_add` command.
+Once installed using our default library of operations, the typical next step is to [add a dataset of time series](adding_time_series.md) to the database using the `SQL_Add` command.
 Custom [master operations](adding_master_operations.md) and [operations](adding_operations.md) can also be added, if required.
 
 ### Computation, processing, and analysis
 
-After installing the software and importing a time-series dataset to a *mySQL* database, the process by which data is retrieved from the database to local Matlab files (using `SQL_retrieve`), feature sets computed within Matlab (using `TS_compute`), and computed data stored back in the database (`SQL_store`) is described in detail [here](calculating.md).
+After installing the software and importing a time-series dataset to a *mySQL* database, the process by which data is retrieved from the database to local Matlab files (using `SQL_Retrieve`), feature sets computed within Matlab (using `TS_Compute`), and computed data stored back in the database (`SQL_store`) is described in detail [here](calculating.md).
 
 After the computation is complete for a time-series dataset, a range of processing, analysis, and plotting functions are also provided with the software, as described [here](analyzing_visualizing.md).

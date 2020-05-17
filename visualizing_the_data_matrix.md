@@ -1,8 +1,6 @@
 # Visualizing the data matrix using `TS_PlotDataMatrix`
 
-The clustered data matrix (if clustering has been performed, otherwise the non-clustered data matrix is used) can be visualized by running
-
-        TS_PlotDataMatrix
+The clustered data matrix (if clustering has been performed, otherwise the non-clustered data matrix is used) can be visualized by running `TS_PlotDataMatrix`.
 
 This will produce a colored visualization of the data matrix such as that shown below.
 
