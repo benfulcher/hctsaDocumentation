@@ -1,42 +1,106 @@
-# Exploring classification rate using `TS_Classify`
+# Feature-based time-series classification
 
-When performing a time-series classification task, a basic first exploration of the data is to investigate how accurately a classifier can performing using all of the features computed in your *hctsa* analysis.
-This can be done by running `TS_Classify`.
-The function requires that group labels be assigned to the time series, using `TS_LabelGroups`.
-For example, running the function on a dataset with three classes of five time series each, as `TS_Classify('norm')`, produces:
+When performing a time-series classification task, a basic first exploration of the data is to investigate how accurately a classifier can learn a mapping from time-series features to labels assigned to time series in your dataset.
+
+The first step is to assign group labels to time series in your dataset using [`TS_LabelGroups`](grouping.md).
+
+Depending on the classifier, you typically want to first normalize the features to put them all on a similar scale (using `TS_Normalize`).
+
+Depending on the question asked of the data, you should also consider whether certain types of features should be removed.
+For example, you may wish to exclude length-dependent features (if differences in time-series length vary between classes but are an uninteresting artefact of the measurement).
+This can be done using `TS_Subset` (and functions like `TS_CompareFeatureSets` described below allow you to test the sensitivity of these results).
+
+## Classifying labeled groups (`TS_Classify`)
+
+`TS_Classify` uses all of the features in a given _hctsa_ data matrix to classify assigned class labels.
+
+### Setting properties of the classification
+
+You can set classification settings, from the number of folds to use in cross-validation to the type of classifier, as the `cfnParams` structure.
+For the labeling defined in a given `TimeSeries` table, you can set defaults for this using `cfnParams = GiveMeDefaultClassificationParams('norm')` (takes `TimeSeries` labeling from `HCTSA_N.mat`).
+This automatically sets an appropriate number of folds (for cross-validation), and includes settings for taking into account class imbalance in classifier training and evaluation.
+It is best to alter the values inside this function to suit your needs, such that these settings can be applied consistently.
+
+### Computing classification accuracy
+
+First let's run a simple classification of the groups labeled in `HCTSA_N.mat`:
+
+```matlab
+% HCTSA data file (class-labeled using TS_LabelGroups):
+dataFile = 'HCTSA_N.mat';
+% Set classification parameters to defaults:
+cfnParams = GiveMeDefaultClassificationParams(dataFile);
+% Just do the classification without any permutation testing:
+numNulls = 0;
+% Evaluate the classifier:
+TS_Classify(dataFile,cfnParams,numNulls)
 ```
-    Classification rate (3-class) using 5-fold svm classification with 8192 features:
-    73.333 +/- 14.907%
+
+In large feature spaces like in _hctsa_, simpler classifiers (like `'svm_linear'`) tend to generalize well, but you can play with the settings in `cfnParams` to get a sense for how the performance varies.
+
+As well as the classification results, the function also produces a confusion matrix, which is especially useful for evaluating where classification errors are occurring.
+Here's an example for a five-class problem:
+
+![](img/TS_Classify_ConfusionMatrix.png)
+
+### Assessing significance as a permutation test relative to a shuffled ensemble
+
+In datasets containing fewer time series, it is more likely to obtain high classification accuracies by chance.
+You may therefore wonder how confident you can be with your classification accuracy.
+For example if you get a two-class classification accuracy of 60%, you might wonder what the probability is of obtaining such an accuracy by chance?
+
+You can set `numNulls` in `TS_Classify` to iterate over the classification settings defined in `cfnParams` except using shuffled class labels.
+This builds up a null distribution from which you can estimate a _p_-value to infer the significance of the classification accuracy obtained with the true data labeling provided.
+
+You can also choose to run across multiple cores by switching on `doParallel`:
+
+```matlab
+numNulls = 100;
+dataFile = 'HCTSA_N.mat';
+cfnParams = GiveMeDefaultClassificationParams(dataFile);
+TS_Classify(dataFile,cfnParams,numNulls,'doParallel',true)
 ```
-In this case, the function has attempted to learn a linear svm classifier on the features to predict the labels assigned to the data, using 5-fold cross validation (note that the default is 10-fold, but for smaller datasets such as this one, fewer folds are used automatically).
-The results show that using 8192 features we obtain a mean classification accuracy of 73.3% (with a standard deviation over the 5-folds of 14.9%).
 
-You can set the classifier with the second input, as well as a range of other options, including computing the classification results using a principal components reduced of the data matrix.
-For example, `TS_Classify('norm','svm_linear','numPCs',10)` will compute classification when up to the top 10 PCs of the data matrix are used to classify the time-series data, yielding:
+This gives you a _p_-value estimate (both via a direct permutation test, and by assuming a Gaussian null distribution), and plots the null distribution with the true result annotated:
+
+![](img/TS_Classify_NullDistribution.png)
+
+## Comparing feature sets
+
+### Specific feature sets (`TS_CompareFeatureSets`)
+You might wonder whether the classification results are driven by simple types of features that aren't related to time-series dynamics at all (such as the mean of the data, or time-series length).
+
+These can be filtered out from the initial computation (e.g., when performing `TS_Init`), or subsequently (e.g., using `TS_Subset`), but you can test the effect such features are having on your dataset using `TS_CompareFeatureSets`.
+Here's an example output:
+
+![](img/TS_CompareFeatureSets.png)
+
+Here we see that length-dependent features are contributing to accurate classification (above-50% accuracy for this two-class balanced problem).
+We can take some relief from the fact that excluding these features (`'notLengthDependent'`) does not significantly alter the classification accuracy, so these features are not single-handedly driving the classification results.
+Nevertheless, assuming differences in recording length is not an interesting difference we want to bias our classification results, it would be advisable to remove these for peace of mind.
+
+## Comparing to lower-dimensional feature spaces
+
+The complexity of the time-series analysis literature is necessary for strong classification results to different degrees, depending on the task.
+You can quickly assess how accurately a smaller number of reduced components (e.g., Principal Components) can better classify your dataset using `TS_Classify_LowDim`:
+
+![](img/TS_Classify_LowDim.png)
+
+The classification accuracy is shown for all features (green, dashed), and as a function of the number of leading PCs included in the classifier (black circles).
+Note that this is cumulative: '5 PCs' means classification in the five-dimensional space of the five leading PCs.
+
+Here we find that we can get decent classification accuracy with just four PCs (and perhaps even more complex classifiers will give even better results in the lower-dimensional spaces).
+
+You can quickly interpret the type of features loading strongly onto each PC from the information shown to screen.
+For example:
 
 ```
-    Computing top 10 PCs... Done.
-    Computing classification rates keeping top 1--10 PCs...
-    1 PCs:   73.333 +/- 27.889%
-    2 PCs:   80.000 +/- 18.257%
-    3 PCs:   80.000 +/- 44.721%
-    4 PCs:   73.333 +/- 14.907%
-    5 PCs:   80.000 +/- 18.257%
-    6 PCs:   80.000 +/- 18.257%
-    7 PCs:   60.000 +/- 14.907%
-    8 PCs:   53.333 +/- 18.257%
-    9 PCs:   40.000 +/- 27.889%
-    10 PCs:   33.333 +/- 33.333%
+---Top feature loadings for PC5---:
+(0.048, r = 0.65) [116] AC_24 (correlation)
+(0.048, r = 0.64) [115] AC_23 (correlation)
+(0.047, r = 0.64) [117] AC_25 (correlation)
+(0.046, r = 0.62) [114] AC_22 (correlation)
+(0.045, r = 0.61) [118] AC_26 (correlation)
 ```
-The plot shows this information graphically:
 
-![](img/TS_Classify.png)
-
-where the classification accuracy is shown for all features (green, dashed), and as a function of the number of leading PCs included in the classifier (black circles).
-
-Because we have so few examples of time series in this case (5 time series from each of 3 classes), attempting to learn a classifier for the dataset using thousands of features is overkill -- we have no where near enough data to constrain such a classifier.
-Indeed, these results show that a classifier using just a single feature (the first PC of the data matrix) reproduces the accuracy of a classifier the full set of 8192 features (both achieving 73.3% on this small dataset).
-
-In small samples, it is more likely to obtain high classification accuracies by chance.
-The function also allows setting the number of randomized nulls, which can be used to compute a null distribution to assess the statistical significance of the results using correctly labeled data, e.g., as `TS_Classify('norm','svm_linear','numNulls',10)`.
-For example, if there are 5 examples each of two classes, a classification rate of 60% may be consistent with chance, but this same 60% classification rate would be highly significant if there are 1000 examples of each class.
+Demonstrates that, on this dataset, long-lag autocorrelations are the most strongly correlated features to PC5.
