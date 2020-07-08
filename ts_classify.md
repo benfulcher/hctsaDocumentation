@@ -23,17 +23,10 @@ It is best to alter the values inside this function to suit your needs, such tha
 
 ### Computing classification accuracy
 
-First let's run a simple classification of the groups labeled in `HCTSA_N.mat`:
+First let's run a simple classification of the groups labeled in `HCTSA_N.mat`, using default classification settings:
 
 ```matlab
-% HCTSA data file (class-labeled using TS_LabelGroups):
-dataFile = 'HCTSA_N.mat';
-% Set classification parameters to defaults:
-cfnParams = GiveMeDefaultClassificationParams(dataFile);
-% Just do the classification without any permutation testing:
-numNulls = 0;
-% Evaluate the classifier:
-TS_Classify(dataFile,cfnParams,numNulls)
+TS_Classify('norm')
 ```
 
 In large feature spaces like in _hctsa_, simpler classifiers (like `'svm_linear'`) tend to generalize well, but you can play with the settings in `cfnParams` to get a sense for how the performance varies.

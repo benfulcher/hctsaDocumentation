@@ -14,17 +14,33 @@ Details of how to format these input files are described below.
 
 To use the default library of operations, you can initiate a time-series dataset (e.g., as specified in the .mat file, `INP_test_ts.mat`) using the following:
 
-    TS_Init('INP_test_ts.mat');
+```matlab
+TS_Init('INP_test_ts.mat');
+```
 
 To specify all sets of master operations and operations, you can use the following:
 
-    TS_Init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
+```matlab
+TS_Init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
+```
 
 `TS_Init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](hctsa_structure.md)).
 <!-- Note that if only the first input file is provided, the default *hctsa* library of operations will be used. -->
 
 Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
 
+### Using reduced feature sets (e.g., _catch22_)
+
+The full _hctsa_ feature set, specified by `INP_ops.txt` and `INP_mops.txt`, involves significant computation time.
+Thus, it can be a good first step to test out your analysis pipeline using a smaller, faster feature set.
+An example is the [catch22](https://github.com/chlubba/catch22) set of 22 features.
+
+This feature set is provided within _hctsa_, and it is very fast to compute using compiled C code.
+These features are compiled on initial `install` of _hctsa_ (by running `mexAll` from the `Toolboxes/catch22` directory of _hctsa_):
+
+```matlab
+TS_Init('INP_ts.mat','INP_mops_catch22.txt','INP_ops_catch22.txt')
+```
 
 ## Adding time series
 When formatting a time series input file, two formats are available:
@@ -104,7 +120,7 @@ When the time comes to perform computations on data using the methods in the dat
 For the above example, Matlab will attempt to run both `CO_tc3(x_z,1)` and `ST_length(x)`, and thus the functions `CO_tc3.m` and `ST_length.m` must be in the Matlab path.
 Recall that the script `startup.m`, which should be run at the start of each session using *hctsa*, handles the addition of paths required for the default code library.
 
-## Adding operations (features)
+## Modifying operations (features)
 
 The input file, e.g., `INP_ops.txt` (in the `Database` directory of the repository) should contain a row for every operation, and use labels that correspond to master operations.
 An example excerpt from such a file is below:
