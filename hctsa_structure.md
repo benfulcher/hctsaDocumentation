@@ -15,14 +15,14 @@ These three different objects are summarized below:
 | **Summary**: | Code and inputs to execute | Single feature | Univariate data|
 | **Example**: | `CO_AutoCorr(x,1:5,'TimeDomain')` | `AC_1` | [1.2, 33.7, -0.1, ...] |
 
-In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (*x*) at lags 1, 2, ..., 5.
+In the example above, a *master operation* specifies the code to run, `CO_AutoCorr(x,1:5,'TimeDomain')`, which outputs the autocorrelation of the input time series (`x`) at lags 1, 2, ..., 5.
 Each operation (or 'feature') is a single number that draws on this set of outputs, for example, the autocorrelation at lag 1, which is named `AC_1`, for example.
 
 In the *hctsa* framework, master operations, operations, and time series are stored as **tables** that contain all of their associated keywords and metadata (and actual time-series data in the case of time series).
 
 For a given *hctsa* analysis, the user must specify a set of code to evaluate (*master operations*), their associated individual outputs to measure (*operations*), and a set of time series to evaluate the features on (*time series*).
 
-We provide a default library of over 7,700 *operations* (derived from approximately 1,000 unique *master operations*).
+We provide a default library of over 7700 *operations* (derived from approximately 1000 unique *master operations*).
 This can be customized, and additional pieces of code can also be added to the repository.
 
 ### The results of a *hctsa* analysis
