@@ -30,7 +30,7 @@ This example uses the `Empirical1000` data context downloaded as `HCTSA_Empirica
 
 #### 1. Computing the new features
 Getting the feature values for the new feature, `hot_feature1`, could be done directly (using `TS_CalculateFeatureVector`), but in order to maintain the HCTSA structure, we instead produce a new `HCTSA.mat` file containing just `hot_feature` and the same time series.
-Note that, to compare to the `HCTSA_Empirical1000.mat` file hosted on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136), you should use version 0.96 of _hctsa_ to ensure that the exact same set of features are used (allowing valid comparison).
+For example, to compare to the `HCTSA_Empirical1000.mat` file hosted on [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136), you should use the same version of _hctsa_ to enable a valid comparison to the same set of features.
 
 We first generate an input file, `INP_hot_master.txt` containing the function call, that takes in a time series, `x`:
 ```
