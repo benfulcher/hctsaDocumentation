@@ -15,7 +15,7 @@ This can be easily achieved using our set of 1000 time series, a random selectio
 
 ![](/img/Empirical1000_25_250samples.png)
 
-Pre-computed results (using [v0.96 of *hctsa*](https://github.com/benfulcher/hctsa/releases/tag/v0.96) and _Matlab 2017a_) can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) as `HCTSA_Empirical1000.mat`.
+Pre-computed results for a recent version of _hctsa_ can be downloaded from [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) as `HCTSA_Empirical1000.mat`.
 
 Alternatively, features can be recomputed using our input file for the time-series dataset, using the input file provided in the same [figshare](https://figshare.com/articles/1000_Empirical_Time_series/5436136) data repository.
 This ensures implementation consistencies on your local compute architecture; i.e., using `TS_Init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_Compute`](running_computations.md)).
@@ -47,9 +47,10 @@ where we have given this feature two keywords: `hot` and `science`.
 
 So now we are able to initiate a new *hctsa* calculation, specifying custom code calls (*master*) and features to extract from the code call (*features*), as:
 ```matlab
-TS_Init('INP_Empirical1000.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
+TS_Init('INP_1000ts.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
 ```
-This generates a new file, `HCTSA_hot.mat`, containing information about the 1000 time series, and the three hot features, which can then be computed as:
+
+This generates a new file, `HCTSA_hot.mat`, containing information about the 1000 time series, and the new hot feature, `hot_feature1`, which can then be computed as:
 ```matlab
 TS_Compute(false,[],[],'missing','HCTSA_hot.mat');
 ```
@@ -59,7 +60,7 @@ So now we have both a context of the behavior of a library of >7000 features on 
 It is time to combine them and look for inter-relationships!
 
 ```matlab
-TS_Combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',false,true,'HCTSA_merged.mat');
+TS_Combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',true,true,'HCTSA_merged.mat');
 ```
 
 #### 3. Comparing
@@ -71,11 +72,11 @@ We can find the ID assigned to our new `hot_feature` in the merged HCTSA file as
 load('HCTSA_merged.mat','Operations');
 Operations(strcmp(Operations.Name,'my_hot_feature'),:)
 ```
-which tells us that the ID of `my_hot_feature` in `HCTSA_merged.mat` is 7750.
+which tells us that the ID of `my_hot_feature` in `HCTSA_merged.mat` is 7703.
 Then we can use [`TS_SimSearch`](sim_search.md) to explore the relationship of our hot new feature to other features in the _hctsa_ library (in terms of linear, Pearson, correlations):
 
 ```matlab
-TS_SimSearch(7750,'tsOrOps','ops','whatDataFile','HCTSA_merged.mat','whatPlots',{'scatter','matrix'})
+TS_SimSearch(7703,'tsOrOps','ops','whatDataFile','HCTSA_merged.mat','whatPlots',{'scatter','matrix'})
 ```
 
 We find that our feature is reproducing the behavior of the first zero of the autocorrelation function (the first match: `first_zero_ac`; see [Interpreting Features](interpreting-features.md) for more info on how to interpret matching features):
