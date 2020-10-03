@@ -76,7 +76,7 @@ which tells us that the ID of `my_hot_feature` in `HCTSA_merged.mat` is 7703.
 Then we can use [`TS_SimSearch`](sim_search.md) to explore the relationship of our hot new feature to other features in the _hctsa_ library (in terms of linear, Pearson, correlations):
 
 ```matlab
-TS_SimSearch(7703,'tsOrOps','ops','whatDataFile','HCTSA_merged.mat','whatPlots',{'scatter','matrix'})
+TS_SimSearch(7703,'tsOrOps','ops','whatData','HCTSA_merged.mat','whatPlots',{'scatter','matrix'})
 ```
 
 We find that our feature is reproducing the behavior of the first zero of the autocorrelation function (the first match: `first_zero_ac`; see [Interpreting Features](interpreting-features.md) for more info on how to interpret matching features):
@@ -105,7 +105,7 @@ Operations(strcmp(Operations.Name,'SC_fastdfa_exponent'),:)
 ```
 and then find similar features using [`TS_SimSearch`](sim_search.md), e.g., as:
 ```matlab
-TS_SimSearch(750,'tsOrOps','ops','whatDataFile','HCTSA_Empirical1000.mat','whatPlots',{'scatter','matrix','network'})
+TS_SimSearch(750,'tsOrOps','ops','whatData','HCTSA_Empirical1000.mat','whatPlots',{'scatter','matrix','network'})
 ```
 Yielding:
 
