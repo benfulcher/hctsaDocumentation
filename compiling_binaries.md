@@ -53,11 +53,16 @@ There are two options:
 
 1. **Install [Cygwin](http://www.cygwin.com) on your machine**. Cygwin provides a Linux distribution-like environment on Windows. Use this environment to compile and install TISEAN (as per the instructions above for Linux or Mac), which will require it to have [C and fortran compilers installed](http://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows/). Matlab will then also need to be launched from Cygwin, using the command: `matlab &`. This instance of Matlab should then be able to call `system` commands through cygwin, including the ability to access the *TISEAN* binaries.
 
-2. **Sacrifice operations that rely on *TISEAN***. In total, *TISEAN*-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods (see below on how to explicitly remove them from the library).
+2. **Sacrifice operations that rely on *TISEAN***.
+In total, *TISEAN*-based operations account for approximately 300 operations in the operation library.
+Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods (see below on how to explicitly remove them from a computed library).
 
 ### Ignoring *TISEAN* functions
 
-If you decide not to use functions from the *TISEAN* package, they can be permanently removed from a given *hctsa* dataset.
 
-1. To filter a local Matlab *hctsa* file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('ops',TS_GetIDs('tisean','raw','ops'),1,'raw');`, which will remove all operations with the 'tisean' keyword from the *hctsa* dataset in `HCTSA.mat`.
-2. If using a *mySQL* database, TISEAN functions can be removed from the database as follows: `SQL_ClearRemove('ops',SQL_GetIDs('ops',0,'tisean',{}),1)`.
+If you decide not to use functions from the *TISEAN* package, you should initialize your dataset with the TISEAN functions removed.
+You could do this by removing them from you `INP_ops.txt` file when initializing your dataset, or you could remove them from your initialized _hctsa_ dataset by filtering on the `'tisean'` keyword.
+
+For example, to filter a local Matlab *hctsa* file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);`, which will remove all operations with the 'tisean' keyword from the *hctsa* dataset in `HCTSA.mat`.
+
+[If you are using a *mySQL* database to store the results of your _hctsa_ calculations, TISEAN functions can be removed from the database as follows: `SQL_ClearRemove('ops',SQL_GetIDs('ops',0,'tisean',{}),true)`].
