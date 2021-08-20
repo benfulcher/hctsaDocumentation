@@ -6,6 +6,8 @@ description: >-
 
 # List of included code files
 
+## Introduction
+
 The full default set of over 7700 features in _hctsa_ is produced by running all of the code files below, many of which produce a large number of outputs \(e.g., some functions fit a time-series model and then output statistics including the parameters of the best-fitting model, measures of the model's goodness of fit, the optimal model order, and autocorrelation statistics on the residuals\).
 
 In our default feature set, each function is run with multiple input parameters, with each parameter set yielding characteristic outputs. For example,
