@@ -1,4 +1,4 @@
-# Performing highly comparative time-series analysis in Matlab using _hctsa_
+# Introduction
 
 This manual outlines the steps required to set up and implement highly comparative time-series analysis using the [hctsa package](https://github.com/benfulcher/hctsa), as described in our papers:
 
@@ -7,4 +7,5 @@ This manual outlines the steps required to set up and implement highly comparati
 
 An updated list of papers related to _hctsa_, or using _hctsa_ is maintained on the _hctsa_ wiki [here](https://github.com/benfulcher/hctsa/wiki/Publications-using-hctsa).
 
-An overview tutorial on applying _hctsa_ to a 5-class EEG dataset is [here](https://github.com/benfulcher/hctsaTutorial_BonnEEG), and a recording of the tutorial (final ~hour is a hands-on demo using this dataset) is on [YouTube](https://www.youtube.com/watch?v=YwPX3rWxP_Y).
+An overview tutorial on applying _hctsa_ to a 5-class EEG dataset is [here](https://github.com/benfulcher/hctsaTutorial_BonnEEG), and a recording of the tutorial \(final ~hour is a hands-on demo using this dataset\) is on [YouTube](https://www.youtube.com/watch?v=YwPX3rWxP_Y).
+
