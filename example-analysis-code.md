@@ -1,4 +1,4 @@
-# Example analysis code
+# Example analysis pipelines
 
 Sometimes it's easiest to quickly get going when you can follow on to some example code. Here are some repositories that allow you to do just this.
 

@@ -2,7 +2,8 @@
 
 * [Introduction](README.md)
 * [List of included code files](list-of-included-code-files.md)
-* [Example analysis code](example-analysis-code.md)
+* [Example analysis pipelines](example-analysis-code.md)
+* [Advice and common pitfalls](advice-and-common-pitfalls.md)
 * [Installing and setting up](setup/README.md)
   * [Structure of the hctsa framework](setup/hctsa_structure.md)
   * [Overview of an hctsa analysis](setup/within_matlab.md)
