@@ -4,19 +4,24 @@ description: Thinking about running an hctsa analysis? Read this first.
 
 # Advice and common pitfalls
 
-### Data processing
+The typical data analysis pipeline starts with inspecting and understanding the data, processing it in accordance with the questions of interest \(and to be consistent with the assumptions of the analysis methods that will be applied\), and then formulating and testing appropriate analysis methods. A typical _hctsa_ pipeline inverts this process: many analysis methods are first applied, and then their results are  interpreted.
+
+Good practice involves thinking carefully about this full _hctsa_ pipeline, including the type of questions and interpretations that are sought from it, and thus how the data are to be prepared, and how the results can be interpreted accurately.
+
+## Data processing
 
 _hctsa_ contains thousands of time-series analysis methods, many of which make strong assumptions of the data, such as that it is \(weak-sense\) stationary. Although _hctsa_ has been applied meaningfully to short, non-stationary patterns \(as commonly studied in time-series data-mining applications\), it is better suited to longer streams of data, from which more subtle temporal statistics can be sampled.
 
 _hctsa_ is not substitute for thoughtful domain-motivated data preparation and processing. For example, _hctsa_ cannot know is 'signal' and what is 'noise' for the question you're asking of your data. The analyst should prepare their data in a way that makes sense for the questions of relevance to them, including the possibility of de-trending/filtering the data, applying noise-removal methods, etc.
 
-For example:
+The following should be considered:
 
-* If your time-series data are measured on scales that differ across different recordings, then the data should be appropriately standardized
-* If your data contain low-order trends that are not meaningful \(e.g., sensor drift\) or not a signal of relevance \(your question is based more around the structure of deviations from a low-frequency trend\), then this should be removed.
-* If your data contain high-frequency measurement noise, the analyst should consider removing it. For example, using a filter \(e.g., moving average\), wavelet denoising, or using a phase-space reconstruction \(cf. [Schreiber's method](https://link.aps.org/doi/10.1103/PhysRevE.47.2401)\).
+* _**Standardizing.**_ If your time-series data are measured on scales that differ across different recordings, then the data should be appropriately standardized.
+* _**Detrending.**_ If your data contain low-order trends that are not meaningful \(e.g., sensor drift\) or not a signal of relevance \(your question is based more around the structure of deviations from a low-frequency trend\), then this should be removed.
+* _**Denoising**_. If your data contain high-frequency measurement noise, the analyst should consider removing it. For example, using a filter \(e.g., moving average\), wavelet denoising, or using a phase-space reconstruction \(e.g., cf. [Schreiber's method](https://link.aps.org/doi/10.1103/PhysRevE.47.2401)\).
+* _**Downsampling**_. Features assume that the data are sampled at a rate that properly resolves the temporal patterns of interest. If your data are over-sampled, then many features will be sensitive to this dominating autocorrelation structure, and will be less sensitive to interesting patterns in the data. In this case, you can consider downsampling your data, for which there are many heuristics \(e.g., cf. [Toker et al.](https://www.nature.com/articles/s42003-019-0715-9)\).
 
-### Interpreting Features
+## Interpreting Features
 
 #### Checking for simpler explanations
 
