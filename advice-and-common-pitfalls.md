@@ -22,7 +22,7 @@ For example:
 
 There are often many routes to solving a given data analysis challenge. For example, in a time-series classification problem, the two classes may be perfectly distinguished based on their lag-1 autocorrelation, and also on their Lyapunov exponent spectrum, and also on hundreds of other properties. In general, one should avoid interpreting the most complex features \(like Lyapunov exponents\) as being uniquely useful for a problem, as they reproduce the behavior of much simpler features, which provide a more interpretable and parsimonious interpretation of the relevant patterns in the dataset. For other problems, time-series analysis methods \(that are sensitive to the time-ordering of the data samples\) may not provide any benefit at all over properties of the data distribution \(e.g., the variance\), or more trivial differences in time-series length across classes.
 
-In general, complex explanations of patterns in a dataset can only be justified when simpler explanations have been ruled out.
+In general, **complex explanations of patterns in a dataset can only be justified when simpler explanations have been ruled out**. E.g., Do not write a paper about a complex \(e.g., powerlaw fit to a visibility graph degree-distribution\) feature when your data can be just as well \(or better\) distinguished by their variance.
 
 _hctsa_ has many functions to check this type of behavior: from inspecting the pairwise correlation structure of high-performing features \(in `TS_TopFeatures`\) to basic checks on different keyword-labeled classes of features \(in `TS_CompareFeatureSets`\).
 
