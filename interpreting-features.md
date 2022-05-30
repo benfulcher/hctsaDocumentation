@@ -1,6 +1,9 @@
 ## Interpreting _hctsa_ features
 
-Often, an _hctsa_ analysis will yield a list of features that may be particularly relevant to a given time-series analysis task, e.g., features that robustly distinguish time series recorded from individuals with some disease diagnosis compared to that of healthy controls. In cases like this, the next step for the analyst is to bridge the automated feature selection enabled by _hctsa_ to domain understanding.
+Often, an _hctsa_ analysis will yield a list of features that may be particularly relevant to a given time-series analysis task, e.g., features that robustly distinguish time series recorded from individuals with some disease diagnosis compared to that of healthy controls.
+In cases like this, the next step is to derive understanding from the mass feature evaluation from _hctsa_.
+Where, in tackling a conventional time-series analysis task, this effort would be done at the start of the process (in manually designing or selecting appropriate methods for the task), in _hctsa_ this hard work in understanding methods and how they behave on data still needs to be done, but it comes at the end of the process and can be focused on the types of methods from across science that perform best on your dataset.
+
 Consider a problem in which `TS_TopFeatures` is run to find features that accurately distinguish groups of time series, yielding a list of features like the following:
 
 ```
@@ -55,7 +58,7 @@ We can use the `MasterID` to get more information about the code that was run us
 
 ```matlab
 >> MasterOperations(MasterOperations.ID==836,:)
-ID             Label                         Code            
+ID             Label                         Code
 ___    ______________________    ____________________________
 
 836    'FC_LocalSimple_mean3'    'FC_LocalSimple(y,'mean',3)'
