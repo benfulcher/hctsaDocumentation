@@ -19,14 +19,20 @@ To use the default library of operations, you can initiate a time-series dataset
 TS_Init('INP_test_ts.mat');
 ```
 
-To specify all sets of master operations and operations, you can use the following:
+To specify the full _hctsa_ sets master operations and operations, you can use the following:
 
 ```matlab
-TS_Init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
+TS_Init('INP_ts.mat','hctsa');
+```
+
+This is equivalent to specifying the function calls and features to extract from them as specified in the _hctsa_ input files: `INP_mops_hctsa.txt` and `INP_ops_hctsa.txt`.
+The following code achieves the same thing directly (and for custom calculations, you can substitute any input files with this syntax):
+
+```matlab
+TS_Init('INP_ts.mat',{'INP_mops_hctsa.txt','INP_ops_hctsa.txt'});
 ```
 
 `TS_Init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](hctsa_structure.md)).
-<!-- Note that if only the first input file is provided, the default *hctsa* library of operations will be used. -->
 
 Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
 
@@ -40,10 +46,14 @@ This feature set is provided within _hctsa_, and it is very fast to compute usin
 These features are compiled on initial `install` of _hctsa_ (by running `mexAll` from the `Toolboxes/catch22` directory of _hctsa_):
 
 ```matlab
-TS_Init('INP_ts.mat','INP_mops_catch22.txt','INP_ops_catch22.txt')
+% Shorthand:
+TS_Init('INP_ts.mat','catch22');
+% Equivalent (specify input files directly):
+TS_Init('INP_ts.mat',{'INP_mops_catch22.txt','INP_ops_catch22.txt'})
 ```
 
 ## Adding time series
+
 When formatting a time series input file, two formats are available:
 * *.mat file input*, which is suited to data that are already stored as variables in Matlab,
 * *.txt file input*, which is better suited to when each time series is already stored as an individual text file.
