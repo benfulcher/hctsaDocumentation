@@ -1,9 +1,9 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [List of included code files](list-of-included-code-files.md)
-* [Getting started](example-analysis-code.md)
-* [Advice and common pitfalls](advice-and-common-pitfalls.md)
+  * [Getting started](readme/example-analysis-code.md)
+  * [Advice and common pitfalls](readme/advice-and-common-pitfalls.md)
+  * [List of included code files](readme/list-of-included-code-files.md)
 * [Installing and setting up](setup/README.md)
   * [Structure of the hctsa framework](setup/hctsa\_structure.md)
   * [Overview of an hctsa analysis](setup/within\_matlab.md)

@@ -2,11 +2,11 @@
 description: Some advice for getting started with an hctsa analysis
 ---
 
-# Getting Started
+# Getting started
 
 ## Preparing for an analysis
 
-_hctsa_ can automate some parts of a time-series analysis pipeline (such as guiding the selection of informative statistical properties in a time-series classification problem), but it does not replace expertise. Careful thought, with understanding of the problem and domain-specific issues are essential in designing how _hctsa_ can be used for a given application, and in properly interpreting its results.
+_hctsa_ automates some parts of a time-series analysis pipeline (such as guiding the selection of informative statistical properties in a time-series classification problem), but it does not replace expertise. Careful thought, with understanding of the problem and domain-specific issues are essential in designing how _hctsa_ can be used for a given application, and in properly interpreting its results.
 
 Some general advice before embarking on an _hctsa_ analysis:
 
@@ -26,12 +26,12 @@ Sometimes it's easiest to quickly get going when you can follow on to some examp
 
 An overview tutorial on applying _hctsa_ to a 5-class EEG dataset is in [this GitHub repo](https://github.com/benfulcher/hctsaTutorial\_BonnEEG) (including the use of reduced feature set, _catch22_, within the _hctsa_ framework). There is also a recording of the tutorial (final \~hour is a hands-on demo using this dataset) on [YouTube](https://www.youtube.com/watch?v=YwPX3rWxP\_Y).
 
-![](<.gitbook/assets/Screen Shot 2022-05-31 at 08.39.56.png>)
+![](<../.gitbook/assets/Screen Shot 2022-05-31 at 08.39.56.png>)
 
 ### Flies in a tube
 
-You can play with _hctsa_ using this [fly movement dataset and analysis code](https://github.com/benfulcher/hctsa\_phenotypingFly). This repository allows you to skip the process of running an _hctsa_ calculation (you can download precomputed results), and get straight down to following some analyses, including code for classifying recordings during the day versus night, or from males versus females using time-series feature extraction.
+You can play with _hctsa_ using this [fly movement dataset and analysis code](https://github.com/benfulcher/hctsa\_phenotypingFly). This repository allows you to skip the process of running an _hctsa_ calculation (you can download pre-computed results), and get straight down to following some analyses, including code for classifying recordings during the day versus night, or from males versus females using time-series feature extraction.
 
 ### Worms in a dish
 
-You can try your hand at classifying different strains of the nematode worm _C. elegans_ based on their time series of their movement speed. The repository, with links to precomputed `HCTSA.mat` files, is [here](https://github.com/benfulcher/hctsa\_phenotypingWorm).
+You can try your hand at classifying different strains of the nematode worm _C. elegans_ based on their time series of their movement speed. The repository, with links to pre-computed `HCTSA.mat` files, is [here](https://github.com/benfulcher/hctsa\_phenotypingWorm).
