@@ -2,8 +2,8 @@
 
 While the global structure of a time-series dataset can be investigated by plotting the data matrix ([`TS_PlotDataMatrix`](visualizing_the_data_matrix.md)) or a low-dimensional representation of it ([`TS_PlotLowDim`](low_dim.md)), sometimes it can be more interesting to retrieve and visualize relationships between a set of nearest neighbors to a particular time series of interest.
 
-The *hctsa* framework provides a way to easily compute distances between pairs of time series, e.g., as a Euclidean distance between their normalized feature vectors.
-This allows very different time series (in terms of their origin, their method of recording and measurement, and their number of samples) to be compared straightforwardly according to their properties, measured by the algorithms in our *hctsa* library.
+The _hctsa_ framework provides a way to easily compute distances between pairs of time series, e.g., as a Euclidean distance between their normalized feature vectors.
+This allows very different time series (in terms of their origin, their method of recording and measurement, and their number of samples) to be compared straightforwardly according to their properties, measured by the algorithms in our _hctsa_ library.
 
 For this, we use the `TS_SimSearch` function, specifying the id of the time series of interest (i.e., the `ID` field of the `TimeSeries` structure) with the first input and the number of neighbors with the 'numNeighbors' input specifier (default: 20).
 By default, data is loaded from `HCTSA_N.loc`, but a custom source can be specified using the `'whatDataFile'` input specifier (e.g., `TS_SimSearch('whatDataFile','HCTSA_custom.mat')`).

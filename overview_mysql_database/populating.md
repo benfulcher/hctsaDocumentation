@@ -42,7 +42,7 @@ Corresponding operations \(or features\) will then need to added separately, to 
 
 ### _Example_: Adding our library of operations to the database
 
-Operations can be added to the _mySQL_ database using an [appropriately-formatted input file](../calculating/input_files.md), such as `INP_ops.txt`, as follows:
+Operations can be added to the _mySQL_ database using an [appropriately-formatted input file](../calculating/input_files.md), such as `INP_ops_hctsa.txt`, as follows:
 
 ```text
 SQL_Add('ops','INP_ops.txt');
@@ -73,4 +73,3 @@ SQL_Add('ts','INP_ts.txt');
 ```
 
 We provide an example input file in the **Database** directory as **INP\_test\_ts.txt**, which can be added to the database, following the syntax above, using `SQL_Add('ts','INP_test_ts.txt')`, as well as a sample .mat file input as **INP\_test\_ts.mat**, which can be added as `SQL_Add('ts','INP_test_ts.mat')`.
-

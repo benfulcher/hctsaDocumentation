@@ -63,8 +63,8 @@ Although they provide important, well-tested implementations of nonlinear time-s
 ### Ignoring *TISEAN* functions
 
 If you decide not to use functions from the *TISEAN* package, you should initialize your dataset with the TISEAN functions removed.
-You could do this by removing them from you `INP_ops.txt` file when initializing your dataset, or you could remove them from your initialized _hctsa_ dataset by filtering on the `'tisean'` keyword.
+You could do this by removing them from you `INP_ops_hctsa.txt` file when initializing your dataset, or you could remove them from your initialized _hctsa_ dataset by filtering on the `'tisean'` keyword.
 
-For example, to filter a local Matlab *hctsa* file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);`, which will remove all operations with the 'tisean' keyword from the *hctsa* dataset in `HCTSA.mat`.
+For example, to filter a local Matlab _hctsa_ file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);`, which will remove all operations with the 'tisean' keyword from the _hctsa_ dataset in `HCTSA.mat`.
 
 [If you are using a *mySQL* database to store the results of your _hctsa_ calculations, TISEAN functions can be removed from the database as follows: `SQL_ClearRemove('ops',SQL_GetIDs('ops',0,'tisean',{}),true)`].

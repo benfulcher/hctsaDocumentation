@@ -27,7 +27,7 @@ These situations must be dealt with by either identifying and fixing the problem
 
 ## Troubleshooting errors
 When getting information on operations that produce special-valued outputs (getting IDs listed from `TS_InspectQuality`), it can be useful to then test examples by re-running pieces of code with the problematic data.
-The function `TS_WhichProblemTS` can be used to retrieve time series from an *hctsa* dataset that caused a problem for a given operation.
+The function `TS_WhichProblemTS` can be used to retrieve time series from an _hctsa_ dataset that caused a problem for a given operation.
 
 Usage is as follows:
 

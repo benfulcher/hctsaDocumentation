@@ -85,7 +85,7 @@ The pairwise distance matrix \(distances are $$1-|r|$$, for Pearson correlation 
 
 ### 4. Interpreting
 
-In this case, the hot new feature wasn't so hot: it was highly \(linearly\) correlated to many existing features \(including the simple zero-crossing of the autocorrelation function, `first_zero_ac`\), even across a highly diverse time-series dataset. However, if you have more luck and come up with a hot new feature that shows distinctive \(and useful\) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions \(i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`\) to the library files \(`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of _hctsa_\), as explained [here](https://github.com/benfulcher/hctsaDocumentation/tree/230d1b1b62d275fb646ed62335f9bc545af84ebb/inputfiles.md). You might even celebrate your success by sharing your new feature with the community, by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa)!! :satisfied:
+In this case, the hot new feature wasn't so hot: it was highly \(linearly\) correlated to many existing features \(including the simple zero-crossing of the autocorrelation function, `first_zero_ac`\), even across a highly diverse time-series dataset. However, if you have more luck and come up with a hot new feature that shows distinctive \(and useful\) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions \(i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`\) to the library files \(`INP_mops_hctsa.txt` and `INP_ops_hctsa.txt` in the **Database** directory of _hctsa_\), as explained [here](https://github.com/benfulcher/hctsaDocumentation/tree/230d1b1b62d275fb646ed62335f9bc545af84ebb/inputfiles.md). You might even celebrate your success by sharing your new feature with the community, by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa)!! :satisfied:
 
 ## _EXAMPLE 2_: Determining the relationship between an existing _hctsa_ feature and the rest of the library.
 
@@ -126,4 +126,3 @@ TS_Plot2d(featureData,TimeSeries,operationNames,{},annotateParams);
 ```
 
 ![](../.gitbook/assets/SC_fastDFA_2d.png)
-

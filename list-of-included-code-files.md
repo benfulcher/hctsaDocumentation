@@ -16,7 +16,7 @@ In our default feature set, each function is run with multiple input parameters,
 * `WL_dwtcoeff` has inputs that set the mother wavelet to use and level of wavelet decomposition; and
 * `FC_LocalSimple` has inputs that determine the time-series forecasting method to use and the size of the training window.
 
-The set of code files below and their input parameters that define the default _hctsa_ feature set are in the `INP_mops.txt` file of the _hctsa_ repository.
+The set of code files below and their input parameters that define the default _hctsa_ feature set are in the `INP_mops_hctsa.txt` file of the _hctsa_ repository.
 
 ## Distribution
 
@@ -254,4 +254,3 @@ Other properties, like extreme values, visibility graphs, physics-based simulati
 | `PH_Walker` | Simulates a hypothetical walker moving through the time domain. |
 | `PP_Compare` | Compare how time-series properties change after pre-processing. |
 | `PP_Iterate` | How time-series properties change in response to iterative pre-processing. |
-

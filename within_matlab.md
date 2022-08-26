@@ -1,9 +1,9 @@
-# An example analysis workflow using *hctsa* in Matlab
+# An example analysis workflow using _hctsa_ in Matlab
 
-At its core, *hctsa* analysis involves computing a library of time-series analysis features (which we call *operations*) on a time-series dataset.
+At its core, _hctsa_ analysis involves computing a library of time-series analysis features (which we call *operations*) on a time-series dataset.
 <!--## Overview of an analysis-->
 
-The basic sequence of a Matlab-based *hctsa* analysis is to:
+The basic sequence of a Matlab-based _hctsa_ analysis is to:
 1. *Initialize* a `HCTSA.mat` file, which contains all of the information about the set of time series and operations in your analysis, as well as the results of applying all operations to all time series, using [`TS_Init`](input_files.md),
 
 2. These operations can be computed on your time-series data using [`TS_Compute`](calculating.md). The results are structured in the local `HCTSA.mat` file containing matrices (that store the results of the computations) and the tables (that store information about the time-series data and operations), as described [here](hctsa_structure.md).
@@ -21,7 +21,7 @@ featVector = TS_CalculateFeatureVector(x,false); % compute the default feature v
 
 Suppose you have have a time-series dataset to analyze.
 You first generate a formatted `INP_ts.mat` input file containing your time series data and associated name and keyword labels, as described [here](input_files.md).
-You then initialize an *hctsa* calculation using the default library of features:
+You then initialize an _hctsa_ calculation using the default library of features:
 ```matlab
 TS_Init('INP_ts.mat');
 ```

@@ -7,7 +7,7 @@ Instructions on how to install and set up a *mySQL* database on a variety of ope
 <!--{#sec:SettingUpJ}-->
 
 Before the structure of the database can be created, Matlab must be set up to be able to talk to the mySQL server, which requires installing a mySQL java connector.
-The steps required to achieve this are performed by the script `install_jconnector`, which should be run from the main *hctsa* directory.
+The steps required to achieve this are performed by the script `install_jconnector`, which should be run from the main _hctsa_ directory.
 If this script runs successfully and a mySQL server has been installed (either on your local machine or on an external server, see above), you are then ready to run the `install` script.
 
 The following outlines the actions performed by the `install_jconnector` script (including instructions on how to perform the steps manually):
@@ -61,9 +61,9 @@ An example usage is as follows:
     % Open a connection to the default mySQL database as dbc:
     % Connection details are stored in sql-setting.conf
     dbc = SQL_OpenDatabase;
-    
+
     % <Do things with the database connection, dbc>
-    
+
     % Close the connection, dbc:
     SQL_CloseDatabase(dbc);
 ```

@@ -1,19 +1,19 @@
 # Working with a *mySQL* database
 
-When running large-scale *hctsa* computations, it can be useful to set up a *mySQL* database for time series, operations, and the computation results, and have many Matlab instances (running on different nodes of a compute cluster, for example) communicate directly with the database.
+When running large-scale _hctsa_ computations, it can be useful to set up a *mySQL* database for time series, operations, and the computation results, and have many Matlab instances (running on different nodes of a compute cluster, for example) communicate directly with the database.
 
-The *hctsa* software comes with this (optional) functionality, allowing a more powerful, distributed way to compute and store results of a large-scale computation.
+The _hctsa_ software comes with this (optional) functionality, allowing a more powerful, distributed way to compute and store results of a large-scale computation.
 
-This chapter outlines the steps involved in setting up, and running *hctsa* computations using a linked *mySQL* database.
+This chapter outlines the steps involved in setting up, and running _hctsa_ computations using a linked *mySQL* database.
 
-## Installing the *hctsa* code package to work with a *mySQL* database
+## Installing the _hctsa_ code package to work with a *mySQL* database
 
-The *hctsa* package requires some preliminary set up to work with a *mySQL* database, described [here](setup_mysql_database.md):
+The _hctsa_ package requires some preliminary set up to work with a *mySQL* database, described [here](setup_mysql_database.md):
 
 1. Installation of *mySQL*, either locally, or on an accessible server.
 2. Setting up Matlab with a *mySQL* java connector (done by running the `install_jconnector` script in the **Database** directory, and then restarting Matlab).
 
-After the database is set up, and the packages required by *hctsa* are installed (by running the `install` script), linking to a *mySQL* database can be done by running the `install_database` script, which:
+After the database is set up, and the packages required by _hctsa_ are installed (by running the `install` script), linking to a *mySQL* database can be done by running the `install_database` script, which:
 
 1. Sets up Matlab to be able to communicate with the *mySQL* server and creates a new database to store Matlab calculations in, described [here](setup_mysql_database.md).
 2. Populates the database with our default library of master operations and operations, as described [here](populating.md). (NB: a description of the terminology of 'master operations': a set of input arguments to an analysis function, and 'operations': a single time-series feature, is [here](populating.md)).
@@ -21,7 +21,7 @@ After the database is set up, and the packages required by *hctsa* are installed
 
 This section contains additional details about each of these steps.
 
-Note that the above steps are one-off installation steps; once the software is installed and compiled, a typical workflow will simply involve opening Matlab, running the `startup` script (which adds all paths required for the *hctsa* software), and then working within Matlab from any desired directory.
+Note that the above steps are one-off installation steps; once the software is installed and compiled, a typical workflow will simply involve opening Matlab, running the `startup` script (which adds all paths required for the _hctsa_ software), and then working within Matlab from any desired directory.
 
 ### Adding a time-series dataset
 

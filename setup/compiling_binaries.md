@@ -50,7 +50,7 @@ If you are running Matlab from Windows, you will need a mechanism for Matlab to 
 
 ### Ignoring _TISEAN_ functions
 
-If you decide not to use functions from the _TISEAN_ package, you should initialize your dataset with the TISEAN functions removed. You could do this by removing them from you `INP_ops.txt` file when initializing your dataset, or you could remove them from your initialized _hctsa_ dataset by filtering on the `'tisean'` keyword.
+If you decide not to use functions from the _TISEAN_ package, you should initialize your dataset with the TISEAN functions removed. You could do this by removing them from you `INP_ops_hctsa.txt` file when initializing your dataset, or you could remove them from your initialized _hctsa_ dataset by filtering on the `'tisean'` keyword.
 
 For example, to filter a local Matlab _hctsa_ file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);`, which will remove all operations with the 'tisean' keyword from the _hctsa_ dataset in `HCTSA.mat`.
 

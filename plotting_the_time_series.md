@@ -1,6 +1,6 @@
 # Plotting the time series
 
-The *hctsa* package provides a simple means of plotting time series: the `TS_PlotTimeSeries` function.
+The _hctsa_ package provides a simple means of plotting time series: the `TS_PlotTimeSeries` function.
 
 ## Basic plotting
 

@@ -9,7 +9,7 @@ This chapter will give instructions on how you can compare a new time-series ana
 We assume that the reader has [installed _hctsa_](setup.md), which will be required to work with files and compute features.
 
 ### Setting a data context
-The first step is defining the set of features to compare to (here we use the default *hctsa* library), and the set of time-series data that behavior is going to be assessed on.
+The first step is defining the set of features to compare to (here we use the default _hctsa_ library), and the set of time-series data that behavior is going to be assessed on.
 If you have just developed a new algorithm for time-series analysis and want to see how it performs across a range of interdisciplinary time-series data, then you may want to use a diverse set of time series sampled from across science.
 This can be easily achieved using our set of 1000 time series, a random selection of 25 such time series are plotted below (only the first 250 samples are plotted to aid visualization):
 
@@ -45,7 +45,7 @@ hot_master.hotFeature1     hot_feature1      hot,science
 ```
 where we have given this feature two keywords: `hot` and `science`.
 
-So now we are able to initiate a new *hctsa* calculation, specifying custom code calls (*master*) and features to extract from the code call (*features*), as:
+So now we are able to initiate a new _hctsa_ calculation, specifying custom code calls (*master*) and features to extract from the code call (*features*), as:
 ```matlab
 TS_Init('INP_1000ts.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
 ```
@@ -66,7 +66,7 @@ TS_Combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',true,true,'HCTSA_merged.mat
 #### 3. Comparing
 
 Now that we have all of the data in the same HCTSA file, we can compare the behavior of the new feature to the existing library of features.
-This can be done manually by the researcher, or by using standard *hctsa* functions; the most relevant is [`TS_SimSearch`](sim_search.md).
+This can be done manually by the researcher, or by using standard _hctsa_ functions; the most relevant is [`TS_SimSearch`](sim_search.md).
 We can find the ID assigned to our new `hot_feature` in the merged HCTSA file as:
 ```matlab
 load('HCTSA_merged.mat','Operations');
@@ -89,7 +89,7 @@ The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation c
 
 #### 4. Interpreting
 In this case, the hot new feature wasn't so hot: it was highly (linearly) correlated to many existing features (including the simple zero-crossing of the autocorrelation function, `first_zero_ac`), even across a highly diverse time-series dataset.
-However, if you have more luck and come up with a hot new feature that shows distinctive (and useful) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of *hctsa*), as explained [here](inputfiles.md).
+However, if you have more luck and come up with a hot new feature that shows distinctive (and useful) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops_hctsa.txt` and `INP_ops_hctsa.txt` in the **Database** directory of _hctsa_), as explained [here](inputfiles.md).
 You might even celebrate your success by sharing your new feature with the community, by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa)!! :satisfied:
 
 

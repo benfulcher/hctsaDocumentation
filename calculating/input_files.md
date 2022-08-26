@@ -4,7 +4,7 @@ Formatted input files are used to set up a custom dataset of time-series data, p
 
 ## Specifying a set of time series and operations using `TS_Init`
 
-Initiating a dataset for an _hctsa_ analysis involves specifying an input file for each of: 1. the time series to analyze \(`INP_ts.mat` or `INP_ts.txt`\). 2. the code to run \(`INP_mops.txt`\). 3. the features to extract from that code \(`INP_ops.txt`\).
+Initiating a dataset for an _hctsa_ analysis involves specifying an input file for each of: 1. the time series to analyze \(`INP_ts.mat` or `INP_ts.txt`\). 2. the code to run \(`INP_mops_hctsa.txt`\). 3. the features to extract from that code \(`INP_ops_hctsa.txt`\).
 
 Details of how to format these input files are described below.
 
@@ -20,13 +20,13 @@ To specify all sets of master operations and operations, you can use the followi
 TS_Init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
 ```
 
-`TS_Init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation \(explained [here](../setup/hctsa_structure.md)\). 
+`TS_Init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation \(explained [here](../setup/hctsa_structure.md)\).
 
 Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
 
 ### Using reduced feature sets \(e.g., _catch22_\)
 
-The full _hctsa_ feature set, specified by `INP_ops.txt` and `INP_mops.txt`, involves significant computation time. Thus, it can be a good first step to test out your analysis pipeline using a smaller, faster feature set. An example is the [catch22](https://github.com/chlubba/catch22) set of 22 features.
+The full _hctsa_ feature set, specified by `INP_ops_hctsa.txt` and `INP_mops_hctsa.txt`, involves significant computation time. Thus, it can be a good first step to test out your analysis pipeline using a smaller, faster feature set. An example is the [catch22](https://github.com/DynamicsAndNeuralSystems/catch22) set of 22 features.
 
 This feature set is provided within _hctsa_, and it is very fast to compute using compiled C code. These features are compiled on initial `install` of _hctsa_ \(by running `mexAll` from the `Toolboxes/catch22` directory of _hctsa_\):
 
@@ -89,14 +89,14 @@ Valid outputs from a master operation are: 1. A single real number, 2. A structu
 
 The \(potentially many\) outputs from a master operation can thus be mapped to individual operations \(or features\), which are single real numbers summarizing a time series that make up individual columns of the resulting data matrix.
 
-Two example lines from the input file, `INP_mops.txt` \(in the `Database` directory of the repository\), are as follows:
+Two example lines from the input file, `INP_mops_hctsa.txt` \(in the `Database` directory of the repository\), are as follows:
 
 ```text
 CO_tc3(x_z,1)     CO_tc3_xz_1
 ST_length(x)    ST_length
 ```
 
-Each line in the input file specifies two pieces of information, separated by whitespace: 1. A piece of code and its input parameters. 2. A unique label for that master operation \(that can be referenced by individual operations\). 
+Each line in the input file specifies two pieces of information, separated by whitespace: 1. A piece of code and its input parameters. 2. A unique label for that master operation \(that can be referenced by individual operations\).
 
 We use the convention that `x` refers to the input time series and `x_z` refers to a _z_-scored transformation of the input time series \(i.e., $$(x - \mu_x)/\sigma_x$$\). In the example above, the first line thus adds an entry in the database for running the code `CO_tc3` using a _z_-scored time series as input \(`x_z`\), with `1` as the second input with the label `CO_tc3_xz_1`, and the second line will add an entry for running the code `ST_length` using the untransformed time series, `x`, with the label `length`.
 
@@ -104,7 +104,7 @@ When the time comes to perform computations on data using the methods in the dat
 
 ## Modifying operations \(features\)
 
-The input file, e.g., `INP_ops.txt` \(in the `Database` directory of the repository\) should contain a row for every operation, and use labels that correspond to master operations. An example excerpt from such a file is below:
+The input file, e.g., `INP_ops_hctsa.txt` \(in the `Database` directory of the repository\) should contain a row for every operation, and use labels that correspond to master operations. An example excerpt from such a file is below:
 
 ```text
     CO_tc3_xz_1.raw     CO_tc3_1_raw      correlation,nonlinear
@@ -116,4 +116,3 @@ The input file, e.g., `INP_ops.txt` \(in the `Database` directory of the reposit
 ```
 
 The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference \(after the fullstop\), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords \(that must not include whitespace\). Whitespace is used to separate the three entries on each line of the input file. In this example, the master operation labeled `CO_tc3_xz_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number \(the length of the time series\), which is referenced by the operation named 'length' here. The two keywords 'correlation' and 'nonlinear' are added to the `CO_tc3_1` operations, while the keywords 'raw' and 'lengthDependent' are added to the operation called `length`. These keywords can be used to organize and filter the set of operations used for a given analysis task.
-
