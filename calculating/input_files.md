@@ -2,48 +2,51 @@
 
 Formatted input files are used to set up a custom dataset of time-series data, pieces of Matlab code to run (master operations), and associated outputs from that code (operations). By default, you can simply specify a custom time-series dataset and the default operation library will be used. In this section we describe how to initiate an _hctsa_ analysis, including how to format the input files used in the _hctsa_ framework.
 
-## Specifying a set of time series and operations using `TS_Init`
+## Working with a default feature set using `TS_Init`
 
-Initiating a dataset for an _hctsa_ analysis involves specifying an input file for each of: 1. the time series to analyze (`INP_ts.mat` or `INP_ts.txt`). 2. the code to run (`INP_mops.txt`). 3. the features to extract from that code (`INP_ops.txt`).
-
-Details of how to format these input files are described below.
-
-To use the default library of operations, you can initiate a time-series dataset (e.g., as specified in the .mat file, `INP_test_ts.mat`) using the following:
+To work with a default feature set, _hctsa_ or _catch22_, you just need to specify information about the time-series to analyze, specified by an input file (e.g., `INP_ts.mat` or `INP_ts.txt`). Details of how to format this input file is described below. A test input file, `'INP_test_ts.mat'`, is provided with the repository, so you can set up feature extraction for it using the _hctsa_ feature set as:
 
 ```
 TS_Init('INP_test_ts.mat');
 ```
 
-To specify all sets of master operations and operations, you can use the following:
+or
 
 ```
-TS_Init('INP_ts.mat','INP_mops.txt','INP_ops.txt');
+TS_Init('INP_test_ts.mat','hctsa');
 ```
 
-`TS_Init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](../setup/hctsa\_structure.md)).&#x20;
-
-Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
-
-### Using reduced feature sets (e.g., _catch22_)
-
-The full _hctsa_ feature set, specified by `INP_ops.txt` and `INP_mops.txt`, involves significant computation time. Thus, it can be a good first step to test out your analysis pipeline using a smaller, faster feature set. An example is the [catch22](https://github.com/chlubba/catch22) set of 22 features.
-
-This feature set is provided within _hctsa_, and it is very fast to compute using compiled C code. These features are compiled on initial `install` of _hctsa_ (by running `mexAll` from the `Toolboxes/catch22` directory of _hctsa_):
+And for _catch22_ as:
 
 ```
-TS_Init('INP_ts.mat','INP_mops_catch22.txt','INP_ops_catch22.txt')
+TS_Init('INP_test_ts.mat','catch22');
 ```
 
-## Adding time series
+The full _hctsa_ feature set involves significant computation time so it is a recommended first step to test out your analysis pipeline using a smaller, faster feature set like [catch22](https://github.com/chlubba/catch22) (but note that it is insensitvie to mean and standard deviation; to include them use catch24). This feature set is provided as a submodule within _hctsa_, and it is very fast to compute using compiled C code (the features are compiled on initial `install` of _hctsa_ (by running `mexAll` from the `Toolboxes/catch22` directory of _hctsa_).
+
+`TS_Init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](../setup/hctsa\_structure.md)). Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
+
+## Using custom feature sets
+
+You can specify a custom feature set of your own making by specifying
+
+1. The code to run (`INP_mops.txt`); and
+2. The features to extract from that code (`INP_ops.txt`).
+
+Details of how to format these input files are described below. The syntax for using a custom feature-set is as:
+
+```
+TS_Init('INP_ts.mat',{'INP_mops.txt','INP_ops.txt'});
+```
+
+## Time Series Input Files
 
 When formatting a time series input file, two formats are available:
 
-* _.mat file input_, which is suited to data that are already stored as variables in Matlab,
-* _.txt file input_, which is better suited to when each time series is already stored as an individual text file.
+* `.mat` _file input_, which is suited to data that are already stored as variables in Matlab; or
+* `.txt` _file input_, which is better suited to when each time series is already stored as an individual text file.
 
-Note that when using the .mat file input method, time-series data is stored in the database to six significant figures. However, when using the .txt file input method, time-series data values are stored in the database as written in the input text file of each time series.
-
-### Input file format 1 (.mat file)
+### Input file format 1 (`.mat` file)
 
 When using a .mat file input, the .mat file should contain three variables:
 
@@ -51,7 +54,7 @@ When using a .mat file input, the .mat file should contain three variables:
 * `labels`: a _N_ x 1 cell of unique strings containing a named label for each time series.
 * `keywords`: a _N_ x 1 cell of strings, where each element contains a comma-delimited set of keywords (one for each time series), containing _no whitespace_.
 
-An example involving two time series is below. In this example, we add two time series (showing only the first two values shown of each), which are labeled according to .dat files from a hypothetical EEG experiment, and assigned keywords (which are separated by commas and no whitespace). In this case, both are assigned keywords 'subject1' and 'eeg' and, additionally, the first time series is assigned 'trial1', and the second 'trial2' (these labels can be used later to retrieve individual time series). Note that the labels do not need to specify filenames, but can be any useful label for a given time series.
+An example involving two time series is below. In this example, we add two time series (showing only the first two values shown of each), which are labeled according to `.dat` files from a hypothetical EEG experiment, and assigned keywords (which are separated by commas and no whitespace). In this case, both are assigned keywords 'subject1' and 'eeg' and, additionally, the first time series is assigned 'trial1', and the second 'trial2' (these labels can be used later to retrieve individual time series). Note that the labels do not need to specify filenames, but can be any useful label for a given time series.
 
 ```
 timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}; % (a cell of vectors)
@@ -62,7 +65,7 @@ keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keyw
 save('INP_test.mat','timeSeriesData','labels','keywords');
 
 % Initialize a new hctsa analysis using these data and the default feature library:
-TS_Init('INP_test.mat');
+TS_Init('INP_test.mat','hctsa');
 ```
 
 ### Input file format 2 (text file)
@@ -79,7 +82,7 @@ gaussianwhitenoise_002.dat     noise,gaussian
 sinusoid_001.dat               periodic,sine
 ```
 
-Using this input file, a new analysis will contain 3 time series, **gaussianwhitenoise\_001.dat** and **gaussianwhitenoise\_002.dat** will be assigned the keywords ‘noise’ and ‘gaussian’, and the data in **sinusoid\_001.dat** will be assigned keywords ‘periodic’ and ‘sine’. Note that keywords should be separated _only_ by commas (and no whitespace).
+Using this input file, a new analysis will contain 3 time series, `gaussianwhitenoise_001.dat` and `gaussianwhitenoise_002.dat` will be assigned the keywords `noise` and `gaussian`, and the data in `sinusoid_001.dat` will be assigned keywords ‘periodic’ and ‘sine’. Note that keywords should be separated _only_ by commas (and no whitespace).
 
 ## Adding master operations
 
@@ -115,4 +118,4 @@ The input file, e.g., `INP_ops.txt` (in the `Database` directory of the reposito
     ST_length           length            raw,lengthDependent
 ```
 
-The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace). Whitespace is used to separate the three entries on each line of the input file. In this example, the master operation labeled `CO_tc3_xz_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named 'length' here. The two keywords 'correlation' and 'nonlinear' are added to the `CO_tc3_1` operations, while the keywords 'raw' and 'lengthDependent' are added to the operation called `length`. These keywords can be used to organize and filter the set of operations used for a given analysis task.
+The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace). Whitespace is used to separate the three entries on each line of the input file. In this example, the master operation labeled `CO_tc3_xz_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named 'length' here. The two keywords 'correlation' and 'nonlinear' are added to the `CO_tc3_1` operations, while the keywords `raw` and `lengthDependent` are added to the operation called `length`. These keywords can be used to organize and filter the set of operations used for a given analysis task.
