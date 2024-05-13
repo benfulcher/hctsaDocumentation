@@ -38,3 +38,4 @@
   * [Clearing or removing data](overview\_mysql\_database/clearing\_or\_removing\_data.md)
   * [Retrieving data from the database](overview\_mysql\_database/retrieving.md)
   * [Error handling and maintenance](overview\_mysql\_database/maintenance.md)
+* [Publications using hctsa](publications-using-hctsa.md)
