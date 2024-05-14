@@ -39,3 +39,6 @@
   * [Retrieving data from the database](overview\_mysql\_database/retrieving.md)
   * [Error handling and maintenance](overview\_mysql\_database/maintenance.md)
 * [Publications using hctsa](publications-using-hctsa.md)
+* [UMAP Projections](umap-projections.md)
+* [Additional Resources](additional-resources.md)
+* [FAQ](faq.md)

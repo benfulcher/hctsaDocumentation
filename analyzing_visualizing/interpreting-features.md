@@ -2,7 +2,7 @@
 
 A typical data analysis procedure might first involve carefully inspecting your data, then thinking about the patterns you might want to capture, then trying to devise an algorithm to capture them (testing the algorithm carefully on simulated data, perhaps, to test its behavior, dependence on noise level, time-series length, sensitivity to low-order trends or other types of stationarity, etc.). But in _hctsa_ we do something somewhat dangerous—apply thousands of methods without even needing to first even look at the data :astonished:
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 A conventional data analysis pipeline starts with the hard work of thinking about the dynamics and carefully selecting time-series analysis methods with deep knowledge of how they work and the assumptions that make their interpretation valid. This hard work is not avoided in _hctsa_, although if you're lucky, _hctsa_ may save you a bunch of work—if it identifies high-performing features, you can focus your energy on interpreting just these. But this hard work comes at the end of an analysis, and is difficult and time-consuming to do well—often involving looking deeply into the algorithms and theory underlying these methods, combined with careful inspection of the data to ensure you are properly interpreting them.
 
@@ -50,7 +50,7 @@ Plotting and inspecting clustered feature–feature correlation plots are crucia
 
 An example is here, were [Bailey et al. (2023)](https://www.biorxiv.org/content/10.1101/2023.06.23.546355v1) identified 3 important groups of features—measuring stationarity of self-correlation properties, stationarity of distributional properties, and global distributional properties—and then go on to interpret each in turn:
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (6).png>)
 
 ## Interpreting individual features
 
