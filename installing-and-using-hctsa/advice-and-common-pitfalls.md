@@ -2,11 +2,25 @@
 description: Thinking about running an hctsa analysis? Read this first.
 ---
 
-# Advice and common pitfalls
+# General advice and common pitfalls
 
 The typical data analysis pipeline starts with inspecting and understanding the data, processing it in accordance with the questions of interest (and to be consistent with the assumptions of the analysis methods that will be applied), and then formulating and testing appropriate analysis methods. A typical _hctsa_ pipeline inverts this process: many analysis methods are first applied, and then their results are  interpreted.
 
 Good practice involves thinking carefully about this full _hctsa_ pipeline, including the type of questions and interpretations that are sought from it, and thus how the data are to be prepared, and how the results can be interpreted accurately.
+
+## Preparing for an analysis
+
+_hctsa_ automates some parts of a time-series analysis pipeline (such as guiding the selection of informative statistical properties in a time-series classification problem), but it does not replace expertise. Careful thought, with understanding of the problem and domain-specific issues are essential in designing how _hctsa_ can be used for a given application, and in properly interpreting its results.
+
+Some general advice before embarking on an _hctsa_ analysis:
+
+1. **What are the data?**
+   * For long, streaming data: **how long** is each time series? _Does this capture the timescale of the problem you care about?_
+   * For continuously evolving processes: At **what rate are the data sampled**? _Does this capture the patterns of interest?_ E.g., if the sampling rate is too high, this can lead to trivially autocorrelated time series such that time-series methods in _hctsa_ will find it challenging to resolve the patterns of interest.
+   * Are the **appropriately processed** (detrended, artifacts removed, …)? This requires careful thought, often with domain expertise, about what problem is being solved. E.g., many time-series analysis algorithms will be dominated by underlying trends if underlying trends in time series are not removed. In general, properties of the data, especially if they're likely to affect many time-series analysis algorithms (like underlying trends, artefactual outliers, etc.) should be removed if they're not informative of the differences you care about distinguishing. See the section below for more information.
+   * **What do they look like?** Addressing the questions above requires you to look at each of the time series to get a sense of the dynamics you're interested in characterizing using time-series features.
+2. **What problem are you trying to solve?** In designing an analysis using _hctsa_, you will need to think about the sample size you have, what effect sizes are expected, what statistical power will you have, etc. E.g., if you only have 5 examples of each of two classes, you will not have the statistical power to pick out individual features from a library of 7000, simple (unregularized) classifiers will be likely to overfit, etc.
+3. **Trial run with a reduced set**. Once you’ve devised a pipeline, it's best to run through it in _hctsa_ but using a _reduced feature set first_ (e.g., the catch22 set), which runs quickly on a laptop and gives you a sense for the process. Once you're satisfied with the analysis pipeline, you can always scale up to the full _hctsa_ library of >7000 features.
 
 ## Data processing
 

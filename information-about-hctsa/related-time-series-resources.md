@@ -7,27 +7,11 @@ cover: >-
 coverY: -139
 ---
 
-# Additional Resources
-
-## 🖥️ Talks and Demos
-
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="https://www.youtube.com/watch?v=c1adfGjof8s"><mark style="color:red;">Youtube live stream</mark></a> of a tutorial session on feature-based time-series analysis tools at Computational Neuroscience Academy 2023, Krakow, Poland.</td><td><a href="https://www.youtube.com/watch?v=c1adfGjof8s">https://www.youtube.com/watch?v=c1adfGjof8s</a></td></tr><tr><td align="center"><a href="https://github.com/benfulcher/hctsaTutorial_BonnEEG">Tutorial on classifying EEG data</a>, check out this <a href="https://youtu.be/YwPX3rWxP_Y"><mark style="color:red;">YouTube video walking through the tutorial</mark></a>; slides for the full talk about analysing neural dynamics using <em>hctsa</em> at CNS 2020 are <a href="https://doi.org/10.6084/m9.figshare.12671900.v1">here</a>. July 2020.</td><td><a href="https://github.com/benfulcher/hctsaTutorial_BonnEEG">https://github.com/benfulcher/hctsaTutorial_BonnEEG</a></td></tr><tr><td align="center">Talk about the importance of comparison for time-series analysis to QMNET: <a href="https://doi.org/10.6084/m9.figshare.12775748.v1"><mark style="color:blue;">Slides</mark></a>, <a href="https://youtu.be/689Nw3RS690"><mark style="color:red;">YouTube</mark></a><mark style="color:red;">.</mark> August 2020.</td><td></td></tr></tbody></table>
-
-## 💾 hctsa datasets and example workflows
-
-There are a range of open datasets with pre-computed _hctsa_ features, as well as some examples of _hctsa_ workflows:
-
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="https://figshare.com/articles/Highly_comparative_time-series_analysis_of_Caenorhabditis_elegans_movement_speed/3863559"><em>C. elegans</em> movement speed data</a> and associated <a href="https://github.com/benfulcher/hctsa_phenotypingWorm">analysis code</a>.</td><td><a href=".gitbook/assets/gr2.png">gr2.png</a></td><td><a href="https://figshare.com/articles/Highly_comparative_time-series_analysis_of_Caenorhabditis_elegans_movement_speed/3863559">https://figshare.com/articles/Highly_comparative_time-series_analysis_of_Caenorhabditis_elegans_movement_speed/3863559</a></td></tr><tr><td align="center"><a href="https://figshare.com/articles/Highly_comparative_time-series_analysis_of_Drosophila_melanogaster_movement_speed/3863553">Drosophila movement speed</a> and associated <a href="https://github.com/benfulcher/hctsa_phenotypingFly">analysis code</a>.</td><td><a href=".gitbook/assets/Screenshot 2024-05-13 at 1.52.13 pm.png">Screenshot 2024-05-13 at 1.52.13 pm.png</a></td><td><a href="https://figshare.com/articles/Highly_comparative_time-series_analysis_of_Drosophila_melanogaster_movement_speed/3863553">https://figshare.com/articles/Highly_comparative_time-series_analysis_of_Drosophila_melanogaster_movement_speed/3863553</a></td></tr><tr><td align="center"><p></p><p><a href="https://figshare.com/articles/dataset/1000_Empirical_Time_series/5436136">1000 empirical time series</a>.</p></td><td><a href=".gitbook/assets/150TS250samples.png">150TS250samples.png</a></td><td><a href="https://figshare.com/articles/dataset/1000_Empirical_Time_series/5436136">https://figshare.com/articles/dataset/1000_Empirical_Time_series/5436136</a></td></tr></tbody></table>
-
-_If you have data to share and host, let me know and I'll add it to this list._&#x20;
-
-***
-
-## 🌟 Related Time Series Resources
+# Related Time-Series Resources
 
 A collection of good resources for time-series analysis (including in other programming languages like python and R) are listed here. See also larger collections of time-series resources, by [Lukasz Mentel](https://github.com/lmmentel/awesome-time-series) and, focused on python: [Max Christ](https://github.com/MaxBenChrist/awesome\_time\_series\_in\_python).
 
-### Time Series Data
+### Time-Series Data
 
 <table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><a href="http://www.comp-engine.org/"><code>CompEngine</code></a></td><td>Accompanying web resource that provides a self-organising database of time-series data. It allows users to upload, explore, and compare thousands of different types of time-series data. </td><td><a href="http://www.comp-engine.org/">http://www.comp-engine.org/</a></td></tr><tr><td align="center"><a href="https://github.com/DynamicsAndNeuralSystems/pyspi"><code>pyspi</code></a></td><td><em>pyspi</em> is a comprehensive python library for computing hundreds of statistics of pairwise interactions (SPIs) directly from multivariate time series (MTS) data.</td><td><a href="https://github.com/DynamicsAndNeuralSystems/pyspi">https://github.com/DynamicsAndNeuralSystems/pyspi</a></td></tr></tbody></table>
 

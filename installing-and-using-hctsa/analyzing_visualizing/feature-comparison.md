@@ -8,7 +8,7 @@ This chapter will give instructions on how you can compare a new time-series ana
 
 The first step is defining the set of features to compare to (here we use the default _hctsa_ library), and the set of time-series data that behavior is going to be assessed on. If you have just developed a new algorithm for time-series analysis and want to see how it performs across a range of interdisciplinary time-series data, then you may want to use a diverse set of time series sampled from across science. This can be easily achieved using our set of 1000 time series, a random selection of 25 such time series are plotted below (only the first 250 samples are plotted to aid visualization):
 
-![](../.gitbook/assets/Empirical1000\_25\_250samples.png)
+![](../../.gitbook/assets/Empirical1000\_25\_250samples.png)
 
 Pre-computed results for a recent version of _hctsa_ can be downloaded from [figshare](https://figshare.com/articles/1000\_Empirical\_Time\_series/5436136) as `HCTSA_Empirical1000.mat`.
 
@@ -77,11 +77,11 @@ TS_SimSearch(7703,'tsOrOps','ops','whatData','HCTSA_merged.mat','whatPlots',{'sc
 
 We find that our feature is reproducing the behavior of the first zero of the autocorrelation function (the first match: `first_zero_ac`; see [Interpreting Features](interpreting-features.md) for more info on how to interpret matching features):
 
-![](<../.gitbook/assets/Screen Shot 2017-09-25 at 18.43.11.png>)
+![](<../../.gitbook/assets/Screen Shot 2017-09-25 at 18.43.11.png>)
 
 The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation coefficients, $$r$$) produced by `TS_SimSearch` provides another visualization of the context of this hot new feature (in this case there are so many highly correlated features, that the matrix doesn't reveal much subtle structure):
 
-![](<../.gitbook/assets/Screen Shot 2017-09-25 at 18.42.09.png>)
+![](<../../.gitbook/assets/Screen Shot 2017-09-25 at 18.42.09.png>)
 
 ### 4. Interpreting
 
@@ -105,13 +105,13 @@ TS_SimSearch(750,'tsOrOps','ops','whatData','HCTSA_Empirical1000.mat','whatPlots
 
 Yielding:
 
-![](../.gitbook/assets/SC\_fastDFA\_scatters.png) ![](../.gitbook/assets/SC\_fastDFA\_matrix.png)
+![](../../.gitbook/assets/SC\_fastDFA\_scatters.png) ![](../../.gitbook/assets/SC\_fastDFA\_matrix.png)
 
 We see that other features in the library indeed have strong relationships to `SC_fastdfa_exponent`, including some unexpected relationships with the stationarity estimate, `StatAvl25`.
 
 Combining the network visualization with scatter plots produces the figures in [our original paper on the empirical structure of time series and their methods](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full) (cf. Sec. 2.4 of the [supplementary text](http://rsif.royalsocietypublishing.org/highwire/filestream/23294/field\_highwire\_adjunct\_files/0/rsif20130048supp1.pdf)), see below:
 
-![](../.gitbook/assets/ApEn\_network.png)
+![](../../.gitbook/assets/ApEn\_network.png)
 
 Specific pairwise relationships can be probed in more detail (visualizing the types of time series that drive any relationship) using `TS_Plot2d`, e.g., as:
 
@@ -125,4 +125,4 @@ annotateParams = struct('n',6); % annotate six time series with the cursor
 TS_Plot2d(featureData,TimeSeries,operationNames,{},annotateParams);
 ```
 
-![](../.gitbook/assets/SC\_fastDFA\_2d.png)
+![](../../.gitbook/assets/SC\_fastDFA\_2d.png)
