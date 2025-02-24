@@ -38,11 +38,11 @@ _as well as:_
 * Connect structural brain connectivity to fMRI dynamics (mouse).
   * &#x20;[📗 _<mark style="color:green;">Chaos</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2017)</mark>](http://aip.scitation.org/doi/10.1063/1.4979281)<mark style="color:green;">.</mark>
 * Connect structural brain connectivity to fMRI dynamics (human).
-  * &#x20;[📗 _<mark style="color:green;">Network Neuroscience</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2020)</mark>](https://doi.org/10.1162/netn\_a\_00151)<mark style="color:green;">.</mark>
+  * &#x20;[📗 _<mark style="color:green;">Network Neuroscience</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2020)</mark>](https://doi.org/10.1162/netn_a_00151)<mark style="color:green;">.</mark>
 * Distinguish time-series patterns for data-mining applications.&#x20;
   * [📗 _<mark style="color:green;">IEEE Trans. Knowl. Data Eng.</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2014)</mark>](http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425)<mark style="color:green;">.</mark>
 * Classify babies with low blood pH from fetal heart rate time series.
-  * [📗 _<mark style="color:green;">34th Ann. Int. Conf. IEEE EMBC</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2012)</mark>](http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=6346629)<mark style="color:green;">.</mark>
+  * [📗 _<mark style="color:green;">34th Ann. Int. Conf. IEEE EMBC</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2012)</mark>](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6346629)<mark style="color:green;">.</mark>
 
 ***
 
@@ -69,19 +69,19 @@ _Here are some highlights:_
 _In addition to:_
 
 * Predict age from resting-state MEG from individual brain regions.
-  * 📙 [_<mark style="color:orange;">Stier et al., bioRxiv</mark>_ <mark style="color:orange;"></mark><mark style="color:orange;">(2024)</mark>](https://doi.org/10.1101/2024.05.09.593348)<mark style="color:orange;">.</mark>
+  * [�](https://ieeexplore.ieee.org/abstract/document/10340663)[ ](#user-content-fn-1)[^1][_<mark style="color:green;">Stier et</mark>_ ](#user-content-fn-1)[^1][_<mark style="color:green;">al., PNAS</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://www.pnas.org/doi/10.1073/pnas.2411098122)
 * Estimate brain age in children from EEG.
   * [📗 _<mark style="color:green;">45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2023)</mark>](https://ieeexplore.ieee.org/abstract/document/10340663)<mark style="color:green;">.</mark>
 * Extract gradients from fMRI _hctsa_ time-series features to understand the relationship between schizophrenia and nicotine dependence.
   * [📗 _<mark style="color:green;">Cerebral Cortex</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2023)</mark>](https://doi.org/10.1093/cercor/bhad030)<mark style="color:green;">.</mark>
-* Classify endogenous (preictal), interictal, and seizure-like (ictal) activity from local field potentials (LFPs) from layers II/III of the primary somatosensory cortex of young mice (using feature selection methods from an initial pool of _hctsa_features).
+* Classify endogenous (preictal), interictal, and seizure-like (ictal) activity from local field potentials (LFPs) from layers II/III of the primary somatosensory cortex of young mice (using feature selection methods from an initial pool of _hcts&#x61;_&#x66;eatures).
   * [📙 _<mark style="color:orange;">SciTePress</mark>_ <mark style="color:orange;"></mark><mark style="color:orange;">(2023)</mark>](https://www.scitepress.org/Papers/2023/116256/)<mark style="color:orange;">.</mark>
 * Distinguish motor-evoked potentials corresponding to multiple sclerosis.
   * [📗 _<mark style="color:green;">Frontiers in Neuroinformatics</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2020)</mark>](https://doi.org/10.3389/fninf.2020.00028)<mark style="color:green;">.</mark>
 
 ***
 
-### 🔬 Medicine**—**General
+### 🔬 Medicin&#x65;**—**&#x47;eneral
 
 _Here are some highlights:_
 
@@ -139,3 +139,6 @@ _in addition to:_
 
 
 
+
+
+[^1]: 
