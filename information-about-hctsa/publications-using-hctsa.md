@@ -89,6 +89,8 @@ _Here are some highlights:_
 
 _in addition to:_
 
+* Predict MS disability progression using time-series features of evoked potential signals
+  * :green\_book: [<mark style="color:green;">Fonteyn et al. International Conference on Machine Learning and Applications (ICMLA). (2025)</mark>](https://doi.org/10.1109/ICMLA61862.2024.00171)<mark style="color:green;">.</mark>
 * Identify sepsis in very low birth weight (<1.5kg) infants from heart rate signals, identifying heart rate characteristics of reduced variability and transient decelerations.
   * [📙 _<mark style="color:orange;">MedRxiv</mark>_ <mark style="color:orange;"></mark><mark style="color:orange;">(2024)</mark>](https://www.medrxiv.org/content/10.1101/2024.02.03.24302230v1)
 * Identify novel heart-rate variability metrics, including `RobustSD`, to create a parsimonious model for cerebral palsy prediction in preterm neonatal intensive care unit patients.
