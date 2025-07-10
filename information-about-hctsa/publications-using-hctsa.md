@@ -35,6 +35,8 @@ We have used _hctsa_ to:
 
 _as well as:_
 
+* Distinguish wake from anesthetized flies.
+  * [📗 <mark style="color:green;">Leung et al.</mark> <mark style="color:green;"></mark>_<mark style="color:green;">PLoS Biology</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://doi.org/10.1371/journal.pbio.3003217)
 * Connect structural brain connectivity to fMRI dynamics (mouse).
   * &#x20;[📗 _<mark style="color:green;">Chaos</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2017)</mark>](http://aip.scitation.org/doi/10.1063/1.4979281)<mark style="color:green;">.</mark>
 * Connect structural brain connectivity to fMRI dynamics (human).
