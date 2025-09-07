@@ -10,7 +10,7 @@ Once mex is set up, the mex functions used in the time-series code repository ca
 
 ## Compiling the _TISEAN_ binaries
 
-Some operations rely on the [_TISEAN_ nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/\~tisean/Tisean\_3.0.1/index.html), which Matlab accesses via the terminal using `system` commands, so the _TISEAN_ binaries _**cannot**_ be installed from within Matlab, but instead must be installed from the command line. If you are running Linux or Mac, we will assume that you are familiar with the command line, while those running Windows will require an alternate method to install _TISEAN_, as explained below.
+Some operations rely on the [_TISEAN_ nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html), which Matlab accesses via the terminal using `system` commands, so the _TISEAN_ binaries _**cannot**_ be installed from within Matlab, but instead must be installed from the command line. If you are running Linux or Mac, we will assume that you are familiar with the command line, while those running Windows will require an alternate method to install _TISEAN_, as explained below.
 
 ### Installing _TISEAN_ on Linux or Mac
 
@@ -23,7 +23,7 @@ $ make
 $ make install
 ```
 
-This should install the _TISEAN_ binaries in your **\~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr`). Additional information about the _TISEAN_ installation process is provided [on the _TISEAN_ website](http://www.mpipks-dresden.mpg.de/\~tisean/Tisean\_3.0.1/index.html).
+This should install the _TISEAN_ binaries in your **\~/bin/** directory (you can instead install into a system-wide directory, **/usr/bin**, for example, by running `./configure –prefix=/usr`). Additional information about the _TISEAN_ installation process is provided [on the _TISEAN_ website](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html).
 
 If installation was successful then you should be able to access the newly-compiled binaries from the commandline, e.g., typing the command `which poincare` should return the path to the _TISEAN_ function `poincare`. Otherwise, you should check that the install directory is in your system path, e.g., by adding the following:
 
@@ -46,7 +46,7 @@ If Matlab’s system paths are set up correctly, this command should return the 
 If you are running Matlab from Windows, you will need a mechanism for Matlab to call `system` commands and find compiled TISEAN binaries. There are two options:
 
 1. **Install** [**Cygwin**](http://www.cygwin.com) **on your machine**. Cygwin provides a Linux distribution-like environment on Windows. Use this environment to compile and install TISEAN (as per the instructions above for Linux or Mac), which will require it to have [C and fortran compilers installed](http://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows/). Matlab will then also need to be launched from Cygwin, using the command: `matlab &`. This instance of Matlab should then be able to call `system` commands through cygwin, including the ability to access the _TISEAN_ binaries.
-2. **Sacrifice operations that rely on **_**TISEAN**_. In total, _TISEAN_-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods (see below on how to explicitly remove them from a computed library).
+2. **Sacrifice operations that rely on&#x20;**_**TISEAN**_. In total, _TISEAN_-based operations account for approximately 300 operations in the operation library. Although they provide important, well-tested implementations of nonlinear time-series analysis methods, it's not the end of the world if you decide it's too much trouble to install and are ok to miss out on these methods (see below on how to explicitly remove them from a computed library).
 
 ### Ignoring _TISEAN_ functions
 
