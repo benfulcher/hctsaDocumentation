@@ -91,6 +91,8 @@ _Here are some highlights:_
 
 _in addition to:_
 
+* Differentiate essential tremor (ET) and tremor-dominant Parkinson's disease (PD)
+  * [ <mark style="color:$success;">Häring et al. Phenotypical Differentiation of Tremor Using Time Series Feature Extraction and Machine Learning,</mark> <mark style="color:$success;"></mark>_<mark style="color:$success;">Movement Disorders</mark>_ <mark style="color:$success;"></mark><mark style="color:$success;">(2025)</mark>](https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.70032)
 * Predict MS disability progression using time-series features of evoked potential signals
   * :green\_book: [<mark style="color:green;">Fonteyn et al. International Conference on Machine Learning and Applications (ICMLA). (2025)</mark>](https://doi.org/10.1109/ICMLA61862.2024.00171)<mark style="color:green;">.</mark>
 * Identify sepsis in very low birth weight (<1.5kg) infants from heart rate signals, identifying heart rate characteristics of reduced variability and transient decelerations.
