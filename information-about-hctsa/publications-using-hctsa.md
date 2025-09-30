@@ -91,6 +91,8 @@ _Here are some highlights:_
 
 _in addition to:_
 
+* Predicting hospital length of stay from vital signs
+  * Juez–Garcia et al. [<mark style="color:green;">Continuous vital sign monitoring for predicting hospital length of stay: a feasibility study in chronic obstructive pulmonary disease and chronic heart failure patients</mark>](https://sjtrem.biomedcentral.com/articles/10.1186/s13049-025-01458-4) <mark style="color:green;">(2025).</mark>
 * Differentiate essential tremor (ET) and tremor-dominant Parkinson's disease (PD)
   * [ <mark style="color:$success;">Häring et al. Phenotypical Differentiation of Tremor Using Time Series Feature Extraction and Machine Learning,</mark> <mark style="color:$success;"></mark>_<mark style="color:$success;">Movement Disorders</mark>_ <mark style="color:$success;"></mark><mark style="color:$success;">(2025)</mark>](https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.70032)
 * Predict MS disability progression using time-series features of evoked potential signals
