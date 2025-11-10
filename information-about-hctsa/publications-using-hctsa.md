@@ -70,6 +70,8 @@ _Here are some highlights:_
 
 _In addition to:_
 
+* Detect associations between brain region dynamics and traits like cognitive ability and substance use.
+  * [<mark style="color:$success;">� Tian et al.,</mark> <mark style="color:$success;"></mark>_<mark style="color:$success;">Nature Human Behavior</mark>_ <mark style="color:$success;"></mark><mark style="color:$success;">(2025).</mark>](https://www.nature.com/articles/s41562-025-02332-0)
 * Predict age from resting-state MEG from individual brain regions.
   * [�](https://ieeexplore.ieee.org/abstract/document/10340663)[ ](#user-content-fn-1)[^1][_<mark style="color:green;">Stier et</mark>_ ](#user-content-fn-1)[^1][_<mark style="color:green;">al., PNAS</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://www.pnas.org/doi/10.1073/pnas.2411098122)
 * Estimate brain age in children from EEG.
