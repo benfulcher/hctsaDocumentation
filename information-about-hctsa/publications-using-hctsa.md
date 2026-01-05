@@ -70,6 +70,8 @@ _Here are some highlights:_
 
 _In addition to:_
 
+* Predict depth of anesthesia from heart-rate dynamics.
+  * [<mark style="color:$success;">Qian et al., Br J Anaesth (2025).</mark>](https://doi.org/10.1016/j.bja.2025.09.053)
 * Detect associations between brain region dynamics and traits like cognitive ability and substance use.
   * [<mark style="color:$success;">� Tian et al.,</mark> <mark style="color:$success;"></mark>_<mark style="color:$success;">Nature Human Behavior</mark>_ <mark style="color:$success;"></mark><mark style="color:$success;">(2025).</mark>](https://www.nature.com/articles/s41562-025-02332-0)
 * Predict age from resting-state MEG from individual brain regions.
@@ -78,7 +80,7 @@ _In addition to:_
   * [📗 _<mark style="color:green;">45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2023)</mark>](https://ieeexplore.ieee.org/abstract/document/10340663)<mark style="color:green;">.</mark>
 * Extract gradients from fMRI _hctsa_ time-series features to understand the relationship between schizophrenia and nicotine dependence.
   * [📗 _<mark style="color:green;">Cerebral Cortex</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2023)</mark>](https://doi.org/10.1093/cercor/bhad030)<mark style="color:green;">.</mark>
-* Classify endogenous (preictal), interictal, and seizure-like (ictal) activity from local field potentials (LFPs) from layers II/III of the primary somatosensory cortex of young mice (using feature selection methods from an initial pool of _hcts&#x61;_&#x66;eatures).
+* Classify endogenous (preictal), interictal, and seizure-like (ictal) activity from local field potentials (LFPs) from layers II/III of the primary somatosensory cortex of young mice (using feature selection methods from an initial pool of _hctsa_ features).
   * [📙 _<mark style="color:orange;">SciTePress</mark>_ <mark style="color:orange;"></mark><mark style="color:orange;">(2023)</mark>](https://www.scitepress.org/Papers/2023/116256/)<mark style="color:orange;">.</mark>
 * Distinguish motor-evoked potentials corresponding to multiple sclerosis.
   * [📗 _<mark style="color:green;">Frontiers in Neuroinformatics</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2020)</mark>](https://doi.org/10.3389/fninf.2020.00028)<mark style="color:green;">.</mark>
