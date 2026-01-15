@@ -35,6 +35,10 @@ The following should be considered:
 * _**Denoising**_. If your data contain high-frequency measurement noise, the analyst should consider removing it. For example, using a filter (e.g., moving average), wavelet denoising, or using a phase-space reconstruction (e.g., cf. [Schreiber's method](https://link.aps.org/doi/10.1103/PhysRevE.47.2401)).
 * _**Downsampling**_. Features assume that the data are sampled at a rate that properly resolves the temporal patterns of interest. If your data are over-sampled, then many features will be sensitive to this dominating autocorrelation structure, and will be less sensitive to interesting patterns in the data. In this case, you can consider downsampling your data, for which there are many heuristics (e.g., cf. [Toker et al.](https://www.nature.com/articles/s42003-019-0715-9)).
 
+#### **A quick note on how sampling rate is treated in&#x20;**_**hctsa**_
+
+Note that in designing _hctsa_, we made the decision to represent a time series as a sequence of numbers, such that say heart rates could be compared alongside say (yearly) tree-ring time-series data, or say (quarterly) economic time-series data. As such, methods that rely on quantifying patterns on an absolute timescale (i.e., specifiable in seconds) rather than a relative timescale (i.e., specifiable in number of samples) is not included in any _hctsa_ features \[and similarly any frequency-domain features that rely on specific frequency bands). When analyzing data of a given modality with relevant timescales of interest, these can be incorporated by in custom additional (domain-specific) features.
+
 ## Interpreting Features
 
 #### Checking for simpler explanations
