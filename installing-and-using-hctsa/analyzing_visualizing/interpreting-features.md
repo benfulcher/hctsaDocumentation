@@ -16,26 +16,26 @@ Sometimes you will run `TS_TopFeatures` and find no features that significantly 
 
 But other times you will obtain a long list of statistically significant (after multiple hypothesis correction) features (e.g., from `TS_TopFeatures`) with values that significantly distinguish the groups you care about (individuals with some disease diagnosis compared to that of healthy controls). In cases like this, the next step is to obtain some understanding of what's happening.
 
-Consider a long and kinda gnarly list, that is quite hard to make sense of. This is a typical situation because the features names in _hctsa_ are long and typically hard to interpret directly. Like perhaps:
+Consider a long and kinda gnarly list, that is quite hard to make sense of. This is a typical situation because the features names in _hctsa_ are long and typically hard to interpret directly. Like perhaps (note: this is an illustrative example captured from an older version of the operation library -- some specific feature names below may since have been renamed or removed as operations are periodically curated, but the general shape of the output, and the walkthrough below, still apply):
 
 ```
-[3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
-[3067] FC_LocalSimple_median3_taures (forecasting) -- 58.14%
-[2748] EN_mse_1-10_2_015_sampen_s3 (entropy,sampen,mse) -- 54.10%
+[1970] FC_LocalSimple_mean3_ac1 (forecasting) -- 59.97%
+[2006] FC_LocalSimple_median3_ac1 (forecasting) -- 58.14%
+[2748] EN_MSE_1-10_2_015_sampen_s3 (entropy,sampen,mse) -- 54.10%
 [7338] MF_armax_2_2_05_1_AR_1 (model) -- 53.71%
 [7339] MF_armax_2_2_05_1_AR_2 (model) -- 53.31%
-[3185] DN_CompareKSFit_uni_psx (distribution,ksdensity,raw,locdep) -- 52.14%
+[3185] DN_CompareKSFit_uni_psx (distribution,ksdensity,raw,locationDependent) -- 52.14%
 [6912] MF_steps_ahead_ar_best_6_ac1_3 (model,prediction,arfit) -- 52.11%
-[6564] WL_coeffs_db3_4_med_coeff (wavelet) -- 52.01%
+[6564] WL_Coeffs_db3_4_med_coeff (wavelet) -- 52.01%
 [4552] SP_Summaries_fft_logdev_fpoly2csS_p1 (spectral) -- 51.57%
-[6634] WL_dwtcoeff_sym2_5_noisestd_l5 (wavelet,dwt) -- 51.48%
-[930] DN_FitKernelSmoothraw_entropy (distribution,ksdensity,entropy,raw,spreaddep) -- 51.37%
-[6574] WL_coeffs_db3_5_med_coeff (wavelet) -- 51.26%
-[6630] WL_dwtcoeff_sym2_5_noisestd_l4 (wavelet,dwt) -- 51.04%
+[6634] WL_DWTCoeff_sym2_5_noisestd_l5 (wavelet,dwt) -- 51.48%
+[930] DN_FitKernelSmoothraw_entropy (distribution,ksdensity,entropy,raw,spreadDependent) -- 51.37%
+[6574] WL_Coeffs_db3_5_med_coeff (wavelet) -- 51.26%
+[6630] WL_DWTCoeff_sym2_5_noisestd_l4 (wavelet,dwt) -- 51.04%
 [1891] CO_StickAngles_y_ac2_all (correlation) -- 50.85%
-[16] rms (distribution,location,raw,locdep,spreaddep) -- 50.83%
+[16] rms (distribution,location,raw,locationDependent,spreadDependent) -- 50.83%
 [6965] MF_steps_ahead_arma_3_1_6_rmserr_6 (model,prediction) -- 50.83%
-[2747] EN_mse_1-10_2_015_sampen_s2 (entropy,sampen,mse) -- 50.35%
+[2747] EN_MSE_1-10_2_015_sampen_s2 (entropy,sampen,mse) -- 50.35%
 [4201] SC_FluctAnal_mag_2_dfa_50_2_logi_ssr (scaling) -- 50.34%
 [6946] MF_steps_ahead_ss_best_6_meandiffrms (model,prediction) -- 50.33%
 ```
@@ -56,7 +56,7 @@ An example is here, were [Bailey et al. (2023)](https://www.biorxiv.org/content/
 
 When such a group of high-performing features capturing a common time-series property has been identified, how can we start to interpret and understand what each individual feature is measuring?
 
-Some features in the group may be easy to interpret directly. For example, in the list above `rms` is straightforward to interpret directly: it is simply the root-mean-square of the distribution of time-series values. Others have clues in the name (e.g., features starting with `WL_coeffs` are to do with measuring wavelet coefficients, features starting with `EN_mse` correspond to measuring the multiscale entropy ('mse'), and features starting with `FC_LocalSimple_mean` are related to time-series forecasting using local means of the time series).
+Some features in the group may be easy to interpret directly. For example, in the list above `rms` is straightforward to interpret directly: it is simply the root-mean-square of the distribution of time-series values. Others have clues in the name (e.g., features starting with `WL_Coeffs` are to do with measuring wavelet coefficients, features starting with `EN_MSE` correspond to measuring the multiscale entropy ('mse'), and features starting with `FC_LocalSimple_mean` are related to time-series forecasting using local means of the time series).
 
 Below we outline a procedure for how a user can go from a time-series feature selected by _hctsa_ towards a deeper understanding of the type of algorithm that feature is derived from, how that algorithm performs across the dataset, and thus how it can provide interpretable information about your specific time-series dataset.
 
@@ -76,32 +76,32 @@ The simplest way of getting a quick idea of what sort of property a feature migh
 To find more specific detailed information about a feature, beyond just a broad categorical label of the literature from which it was derived, the next step is find and inspect the code file that generates the feature of interest. For example, say we were interested in the top performing feature in the list above:
 
 ```
-    [3016] FC_LocalSimple_mean3_taures (forecasting) -- 59.97%
+    [1970] FC_LocalSimple_mean3_ac1 (forecasting) -- 59.97%
 ```
 
-We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction). We can use the feature ID (`3016`) provided in square brackets to get information from the `Operations` metadata table:
+We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction). We can use the feature ID (`1970`) provided in square brackets to get information from the `Operations` metadata table:
 
 ```
->> Operations(Operations.ID==3016,:)
-ID                 Name                   Keywords                CodeString              MasterID
-____    _____________________________    _____________    _____________________________    ________
+>> Operations(Operations.ID==1970,:)
+ID               Name                 Keywords              CodeString            MasterID
+____    ________________________    _____________    _______________________    ________
 
-3016    'FC_LocalSimple_mean3_taures'    'forecasting'    'FC_LocalSimple_mean3.taures'    836
+1970    'FC_LocalSimple_mean3_ac1'    'forecasting'    'FC_LocalSimple_mean3.ac1'    496
 ```
 
-Inspecting the text before the dot, `.`, in the `CodeString` field (`FC_LocalSimple_mean3`) tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature. Whereas the text following the dot, `.`, in the `CodeString` field (`taures`), tells us the field of the output structure produced by the Matlab function that was run.
+Inspecting the text before the dot, `.`, in the `CodeString` field (`FC_LocalSimple_mean3`) tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature. Whereas the text following the dot, `.`, in the `CodeString` field (`ac1`), tells us the field of the output structure produced by the Matlab function that was run.
 
 We can use the `MasterID` to get more information about the code that was run using the `MasterOperations` metadata table:
 
 ```
->> MasterOperations(MasterOperations.ID==836,:)
-ID             Label                         Code            
-___    ______________________    ____________________________
+>> MasterOperations(MasterOperations.ID==496,:)
+ID             Label                            Code
+___    ______________________    ________________________________
 
-836    'FC_LocalSimple_mean3'    'FC_LocalSimple(y,'mean',3)'
+496    'FC_LocalSimple_mean3'    'FC_LocalSimple(x_z,'mean',3)'
 ```
 
-This tells us that the code used to produce our feature was `FC_LocalSimple(y,'mean',3)`. We can get information about this function in the command line by running a `help` command:
+This tells us that the code used to produce our feature was `FC_LocalSimple(x_z,'mean',3)` (`x_z` being the z-scored input time series that _hctsa_ passes to every operation). We can get information about this function in the command line by running a `help` command:
 
 ```
 >> help FC_LocalSimple
@@ -131,18 +131,22 @@ We can also inspect the code in the function `FC_LocalSimple` directly for more 
 
 Inspecting the code file, we see that running `FC_LocalSimple(y,'mean',3)` does forecasting using local estimates of the time-series mean (since the second input to `FC_LocalSimple`, `forecastMeth` is set to `'mean'`), using the previous three time-series values to make the prediction (since the third input to `FC_LocalSimple`, `trainLength` is set to `3`).
 
-To understand what the specific output quantity from this code is that came up as being highly informative in our `TS_TopFeatures` analysis, we need to look for the output labeled `taures` of the output structure produced by `FC_LocalSimple`. We discover the following relevant lines of code in `FC_LocalSimple.m`:
+To understand what the specific output quantity from this code is that came up as being highly informative in our `TS_TopFeatures` analysis, we need to look for the output labeled `ac1` of the output structure produced by `FC_LocalSimple`. We discover that this is produced via a shared residual-analysis routine, `MF_ResidualAnalysis`, that `FC_LocalSimple.m` calls on its prediction residuals:
 
 ```
-% Autocorrelation structure of the residuals:
-out.ac1 = CO_AutoCorr(res,1,'Fourier');
-out.ac2 = CO_AutoCorr(res,2,'Fourier');
-out.taures = CO_FirstZero(res,'ac');
+% Report the residuals through the shared contract:
+residOut = MF_ResidualAnalysis(res, y, 'core');
+fields = fieldnames(residOut);
+for k = 1:length(fields)
+    out.(fields{k}) = residOut.(fields{k});
+end
 ```
 
-This shows us that, after doing the local mean prediction, `FC_LocalSimple` then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions (the outputs labeled `ac1`, `ac2`, and our output of interest: `taures`).
+Inspecting `MF_ResidualAnalysis.m` (cf. `help MF_ResidualAnalysis`) shows us that its `'core'` output level includes an `ac1` field: the lag-1 autocorrelation of the residuals, computed as `CO_AutoCorr(res,1,'Fourier')`.
 
-The code shows that this `taures` output computes the `CO_FirstZero` of the residuals, which measures the first zero of the autocorrelation function (e.g., cf `help CO_FirstZero`). When the local mean prediction still leaves a lot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_taures`, will thus take a high value.
+This shows us that, after doing the local mean prediction, `FC_LocalSimple` then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions -- our output of interest, `ac1`, being the simplest of these (higher-lag and ratio-based variants, like `ac2` and `taurat`, are also available in the shared contract).
+
+When the local mean prediction still leaves a lot of autocorrelation structure in the residuals, our feature, `FC_LocalSimple_mean3_ac1`, will thus take a high value.
 
 ### Visualizing outputs
 
@@ -151,7 +155,7 @@ Once we've seen the code that was used to produce a feature, and started to thin
 For example, we can run the following:
 
 ```
-TS_FeatureSummary(3016,'raw',true);
+TS_FeatureSummary(1970,'raw',true);
 ```
 
 which produces a plot like that shown below. We have run this on a dataset containing noisy sine waves, labeled 'noisy' (red) and periodic signals without noise, labeled 'periodic' (blue):
