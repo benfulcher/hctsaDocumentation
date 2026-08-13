@@ -4,7 +4,7 @@ While the global structure of a time-series dataset can be investigated by plott
 
 The _hctsa_ framework provides a way to easily compute distances between pairs of time series, e.g., as a Euclidean distance between their normalized feature vectors. This allows very different time series (in terms of their origin, their method of recording and measurement, and their number of samples) to be compared straightforwardly according to their properties, measured by the algorithms in our _hctsa_ library.
 
-For this, we use the `TS_SimSearch` function, specifying the id of the time series of interest (i.e., the `ID` field of the `TimeSeries` structure) with the first input and the number of neighbors with the 'numNeighbors' input specifier (default: 20). By default, data is loaded from `HCTSA_N.loc`, but a custom source can be specified using the `'whatDataFile'` input specifier (e.g., `TS_SimSearch('whatDataFile','HCTSA_custom.mat')`).
+For this, we use the `TS_SimSearch` function, specifying the id of the time series of interest (i.e., the `ID` field of the `TimeSeries` structure) with the first input and the number of neighbors with the 'numNeighbors' input specifier (default: 20). By default, data is loaded from `HCTSA_N.mat`, but a custom source can be specified using the `'whatData'` input specifier (e.g., `TS_SimSearch('whatData','HCTSA_custom.mat')`).
 
 After specifying the target and how many neighbors to retrieve, `TS_SimSearch` outputs the list of neighbors and their distances to screen, and the function also provides a range of plotting options to visualize the neighbors. The plots to produce are specified as a cell using the 'whatPlots' input.
 
@@ -22,7 +22,7 @@ The specified target time series (`ID = 1`) is shown as a white star, and all 14
 
 Pairwise distances are computed between all pairs of time series (as a Euclidean distance between their feature vectors), and plotted using color, from low (red = more similar pairs of time series) to high (blue = more different pairs of time series).
 
-Because this dataset contains 3 classes that were previously labeled (using [`TS_LabelGroups`](grouping.md) as: `TS_LabelGroups({'seizure','eyesOpen','eyesClosed'})`), the function shows these class assignments using color labels to the left of the plot (purple, green, and orange in this case).
+Because this dataset contains 3 classes that were previously labeled (using [`TS_LabelGroups`](grouping.md) as: `TS_LabelGroups('raw',{'seizure','eyesOpen','eyesClosed'})`), the function shows these class assignments using color labels to the left of the plot (purple, green, and orange in this case).
 
 In this case we see that the purple and green classes are relatively similar under this distance metric (eyes open and eyes closed), whereas the orange time series (seizure) are distinguished.
 

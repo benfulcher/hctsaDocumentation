@@ -32,7 +32,7 @@ Next you want to evaluate the code on all of the time series in your dataset. Fo
 TS_Compute;
 ```
 
-As described [here](https://github.com/benfulcher/hctsaDocumentation/tree/71794292cac125d96004eacd0c1934c6feacd36b/running_computations/README.md), or, for larger datasets, using a script to regularly save back to the local file \(cf. `sample_runscript_matlab`\).
+As described [here](../calculating/running_computations.md), or, for larger datasets, using a script to regularly save back to the local file \(cf. `sample_runscript_matlab`\).
 
 Having run your calculations, you may then want to label your data using the keywords you provided in the case that you have labeled groups of time series:
 

@@ -2,7 +2,7 @@
 
 When running _hctsa_ analyses, often you want to take subsets of time series \(to look in more detail at a subset of your data\) or subsets of operations \(to explore the behavior of different feature subsets\), or combine multiple subsets of data together \(e.g., as additional data arrive\).
 
-The _hctsa_ package contains a range of functions for these types of tasks, working directly with _hctsa_ .mat files, and are described below. Note that these types of tasks are easier to manage when _hctsa_ data are stored in a [mySQL database](../overview_mysql_database/).
+The _hctsa_ package contains a range of functions for these types of tasks, working directly with _hctsa_ .mat files, and are described below.
 
 ## Retrieving time series \(or operations\) of interest by matching on assigned keywords using `TS_GetIDs`
 
@@ -28,34 +28,34 @@ Note that to get a quick impression of the unique time-series keywords present i
 
 Sometimes you may want to remove a time series from an _hctsa_ dataset because the data was not properly processed, for example. Or one operation may have produced errors because of a missing toolbox reference, or you may have altered the code for an operation, and want to clear the stored results from previous calculations.
 
-For example, often you want to remove from your operation library operations that are dependent on the location of the data \(e.g., its mean: `'locdep'`\), that only operate on positive-only time series \(`'posOnly'`\), that require the TISEAN package \(`'tisean'`\), or that are stochastic \(i.e., they give different results when repeated, `'stochastic'`\).
+For example, often you want to remove from your operation library operations that are dependent on the location of the data \(e.g., its mean: `'locationDependent'`\), that only operate on positive-only time series \(`'posOnly'`\), that require the TISEAN package \(`'tisean'`\), or that are stochastic \(i.e., they give different results when repeated, `'stochastic'`\).
 
-The function `TS_LocalClearRemove` achieves these tasks when working directly with .mat files \(NB: if using a mySQL database, [`SQL_ClearRemove`](../overview_mysql_database/clearing_or_removing_data.md) should be used instead\).
+The function `TS_LocalClearRemove` achieves these tasks when working directly with .mat files.
 
 `TS_LocalClearRemove` loads in a an _hctsa_ .mat data file, clears or removes the specified time series or operations, and then writes the result back to the file.
 
 _Example 1_: Clear all computed data from time series with IDs 1:5 from `HCTSA.mat` \(specifying `'raw'`\):
 
 ```text
-TS_LocalClearRemove('ts',1:5,0,'raw');
+TS_LocalClearRemove('raw','ts',1:5,false);
 ```
 
 _Example 2_: Remove all operations with the keyword 'tisean' \(that depend on the [TISEAN package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html)\) from `HCTSA.mat`:
 
 ```text
-TS_LocalClearRemove('ops',TS_GetIDs('tisean','raw','ops'),1,'raw');
+TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);
 ```
 
 _Example 3_: Remove all operations that require positive-only data \(the `'posOnly'` keyword\) from `HCTSA.mat`:
 
 ```text
-TS_LocalClearRemove('ops',TS_GetIDs('posOnly','raw','ops'),1,'raw');
+TS_LocalClearRemove('raw','ops',TS_GetIDs('posOnly','raw','ops'),true);
 ```
 
-_Example 4_: Remove all operations that are location dependent \(the `'locdep'` keyword\) from `HCTSA.mat`:
+_Example 4_: Remove all operations that are location dependent \(the `'locationDependent'` keyword\) from `HCTSA.mat`:
 
 ```text
-TS_LocalClearRemove('ops',TS_GetIDs('locdep','raw','ops'),1,'raw');
+TS_LocalClearRemove('raw','ops',TS_GetIDs('locationDependent','raw','ops'),true);
 ```
 
 See the documentation in the function file for additional details about the inputs to `TS_LocalClearRemove`.
@@ -90,7 +90,7 @@ _Example_: combine _hctsa_ datasets stored in the files `HCTSA_healthy.mat` and 
 TS_Combine('HCTSA_healthy.mat','HCTSA_disease.mat',false,false,'HCTSA_combined.mat')
 ```
 
-The third input, `compare_tsids`, controls the behavior of the function in combining time series. By setting this to 1, `TS_Combine` assumes that the TimeSeries IDs are comparable between the datasets \(e.g., most common when using a [_mySQL_ database to store _hctsa_ data](../overview_mysql_database/)\), and thus filters out duplicates so that the resulting _hctsa_ dataset contains a unique set of time series. By setting this to 0 \(default\), the output will contain a union of time series present in each of the two _hctsa_ datasets. In the case that duplicate TimeSeries IDs exist in the combination file, a new index will be generated in the combined file \(where IDs assigned to time series are re-assigned as unique integers using `TS_ReIndex`\).
+The third input, `compare_tsids`, controls the behavior of the function in combining time series. By setting this to `true`, `TS_Combine` assumes that the TimeSeries IDs are comparable between the datasets \(e.g., because both were produced by the same `TS_Init` run, just computed/subset separately\), and thus filters out duplicates so that the resulting _hctsa_ dataset contains a unique set of time series. By setting this to `false` \(default\), the output will contain a union of time series present in each of the two _hctsa_ datasets. In the case that duplicate TimeSeries IDs exist in the combination file, a new index will be generated in the combined file \(where IDs assigned to time series are re-assigned as unique integers using `TS_ReIndex`\).
 
-In combining operations, this function works differently when data have been stored in a unified [_mySQL_ database](../overview_mysql_database/), in which case operation IDs can be compared meaningfully and combined as an intersection. However, when _hctsa_ datasets have been generated using `TS_Init`, the function will check that the same set of operations have been used in both files.
+In combining operations, `TS_Combine` checks that the same set of operations \(by name\) has been used in both `hctsa` datasets, since operation IDs are only guaranteed to be meaningfully comparable when both files were generated using `TS_Init` with the same feature set.
 

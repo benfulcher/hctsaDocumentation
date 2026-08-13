@@ -33,7 +33,7 @@ annotateParams.userInput = false; % points not selected by user but allocated ra
 annotateParams.textAnnotation = false; % don't display names of annotated time series
 
 % Generate a plot using these settings:
-TS_PlotLowDim('norm','pca',showDistributions,'',annotateParams);
+TS_PlotLowDim('norm','pca',showDistributions,annotateParams);
 ```
 
 which yields:
@@ -44,10 +44,10 @@ which yields:
 
 If groups of time series have been specified (using `TS_LabelGroups`), then these are automatically recognized by `TS_PlotLowDim`, which will then distinguish the labeled groups in the resulting 2-dimensional annotated time-series plot.
 
-Consider the sample dataset containing 20 periodic signals with additive noise (given the keyword **noisy** in the database), and 20 purely periodic signals (given the keyword **periodic** in the database). After retrieving and normalizing the data, we store the two groups in the metadata for the normalized dataset **HCTSA\_N.mat**:
+Consider the sample dataset containing 20 periodic signals with additive noise (given the keyword **noisy**), and 20 purely periodic signals (given the keyword **periodic**). After retrieving and normalizing the data, we store the two groups in the metadata for the normalized dataset **HCTSA\_N.mat**:
 
 ```
-TS_LabelGroups('norm',{'noisy','periodic'},'ts');
+TS_LabelGroups('norm',{'noisy','periodic'},true);
 ```
 
 ```
@@ -64,7 +64,7 @@ Running the following:
 ```
 annotateParams = struct('n',6); % annotate 6 time series
 showDistributions = true; % plot marginal distributions
-TS_PlotLowDim('norm','pca',showDistributions,'',annotateParams);
+TS_PlotLowDim('norm','pca',showDistributions,annotateParams);
 ```
 
 The function then directs you to select 6 points to annotate time series to, producing the following:

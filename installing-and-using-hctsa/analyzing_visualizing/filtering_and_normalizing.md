@@ -28,17 +28,17 @@ Analysis can be performed on the data contained in `HCTSA_N.mat` in the knowledg
 
 ## Filtering features using `TS_FilterData`
 
-It is often useful to check whether the feature-based classification results of a given analysis is driven by 'trivial' types of features that do not depend on the dynamical properties of the data, e.g., features sensitive to time-series length, location \(e.g., mean\), or spread \(e.g., variance\). Because these features are labeled as `'lengthdep'`, `'locdep'`, and `'spreaddep'`, you can easily filter these out to check the robustness of your analysis.
+It is often useful to check whether the feature-based classification results of a given analysis is driven by 'trivial' types of features that do not depend on the dynamical properties of the data, e.g., features sensitive to time-series length, location \(e.g., mean\), or spread \(e.g., variance\). Because these features are labeled as `'lengthDependent'`, `'locationDependent'`, and `'spreadDependent'`, you can easily filter these out to check the robustness of your analysis.
 
 An example:
 
 ```text
 % Get the IDs of length-dependent features from the `HCTSA.mat` file:
-[ID_lengthDep,ID_notlengthDep] = TS_GetIDs('lengthdep','raw','ops');
+[ID_lengthDep,ID_notlengthDep] = TS_GetIDs('lengthDependent','raw','ops');
 
 % Generate a new file without these features, called 'HCTSA_locFilt':
 TS_FilterData('raw',[],ID_notlengthDep,'HCTSA_locFilt.mat');
 ```
 
-You could use the same template to filter `'locdep'` or `'spreaddep'` features \(or any other combination of keyword labels\). You can then go ahead with analyzing the filtered HCTSA dataset as above, except using your new filename, `HCTSA_locFilt`.
+You could use the same template to filter `'locationDependent'` or `'spreadDependent'` features \(or any other combination of keyword labels\). You can then go ahead with analyzing the filtered HCTSA dataset as above, except using your new filename, `HCTSA_locFilt`.
 

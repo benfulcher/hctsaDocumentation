@@ -63,7 +63,7 @@ Here we see that length-dependent features are contributing to accurate classifi
 
 ## Comparing to lower-dimensional feature spaces
 
-The complexity of the time-series analysis literature is necessary for strong classification results to different degrees, depending on the task. You can quickly assess how accurately a smaller number of reduced components (e.g., Principal Components) can better classify your dataset using `TS_Classify_LowDim`:
+The complexity of the time-series analysis literature is necessary for strong classification results to different degrees, depending on the task. You can quickly assess how accurately a smaller number of reduced components (e.g., Principal Components) can better classify your dataset using `TS_ClassifyLowDim`:
 
 ![](../../.gitbook/assets/TS\_Classify\_LowDim.png)
 

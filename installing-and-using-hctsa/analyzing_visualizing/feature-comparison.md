@@ -2,7 +2,7 @@
 
 One of the key goals of highly comparative time-series analysis, is to allow unbiased methodological comparison between the vast literature of time-series analysis tools developed for different applications. By representing features in terms of their outputs across a time-series dataset, the context of a given feature can be assessed by searching the database for features with similar behavior. The search can be done using a diverse range of real and model-generated data, or using a more specific dataset if this is more appropriate for a given application (e.g., looking just at EEG signals). Just like [similar time series to a target can be retrieved and visualized](sim\_search.md), similar features to a given target feature can also be retrieved using `TS_SimSearch`.
 
-This chapter will give instructions on how you can compare a new time-series analysis feature to our library of over 7000 time-series features using _hctsa_. We assume that the reader has [installed _hctsa_](../setup/), which will be required to work with files and compute features.
+This chapter will give instructions on how you can compare a new time-series analysis feature to our library of over 7400 time-series features using _hctsa_. We assume that the reader has [installed _hctsa_](../setup/), which will be required to work with files and compute features.
 
 ## Setting a data context
 
@@ -43,7 +43,7 @@ where we have given this feature two keywords: `hot` and `science`.
 So now we are able to initiate a new _hctsa_ calculation, specifying custom code calls (_master_) and features to extract from the code call (_features_), as:
 
 ```
-TS_Init('INP_1000ts.mat','INP_hot_master.txt','INP_hot_features.txt',true,'HCTSA_hot.mat');
+TS_Init('INP_1000ts.mat',{'INP_hot_master.txt','INP_hot_features.txt'},true,'HCTSA_hot.mat');
 ```
 
 This generates a new file, `HCTSA_hot.mat`, containing information about the 1000 time series, and the new hot feature, `hot_feature1`, which can then be computed as:
@@ -54,7 +54,7 @@ TS_Compute(false,[],[],'missing','HCTSA_hot.mat');
 
 ### 2. Combining
 
-So now we have both a context of the behavior of a library of >7000 features on 1000 diverse time series, and we also have the behavior of our three hot new features. It is time to combine them and look for inter-relationships!
+So now we have both a context of the behavior of a library of >7400 features on 1000 diverse time series, and we also have the behavior of our three hot new features. It is time to combine them and look for inter-relationships!
 
 ```
 TS_Combine('HCTSA_Empirical1000.mat','HCTSA_hot.mat',true,true,'HCTSA_merged.mat');
@@ -85,22 +85,22 @@ The pairwise distance matrix (distances are $$1-|r|$$, for Pearson correlation c
 
 ### 4. Interpreting
 
-In this case, the hot new feature wasn't so hot: it was highly (linearly) correlated to many existing features (including the simple zero-crossing of the autocorrelation function, `first_zero_ac`), even across a highly diverse time-series dataset. However, if you have more luck and come up with a hot new feature that shows distinctive (and useful) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops.txt` and `INP_ops.txt` in the **Database** directory of _hctsa_), as explained [here](https://github.com/benfulcher/hctsaDocumentation/tree/230d1b1b62d275fb646ed62335f9bc545af84ebb/inputfiles.md). You might even celebrate your success by sharing your new feature with the community, by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa)!! :satisfied:
+In this case, the hot new feature wasn't so hot: it was highly (linearly) correlated to many existing features (including the simple zero-crossing of the autocorrelation function, `first_zero_ac`), even across a highly diverse time-series dataset. However, if you have more luck and come up with a hot new feature that shows distinctive (and useful) performance, then it can be incorporated in the default set of features used by _hctsa_ by adding the necessary master and feature definitions (i.e., the text in `INP_hot_master.txt` and the text in `INP_hot_features.txt`) to the library files (`INP_mops_hctsa.txt` and `INP_ops_hctsa.txt` in the **FeatureSets** directory of _hctsa_), as explained [here](../calculating/input_files.md). You might even celebrate your success by sharing your new feature with the community, by sending a [Pull Request](https://help.github.com/articles/using-pull-requests/) to the [hctsa github repository](https://github.com/benfulcher/hctsa)!! :satisfied:
 
 ## _EXAMPLE 2_: Determining the relationship between an existing _hctsa_ feature and the rest of the library.
 
 If using a set of 1000 time series, then this is easy because all the data is already computed in `HCTSA_Empirical1000.mat` on [figshare](https://figshare.com/articles/1000\_Empirical\_Time\_series/5436136) :relaxed:
 
-For example, say we want to find neighbors to the `fastdfa` algorithm from [Max Little's website](http://www.maxlittle.net/software/index.php). This algorithm is already implemented in _hctsa_ in the code `SC_fastdfa.m` as the feature `SC_fastdfa_exponent`. We can find the ID of this feature by finding the matching row in the Operations table (`ID=750`):
+For example, say we want to find neighbors to the `fastdfa` algorithm from [Max Little's website](http://www.maxlittle.net/software/index.php). This algorithm is already implemented in _hctsa_ in the code `SC_FastDFA.m` as the feature `SC_FastDFA_exponent`. We can find the ID of this feature by finding the matching row in the Operations table:
 
 ```
-Operations(strcmp(Operations.Name,'SC_fastdfa_exponent'),:)
+Operations(strcmp(Operations.Name,'SC_FastDFA_exponent'),:)
 ```
 
 and then find similar features using [`TS_SimSearch`](sim\_search.md), e.g., as:
 
 ```
-TS_SimSearch(750,'tsOrOps','ops','whatData','HCTSA_Empirical1000.mat','whatPlots',{'scatter','matrix','network'})
+TS_SimSearch(5862,'tsOrOps','ops','whatData','HCTSA_Empirical1000.mat','whatPlots',{'scatter','matrix','network'})
 ```
 
 Yielding:
@@ -116,7 +116,12 @@ Combining the network visualization with scatter plots produces the figures in [
 Specific pairwise relationships can be probed in more detail (visualizing the types of time series that drive any relationship) using `TS_Plot2d`, e.g., as:
 
 ```
-theFeatureIDs = [750,544]; % IDs for the two features of interest
+theFeatureIDs = [5862,544]; % IDs for the two features of interest -- 5862 is SC_FastDFA_exponent;
+                             % 544 was the paired feature (e.g., a StatAv-family feature) in the
+                             % original analysis below, but operation IDs have shifted substantially
+                             % since then, so look up the current ID for your feature of interest
+                             % (e.g., via Operations(strcmp(Operations.Name,'...'),:)) rather than
+                             % assuming 544 still points to the same feature.
 [TS_DataMat,TimeSeries,Operations] = TS_LoadData('HCTSA_Empirical1000.mat'); % load data
 featureData = TS_DataMat(:,theFeatureIDs); % take the subset
 operationNames = Operations.Name(theFeatureIDs); % names of the two features

@@ -56,13 +56,13 @@ Computing features for full time-series datasets can be time consuming, especial
 
 ### Computation time scaling
 
-The first thing to think about is how the time taken to compute 7749 features of v0.93 of _hctsa_ scales with the length of time series in your dataset (see plot below). The figure compares results using a single core (e.g., `TS_Compute(false)`) to results using a 16-core machine, with parallelization enabled (e.g., `TS_Compute(true)`).
+The first thing to think about is how the time taken to compute the default feature set (7469 features, as of the current release) scales with the length of time series in your dataset (see plot below). The figure compares results using a single core (e.g., `TS_Compute(false)`) to results using a 16-core machine, with parallelization enabled (e.g., `TS_Compute(true)`).
 
 ![](../../.gitbook/assets/computeScaling.png)
 
 Times may vary across on individual machines, but the above plot can be used to estimate the computation time per time series, and thus help decide on an appropriate computation strategy for a given dataset.
 
-Note that if computation times are too long for the computational resources at hand, one can always choose a reduced set of features, rather than the full set of >7000, to get a preliminary understanding of the dataset. One such reduced set of features is in `INP_ops_reduced.txt`. We plan to reduced additional reduced feature sets, determined according to different criteria, in future.
+Note that if computation times are too long for the computational resources at hand, one can always choose a reduced set of features, rather than the full default set, to get a preliminary understanding of the dataset -- e.g., the `catch22` feature set (`TS_Init(...,'catch22')`) is a much smaller, canonical subset designed for this purpose.
 
 ### On a single machine
 
@@ -74,7 +74,3 @@ If only a single machine is available for computation, there are a couple of opt
 ### On a distributed compute cluster using Matlab
 
 Code for running distributed _hctsa_ computations on a cluster (using pbs or slurm schedulers) is [here](https://github.com/benfulcher/distributed\_hctsa). The strategy is as follows: with a distributed computing setup, a local Matlab file (`HCTSA.mat`) can be split into smaller pieces using `TS_Subset`, which outputs a new data file for a particular subset of your data, e.g., `TS_Subset('raw',1:100)` will generate a new file, `HCTSA_subset.mat` that contains just time series with IDs from 1 to 100. Computing features for time series in each such subset can then be run on a distributed computing setup. For example, with a different compute node computing a different subset (by queuing batch jobs that each work on a given subset of time series). After all subsets have been computed, the results are recombined into a single `HCTSA.mat` file using `TS_Combine` commands.
-
-### Using mySQL to facilitate distributed computing
-
-Distributing feature computations on a large-scale distributed computing setup can be better suited to a linked mySQL database, especially for datasets that grow with time, as new time series can be easily added to the database. In this case, computation proceeds similarly to above, where shell scripts on a distributed cluster computing environment can be used to distribute jobs across cores, with all individual jobs writing to a centralized _mySQL_ server. A set of Matlab code that generates an appropriately formatted mySQL database and interfaces with the database to facilitate _hctsa_ feature computation is included with the software package, and is described in detail [here](../overview\_mysql\_database/).

@@ -21,7 +21,7 @@ In the _hctsa_ framework, master operations, operations, and time series are sto
 
 For a given _hctsa_ analysis, the user must specify a set of code to evaluate \(_master operations_\), their associated individual outputs to measure \(_operations_\), and a set of time series to evaluate the features on \(_time series_\).
 
-We provide a default library of over 7700 _operations_ \(derived from approximately 1000 unique _master operations_\). This can be customized, and additional pieces of code can also be added to the repository.
+We provide a default library of 7469 _operations_ \(derived from 1024 unique _master operations_\). This can be customized, and additional pieces of code can also be added to the repository.
 
 ### The results of a _hctsa_ analysis
 
@@ -37,7 +37,7 @@ Each `HCTSA*.mat` file includes the tables described above: for **TimeSeries** \
 
 ## Quality labels
 
-_Quality labels_ are used to indicate when operations take non-real values, or when fatal errors were encountered. Quality labels are stored in the **Quality** column of the **Results** table in the _mySQL_ database, and in local Matlab files as the **TS\_Quality** matrix.
+_Quality labels_ are used to indicate when operations take non-real values, or when fatal errors were encountered. Quality labels are stored in local Matlab files as the **TS\_Quality** matrix.
 
 When the quality label is nonzero, this indicates that a _special-valued output_ occurred. In this case, the output value of the operation is set to zero, as a convention, and the quality label codes the special output value:
 
