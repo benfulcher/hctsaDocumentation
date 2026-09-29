@@ -35,6 +35,8 @@ We have used _hctsa_ to:
 
 _as well as:_
 
+* Profile brain dynamics during anesthesia across six species, from nematodes to humans.
+  * [📗 <mark style="color:green;">Luppi et al.,</mark> _<mark style="color:green;">Nature Neuroscience</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.1038/s41593-026-02460-4)
 * Distinguish wake from anesthetized flies.
   * [📗 <mark style="color:green;">Leung et al.</mark> <mark style="color:green;"></mark>_<mark style="color:green;">PLoS Biology</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://doi.org/10.1371/journal.pbio.3003217)
 * Connect structural brain connectivity to fMRI dynamics (mouse).
