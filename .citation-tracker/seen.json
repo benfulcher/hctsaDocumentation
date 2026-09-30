@@ -1,0 +1,2925 @@
+{
+ "tool": "hctsa",
+ "entries": {
+  "doi:10.1002/aisy.202401150": {
+   "doi": "10.1002/aisy.202401150",
+   "openalex": "W4411620463",
+   "title": "Highly Efficient Classification of Time‐Series Based on Resistive Switching Cluster‐Assembled Materials",
+   "year": 2025,
+   "authors": [
+    "Profumo",
+    "Borghi",
+    "Angì",
+    "Maschietto"
+   ],
+   "venue": "Advanced Intelligent Systems",
+   "type": "journal",
+   "pubdate": "2025-06-25",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1002/mds.70032": {
+   "doi": "10.1002/mds.70032",
+   "title": "Phenotypical Differentiation of Tremor Using Time Series Feature Extraction and Machine Learning",
+   "year": 2025,
+   "authors": [
+    "Häring",
+    "Selzam",
+    "Martin‐Rodríguez",
+    "Schwingenschuh"
+   ],
+   "venue": "Movement Disorders",
+   "type": "journal",
+   "openalex": "W4414032737",
+   "pmid": "40913350",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 101,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1007/978-3-032-04555-3_36": {
+   "doi": "10.1007/978-3-032-04555-3_36",
+   "openalex": "W4414131890",
+   "title": "A Subject-Independent Stress Detection Model Based on Temporal Feature Disentanglement",
+   "year": 2025,
+   "authors": [
+    "Zeng",
+    "Duan",
+    "Huang",
+    "Zhang"
+   ],
+   "venue": "Lecture notes in computer science",
+   "type": "journal",
+   "pubdate": "2025-09-11",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1007/978-3-032-15535-1_10": {
+   "doi": "10.1007/978-3-032-15535-1_10",
+   "openalex": "W7130660521",
+   "title": "Time Series Extrinsic Regression Algorithms for Forecasting Long Time Series with a Short Horizon",
+   "year": 2026,
+   "authors": [
+    "Banwell",
+    "Bagnall"
+   ],
+   "venue": "Lecture notes in computer science",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1007/978-3-032-15535-1_8": {
+   "doi": "10.1007/978-3-032-15535-1_8",
+   "openalex": "W7130651761",
+   "title": "Unsupervised Feature Construction for Time Series Anomaly Detection - An Evaluation",
+   "year": 2026,
+   "authors": [
+    "Hamon",
+    "Lemaire",
+    "Nair-Benrekia",
+    "Berlemont"
+   ],
+   "venue": "Lecture notes in computer science",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1007/978-3-032-16708-8_16": {
+   "doi": "10.1007/978-3-032-16708-8_16",
+   "openalex": "W7155218332",
+   "title": "Using Temporal Features to Improve Accuracy in Multivariate Pattern Analysis (MVPA) of M/EEG Data",
+   "year": 2026,
+   "authors": [
+    "Morgani",
+    "Goddard",
+    "Batista"
+   ],
+   "venue": "Communications in computer and information science",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1007/978-3-319-68765-0_27": {
+   "doi": "10.1007/978-3-319-68765-0_27",
+   "title": "Towards Automatic Evaluation of Asphalt Irregularity Using Smartphone’s Sensors",
+   "year": 2017,
+   "authors": [
+    "Souza",
+    "Cherman",
+    "Rossi",
+    "Souza"
+   ],
+   "venue": "Lecture notes in computer science",
+   "type": "journal",
+   "openalex": "W2764147769",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1007/978-981-96-3294-7_35": {
+   "doi": "10.1007/978-981-96-3294-7_35",
+   "openalex": "W4409125183",
+   "title": "Evaluating Feature Importance in the Context of Simulation-Based Inference for Cortical Circuit Parameter Estimation",
+   "year": 2025,
+   "authors": [
+    "Sandron",
+    "Valero",
+    "García",
+    "Mancini"
+   ],
+   "venue": "Lecture notes in computer science",
+   "type": "journal",
+   "pubdate": "2025-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1007/978-981-96-4279-3_8": {
+   "doi": "10.1007/978-981-96-4279-3_8",
+   "openalex": "W4409239408",
+   "title": "Bidirectional Information Fusion Time Series Transformer for Telecom Fraud Detection",
+   "year": 2025,
+   "authors": [
+    "Jiang",
+    "Liu",
+    "Lin",
+    "Cui"
+   ],
+   "venue": "Communications in computer and information science",
+   "type": "journal",
+   "pubdate": "2025-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1007/978-981-96-8183-9_16": {
+   "doi": "10.1007/978-981-96-8183-9_16",
+   "openalex": "W4411437779",
+   "title": "Revisit Time Series Classification Benchmark: The Impact of Temporal Information for Classification",
+   "year": 2025,
+   "authors": [
+    "Zhang",
+    "Batista",
+    "Kanhere"
+   ],
+   "venue": "Lecture notes in computer science",
+   "type": "journal",
+   "pubdate": "2025-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1007/s00180-025-01703-5": {
+   "doi": "10.1007/s00180-025-01703-5",
+   "openalex": "W7130818192",
+   "title": "Enhancing univariate time series forecasting: a general tree-based model selection approach",
+   "year": 2026,
+   "authors": [
+    "Stroilă"
+   ],
+   "venue": "Computational Statistics",
+   "type": "journal",
+   "pubdate": "2026-02-21",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.9,
+   "evidence": "'utilized the catch22 library for feature extraction, which is a refined subset of the hctsa feature library'",
+   "note": "candidate for the catch22 page"
+  },
+  "doi:10.1007/s10618-019-00647-x": {
+   "doi": "10.1007/s10618-019-00647-x",
+   "title": "catch22: CAnonical Time-series CHaracteristics",
+   "year": 2019,
+   "authors": [
+    "Lubba",
+    "Sethi",
+    "Knaute",
+    "Schultz"
+   ],
+   "venue": "Data Mining and Knowledge Discovery",
+   "type": "journal",
+   "openalex": "W2913571826",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Methods Papers",
+   "page_line": 26,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1007/s10618-024-01085-0": {
+   "doi": "10.1007/s10618-024-01085-0",
+   "openalex": "W4407574880",
+   "title": "Proximity forest 2.0: a new effective and scalable similarity-based classifier for time series",
+   "year": 2025,
+   "authors": [
+    "Tan",
+    "Herrmann",
+    "Salehi",
+    "Webb"
+   ],
+   "venue": "Data Mining and Knowledge Discovery",
+   "type": "journal",
+   "pubdate": "2025-02-14",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.9,
+   "evidence": "Proximity Forest 2.0; hctsa cited as background on feature-based approaches"
+  },
+  "doi:10.1007/s10618-025-01089-4": {
+   "doi": "10.1007/s10618-025-01089-4",
+   "openalex": "W4408091617",
+   "title": "Multilayer horizontal visibility graphs for multivariate time series analysis",
+   "year": 2025,
+   "authors": [
+    "Silva",
+    "Silva",
+    "Ribeiro",
+    "Silva"
+   ],
+   "venue": "Data Mining and Knowledge Discovery",
+   "type": "journal",
+   "pubdate": "2025-03-03",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.9,
+   "evidence": "Multilayer visibility graphs; Fulcher & Jones cited as background on time-series features"
+  },
+  "doi:10.1007/s10618-025-01098-3": {
+   "doi": "10.1007/s10618-025-01098-3",
+   "openalex": "W4409449339",
+   "title": "TSRF-Dist: a novel time series distance based on extremely randomized canonical interval forests",
+   "year": 2025,
+   "authors": [
+    "Azzari",
+    "Bicego",
+    "Combi",
+    "Cracco"
+   ],
+   "venue": "Data Mining and Knowledge Discovery",
+   "type": "journal",
+   "pubdate": "2025-04-15",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.9,
+   "evidence": "Uses CATCH22 features; hctsa cited only as the 7658-feature source library",
+   "note": "candidate for the catch22 page"
+  },
+  "doi:10.1007/s11740-026-01441-7": {
+   "doi": "10.1007/s11740-026-01441-7",
+   "openalex": "W7160553061",
+   "title": "Structured representation of simulation and annotation data for machine learning in forming technologies",
+   "year": 2026,
+   "authors": [
+    "Schumann",
+    "Moske",
+    "Wüst",
+    "Divo"
+   ],
+   "venue": "Production Engineering",
+   "type": "journal",
+   "pubdate": "2026-05-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "full text fetched but not yet adjudicated",
+   "note": "pending review"
+  },
+  "doi:10.1007/s12539-026-00817-8": {
+   "doi": "10.1007/s12539-026-00817-8",
+   "openalex": "W7131814098",
+   "pmid": "41758277",
+   "title": "A Framework Integrating Spiking Cortical Circuit Modeling and Simulation-Based Inference to Probe Biomarkers of Cortical Dysfunction in Alzheimer’s Disease",
+   "year": 2026,
+   "authors": [
+    "Sánchez",
+    "Valero",
+    "García",
+    "Rodríguez-González"
+   ],
+   "venue": "Interdisciplinary Sciences Computational Life Sciences",
+   "type": "journal",
+   "pubdate": "2026-02-27",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "full text fetched but not yet adjudicated",
+   "note": "pending review"
+  },
+  "doi:10.1007/s41060-024-00710-x": {
+   "doi": "10.1007/s41060-024-00710-x",
+   "openalex": "W4406218900",
+   "title": "Localized global models using autoencoder-based clustering to forecast related time series",
+   "year": 2025,
+   "authors": [
+    "Abbasimehr",
+    "Noshad"
+   ],
+   "venue": "International Journal of Data Science and Analytics",
+   "type": "journal",
+   "pubdate": "2025-01-09",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1016/j.accpm.2021.101015": {
+   "doi": "10.1016/j.accpm.2021.101015",
+   "title": "Computational signatures for post-cardiac arrest trajectory prediction: Importance of early physiological time series",
+   "year": 2021,
+   "authors": [
+    "Kim",
+    "Nguyen",
+    "Jin",
+    "Tamby"
+   ],
+   "venue": "Anaesthesia Critical Care & Pain Medicine",
+   "type": "journal",
+   "openalex": "W4200450447",
+   "pmid": "34968747",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.addma.2023.103810": {
+   "doi": "10.1016/j.addma.2023.103810",
+   "title": "Localized keyhole pore prediction during laser powder bed fusion via multimodal process monitoring and X-ray radiography",
+   "year": 2023,
+   "authors": [
+    "Gorgannejad",
+    "Martin",
+    "Nicolino",
+    "Strantza"
+   ],
+   "venue": "Additive manufacturing",
+   "type": "journal",
+   "openalex": "W4387344689",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.bja.2025.09.053": {
+   "doi": "10.1016/j.bja.2025.09.053",
+   "title": "Heart rate dynamics predict anaesthetic depth: a compact machine learning model",
+   "year": 2025,
+   "authors": [
+    "Qian",
+    "Xiao",
+    "Luo",
+    "Song"
+   ],
+   "venue": "British Journal of Anaesthesia",
+   "type": "journal",
+   "openalex": "W4416445617",
+   "pmid": "41271473",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 74,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.bspc.2025.108153": {
+   "doi": "10.1016/j.bspc.2025.108153",
+   "openalex": "W4410798394",
+   "title": "Interpretability and accuracy of machine learning algorithms for biomedical time series analysis – a scoping review",
+   "year": 2025,
+   "authors": [
+    "Jović",
+    "Frid",
+    "Brkić",
+    "Cifrek"
+   ],
+   "venue": "Biomedical Signal Processing and Control",
+   "type": "journal",
+   "pubdate": "2025-05-28",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1016/j.clinph.2025.2110937": {
+   "doi": "10.1016/j.clinph.2025.2110937",
+   "openalex": "W4412644094",
+   "pmid": "40714439",
+   "title": "Prediction of response to transcranial magnetic stimulation treatment for depression using EEG and machine learning",
+   "year": 2025,
+   "authors": [
+    "Bailey",
+    "Fulcher",
+    "Arns",
+    "Fitzgerald"
+   ],
+   "venue": "Clinical Neurophysiology",
+   "type": "journal",
+   "pubdate": "2025-07-24",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.97,
+   "ours": true,
+   "section": "Applications Papers",
+   "evidence": "Published version of the medRxiv preprint already carded on the page (Bailey, Fulcher, Arns, Fitzgerald et al.)",
+   "note": "PREPRINT UPDATE: replaces the 10.1101/2023.10.24.23297492 card; no new bullet needed",
+   "on_page": true
+  },
+  "doi:10.1016/j.conb.2026.103263": {
+   "doi": "10.1016/j.conb.2026.103263",
+   "openalex": "W7204640443",
+   "pmid": "42667866",
+   "title": "Neural mechanisms underlying the sensory and sensorimotor learning of birdsong",
+   "year": 2026,
+   "authors": [
+    "Woolley",
+    "Sakata"
+   ],
+   "venue": "Current Opinion in Neurobiology",
+   "type": "journal",
+   "pubdate": "2026-08-29",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1016/j.cub.2025.05.008": {
+   "doi": "10.1016/j.cub.2025.05.008",
+   "openalex": "W4411237286",
+   "pmid": "40513571",
+   "title": "Humans have nasal respiratory fingerprints",
+   "year": 2025,
+   "authors": [
+    "Soroka",
+    "Ravia",
+    "Snitz",
+    "Honigstein"
+   ],
+   "venue": "Current Biology",
+   "type": "journal",
+   "pubdate": "2025-06-12",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "confidence": 0.4,
+   "evidence": "Current Biology paywalled; 'nasal respiratory fingerprints' plausibly uses hctsa but unverified"
+  },
+  "doi:10.1016/j.enbuild.2019.05.028": {
+   "doi": "10.1016/j.enbuild.2019.05.028",
+   "title": "A hybrid model for appliance classification based on time series features",
+   "year": 2019,
+   "authors": [
+    "Liu",
+    "Wu",
+    "Yu"
+   ],
+   "venue": "Energy and Buildings",
+   "type": "journal",
+   "openalex": "W2944008045",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.enbuild.2019.07.019": {
+   "doi": "10.1016/j.enbuild.2019.07.019",
+   "title": "What's in the box?! Towards explainable machine learning applied to non-residential building smart meter classification",
+   "year": 2019,
+   "authors": [
+    "Miller"
+   ],
+   "venue": "Energy and Buildings",
+   "type": "journal",
+   "openalex": "W2960959326",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.ins.2025.123059": {
+   "doi": "10.1016/j.ins.2025.123059",
+   "openalex": "W7117703372",
+   "title": "Scalable variational Bayesian change-point segmentation and parsimonious clustering for generalizable time-series structure discovery with uncertainty quantification",
+   "year": 2025,
+   "authors": [
+    "Anjaria"
+   ],
+   "venue": "Information Sciences",
+   "type": "journal",
+   "pubdate": "2025-12-31",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1016/j.jhydrol.2023.129579": {
+   "doi": "10.1016/j.jhydrol.2023.129579",
+   "title": "Reconstruction of a spatially seamless, daily SMAP (SSD_SMAP) surface soil moisture dataset from 2015 to 2021",
+   "year": 2023,
+   "authors": [
+    "Yang",
+    "Wang"
+   ],
+   "venue": "Journal of Hydrology",
+   "type": "journal",
+   "openalex": "W4367321684",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "⛰️ Geoscience",
+   "page_line": 144,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.jmatprotec.2022.117656": {
+   "doi": "10.1016/j.jmatprotec.2022.117656",
+   "title": "Sensor fusion of pyrometry and acoustic measurements for localized keyhole pore identification in laser powder bed fusion",
+   "year": 2022,
+   "authors": [
+    "Tempelman",
+    "Wachtor",
+    "Flynn",
+    "Depond"
+   ],
+   "venue": "Journal of Materials Processing Technology",
+   "type": "journal",
+   "openalex": "W4281739937",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.neunet.2023.12.007": {
+   "doi": "10.1016/j.neunet.2023.12.007",
+   "title": "Uncovering a stability signature of brain dynamics associated with meditation experience using massive time-series feature extraction",
+   "year": 2023,
+   "authors": [
+    "Bailey",
+    "Fulcher",
+    "Caldwell",
+    "Hill"
+   ],
+   "venue": "Neural Networks",
+   "type": "journal",
+   "openalex": "W4389373363",
+   "pmid": "38091761",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.sleep.2022.06.013": {
+   "doi": "10.1016/j.sleep.2022.06.013",
+   "title": "Beyond traditional sleep scoring: Massive feature extraction and data-driven clustering of sleep time series",
+   "year": 2022,
+   "authors": [
+    "Decat",
+    "Walter",
+    "Koh",
+    "Sribanditmongkol"
+   ],
+   "venue": "Sleep Medicine",
+   "type": "journal",
+   "openalex": "W4283213862",
+   "pmid": "35779380",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1016/j.tins.2025.06.003": {
+   "doi": "10.1016/j.tins.2025.06.003",
+   "openalex": "W4412774196",
+   "pmid": "40744776",
+   "title": "Integrating and interpreting brain maps",
+   "year": 2025,
+   "authors": [
+    "Hansen",
+    "Mišić"
+   ],
+   "venue": "Trends in Neurosciences",
+   "type": "journal",
+   "pubdate": "2025-07-31",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1029/2024ea003966": {
+   "doi": "10.1029/2024ea003966",
+   "openalex": "W4408329794",
+   "title": "Interpretable Machine Learning Biosignature Detection From Ocean Worlds Analogue CO 2 Isotopologue Data",
+   "year": 2025,
+   "authors": [
+    "Clough",
+    "Poian",
+    "Major",
+    "Seyler"
+   ],
+   "venue": "Earth and Space Science",
+   "type": "journal",
+   "pubdate": "2025-03-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1038/s41390-023-02853-2": {
+   "doi": "10.1038/s41390-023-02853-2",
+   "title": "Heart rate patterns predicting cerebral palsy in preterm infants",
+   "year": 2023,
+   "authors": [
+    "Letzkus",
+    "Picavia",
+    "Lyons",
+    "Brandberg"
+   ],
+   "venue": "Pediatric Research",
+   "type": "journal",
+   "openalex": "W4387996580",
+   "pmid": "37891365",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 107,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41467-020-15778-9": {
+   "doi": "10.1038/s41467-020-15778-9",
+   "title": "Stress gates an astrocytic energy reservoir to impair synaptic plasticity",
+   "year": 2020,
+   "authors": [
+    "Murphy‐Royal",
+    "Johnston",
+    "Boyce",
+    "Díaz‐Castro"
+   ],
+   "venue": "Nature Communications",
+   "type": "journal",
+   "openalex": "W3018483640",
+   "pmid": "32332733",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧫 Cellular Neuroscience",
+   "page_line": 61,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41467-020-20581-7": {
+   "doi": "10.1038/s41467-020-20581-7",
+   "title": "Non-invasive suppression of essential tremor via phase-locked disruption of its temporal coherence",
+   "year": 2021,
+   "authors": [
+    "Schreglmann",
+    "Wang",
+    "Peach",
+    "Li"
+   ],
+   "venue": "Nature Communications",
+   "type": "journal",
+   "openalex": "W3120559597",
+   "pmid": "33441542",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41467-023-41689-6": {
+   "doi": "10.1038/s41467-023-41689-6",
+   "title": "Neurophysiological signatures of cortical micro-architecture",
+   "year": 2023,
+   "authors": [
+    "Shafiei",
+    "Fulcher",
+    "Voytek",
+    "Satterthwaite"
+   ],
+   "venue": "Nature Communications",
+   "type": "journal",
+   "openalex": "W4387043781",
+   "pmid": "37752115",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41514-023-00129-x": {
+   "doi": "10.1038/s41514-023-00129-x",
+   "title": "An ensemble learning model for continuous cognition assessment based on resting-state EEG",
+   "year": 2024,
+   "authors": [
+    "Sun",
+    "Sun",
+    "Shen",
+    "Li"
+   ],
+   "venue": "npj Aging",
+   "type": "journal",
+   "openalex": "W4390499202",
+   "pmid": "38167843",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41540-025-00527-9": {
+   "doi": "10.1038/s41540-025-00527-9",
+   "openalex": "W4410240801",
+   "pmid": "40346107",
+   "title": "A Python toolbox for neural circuit parameter inference",
+   "year": 2025,
+   "authors": [
+    "Valero",
+    "Rodríguez-González",
+    "Montobbio",
+    "Casal"
+   ],
+   "venue": "npj Systems Biology and Applications",
+   "type": "journal",
+   "pubdate": "2025-05-09",
+   "first_seen": "2026-09-22",
+   "verdict": "B",
+   "confidence": 0.7,
+   "section": "Neuroimaging",
+   "evidence": "ncpi toolbox 'integrated hctsa' as one of two optional feature libraries alongside catch22; hctsa is an integration, not the basis of the paper's results"
+  },
+  "doi:10.1038/s41562-025-02332-0": {
+   "doi": "10.1038/s41562-025-02332-0",
+   "title": "Spontaneous brain regional dynamics contribute to generalizable brain–behaviour associations",
+   "year": 2025,
+   "authors": [
+    "Tian",
+    "Peng",
+    "Liu",
+    "Shafiei"
+   ],
+   "venue": "Nature Human Behaviour",
+   "type": "journal",
+   "openalex": "W4415692900",
+   "pmid": "41168426",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 76,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41586-024-07440-x": {
+   "doi": "10.1038/s41586-024-07440-x",
+   "title": "Distinct µ-opioid ensembles trigger positive and negative fentanyl reinforcement",
+   "year": 2024,
+   "authors": [
+    "Chaudun",
+    "Python",
+    "Liu",
+    "Hiver"
+   ],
+   "venue": "Nature",
+   "type": "journal",
+   "openalex": "W4398201142",
+   "pmid": "38778097",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧫 Cellular Neuroscience",
+   "page_line": 61,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41593-020-0591-0": {
+   "doi": "10.1038/s41593-020-0591-0",
+   "title": "Paraventricular nucleus CRH neurons encode stress controllability and regulate defensive behavior selection",
+   "year": 2020,
+   "authors": [
+    "Daviu",
+    "Füzesi",
+    "Rosenegger",
+    "Rasiah"
+   ],
+   "venue": "Nature Neuroscience",
+   "type": "journal",
+   "openalex": "W3005833620",
+   "pmid": "32066984",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧫 Cellular Neuroscience",
+   "page_line": 61,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41593-025-02091-1": {
+   "doi": "10.1038/s41593-025-02091-1",
+   "openalex": "W4415611784",
+   "pmid": "41152637",
+   "title": "Falling asleep follows a predictable bifurcation dynamic",
+   "year": 2025,
+   "authors": [
+    "Li",
+    "Ilina",
+    "Peach",
+    "Wei"
+   ],
+   "venue": "Nature Neuroscience",
+   "type": "journal",
+   "pubdate": "2025-10-28",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.8,
+   "evidence": "hctsa appears only in the reference list of this sleep-bifurcation paper"
+  },
+  "doi:10.1038/s41598-021-02537-z": {
+   "doi": "10.1038/s41598-021-02537-z",
+   "title": "A study on the impact of the users’ characteristics on the performance of wearable fall detection systems",
+   "year": 2021,
+   "authors": [
+    "A.Santoyo-Ramón",
+    "Casilari",
+    "Cano"
+   ],
+   "venue": "Scientific Reports",
+   "type": "journal",
+   "openalex": "W3217657661",
+   "pmid": "34836975",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 111,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s41746-021-00551-z": {
+   "doi": "10.1038/s41746-021-00551-z",
+   "title": "Discovery of signatures of fatal neonatal illness in vital signs using highly comparative time-series analysis",
+   "year": 2022,
+   "authors": [
+    "Niestroy",
+    "Moorman",
+    "Levinson",
+    "Manir"
+   ],
+   "venue": "npj Digital Medicine",
+   "type": "journal",
+   "openalex": "W4225696749",
+   "pmid": "35039624",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s42003-024-05819-0": {
+   "doi": "10.1038/s42003-024-05819-0",
+   "title": "Macroscale intrinsic dynamics are associated with microcircuit function in focal and generalized epilepsies",
+   "year": 2024,
+   "authors": [
+    "Yang",
+    "Zhou",
+    "Peng",
+    "Meng"
+   ],
+   "venue": "Communications Biology",
+   "type": "journal",
+   "openalex": "W4391431386",
+   "pmid": "38302632",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1038/s42003-025-07794-6": {
+   "doi": "10.1038/s42003-025-07794-6",
+   "openalex": "W4408348082",
+   "pmid": "40075150",
+   "title": "A continuous approach to explain insomnia and subjective-objective sleep discrepancy",
+   "year": 2025,
+   "authors": [
+    "Herzog",
+    "Crosbie",
+    "Aloulou",
+    "Hanif"
+   ],
+   "venue": "Communications Biology",
+   "type": "journal",
+   "pubdate": "2025-03-12",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.9,
+   "evidence": "hctsa appears only in the reference list"
+  },
+  "doi:10.1038/s42003-025-09165-7": {
+   "doi": "10.1038/s42003-025-09165-7",
+   "openalex": "W4417363108",
+   "pmid": "41402437",
+   "title": "Feature similarity, a sensitive method to capture the functional interaction of brain regions and networks to support flexible behavior",
+   "year": 2025,
+   "authors": [
+    "Wang",
+    "Lyu",
+    "Krieger‐Redwood",
+    "Souter"
+   ],
+   "venue": "Communications Biology",
+   "type": "journal",
+   "pubdate": "2025-12-16",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.98,
+   "section": "Neuroimaging",
+   "evidence": "'FS was implemented using more than 7000 features from the hctsa library'; 'normalized feature matrix (400 parcels x ~7000 features x 4 ...)'"
+  },
+  "doi:10.1063/1.4979281": {
+   "doi": "10.1063/1.4979281",
+   "title": "Structural connectome topology relates to regional BOLD signal dynamics in the mouse brain",
+   "year": 2017,
+   "authors": [
+    "Sethi",
+    "Zerbi",
+    "Wenderoth",
+    "Fornito"
+   ],
+   "venue": "Chaos An Interdisciplinary Journal of Nonlinear Science",
+   "type": "journal",
+   "openalex": "W2949321751",
+   "pmid": "28456172",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 41,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1063/5.0250399": {
+   "doi": "10.1063/5.0250399",
+   "openalex": "W4407917905",
+   "pmid": "39998165",
+   "title": "Peptide classification from statistical analysis of nanopore sensing experiments",
+   "year": 2025,
+   "authors": [
+    "Hoßbach",
+    "Tovey",
+    "Ensslen",
+    "Behrends"
+   ],
+   "venue": "The Journal of Chemical Physics",
+   "type": "journal",
+   "pubdate": "2025-02-25",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1073/pnas.2019336118": {
+   "doi": "10.1073/pnas.2019336118",
+   "title": "CODY enables quantitatively spatiotemporal predictions on in vivo gut microbial variability induced by diet intervention",
+   "year": 2021,
+   "authors": [
+    "Geng",
+    "Ji",
+    "Li",
+    "López‐Isunza"
+   ],
+   "venue": "Proceedings of the National Academy of Sciences",
+   "type": "conference",
+   "openalex": "W3138933545",
+   "pmid": "33753486",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🦠 Medicine—Pathology",
+   "page_line": 121,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1073/pnas.2411098122": {
+   "doi": "10.1073/pnas.2411098122",
+   "title": "Temporal autocorrelation is predictive of age—An extensive MEG time-series analysis",
+   "year": 2025,
+   "authors": [
+    "Stier",
+    "Balestrieri",
+    "Fehring",
+    "Focke"
+   ],
+   "venue": "Proceedings of the National Academy of Sciences",
+   "type": "conference",
+   "openalex": "W4407762195",
+   "pmid": "39977317",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 78,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1088/0967-3334/35/7/1357": {
+   "doi": "10.1088/0967-3334/35/7/1357",
+   "title": "Feature selection using genetic algorithms for fetal heart rate analysis",
+   "year": 2014,
+   "authors": [
+    "Liang",
+    "Redman",
+    "Payne",
+    "Georgieva"
+   ],
+   "venue": "Physiological Measurement",
+   "type": "journal",
+   "openalex": "W2066879661",
+   "pmid": "24854596",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 115,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1088/1402-4896/ae6a49": {
+   "doi": "10.1088/1402-4896/ae6a49",
+   "openalex": "W7160526176",
+   "title": "Automating the classification of stellar activity: an unsupervised machine learning pipeline for large-scale surveys",
+   "year": 2026,
+   "authors": [
+    "Ferreira",
+    "Gonçalves",
+    "Borin",
+    "Rosa"
+   ],
+   "venue": "Physica Scripta",
+   "type": "journal",
+   "pubdate": "2026-05-07",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1088/1741-2552/adff39": {
+   "doi": "10.1088/1741-2552/adff39",
+   "openalex": "W4413656854",
+   "pmid": "40856471",
+   "title": "Unveiling functional heterogeneity in anatomical functional areas: a framework for fine-grained functional connectivity analysis of wide-field calcium imaging data",
+   "year": 2025,
+   "authors": [
+    "Li",
+    "Xu",
+    "Liu",
+    "Zhan"
+   ],
+   "venue": "Journal of Neural Engineering",
+   "type": "journal",
+   "pubdate": "2025-08-26",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "confidence": 0.4,
+   "evidence": "J. Neural Engineering paywalled; unverified"
+  },
+  "doi:10.1093/braincomms/fcad330": {
+   "doi": "10.1093/braincomms/fcad330",
+   "title": "Limited clinical validity of univariate resting-state EEG markers for classifying seizure disorders",
+   "year": 2023,
+   "authors": [
+    "Faiman",
+    "Sparks",
+    "Winston",
+    "Brunnhuber"
+   ],
+   "venue": "Brain Communications",
+   "type": "journal",
+   "openalex": "W4389218454",
+   "pmid": "38107505",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1093/cercor/bhaa084": {
+   "doi": "10.1093/cercor/bhaa084",
+   "title": "Cortical Excitation:Inhibition Imbalance Causes Abnormal Brain Network Dynamics as Observed in Neurodevelopmental Disorders",
+   "year": 2020,
+   "authors": [
+    "Markicevic",
+    "Fulcher",
+    "Lewis",
+    "Helmchen"
+   ],
+   "venue": "Cerebral Cortex",
+   "type": "journal",
+   "openalex": "W3017183124",
+   "pmid": "32313923",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1093/cercor/bhad030": {
+   "doi": "10.1093/cercor/bhad030",
+   "title": "Altered functional dynamics gradient in schizophrenia with cigarette smoking",
+   "year": 2023,
+   "authors": [
+    "Chen"
+   ],
+   "venue": "Cerebral Cortex",
+   "type": "journal",
+   "openalex": "W4323036427",
+   "pmid": "36864548",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 82,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1093/mnras/stac1515": {
+   "doi": "10.1093/mnras/stac1515",
+   "title": "Classifying Kepler light curves for 12 000 A and F stars using supervised feature-based machine learning",
+   "year": 2022,
+   "authors": [
+    "Barbara",
+    "Bedding",
+    "Fulcher",
+    "Murphy"
+   ],
+   "venue": "Monthly Notices of the Royal Astronomical Society",
+   "type": "journal",
+   "openalex": "W4281820452",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1093/nc/niag029": {
+   "doi": "10.1093/nc/niag029",
+   "openalex": "W7167585600",
+   "pmid": "42415873",
+   "title": "A data-driven approach to identifying and evaluating connectivity-based neural correlates of conscious visual perception",
+   "year": 2026,
+   "authors": [
+    "Bryant",
+    "Whyte"
+   ],
+   "venue": "Neuroscience of Consciousness",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1093/sleep/zsaf284": {
+   "doi": "10.1093/sleep/zsaf284",
+   "openalex": "W4414436406",
+   "pmid": "40985559",
+   "title": "Unsupervised clustering of extensive physiological features substantiates five-stage sleep staging paradigm",
+   "year": 2025,
+   "authors": [
+    "Ma",
+    "Li",
+    "Xu",
+    "Tan"
+   ],
+   "venue": "SLEEP",
+   "type": "journal",
+   "pubdate": "2025-09-20",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "confidence": 0.5,
+   "evidence": "SLEEP paywalled (OUP blocks automated access); title 'Unsupervised clustering of extensive physiological features' suggests possible hctsa use"
+  },
+  "doi:10.1098/rsif.2013.0048": {
+   "doi": "10.1098/rsif.2013.0048",
+   "title": "Highly comparative time-series analysis: the empirical structure of time series and their methods",
+   "year": 2013,
+   "authors": [
+    "Fulcher",
+    "Little",
+    "Jones"
+   ],
+   "venue": "Journal of The Royal Society Interface",
+   "type": "journal",
+   "openalex": "W2167487311",
+   "pmid": "23554344",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Methods Papers",
+   "page_line": 26,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1098/rsif.2023.0399": {
+   "doi": "10.1098/rsif.2023.0399",
+   "title": "Who is calling? Optimizing source identification from marmoset vocalizations with hierarchical machine learning classifiers",
+   "year": 2023,
+   "authors": [
+    "Phaniraj",
+    "Wierucka",
+    "Zürcher",
+    "Burkart"
+   ],
+   "venue": "Journal of The Royal Society Interface",
+   "type": "journal",
+   "openalex": "W4387710822",
+   "pmid": "37848054",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧬 Biology",
+   "page_line": 55,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2023.09.06.556465": {
+   "doi": "10.1101/2023.09.06.556465",
+   "title": "The brain’s topographical organization shapes dynamic interaction patterns to support flexible behavior",
+   "year": 2023,
+   "authors": [
+    "Wang",
+    "Wang",
+    "Krieger‐Redwood",
+    "Lyu"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "openalex": "W4386468456",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2023.09.22.559020": {
+   "doi": "10.1101/2023.09.22.559020",
+   "title": "Dynamic vocal learning in adult marmoset monkeys",
+   "year": 2023,
+   "authors": [
+    "Phaniraj",
+    "Wierucka",
+    "Burkart"
+   ],
+   "type": "preprint",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧬 Biology",
+   "page_line": 55,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2023.10.24.23297492": {
+   "doi": "10.1101/2023.10.24.23297492",
+   "title": "Prediction of response to transcranial magnetic stimulation treatment for depression using electroencephalography and statistical learning methods, including an out-of-sample validation",
+   "year": 2023,
+   "authors": [
+    "Bailey",
+    "Fulcher",
+    "Arns",
+    "Fitzgerald"
+   ],
+   "venue": "medRxiv",
+   "type": "preprint",
+   "openalex": "W4387933083",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2024.01.10.573372": {
+   "doi": "10.1101/2024.01.10.573372",
+   "title": "Extracting interpretable signatures of whole-brain dynamics through systematic comparison",
+   "year": 2024,
+   "authors": [
+    "Bryant",
+    "Aquino",
+    "Parkes",
+    "Fornito"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "openalex": "W4390823683",
+   "pmid": "38915560",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2024.01.24.24301724": {
+   "doi": "10.1101/2024.01.24.24301724",
+   "title": "Highly comparative time series analysis of oxygen saturation and heart rate to predict respiratory outcomes in extremely preterm infants",
+   "year": 2024,
+   "authors": [
+    "Qiu",
+    "Fiore",
+    "Krishnamurthi",
+    "Indic"
+   ],
+   "venue": "medRxiv",
+   "type": "preprint",
+   "openalex": "W4391228521",
+   "pmid": "38343830",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2024.02.03.24302230": {
+   "doi": "10.1101/2024.02.03.24302230",
+   "title": "Can machine learning or deep learning discover novel signatures of illness in continuous cardiorespiratory monitoring data?",
+   "year": 2024,
+   "authors": [
+    "Sullivan",
+    "Mesner",
+    "Niestroy",
+    "Lake"
+   ],
+   "venue": "medRxiv",
+   "type": "preprint",
+   "openalex": "W4391522045",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 105,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2024.03.14.24303988": {
+   "doi": "10.1101/2024.03.14.24303988",
+   "title": "Phenotypical differentiation of tremor using time series feature extraction and machine learning",
+   "year": 2024,
+   "authors": [
+    "Häring",
+    "Selzam",
+    "Martin‐Rodríguez",
+    "Schwingenschuh"
+   ],
+   "venue": "medRxiv",
+   "type": "preprint",
+   "openalex": "W4392862787",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1101/2025.01.24.634803": {
+   "doi": "10.1101/2025.01.24.634803",
+   "openalex": "W4406824741",
+   "title": "Synaptome architecture shapes regional dynamics in the mouse brain",
+   "year": 2025,
+   "authors": [
+    "Hansen",
+    "Luppi",
+    "Qiu",
+    "Gini"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2025-01-25",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.98,
+   "ours": true,
+   "section": "Applications Papers",
+   "evidence": "Using hctsa, > 6 000 time-series features were calculated for each of 88 regions; 'we use the highly comparative time-series analysis toolbox (hctsa) to comprehensively phenotype the dynamic signature of each brain region'",
+   "note": "Fulcher is a co-author -> Our Research (Applications Papers)"
+  },
+  "doi:10.1101/2025.04.05.647237": {
+   "doi": "10.1101/2025.04.05.647237",
+   "openalex": "W4409190168",
+   "title": "An engine for systematic discovery of cause-effect relationships between brain structure and function",
+   "year": 2025,
+   "authors": [
+    "Luppi",
+    "Milisav",
+    "Suárez",
+    "Shafiei"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2025-04-05",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.97,
+   "ours": false,
+   "section": "Neuroimaging",
+   "evidence": "'We also performed massive time-series feature extraction using the highly comparative time-series analysis toolbox, hctsa [60,61], of which catch22 is a representative subset'",
+   "note": "Luppi et al.; no Fulcher authorship -> Others' Research"
+  },
+  "doi:10.1101/2025.04.17.648358": {
+   "doi": "10.1101/2025.04.17.648358",
+   "openalex": "W4409723852",
+   "title": "Brain network dynamics determine tau presence while regional vulnerability governs tau load in Alzheimer’s disease",
+   "year": 2025,
+   "authors": [
+    "Xiao",
+    "Spotorno",
+    "An",
+    "Bazinet"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2025-04-23",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.85,
+   "evidence": "hctsa appears only in the reference list"
+  },
+  "doi:10.1101/2025.04.30.651376": {
+   "doi": "10.1101/2025.04.30.651376",
+   "openalex": "W4410070870",
+   "title": "Identifying Explainable and Generalizable Features for MEG Decoding",
+   "year": 2025,
+   "authors": [
+    "Maleki",
+    "Karimi-Rouzbahani"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2025-05-04",
+   "first_seen": "2026-09-22",
+   "verdict": "C",
+   "confidence": 0.9,
+   "evidence": "'24 were derived from the updated version of the Catch22'; hctsa cited only as the source library",
+   "note": "already on the catch22 page"
+  },
+  "doi:10.1101/2025.08.01.668189": {
+   "doi": "10.1101/2025.08.01.668189",
+   "openalex": "W4412835735",
+   "title": "Transdiagnostic electrophysiological subtypes reveal brain-behavior dimensions in youth psychiatry",
+   "year": 2025,
+   "authors": [
+    "Tabbal",
+    "Ebadi",
+    "Robert",
+    "Rodríguez‐Herreros"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2025-08-01",
+   "first_seen": "2026-09-22",
+   "verdict": "C",
+   "confidence": 0.85,
+   "evidence": "Uses 'catch24 (a subset of time-series features from the hctsa toolbox)' - catch24, not the hctsa library",
+   "note": "candidate for the catch22 page"
+  },
+  "doi:10.1101/2025.09.22.677729": {
+   "doi": "10.1101/2025.09.22.677729",
+   "openalex": "W4414447469",
+   "title": "Representation learning of single-cell time-series with deep variational autoencoders",
+   "year": 2025,
+   "authors": [
+    "Fraisse",
+    "Oyarzún",
+    "Karoui"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2025-09-22",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.85,
+   "evidence": "Cites Henderson & Fulcher feature-set evaluation only"
+  },
+  "doi:10.1103/4nb2-398s": {
+   "doi": "10.1103/4nb2-398s",
+   "openalex": "W4416550162",
+   "title": "Identifying statistical indicators of temporal asymmetry using a data-driven approach",
+   "year": 2026,
+   "authors": [
+    "Nogare",
+    "Fulcher"
+   ],
+   "venue": "Physical Review Research",
+   "type": "journal",
+   "pubdate": "2026-03-13",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.98,
+   "ours": true,
+   "section": "Applications Papers",
+   "evidence": "'systematically evaluating over 6000 time-series summary statistics, derived from across the time-series analysis literature, on their ability to distinguish the time irreversibility of data simulated from a diverse range of 35 systems'",
+   "summary": "Identify which statistics best distinguish time-irreversible dynamics, across 35 simulated systems.",
+   "note": "Dalle Nogare & Fulcher - methods paper; Ben may prefer it under Methods Papers"
+  },
+  "doi:10.1103/qnx2-yp4c": {
+   "doi": "10.1103/qnx2-yp4c",
+   "openalex": "W4417210148",
+   "title": "Feature-based information-theoretic approach for detecting interpretable, long-timescale pairwise interactions from time series",
+   "year": 2025,
+   "authors": [
+    "Nguyen",
+    "McMullin",
+    "Lizier",
+    "Fulcher"
+   ],
+   "venue": "Physical Review Research",
+   "type": "journal",
+   "pubdate": "2025-10-14",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.9,
+   "ours": true,
+   "section": "Applications Papers",
+   "evidence": "Introduces a feature-based information-theoretic method that 'extracts a candidate set of time-series features from sliding windows of the source time series'; Nguyen, McMullin, Lizier & Fulcher",
+   "summary": "Detect interpretable, long-timescale pairwise interactions between time series using time-series features.",
+   "note": "methods paper; Ben may prefer it under Methods Papers"
+  },
+  "doi:10.1109/access.2021.3056441": {
+   "doi": "10.1109/access.2021.3056441",
+   "title": "Towards an Accelerometer-Based Elderly Fall Detection System Using Cross-Disciplinary Time Series Features",
+   "year": 2021,
+   "authors": [
+    "Nahian",
+    "Ghosh",
+    "Banna",
+    "Aseeri"
+   ],
+   "venue": "IEEE Access",
+   "type": "journal",
+   "openalex": "W3127786468",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1109/access.2021.3071400": {
+   "doi": "10.1109/access.2021.3071400",
+   "title": "Attention-Based Bi-Directional Long-Short Term Memory Network for Earthquake Prediction",
+   "year": 2021,
+   "authors": [
+    "Banna",
+    "Ghosh",
+    "Nahian",
+    "Taher"
+   ],
+   "venue": "IEEE Access",
+   "type": "journal",
+   "openalex": "W3151064326",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "⛰️ Geoscience",
+   "page_line": 144,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1109/access.2021.3099459": {
+   "doi": "10.1109/access.2021.3099459",
+   "title": "Time Series-Analysis Based Engineering of High-Dimensional Wide-Area Stability Indices for Machine Learning",
+   "year": 2021,
+   "authors": [
+    "Dabou",
+    "Kamwa",
+    "Chung",
+    "Mugombozi"
+   ],
+   "venue": "IEEE Access",
+   "type": "journal",
+   "openalex": "W3184954280",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1109/bigdata66926.2025.11401527": {
+   "doi": "10.1109/bigdata66926.2025.11401527",
+   "openalex": "W7134209842",
+   "title": "PanicleVis: A Multidimensional and Multilevel Graph-Based Visualization System for Spatiotemporal Panicle Phenotyping Data",
+   "year": 2025,
+   "authors": [
+    "Xie",
+    "Sun",
+    "Huang",
+    "Walia"
+   ],
+   "type": "journal",
+   "pubdate": "2025-12-08",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/dsaa65442.2025.11247984": {
+   "doi": "10.1109/dsaa65442.2025.11247984",
+   "openalex": "W4416677392",
+   "title": "Automatic Feature Engineering for Time Series Extrinsic Regression: A Comparative Study of Signal Processing Libraries",
+   "year": 2025,
+   "authors": [
+    "Renault",
+    "Gay",
+    "Nair-Benrekia",
+    "Lemaire"
+   ],
+   "type": "journal",
+   "pubdate": "2025-10-09",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/icicgr68236.2026.11600372": {
+   "doi": "10.1109/icicgr68236.2026.11600372",
+   "openalex": "W7169116906",
+   "title": "A Multidomain Survey of Biological Rhythm Analysis: Integrating Mathematical Modelling, Multiscale Complexity, and Data-Driven Methods",
+   "year": 2026,
+   "authors": [
+    "Wagh",
+    "Estrella",
+    "Exposito"
+   ],
+   "type": "journal",
+   "pubdate": "2026-04-24",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/icmla61862.2024.00171": {
+   "doi": "10.1109/icmla61862.2024.00171",
+   "title": "Improving Features for Multiple Sclerosis Disability Progression Prediction Through Temporal Alignment of Hospital Visits",
+   "year": 2024,
+   "authors": [
+    "Fonteyn",
+    "Dhaene",
+    "Deschrijver"
+   ],
+   "type": "journal",
+   "openalex": "W4408146269",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 103,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1109/ictai66417.2025.00014": {
+   "doi": "10.1109/ictai66417.2025.00014",
+   "openalex": "W4417339223",
+   "title": "Explaining Time Series Classification Predictions via Causal Attributions",
+   "year": 2025,
+   "authors": [
+    "Alcaraz",
+    "Strodthoff"
+   ],
+   "type": "journal",
+   "pubdate": "2025-11-03",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/iscc65549.2025.11326085": {
+   "doi": "10.1109/iscc65549.2025.11326085",
+   "openalex": "W7123596948",
+   "title": "Quality Assurance for Home Spirometry using Machine Learning",
+   "year": 2025,
+   "authors": [
+    "Gardiner",
+    "Rogers",
+    "Lines",
+    "Wilson"
+   ],
+   "type": "journal",
+   "pubdate": "2025-07-02",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/jsen.2025.3626760": {
+   "doi": "10.1109/jsen.2025.3626760",
+   "openalex": "W4415883024",
+   "title": "Unsupervised Feature Selection-Based Interval Enhancement for Time Series Clustering and Its Application",
+   "year": 2025,
+   "authors": [
+    "Mi",
+    "Huo",
+    "He",
+    "Zhu"
+   ],
+   "venue": "IEEE Sensors Journal",
+   "type": "journal",
+   "pubdate": "2025-11-04",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/jsen.2026.3706360": {
+   "doi": "10.1109/jsen.2026.3706360",
+   "openalex": "W7166504024",
+   "title": "Physics-Informed RF Features for Bone Fracture Detection and Healing Classification: A Grouped Cross-Validation Study Using 2D-FDTD Simulation Across Five Anatomical Sites",
+   "year": 2026,
+   "authors": [
+    "Aldelemy",
+    "Al-Dulaimi",
+    "Adjei",
+    "Siaw"
+   ],
+   "venue": "IEEE Sensors Journal",
+   "type": "journal",
+   "pubdate": "2026-06-29",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/jsen.2026.3709367": {
+   "doi": "10.1109/jsen.2026.3709367",
+   "openalex": "W7167853057",
+   "title": "Physiological Stratified Models for Personalized Cuffless Blood Pressure Estimation Using Wearable Multimodal Sensors",
+   "year": 2026,
+   "authors": [
+    "Fu",
+    "Lyu",
+    "Zhang",
+    "Tin"
+   ],
+   "venue": "IEEE Sensors Journal",
+   "type": "journal",
+   "pubdate": "2026-07-09",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/tcsi.2025.3582251": {
+   "doi": "10.1109/tcsi.2025.3582251",
+   "openalex": "W4411996048",
+   "title": "Mecha: Multiview Enhanced Characteristics via Series Shuffling for Time Series Classification and Its Application to Turntable Circuit",
+   "year": 2025,
+   "authors": [
+    "He",
+    "Huo",
+    "Mi",
+    "Chen"
+   ],
+   "venue": "IEEE Transactions on Circuits and Systems I Regular Papers",
+   "type": "journal",
+   "pubdate": "2025-07-03",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/tim.2026.3699709": {
+   "doi": "10.1109/tim.2026.3699709",
+   "openalex": "W7163425772",
+   "title": "Dynamic Pattern Classification of Multivariate Time Series via Topological Aggregation",
+   "year": 2026,
+   "authors": [
+    "Guo",
+    "Wu",
+    "Zhang",
+    "Wang"
+   ],
+   "venue": "IEEE Transactions on Instrumentation and Measurement",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1109/tiv.2025.3620769": {
+   "doi": "10.1109/tiv.2025.3620769",
+   "openalex": "W4415125572",
+   "title": "Longitudinal Force Estimation in Intelligent Tires Using Key Features and Tread Dynamics Validation",
+   "year": 2025,
+   "authors": [
+    "Ishii",
+    "Nishida",
+    "Masago",
+    "Mori"
+   ],
+   "venue": "IEEE Transactions on Intelligent Vehicles",
+   "type": "journal",
+   "pubdate": "2025-10-13",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1111/1365-2478.13386": {
+   "doi": "10.1111/1365-2478.13386",
+   "title": "A comparison of deep and shallow models for the detection of induced seismicity",
+   "year": 2023,
+   "authors": [
+    "Goel",
+    "Gorse"
+   ],
+   "venue": "Geophysical Prospecting",
+   "type": "journal",
+   "openalex": "W4380152376",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "⛰️ Geoscience",
+   "page_line": 144,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1111/2041-210x.70091": {
+   "doi": "10.1111/2041-210x.70091",
+   "openalex": "W4412123713",
+   "title": "Same data, different results? Machine learning approaches in bioacoustics",
+   "year": 2025,
+   "authors": [
+    "Wierucka",
+    "Murphy",
+    "Watson",
+    "Falk"
+   ],
+   "venue": "Methods in Ecology and Evolution",
+   "type": "journal",
+   "pubdate": "2025-07-09",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.95,
+   "section": "Biology",
+   "evidence": "'we extracted features using a new approach - the Highly Comparative Time Series Analysis (HCTSA), which extracts thousands of features'; HCTSA is one of three feature-extraction methods whose performance is the paper's main result"
+  },
+  "doi:10.1145/3735654.3735938": {
+   "doi": "10.1145/3735654.3735938",
+   "openalex": "W4411528122",
+   "title": "Towards Learning to Rank Deep-Learning Models for Multivariate Time-Series Transfer Learning",
+   "year": 2025,
+   "authors": [
+    "Sigl",
+    "Meyer-Wegener"
+   ],
+   "type": "journal",
+   "pubdate": "2025-06-22",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1145/3744256.3812577": {
+   "doi": "10.1145/3744256.3812577",
+   "openalex": "W7165196332",
+   "title": "Benchmarking Data-Driven Time Series Classification Methods for a real-world Building HVAC System",
+   "year": 2026,
+   "authors": [
+    "Hadwiger",
+    "Hirsch",
+    "Masoumali",
+    "Schweiger"
+   ],
+   "type": "journal",
+   "pubdate": "2026-06-19",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1145/3747327.3764784": {
+   "doi": "10.1145/3747327.3764784",
+   "openalex": "W4415065047",
+   "title": "Canonical Time Series Features for Pain Classification",
+   "year": 2025,
+   "authors": [
+    "Boda",
+    "Kamarthi",
+    "Ozek",
+    "Lu"
+   ],
+   "type": "journal",
+   "pubdate": "2025-10-11",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "confidence": 0.5,
+   "evidence": "ACM paywalled; title 'Canonical Time Series Features for Pain Classification' suggests catch22 rather than hctsa",
+   "note": "candidate for the catch22 page"
+  },
+  "doi:10.1162/imag.a.1126": {
+   "doi": "10.1162/imag.a.1126",
+   "openalex": "W7125201305",
+   "pmid": "41658341",
+   "title": "Mapping high-amplitude fMRI edge time series events across space and time",
+   "year": 2026,
+   "authors": [
+    "Faskowitz",
+    "Bandettini",
+    "González-Castillo"
+   ],
+   "venue": "Imaging Neuroscience",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "confidence": 0.3,
+   "evidence": "MIT Press blocked automated download; unverified"
+  },
+  "doi:10.1162/imag_a_00499": {
+   "doi": "10.1162/imag_a_00499",
+   "openalex": "W4407677802",
+   "pmid": "40800947",
+   "title": "Beyond oscillations—Toward a richer characterization of brain states",
+   "year": 2025,
+   "authors": [
+    "Balestrieri",
+    "Chalas",
+    "Stier",
+    "Fehring"
+   ],
+   "venue": "Imaging Neuroscience",
+   "type": "journal",
+   "pubdate": "2025-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.1162/netn_a_00151": {
+   "doi": "10.1162/netn_a_00151",
+   "title": "Timescales of spontaneous fMRI fluctuations relate to structural connectivity in the brain",
+   "year": 2020,
+   "authors": [
+    "Fallon",
+    "Ward",
+    "Parkes",
+    "Oldham"
+   ],
+   "venue": "Network Neuroscience",
+   "type": "journal",
+   "openalex": "W3034424424",
+   "pmid": "33615091",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 43,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1162/netn_a_00320": {
+   "doi": "10.1162/netn_a_00320",
+   "title": "Functional connectome fingerprinting across the lifespan",
+   "year": 2023,
+   "authors": [
+    "St‐Onge",
+    "Javanray",
+    "Binette",
+    "Strikwerda‐Brown"
+   ],
+   "venue": "Network Neuroscience",
+   "type": "journal",
+   "openalex": "W4368618051",
+   "pmid": "37781144",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1186/s12883-020-01672-w": {
+   "doi": "10.1186/s12883-020-01672-w",
+   "title": "Machine learning analysis of motor evoked potential time series to predict disability progression in multiple sclerosis",
+   "year": 2020,
+   "authors": [
+    "Yperman",
+    "Becker",
+    "Valkenborg",
+    "Popescu"
+   ],
+   "venue": "BMC Neurology",
+   "type": "journal",
+   "openalex": "W3012619665",
+   "pmid": "32199461",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1186/s12984-023-01217-5": {
+   "doi": "10.1186/s12984-023-01217-5",
+   "title": "Towards PPG-based anger detection for emotion regulation",
+   "year": 2023,
+   "authors": [
+    "How",
+    "Green",
+    "Mihailidis"
+   ],
+   "venue": "Journal of NeuroEngineering and Rehabilitation",
+   "type": "journal",
+   "openalex": "W4385837137",
+   "pmid": "37582733",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧬 Biology",
+   "page_line": 55,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1186/s13049-025-01458-4": {
+   "doi": "10.1186/s13049-025-01458-4",
+   "title": "Continuous vital sign monitoring for predicting hospital length of stay: a feasibility study in chronic obstructive pulmonary disease and chronic heart failure patients",
+   "year": 2025,
+   "authors": [
+    "Juez-Garcia",
+    "Benítez",
+    "Torres",
+    "González"
+   ],
+   "venue": "Scandinavian Journal of Trauma Resuscitation and Emergency Medicine",
+   "type": "journal",
+   "openalex": "W4414532736",
+   "pmid": "40993754",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 99,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1364/boe.466005": {
+   "doi": "10.1364/boe.466005",
+   "title": "COVID-19 screening with digital holographic microscopy using intra-patient probability functions of spatio-temporal bio-optical attributes",
+   "year": 2022,
+   "authors": [
+    "O’Connor",
+    "Javidi"
+   ],
+   "venue": "Biomedical Optics Express",
+   "type": "journal",
+   "openalex": "W4296117539",
+   "pmid": "36425632",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🦠 Medicine—Pathology",
+   "page_line": 121,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1364/oe.442321": {
+   "doi": "10.1364/oe.442321",
+   "title": "COVID-19 detection from red blood cells using highly comparative time-series analysis (HCTSA) in digital holographic microscopy",
+   "year": 2021,
+   "authors": [
+    "O’Connor",
+    "Santaniello",
+    "Javidi"
+   ],
+   "venue": "Optics Express",
+   "type": "journal",
+   "openalex": "W4200452613",
+   "pmid": "35209327",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🦠 Medicine—Pathology",
+   "page_line": 121,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1371/journal.pbio.3003217": {
+   "doi": "10.1371/journal.pbio.3003217",
+   "title": "Wakefulness can be distinguished from general anesthesia and sleep in flies using a massive library of univariate time series analyses",
+   "year": 2025,
+   "authors": [
+    "Leung",
+    "Mahmoud",
+    "Jeans",
+    "Fulcher"
+   ],
+   "venue": "PLoS Biology",
+   "type": "journal",
+   "openalex": "W4412163999",
+   "pmid": "40638578",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 39,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1371/journal.pcbi.1008820": {
+   "doi": "10.1371/journal.pcbi.1008820",
+   "title": "Behavioral discrimination and time-series phenotyping of birdsong performance",
+   "year": 2021,
+   "authors": [
+    "Paul",
+    "McLendon",
+    "Rally",
+    "Sakata"
+   ],
+   "venue": "PLoS Computational Biology",
+   "type": "journal",
+   "openalex": "W3152402836",
+   "pmid": "33830995",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧬 Biology",
+   "page_line": 55,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1371/journal.pone.0227039": {
+   "doi": "10.1371/journal.pone.0227039",
+   "title": "Multimodal hand gesture recognition using single IMU and acoustic measurements at wrist",
+   "year": 2020,
+   "authors": [
+    "Siddiqui",
+    "Chan"
+   ],
+   "venue": "PLoS ONE",
+   "type": "journal",
+   "openalex": "W2999709773",
+   "pmid": "31929544",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.21203/rs.3.rs-3052453/v1": {
+   "doi": "10.21203/rs.3.rs-3052453/v1",
+   "title": "Identifying Methamphetamine Users through EEG Analysis: Harnessing hctsa and Machine Learning Approaches",
+   "year": 2023,
+   "authors": [
+    "Meynaghizadeh-Zargar",
+    "Kazmi",
+    "Sadigh‐Eteghad",
+    "Barati"
+   ],
+   "venue": "Research Square",
+   "type": "preprint",
+   "openalex": "W4380887573",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.21203/rs.3.rs-3344208/v1": {
+   "doi": "10.21203/rs.3.rs-3344208/v1",
+   "title": "Deciphering complex brain spatiotemporal dynamics shaping diverse human behavior",
+   "year": 2023,
+   "authors": [
+    "Liu",
+    "Tian",
+    "Peng",
+    "Wang"
+   ],
+   "venue": "Research Square",
+   "type": "preprint",
+   "openalex": "W4387608717",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.2139/ssrn.5875975": {
+   "doi": "10.2139/ssrn.5875975",
+   "openalex": "W4417081210",
+   "title": "Hypergraph-Regularized Deep Stochastic Configuration Networks for Speech-Based Depression Detection",
+   "year": 2025,
+   "authors": [
+    "Cheng",
+    "Zhang",
+    "Zhang",
+    "Zhang"
+   ],
+   "venue": "SSRN Electronic Journal",
+   "type": "preprint",
+   "pubdate": "2025-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.2139/ssrn.6906937": {
+   "doi": "10.2139/ssrn.6906937",
+   "openalex": "W7163991009",
+   "title": "Benchmarking Python-Packages for Time Series Feature Extraction on Manufacturing Data",
+   "year": 2026,
+   "authors": [
+    "Seidler",
+    "Müller",
+    "Wolf",
+    "Eigenbrod"
+   ],
+   "venue": "SSRN Electronic Journal",
+   "type": "preprint",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.2139/ssrn.7346355": {
+   "doi": "10.2139/ssrn.7346355",
+   "openalex": "W7168362067",
+   "title": "OOD-RL-Bench: A BenchmarkFramework for Out-of-Distribution Detection in Reinforcement Learning",
+   "year": 2026,
+   "authors": [
+    "Mittag",
+    "Dazeley",
+    "Vamplew"
+   ],
+   "venue": "SSRN Electronic Journal",
+   "type": "preprint",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.23919/cje.2025.00.142": {
+   "doi": "10.23919/cje.2025.00.142",
+   "openalex": "W7167279632",
+   "title": "Hardware-Efficient Architecture of Base-2 Non-Linear SVM Classification for Epileptic Seizure Detection",
+   "year": 2026,
+   "authors": [
+    "Chen",
+    "Xing",
+    "Wang",
+    "Xu"
+   ],
+   "venue": "Chinese Journal of Electronics",
+   "type": "journal",
+   "pubdate": "2026-05-01",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.3389/fimmu.2026.1625837": {
+   "doi": "10.3389/fimmu.2026.1625837",
+   "openalex": "W7134974167",
+   "pmid": "41890713",
+   "title": "Combining magnetic resonance imaging and evoked potentials enhances machine learning prediction of multiple sclerosis disability worsening",
+   "year": 2026,
+   "authors": [
+    "Aerts",
+    "Werthen-Brabants",
+    "Khan",
+    "Giraldo"
+   ],
+   "venue": "Frontiers in Immunology",
+   "type": "journal",
+   "pubdate": "2026-03-11",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "full text fetched but not yet adjudicated",
+   "note": "pending review"
+  },
+  "doi:10.3389/fneur.2026.1910178": {
+   "doi": "10.3389/fneur.2026.1910178",
+   "openalex": "W7211874225",
+   "title": "Signal-based differentiation of essential and dystonic tremor",
+   "year": 2026,
+   "authors": [
+    "Selzam",
+    "Häring",
+    "Martin‐Rodríguez",
+    "Schwingenschuh"
+   ],
+   "venue": "Frontiers in Neurology",
+   "type": "journal",
+   "pubdate": "2026-09-07",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "full text fetched but not yet adjudicated",
+   "note": "pending review"
+  },
+  "doi:10.3389/fnhum.2025.1607941": {
+   "doi": "10.3389/fnhum.2025.1607941",
+   "openalex": "W4410905488",
+   "pmid": "40520675",
+   "title": "Topological signatures of brain dynamics: persistent homology reveals individuality and brain–behavior links",
+   "year": 2025,
+   "authors": [
+    "Wang",
+    "Xian",
+    "Chen",
+    "Yan"
+   ],
+   "venue": "Frontiers in Human Neuroscience",
+   "type": "journal",
+   "pubdate": "2025-05-30",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.85,
+   "evidence": "hctsa cited in passing alongside Sokunbi and Lubba; analysis is persistent homology"
+  },
+  "doi:10.3389/fninf.2020.00028": {
+   "doi": "10.3389/fninf.2020.00028",
+   "title": "Deciphering the Morphology of Motor Evoked Potentials",
+   "year": 2020,
+   "authors": [
+    "Yperman",
+    "Becker",
+    "Valkenborg",
+    "Hellings"
+   ],
+   "venue": "Frontiers in Neuroinformatics",
+   "type": "journal",
+   "openalex": "W3041997206",
+   "pmid": "32765249",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 86,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.3390/bios11080284": {
+   "doi": "10.3390/bios11080284",
+   "title": "A Study of One-Class Classification Algorithms for Wearable Fall Sensors",
+   "year": 2021,
+   "authors": [
+    "A.Santoyo-Ramón",
+    "Casilari",
+    "Cano"
+   ],
+   "venue": "Biosensors",
+   "type": "journal",
+   "openalex": "W3195445035",
+   "pmid": "34436087",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 113,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.3390/math14030538": {
+   "doi": "10.3390/math14030538",
+   "openalex": "W7127185026",
+   "title": "Structural Preservation in Time Series Through Multiscale Topological Features Derived from Persistent Homology",
+   "year": 2026,
+   "authors": [
+    "Jesus",
+    "Fernández-Navarro",
+    "Carbonero-Ruz"
+   ],
+   "venue": "Mathematics",
+   "type": "journal",
+   "pubdate": "2026-02-02",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "doi:10.3390/s20174818": {
+   "doi": "10.3390/s20174818",
+   "title": "Indication of Electromagnetic Field Exposure via RBF-SVM Using Time-Series Features of Zebrafish Locomotion",
+   "year": 2020,
+   "authors": [
+    "He",
+    "Tsang",
+    "Kong",
+    "Chow"
+   ],
+   "venue": "Sensors",
+   "type": "journal",
+   "openalex": "W3080355364",
+   "pmid": "32858993",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧬 Biology",
+   "page_line": 55,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.3390/s26061862": {
+   "doi": "10.3390/s26061862",
+   "openalex": "W7136200875",
+   "pmid": "41902031",
+   "title": "Biomarker Discovery for Autism Prediction Using Massive Feature Extraction Based on EEG Signals",
+   "year": 2026,
+   "authors": [
+    "Hafeez",
+    "Aslam",
+    "Altaf"
+   ],
+   "venue": "Sensors",
+   "type": "journal",
+   "pubdate": "2026-03-16",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.96,
+   "section": "Neuroimaging",
+   "evidence": "'a prediction framework based on massive feature extraction using the highly comparative time-series analysis (HCTSA) method and a hybrid feature selection method for the classification of ASD from resting-state EEG'",
+   "summary": "Predict autism spectrum disorder from resting-state EEG, and identify the most discriminative channels and features."
+  },
+  "doi:10.36001/phmap.2023.v4i1.3596": {
+   "doi": "10.36001/phmap.2023.v4i1.3596",
+   "title": "Expert-Informed Hierarchical Diagnostics of Multiple Fault Modes of a Spacecraft Propulsion System",
+   "year": 2023,
+   "authors": [
+    "Aimiyekagbon",
+    "Löwen",
+    "Bender",
+    "Muth"
+   ],
+   "venue": "PHM Society Asia-Pacific Conference",
+   "type": "conference",
+   "openalex": "W4388599027",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 134,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.3847/1538-4357/ae64ef": {
+   "doi": "10.3847/1538-4357/ae64ef",
+   "openalex": "W7161987900",
+   "title": "StarCLR: Contrastive Learning Representation for Astronomical Light Curves",
+   "year": 2026,
+   "authors": [
+    "Ding",
+    "Chen",
+    "Gao",
+    "Tang"
+   ],
+   "venue": "The Astrophysical Journal",
+   "type": "journal",
+   "pubdate": "2026-05-21",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "full text fetched but not yet adjudicated",
+   "note": "pending review"
+  },
+  "doi:10.3997/2214-4609.202011128": {
+   "doi": "10.3997/2214-4609.202011128",
+   "title": "Winning with Simple Learning Models: Detecting Earthquakes in Groningen, The Netherlands",
+   "year": 2020,
+   "authors": [
+    "Waheed",
+    "Afify",
+    "Fehler",
+    "Fulcher"
+   ],
+   "type": "journal",
+   "openalex": "W3123119685",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "⛰️ Geoscience",
+   "page_line": 144,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.5194/essd-17-3391-2025": {
+   "doi": "10.5194/essd-17-3391-2025",
+   "openalex": "W4412476960",
+   "title": "A 3 h, 1 km surface soil moisture dataset for the contiguous United States from 2015 to 2023",
+   "year": 2025,
+   "authors": [
+    "Yang",
+    "Yang",
+    "Ochsner",
+    "Krueger"
+   ],
+   "venue": "Earth system science data",
+   "type": "journal",
+   "pubdate": "2025-07-16",
+   "first_seen": "2026-09-22",
+   "verdict": "C",
+   "confidence": 0.75,
+   "section": "Geoscience",
+   "evidence": "Calls the approach 'highly comparative time series analysis (HCTSA)' and cites Fulcher 2013/2017, but extracts only four characteristics (maximum, minimum, mean, median) - not the feature library"
+  },
+  "doi:10.52294/001c.138841": {
+   "doi": "10.52294/001c.138841",
+   "openalex": "W4411485597",
+   "title": "Bridging the epistemological divide in neuroscience to improve ontological clarity",
+   "year": 2025,
+   "authors": [
+    "Baracchini",
+    "Müller",
+    "Shine"
+   ],
+   "venue": "Aperture Neuro",
+   "type": "journal",
+   "pubdate": "2025-06-20",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.9,
+   "evidence": "Perspective piece; hctsa cited only"
+  },
+  "doi:10.53469/ijomsr.2025.08(09).07": {
+   "doi": "10.53469/ijomsr.2025.08(09).07",
+   "openalex": "W4414679598",
+   "title": "Sales Prediction Based on Textual Features of Online Product Reviews",
+   "year": 2025,
+   "authors": [
+    "Yu",
+    "Yang",
+    "Yang",
+    "Zhou"
+   ],
+   "venue": "International Journal of Management Science Research",
+   "type": "journal",
+   "pubdate": "2025-09-29",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.85,
+   "evidence": "hctsa in reference list only"
+  },
+  "doi:10.64898/2026.02.05.26345687": {
+   "doi": "10.64898/2026.02.05.26345687",
+   "openalex": "W7128294785",
+   "title": "Uncovering Neural Signatures of Convulsive Therapy in Depression Using Massive EEG Time-Series Feature Extraction",
+   "year": 2026,
+   "authors": [
+    "Hill",
+    "Godfrey",
+    "Lum",
+    "Zomorrodi"
+   ],
+   "venue": "medRxiv",
+   "type": "preprint",
+   "pubdate": "2026-02-06",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.98,
+   "section": "Neuroimaging",
+   "evidence": "'>7,000 time-series features per PC were extracted from each patient using the highly comparative time-series analysis (hctsa) framework'; hctsa-based classifiers are the paper's main result",
+   "summary": "Uncover EEG signatures of electroconvulsive and magnetic seizure therapy in treatment-resistant depression."
+  },
+  "doi:10.64898/2026.08.04.742623": {
+   "doi": "10.64898/2026.08.04.742623",
+   "openalex": "W7202131000",
+   "title": "Heart rate dynamics embed a shared representation of individual brain organization and cognitive function",
+   "year": 2026,
+   "authors": [
+    "Qian",
+    "Fulcher",
+    "Ju",
+    "Xiao"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2026-08-10",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "confidence": 0.95,
+   "ours": true,
+   "section": "Applications Papers",
+   "evidence": "'combining highly comparative time-series analysis with multi-modal neuroimaging and intracranial electrophysiology, we establish heart rate dynamics as a physiological fingerprint that maps onto whole-brain functional architecture'",
+   "summary": "Map heart-rate dynamics onto whole-brain functional architecture and cognitive function."
+  },
+  "doi:10.7554/elife.106194.1": {
+   "doi": "10.7554/elife.106194.1",
+   "openalex": "W4410550617",
+   "title": "Virtual Brain Inference (VBI): A flexible and integrative toolkit for efficient probabilistic inference on virtual brain models",
+   "year": 2025,
+   "authors": [
+    "Ziaeemehr",
+    "Woodman",
+    "Domide",
+    "Petkoski"
+   ],
+   "venue": "eLife",
+   "type": "journal",
+   "pubdate": "2025-05-21",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.85,
+   "evidence": "VBI toolkit; hctsa named as an interchangeable external library, not used"
+  },
+  "doi:10.7554/elife.106194.4": {
+   "doi": "10.7554/elife.106194.4",
+   "openalex": "W4417291512",
+   "pmid": "41384500",
+   "title": "Virtual Brain Inference (VBI), a flexible and integrative toolkit for efficient probabilistic inference on whole-brain models",
+   "year": 2025,
+   "authors": [
+    "Ziaeemehr",
+    "Woodman",
+    "Domide",
+    "Petkoski"
+   ],
+   "venue": "eLife",
+   "type": "journal",
+   "pubdate": "2025-11-24",
+   "first_seen": "2026-09-22",
+   "verdict": "D",
+   "confidence": 0.85,
+   "evidence": "Same paper, later version; hctsa named as an interchangeable library"
+  },
+  "doi:10.7554/elife.62116": {
+   "doi": "10.7554/elife.62116",
+   "title": "Topographic gradients of intrinsic dynamics across neocortex",
+   "year": 2020,
+   "authors": [
+    "Shafiei",
+    "Markello",
+    "Wael",
+    "Bernhardt"
+   ],
+   "venue": "eLife",
+   "type": "journal",
+   "openalex": "W3111678667",
+   "pmid": "33331819",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.7554/elife.78620": {
+   "doi": "10.7554/elife.78620",
+   "title": "Neuromodulation of striatal D1 cells shapes BOLD fluctuations in anatomically connected thalamic and cortical regions",
+   "year": 2023,
+   "authors": [
+    "Markicevic",
+    "Sturman",
+    "Bohacek",
+    "Rudin"
+   ],
+   "venue": "eLife",
+   "type": "journal",
+   "openalex": "W4387563055",
+   "pmid": "37824184",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 34,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.7554/elife.86695": {
+   "doi": "10.7554/elife.86695",
+   "title": "A reductionist paradigm for high-throughput behavioural fingerprinting in Drosophila melanogaster",
+   "year": 2023,
+   "authors": [
+    "Jones",
+    "Willis",
+    "Firth",
+    "Giachello"
+   ],
+   "venue": "eLife",
+   "type": "journal",
+   "openalex": "W4376141655",
+   "pmid": "37938101",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧬 Biology",
+   "page_line": 55,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.7717/peerj-cs.3328": {
+   "doi": "10.7717/peerj-cs.3328",
+   "openalex": "W4415786270",
+   "title": "Crossfire: cross-domain feature integration for robust time series classification",
+   "year": 2025,
+   "authors": [
+    "Alagöz"
+   ],
+   "venue": "PeerJ Computer Science",
+   "type": "journal",
+   "pubdate": "2025-11-03",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "pmid:41991947": {
+   "pmid": "41991947",
+   "title": "Spinal cord structural and functional architecture and its shared organization with the brain across the adult lifespan.",
+   "year": 2026,
+   "authors": [
+    "C",
+    "N",
+    "S",
+    "O"
+   ],
+   "venue": "Nat Commun",
+   "type": "journal",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "title:intrinsic timescale develops hierarchically from sensorimotor to association cor": {
+   "title": "Intrinsic timescale develops hierarchically from sensorimotor to association cortex in youth and stabilizes in adulthood",
+   "year": 2026,
+   "authors": [
+    "G",
+    "J",
+    "VJ",
+    "DS"
+   ],
+   "type": "journal",
+   "first_seen": "2026-09-22",
+   "verdict": "U",
+   "evidence": "no full text reachable",
+   "note": "pending review"
+  },
+  "url:http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425": {
+   "url": "http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 45,
+   "note": "bootstrap: already on page"
+  },
+  "url:http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6346629": {
+   "url": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6346629",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Applications Papers",
+   "page_line": 47,
+   "note": "bootstrap: already on page"
+  },
+  "url:http://www.cell.com/cell-systems/fulltext/S2405-4712(17)30438-6": {
+   "url": "http://www.cell.com/cell-systems/fulltext/S2405-4712(17)30438-6",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Methods Papers",
+   "page_line": 26,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://hdl.handle.net/1721.1/139296": {
+   "url": "https://hdl.handle.net/1721.1/139296",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 136,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://ieeexplore.ieee.org/abstract/document/10340663": {
+   "url": "https://ieeexplore.ieee.org/abstract/document/10340663",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 80,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://ieeexplore.ieee.org/abstract/document/8037372/": {
+   "url": "https://ieeexplore.ieee.org/abstract/document/8037372/",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://ieeexplore.ieee.org/abstract/document/8693868": {
+   "url": "https://ieeexplore.ieee.org/abstract/document/8693868",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 69,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://ieeexplore.ieee.org/abstract/document/8757135": {
+   "url": "https://ieeexplore.ieee.org/abstract/document/8757135",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://ris.uni-paderborn.de/record/22507": {
+   "url": "https://ris.uni-paderborn.de/record/22507",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://www.crcpress.com/Feature-Engineering-for-Machine-Learning-and-Data-Analytics/Dong-Liu/p/book/9781138744387": {
+   "url": "https://www.crcpress.com/Feature-Engineering-for-Machine-Learning-and-Data-Analytics/Dong-Liu/p/book/9781138744387",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "Methods Papers",
+   "page_line": 26,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://www.researchgate.net/publication/350835794_Social_Group_Optimized_Machine-Learning_Based_Elderly_Fall_detection_Approach_Using_Interdisciplinary_Time-Series_Features": {
+   "url": "https://www.researchgate.net/publication/350835794_Social_Group_Optimized_Machine-Learning_Based_Elderly_Fall_detection_Approach_Using_Interdisciplinary_Time-Series_Features",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🔬 Medicine—General",
+   "page_line": 94,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://www.researchgate.net/publication/355700005_Big_Data-Driven_Detection_of_False_Data_Injection_Attacks_in_Smart_Meters": {
+   "url": "https://www.researchgate.net/publication/355700005_Big_Data-Driven_Detection_of_False_Data_Injection_Attacks_in_Smart_Meters",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🏗 Engineering",
+   "page_line": 129,
+   "note": "bootstrap: already on page"
+  },
+  "url:https://www.scitepress.org/Papers/2023/116256/": {
+   "url": "https://www.scitepress.org/Papers/2023/116256/",
+   "first_seen": "2026-09-22",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "page_line": 84,
+   "note": "bootstrap: already on page"
+  },
+  "doi:10.1371/journal.pbio.3003637": {
+   "doi": "10.1371/journal.pbio.3003637",
+   "title": "Synapse types are spatially associated with regional hemodynamics in the mouse brain",
+   "year": 2026,
+   "authors": [
+    "Hansen",
+    "Luppi",
+    "Qiu",
+    "Gini"
+   ],
+   "venue": "PLOS Biology",
+   "type": "journal",
+   "first_seen": "2026-09-30",
+   "verdict": "A",
+   "ours": true,
+   "on_page": true,
+   "section": "Applications Papers",
+   "note": "Published version of doi:10.1101/2025.01.24.634803 (retitled); page link updated by hand"
+  },
+  "doi:10.1038/s41593-026-02460-4": {
+   "doi": "10.1038/s41593-026-02460-4",
+   "title": "Comprehensive profiling of brain dynamics during anesthesia across phylogeny",
+   "year": 2026,
+   "authors": [
+    "Luppi",
+    "Uhrig",
+    "Tasserie",
+    "Shafiei"
+   ],
+   "venue": "Nature Neuroscience",
+   "type": "journal",
+   "first_seen": "2026-09-30",
+   "verdict": "A",
+   "ours": true,
+   "on_page": true,
+   "section": "Applications Papers",
+   "evidence": ">6,000 hctsa time-series features computed per region across six species",
+   "note": "Added by hand (PR #3)"
+  }
+ }
+}
