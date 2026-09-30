@@ -42,22 +42,22 @@ _as well as:_
 
 * Profile brain dynamics during anesthesia across six species, from nematodes to humans.
   * [📗 <mark style="color:green;">Luppi et al.,</mark> _<mark style="color:green;">Nature Neuroscience</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.1038/s41593-026-02460-4)
-* Distinguish wake from anesthetized flies.
-  * [📗 <mark style="color:green;">Leung et al.</mark> <mark style="color:green;"></mark>_<mark style="color:green;">PLoS Biology</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://doi.org/10.1371/journal.pbio.3003217)
-* Connect structural brain connectivity to fMRI dynamics (mouse).
-  * &#x20;[📗 _<mark style="color:green;">Chaos</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2017)</mark>](http://aip.scitation.org/doi/10.1063/1.4979281)<mark style="color:green;">.</mark>
-* Connect structural brain connectivity to fMRI dynamics (human).
-  * &#x20;[📗 _<mark style="color:green;">Network Neuroscience</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2020)</mark>](https://doi.org/10.1162/netn_a_00151)<mark style="color:green;">.</mark>
-* Distinguish time-series patterns for data-mining applications.&#x20;
-  * [📗 _<mark style="color:green;">IEEE Trans. Knowl. Data Eng.</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2014)</mark>](http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425)<mark style="color:green;">.</mark>
-* Classify babies with low blood pH from fetal heart rate time series.
-  * [📗 _<mark style="color:green;">34th Ann. Int. Conf. IEEE EMBC</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2012)</mark>](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6346629)<mark style="color:green;">.</mark>
 * Relate regional brain dynamics to synaptome architecture in the mouse brain.
   * [📗 <mark style="color:green;">Hansen et al.,</mark> _<mark style="color:green;">PLoS Biology</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.1371/journal.pbio.3003637)
 * Map heart-rate dynamics onto whole-brain functional architecture and cognitive function.
   * [📙 <mark style="color:orange;">Qian et al.,</mark> _<mark style="color:orange;">bioRxiv</mark>_ <mark style="color:orange;">(2026).</mark>](https://doi.org/10.64898/2026.08.04.742623)
 * Identify which statistics best distinguish time-irreversible dynamics, across 35 simulated systems.
   * [📗 <mark style="color:green;">Dalle Nogare and Fulcher,</mark> _<mark style="color:green;">Physical Review Research</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.1103/4nb2-398s)
+* Distinguish wake from anesthetized flies.
+  * [📗 <mark style="color:green;">Leung et al.</mark> <mark style="color:green;"></mark>_<mark style="color:green;">PLoS Biology</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://doi.org/10.1371/journal.pbio.3003217)
+* Connect structural brain connectivity to fMRI dynamics (human).
+  * &#x20;[📗 _<mark style="color:green;">Network Neuroscience</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2020)</mark>](https://doi.org/10.1162/netn_a_00151)<mark style="color:green;">.</mark>
+* Connect structural brain connectivity to fMRI dynamics (mouse).
+  * &#x20;[📗 _<mark style="color:green;">Chaos</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2017)</mark>](http://aip.scitation.org/doi/10.1063/1.4979281)<mark style="color:green;">.</mark>
+* Distinguish time-series patterns for data-mining applications.&#x20;
+  * [📗 _<mark style="color:green;">IEEE Trans. Knowl. Data Eng.</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2014)</mark>](http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425)<mark style="color:green;">.</mark>
+* Classify babies with low blood pH from fetal heart rate time series.
+  * [📗 _<mark style="color:green;">34th Ann. Int. Conf. IEEE EMBC</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2012)</mark>](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6346629)<mark style="color:green;">.</mark>
 
 ***
 
@@ -88,12 +88,20 @@ _Here are some highlights:_
 
 _In addition to:_
 
+* Uncover EEG signatures of electroconvulsive and magnetic seizure therapy in treatment-resistant depression.
+  * [📙 <mark style="color:orange;">Hill et al.,</mark> _<mark style="color:orange;">medRxiv</mark>_ <mark style="color:orange;">(2026).</mark>](https://doi.org/10.64898/2026.02.05.26345687)
+* Predict autism spectrum disorder from resting-state EEG, and identify the most discriminative channels and features.
+  * [📗 <mark style="color:green;">Hafeez et al.,</mark> _<mark style="color:green;">Sensors</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.3390/s26061862)
 * Predict depth of anesthesia from heart-rate dynamics.
   * [📗 <mark style="color:green;">Qian et al., Br J Anaesth (2025).</mark>](https://doi.org/10.1016/j.bja.2025.09.053)
 * Detect associations between brain region dynamics and traits like cognitive ability and substance use.
   * [<mark style="color:green;">📗 Tian et al.,</mark> <mark style="color:green;"></mark>_<mark style="color:green;">Nature Human Behavior</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://www.nature.com/articles/s41562-025-02332-0)
 * Predict age from resting-state MEG from individual brain regions.
   * [📗](https://www.pnas.org/doi/10.1073/pnas.2411098122)[ ](#user-content-fn-1)[^1][_<mark style="color:green;">Stier et</mark>_ ](#user-content-fn-1)[^1][_<mark style="color:green;">al., PNAS</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://www.pnas.org/doi/10.1073/pnas.2411098122)
+* Systematically test cause–effect relationships between brain structure and function.
+  * [📙 <mark style="color:orange;">Luppi et al.,</mark> _<mark style="color:orange;">bioRxiv</mark>_ <mark style="color:orange;">(2025).</mark>](https://doi.org/10.1101/2025.04.05.647237)
+* Capture functional interactions between brain regions and networks through the similarity of their time-series features.
+  * [📗 <mark style="color:green;">Wang et al.,</mark> _<mark style="color:green;">Communications Biology</mark>_ <mark style="color:green;">(2025).</mark>](https://doi.org/10.1038/s42003-025-09165-7)
 * Estimate brain age in children from EEG.
   * [📗 _<mark style="color:green;">45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2023)</mark>](https://ieeexplore.ieee.org/abstract/document/10340663)<mark style="color:green;">.</mark>
 * Extract gradients from fMRI _hctsa_ time-series features to understand the relationship between schizophrenia and nicotine dependence.
@@ -102,14 +110,6 @@ _In addition to:_
   * [📙 _<mark style="color:orange;">SciTePress</mark>_ <mark style="color:orange;"></mark><mark style="color:orange;">(2023)</mark>](https://www.scitepress.org/Papers/2023/116256/)<mark style="color:orange;">.</mark>
 * Distinguish motor-evoked potentials corresponding to multiple sclerosis.
   * [📗 _<mark style="color:green;">Frontiers in Neuroinformatics</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2020)</mark>](https://doi.org/10.3389/fninf.2020.00028)<mark style="color:green;">.</mark>
-* Uncover EEG signatures of electroconvulsive and magnetic seizure therapy in treatment-resistant depression.
-  * [📙 <mark style="color:orange;">Hill et al.,</mark> _<mark style="color:orange;">medRxiv</mark>_ <mark style="color:orange;">(2026).</mark>](https://doi.org/10.64898/2026.02.05.26345687)
-* Predict autism spectrum disorder from resting-state EEG, and identify the most discriminative channels and features.
-  * [📗 <mark style="color:green;">Hafeez et al.,</mark> _<mark style="color:green;">Sensors</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.3390/s26061862)
-* Systematically test cause–effect relationships between brain structure and function.
-  * [📙 <mark style="color:orange;">Luppi et al.,</mark> _<mark style="color:orange;">bioRxiv</mark>_ <mark style="color:orange;">(2025).</mark>](https://doi.org/10.1101/2025.04.05.647237)
-* Capture functional interactions between brain regions and networks through the similarity of their time-series features.
-  * [📗 <mark style="color:green;">Wang et al.,</mark> _<mark style="color:green;">Communications Biology</mark>_ <mark style="color:green;">(2025).</mark>](https://doi.org/10.1038/s42003-025-09165-7)
 
 ***
 
