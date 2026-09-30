@@ -2881,6 +2881,45 @@
    "section": "🧠 Neuroimaging",
    "page_line": 84,
    "note": "bootstrap: already on page"
+  },
+  "doi:10.1371/journal.pbio.3003637": {
+   "doi": "10.1371/journal.pbio.3003637",
+   "title": "Synapse types are spatially associated with regional hemodynamics in the mouse brain",
+   "year": 2026,
+   "authors": [
+    "Hansen",
+    "Luppi",
+    "Qiu",
+    "Gini"
+   ],
+   "venue": "PLOS Biology",
+   "type": "journal",
+   "first_seen": "2026-09-30",
+   "verdict": "A",
+   "ours": true,
+   "on_page": true,
+   "section": "Applications Papers",
+   "note": "Published version of doi:10.1101/2025.01.24.634803 (retitled); page link updated by hand"
+  },
+  "doi:10.1038/s41593-026-02460-4": {
+   "doi": "10.1038/s41593-026-02460-4",
+   "title": "Comprehensive profiling of brain dynamics during anesthesia across phylogeny",
+   "year": 2026,
+   "authors": [
+    "Luppi",
+    "Uhrig",
+    "Tasserie",
+    "Shafiei"
+   ],
+   "venue": "Nature Neuroscience",
+   "type": "journal",
+   "first_seen": "2026-09-30",
+   "verdict": "A",
+   "ours": true,
+   "on_page": true,
+   "section": "Applications Papers",
+   "evidence": ">6,000 hctsa time-series features computed per region across six species",
+   "note": "Added by hand (PR #3)"
   }
  }
 }

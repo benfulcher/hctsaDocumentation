@@ -53,7 +53,7 @@ _as well as:_
 * Classify babies with low blood pH from fetal heart rate time series.
   * [📗 _<mark style="color:green;">34th Ann. Int. Conf. IEEE EMBC</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2012)</mark>](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6346629)<mark style="color:green;">.</mark>
 * Relate regional brain dynamics to synaptome architecture in the mouse brain.
-  * [📙 <mark style="color:orange;">Hansen et al.,</mark> _<mark style="color:orange;">bioRxiv</mark>_ <mark style="color:orange;">(2025).</mark>](https://doi.org/10.1101/2025.01.24.634803)
+  * [📗 <mark style="color:green;">Hansen et al.,</mark> _<mark style="color:green;">PLoS Biology</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.1371/journal.pbio.3003637)
 * Map heart-rate dynamics onto whole-brain functional architecture and cognitive function.
   * [📙 <mark style="color:orange;">Qian et al.,</mark> _<mark style="color:orange;">bioRxiv</mark>_ <mark style="color:orange;">(2026).</mark>](https://doi.org/10.64898/2026.08.04.742623)
 * Identify which statistics best distinguish time-irreversible dynamics, across 35 simulated systems.
