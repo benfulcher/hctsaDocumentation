@@ -1564,10 +1564,10 @@
    "verdict": "A",
    "confidence": 0.9,
    "ours": true,
-   "section": "Applications Papers",
+   "section": "Methods Papers",
    "evidence": "Introduces a feature-based information-theoretic method that 'extracts a candidate set of time-series features from sliding windows of the source time series'; Nguyen, McMullin, Lizier & Fulcher",
    "summary": "Detect interpretable, long-timescale pairwise interactions between time series using time-series features.",
-   "note": "methods paper; Ben may prefer it under Methods Papers"
+   "note": "methods paper; Ben may prefer it under Methods Papers; moved to a Methods card by hand"
   },
   "doi:10.1109/access.2021.3056441": {
    "doi": "10.1109/access.2021.3056441",
