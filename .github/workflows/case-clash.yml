@@ -1,0 +1,24 @@
+# Fail if two tracked paths differ only in letter case (e.g. MATLAB_light.png vs
+# matlab_light.png). GitBook's sync can add such pairs, and on macOS/Windows
+# (case-insensitive filesystems) only one of them can exist in a checkout, so the
+# other shows up as a phantom modification and the wrong image may be served locally.
+name: Case-insensitive filename clashes
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look for paths that differ only in case
+        run: |
+          clashes=$(git ls-files | sort -f | uniq -i -D)
+          if [ -n "$clashes" ]; then
+            echo "::error::These paths differ only in letter case; delete or rename one of each pair:"
+            echo "$clashes"
+            exit 1
+          fi
+          echo "No case-only filename clashes."
