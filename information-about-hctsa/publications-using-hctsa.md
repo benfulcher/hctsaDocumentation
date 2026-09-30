@@ -43,6 +43,8 @@ _as well as:_
   * [📙 <mark style="color:orange;">Qian et al.,</mark> _<mark style="color:orange;">bioRxiv</mark>_ <mark style="color:orange;">(2026).</mark>](https://doi.org/10.64898/2026.08.04.742623)
 * Identify which statistics best distinguish time-irreversible dynamics, across 35 simulated systems.
   * [📗 <mark style="color:green;">Dalle Nogare and Fulcher,</mark> _<mark style="color:green;">Physical Review Research</mark>_ <mark style="color:green;">(2026).</mark>](https://doi.org/10.1103/4nb2-398s)
+* Distill hctsa into a reduced set of 16 features (catchaMouse16) that captures biologically informative dynamics in fMRI.
+  * [📗 <mark style="color:green;">Alam et al.,</mark> _<mark style="color:green;">Aperture Neuro</mark>_ <mark style="color:green;">(2025).</mark>](https://doi.org/10.52294/001c.140433)
 * Distinguish wake from anesthetized flies.
   * [📗 <mark style="color:green;">Leung et al.</mark> <mark style="color:green;"></mark>_<mark style="color:green;">PLoS Biology</mark>_ <mark style="color:green;"></mark><mark style="color:green;">(2025).</mark>](https://doi.org/10.1371/journal.pbio.3003217)
 * Connect structural brain connectivity to fMRI dynamics (human).
