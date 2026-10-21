@@ -7,11 +7,19 @@ coverY: 0
 
 # UMAP Projections
 
-In each dataset, each time series is represented in the high-dimensional feature space of _hctsa_ features. In each plot, we show the data projected into a two-dimensional [UMAP](https://github.com/lmcinnes/umap) space. Each point in the space is a time series, and we have coloured each point according to its assigned label. In many cases, the unsupervised UMAP projection of the _hctsa_ feature space captures the labeled structure of the data.
+In each dataset, each time series is represented in the high-dimensional feature space of _hctsa_ features.
+In each plot, we show the data projected into a two-dimensional [UMAP](https://github.com/lmcinnes/umap) space.
+Each point in the space is a time series, and we have colored each point according to its assigned label.
+In many cases, the unsupervised UMAP projection of the _hctsa_ feature space captures the labeled structure of the data.
 
 Only a selection of the most interesting-looking projections (according to our eyes) are shown here. _Oh, did you want to have a play with all the data?_ It's available on [figshare](https://figshare.com/articles/Computed\_HCTSA\_matrices\_for\_the\_UEA\_UCR\_2018\_time-series\_classification\_tasks/6865163).
 
 Thanks to [Carl Lubba](https://twitter.com/chlubba) for doing all the computation shown here!
+
+{% hint style="info" %}
+These projections, and the feature matrices on figshare, were computed with an earlier version of _hctsa_ (before v3.0.0), whose feature set differs from the current one (6392 features).
+Recompute the features with v3.0.0 if you need them to match the current feature set.
+{% endhint %}
 
 ***
 

@@ -11,6 +11,10 @@ It can be good practice to visualize where special values and errors are occurri
 3. `TS_InspectQuality('full');` Plots the full data matrix (all time series as rows and all operations as columns), and shows where each possible special-valued output can occur (including 'error', 'NaN', 'Inf', '-Inf', 'complex', 'empty', or a 'link error').
 4. `TS_InspectQuality('reduced');` As `'full'`, but includes only columns where special values occurred.
 
+The full set of inputs is `hadProblem = TS_InspectQuality(inspectWhat,customFile,askIfLarge)`, where `customFile` is the _hctsa_ file to inspect (`HCTSA.mat` by default; shorthands like `'raw'` and `'norm'` also work), and `askIfLarge` (default `true`) waits for a key press before plotting a very large matrix (more than 900,000 entries) in the `'full'` and `'reduced'` modes (set it to `false` to plot without waiting).
+In the `'full'` and `'reduced'` plots, entries that have not yet been calculated are shown as a separate '(uncalculated)' category.
+The codes stored in `TS_Quality` for each type of output are listed [here](../setup/hctsa\_structure.md#quality-labels).
+
 For example, running `TS_InspectQuality('summary')` loads in data from **HCTSA.mat** and produces the following, which can be zoomed in on and explored to understand which features are producing problematic outputs:
 
 ![pca\_image](../../.gitbook/assets/InspectQuality.png)
@@ -19,9 +23,12 @@ For example, running `TS_InspectQuality('summary')` loads in data from **HCTSA.m
 
 Note that errors returned from Matlab files do not halt the progress of the computation (using `try-catch` statements), but errors with compiled **mex** functions (or external command-line packages like TISEAN) can produce a fault that crashes Matlab or the system. We have performed some basic testing on all mex functions, but for some unusual time series, such faults may still occur. These situations must be dealt with by either identifying and fixing the problem in the original source code and recompiling, or by removing the problem code.
 
+If you computed TISEAN-based features in parallel on Linux with a version of _hctsa_ earlier than v3.0.0, recompute them: under load, program output could be truncated, giving errors or wrong values.
+
 ## Troubleshooting errors
 
-When getting information on operations that produce special-valued outputs (getting IDs listed from `TS_InspectQuality`), it can be useful to then test examples by re-running pieces of code with the problematic data. The function `TS_WhichProblemTS` can be used to retrieve time series from an _hctsa_ dataset that caused a problem for a given operation.
+When getting information on operations that produce special-valued outputs (getting IDs listed from `TS_InspectQuality`), it can be useful to then test examples by re-running pieces of code with the problematic data.
+The function `TS_WhichProblemTS` can be used to retrieve time series from an _hctsa_ dataset that caused a problem (i.e., any nonzero quality label) for a given operation.
 
 Usage is as follows:
 
@@ -30,6 +37,12 @@ Usage is as follows:
 [ts_ind, dataCell, codeEval] = TS_WhichProblemTS(684);
 ```
 
-This provides the list of time series IDs (`ts_ind`), their time-series data vectors (`dataCell`), and the code to evaluate the given operation (in this case, the master operation code corresponding to the operation with ID 684).
+This provides the list of problem time series (`ts_ind`, indices of rows in the `TimeSeries` table, which match the time-series IDs unless the file has been subset or combined), their time-series data vectors (`dataCell`), and the code to evaluate the given operation (in this case, the master operation code corresponding to the operation with ID 684).
+The full set of inputs is `TS_WhichProblemTS(opID,whatData,doPlot)`, where `whatData` is the _hctsa_ file to use (default `'raw'`, i.e., `HCTSA.mat`).
+By default (`doPlot = true`), it also plots up to 10 examples of the problem time series; set `doPlot` to `false` to skip the plot, e.g., `TS_WhichProblemTS(684,'raw',false)`.
 
 You can then pick an example time series (e.g., the first problem time series: `x = dataCell{1}; x_z = zscore(x)`), and then copy and paste the code in codeEval into the command line to evaluate the code for this time series. This method allows easy debugging and inspection of examples of time-series data that caused problems for particular operations flagged through the `TS_InspectQuality` process.
+
+{% hint style="info" %}
+In _hctsa_ v3.0.0, `TS_WhichProblemTS` wraps `dataCell` in an extra cell, so the first problem time series is `dataCell{1}{1}`.
+{% endhint %}

@@ -40,6 +40,12 @@ Consider a long and kinda gnarly list, that is quite hard to make sense of. This
 [6946] MF_steps_ahead_ss_best_6_meandiffrms (model,prediction) -- 50.33%
 ```
 
+{% hint style="info" %}
+The IDs in square brackets are from that older library.
+In _hctsa_ v3.0.0, several of these features have been renamed (e.g., `MF_steps_ahead_ar_best_6_ac1_3` is now `MF_steps_ahead_ar_best_6_ac1_h3`) or deregistered (e.g., `DN_CompareKSFit_uni_psx`, `DN_FitKernelSmoothraw_entropy`, `CO_StickAngles_y_ac2_all`, and the `WL_Coeffs_db3_*_med_coeff` features).
+`FeatureSets/renamed_operations.csv` traces each old feature name to its current name, or gives the reason it was removed.
+{% endhint %}
+
 If there are hundreds or thousands of statistically significant features, some of which have much higher accuracy than others, you may first want to inspect only a subset of features, e.g., the 50 or 100 top-performing features (with the most significant differences). If you can make sense of these first, you will usually have a pretty good basis for working out what's going on with the features with lower performance (if indeed you want to go beyond interpreting the best-performing features).
 
 ### 2: Find groups of similar features
@@ -69,7 +75,7 @@ The simplest way of getting a quick idea of what sort of property a feature migh
 3. _'wavelet'_ (features derived from wavelet transforms of the time series),
 4. _'locationDependent'_ (location dependent: features that change under mean shifts of a time series),
 5. _'spreadDependent'_ (spread dependent: features that change under rescaling about their mean), and
-6. _'lengthDependent'_ (length dependent: features that are highly sensitive to the length of a time series).
+6. _'lengthDependent'_ (length dependent: features that are highly sensitive to the length of a time series; since length bias was removed from the features in v3.0.0, only a handful of features, such as `ST_length`, now carry this keyword).
 
 ### Inspecting code
 
@@ -79,14 +85,17 @@ To find more specific detailed information about a feature, beyond just a broad 
     [1970] FC_LocalSimple_mean3_ac1 (forecasting) -- 59.97%
 ```
 
-We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction). We can use the feature ID (`1970`) provided in square brackets to get information from the `Operations` metadata table:
+We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction).
+We can use the feature ID provided in square brackets to get information from the `Operations` metadata table.
+IDs depend on the version of the feature library: in _hctsa_ v3.0.0, the ID of `FC_LocalSimple_mean3_ac1` is 1668 (you can find it by name, as `Operations(strcmp(Operations.Name,'FC_LocalSimple_mean3_ac1'),:)`):
 
 ```
->> Operations(Operations.ID==1970,:)
-ID               Name                 Keywords              CodeString            MasterID
-____    ________________________    _____________    _______________________    ________
+>> Operations(Operations.ID==1668,:)
 
-1970    'FC_LocalSimple_mean3_ac1'    'forecasting'    'FC_LocalSimple_mean3.ac1'    496
+     ID                 Name                      Keywords                    CodeString             MasterID
+    ____    ____________________________    _____________________    ____________________________    ________
+
+    1668    {'FC_LocalSimple_mean3_ac1'}    {'model,forecasting'}    {'FC_LocalSimple_mean3.ac1'}      515
 ```
 
 Inspecting the text before the dot, `.`, in the `CodeString` field (`FC_LocalSimple_mean3`) tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature. Whereas the text following the dot, `.`, in the `CodeString` field (`ac1`), tells us the field of the output structure produced by the Matlab function that was run.
@@ -94,37 +103,61 @@ Inspecting the text before the dot, `.`, in the `CodeString` field (`FC_LocalSim
 We can use the `MasterID` to get more information about the code that was run using the `MasterOperations` metadata table:
 
 ```
->> MasterOperations(MasterOperations.ID==496,:)
-ID             Label                            Code
-___    ______________________    ________________________________
+>> MasterOperations(MasterOperations.ID==515,:)
 
-496    'FC_LocalSimple_mean3'    'FC_LocalSimple(x_z,'mean',3)'
+    ID              Label                            Code
+    ___    ________________________    ________________________________
+
+    515    {'FC_LocalSimple_mean3'}    {'FC_LocalSimple(x_z,'mean',3)'}
 ```
 
 This tells us that the code used to produce our feature was `FC_LocalSimple(x_z,'mean',3)` (`x_z` being the z-scored input time series that _hctsa_ passes to every operation). We can get information about this function in the command line by running a `help` command:
 
 ```
 >> help FC_LocalSimple
-FC_LocalSimple    Simple local time-series forecasting.
+  FC_LocalSimple   How well a simple local rule forecasts the next value.
 
-Simple predictors using the past trainLength values of the time series to
-predict its next value.
+  Predicts each value of the time series from the trainLength values just before
+  it, using a simple rule (the mean, the median, or a straight line fitted to those
+  values and extended one step). The residuals are the prediction minus the data
+  (e = yp - y), and the outputs describe them with the shared residual summary
+  MF_ResidualAnalysis (at its 'core' level), plus the Gaussianity of their
+  distribution. The first trainLength values are used for training only and are not
+  forecast. If the series is too short to forecast, a NaN is returned.
 
----INPUTS:
-y, the input time series
+  ---INPUTS:
+  y, the input time series
 
-forecastMeth, the forecasting method:
-         (i) 'mean': local mean prediction using the past trainLength time-series
-                      values,
-         (ii) 'median': local median prediction using the past trainLength
-                        time-series values
-         (iii) 'lfit': local linear prediction using the past trainLength
-                        time-series values.
+  forecastMeth, the forecasting method:
+           (i) 'mean': the mean of the past trainLength values (default),
+           (ii) 'median': the median of the past trainLength values,
+           (iii) 'lfit': the next point on a straight line fitted to the past
+                          trainLength values.
 
-trainLength, the number of time-series values to use to forecast the next value
+  trainLength, the number of past values used to forecast the next value (default
+           3), or a string that sets it from the series: 'ac' (the first
+           zero-crossing of the autocorrelation function of y; discrete, from
+           CO_FirstCrossing), 'ac1e' (the floor of its first 1/e crossing), or 'mi'
+           (the smaller of the first minimum of the Kraskov automutual information
+           and the 'ac1e' delay); see BF_GetTau. For 'lfit' with 'ac', 'ac1e' or
+           'mi', this is at least 2 (a line cannot be fitted to a single point).
 
----OUTPUTS: the mean error, stationarity of residuals, Gaussianity of
-residuals, and their autocorrelation structure.
+  ---OUTPUTS:
+  meane, mean of the residuals (the bias of the forecast)
+  meanabs, mean absolute residual
+  stde, standard deviation of the residuals
+  maxonstd, largest absolute residual, in units of the residual standard deviation
+  ac1, ac2, ac3: autocorrelation of the (z-scored) residuals at lags 1, 2 and 3
+  propbth, proportion of the residual autocorrelations at lags 1 to 25 within the
+           significance band +/- 2.6/sqrt(N)
+  taurat, decorrelation time of the residuals (first zero-crossing of their
+           autocorrelation function) divided by that of the time series
+  sws, standard deviation across 5 windows of the local standard deviation of the
+           residuals, relative to their overall standard deviation
+  swm, standard deviation across 5 windows of the local mean of the residuals,
+           relative to their overall standard deviation
+  normr2, R^2 of a Gaussian fit (DN_SimpleFit) to the kernel-smoothed distribution
+           of the residuals: a measure of their Gaussianity
 ```
 
 We can also inspect the code in the function `FC_LocalSimple` directly for more information. Like all code files for computing time-series features, `FC_LocalSimple.m` is located in the Operations directory of the _hctsa_ repository.
@@ -134,7 +167,8 @@ Inspecting the code file, we see that running `FC_LocalSimple(y,'mean',3)` does 
 To understand what the specific output quantity from this code is that came up as being highly informative in our `TS_TopFeatures` analysis, we need to look for the output labeled `ac1` of the output structure produced by `FC_LocalSimple`. We discover that this is produced via a shared residual-analysis routine, `MF_ResidualAnalysis`, that `FC_LocalSimple.m` calls on its prediction residuals:
 
 ```
-% Report the residuals through the shared contract:
+% Report the residuals through the shared contract, at the cheap 'core' level, under
+% the names the rest of the model-fitting family uses.
 residOut = MF_ResidualAnalysis(res, y, 'core');
 fields = fieldnames(residOut);
 for k = 1:length(fields)
@@ -142,7 +176,7 @@ for k = 1:length(fields)
 end
 ```
 
-Inspecting `MF_ResidualAnalysis.m` (cf. `help MF_ResidualAnalysis`) shows us that its `'core'` output level includes an `ac1` field: the lag-1 autocorrelation of the residuals, computed as `CO_AutoCorr(res,1,'Fourier')`.
+Inspecting `MF_ResidualAnalysis.m` (cf. `help MF_ResidualAnalysis`) shows us that its `'core'` output level includes an `ac1` field: the lag-1 autocorrelation of the z-scored residuals (the first of the autocorrelations at lags 1 to 25 computed as `CO_AutoCorr(zscore(e),1:25,'Fourier')`, where `e` are the residuals).
 
 This shows us that, after doing the local mean prediction, `FC_LocalSimple` then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions -- our output of interest, `ac1`, being the simplest of these (higher-lag and ratio-based variants, like `ac2` and `taurat`, are also available in the shared contract).
 
@@ -155,7 +189,7 @@ Once we've seen the code that was used to produce a feature, and started to thin
 For example, we can run the following:
 
 ```
-TS_FeatureSummary(1970,'raw',true);
+TS_FeatureSummary(1668,'raw',true);
 ```
 
 which produces a plot like that shown below. We have run this on a dataset containing noisy sine waves, labeled 'noisy' (red) and periodic signals without noise, labeled 'periodic' (blue):

@@ -6,13 +6,26 @@ This will produce a colored visualization of the data matrix such as that shown 
 
 When data is grouped according to a set of distinct keywords and stored as group metadata (using the `TS_LabelGroups` [function](grouping.md)), these can also be visualized using `TS_PlotDataMatrix('colorGroups',true)`.
 
+All inputs to `TS_PlotDataMatrix` are name–value pairs:
+
+* `'whatData'`: the data to plot: `'norm'` (default, `HCTSA_N.mat`), `'raw'` (`HCTSA.mat`), or a filename.
+* `'addTimeSeries'`: whether to annotate time-series segments to the left of the data matrix (default: `true`).
+* `'timeSeriesLength'`: the number of samples in each of these annotations (default: 200).
+* `'colorGroups'`: whether to color each labeled group of time series with its own colormap (default: `false`).
+  The values of each group are scaled to span their own colormap, so colors can only be compared within a group.
+* `'groupReorder'`: whether to sort time series by group, and cluster within each group (default: `false`).
+* `'customColorMap'`: the colormap for ungrouped data (default: `'redyellowblue'`).
+* `'colorNaNs'`: whether to draw rectangles over special values (default: `true`).
+* `'customOrder'`: a cell of two permutation vectors, `{rowOrder,columnOrder}`, to reorder rows and columns before plotting.
+
 ### Visualizing the normalized data matrix
 
-Running `TS_PlotDataMatrix('norm')` plots the data contained in the local file `HCTSA_N.mat`, yielding:
+Running `TS_PlotDataMatrix('whatData','norm')` (or just `TS_PlotDataMatrix`, as `'norm'` is the default) plots the data contained in the local file `HCTSA_N.mat`, yielding:
 
 ![](../../.gitbook/assets/Bonn\_DataMatrix\_norm.png)
 
-where black rectangles label missing values, and other values are shown from low (blue) to high (red) after normalization using the scaled outlier-robust sigmoidal transformation. Due to the size of the matrix, operations are not labeled individually.
+where black rectangles label missing values, and other values are shown from low (blue) to high (red) after normalization (e.g., using the default 'mixedSigmoid' transformation of `TS_Normalize`).
+Due to the size of the matrix, operations are not labeled individually.
 
 Examples of time series segments are shown to the left of the plot, and when the middle plot is zoomed, the time-series annotations remain matched to the data matrix:
 
@@ -33,8 +46,8 @@ Much prettier, hey?! By reordering rows and columns, this representation reveals
 In this example, we consider a set of 20 periodic and 20 noisy periodic signals. We assigned the time series in `HCTSA.mat` to groups (using `TS_LabelGroups('raw',{'periodic','noisy'})`), then normalized the data matrix (`TS_Normalize`), and then clustered it (`TS_Cluster`). So now we have a clustered data matrix containing thousands of summaries of each time series, as well as pre-assigned group information as to which time series are periodic and which are noisy. When the time series have been assigned to groups, this can be accessed by switching on the `'colorGroups'` setting:
 
 ```
-TS_PlotDataMatrix('norm','colorGroups',false); % don't color according to group labels
-TS_PlotDataMatrix('norm','colorGroups',true); % color according to group labels
+TS_PlotDataMatrix('whatData','norm','colorGroups',false); % don't color according to group labels
+TS_PlotDataMatrix('whatData','norm','colorGroups',true); % color according to group labels
 ```
 
 producing the following two plots:

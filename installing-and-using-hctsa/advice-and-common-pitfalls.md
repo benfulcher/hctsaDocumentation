@@ -19,8 +19,10 @@ Some general advice before embarking on an _hctsa_ analysis:
    * For continuously evolving processes: At **what rate are the data sampled**? _Does this capture the patterns of interest?_ E.g., if the sampling rate is too high, this can lead to trivially autocorrelated time series such that time-series methods in _hctsa_ will find it challenging to resolve the patterns of interest.
    * Are the **appropriately processed** (detrended, artifacts removed, …)? This requires careful thought, often with domain expertise, about what problem is being solved. E.g., many time-series analysis algorithms will be dominated by underlying trends if underlying trends in time series are not removed. In general, properties of the data, especially if they're likely to affect many time-series analysis algorithms (like underlying trends, artefactual outliers, etc.) should be removed if they're not informative of the differences you care about distinguishing. See the section below for more information.
    * **What do they look like?** Addressing the questions above requires you to look at each of the time series to get a sense of the dynamics you're interested in characterizing using time-series features.
-2. **What problem are you trying to solve?** In designing an analysis using _hctsa_, you will need to think about the sample size you have, what effect sizes are expected, what statistical power will you have, etc. E.g., if you only have 5 examples of each of two classes, you will not have the statistical power to pick out individual features from a library of 7000, simple (unregularized) classifiers will be likely to overfit, etc.
-3. **Trial run with a reduced set**. Once you’ve devised a pipeline, it's best to run through it in _hctsa_ but using a _reduced feature set first_ (e.g., the catch22 set), which runs quickly on a laptop and gives you a sense for the process. Once you're satisfied with the analysis pipeline, you can always scale up to the full _hctsa_ library of >7000 features.
+2. **What problem are you trying to solve?** In designing an analysis using _hctsa_, you will need to think about the sample size you have, what effect sizes are expected, what statistical power will you have, etc.
+   E.g., if you only have 5 examples of each of two classes, you will not have the statistical power to pick out individual features from a library of more than 6000, simple (unregularized) classifiers will be likely to overfit, etc.
+3. **Trial run with a reduced set**. Once you’ve devised a pipeline, it's best to run through it in _hctsa_ but using a _reduced feature set first_ (e.g., the catch22 set, `TS_Init('INP_ts.mat','catch22')`), which runs quickly on a laptop and gives you a sense for the process.
+   Once you're satisfied with the analysis pipeline, you can always scale up to the full _hctsa_ library of 6392 features.
 
 ## Data processing
 
@@ -37,7 +39,12 @@ The following should be considered:
 
 #### **A quick note on how sampling rate is treated in&#x20;**_**hctsa**_
 
-Note that in designing _hctsa_, we made the decision to represent a time series as a sequence of numbers, such that say heart rates could be compared alongside say (yearly) tree-ring time-series data, or say (quarterly) economic time-series data. As such, methods that rely on quantifying patterns on an absolute timescale (i.e., specifiable in seconds) rather than a relative timescale (i.e., specifiable in number of samples) is not included in any _hctsa_ features \[and similarly any frequency-domain features that rely on specific frequency bands). When analyzing data of a given modality with relevant timescales of interest, these can be incorporated by in custom additional (domain-specific) features.
+Note that in designing _hctsa_, we made the decision to represent a time series as a sequence of numbers, such that say heart rates could be compared alongside say (yearly) tree-ring time-series data, or say (quarterly) economic time-series data.
+As such, methods that rely on quantifying patterns on an absolute timescale (i.e., specifiable in seconds) rather than a relative timescale (i.e., specifiable in number of samples) are not included in any _hctsa_ features (and similarly any frequency-domain features that rely on specific frequency bands).
+When analyzing data of a given modality with relevant timescales of interest, these can be incorporated in custom additional (domain-specific) features.
+
+From v3.0.0, many features that use a time delay set it from the time series' own correlation time (cf. `BF_GetTau`: the 1/e crossing of the autocorrelation function, or the first minimum of the automutual information, capped at that 1/e crossing), and some features are also computed on a version of the time series downsampled by its 1/e autocorrelation time (marked `_dec` in their names), alongside the originals.
+This reduces, but does not remove, the sensitivity of _hctsa_ features to the sampling rate.
 
 ## Interpreting Features
 
@@ -47,5 +54,5 @@ There are often many routes to solving a given data analysis challenge. For exam
 
 In general, **complex explanations of patterns in a dataset can only be justified when simpler explanations have been ruled out**. E.g., Do not write a paper about a complex (e.g., powerlaw fit to a visibility graph degree-distribution) feature when your data can be just as well (or better) distinguished by their variance.
 
-_hctsa_ has many functions to check this type of behavior: from inspecting the pairwise correlation structure of high-performing features (in `TS_TopFeatures`) to basic checks on different keyword-labeled classes of features (in `TS_CompareFeatureSets`).
+_hctsa_ has many functions to check this type of behavior: from inspecting the pairwise correlation structure of high-performing features (in `TS_TopFeatures`) to comparing the classification performance of different subsets of features, such as location-, length- or spread-dependent features, simple autocorrelations and quantiles, or catch22 (in `TS_CompareFeatureSets`).
 

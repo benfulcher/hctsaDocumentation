@@ -24,11 +24,25 @@ First let's run a simple classification of the groups labeled in `HCTSA_N.mat`, 
 TS_Classify('norm')
 ```
 
-In large feature spaces like in _hctsa_, simpler classifiers (like `'svm_linear'`) tend to generalize well, but you can play with the settings in `cfnParams` to get a sense for how the performance varies.
+In large feature spaces like in _hctsa_, simpler classifiers (like a linear SVM, the default `'svm-linear-lowdim'`, or `'svm-linear'`) tend to generalize well, but you can play with the settings in `cfnParams` to get a sense for how the performance varies.
+The classifier is set by `cfnParams.whatClassifier`; the options are `'svm-linear'`, `'svm-linear-lowdim'`, `'svm-rbf'`, `'linear'`, `'fast-linear'`, `'knn'` and `'logistic'`.
 
 As well as the classification results, the function also produces a confusion matrix, which is especially useful for evaluating where classification errors are occurring. Here's an example for a five-class problem:
 
 ![](../../.gitbook/assets/TS\_Classify\_ConfusionMatrix.png)
+
+### Normalizing within cross-validation folds
+
+By default, the classifier is cross-validated on the data as given.
+For data normalized by `TS_Normalize`, the feature filtering and the normalization of each feature were fitted on all time series, including those in each test fold, so cross-validated accuracies can be slightly optimistic.
+To avoid this, set `'normalizeWithinFolds'` to fit the filter and normalization on each training fold only (the unnormalized data, `HCTSA.mat` here, are loaded for this):
+
+```
+TS_Classify('norm',cfnParams,0,'normalizeWithinFolds',true)
+```
+
+Other optional inputs to `TS_Classify` include `'doPlot'` (whether to plot outputs) and `'seedReset'` (for reproducible cross-validation).
+Setting `cfnParams.classifierFilename` trains a classifier on all the data and saves it to that file, for use by `TS_Predict`.
 
 ### Assessing significance as a permutation test relative to a shuffled ensemble
 
@@ -55,11 +69,17 @@ This gives you a _p_-value estimate (both via a direct permutation test, and by 
 
 You might wonder whether the classification results are driven by simple types of features that aren't related to time-series dynamics at all (such as the mean of the data, or time-series length).
 
-These can be filtered out from the initial computation (e.g., when performing `TS_Init`), or subsequently (e.g., using `TS_Subset`), but you can test the effect such features are having on your dataset using `TS_CompareFeatureSets`. Here's an example output:
+These can be filtered out from the initial computation (e.g., when performing `TS_Init`), or subsequently (e.g., using `TS_Subset`), but you can test the effect such features are having on your dataset using `TS_CompareFeatureSets`.
+By default, `TS_CompareFeatureSets('norm')` compares the sets `'all'`, `'catch22'`, `'linearAutoCorrs'`, `'quantiles'`, `'linearAutoCorrsAndQuantiles'`, `'notLocationDependent'`, `'locationDependent'`, `'notLengthDependent'`, `'lengthDependent'`, `'notSpreadDependent'` and `'spreadDependent'` (a custom list can be given as the third input).
+The `'catch22'` set is skipped, with a warning, unless the dataset contains the _catch22_ features (computed using `TS_Init(...,'catch22')`).
+Here's an example output:
 
 ![](../../.gitbook/assets/TS\_CompareFeatureSets.png)
 
-Here we see that length-dependent features are contributing to accurate classification (above-50% accuracy for this two-class balanced problem). We can take some relief from the fact that excluding these features (`'notLengthDependent'`) does not significantly alter the classification accuracy, so these features are not single-handedly driving the classification results. Nevertheless, assuming differences in recording length is not an interesting difference we want to bias our classification results, it would be advisable to remove these for peace of mind.
+Here we see that length-dependent features are contributing to accurate classification (above-50% accuracy for this two-class balanced problem).
+(This example was made with an older version of the feature library; in v3.0.0, only a handful of features, such as `ST_length`, carry the `lengthDependent` keyword.)
+We can take some relief from the fact that excluding these features (`'notLengthDependent'`) does not significantly alter the classification accuracy, so these features are not single-handedly driving the classification results.
+Nevertheless, assuming differences in recording length is not an interesting difference we want to bias our classification results, it would be advisable to remove these for peace of mind.
 
 ## Comparing to lower-dimensional feature spaces
 
@@ -71,7 +91,8 @@ The classification accuracy is shown for all features (green, dashed), and as a 
 
 Here we find that we can get decent classification accuracy with just four PCs (and perhaps even more complex classifiers will give even better results in the lower-dimensional spaces).
 
-You can quickly interpret the type of features loading strongly onto each PC from the information shown to screen. For example:
+You can quickly interpret the type of features loading strongly onto each PC from the information shown to screen, which lists the PC coefficient and the correlation, `r`, of each top feature with the PC, followed by its ID, name and keywords.
+For example (from an older version of the feature library, so the IDs differ from those in v3.0.0):
 
 ```
 ---Top feature loadings for PC5---:

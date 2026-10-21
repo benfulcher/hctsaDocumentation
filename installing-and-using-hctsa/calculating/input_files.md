@@ -22,21 +22,29 @@ And for _catch22_ as:
 TS_Init('INP_test_ts.mat','catch22');
 ```
 
-The full _hctsa_ feature set involves significant computation time so it is a recommended first step to test out your analysis pipeline using a smaller, faster feature set like [catch22](https://github.com/chlubba/catch22) (but note that it is insensitvie to mean and standard deviation; to include them use catch24). This feature set is provided as a submodule within _hctsa_, and it is very fast to compute using compiled C code (the features are compiled on initial `install` of _hctsa_, by running `mexAll` from the `Toolboxes/catch22/wrap_Matlab` directory of _hctsa_).
+The full _hctsa_ feature set involves significant computation time so it is a recommended first step to test out your analysis pipeline using a smaller, faster feature set like [catch22](https://github.com/chlubba/catch22) (but note that it is insensitive to mean and standard deviation; to include them use `'catch24'`).
+This feature set is provided as a git submodule within _hctsa_, and it is very fast to compute using compiled C code (the features are compiled by `install.m`, which runs `mexAll` from the `Toolboxes/catch22/wrap_Matlab` directory of _hctsa_).
+To include the submodule, clone _hctsa_ with `git clone --recurse-submodules` (if it is missing, `startup.m` tries to fetch it the first time it runs in an interactive Matlab session), or download the release archive (e.g., `hctsa-v3.0.0.tar.gz`), since GitHub's automatic 'Source code' archives do not include it.
+_catch22_ is needed only for the `'catch22'` and `'catch24'` feature sets.
 
 `TS_Init` produces a Matlab file, `HCTSA.mat`, containing all of the structures required to understand the set of time series, operations, and the results of their computation (explained [here](../setup/hctsa\_structure.md)). Through this initialization process, each time series will be assigned a unique ID, as will each master operation, and each operation.
+
+The full set of inputs is `TS_Init(INP_ts,whatFeatureSet,beVocal,outputFile)`.
+By default, `TS_Init` plots the first few time series and asks you to confirm (by typing `y`) that they look right; setting `beVocal` to `false` skips these interactive checks (e.g., `TS_Init('INP_test_ts.mat','hctsa',false)`).
+The output can be written to a file other than `HCTSA.mat` by setting `outputFile`, e.g., `TS_Init('INP_test_ts.mat','hctsa',false,'HCTSA_test.mat')`.
+If the output file already exists, `TS_Init` asks for confirmation before overwriting it.
 
 ## Using custom feature sets
 
 You can specify a custom feature set of your own making by specifying
 
-1. The code to run (`INP_mops.txt`); and
-2. The features to extract from that code (`INP_ops.txt`).
+1. The code to run (e.g., `INP_mops_custom.txt`, in the format of `FeatureSets/INP_mops_hctsa.txt`); and
+2. The features to extract from that code (e.g., `INP_ops_custom.txt`, in the format of `FeatureSets/INP_ops_hctsa.txt`).
 
 Details of how to format these input files are described below. The syntax for using a custom feature-set is as:
 
 ```
-TS_Init('INP_ts.mat',{'INP_mops.txt','INP_ops.txt'});
+TS_Init('INP_ts.mat',{'INP_mops_custom.txt','INP_ops_custom.txt'});
 ```
 
 ## Time Series Input Files
@@ -58,7 +66,7 @@ An example involving two time series is below. In this example, we add two time 
 
 ```
 timeSeriesData = {[1.45,2.87,...],[8.53,-1.244,...]}; % (a cell of vectors)
-labels = {'EEGExperiment_sub1_trail1.dat','EEGExperiment_sub1_trail2.dat'}; % data labels for each time series
+labels = {'EEGExperiment_sub1_trial1.dat','EEGExperiment_sub1_trial2.dat'}; % data labels for each time series
 keywords = {'subject1,trial1,eeg','subject1,trial2,eeg'}; % comma-delimited keywords for each time series
 
 % Save these variables out to INP_test.mat:
@@ -70,7 +78,10 @@ TS_Init('INP_test.mat','hctsa');
 
 ### Input file format 2 (text file)
 
-When using a text file input, the input file now specifies filenames of time series data files, which Matlab will then attempt to load (using `dlmread`). Data files should thus be accessible in the Matlab path. Each time-series text file should have a single real number on each row, specifying the ordered values that make up the time series. Once imported, the time-series data is stored directly in the `HCTSA.mat` file; thus the original time-series data files are no longer required, and can be removed from the Matlab path.
+When using a text file input, the input file now specifies filenames of time series data files, which Matlab will then attempt to load (using `readmatrix`).
+Data files should thus be accessible in the Matlab path.
+Each time-series text file should have a single real number on each row, specifying the ordered values that make up the time series.
+Once imported, the time-series data is stored directly in the `HCTSA.mat` file; thus the original time-series data files are no longer required, and can be removed from the Matlab path.
 
 The input text file should be formatted as rows with each row specifying two whitespace separated entries: (i) the file name of a time-series data file and (ii) comma-delimited keywords.
 
@@ -84,6 +95,14 @@ sinusoid_001.dat               periodic,sine
 
 Using this input file, a new analysis will contain 3 time series, `gaussianwhitenoise_001.dat` and `gaussianwhitenoise_002.dat` will be assigned the keywords `noise` and `gaussian`, and the data in `sinusoid_001.dat` will be assigned keywords ‘periodic’ and ‘sine’. Note that keywords should be separated _only_ by commas (and no whitespace).
 
+### Requirements for time-series data
+
+* Each time series must be univariate (a vector of values).
+* Time series containing `NaN` or `Inf` values are skipped (with a warning), as are time series with an empty label.
+* Time series longer than 50,000 samples are skipped (with a warning); this maximum length can be changed in `TS_ReadInputFile.m`.
+* Labels must be unique: an input file with duplicate labels gives an error.
+* A `.mat` input file can only be used for time series; master operation and operation input files must be text files.
+
 ## Adding master operations
 
 In our system, a _master operation_ refers to a piece of Matlab code and a set of input parameters.
@@ -95,27 +114,33 @@ The (potentially many) outputs from a master operation can thus be mapped to ind
 Two example lines from the input file, `INP_mops_hctsa.txt` (in the `FeatureSets` directory of the repository), are as follows:
 
 ```
-CO_TC3(x_z,1)     CO_TC3_xz_1
+CO_TC3(x_z,1)     CO_TC3_1
 ST_Length(x)    ST_length
 ```
 
 Each line in the input file specifies two pieces of information, separated by whitespace: 1. A piece of code and its input parameters. 2. A unique label for that master operation (that can be referenced by individual operations).&#x20;
 
-We use the convention that `x` refers to the input time series and `x_z` refers to a _z_-scored transformation of the input time series (i.e., $$(x - \mu_x)/\sigma_x$$). In the example above, the first line thus adds an entry for running the code `CO_TC3` using a _z_-scored time series as input (`x_z`), with `1` as the second input with the label `CO_TC3_xz_1`, and the second line will add an entry for running the code `ST_Length` using the untransformed time series, `x`, with the label `length`.
+We use the convention that `x` refers to the input time series and `x_z` refers to a _z_-scored transformation of the input time series (i.e., $$(x - \mu_x)/\sigma_x$$).
+In the example above, the first line thus adds an entry for running the code `CO_TC3` using a _z_-scored time series as input (`x_z`), with `1` as the second input with the label `CO_TC3_1`, and the second line will add an entry for running the code `ST_Length` using the untransformed time series, `x`, with the label `ST_length`.
 
 When the time comes to perform computations on data using the methods specified in these input files, Matlab needs to have path access to each of the master operations functions specified. For the above example, Matlab will attempt to run both `CO_TC3(x_z,1)` and `ST_Length(x)`, and thus the functions `CO_TC3.m` and `ST_Length.m` must be in the Matlab path. Recall that the script `startup.m`, which should be run at the start of each session using _hctsa_, handles the addition of paths required for the default code library.
+Each piece of code is evaluated as a function of `x` and `x_z` only, so it cannot refer to any other variables.
 
 ## Modifying operations (features)
 
 The input file, e.g., `INP_ops_hctsa.txt` (in the `FeatureSets` directory of the repository) should contain a row for every operation, and use labels that correspond to master operations. An example excerpt from such a file is below:
 
 ```
-    CO_TC3_xz_1.raw     CO_TC3_1_raw      correlation,nonlinear
-    CO_TC3_xz_1.abs     CO_TC3_1_abs      correlation,nonlinear
-    CO_TC3_xz_1.num     CO_TC3_1_num      correlation,nonlinear
-    CO_TC3_xz_1.absnum  CO_TC3_1_absnum   correlation,nonlinear
-    CO_TC3_xz_1.denom   CO_TC3_1_denom    correlation,nonlinear
-    ST_length           length            raw,lengthDependent
+    CO_TC3_1.raw        CO_TC3_1_raw      correlation,nonlinear
+    CO_TC3_1.abs        CO_TC3_1_abs      correlation,nonlinear
+    CO_TC3_1.num        CO_TC3_1_num      correlation,nonlinear
+    CO_TC3_1.absnum     CO_TC3_1_absnum   correlation,nonlinear
+    CO_TC3_1.denom      CO_TC3_1_denom    correlation,nonlinear
+    ST_length           length            misc,raw,lengthDependent
 ```
 
-The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace). Whitespace is used to separate the three entries on each line of the input file. In this example, the master operation labeled `CO_TC3_xz_1`, outputs is a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named 'length' here. The two keywords 'correlation' and 'nonlinear' are added to the `CO_TC3_1` operations, while the keywords `raw` and `lengthDependent` are added to the operation called `length`. These keywords can be used to organize and filter the set of operations used for a given analysis task.
+The first column references a corresponding master label and, in the case of master operations that produce structure, the particular field of the structure to reference (after the fullstop), the second column denotes the label for the operation, and the final column is a set of comma-delimited keywords (that must not include whitespace).
+Whitespace is used to separate the three entries on each line of the input file.
+In this example, the master operation labeled `CO_TC3_1` outputs a structure, with fields that are referenced by the first five operations listed here, and the `ST_length` master operation outputs a single number (the length of the time series), which is referenced by the operation named 'length' here.
+The two keywords 'correlation' and 'nonlinear' are added to the `CO_TC3_1` operations, while the keywords `misc`, `raw` and `lengthDependent` are added to the operation called `length`.
+These keywords can be used to organize and filter the set of operations used for a given analysis task.

@@ -1,6 +1,7 @@
 # Low dimensional representation
 
 The software also provides a basic means of visualizing low-dimensional representations of the data, using PCA as `TS_PlotLowDim`.
+A t-SNE projection can be used instead by specifying `'tSNE'` in place of `'pca'`.
 
 This can be done for a time-series dataset as follows:
 
@@ -10,7 +11,9 @@ TS_PlotLowDim('norm','pca');
 
 This uses the normalized data (specifying `'norm'`), plotting time series in the reduced, two-dimensional principal components space of operations (the leading two principal components of the data matrix).
 
-By default, the user will be prompted to select 10 points on the plot to annotate with their corresponding time series, which are annotated as the first 300 points of that time series (and their names by default).
+By default, 6 randomly chosen points are annotated with their corresponding time series (the first 300 samples of each) and their names, without user input.
+To choose the points to annotate yourself, pass `annotateParams` (the fourth input) as a structure: for example, `TS_PlotLowDim('norm','pca',true,struct('n',10,'textAnnotation','Name'))` prompts you to click on 10 points on the plot (`userInput` is `true` by default when `annotateParams` is a structure).
+Passing an integer annotates that many randomly chosen points, and `0` (or `false`) turns annotation off.
 
 After selecting 10 points, we have the following:
 
@@ -30,7 +33,7 @@ annotateParams = struct;
 annotateParams.n = 8; % annotate 8 time series
 annotateParams.maxL = 150; % annotates the first 150 samples of time series
 annotateParams.userInput = false; % points not selected by user but allocated randomly
-annotateParams.textAnnotation = false; % don't display names of annotated time series
+annotateParams.textAnnotation = 'none'; % don't display names of annotated time series ('Name', 'ID', or 'length' to display them)
 
 % Generate a plot using these settings:
 TS_PlotLowDim('norm','pca',showDistributions,annotateParams);
@@ -39,6 +42,8 @@ TS_PlotLowDim('norm','pca',showDistributions,annotateParams);
 which yields:
 
 ![annotated plot](../../.gitbook/assets/lowDimAnnotated.png)
+
+Other fields of `annotateParams` include `fdim` (the width and height of each annotation, as fractions of the plot size), `theLineWidth`, `doRainbow`, and `cmap` (cf. `BF_AnnotatePoints`).
 
 ## Plotting grouped time series
 
@@ -50,12 +55,7 @@ Consider the sample dataset containing 20 periodic signals with additive noise (
 TS_LabelGroups('norm',{'noisy','periodic'},true);
 ```
 
-```
-We found:
-noisy -- 20 matches
-periodic -- 20 matches
-Saving group labels and information back to HCTSA_N.mat... Saved.
-```
+The function reports how many of the 40 time series match each keyword (20 for each), and saves the group labels back to `HCTSA_N.mat`.
 
 Now when we plot the dataset in `TS_PlotLowDim`, it will automatically distinguish the groups in the plot and attempt to classify the difference in the reduced principal components space.
 
@@ -71,4 +71,6 @@ The function then directs you to select 6 points to annotate time series to, pro
 
 ![](../../.gitbook/assets/PC\_noisy\_periodic.png)
 
-Notice how the two labeled groups have been distinguished as red and blue points, and a linear classification boundary has been added (with in-sample misclassification rate annotated to the title and to each individual principal component). If marginal distributions are plotted (setting `showDistribution = true` above), they are labeled according to the same colors.
+Notice how the two labeled groups have been distinguished as red and blue points, and a linear classification boundary has been added (boundaries are drawn when there are fewer than five classes).
+The in-sample classification accuracy (balanced accuracy if the classes are unbalanced) is annotated to the title (for both components combined) and to each principal-component axis label.
+If marginal distributions are plotted (setting `showDistributions = true` above), they are labeled according to the same colors.
