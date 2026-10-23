@@ -52,11 +52,11 @@ An example:
 % Get the IDs of length-dependent features from the `HCTSA.mat` file:
 [ID_lengthDep,ID_notlengthDep] = TS_GetIDs('lengthDependent','raw','ops');
 
-% Generate a new file without these features, called 'HCTSA_locFilt':
-TS_FilterData('raw',[],ID_notlengthDep,'HCTSA_locFilt.mat');
+% Generate a new file without these features, called 'HCTSA_lengthFilt':
+TS_FilterData('raw',[],ID_notlengthDep,'HCTSA_lengthFilt.mat');
 ```
 
 You could use the same template to filter `'locationDependent'` or `'spreadDependent'` features \(or any other combination of keyword labels\).
 In the default feature set, only a few features are labeled `'lengthDependent'`, whereas over 40 are labeled `'locationDependent'` and over 40 `'spreadDependent'`.
-You can then go ahead with analyzing the filtered HCTSA dataset as above, except using your new filename, `HCTSA_locFilt`.
+You can then go ahead with analyzing the filtered HCTSA dataset as above, except using your new filename, `HCTSA_lengthFilt`.
 

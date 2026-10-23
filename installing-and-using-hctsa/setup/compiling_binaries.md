@@ -42,7 +42,8 @@ If only this step fails, fix the issue and re-run `compile_ripser` from inside t
 ## Windows
 
 Automatic compilation of _TISEAN_ and _ripser_ is not supported on Windows: `install` reports an error for these two components.
-You can try building them manually (see `Toolboxes/Tisean_3.0.1/index.html` and `Toolboxes/ripser/README.md`) and adding them to the system path, or skip the operations that use them, as described below.
+In _hctsa_ v3.0.0, the operations that use them can't be run on Windows, so skip them, as described below.
+The other operations don't need these binaries.
 
 ## Ignoring _TISEAN_ and _ripser_ functions
 

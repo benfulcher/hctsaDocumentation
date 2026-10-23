@@ -1,6 +1,6 @@
 # Analyzing and visualizing results
 
-Once a set of operations have been computed on a time-series dataset, the results are stored in a local **HCTSA.mat** file. The result can be used to perform a wide variety of highly comparative analyses, such as those outlined in [our paper](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full).
+Once a set of operations have been computed on a time-series dataset, the results are stored in a local **HCTSA.mat** file. The result can be used to perform a wide variety of highly comparative analyses, such as those outlined in [our paper](https://doi.org/10.1098/rsif.2013.0048).
 
 The type of analysis employed should be motivated by the specific time-series analysis task at hand. Setting up the problem, guiding the methodology, and interpreting the results requires strong scientific input that should draw on domain knowledge, including the questions asked of the data, experience performing data analysis, and statistical considerations.
 

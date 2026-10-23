@@ -11,11 +11,14 @@ The first step is defining the set of features to compare to (here we use the de
 
 ![](../../.gitbook/assets/Empirical1000\_25\_250samples.png)
 
-Pre-computed results can be downloaded from [figshare](https://figshare.com/articles/1000\_Empirical\_Time\_series/5436136) as `HCTSA_Empirical1000.mat`.
-Check which version of _hctsa_ they were computed with: feature names and values differ between versions, so results from different versions should not be mixed.
+The time series, an _hctsa_ input file (`INP_1000ts.mat`) and a pre-computed feature matrix (`HCTSA_Empirical1000.mat`) can be downloaded from [figshare](https://doi.org/10.6084/m9.figshare.5436136).
+The pre-computed matrix there was computed with a pre-release version of _hctsa_ v3 (v3.0.0-alpha), so its feature names and values differ from those of v3.0.0, and results from different versions should not be mixed.
+We therefore recommend recomputing the features with your version of _hctsa_, which also ensures they match your local compute architecture: initialize with `TS_Init('INP_1000ts.mat');`, then compute using [`TS_Compute`](../calculating/running\_computations.md) (e.g., `TS_Compute('series')`, which parallelizes the computation over time series).
 
-Alternatively, features can be recomputed using our input file for the time-series dataset, using the input file provided in the same [figshare](https://figshare.com/articles/1000\_Empirical\_Time\_series/5436136) data repository.
-This ensures that the features match your version of _hctsa_ and your local compute architecture; i.e., using `TS_Init('INP_Empirical1000.mat');` to initialize, followed by [compute commands involving `TS_Compute`](../calculating/running\_computations.md) (e.g., `TS_Compute('series')`, which parallelizes the computation over time series).
+Another diverse data context is the [1000 × 1000 collection](https://dynamicsandneuralsystems.github.io/1000x1000/): 1000 simulated time series, each 1000 samples long, from 133 generating processes across 13 classes of dynamics (including noise and linear processes, maps, chaotic flows, oscillators, point processes and models of natural systems).
+Each series comes with its generating process, parameters and property tags, so you can relate a feature's behavior to known dynamical properties.
+The data, including an _hctsa_ input file (`INP_1000x1000.mat`), are on [figshare](https://doi.org/10.6084/m9.figshare.34013331), and the interactive website lets you browse, listen to and map the collection.
+As for Empirical1000, its pre-computed feature matrix predates v3.0.0, so recompute the features from the input file.
 
 However, if you only ever analyze a particular type of data (e.g., rainfall), then perhaps you're more interested in which methods perform similarly on rainfall data. For this case, you can produce your own data context for custom data using properly structured input files [as explained here](../calculating/input\_files.md).
 
@@ -47,7 +50,7 @@ where we have given this feature two keywords: `hot` and `science`.
 So now we are able to initiate a new _hctsa_ calculation, specifying custom code calls (_master_) and features to extract from the code call (_features_), as:
 
 ```
-TS_Init('INP_Empirical1000.mat',{'INP_hot_master.txt','INP_hot_features.txt'},true,'HCTSA_hot.mat');
+TS_Init('INP_1000ts.mat',{'INP_hot_master.txt','INP_hot_features.txt'},true,'HCTSA_hot.mat');
 ```
 
 This generates a new file, `HCTSA_hot.mat`, containing information about the 1000 time series, and the new hot feature, `hot_feature1`, which can then be computed as:
@@ -133,7 +136,7 @@ The figures below show the result of this analysis for `SC_FastDFA_exponent`, ma
 
 In that analysis, other features in the library had strong relationships to the `fastdfa` exponent, including some unexpected relationships with the stationarity estimate, `StatAvl25` (the `StatAv` features of v3.0.0 are `StatAvl50` and `StatAvl250`).
 
-Combining the network visualization with scatter plots produces the figures in [our original paper on the empirical structure of time series and their methods](http://rsif.royalsocietypublishing.org/content/10/83/20130048.full) (cf. Sec. 2.4 of the [supplementary text](http://rsif.royalsocietypublishing.org/highwire/filestream/23294/field\_highwire\_adjunct\_files/0/rsif20130048supp1.pdf)), see below:
+Combining the network visualization with scatter plots produces the figures in [our original paper on the empirical structure of time series and their methods](https://doi.org/10.1098/rsif.2013.0048) (cf. Sec. 2.4 of its supplementary text), see below:
 
 ![](../../.gitbook/assets/ApEn\_network.png)
 
