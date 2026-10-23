@@ -11,9 +11,9 @@ The first step is defining the set of features to compare to (here we use the de
 
 ![](../../.gitbook/assets/Empirical1000\_25\_250samples.png)
 
-The time series, an _hctsa_ input file (`INP_1000ts.mat`) and a pre-computed feature matrix (`HCTSA_Empirical1000.mat`) can be downloaded from [figshare](https://doi.org/10.6084/m9.figshare.5436136).
+The _hctsa_ input file for these time series is included with _hctsa_ (`TimeSeries/INP_Empirical1000.mat`), and the data, input file (as `INP_1000ts.mat`) and a pre-computed feature matrix (`HCTSA_Empirical1000.mat`) can also be downloaded from [figshare](https://doi.org/10.6084/m9.figshare.5436136).
 The pre-computed matrix there was computed with a pre-release version of _hctsa_ v3 (v3.0.0-alpha), so its feature names and values differ from those of v3.0.0, and results from different versions should not be mixed.
-We therefore recommend recomputing the features with your version of _hctsa_, which also ensures they match your local compute architecture: initialize with `TS_Init('INP_1000ts.mat');`, then compute using [`TS_Compute`](../calculating/running\_computations.md) (e.g., `TS_Compute('series')`, which parallelizes the computation over time series).
+We therefore recommend recomputing the features with your version of _hctsa_, which also ensures they match your local compute architecture: initialize with `TS_Init('INP_Empirical1000.mat');`, then compute using [`TS_Compute`](../calculating/running\_computations.md) (e.g., `TS_Compute('series')`, which parallelizes the computation over time series).
 
 Another diverse data context is the [1000 × 1000 collection](https://dynamicsandneuralsystems.github.io/1000x1000/): 1000 simulated time series, each 1000 samples long, from 133 generating processes across 13 classes of dynamics (including noise and linear processes, maps, chaotic flows, oscillators, point processes and models of natural systems).
 Each series comes with its generating process, parameters and property tags, so you can relate a feature's behavior to known dynamical properties.
@@ -50,7 +50,7 @@ where we have given this feature two keywords: `hot` and `science`.
 So now we are able to initiate a new _hctsa_ calculation, specifying custom code calls (_master_) and features to extract from the code call (_features_), as:
 
 ```
-TS_Init('INP_1000ts.mat',{'INP_hot_master.txt','INP_hot_features.txt'},true,'HCTSA_hot.mat');
+TS_Init('INP_Empirical1000.mat',{'INP_hot_master.txt','INP_hot_features.txt'},true,'HCTSA_hot.mat');
 ```
 
 This generates a new file, `HCTSA_hot.mat`, containing information about the 1000 time series, and the new hot feature, `hot_feature1`, which can then be computed as:
