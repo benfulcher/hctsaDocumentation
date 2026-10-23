@@ -2,9 +2,19 @@
 
 Although many sections of the time-series analysis literature has worked to develop methods for quantifying complex temporal structure in long time-series recordings, many time series that are analyzed in practice are relatively short. _hctsa_ has been successfully applied to time-series classification problems in the data mining literature, which includes datasets of time series as short as 60 samples ([link to paper](http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6786425)). However, time-series data are sometimes even shorter, including yearly economic data across perhaps six years, or biological data measured at say 10 points across a lifespan. Although many features in _hctsa_ will not give a meaningful output when applied to a short time series, _hctsa_ includes methods for filtering such features (cf. [`TS_Normalize`](filtering\_and\_normalizing.md)), after which the remaining features can be used for analysis.
 
-The number of features with a meaningful output, from time series as short as 5 samples, up to those with as many as 500 samples, is shown below (where the maximum set, 7749 features in the older version of _hctsa_ this plot was generated from, is shown as a dashed horizontal line; the default set in _hctsa_ v3.0.0 has 6392 features): ![](../../.gitbook/assets/LengthDependence.png)
+To show how many features can be computed as a function of time-series length, we took 10 diverse time series from the [Empirical1000](https://doi.org/10.6084/m9.figshare.5436136) dataset (including Gaussian noise, an AR(4) process, the Lorenz system, a chaotic map, a random walk, heart-rate intervals, financial returns, music, monthly river flow and seismic data) and computed the default _hctsa_ v3.0.0 feature set on the first N samples of each, for N from 5 to 500.
+The number of features with a real-valued output (`TS_Quality` = 0) is plotted below against N for each series (gray), with the mean across the 10 series (black) and the number of features that are real-valued for all 10 series (blue); the full set of 6392 features is shown as a dashed horizontal line:
 
-In each case, over 3000 features could be computed with that version (the counts for v3.0.0 will differ, as many features have since been redefined, added or removed).
+![](../../.gitbook/assets/LengthDependence.png)
+
+Even at N = 5, a mean of 2463 features per series could be computed (2669 at most); one series (a music recording) gave far fewer (1131), which is why only 1102 features were real-valued for all 10 series at that length.
+The mean rises to 3464 features at N = 10, 5352 at N = 50, 5751 at N = 100 and 6220 at N = 500 (where 5703 features were real-valued for all 10 series).
+
+Most of the features that cannot be computed on very short time series return a special value (most commonly `NaN`), but some operations raise an error, which is recorded with quality label 1 in `TS_Quality` (see [Performing calculations](../calculating/running\_computations.md)).
+In this example, every series of length 50 or less had errors (from 55 master operations in total; at N = 5, 608 operations from 53 master operations), and no series of length 60 or more had any.
+They included `SP_Summaries` and `MF_arfit` (errors up to N = 15), `MF_GARCHfit` (up to N = 20), `MF_FitSubsegments` (up to N = 25) and the `ST_MomentCorr` operations (up to N = 50).
+These errors are expected for such short inputs, and these features are removed by `TS_Normalize` like any other feature without a real-valued output.
+
 Note that one must be careful when representing a 5-dimensional object with thousands of features, the vast majority of which will be highly intercorrelated.
 
 When computing features for a large number of short time series, `TS_Compute('series')` parallelizes the computation over time series, which is much faster than parallelizing over the operations within each time series (`TS_Compute('operations')`; see [Running computations](../calculating/running\_computations.md)).

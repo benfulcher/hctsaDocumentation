@@ -127,14 +127,15 @@ When multiple cores are available, using a parallel setting is recommended: `TS_
 
 ### Computation time scaling
 
-The first thing to think about is how the time taken to compute the default feature set (6392 features from 927 master operations in v3.0.0) scales with the length of time series in your dataset (see plot below).
-The figure compares results using a single core (e.g., `TS_Compute('none')`) to results using a 16-core machine, with parallelization over operations enabled (e.g., `TS_Compute('operations')`).
-Note that this plot was made with an earlier, larger version of the feature set (7469 features), before the `'series'` mode existed; timings for v3.0.0 will differ.
-As a guide, the v3.0.0 release notes quote about 31 s per time series on a single core for the full feature set (on a corpus of 1000 synthetic time series).
+The first thing to think about is how the time taken to compute the default feature set (6392 features from 927 master operations in v3.0.0) scales with the length of time series in your dataset.
+The plot below shows the time taken to compute all features for a single time series on a single core (`TS_Compute('none')`), for three time series from the [Empirical1000](https://doi.org/10.6084/m9.figshare.5436136) dataset (an ECG recording, the Lorenz system and a stochastic AR(2) process) truncated to lengths from 100 to 10000 samples.
 
 ![](../../.gitbook/assets/computeScaling.png)
 
-Times may vary across individual machines, but the above plot can be used to estimate the computation time per time series, and thus help decide on an appropriate computation strategy for a given dataset.
+The time per series (the wall time of each `TS_Compute` call) was about 17 s up to a length of 500 samples, then rose to about 24 s at 1000 samples, 39 s at 2500, 69 s at 5000 and 150 s at 10000 (means over the three series).
+The v3.0.0 release notes quote a similar figure, about 31 s per series on one core, for a corpus of 1000 synthetic time series.
+These timings were measured with _hctsa_ v3.0.0 (MATLAB R2026a) on one node of a compute cluster (Intel Xeon Gold 6548N) that was shared with other jobs, so they are indicative only: times will vary across machines, but the plot can be used to estimate the computation time per time series, and thus help decide on an appropriate computation strategy for a given dataset.
+For a dataset of many time series, `TS_Compute('series')` distributes whole time series across the workers of a parallel pool, so the total time is roughly the single-core time per series multiplied by the number of series, divided by the number of cores.
 
 Note that if computation times are too long for the computational resources at hand, one can always choose a reduced set of features, rather than the full default set, to get a preliminary understanding of the dataset -- e.g., the `catch22` feature set (`TS_Init(...,'catch22')`) is a much smaller, canonical subset designed for this purpose.
 

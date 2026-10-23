@@ -17,17 +17,20 @@ After specifying the target and how many neighbors to retrieve, `TS_SimSearch` o
     TS_SimSearch('whatPlots',{'matrix'});
 ```
 
-To investigate the pairwise relationships between all neighbors retrieved, you specify the `'matrix'` option of the `TS_SimSearch` function. An example output using a publicly-available [EEG dataset](http://epileptologie-bonn.de/cms/front\_content.php?idcat=193\&lang=3), retrieving 14 neighbors from the time series with `ID = 1`, as `TS_SimSearch('targetID',1,'whatPlots',{'matrix'},'numNeighbors',14)`, is shown below:
+To investigate the pairwise relationships between all neighbors retrieved, you specify the `'matrix'` option of the `TS_SimSearch` function.
+As an example, we use a publicly available [EEG dataset](http://epileptologie-bonn.de/cms/front\_content.php?idcat=193\&lang=3), keeping (with `TS_FilterData`) its 300 time series from three classes, which we labeled (using [`TS_LabelGroups`](grouping.md) as: `TS_LabelGroups('raw',{'seizure','eyesOpen','eyesClosed'})`) and normalized (using `TS_Normalize`).
+The output from retrieving 14 neighbors of the time series with `ID = 1` (an eyes-open recording, `Z001`), as `TS_SimSearch('targetID',1,'whatPlots',{'matrix'},'numNeighbors',14)`, is shown below:
 
 ![](../../.gitbook/assets/TS\_SimSearch\_matrix.png)
 
-The specified target time series (`ID = 1`) is shown as a white star in a white box, and all 14 neighbors are shown, as labeled on the left of the plot with their respective IDs, and a 100-sample subset of their time traces.
+The specified target time series (`ID = 1`) is shown as a white star in a white box, and all 14 neighbors are shown, labeled on the left of the plot with their IDs and names, alongside the first 100 samples of their time traces.
 
 Pairwise distances are computed between all pairs of time series (as a Euclidean distance between their feature vectors), and plotted using color, from low (red = more similar pairs of time series) to high (blue = more different pairs of time series).
 
-Because this dataset contains 3 classes that were previously labeled (using [`TS_LabelGroups`](grouping.md) as: `TS_LabelGroups('raw',{'seizure','eyesOpen','eyesClosed'})`), the function shows these class assignments using color labels to the left of the plot (purple, green, and orange in this case).
+Because the time series have been labeled, the function shows these class assignments using color labels to the left of the matrix (green for `seizure`, orange for `eyesOpen`, and purple for `eyesClosed` in this case).
 
-In this case we see that the purple and green classes are relatively similar under this distance metric (eyes open and eyes closed), whereas the orange time series (seizure) are distinguished.
+In this case, 10 of the 14 nearest neighbors of the eyes-open target are also eyes-open recordings (orange), and the other 4 are eyes-closed recordings (purple); none of the seizure recordings (green) are among its neighbors.
+Under this distance metric, the eyes-closed neighbors are more similar to each other (and to one eyes-open recording, `Z003`) than to most of the eyes-open neighbors.
 
 ## Network of neighbors
 
@@ -37,13 +40,15 @@ Another way to visualize the similarity (under our feature-based distance metric
     TS_SimSearch('targetID',1,'whatPlots',{'network'});
 ```
 
-which produces something like the following:
+which shows the target and its 20 nearest neighbors (the default `'numNeighbors'`), producing something like the following:
 
 ![](../../.gitbook/assets/TS\_SimSearch\_network.png)
 
-The strongest links are visualized as blue lines (by default, the top 40% of strongest links are plotted, cf. the legend showing 0.9, 0.8, 0.7, and 0.6 for the top 10%, 20%, 30%, and 40% of links, respectively).
+The strongest links are visualized as blue lines (by default, the strongest 40% of links are plotted, in four shades, as listed in the legend: the strongest 10%, 10–20%, 20–30%, and 30–40% of links).
+The layout of the network starts from random node positions, so it differs slightly from run to run (unless the random seed is fixed, e.g., with `rng(0)`).
 
-The target is distinguished (as purple in this case), and the other classes of time series are shown using color, with names and time-series segments annotated. Again, you can see that the EEG time series during seizure (blue) are distinguished from eyes open (red) and eyes closed (green).
+The target is distinguished (as green in this case), and the other classes of time series are shown using color, with names and time-series segments annotated.
+Here, 16 of the 20 neighbors are eyes-open recordings (red), and the 4 eyes-closed recordings (blue) sit together at the edge of the network.
 
 ## Scatter plots of the target and its neighbors
 

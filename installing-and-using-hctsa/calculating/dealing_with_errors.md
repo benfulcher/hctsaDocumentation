@@ -15,9 +15,23 @@ The full set of inputs is `hadProblem = TS_InspectQuality(inspectWhat,customFile
 In the `'full'` and `'reduced'` plots, entries that have not yet been calculated are shown as a separate '(uncalculated)' category.
 The codes stored in `TS_Quality` for each type of output are listed [here](../setup/hctsa\_structure.md#quality-labels).
 
-For example, running `TS_InspectQuality('summary')` loads in data from **HCTSA.mat** and produces the following, which can be zoomed in on and explored to understand which features are producing problematic outputs:
+For example, for the 1000 time series of the [Empirical1000](https://doi.org/10.6084/m9.figshare.5436136) dataset, running `TS_InspectQuality('summary')` loads in data from **HCTSA.mat** and produces the following, which can be zoomed in on and explored to understand which features are producing problematic outputs:
 
-![pca\_image](../../.gitbook/assets/InspectQuality.png)
+![TS\_InspectQuality summary](../../.gitbook/assets/InspectQuality.png)
+
+Here 1630 of the 6392 operations produced a special value for at least one time series.
+Almost all of these special values are NaN (131,509 outputs, compared to 147 Inf, 21 -Inf, and 3 empty outputs, which are too few to see at this scale), and there were no errors.
+In `'summary'` mode, each of these operations is also listed in the command window, from the highest proportion of special values to the lowest:
+
+```
+1630 operations have special values:
+[300] CO_AutoCorrShape_posDrown_meanmaxima (CO_AutoCorrShape_posDrown.meanmaxima) -- 80.6% special values.
+[299] CO_AutoCorrShape_posDrown_meanminima (CO_AutoCorrShape_posDrown.meanminima) -- 80.2% special values.
+[5686] SP_Summaries_welch_rect_meanProm_5 (SP_Summaries_welch_rect.meanProm_5) -- 75.7% special values.
+[5687] SP_Summaries_welch_rect_meanPeakWidth_prom5 (SP_Summaries_welch_rect.meanPeakWidth_prom5) -- 75.7% special values.
+[953] DN_CompareKSFit_gamma_adiff (DN_CompareKSFit_gamma.adiff) -- 67.0% special values.
+...
+```
 
 ## Errors with compiled code
 
@@ -33,13 +47,14 @@ The function `TS_WhichProblemTS` can be used to retrieve time series from an _hc
 Usage is as follows:
 
 ```
-% Find time series that failed for the operation with ID = 684.
-[ts_ind, dataCell, codeEval] = TS_WhichProblemTS(684);
+% Find time series that failed for the operation with ID = 953.
+[ts_ind, dataCell, codeEval] = TS_WhichProblemTS(953);
 ```
 
-This provides the list of problem time series (`ts_ind`, indices of rows in the `TimeSeries` table, which match the time-series IDs unless the file has been subset or combined), their time-series data vectors (`dataCell`), and the code to evaluate the given operation (in this case, the master operation code corresponding to the operation with ID 684).
+This provides the list of problem time series (`ts_ind`, indices of rows in the `TimeSeries` table, which match the time-series IDs unless the file has been subset or combined), their time-series data vectors (`dataCell`), and the code to evaluate the given operation (in this case, the master operation code corresponding to the operation with ID 953, `DN_CompareKSFit(x,'gamma')`).
+For the Empirical1000 dataset above, this operation (which fits a gamma distribution, defined only for positive values) gives a NaN for 670 of the 1000 time series, all but one of which contain zero or negative values.
 The full set of inputs is `TS_WhichProblemTS(opID,whatData,doPlot)`, where `whatData` is the _hctsa_ file to use (default `'raw'`, i.e., `HCTSA.mat`).
-By default (`doPlot = true`), it also plots up to 10 examples of the problem time series; set `doPlot` to `false` to skip the plot, e.g., `TS_WhichProblemTS(684,'raw',false)`.
+By default (`doPlot = true`), it also plots up to 10 examples of the problem time series; set `doPlot` to `false` to skip the plot, e.g., `TS_WhichProblemTS(953,'raw',false)`.
 
 You can then pick an example time series (e.g., the first problem time series: `x = dataCell{1}; x_z = zscore(x)`), and then copy and paste the code in codeEval into the command line to evaluate the code for this time series. This method allows easy debugging and inspection of examples of time-series data that caused problems for particular operations flagged through the `TS_InspectQuality` process.
 

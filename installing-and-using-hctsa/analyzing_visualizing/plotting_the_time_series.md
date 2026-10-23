@@ -17,11 +17,12 @@ For example, to plot a set of time series that have not been assigned groups, we
     TS_PlotTimeSeries(whatData,plotHowMany,plotWhatTimeSeries,maxLength,plotOptions);
 ```
 
-For our assorted set of time series, this produces the following:
+For an assorted set of time series (the 1000 time series of the [Empirical1000](https://doi.org/10.6084/m9.figshare.5436136) dataset, normalized into `HCTSA_N.mat`), this produces the following:
 
 ![](../../.gitbook/assets/timeSeriesPlot.png)
 
-Showing 400 samples of 10 selected time series, equally-spaced through the TimeSeries IDs in `HCTSA_N.mat`.
+Showing 400 samples of 10 selected time series, equally spaced through the time series in `HCTSA_N.mat` (IDs 1, 112, 223, ..., 1000).
+Each title gives the time series's ID (in braces), name, keywords (in square brackets), and length.
 In this subplot layout, a time series longer than `maxLength` is shown as a randomly positioned segment of `maxLength` samples (its range is given in the title).
 
 ## Freeform plotting
@@ -54,4 +55,6 @@ When the time series have been assigned groups (using `TS_LabelGroups`, [here](g
 
 ![](../../.gitbook/assets/GroupedTimeSeriesPlot.png)
 
-In this case the two labeled groups of time series are recognized by the function: red (noisy), blue (no noise), and then 5 time series in each group are plotted, showing a 500-sample segment of each time series.
+Here we used the noisy/periodic dataset of 40 time series of length 500 (20 sums of sinusoids with added noise, keyword `noisy`, and 20 noise-free ones, keyword `periodic`), labeled using `TS_LabelGroups('norm',{'noisy','periodic'})`.
+The two labeled groups of time series are recognized by the function: red (`noisy`) and blue (`periodic`), and 5 time series from each group are plotted.
+These time series are no longer than `maxLength` (500 samples), so each is plotted in full.
