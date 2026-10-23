@@ -52,7 +52,7 @@ You could do this by removing them from a copy of the default operations input f
 Alternatively, you could remove them from your initialized _hctsa_ dataset by filtering on the `'tisean'` keyword.
 
 For example, to filter a local Matlab _hctsa_ file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);`, which will remove all operations with the 'tisean' keyword from the _hctsa_ dataset in `HCTSA.mat`.
-The `PP_SchreiberDenoise` operations also use _TISEAN_ (`nrlazy`) but do not carry the `'tisean'` keyword, so remove them by name:
+In _hctsa_ v3.0.0, the `PP_SchreiberDenoise` operations also use _TISEAN_ (`nrlazy`) but do not carry the `'tisean'` keyword, so remove them by name:
 
 ```
 load('HCTSA.mat','Operations');
