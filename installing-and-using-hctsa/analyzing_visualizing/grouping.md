@@ -16,11 +16,14 @@ If you want to label according to a specific set of keywords, you can do this by
 TS_LabelGroups('raw',{'parkinsons','healthy'});
 ```
 
-Note that any time series that are not labeling by either `'parkinsons'` nor `'healthy'` are left unlabeled.
+Note that any time series that are labeled by neither `'parkinsons'` nor `'healthy'` are left unlabeled.
+To instead remove unlabeled time series, set the fourth input, `filterMissing`, to `true` (e.g., `TS_LabelGroups('raw',{'parkinsons','healthy'},true,true)`): the labeled time series are then saved to a new, filtered file.
+Each keyword must match at least one time series, and a time series matching more than one of the keywords produces an error.
 
 ### Automatic labeling
 
-If every time series has a single keyword that uniquely labels it, `TS_LabelGroups` can automatically detect this by running `TS_LabelGroups('raw',{});`.
+If you pass an empty cell, `TS_LabelGroups('raw',{});`, the function lists all unique keywords in the dataset and, after you confirm with `y`, uses each of them as a group.
+This works only when no time series has more than one keyword (a time series matching multiple groups produces an error).
 
 ### Complex labeling
 
@@ -28,7 +31,7 @@ More complex labeling \(e.g., using custom combinations of keywords\) is not imp
 
 ## Working with labels
 
-By default, the group labels are saved back to the data file \(in this example, `HCTSA.mat`\).
+By default, the group labels are saved back to the data file \(in this example, `HCTSA.mat`\); set the third input, `saveBack`, to `false` to prevent this.
 
 Group labels can be reassigned at any time by re-running the `TS_LabelGroups` function, and can be cleared by running, e.g., `TS_LabelGroups('raw','clear')`.
 
