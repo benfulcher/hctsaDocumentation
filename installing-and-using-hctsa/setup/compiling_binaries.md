@@ -10,11 +10,14 @@ Once mex is set up, running `install` (from the repository root) compiles all th
 
 ## Compiling the _TISEAN_ binaries
 
-Some operations rely on the [_TISEAN_ nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html). As part of the same `install` step (`compile_mex` calling `compile_tisean`), _hctsa_ now compiles TISEAN from source directly into `Toolboxes/Tisean_3.0.1/bin` and adds that directory to the system path — no command-line steps, no platform-specific instructions, and no separate Windows/Cygwin workaround are needed. Only the specific TISEAN binaries that _hctsa_ operations actually call are built (`c1`, `c2d`, `c2g`, `c2t`, `d2`, `nstat_z`, `false_nearest`, `boxcount`, `lyap_r`, `lyap_spec`, `poincare`), not the full TISEAN suite.
+Some operations rely on the [_TISEAN_ nonlinear time-series analysis package](https://www.pks.mpg.de/tisean/).
+_hctsa_ includes TISEAN 3.0.1 with bug fixes from its authors and from _hctsa_, maintained at [DynamicsAndNeuralSystems/tisean](https://github.com/DynamicsAndNeuralSystems/tisean).
+As part of the same `install` step (`compile_mex` calling `compile_tisean`), _hctsa_ now compiles TISEAN from source directly into `Toolboxes/Tisean_3.0.1/bin` and adds that directory to the system path — no command-line steps, no platform-specific instructions, and no separate Windows/Cygwin workaround are needed.
+Only the specific TISEAN binaries that _hctsa_ operations actually call are built (`c1`, `c2d`, `c2g`, `c2t`, `d2`, `nstat_z`, `false_nearest`, `boxcount`, `lyap_r`, `lyap_spec`, `nrlazy`), not the full TISEAN suite.
 
 If `compile_tisean` is the only part of `install` that fails (e.g. because a required compiler is missing), you can fix the underlying issue and re-run `compile_tisean` on its own from the `Toolboxes` directory, rather than re-running the whole of `install`.
 
-If installation was successful, `startup.m` will report the path to the compiled TISEAN binaries, and you should be able to access them from Matlab, e.g., typing `!which poincare` should return a path inside `Toolboxes/Tisean_3.0.1/bin`.
+If installation was successful, `startup.m` will report the path to the compiled TISEAN binaries, and you should be able to access them from Matlab, e.g., typing `!which d2` should return a path inside `Toolboxes/Tisean_3.0.1/bin`.
 
 ### Ignoring _TISEAN_ functions
 
