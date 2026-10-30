@@ -40,7 +40,7 @@ _Example 1_: Clear all computed data from time series with IDs 1:5 from `HCTSA.m
 TS_LocalClearRemove('raw','ts',1:5,false);
 ```
 
-_Example 2_: Remove all operations with the keyword 'tisean' \(that depend on the [TISEAN package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html)\) from `HCTSA.mat`:
+_Example 2_: Remove all operations with the keyword 'tisean' \(that depend on the [TISEAN package](https://github.com/DynamicsAndNeuralSystems/tisean)\) from `HCTSA.mat`:
 
 ```text
 TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);
