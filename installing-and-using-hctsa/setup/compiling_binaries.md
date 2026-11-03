@@ -24,14 +24,15 @@ If the optional _catch22_ submodule is present, `compile_mex` also compiles its 
 
 ## Compiling the _TISEAN_ binaries
 
-Some operations rely on the [_TISEAN_ nonlinear time-series analysis package](http://www.mpipks-dresden.mpg.de/~tisean/Tisean_3.0.1/index.html).
+Some operations rely on the [_TISEAN_ nonlinear time-series analysis package](https://www.pks.mpg.de/tisean/).
+_hctsa_ includes _TISEAN_ 3.0.1 with bug fixes from its authors and from _hctsa_, maintained at [DynamicsAndNeuralSystems/tisean](https://github.com/DynamicsAndNeuralSystems/tisean).
 As part of the same `install` step (`compile_mex` calling `compile_tisean`), _hctsa_ compiles _TISEAN_ from source directly into `Toolboxes/Tisean_3.0.1/bin`, with no command-line steps needed.
-Only 12 _TISEAN_ binaries are built (`c1`, `c2d`, `c2g`, `c2t`, `d2`, `nstat_z`, `false_nearest`, `boxcount`, `lyap_r`, `lyap_spec`, `poincare`, `nrlazy`), not the full _TISEAN_ suite.
+Only the _TISEAN_ binaries that _hctsa_ operations call are built (`c1`, `c2d`, `c2g`, `c2t`, `d2`, `nstat_z`, `false_nearest`, `boxcount`, `lyap_r`, `lyap_spec`, `nrlazy`), not the full _TISEAN_ suite (_hctsa_ v3.0.0 also builds `poincare`, which no operation uses).
 
 If `compile_tisean` is the only part of `install` that fails (e.g., because a required compiler is missing), you can fix the underlying issue and re-run `compile_tisean` on its own from inside the `Toolboxes` directory, rather than re-running the whole of `install`.
 
 `startup` adds the compiled _TISEAN_ binaries (`Toolboxes/Tisean_3.0.1/bin`) to the system path for the current Matlab session.
-If installation was successful, you should be able to access them from Matlab, e.g., typing `!which lyap_r` should return a path inside `Toolboxes/Tisean_3.0.1/bin`.
+If installation was successful, you should be able to access them from Matlab, e.g., typing `!which d2` should return a path inside `Toolboxes/Tisean_3.0.1/bin`.
 
 ## Compiling _ripser_
 
@@ -52,11 +53,15 @@ You could do this by removing them from a copy of the default operations input f
 Alternatively, you could remove them from your initialized _hctsa_ dataset by filtering on the `'tisean'` keyword.
 
 For example, to filter a local Matlab _hctsa_ file (e.g., `HCTSA.mat`), you can use the following: `TS_LocalClearRemove('raw','ops',TS_GetIDs('tisean','raw','ops'),true);`, which will remove all operations with the 'tisean' keyword from the _hctsa_ dataset in `HCTSA.mat`.
-In _hctsa_ v3.0.0, the `PP_SchreiberDenoise` operations also use _TISEAN_ (`nrlazy`) but do not carry the `'tisean'` keyword, so remove them by name:
+In _hctsa_ v3.0.0, some operations also use _TISEAN_ but do not carry the `'tisean'` keyword: the `PP_SchreiberDenoise` operations (which use `nrlazy`), and the operations that choose their embedding dimension using false nearest neighbors (`{'fnn',0.05}`, which runs `false_nearest`; their names contain `fnn005`).
+Remove these by name:
 
 ```
 load('HCTSA.mat','Operations');
-TS_LocalClearRemove('raw','ops',Operations.ID(startsWith(Operations.Name,'PP_SchreiberDenoise')),true);
+isTisean = startsWith(Operations.Name,'PP_SchreiberDenoise') | contains(Operations.Name,'fnn005');
+TS_LocalClearRemove('raw','ops',Operations.ID(isTisean),true);
 ```
+
+(The `main` branch of _hctsa_ on GitHub now gives all of these operations the `'tisean'` keyword.)
 
 Similarly, the operations that use _ripser_ (`NL_PersistentHomology`) carry the `'topology'` keyword, and can be removed using `TS_LocalClearRemove('raw','ops',TS_GetIDs('topology','raw','ops'),true);`.
