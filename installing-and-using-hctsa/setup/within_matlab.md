@@ -2,10 +2,11 @@
 
 At its core, _hctsa_ analysis involves computing a library of time-series analysis features \(which we call _operations_\) on a time-series dataset. 
 
-The basic sequence of a Matlab-based _hctsa_ analysis is to: 1. _Initialize_ a `HCTSA.mat` file, which contains all of the information about the set of time series and operations in your analysis, as well as the results of applying all operations to all time series, using [`TS_Init`](../calculating/input_files.md),
+The basic sequence of a Matlab-based _hctsa_ analysis is to:
 
-1. These operations can be computed on your time-series data using [`TS_Compute`](../calculating/). The results are structured in the local `HCTSA.mat` file containing matrices \(that store the results of the computations\) and the tables \(that store information about the time-series data and operations\), as described [here](hctsa_structure.md).
-2. After the computation is complete, [a range of processing, analysis, and plotting functions](../analyzing_visualizing/) are provided to understand and interpret the results.
+1. _Initialize_ a `HCTSA.mat` file, which contains all of the information about the set of time series and operations in your analysis, as well as the results of applying all operations to all time series, using [`TS_Init`](../calculating/input_files.md).
+2. Compute these operations on your time-series data using [`TS_Compute`](../calculating/). The results are structured in the local `HCTSA.mat` file containing matrices \(that store the results of the computations\) and the tables \(that store information about the time-series data and operations\), as described [here](hctsa_structure.md).
+3. After the computation is complete, use [a range of processing, analysis, and plotting functions](../analyzing_visualizing/) to understand and interpret the results.
 
 ## _Example 1_: Compute a feature vector for a time series
 
@@ -15,6 +16,8 @@ As a quick check of your operation library, you can compute the full default cod
 x = randn(500,1); % A random time-series
 featVector = TS_CalculateFeatureVector(x,false); % compute the default feature vector for x
 ```
+
+Computing all 6392 features in serial \(the `false` input\) can take a minute or so.
 
 ## _Example 2_: Analyze a time-series dataset
 
@@ -32,7 +35,8 @@ Next you want to evaluate the code on all of the time series in your dataset. Fo
 TS_Compute;
 ```
 
-As described [here](../calculating/running_computations.md), or, for larger datasets, using a script to regularly save back to the local file \(cf. `sample_runscript_matlab`\).
+As described [here](../calculating/running_computations.md), `TS_Compute` has options for larger datasets.
+For example, `TS_Compute('series')` computes time series in parallel \(using the Parallel Computing Toolbox\), which is much faster for datasets with many time series, and the last input, `autosaveEvery`, saves partial progress to `HCTSA.mat` at a set interval \(in seconds\) during long runs.
 
 Having run your calculations, you may then want to label your data using the keywords you provided in the case that you have labeled groups of time series:
 
@@ -40,7 +44,7 @@ Having run your calculations, you may then want to label your data using the key
 TS_LabelGroups;
 ```
 
-and then normalize and filter the data using the default sigmoidal transformation:
+and then normalize and filter the data using the default sigmoidal transformation \(`'mixedSigmoid'`\), which also removes time series with fewer than 70% good values, and then features with any bad values, saving the result to `HCTSA_N.mat`:
 
 ```text
 TS_Normalize;

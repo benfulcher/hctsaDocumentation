@@ -4,11 +4,24 @@ When running _hctsa_ analyses, often you want to take subsets of time series \(t
 
 The _hctsa_ package contains a range of functions for these types of tasks, working directly with _hctsa_ .mat files, and are described below.
 
+## Loading data from an _hctsa_ file using `TS_LoadData`
+
+The main variables of an _hctsa_ file \(described [here](../setup/hctsa\_structure.md)\) can be loaded into the workspace using `TS_LoadData`:
+
+```text
+[TS_DataMat,TimeSeries,Operations] = TS_LoadData('raw');
+```
+
+The input can be a filename or a shorthand: `'raw'` for `HCTSA.mat` and `'norm'` \(the default\) for `HCTSA_N.mat`.
+Entries with a nonzero quality label \(errors and special-valued outputs\) are returned as `NaN` in `TS_DataMat`.
+
 ## Retrieving time series \(or operations\) of interest by matching on assigned keywords using `TS_GetIDs`
 
 Many time-series classification problems involve filtering subsets of time series based on keyword matching, where keywords are specified in the [input file](input_files.md) provided when initializing a dataset.
 
-Most filtering functions \(such as those listed in this section\), require you to specify a range of IDs of TimeSeries or Operations in order to specify them. Recall that each TimeSeries and Operation is assigned a unique ID \(assed as the ID field in the corresponding metadata table\). To quickly get the IDs of time series that match a given keyword, the following function can be used:
+Most filtering functions \(such as those listed in this section\), require you to specify a range of IDs of TimeSeries or Operations in order to specify them.
+Recall that each TimeSeries and Operation is assigned a unique ID \(stored as the `ID` field in the corresponding metadata table\).
+To quickly get the IDs of time series that match a given keyword, the following function can be used:
 
 ```text
 TimeSeriesIDs = TS_GetIDs(theKeyword,'HCTSA_N.mat');
@@ -20,6 +33,10 @@ Or the IDs of operations tagged with the 'entropy' keyword:
 OperationIDs = TS_GetIDs('entropy','norm','ops');
 ```
 
+The full set of inputs is `[IDs,notIDs] = TS_GetIDs(theMatchString,whatData,tsOrOps,nameOrKeywords)`, where `whatData` defaults to `'norm'` \(`HCTSA_N.mat`\) and `tsOrOps` to `'ts'`.
+Matching is on whole keywords; set `nameOrKeywords` to `'Name'` to match on names instead.
+The second output, `notIDs`, gives the IDs that do not match.
+
 These IDs can then be used in the functions below \(e.g., to clear data, or extract a subset of data\).
 
 Note that to get a quick impression of the unique time-series keywords present in a dataset, use the function `TS_WhatKeywords`, which gives a text summary of the unique keywords in an _hctsa_ dataset.
@@ -28,7 +45,7 @@ Note that to get a quick impression of the unique time-series keywords present i
 
 Sometimes you may want to remove a time series from an _hctsa_ dataset because the data was not properly processed, for example. Or one operation may have produced errors because of a missing toolbox reference, or you may have altered the code for an operation, and want to clear the stored results from previous calculations.
 
-For example, often you want to remove from your operation library operations that are dependent on the location of the data \(e.g., its mean: `'locationDependent'`\), that only operate on positive-only time series \(`'posOnly'`\), that require the TISEAN package \(`'tisean'`\), or that are stochastic \(i.e., they give different results when repeated, `'stochastic'`\).
+For example, often you want to remove from your operation library operations that are dependent on the location of the data \(e.g., its mean: `'locationDependent'`\), that only operate on positive-only time series \(`'posOnly'`\), or that require the TISEAN package \(`'tisean'`\).
 
 The function `TS_LocalClearRemove` achieves these tasks when working directly with .mat files.
 
@@ -90,7 +107,36 @@ _Example_: combine _hctsa_ datasets stored in the files `HCTSA_healthy.mat` and 
 TS_Combine('HCTSA_healthy.mat','HCTSA_disease.mat',false,false,'HCTSA_combined.mat')
 ```
 
+The full set of inputs for combining two files is `TS_Combine(HCTSA_1,HCTSA_2,compare_tsids,merge_features,outputFileName,forceWrite)`.
+
 The third input, `compare_tsids`, controls the behavior of the function in combining time series. By setting this to `true`, `TS_Combine` assumes that the TimeSeries IDs are comparable between the datasets \(e.g., because both were produced by the same `TS_Init` run, just computed/subset separately\), and thus filters out duplicates so that the resulting _hctsa_ dataset contains a unique set of time series. By setting this to `false` \(default\), the output will contain a union of time series present in each of the two _hctsa_ datasets. In the case that duplicate TimeSeries IDs exist in the combination file, a new index will be generated in the combined file \(where IDs assigned to time series are re-assigned as unique integers using `TS_ReIndex`\).
 
-In combining operations, `TS_Combine` checks that the same set of operations \(by name\) has been used in both `hctsa` datasets, since operation IDs are only guaranteed to be meaningfully comparable when both files were generated using `TS_Init` with the same feature set.
+In combining operations, `TS_Combine` checks that the same set of operations \(by name\) has been used in both `hctsa` datasets \(and gives an error if they differ\), since operation IDs are only guaranteed to be meaningfully comparable when both files were generated using `TS_Init` with the same feature set.
 
+The fourth input, `merge_features` \(default `false`\), is for the case where the _same_ time series have been computed using _different_ \(disjoint\) feature sets: setting it to `true` combines them into a dataset containing the union of the features.
+
+If the output file \(`HCTSA.mat` by default\) already exists, the result is saved to a new file with `_combined` appended to its name \(e.g., `HCTSA_combined.mat`\), unless the sixth input, `forceWrite`, is `true`, in which case the existing file is overwritten.
+
+### Combining many files
+
+To combine many files at once \(e.g., subsets of a dataset that were computed separately\), pass a cell array of filenames as the first input.
+This combines all of them in a single pass, which is much faster than a sequence of pairwise `TS_Combine` calls.
+The remaining inputs then shift to `TS_Combine(fileList,outputFileName,compare_tsids,forceWrite)`; for example:
+
+```text
+TS_Combine({'HCTSA_1.mat','HCTSA_2.mat','HCTSA_3.mat'},'HCTSA.mat',true)
+```
+
+All files must contain the same set of operations \(`merge_features` is not available in this form\).
+
+## Exporting data to .csv files using `OutputToCSV`
+
+To analyze _hctsa_ results in other environments \(e.g., Python or R\), `OutputToCSV` writes the data in an _hctsa_ file to `.csv` files in the current directory:
+
+```text
+OutputToCSV('HCTSA.mat');
+```
+
+This writes the feature matrix \(`hctsa_datamatrix.csv`, with `NaN` for errors and special-valued outputs\), information about the time series \(`hctsa_timeseries-info.csv`\), and information about the operations \(`hctsa_features.csv`\).
+The full set of inputs is `OutputToCSV(whatData,writeTimeSeriesData,writeMasterFeatures,numSigFigs)`: setting `writeTimeSeriesData` to `true` also writes the time-series data \(`hctsa_timeseries-data.csv`\), and setting `writeMasterFeatures` to `true` also writes information about the master operations \(`hctsa_masterfeatures.csv`\).
+Values are written with `numSigFigs` significant digits \(15 by default; 17 reproduces each double-precision value exactly\).

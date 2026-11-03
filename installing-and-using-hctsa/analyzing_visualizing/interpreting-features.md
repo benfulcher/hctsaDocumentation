@@ -16,29 +16,36 @@ Sometimes you will run `TS_TopFeatures` and find no features that significantly 
 
 But other times you will obtain a long list of statistically significant (after multiple hypothesis correction) features (e.g., from `TS_TopFeatures`) with values that significantly distinguish the groups you care about (individuals with some disease diagnosis compared to that of healthy controls). In cases like this, the next step is to obtain some understanding of what's happening.
 
-Consider a long and kinda gnarly list, that is quite hard to make sense of. This is a typical situation because the features names in _hctsa_ are long and typically hard to interpret directly. Like perhaps (note: this is an illustrative example captured from an older version of the operation library -- some specific feature names below may since have been renamed or removed as operations are periodically curated, but the general shape of the output, and the walkthrough below, still apply):
+Consider a long and kinda gnarly list, that is quite hard to make sense of.
+This is a typical situation because the features names in _hctsa_ are long and typically hard to interpret directly.
+For example, here are the top features (out of 40 listed) for distinguishing seizure from eyes-open EEG, from the `TS_TopFeatures('norm','classification',[],'numNulls',10)` run described in [Finding informative features](ts\_topfeatures.md) (in-sample linear classification accuracy, _hctsa_ v3.0.0):
 
 ```
-[1970] FC_LocalSimple_mean3_ac1 (forecasting) -- 59.97%
-[2006] FC_LocalSimple_median3_ac1 (forecasting) -- 58.14%
-[2748] EN_MSE_1-10_2_015_sampen_s3 (entropy,sampen,mse) -- 54.10%
-[7338] MF_armax_2_2_05_1_AR_1 (model) -- 53.71%
-[7339] MF_armax_2_2_05_1_AR_2 (model) -- 53.31%
-[3185] DN_CompareKSFit_uni_psx (distribution,ksdensity,raw,locationDependent) -- 52.14%
-[6912] MF_steps_ahead_ar_best_6_ac1_3 (model,prediction,arfit) -- 52.11%
-[6564] WL_Coeffs_db3_4_med_coeff (wavelet) -- 52.01%
-[4552] SP_Summaries_fft_logdev_fpoly2csS_p1 (spectral) -- 51.57%
-[6634] WL_DWTCoeff_sym2_5_noisestd_l5 (wavelet,dwt) -- 51.48%
-[930] DN_FitKernelSmoothraw_entropy (distribution,ksdensity,entropy,raw,spreadDependent) -- 51.37%
-[6574] WL_Coeffs_db3_5_med_coeff (wavelet) -- 51.26%
-[6630] WL_DWTCoeff_sym2_5_noisestd_l4 (wavelet,dwt) -- 51.04%
-[1891] CO_StickAngles_y_ac2_all (correlation) -- 50.85%
-[16] rms (distribution,location,raw,locationDependent,spreadDependent) -- 50.83%
-[6965] MF_steps_ahead_arma_3_1_6_rmserr_6 (model,prediction) -- 50.83%
-[2747] EN_MSE_1-10_2_015_sampen_s2 (entropy,sampen,mse) -- 50.35%
-[4201] SC_FluctAnal_mag_2_dfa_50_2_logi_ssr (scaling) -- 50.34%
-[6946] MF_steps_ahead_ss_best_6_meandiffrms (model,prediction) -- 50.33%
+[974] DN_CompareKSFit_uni_psy (distribution,ksdensity,raw,spreadDependent) -- 99.50%
+[1342] EN_LZComplexity_7_diff (entropy,mex) -- 99.50%
+[1344] EN_LZComplexity_8_diff (entropy,mex) -- 99.50%
+[1346] EN_LZComplexity_9_diff (entropy,mex) -- 99.50%
+[3499] NL_TakensEstimator_n1_c001_ac1_1_3 (nonlinear,scaling,dimension,tisean) -- 99.50%
+[3529] NL_d2_1_10_ac1_takens05_iqr (nonlinear,tisean,dimension) -- 99.50%
+[4193] PP_SchreiberDenoise_5_1_1_03_ac1Change (preprocessing,nonlinear,correlation) -- 99.50%
+[4200] PP_SchreiberDenoise_5_1_4_03_ac1Change (preprocessing,nonlinear,correlation) -- 99.50%
+[359] CO_Embed2_AngleTau_50_max_thetaac1 (correlation,embedding) -- 99.00%
+[1340] EN_LZComplexity_6_diff (entropy,mex) -- 99.00%
+[1348] EN_LZComplexity_10_diff (entropy,mex) -- 99.00%
+[3500] NL_TakensEstimator_n1_c001_ac1_1_8 (nonlinear,scaling,dimension,tisean) -- 99.00%
+[3528] NL_d2_1_10_ac1_takens05_std (nonlinear,tisean,dimension) -- 99.00%
+[1366] EN_MSE_1-10_2_015_diff1_sampen_s1 (entropy) -- 98.50%
+[1476] EN_SampEn_5_005_sampen2 (entropy) -- 98.50%
+[2154] MD_RawHRVMeas_CVI (medical,raw,spreadDependent) -- 98.50%
+[3526] NL_d2_1_10_ac1_takens05_max (nonlinear,tisean,dimension) -- 98.50%
+[4268] SB_MotifThree_diffquant_cb (symbolic,motifs) -- 98.50%
+[4292] SB_MotifThree_diffquant_cba (symbolic,motifs) -- 98.50%
+[5172] SC_FluctAnal_2_dfa_50_2_logi_r2_alpha (scaling) -- 98.50%
+[6330] WL_DetailCoeffs_db3_max_std_mean (wavelet) -- 98.50%
+...
 ```
+
+In this example, 4694 of the 6126 features were significant (FDR-corrected at 0.05).
 
 If there are hundreds or thousands of statistically significant features, some of which have much higher accuracy than others, you may first want to inspect only a subset of features, e.g., the 50 or 100 top-performing features (with the most significant differences). If you can make sense of these first, you will usually have a pretty good basis for working out what's going on with the features with lower performance (if indeed you want to go beyond interpreting the best-performing features).
 
@@ -56,37 +63,40 @@ An example is here, were [Bailey et al. (2023)](https://www.biorxiv.org/content/
 
 When such a group of high-performing features capturing a common time-series property has been identified, how can we start to interpret and understand what each individual feature is measuring?
 
-Some features in the group may be easy to interpret directly. For example, in the list above `rms` is straightforward to interpret directly: it is simply the root-mean-square of the distribution of time-series values. Others have clues in the name (e.g., features starting with `WL_Coeffs` are to do with measuring wavelet coefficients, features starting with `EN_MSE` correspond to measuring the multiscale entropy ('mse'), and features starting with `FC_LocalSimple_mean` are related to time-series forecasting using local means of the time series).
+Some features in the group may be easy to interpret directly.
+For example, `rms` is simply the root-mean-square of the distribution of time-series values.
+Others have clues in the name: in the list above, features starting with `EN_LZComplexity` measure the Lempel–Ziv complexity of a symbolic encoding of the time series, `EN_SampEn` its sample entropy, `EN_MSE` its multiscale entropy ('mse'), `NL_TakensEstimator` estimate its correlation dimension, and `WL_DetailCoeffs` are to do with wavelet detail coefficients.
+Similarly, features starting with `FC_LocalSimple_mean` are related to time-series forecasting using local means of the time series.
 
 Below we outline a procedure for how a user can go from a time-series feature selected by _hctsa_ towards a deeper understanding of the type of algorithm that feature is derived from, how that algorithm performs across the dataset, and thus how it can provide interpretable information about your specific time-series dataset.
 
 ### Inspecting keywords
 
-The simplest way of getting a quick idea of what sort of property a feature might be measuring is from its keywords, that often label individual features by the class of time-series analysis method from which they were derived. Keywords have not been applied exhaustively to features (this is an ongoing challenge), but when they are there they can be useful at giving a sense of what's going on. In the list above, we see keywords listed in parentheses, such as:
+The simplest way of getting a quick idea of what sort of property a feature might be measuring is from its keywords, that often label individual features by the class of time-series analysis method from which they were derived. Keywords have not been applied exhaustively to features (this is an ongoing challenge), but when they are there they can be useful at giving a sense of what's going on. In the list above, keywords are listed in parentheses (e.g., `entropy`, `dimension`, `spreadDependent`).
+Some common keywords are:
 
 1. _'forecasting'_ (methods related to predicting future values of a time series),
 2. _'entropy'_ (methods related to predictability and information content in a time series),
 3. _'wavelet'_ (features derived from wavelet transforms of the time series),
 4. _'locationDependent'_ (location dependent: features that change under mean shifts of a time series),
 5. _'spreadDependent'_ (spread dependent: features that change under rescaling about their mean), and
-6. _'lengthDependent'_ (length dependent: features that are highly sensitive to the length of a time series).
+6. _'lengthDependent'_ (length dependent: features that are highly sensitive to the length of a time series; since length bias was removed from the features in v3.0.0, only a handful of features, such as `ST_length`, now carry this keyword).
 
 ### Inspecting code
 
-To find more specific detailed information about a feature, beyond just a broad categorical label of the literature from which it was derived, the next step is find and inspect the code file that generates the feature of interest. For example, say we were interested in the top performing feature in the list above:
+To find more specific detailed information about a feature, beyond just a broad categorical label of the literature from which it was derived, the next step is find and inspect the code file that generates the feature of interest.
+For example, say we were interested in the feature `FC_LocalSimple_mean3_ac1`, which we visualize on a simple dataset of noisy and periodic signals [below](#visualizing-outputs).
+Its keywords (`model,forecasting`) tell us that it has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction).
+We can use the feature ID (given in square brackets in the output of `TS_TopFeatures`) to get information from the `Operations` metadata table.
+IDs depend on the version of the feature library: in _hctsa_ v3.0.0, the ID of `FC_LocalSimple_mean3_ac1` is 1668 (you can find it by name, as `Operations(strcmp(Operations.Name,'FC_LocalSimple_mean3_ac1'),:)`):
 
 ```
-    [1970] FC_LocalSimple_mean3_ac1 (forecasting) -- 59.97%
-```
+>> Operations(Operations.ID==1668,:)
 
-We know from the keyword that this feature has something to do with forecasting, and the name provides clues about the details (e.g., `FC_` stands for forecasting, the function `FC_LocalSimple` is the one that produces this feature, which, as the name suggests, performs simple local time-series prediction). We can use the feature ID (`1970`) provided in square brackets to get information from the `Operations` metadata table:
+     ID                 Name                      Keywords                    CodeString             MasterID
+    ____    ____________________________    _____________________    ____________________________    ________
 
-```
->> Operations(Operations.ID==1970,:)
-ID               Name                 Keywords              CodeString            MasterID
-____    ________________________    _____________    _______________________    ________
-
-1970    'FC_LocalSimple_mean3_ac1'    'forecasting'    'FC_LocalSimple_mean3.ac1'    496
+    1668    {'FC_LocalSimple_mean3_ac1'}    {'model,forecasting'}    {'FC_LocalSimple_mean3.ac1'}      515
 ```
 
 Inspecting the text before the dot, `.`, in the `CodeString` field (`FC_LocalSimple_mean3`) tells us the name that _hctsa_ uses to describe the Matlab function and its unique set of inputs that produces this feature. Whereas the text following the dot, `.`, in the `CodeString` field (`ac1`), tells us the field of the output structure produced by the Matlab function that was run.
@@ -94,37 +104,61 @@ Inspecting the text before the dot, `.`, in the `CodeString` field (`FC_LocalSim
 We can use the `MasterID` to get more information about the code that was run using the `MasterOperations` metadata table:
 
 ```
->> MasterOperations(MasterOperations.ID==496,:)
-ID             Label                            Code
-___    ______________________    ________________________________
+>> MasterOperations(MasterOperations.ID==515,:)
 
-496    'FC_LocalSimple_mean3'    'FC_LocalSimple(x_z,'mean',3)'
+    ID              Label                            Code
+    ___    ________________________    ________________________________
+
+    515    {'FC_LocalSimple_mean3'}    {'FC_LocalSimple(x_z,'mean',3)'}
 ```
 
 This tells us that the code used to produce our feature was `FC_LocalSimple(x_z,'mean',3)` (`x_z` being the z-scored input time series that _hctsa_ passes to every operation). We can get information about this function in the command line by running a `help` command:
 
 ```
 >> help FC_LocalSimple
-FC_LocalSimple    Simple local time-series forecasting.
+  FC_LocalSimple   How well a simple local rule forecasts the next value.
 
-Simple predictors using the past trainLength values of the time series to
-predict its next value.
+  Predicts each value of the time series from the trainLength values just before
+  it, using a simple rule (the mean, the median, or a straight line fitted to those
+  values and extended one step). The residuals are the prediction minus the data
+  (e = yp - y), and the outputs describe them with the shared residual summary
+  MF_ResidualAnalysis (at its 'core' level), plus the Gaussianity of their
+  distribution. The first trainLength values are used for training only and are not
+  forecast. If the series is too short to forecast, a NaN is returned.
 
----INPUTS:
-y, the input time series
+  ---INPUTS:
+  y, the input time series
 
-forecastMeth, the forecasting method:
-         (i) 'mean': local mean prediction using the past trainLength time-series
-                      values,
-         (ii) 'median': local median prediction using the past trainLength
-                        time-series values
-         (iii) 'lfit': local linear prediction using the past trainLength
-                        time-series values.
+  forecastMeth, the forecasting method:
+           (i) 'mean': the mean of the past trainLength values (default),
+           (ii) 'median': the median of the past trainLength values,
+           (iii) 'lfit': the next point on a straight line fitted to the past
+                          trainLength values.
 
-trainLength, the number of time-series values to use to forecast the next value
+  trainLength, the number of past values used to forecast the next value (default
+           3), or a string that sets it from the series: 'ac' (the first
+           zero-crossing of the autocorrelation function of y; discrete, from
+           CO_FirstCrossing), 'ac1e' (the floor of its first 1/e crossing), or 'mi'
+           (the smaller of the first minimum of the Kraskov automutual information
+           and the 'ac1e' delay); see BF_GetTau. For 'lfit' with 'ac', 'ac1e' or
+           'mi', this is at least 2 (a line cannot be fitted to a single point).
 
----OUTPUTS: the mean error, stationarity of residuals, Gaussianity of
-residuals, and their autocorrelation structure.
+  ---OUTPUTS:
+  meane, mean of the residuals (the bias of the forecast)
+  meanabs, mean absolute residual
+  stde, standard deviation of the residuals
+  maxonstd, largest absolute residual, in units of the residual standard deviation
+  ac1, ac2, ac3: autocorrelation of the (z-scored) residuals at lags 1, 2 and 3
+  propbth, proportion of the residual autocorrelations at lags 1 to 25 within the
+           significance band +/- 2.6/sqrt(N)
+  taurat, decorrelation time of the residuals (first zero-crossing of their
+           autocorrelation function) divided by that of the time series
+  sws, standard deviation across 5 windows of the local standard deviation of the
+           residuals, relative to their overall standard deviation
+  swm, standard deviation across 5 windows of the local mean of the residuals,
+           relative to their overall standard deviation
+  normr2, R^2 of a Gaussian fit (DN_SimpleFit) to the kernel-smoothed distribution
+           of the residuals: a measure of their Gaussianity
 ```
 
 We can also inspect the code in the function `FC_LocalSimple` directly for more information. Like all code files for computing time-series features, `FC_LocalSimple.m` is located in the Operations directory of the _hctsa_ repository.
@@ -134,7 +168,8 @@ Inspecting the code file, we see that running `FC_LocalSimple(y,'mean',3)` does 
 To understand what the specific output quantity from this code is that came up as being highly informative in our `TS_TopFeatures` analysis, we need to look for the output labeled `ac1` of the output structure produced by `FC_LocalSimple`. We discover that this is produced via a shared residual-analysis routine, `MF_ResidualAnalysis`, that `FC_LocalSimple.m` calls on its prediction residuals:
 
 ```
-% Report the residuals through the shared contract:
+% Report the residuals through the shared contract, at the cheap 'core' level, under
+% the names the rest of the model-fitting family uses.
 residOut = MF_ResidualAnalysis(res, y, 'core');
 fields = fieldnames(residOut);
 for k = 1:length(fields)
@@ -142,7 +177,7 @@ for k = 1:length(fields)
 end
 ```
 
-Inspecting `MF_ResidualAnalysis.m` (cf. `help MF_ResidualAnalysis`) shows us that its `'core'` output level includes an `ac1` field: the lag-1 autocorrelation of the residuals, computed as `CO_AutoCorr(res,1,'Fourier')`.
+Inspecting `MF_ResidualAnalysis.m` (cf. `help MF_ResidualAnalysis`) shows us that its `'core'` output level includes an `ac1` field: the lag-1 autocorrelation of the z-scored residuals (the first of the autocorrelations at lags 1 to 25 computed as `CO_AutoCorr(zscore(e),1:25,'Fourier')`, where `e` are the residuals).
 
 This shows us that, after doing the local mean prediction, `FC_LocalSimple` then outputs some features on whether there is any residual autocorrelation structure in the residuals of the rolling predictions -- our output of interest, `ac1`, being the simplest of these (higher-lag and ratio-based variants, like `ac2` and `taurat`, are also available in the shared contract).
 
@@ -155,14 +190,17 @@ Once we've seen the code that was used to produce a feature, and started to thin
 For example, we can run the following:
 
 ```
-TS_FeatureSummary(1970,'raw',true);
+TS_FeatureSummary(1668,'raw',true);
 ```
 
-which produces a plot like that shown below. We have run this on a dataset containing noisy sine waves, labeled 'noisy' (red) and periodic signals without noise, labeled 'periodic' (blue):
+which produces a plot like that shown below.
+We have run this on a dataset of 40 time series of length 500, each a sum of one or two sine waves: 20 with added Gaussian noise, labeled 'noisy' (red), and 20 without noise, labeled 'periodic' (blue):
 
 ![](../../.gitbook/assets/FeatureSummaryForInterpretation.png)
 
-In this plot, we see how this feature orders time series (with the distribution of values shown on the left, and split between the two groups: 'noisy', and 'periodic'). Our intuition from the code, that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction, appears to hold visually on this dataset.
+In this plot, we see how this feature orders time series (with the distribution of values shown on the left, and split between the two groups: 'noisy', and 'periodic').
+The periodic signals all have highly autocorrelated residuals (values from 0.87 to 0.99), whereas the noisy signals have lower values (from −0.06 to 0.73), because the noise is largely uncorrelated from one sample to the next.
+Our intuition from the code, that time series with longer correlation timescales will have highly autocorrelated residuals after a local mean prediction, appears to hold visually on this dataset: among the periodic signals, those with the slowest oscillations have the highest values.
 
 In general, the mechanism provided by `TS_FeatureSummary` to visualize how a given feature orders time series, including across labeled groups, can be very useful for feature interpretation.
 

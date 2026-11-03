@@ -13,7 +13,10 @@ Select a drop-down for more information:
 
 <summary><strong>How can I use more machine-learning algorithms rather than SVM linear only using <code>TS_Classify</code>?</strong></summary>
 
-You can specify the classification algorithm in the `cfnParams` structure. You can see the options in `GiveMeCfn`. Typically because there is complexity in the embedding in a high-dimensional feature space, we have tried to remove complexity in the classifiers (to avoid overfitting), also for interpretability. You can also use `OutputToCSV` and use the hctsa data in other environments (like python), \[if this route, feel free to share your python workflow [here](https://github.com/benfulcher/hctsaAnalysisPython)]
+You can specify the classification algorithm by setting `cfnParams.whatClassifier` and passing `cfnParams` to `TS_Classify` (the default, set by `GiveMeDefaultClassificationParams`, is `'svm-linear-lowdim'`).
+You can see the options in `GiveMeCfn`.
+Typically because there is complexity in the embedding in a high-dimensional feature space, we have tried to remove complexity in the classifiers (to avoid overfitting), also for interpretability.
+You can also export the features using `OutputToCSV` and analyze them in other environments (like Python).
 
 </details>
 
@@ -21,7 +24,7 @@ You can specify the classification algorithm in the `cfnParams` structure. You c
 
 <summary><strong>Can I perform a multivariate time series analysis using </strong><em><strong>hctsa</strong></em><strong>?</strong></summary>
 
-_hctsa_ is designed to extracting thousands of features from a _**single univariate time series**_; [pyspi](https://github.com/olivercliff/pyspi) implements hundreds of pairwise dependence measures from multivariate time series.
+_hctsa_ is designed to extract thousands of features from a _**single univariate time series**_; [pyspi](https://github.com/DynamicsAndNeuralSystems/pyspi) implements hundreds of pairwise dependence measures from multivariate time series.
 
 You could incorporate both (i) univariate features of the components of the system; and (ii) features summarizing the pairwise dependence structure of the distributed system.
 
@@ -30,7 +33,7 @@ For example, some points to consider:
 * You could compute univariate features of each component of your system and then concatenate them to combine features of all individual time series:
   * To do this you may consider using a reduced set of features, like [catch22](https://github.com/DynamicsAndNeuralSystems/catch22) to avoid massive dimensionality explosion.
   * You may alternatively use _hctsa_ and then do feature selection or dimensionality reduction to tailor a reduced feature set to your application.
-  * You may also consider adding some pairwise dependence measures to summarize the multivariate structure, cf. [pyspi](https://github.com/olivercliff/pyspi).
+  * You may also consider adding some pairwise dependence measures to summarize the multivariate structure, cf. [pyspi](https://github.com/DynamicsAndNeuralSystems/pyspi).
 * You could compute univariate features of extracted dominant components of your multivariate system, e.g., using PCA.
 
 </details>
@@ -45,13 +48,17 @@ Use `OutputToCSV`. This gives you `.csv` files corresponding to a given _hctsa_ 
 
 <details>
 
-<summary><strong>Are there any plans to move away from Matlab (which is proprietary and thus not accessible to users perhaps outside universities) to perhaps Python/R/Julia?</strong></summary>
+<summary><strong>Can I use <em>hctsa</em> features without MATLAB (e.g., in Python, R or Julia)?</strong></summary>
 
-Most users are within Universities with a Matlab license, so I haven't come across issues with this (and the main analysis code is licensed non-commercial anyway). But there are a couple solutions if this comes up:
+There are a few options for working without MATLAB:
 
-* Use an alternative (e.g., native R or native python) feature-extraction tool, such as those listed [here](https://github.com/benfulcher/hctsa/wiki/Related-time-series-resources). These have far fewer features than _hctsa_ but can get you some of the way there.
-* Use Matlab temporarily to derive a reduced set of useful features for your problem, and then implement them (or find non-Matlab implementations). This pipeline is demonstrated (and implemented) in [catch22](https://github.com/DynamicsAndNeuralSystems/catch22) and we currently have new reduced ones in development. Our goal is to code reduced feature sets in C so they can be efficiently used in any programming language.
-* Also note that although it doesn't get around the license issue, you can run _hctsa_ from python using [pyopy](https://github.com/strawlab/pyopy).
+* Use the Python package [_pyhctsa_](https://github.com/DynamicsAndNeuralSystems/pyhctsa), where future development is planned to happen.
+* Use an alternative (e.g., native R or native Python) feature-extraction tool, such as those listed [here](related-time-series-resources.md).
+  These have far fewer features than _hctsa_ but can get you some of the way there.
+* Use a reduced feature set coded in C, which can be used efficiently from many programming languages: [_catch22_](https://github.com/DynamicsAndNeuralSystems/catch22) (22 features selected for general time-series classification) or [_catchaMouse16_](https://github.com/DynamicsAndNeuralSystems/catchaMouse16) (16 features selected for fMRI).
+  You can also derive a reduced set of useful features for your own problem with _hctsa_, and then implement them (or find non-MATLAB implementations).
+
+Note also the licenses: the _hctsa_ framework for running analyses and visualizations is licensed as [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (a commercial license is available from [Engine Analytics](http://www.engineanalytics.org/)), and the code for computing features is licensed as [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 </details>
 
