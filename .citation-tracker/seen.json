@@ -422,6 +422,23 @@
    "page_line": 74,
    "note": "bootstrap: already on page"
   },
+  "doi:10.1016/j.brainresbull.2026.112193": {
+   "doi": "10.1016/j.brainresbull.2026.112193",
+   "openalex": "W7224993832",
+   "pmid": "42966412",
+   "title": "Age-related patterns in local spontaneous activity measured by fNIRS: Greater unpredictability in infancy, local reorganization in childhood",
+   "year": 2026,
+   "authors": [
+    "Li"
+   ],
+   "venue": "Brain Research Bulletin",
+   "type": "journal",
+   "pubdate": "2026-10-31",
+   "first_seen": "2026-11-17",
+   "verdict": "U",
+   "evidence": "Full text unreachable (ScienceDirect returned 403 to the in-app browser; not in Europe PMC full text). Abstract describes age-related 'resting-state regional dynamics' features of fNIRS, so genuine hctsa/catch22 use is plausible.",
+   "note": ""
+  },
   "doi:10.1016/j.bspc.2025.108153": {
    "doi": "10.1016/j.bspc.2025.108153",
    "openalex": "W4410798394",
@@ -921,6 +938,24 @@
    "page_line": 111,
    "note": "bootstrap: already on page"
   },
+  "doi:10.1038/s41598-026-66211-y": {
+   "doi": "10.1038/s41598-026-66211-y",
+   "openalex": "W7202339741",
+   "title": "Evaluating the classification performance and data requirements of Catch22 features on noisy and short synthetic time series",
+   "year": 2026,
+   "authors": [
+    "Rojas",
+    "Parlitz",
+    "Masoller"
+   ],
+   "venue": "Scientific Reports",
+   "type": "journal",
+   "pubdate": "2026-08-13",
+   "first_seen": "2026-11-17",
+   "verdict": "C",
+   "evidence": "Catch22 is a curated set of 22 handcrafted features (listed in Table 1),extracted from the hctsa library of more than 7,000 features",
+   "note": "Paper evaluates catch22, not hctsa"
+  },
   "doi:10.1038/s41746-021-00551-z": {
    "doi": "10.1038/s41746-021-00551-z",
    "title": "Discovery of signatures of fatal neonatal illness in vital signs using highly comparative time-series analysis",
@@ -1108,6 +1143,26 @@
    "page_line": 115,
    "note": "bootstrap: already on page"
   },
+  "doi:10.1088/1361-6579/aea9e9": {
+   "doi": "10.1088/1361-6579/aea9e9",
+   "openalex": "W7213606301",
+   "pmid": "42759566",
+   "title": "Prediction of cerebral palsy in extremely preterm infants with beat-to-beat and lower-resolution heart rate variability metrics",
+   "year": 2026,
+   "authors": [
+    "Govindan",
+    "Chirumamilla",
+    "Letzkus",
+    "Plessis"
+   ],
+   "venue": "Physiological Measurement",
+   "type": "journal",
+   "pubdate": "2026-09-18",
+   "first_seen": "2026-11-17",
+   "verdict": "C",
+   "evidence": "For RobustSD, we followed the implementation available in an open-source package (Fulcher et al 2013, Fulcher and Jones 2017).",
+   "note": "One hctsa-derived HRV metric (RobustSD) among standard HRV measures"
+  },
   "doi:10.1088/1402-4896/ae6a49": {
    "doi": "10.1088/1402-4896/ae6a49",
    "openalex": "W7160526176",
@@ -1146,6 +1201,24 @@
    "verdict": "U",
    "confidence": 0.4,
    "evidence": "J. Neural Engineering paywalled; unverified"
+  },
+  "doi:10.1093/bioadv/vbag301": {
+   "doi": "10.1093/bioadv/vbag301",
+   "openalex": "W7221049707",
+   "pmid": "42979577",
+   "title": "Bridging large language model-based agents and workflow languages for automated multi-perspective analysis of single-cell RNA sequencing data",
+   "year": 2026,
+   "authors": [
+    "Hayakawa",
+    "Ozaki"
+   ],
+   "venue": "Bioinformatics Advances",
+   "type": "journal",
+   "pubdate": "2026-01-07",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "This approach is conceptually related to multiverse analysis (Steegen et al. 2016) and highly comparative feature extraction (Fulcher et al. 2013, Fulcher and Jones 2017)",
+   "note": ""
   },
   "doi:10.1093/braincomms/fcad330": {
    "doi": "10.1093/braincomms/fcad330",
@@ -1324,7 +1397,8 @@
    "on_page": true,
    "section": "🧠 Neuroimaging",
    "page_line": 69,
-   "note": "bootstrap: already on page"
+   "note": "bootstrap: already on page",
+   "published_as": "10.1523/jneurosci.2223-23.2024"
   },
   "doi:10.1101/2023.09.22.559020": {
    "doi": "10.1101/2023.09.22.559020",
@@ -1608,6 +1682,24 @@
    "summary": "Detect interpretable, long-timescale pairwise interactions between time series using time-series features.",
    "note": "methods paper; Ben may prefer it under Methods Papers; moved to a Methods card by hand"
   },
+  "doi:10.1103/tmkr-9kl2": {
+   "doi": "10.1103/tmkr-9kl2",
+   "openalex": "W4415337602",
+   "title": "Limits of Inference in Complex Systems: When Stochastic Models Become Indistinguishable",
+   "year": 2026,
+   "authors": [
+    "Aguilar",
+    "Muñoz",
+    "Azaele"
+   ],
+   "venue": "Physical Review X",
+   "type": "journal",
+   "pubdate": "2026-05-21",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "A common strategy for tackling parametric inference and model distinguishability is to compare readily accessible statistics —such as selected moments or one- and two-point distributions— that can be computed in both models and data [44, 45].",
+   "note": "Read from arXiv 2509.24977v3"
+  },
   "doi:10.1109/access.2021.3056441": {
    "doi": "10.1109/access.2021.3056441",
    "title": "Towards an Accelerometer-Based Elderly Fall Detection System Using Cross-Disciplinary Time Series Features",
@@ -1668,6 +1760,23 @@
    "page_line": 129,
    "note": "bootstrap: already on page"
   },
+  "doi:10.1109/access.2026.3715536": {
+   "doi": "10.1109/access.2026.3715536",
+   "openalex": "W7169886878",
+   "title": "Interpretable Voltage Event Classification From Cycle-by-Cycle IEEE 1159 State Sequences in Substation Oscillograms",
+   "year": 2026,
+   "authors": [
+    "Pacheco",
+    "Pedroso"
+   ],
+   "venue": "IEEE Access",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "The second is the catch22 canonical time-series feature set [47], a modern general-purpose representation distilled from the hctsa library [48].",
+   "note": "Read in browser (IEEE Xplore); catch22 is a baseline, hctsa only named"
+  },
   "doi:10.1109/bigdata66926.2025.11401527": {
    "doi": "10.1109/bigdata66926.2025.11401527",
    "openalex": "W7134209842",
@@ -1703,6 +1812,25 @@
    "verdict": "U",
    "evidence": "no full text reachable",
    "note": "pending review"
+  },
+  "doi:10.1109/icde65706.2026.00295": {
+   "doi": "10.1109/icde65706.2026.00295",
+   "openalex": "W7162346278",
+   "title": "From Benchmarks to Production: Transferring Time Series Anomaly Detection Methods for Electricity Production Monitoring",
+   "year": 2026,
+   "authors": [
+    "Vautier",
+    "Caron",
+    "Xhepi",
+    "Bizeul"
+   ],
+   "venue": "IEEE International Conference on Data Engineering (ICDE)",
+   "type": "conference",
+   "pubdate": "2026-05-01",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Among the most widely used are HCTSA [26], TSFRESH [21], and CATCH22 [27].",
+   "note": "Related work; hctsa set aside as too high-dimensional"
   },
   "doi:10.1109/icicgr68236.2026.11600372": {
    "doi": "10.1109/icicgr68236.2026.11600372",
@@ -1925,6 +2053,26 @@
    "section": "Biology",
    "evidence": "'we extracted features using a new approach - the Highly Comparative Time Series Analysis (HCTSA), which extracts thousands of features'; HCTSA is one of three feature-extraction methods whose performance is the paper's main result"
   },
+  "doi:10.1126/sciadv.aec2023": {
+   "doi": "10.1126/sciadv.aec2023",
+   "openalex": "W7223103133",
+   "pmid": "42905808",
+   "title": "Coordinated mosquito biting dynamics at the human skin interface",
+   "year": 2026,
+   "authors": [
+    "Konopka",
+    "Poinapen",
+    "Chitnis",
+    "Morrow"
+   ],
+   "venue": "Science Advances",
+   "type": "journal",
+   "pubdate": "2026-10-21",
+   "first_seen": "2026-11-17",
+   "verdict": "C",
+   "evidence": "First, we used the catch22 software ( 36 ) to extract 24 features (F1 to F24)",
+   "note": "catch24 used, hctsa cited alongside; full text read via Europe PMC (PMC13685975)"
+  },
   "doi:10.1145/3735654.3735938": {
    "doi": "10.1145/3735654.3735938",
    "openalex": "W4411528122",
@@ -1977,6 +2125,22 @@
    "confidence": 0.5,
    "evidence": "ACM paywalled; title 'Canonical Time Series Features for Pain Classification' suggests catch22 rather than hctsa",
    "note": "candidate for the catch22 page"
+  },
+  "doi:10.11606/d.3.2025.tde-24022026-084536": {
+   "doi": "10.11606/d.3.2025.tde-24022026-084536",
+   "openalex": "W7131214886",
+   "title": "Metodologia baseada em séries temporais para estimar a penetração de micro e mini geração distribuída no sistema elétrico brasileiro.",
+   "year": 2025,
+   "authors": [
+    "Martins"
+   ],
+   "venue": "Digital Library of Theses and Dissertations  (Universidade de São Paulo)",
+   "type": "journal",
+   "pubdate": "2025-12-03",
+   "first_seen": "2026-11-17",
+   "verdict": "U",
+   "evidence": "Full text unreachable (USP theses repository: scripted download failed and the in-app browser could not open the site)",
+   "note": ""
   },
   "doi:10.1162/imag.a.1126": {
    "doi": "10.1162/imag.a.1126",
@@ -2080,6 +2244,26 @@
    "page_line": 69,
    "note": "bootstrap: already on page"
   },
+  "doi:10.1186/s12916-026-04936-3": {
+   "doi": "10.1186/s12916-026-04936-3",
+   "openalex": "W7167607220",
+   "pmid": "42415071",
+   "title": "Complex affect dynamics offer limited incremental value for cross-sectional prediction of psychological and behavioural variables in cross-validated models",
+   "year": 2026,
+   "authors": [
+    "Shu",
+    "Levi",
+    "Tiego",
+    "Constable"
+   ],
+   "venue": "BMC Medicine",
+   "type": "journal",
+   "pubdate": "2026-07-07",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "The recent development of accessible approaches for highly comparative time series analysis ... can be leveraged to avoid the unnecessary proliferation of redundant methods [ 85 , 86 , 87 ].",
+   "note": "Discussion-only citation"
+  },
   "doi:10.1186/s12984-023-01217-5": {
    "doi": "10.1186/s12984-023-01217-5",
    "title": "Towards PPG-based anger detection for emotion regulation",
@@ -2120,6 +2304,24 @@
    "section": "🔬 Medicine—General",
    "page_line": 99,
    "note": "bootstrap: already on page"
+  },
+  "doi:10.13140/rg.2.2.16699.37924": {
+   "doi": "10.13140/rg.2.2.16699.37924",
+   "openalex": "W7143473049",
+   "title": "Reconciling Latent Variables and Networks Exploring and extending the Psychometric-Toolbox",
+   "year": 2026,
+   "authors": [
+    "Kistermann",
+    "Andriamiarana",
+    "Kelava"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-03-27",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Fulcher, B. D., & Jones, N. S. (2017). hctsa: A Computational Framework for Automated Time-Series Phenotyping",
+   "note": "Reference-list citation only (arXiv 2603.26116)"
   },
   "doi:10.1364/boe.466005": {
    "doi": "10.1364/boe.466005",
@@ -2240,6 +2442,62 @@
    "page_line": 129,
    "note": "bootstrap: already on page"
   },
+  "doi:10.14989/doctor.k26993": {
+   "doi": "10.14989/doctor.k26993",
+   "openalex": "W7223233850",
+   "title": "部分系列に着目した時系列解析の高度化手法に関する研究 ―区分的類似度測定、共変量拡張、ゲノム配列符号化モデルの構築―",
+   "year": 2026,
+   "authors": [
+    "Yu"
+   ],
+   "venue": "Institutional Repositories DataBase (IRDB)",
+   "type": "journal",
+   "pubdate": "2026-07-23",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Here, we introduce three transformation methods, including hctsa [23], catch22 [24], and ROCKET [25]",
+   "note": "Kyoto thesis; background section only"
+  },
+  "doi:10.1523/jneurosci.2223-23.2024": {
+   "doi": "10.1523/jneurosci.2223-23.2024",
+   "openalex": "W4393160601",
+   "pmid": "38527807",
+   "title": "The Brain’s Topographical Organization Shapes Dynamic Interaction Patterns That Support Flexible Behavior Based on Rules and Long-Term Knowledge",
+   "year": 2024,
+   "authors": [
+    "Wang",
+    "Krieger‐Redwood",
+    "Lyu",
+    "Lowndes"
+   ],
+   "venue": "Journal of Neuroscience",
+   "type": "journal",
+   "pubdate": "2024-03-25",
+   "first_seen": "2026-11-17",
+   "verdict": "A",
+   "on_page": true,
+   "section": "🧠 Neuroimaging",
+   "note": "published version of doi:10.1101/2023.09.06.556465"
+  },
+  "doi:10.21203/rs.3.rs-10531485/v1": {
+   "doi": "10.21203/rs.3.rs-10531485/v1",
+   "openalex": "W7172524285",
+   "title": "Heartwood detection in sandalwood (Santalum album) using resistance drilling",
+   "year": 2026,
+   "authors": [
+    "Bui",
+    "Bush",
+    "Downes",
+    "Gendvilas"
+   ],
+   "venue": "Research Square",
+   "type": "preprint",
+   "pubdate": "2026-08-05",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "they offer substantial potential for deriving a much broader range of features using time-series analysis methods (Fulcher and Jones, 2017, Fulcher, 2018, Henderson and Fulcher, 2021)",
+   "note": "Future-work mention"
+  },
   "doi:10.21203/rs.3.rs-3052453/v1": {
    "doi": "10.21203/rs.3.rs-3052453/v1",
    "title": "Identifying Methamphetamine Users through EEG Analysis: Harnessing hctsa and Machine Learning Approaches",
@@ -2356,6 +2614,23 @@
    "evidence": "no full text reachable",
    "note": "pending review"
   },
+  "doi:10.32614/rj-2025-023": {
+   "doi": "10.32614/rj-2025-023",
+   "openalex": "W4416977331",
+   "title": "Feature-Based Time-Series Analysis in R using the Theft Ecosystem",
+   "year": 2025,
+   "authors": [
+    "Henderson",
+    "Fulcher"
+   ],
+   "venue": "The R Journal",
+   "type": "journal",
+   "pubdate": "2025-10-21",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "hctsa, which computes > 7700 time-series features (Fulcher and Jones, 2017)",
+   "note": "theft paper: hctsa is background; theft wraps six open feature sets, not hctsa"
+  },
   "doi:10.3389/fimmu.2026.1625837": {
    "doi": "10.3389/fimmu.2026.1625837",
    "openalex": "W7134974167",
@@ -2394,6 +2669,25 @@
    "verdict": "U",
    "evidence": "full text fetched but not yet adjudicated",
    "note": "pending review"
+  },
+  "doi:10.3389/fneur.2026.1954245": {
+   "doi": "10.3389/fneur.2026.1954245",
+   "openalex": "W7225716009",
+   "title": "Multi-dimensional signal exploration on the effect of tremor interventions",
+   "year": 2026,
+   "authors": [
+    "Köhler",
+    "Müller",
+    "Chen",
+    "Selzam"
+   ],
+   "venue": "Frontiers in Neurology",
+   "type": "journal",
+   "pubdate": "2026-11-10",
+   "first_seen": "2026-11-17",
+   "verdict": "C",
+   "evidence": "Due to the limited sample size and subsequent risk to overfitting, we chose the catch22 framework",
+   "note": "catch22 used in place of full hctsa"
   },
   "doi:10.3389/fnhum.2025.1607941": {
    "doi": "10.3389/fnhum.2025.1607941",
@@ -2474,6 +2768,24 @@
    "evidence": "no full text reachable",
    "note": "pending review"
   },
+  "doi:10.3390/math14111788": {
+   "doi": "10.3390/math14111788",
+   "openalex": "W7162091405",
+   "title": "Time-Series Forecasting by Statistical State-Dependent Reconstruction of Coefficients of Itô-Type Processes",
+   "year": 2026,
+   "authors": [
+    "Ivanov",
+    "Korolev",
+    "Vakshin"
+   ],
+   "venue": "Mathematics",
+   "type": "journal",
+   "pubdate": "2026-05-22",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "The usual approach, as discussed, for example, in [1,2,3,4], is as follows.",
+   "note": "Read in browser (MDPI); hctsa is ref [1], cited as background on feature engineering"
+  },
   "doi:10.3390/s20174818": {
    "doi": "10.3390/s20174818",
    "title": "Indication of Electromagnetic Field Exposure via RBF-SVM Using Time-Series Features of Zebrafish Locomotion",
@@ -2536,6 +2848,28 @@
    "page_line": 134,
    "note": "bootstrap: already on page"
   },
+  "doi:10.36001/phmap.2025.v5i1.4449": {
+   "doi": "10.36001/phmap.2025.v5i1.4449",
+   "openalex": "W7123358605",
+   "title": "Multilevel fault diagnostics for railway applications using limited historical data",
+   "year": 2026,
+   "authors": [
+    "Aimiyekagbon",
+    "Löwen",
+    "Hanselle",
+    "Rief"
+   ],
+   "venue": "PHM Society Asia-Pacific Conference",
+   "type": "conference",
+   "pubdate": "2026-01-13",
+   "first_seen": "2026-11-17",
+   "verdict": "A",
+   "evidence": "Firstly, to extract features, the HCTSA toolbox is applied.",
+   "note": "Railway fault classification on hctsa features, following Löwen et al. (2025)",
+   "ours": false,
+   "section": "Engineering",
+   "confidence": 0.85
+  },
   "doi:10.3847/1538-4357/ae64ef": {
    "doi": "10.3847/1538-4357/ae64ef",
    "openalex": "W7161987900",
@@ -2573,6 +2907,193 @@
    "section": "⛰️ Geoscience",
    "page_line": 144,
    "note": "bootstrap: already on page"
+  },
+  "doi:10.48550/arxiv.2508.14667": {
+   "doi": "10.48550/arxiv.2508.14667",
+   "openalex": "W4415240438",
+   "title": "ELATE: Evolutionary Language model for Automated Time-series Engineering",
+   "year": 2025,
+   "authors": [
+    "Murray",
+    "Dervovic",
+    "Cashmore"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2025-08-20",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "B. D. Fulcher. Feature-based time-series analysis.",
+   "note": "Related-work citation only; the '7831 features' snippet refers to tsfresh"
+  },
+  "doi:10.48550/arxiv.2510.07432": {
+   "doi": "10.48550/arxiv.2510.07432",
+   "openalex": "W4416394448",
+   "title": "TS-Agent: Understanding and Reasoning Over Raw Time Series via Iterative Insight Gathering",
+   "year": 2025,
+   "authors": [
+    "Liu",
+    "Fons",
+    "Vapsi",
+    "Ghassemi"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2025-10-08",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Fulcher, B. D. and Jones, N. S. Hctsa: A computational framework for automated time-series phenotyping",
+   "note": "Reference-list citation only"
+  },
+  "doi:10.48550/arxiv.2603.20352": {
+   "doi": "10.48550/arxiv.2603.20352",
+   "openalex": "W7140221819",
+   "title": "The Multiverse of Time Series Machine Learning: an Archive for Multivariate Time Series Classification",
+   "year": 2026,
+   "authors": [
+    "Middlehurst",
+    "Rushbrooke",
+    "Ismail-Fawaz",
+    "Devanne"
+   ],
+   "venue": "ePrints Soton (University of Southampton)",
+   "type": "preprint",
+   "pubdate": "2026-03-20",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Catch22 [49] provides a compact set of 22 features distilled from the much larger hctsa library [26]",
+   "note": "Background mention"
+  },
+  "doi:10.48550/arxiv.2604.25499": {
+   "doi": "10.48550/arxiv.2604.25499",
+   "openalex": "W7158303993",
+   "title": "EvoTSC: Evolving Feature Learning Models for Time Series Classification via Genetic Programming",
+   "year": 2026,
+   "authors": [
+    "Yang",
+    "Xue",
+    "Zhang"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-04-28",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "A foundational work in this area is hctsa [9], which consolidates decades of interdisciplinary time series analysis methods into a large, interpretable feature library",
+   "note": "Related work"
+  },
+  "doi:10.48550/arxiv.2605.17340": {
+   "doi": "10.48550/arxiv.2605.17340",
+   "openalex": "W7161731619",
+   "title": "Olivia: Harmonizing Time Series Foundation Models with Power Spectral Density",
+   "year": 2026,
+   "authors": [
+    "费璟如",
+    "Yi",
+    "Wang",
+    "Wen"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-05-17",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Fulcher, B. D. and Jones, N. S. hctsa: A computational framework",
+   "note": "Reference-list citation only"
+  },
+  "doi:10.48550/arxiv.2606.09912": {
+   "doi": "10.48550/arxiv.2606.09912",
+   "openalex": "W7164129011",
+   "title": "Mix, Don't Pick: Why Synthetic Corpus Composition Matters for Time Series Foundation Model Pretraining",
+   "year": 2026,
+   "authors": [
+    "Nagpal",
+    "Sanyal",
+    "Mandal",
+    "Kumar"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-06-06",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Fulcher, B. D. and Jones, N. S. hctsa: A computational framework for automated time-series phenotyping",
+   "note": "Reference-list citation only"
+  },
+  "doi:10.48550/arxiv.2606.12836": {
+   "doi": "10.48550/arxiv.2606.12836",
+   "openalex": "W7164560014",
+   "title": "Interpretable model-free inference of parametric variation across time-series data through large-scale feature extraction",
+   "year": 2026,
+   "authors": [
+    "Fulcher",
+    "Lubba",
+    "Gilestro",
+    "Schultz"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-06-11",
+   "first_seen": "2026-11-17",
+   "verdict": "A",
+   "evidence": "Here we used version 0.97 of hctsa [48].",
+   "note": "Fulcher is first author -> Our Research (Applications Papers). Also: 'drawing on a comprehensive set of > 7000 time-series features in the hctsa feature library'",
+   "ours": true,
+   "section": "Applications Papers",
+   "confidence": 0.98
+  },
+  "doi:10.48550/arxiv.2608.01586": {
+   "doi": "10.48550/arxiv.2608.01586",
+   "openalex": "W7172384994",
+   "title": "Statistical comparisons of time-series feature sets on classification tasks",
+   "year": 2026,
+   "authors": [
+    "Henderson",
+    "Fulcher"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-08-03",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "To our knowledge, the most broadly comprehensive existing time-series feature set is hctsa",
+   "note": "Henderson & Fulcher: compares six open-source feature sets; hctsa is background"
+  },
+  "doi:10.48550/arxiv.2608.20861": {
+   "doi": "10.48550/arxiv.2608.20861",
+   "openalex": "W7204140398",
+   "title": "Beyond Mean Frametime: Time-Series Signatures for XR Timing Analysis",
+   "year": 2026,
+   "authors": [
+    "Thäns",
+    "Latoschik"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-08-21",
+   "first_seen": "2026-11-17",
+   "verdict": "C",
+   "evidence": "We instantiate the timing-signature representation with 22 canonical time-series characteristics from catch22, a compact and interpretable subset derived from the hctsa feature library [10, 17].",
+   "note": "catch22/catch24 used"
+  },
+  "doi:10.48550/arxiv.2609.15859": {
+   "doi": "10.48550/arxiv.2609.15859",
+   "openalex": "W7213350188",
+   "title": "LongAgent: History-Guided Agentic Search for Longitudinal Outcome Prediction",
+   "year": 2026,
+   "authors": [
+    "Wang",
+    "Guitton",
+    "Fu",
+    "Tao"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-09-14",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Fulcher, B.D., Jones, N.S.: hctsa: A computational framework for automated time-series phenotyping",
+   "note": "Reference-list citation only"
   },
   "doi:10.5194/essd-17-3391-2025": {
    "doi": "10.5194/essd-17-3391-2025",
@@ -2635,6 +3156,22 @@
    "summary": "Distill hctsa into a reduced set of 16 features (catchaMouse16) that captures biologically informative dynamics in fMRI.",
    "note": "methods-flavored (reduced set derived from hctsa); Ben may prefer it under Methods Papers"
   },
+  "doi:10.5282/edoc.37395": {
+   "doi": "10.5282/edoc.37395",
+   "openalex": "W7203711868",
+   "title": "Atemgasanalyse mittels E-Nose-Technologie zur Diskriminierung von COVID-19-Pneumonien",
+   "year": 2026,
+   "authors": [
+    "Pfeiffer"
+   ],
+   "venue": "Electronic Theses of LMU Munich (Ludwig-Maximilians-Universität München)",
+   "type": "journal",
+   "pubdate": "2026-08-18",
+   "first_seen": "2026-11-17",
+   "verdict": "C",
+   "evidence": "Fluctanal passt ein Polynom erster Ordnung auf die Zeitreihe an und gibt die Spannweite zurück (Fulcher, Little et al. 2013, Fulcher and Jones 2017).",
+   "note": "LMU thesis: a handful of individual features (stability, lumpiness, fluctanal) cited to hctsa"
+  },
   "doi:10.53469/ijomsr.2025.08(09).07": {
    "doi": "10.53469/ijomsr.2025.08(09).07",
    "openalex": "W4414679598",
@@ -2696,6 +3233,58 @@
    "section": "Applications Papers",
    "evidence": "'combining highly comparative time-series analysis with multi-modal neuroimaging and intracranial electrophysiology, we establish heart rate dynamics as a physiological fingerprint that maps onto whole-brain functional architecture'",
    "summary": "Map heart-rate dynamics onto whole-brain functional architecture and cognitive function."
+  },
+  "doi:10.64898/2026.09.08.750125": {
+   "doi": "10.64898/2026.09.08.750125",
+   "openalex": "W7159856203",
+   "title": "Multi-Methodological Characterization of Sleep Deprivation: From Standard EEG Power Spectra to Aperiodic Dynamics in Humans and Mice",
+   "year": 2026,
+   "authors": [
+    "Kroker",
+    "Puder",
+    "Abbasi",
+    "Ghiasi"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "type": "preprint",
+   "pubdate": "2026-09-14",
+   "first_seen": "2026-11-17",
+   "verdict": "A",
+   "evidence": "By integrating standard power spectral density analysis with aperiodic component fitting (SpecParam) and highly comparative time-series analysis (HCTSA), we identified robust cross-species biomarkers of sleep pressure.",
+   "note": "~7000 hctsa features computed on EEG alongside spectral measures; reports best hctsa feature (CO_Embed2_Basic_tau_incircle_2)",
+   "ours": false,
+   "section": "Neuroimaging",
+   "confidence": 0.9
+  },
+  "doi:10.70517/ijhsa46467": {
+   "doi": "10.70517/ijhsa46467",
+   "openalex": "W4413379208",
+   "title": "Research on feature extraction and reconstruction method of time series data based on generative adversarial network",
+   "year": 2025,
+   "authors": [],
+   "venue": "International journal for housing science and its applications.",
+   "type": "journal",
+   "pubdate": "2025-08-15",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "[4] Fulcher, B. D., & Jones, N. S. (2017). hctsa: A computational framework for automated time-series phenotyping",
+   "note": "Reference-list citation only"
+  },
+  "doi:10.70675/92516ac0z309fz4292za97cz31214149a337": {
+   "doi": "10.70675/92516ac0z309fz4292za97cz31214149a337",
+   "openalex": "W7152802186",
+   "title": "Contributions to independence testing for time series data : Application to causal discovery",
+   "year": 2025,
+   "authors": [
+    "Arsac"
+   ],
+   "venue": "theses.fr (ABES)",
+   "type": "journal",
+   "pubdate": "2025-12-17",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "Fulcher, B. D. and Jones, N. S. (2017). hctsa: A computational framework for automated time-series phenotyping",
+   "note": "Thesis; reference-list citation only"
   },
   "doi:10.7554/elife.106194.1": {
    "doi": "10.7554/elife.106194.1",
@@ -2814,6 +3403,53 @@
    "verdict": "U",
    "evidence": "no full text reachable",
    "note": "pending review"
+  },
+  "openalex:W7125356972": {
+   "openalex": "W7125356972",
+   "title": "Evaluating feature extraction on wearable sensor data for outdoor sports activity recognition",
+   "year": 2025,
+   "authors": [
+    "Kassem"
+   ],
+   "venue": "Aaltodoc (Aalto University)",
+   "type": "journal",
+   "pubdate": "2025-12-28",
+   "first_seen": "2026-11-17",
+   "verdict": "B",
+   "evidence": "The present study addresses this gap by evaluating Catch22, TSFRESH, HCTSA, and TSFEL in combination with established classifiers",
+   "note": "Aalto thesis: hctsa (7755 features) is one of four feature libraries compared; catch22 performed best"
+  },
+  "openalex:W7208794437": {
+   "openalex": "W7208794437",
+   "title": "Parameter inference from a non-stationary unknown process using statistical feature-based slow feature analysis",
+   "year": 2026,
+   "authors": [
+    "Owens",
+    "Tamaki",
+    "Fulcher"
+   ],
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "pubdate": "2026-08-31",
+   "first_seen": "2026-11-17",
+   "verdict": "C",
+   "evidence": "in this work we use catch24 which consists of 24 statistical features",
+   "note": "Owens, Tamaki & Fulcher (arXiv 2609.01651): f-SFA with catch24; hctsa named as a possible extension"
+  },
+  "openalex:W7225484804": {
+   "openalex": "W7225484804",
+   "title": "Comparing Model-Based, Feature-Based, and Deep Learning Approaches to Time-Series Clustering for Intensive Longitudinal Data: Monte Carlo Studies and an Empirical Demonstration",
+   "year": 2026,
+   "authors": [
+    "Meyer"
+   ],
+   "venue": "SHAREOK (University of Oklahoma; Oklahoma State University; Central Oklahoma University)",
+   "type": "journal",
+   "pubdate": "2026-01-01",
+   "first_seen": "2026-11-17",
+   "verdict": "D",
+   "evidence": "The comparisons therefore concern these implementations and their scaling and reduction steps, not catch22, hctsa, or the workflow of Kreienkamp et al. (2025).",
+   "note": "Thesis; explicitly not using hctsa"
   },
   "pmid:41991947": {
    "pmid": "41991947",
